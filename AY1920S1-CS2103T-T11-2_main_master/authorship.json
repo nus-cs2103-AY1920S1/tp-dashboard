@@ -55676,381 +55676,563 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "/**"
+        "content": "import static java.util.Objects.requireNonNull;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "jascxx"
         },
-        "content": " * Represents the statistics of a card."
+        "content": ""
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "jascxx"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "public class CardStatistics {"
+        "content": " * Represents the statistics of a card."
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private String cardId;"
+        "content": "public class CardStatistics {"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private int numShown;"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private int numCorrect;"
+        "content": "    private String cardId;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    private int numShown;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public CardStatistics(String cardId, int numShown, int numCorrect) {"
+        "content": "    private int numCorrect;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.cardId \u003d cardId;"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.numShown \u003d numShown;"
+        "content": "    public CardStatistics(String cardId, int numShown, int numCorrect) {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.numCorrect \u003d numCorrect;"
+        "content": "        if (numShown \u003c 0 || numCorrect \u003c 0) {"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "            throw new IllegalArgumentException(\"Integer arguments should be positive.\");"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public String getCardId() {"
+        "content": "        if (numCorrect \u003e numShown) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return cardId;"
+        "content": "            throw new IllegalArgumentException(\"Number of correct guesses should be at most the number\""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "                + \"the card has been shown.\");"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public int getNumShown() {"
+        "content": "        requireNonNull(cardId);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return numShown;"
+        "content": "        this.cardId \u003d cardId;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        this.numShown \u003d numShown;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        this.numCorrect \u003d numCorrect;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public int getNumCorrect() {"
+        "content": "    }"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return numCorrect;"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public String getCardId() {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        return cardId;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "     * Add a wrong guess data point to this card stats."
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "     */"
+        "content": "    public int getNumShown() {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void addWrong() {"
+        "content": "        return numShown;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        ++numShown;"
+        "content": "    }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    public int getNumCorrect() {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    /**"
+        "content": "        return numCorrect;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "     * Add a correct guess data point to this card stats."
+        "content": "    }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void addCorrect() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        ++numCorrect;"
+        "content": "     * Add a wrong guess data point to this card stats."
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        ++numShown;"
+        "content": "     */"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public void addWrong() {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        ++numShown;"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public String toString() {"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return new StringBuilder()"
+        "content": "    /**"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .append(\"id:\")"
+        "content": "     * Add a correct guess data point to this card stats."
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .append(cardId)"
+        "content": "     */"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .append(\"\\nnumShown:\")"
+        "content": "    public void addCorrect() {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .append(numShown)"
+        "content": "        ++numCorrect;"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .append(\"\\nnumCorrect:\")"
+        "content": "        ++numShown;"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .append(numCorrect)"
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .toString();"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public boolean equals(Object obj) {"
       },
       {
         "lineNumber": 57,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        if (obj \u003d\u003d this) {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        if (!(obj instanceof CardStatistics)) {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        CardStatistics other \u003d (CardStatistics) obj;"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return getCardId().equals(other.getCardId())"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 getNumShown() \u003d\u003d other.getNumShown()"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 getNumCorrect() \u003d\u003d other.getNumCorrect();"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return new StringBuilder()"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .append(\"id:\")"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .append(cardId)"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .append(\"\\nnumShown:\")"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .append(numShown)"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .append(\"\\nnumCorrect:\")"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .append(numCorrect)"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .toString();"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 83,
         "author": {
           "gitId": "jascxx"
         },
@@ -56058,7 +56240,7 @@
       }
     ],
     "authorContributionMap": {
-      "jascxx": 57
+      "jascxx": 83
     }
   },
   {
@@ -56245,7 +56427,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            throw new AssertionError(\"Millis taken cannot be negative\");"
+        "content": "            throw new IllegalArgumentException(\"Millis taken cannot be negative\");"
       },
       {
         "lineNumber": 27,
@@ -56511,31 +56693,129 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public String toString() {"
+        "content": "    public boolean equals(Object obj) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return dataType + \" - \" + guess + \": \" + millisTaken + \"ms\";"
+        "content": "        if (obj \u003d\u003d this) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "            return true;"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 68,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        if (!(obj instanceof GameDataPoint)) {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameDataPoint other \u003d (GameDataPoint) obj;"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return dataType.equals(other.dataType)"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 getMillisTaken() \u003d\u003d other.getMillisTaken()"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 guess.equals(other.guess);"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return dataType + \" - \" + guess + \": \" + millisTaken + \"ms\";"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
         "author": {
           "gitId": "jascxx"
         },
@@ -56543,7 +56823,7 @@
       }
     ],
     "authorContributionMap": {
-      "jascxx": 68
+      "jascxx": 82
     }
   },
   {
@@ -56663,7 +56943,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import java.util.List;"
+        "content": "import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;"
       },
       {
         "lineNumber": 4,
@@ -56675,369 +56955,544 @@
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "import seedu.address.model.card.Card;"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
         "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "jascxx"
+          "gitId": "dragontho"
         },
-        "content": "/**"
+        "content": "import seedu.address.model.card.Card;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "jascxx"
+          "gitId": "dragontho"
         },
-        "content": " * Represents the statistics of a single game."
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "jascxx"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "public class GameStatistics {"
+        "content": " * Represents the statistics of a single game."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private final String title;"
+        "content": "public class GameStatistics {"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private final int score;"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private final ScoreGrade grade;"
+        "content": "    private final String title;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private final double secTaken;"
+        "content": "    private final int score;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private final List\u003cCard\u003e correctCards;"
+        "content": "    private final ScoreGrade grade;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private final List\u003cCard\u003e wrongCards;"
+        "content": "    private final double secTaken;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    private final List\u003cCard\u003e correctCards;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public GameStatistics(String title, int score, double secTaken,"
+        "content": "    private final List\u003cCard\u003e wrongCards;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                          List\u003cCard\u003e correctCards, List\u003cCard\u003e wrongCards) {"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.title \u003d title;"
+        "content": "    public GameStatistics(String title, int score, double secTaken,"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.score \u003d score;"
+        "content": "                          List\u003cCard\u003e correctCards, List\u003cCard\u003e wrongCards) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.secTaken \u003d secTaken;"
+        "content": "        requireAllNonNull(title, correctCards, wrongCards);"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.correctCards \u003d correctCards;"
+        "content": "        if (score \u003c ScoreData.MIN_SCORE || score \u003e ScoreData.MAX_SCORE) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.wrongCards \u003d wrongCards;"
+        "content": "            throw new IllegalArgumentException(\"Score must be within bound as specified in ScoreData\");"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.grade \u003d ScoreGrade.getGrade(score);"
+        "content": "        this.title \u003d title;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        this.score \u003d score;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        this.secTaken \u003d secTaken;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public String getTitle() {"
+        "content": "        this.correctCards \u003d correctCards;"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return title;"
+        "content": "        this.wrongCards \u003d wrongCards;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        this.grade \u003d ScoreGrade.getGrade(score);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public int getScore() {"
+        "content": "    }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return score;"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public String getTitle() {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        return title;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public ScoreGrade getGrade() {"
+        "content": "    }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return grade;"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public int getScore() {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        return score;"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public double getSecTaken() {"
+        "content": "    }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return secTaken;"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public ScoreGrade getGrade() {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        return grade;"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public List\u003cCard\u003e getCorrectCards() {"
+        "content": "    }"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return correctCards;"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public double getSecTaken() {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        return secTaken;"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public List\u003cCard\u003e getWrongCards() {"
+        "content": "    }"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return wrongCards;"
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public List\u003cCard\u003e getCorrectCards() {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        return correctCards;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public boolean allCorrect() {"
+        "content": "    }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return getWrongCards().isEmpty();"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    public List\u003cCard\u003e getWrongCards() {"
       },
       {
         "lineNumber": 57,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return wrongCards;"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public boolean isAllCorrect() {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return getWrongCards().isEmpty();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        if (other \u003d\u003d this) {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        if (!(other instanceof GameStatistics)) {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameStatistics otherGameStats \u003d (GameStatistics) other;"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return title.equals(otherGameStats.getTitle())"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 score \u003d\u003d otherGameStats.getScore()"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 grade.equals(otherGameStats.getGrade())"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 secTaken \u003d\u003d otherGameStats.getSecTaken()"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 correctCards.equals(otherGameStats.getCorrectCards())"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                \u0026\u0026 wrongCards.equals(otherGameStats.getWrongCards());"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 82,
         "author": {
           "gitId": "jascxx"
         },
@@ -57046,7 +57501,7 @@
     ],
     "authorContributionMap": {
       "dragontho": 2,
-      "jascxx": 55
+      "jascxx": 80
     }
   },
   {
@@ -57317,350 +57772,350 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            data.get(card).add(gameDataPoint);"
+        "content": "            List\u003cGameDataPoint\u003e dataPoints \u003d data.get(card);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        } else {"
+        "content": "            if (dataPoints.get(dataPoints.size() - 1).getMillisTaken() \u003e gameDataPoint.getMillisTaken()) {"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            List\u003cGameDataPoint\u003e gameDataPointList \u003d new ArrayList\u003c\u003e();"
+        "content": "                throw new IllegalArgumentException(\"The data point to add on a card must have larger millis \""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            gameDataPointList.add(gameDataPoint);"
+        "content": "                        + \"taken compared to the previously added one.\");"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            data.put(card, gameDataPointList);"
+        "content": "            }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        }"
+        "content": "            data.get(card).add(gameDataPoint);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "            List\u003cGameDataPoint\u003e gameDataPointList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public String getTitle() {"
+        "content": "            gameDataPointList.add(gameDataPoint);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return title;"
+        "content": "            data.put(card, gameDataPointList);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public Map\u003cCard, List\u003cGameDataPoint\u003e\u003e getData() {"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return data;"
+        "content": "    public String getTitle() {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        return title;"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 54,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public Map\u003cCard, List\u003cGameDataPoint\u003e\u003e getData() {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return data;"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
         "author": {
           "gitId": "dragontho"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 60,
         "author": {
           "gitId": "dragontho"
         },
         "content": "     * Builds the resulting {@code GameStatistics} object."
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 61,
         "author": {
           "gitId": "dragontho"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 62,
         "author": {
           "gitId": "dragontho"
         },
         "content": "     * @return"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 63,
         "author": {
           "gitId": "dragontho"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 64,
         "author": {
           "gitId": "jascxx"
         },
         "content": "    public GameStatistics build() {"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 65,
         "author": {
           "gitId": "jascxx"
         },
         "content": "        return new GameStatistics(title,"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 66,
         "author": {
           "gitId": "jascxx"
         },
         "content": "                getScore(),"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 67,
         "author": {
           "gitId": "jascxx"
         },
         "content": "                getTimeTakenSec(),"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 68,
         "author": {
           "gitId": "jascxx"
         },
         "content": "                getAllCorrectCards(),"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 69,
         "author": {
           "gitId": "jascxx"
         },
         "content": "                getAllWrongCards());"
       },
       {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "jascxx"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "jascxx"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "jascxx"
-        },
-        "content": "    // The following are helper methods to construct the game statistics."
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "jascxx"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "jascxx"
-        },
-        "content": "    /**"
-      },
-      {
         "lineNumber": 70,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "     * Returns the score of the game. To be shown in the result page."
+        "content": "    }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "     * The scoring system can be flexible."
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "     */"
+        "content": "    // The following are helper methods to construct the game statistics."
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private int getScore() {"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        // todo implement this method properly"
+        "content": "    /**"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        int correctAnswer \u003d (int) data.keySet()"
+        "content": "     * Returns the score of the game. To be shown in the result page."
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .stream()"
+        "content": "     * The scoring system can be flexible."
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .filter(x -\u003e {"
+        "content": "     */"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                    Optional\u003cGuess\u003e guess \u003d getLastDataPoint(x).getGuess();"
+        "content": "    private int getScore() {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                    return guess.isPresent() \u0026\u0026 guess.get().matches(x.getWord());"
+        "content": "        int correctAnswer \u003d (int) data.keySet()"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                })"
+        "content": "                .stream()"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .count();"
+        "content": "                .filter(x -\u003e {"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        int score \u003d (int) Math.round(((double) correctAnswer) / data.size() * ScoreData.MAX_SCORE);"
+        "content": "                    Optional\u003cGuess\u003e guess \u003d getLastDataPoint(x).getGuess();"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return score;"
+        "content": "                    return guess.isPresent() \u0026\u0026 guess.get().matches(x.getWord());"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "                })"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "                .count();"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    private ScoreGrade getScoreGrade() {"
+        "content": "        int score \u003d (int) Math.round(((double) correctAnswer) / data.size() * ScoreData.MAX_SCORE);"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return ScoreGrade.getGrade(getScore());"
+        "content": "        return score;"
       },
       {
         "lineNumber": 88,
@@ -57933,80 +58388,108 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Override"
+        "content": "    public int size() {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public String toString() {"
+        "content": "        return data.size();"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        StringBuilder sb \u003d new StringBuilder();"
+        "content": "    }"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        for (Map.Entry\u003cCard, List\u003cGameDataPoint\u003e\u003e entry : data.entrySet()) {"
+        "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            sb.append(\"-------\").append(entry.getKey()).append(\"-------\\n\");"
+        "content": "    @Override"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            for (GameDataPoint gameDataPoint : entry.getValue()) {"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                sb.append(\"   \").append(gameDataPoint).append(\"\\n\");"
+        "content": "        StringBuilder sb \u003d new StringBuilder();"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            }"
+        "content": "        for (Map.Entry\u003cCard, List\u003cGameDataPoint\u003e\u003e entry : data.entrySet()) {"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        }"
+        "content": "            sb.append(\"-------\").append(entry.getKey()).append(\"-------\\n\");"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return sb.toString();"
+        "content": "            for (GameDataPoint gameDataPoint : entry.getValue()) {"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "                sb.append(\"   \").append(gameDataPoint).append(\"\\n\");"
       },
       {
         "lineNumber": 137,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return sb.toString();"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 141,
         "author": {
           "gitId": "jascxx"
         },
@@ -58015,7 +58498,7 @@
     ],
     "authorContributionMap": {
       "dragontho": 5,
-      "jascxx": 132
+      "jascxx": 136
     }
   },
   {
@@ -58235,89 +58718,166 @@
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "    /**"
+        "content": "    @Override"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "     * Takes the maximum of the two scores."
+        "content": "    public boolean equals(Object obj) {"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "     *"
+        "content": "        if (obj \u003d\u003d this) {"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "     * @param data1 First score to compare."
+        "content": "            return true;"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "     * @param data2 Second score to compare"
+        "content": "        }"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "     * @return The {@code ScoreData} that is more."
+        "content": "        if (!(obj instanceof ScoreData)) {"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "     */"
+        "content": "            return false;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public static ScoreData max(ScoreData data1, ScoreData data2) {"
+        "content": "        }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return data1.score \u003e data2.score"
+        "content": "        return getScore() \u003d\u003d ((ScoreData) obj).getScore();"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                ? data1"
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                : data2;"
+        "content": ""
       },
       {
         "lineNumber": 42,
+        "author": {
+          "gitId": "dragontho"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "dragontho"
+        },
+        "content": "     * Takes the maximum of the two scores."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "dragontho"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "dragontho"
+        },
+        "content": "     * @param data1 First score to compare."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "dragontho"
+        },
+        "content": "     * @param data2 Second score to compare"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "dragontho"
+        },
+        "content": "     * @return The {@code ScoreData} that is more."
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "dragontho"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public static ScoreData max(ScoreData data1, ScoreData data2) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        return data1.score \u003e data2.score"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                ? data1"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                : data2;"
+      },
+      {
+        "lineNumber": 53,
         "author": {
           "gitId": "jascxx"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 54,
         "author": {
           "gitId": "jascxx"
         },
@@ -58326,7 +58886,7 @@
     ],
     "authorContributionMap": {
       "dragontho": 7,
-      "jascxx": 36
+      "jascxx": 47
     }
   },
   {
@@ -58457,45 +59017,73 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    static ScoreGrade getGrade(int grade) {"
+        "content": "    public int getMinScore() {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        return Arrays.stream(ScoreGrade.values())"
+        "content": "        return minScore;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .filter(x -\u003e grade \u003e\u003d x.minScore)"
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .findFirst()"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                .orElse(LOW);"
+        "content": "    static ScoreGrade getGrade(int grade) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        return Arrays.stream(ScoreGrade.values())"
       },
       {
         "lineNumber": 24,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .filter(x -\u003e grade \u003e\u003d x.minScore)"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .findFirst()"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                .orElse(LOW);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
         "author": {
           "gitId": "jascxx"
         },
@@ -58503,7 +59091,7 @@
       }
     ],
     "authorContributionMap": {
-      "jascxx": 24
+      "jascxx": 28
     }
   },
   {
@@ -58851,7 +59439,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        if (gameStats.allCorrect()) {"
+        "content": "        if (gameStats.isAllCorrect()) {"
       },
       {
         "lineNumber": 50,
@@ -59390,7 +59978,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public boolean receivedBadgeEasy() {"
+        "content": "    public boolean isReceivedBadgeEasy() {"
       },
       {
         "lineNumber": 127,
@@ -59418,7 +60006,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public boolean receivedBadgeNormal() {"
+        "content": "    public boolean isReceivedBadgeNormal() {"
       },
       {
         "lineNumber": 131,
@@ -59446,7 +60034,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public boolean receivedBadgeHard() {"
+        "content": "    public boolean isReceivedBadgeHard() {"
       },
       {
         "lineNumber": 135,
@@ -59579,7 +60167,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "     * Create a new black statistics with the name {@code wbName}."
+        "content": "     * Create a new word bank statistics with the name {@code wbName}."
       },
       {
         "lineNumber": 154,
@@ -64640,21 +65228,21 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.badgeEasy \u003d wbStats.receivedBadgeEasy();"
+        "content": "        this.badgeEasy \u003d wbStats.isReceivedBadgeEasy();"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.badgeNormal \u003d wbStats.receivedBadgeNormal();"
+        "content": "        this.badgeNormal \u003d wbStats.isReceivedBadgeNormal();"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        this.badgeHard \u003d wbStats.receivedBadgeHard();"
+        "content": "        this.badgeHard \u003d wbStats.isReceivedBadgeHard();"
       },
       {
         "lineNumber": 72,
@@ -79916,14 +80504,14 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        badgesRowPlaceholder.getChildren().add(new BadgesRow(wbStatistics.receivedBadgeEasy(),"
+        "content": "        badgesRowPlaceholder.getChildren().add(new BadgesRow(wbStatistics.isReceivedBadgeEasy(),"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                wbStatistics.receivedBadgeNormal(), wbStatistics.receivedBadgeHard()).getRoot());"
+        "content": "                wbStatistics.isReceivedBadgeNormal(), wbStatistics.isReceivedBadgeHard()).getRoot());"
       },
       {
         "lineNumber": 72,
@@ -80231,7 +80819,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            \u0026\u0026 gameStatistics.allCorrect()) {"
+        "content": "            \u0026\u0026 gameStatistics.isAllCorrect()) {"
       },
       {
         "lineNumber": 116,
@@ -80273,7 +80861,7 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        if (gameStatistics.allCorrect()) {"
+        "content": "        if (gameStatistics.isAllCorrect()) {"
       },
       {
         "lineNumber": 122,
@@ -84821,14 +85409,14 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        badgesRowPlaceholder.getChildren().add(new BadgesRow(wbStatistics.receivedBadgeEasy(),"
+        "content": "        badgesRowPlaceholder.getChildren().add(new BadgesRow(wbStatistics.isReceivedBadgeEasy(),"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                wbStatistics.receivedBadgeNormal(), wbStatistics.receivedBadgeHard()).getRoot());"
+        "content": "                wbStatistics.isReceivedBadgeNormal(), wbStatistics.isReceivedBadgeHard()).getRoot());"
       },
       {
         "lineNumber": 63,
@@ -90177,9 +90765,9 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "kohyida1997"
+          "gitId": "jascxx"
         },
-        "content": "\u003cScrollPane fitToHeight\u003d\"true\" fitToWidth\u003d\"true\" xmlns\u003d\"http://javafx.com/javafx/11\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+        "content": "\u003cScrollPane fitToHeight\u003d\"true\" fitToWidth\u003d\"true\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
       },
       {
         "lineNumber": 13,
@@ -90205,9 +90793,9 @@
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "              \u003cLabel fx:id\u003d\"title\" alignment\u003d\"CENTER\" maxHeight\u003d\"-Infinity\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"-Infinity\" minWidth\u003d\"-Infinity\" text\u003d\"Title\" textAlignment\u003d\"CENTER\" /\u003e"
+        "content": "              \u003cLabel fx:id\u003d\"title\" alignment\u003d\"CENTER\" maxHeight\u003d\"-Infinity\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"-Infinity\" minWidth\u003d\"-Infinity\" styleClass\u003d\"label-header\" text\u003d\"Title\" textAlignment\u003d\"CENTER\" /\u003e"
       },
       {
         "lineNumber": 17,
@@ -90226,16 +90814,16 @@
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "            \u003cLabel fx:id\u003d\"title1\" alignment\u003d\"CENTER\" maxHeight\u003d\"-Infinity\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"-Infinity\" minWidth\u003d\"-Infinity\" text\u003d\"Score:\" textAlignment\u003d\"CENTER\" /\u003e"
+        "content": "            \u003cLabel fx:id\u003d\"title1\" alignment\u003d\"CENTER\" maxHeight\u003d\"-Infinity\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"-Infinity\" minWidth\u003d\"-Infinity\" styleClass\u003d\"cell_big_label\" text\u003d\"Score:\" textAlignment\u003d\"CENTER\" /\u003e"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "            \u003cLabel fx:id\u003d\"scoreText\" alignment\u003d\"CENTER\" maxHeight\u003d\"-Infinity\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"-Infinity\" minWidth\u003d\"-Infinity\" text\u003d\"XX\" textAlignment\u003d\"CENTER\" /\u003e"
+        "content": "            \u003cLabel fx:id\u003d\"scoreText\" alignment\u003d\"CENTER\" maxHeight\u003d\"-Infinity\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"-Infinity\" minWidth\u003d\"-Infinity\" styleClass\u003d\"label-header\" text\u003d\"XX\" textAlignment\u003d\"CENTER\" /\u003e"
       },
       {
         "lineNumber": 21,
@@ -90785,9 +91373,8 @@
       }
     ],
     "authorContributionMap": {
-      "dragontho": 4,
-      "jascxx": 93,
-      "kohyida1997": 1
+      "dragontho": 1,
+      "jascxx": 97
     }
   },
   {
@@ -123614,6 +124201,330 @@
     }
   },
   {
+    "path": "src/test/java/seedu/address/statistics/CardStatisticsTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "package seedu.address.statistics;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertNotEquals;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import static seedu.address.testutil.Assert.assertThrows;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "public class CardStatisticsTest {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void constructor() {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new CardStatistics(null, 1, 1));"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertThrows(IllegalArgumentException.class, ()"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            -\u003e new CardStatistics(\"a\", 1, 2)); // numShown \u003c numCorrect"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertThrows(IllegalArgumentException.class, ()"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            -\u003e new CardStatistics(\"a\", -1, 1));"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertThrows(IllegalArgumentException.class, ()"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "            -\u003e new CardStatistics(\"a\", 1, -1));"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void addWrongCorrect() {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        CardStatistics cardStatistics \u003d new CardStatistics(\"abc\", 3, 2);"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        CardStatistics cardStatisticsWrong \u003d new CardStatistics(\"abc\", 4, 2);"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        cardStatistics.addWrong();"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(cardStatistics, cardStatisticsWrong);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void addCorrect() {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        CardStatistics cardStatistics \u003d new CardStatistics(\"abc\", 3, 2);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        CardStatistics cardStatisticsCorrect \u003d new CardStatistics(\"abc\", 4, 3);"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        cardStatistics.addCorrect();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(cardStatistics, cardStatisticsCorrect);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        CardStatistics cardStatistics \u003d new CardStatistics(\"abc\", 3, 2);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(cardStatistics, cardStatistics);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        Integer i \u003d 1;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(cardStatistics, i);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jascxx": 45
+    }
+  },
+  {
     "path": "src/test/java/seedu/address/statistics/GameDataPointTest.java",
     "fileType": "tests",
     "lines": [
@@ -123643,283 +124554,423 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import static seedu.address.testutil.Assert.assertThrows;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertNotEquals;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import static seedu.address.testutil.Assert.assertThrows;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import java.util.Optional;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import java.util.Optional;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import seedu.address.model.game.Guess;"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import seedu.address.model.game.Guess;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "public class GameDataPointTest {"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "public class GameDataPointTest {"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void createSkipData() {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertThrows(AssertionError.class, () -\u003e GameDataPoint.createSkipData(-1)); // invalid millis"
+        "content": "    public void createSkipData() {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        assertThrows(IllegalArgumentException.class, () -\u003e GameDataPoint.createSkipData(-1)); // invalid millis"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void createGuessData() {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertThrows(NullPointerException.class, ()"
+        "content": "    public void createGuessData() {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            -\u003e GameDataPoint.createGuessData(null, 1)); // null guess"
+        "content": "        assertThrows(NullPointerException.class, ()"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertThrows(AssertionError.class, ()"
+        "content": "            -\u003e GameDataPoint.createGuessData(null, 1)); // null guess"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "            -\u003e GameDataPoint.createGuessData(new Guess(\"abc\"), -1)); // invalid millis"
+        "content": "        assertThrows(IllegalArgumentException.class, ()"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "            -\u003e GameDataPoint.createGuessData(new Guess(\"abc\"), -1)); // invalid millis"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void getMillisTaken() {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(GameDataPoint.createSkipData(1).getMillisTaken(), 1);"
+        "content": "    public void getMillisTaken() {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(GameDataPoint.createGuessData(new Guess(\"abc\"), 1).getMillisTaken(),"
+        "content": "        assertEquals(GameDataPoint.createSkipData(1).getMillisTaken(), 1);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                1);"
+        "content": "        assertEquals(GameDataPoint.createGuessData(new Guess(\"abc\"), 1).getMillisTaken(),"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "                1);"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void getGuess() {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(GameDataPoint.createSkipData(1).getGuess(), Optional.empty()); // skip data does not have a guess."
+        "content": "    public void getGuess() {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        Guess g1 \u003d new Guess(\"abc\");"
+        "content": "        assertEquals(GameDataPoint.createSkipData(1).getGuess(), Optional.empty()); // skip data does not have a guess."
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        Guess g2 \u003d new Guess(\"abc\");"
+        "content": "        Guess g1 \u003d new Guess(\"abc\");"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(GameDataPoint.createGuessData(g1, 1).getGuess().get(),"
+        "content": "        Guess g2 \u003d new Guess(\"abc\");"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                g1);"
+        "content": "        assertEquals(GameDataPoint.createGuessData(g1, 1).getGuess().get(), g1);"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(GameDataPoint.createGuessData(g1, 1).getGuess().get(),"
+        "content": "        assertEquals(GameDataPoint.createGuessData(g1, 1).getGuess().get(), g2);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                g2);"
+        "content": "    }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 44,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameDataPoint g1 \u003d GameDataPoint.createGuessData(new Guess(\"abc\"), 1);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameDataPoint g2 \u003d GameDataPoint.createGuessData(new Guess(\"abc\"), 1);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameDataPoint g3 \u003d GameDataPoint.createGuessData(new Guess(\"abcd\"), 1);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameDataPoint g4 \u003d GameDataPoint.createGuessData(new Guess(\"abc\"), 2);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameDataPoint g5 \u003d GameDataPoint.createSkipData(1);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameDataPoint g6 \u003d GameDataPoint.createSkipData(1);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameDataPoint g7 \u003d GameDataPoint.createSkipData(2);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        Integer i \u003d 1;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(g1, i);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(g1, g1);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(g1, g2);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(g1, g3);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(g1, g4);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(g5, g6);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(g5, g7);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(g1, g5);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 64,
         "author": {
           "gitId": "jascxx"
         },
@@ -123927,7 +124978,7 @@
       }
     ],
     "authorContributionMap": {
-      "jascxx": 44
+      "jascxx": 64
     }
   },
   {
@@ -123981,185 +125032,297 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import static seedu.address.testutil.TypicalCards.CHARIZARD;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import seedu.address.model.game.Guess;"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "public class GameStatisticsBuilderTest {"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import seedu.address.model.game.Guess;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void constructor_nullTitle_throwsNullPointerException() {"
+        "content": "public class GameStatisticsBuilderTest {"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertThrows(NullPointerException.class, () -\u003e new GameStatisticsBuilder(null));"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    public void constructor() {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Test"
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new GameStatisticsBuilder(null));"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void constructor_validString_success() {"
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        new GameStatisticsBuilder(\"abc\");"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    public void addDataPoint() {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Test"
+        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void addDataPoint() {"
+        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(100), ABRA);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 101), ABRA);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(100), ABRA);"
+        "content": "        assertEquals(1, gameStats.size()); // 2 data points in 1 card."
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 101), ABRA);"
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"guess\"),"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(1, gameStats.getData().size()); // 2 data points in 1 card."
+        "content": "                100), BUTTERFREE);"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(100), BUTTERFREE);"
+        "content": "        assertEquals(2, gameStats.size()); // 2 different cards"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(2, gameStats.getData().size()); // 2 different cards"
+        "content": "        assertThrows(IllegalArgumentException.class, () -\u003e gameStats.addDataPoint(GameDataPoint.createSkipData(90),"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "                BUTTERFREE));"
       },
       {
         "lineNumber": 33,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void build() {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(100), ABRA);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 101), ABRA);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(100), BUTTERFREE);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"ccc\"), 10), CHARIZARD);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(3, gameStats.size());"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(gameStats.build().getScore(), 33);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(gameStats.build().getCorrectCards(), List.of(ABRA));"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(gameStats.build().getWrongCards(), List.of(BUTTERFREE, CHARIZARD));"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(gameStats.build().getSecTaken(), 0.211);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(gameStats.build().getTitle(), \"pokemon\");"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 49,
         "author": {
           "gitId": "jascxx"
         },
@@ -124167,7 +125330,7 @@
       }
     ],
     "authorContributionMap": {
-      "jascxx": 33
+      "jascxx": 49
     }
   },
   {
@@ -124200,231 +125363,231 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import static seedu.address.testutil.TypicalCards.ABRA;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import static seedu.address.testutil.TypicalCards.BUTTERFREE;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertNotEquals;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import static seedu.address.testutil.TypicalCards.CHARIZARD;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertThrows;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import static seedu.address.testutil.TypicalCards.DITTO;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import static seedu.address.testutil.TypicalCards.EEVEE;"
+        "content": "import static seedu.address.testutil.TypicalCards.ABRA;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "import static seedu.address.testutil.TypicalCards.FLAREON;"
+        "content": "import static seedu.address.testutil.TypicalCards.BUTTERFREE;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import static seedu.address.testutil.TypicalCards.CHARIZARD;"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": "import static seedu.address.testutil.TypicalCards.DITTO;"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": ""
+        "content": "import static seedu.address.testutil.TypicalCards.EEVEE;"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
-        "content": "import seedu.address.model.game.Guess;"
+        "content": "import static seedu.address.testutil.TypicalCards.FLAREON;"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "dragontho"
+          "gitId": "jascxx"
         },
         "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "jascxx"
+          "gitId": "dragontho"
         },
-        "content": "public class GameStatisticsTest {"
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "jascxx"
+          "gitId": "dragontho"
         },
         "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "jascxx"
+          "gitId": "dragontho"
         },
-        "content": "    @Test"
+        "content": "import seedu.address.model.game.Guess;"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "jascxx"
+          "gitId": "dragontho"
         },
-        "content": "    public void getScore() {"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
+        "content": "public class GameStatisticsTest {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 101), ABRA);"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 101),"
+        "content": "    @Test"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                BUTTERFREE);"
+        "content": "    public void constructor() {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(100, gameStats.build().getScore());"
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new GameStatisticsBuilder(null));"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        GameStatisticsBuilder gameStats1 \u003d new GameStatisticsBuilder(\"pokemon\");"
+        "content": "    @Test"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats1.addDataPoint(GameDataPoint.createSkipData(10), ABRA);"
+        "content": "    public void getScore() {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats1.addDataPoint(GameDataPoint.createSkipData(10), BUTTERFREE);"
+        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(0, gameStats1.build().getScore());"
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 101), ABRA);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 101),"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "                BUTTERFREE);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        GameStatisticsBuilder gameStats2 \u003d new GameStatisticsBuilder(\"pokemon\");"
+        "content": "        assertEquals(100, gameStats.build().getScore());"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats2.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10), ABRA);"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats2.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10),"
+        "content": "        GameStatisticsBuilder gameStats1 \u003d new GameStatisticsBuilder(\"pokemon\");"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                BUTTERFREE);"
+        "content": "        gameStats1.addDataPoint(GameDataPoint.createSkipData(10), ABRA);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(50, gameStats2.build().getScore());"
+        "content": "        gameStats1.addDataPoint(GameDataPoint.createSkipData(10), BUTTERFREE);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        assertEquals(0, gameStats1.build().getScore());"
       },
       {
         "lineNumber": 37,
@@ -124438,49 +125601,49 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    public void getTimeTakenSec() {"
+        "content": "        GameStatisticsBuilder gameStats2 \u003d new GameStatisticsBuilder(\"pokemon\");"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
+        "content": "        gameStats2.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10), ABRA);"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 10), ABRA);"
+        "content": "        gameStats2.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10),"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10),"
+        "content": "                BUTTERFREE);"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                BUTTERFREE);"
+        "content": "        assertEquals(50, gameStats2.build().getScore());"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(0.02, gameStats.build().getSecTaken(), 1e-9);"
+        "content": "    }"
       },
       {
         "lineNumber": 45,
@@ -124494,80 +125657,339 @@
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(11), CHARIZARD);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(12), DITTO);"
+        "content": "    public void getTimeTakenSec() {"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(0.043, gameStats.build().getSecTaken(), 1e-9);"
+        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 10), ABRA);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "jascxx"
         },
-        "content": ""
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10),"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 21),"
+        "content": "                BUTTERFREE);"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                EEVEE);"
+        "content": "        assertEquals(0.02, gameStats.build().getSecTaken(), 1e-9);"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 31),"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "                FLAREON);"
+        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(11), CHARIZARD);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "        assertEquals(0.095, gameStats.build().getSecTaken(), 1e-9);"
+        "content": "        gameStats.addDataPoint(GameDataPoint.createSkipData(12), DITTO);"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "jascxx"
         },
-        "content": "    }"
+        "content": "        assertEquals(0.043, gameStats.build().getSecTaken(), 1e-9);"
       },
       {
         "lineNumber": 57,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 21),"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                EEVEE);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 31),"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                FLAREON);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(0.095, gameStats.build().getSecTaken(), 1e-9);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void isAllCorrect() {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 10), ABRA);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10),"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                BUTTERFREE);"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertTrue(gameStats.build().isAllCorrect());"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 10), BUTTERFREE);"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertFalse(gameStats.build().isAllCorrect());"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameStatisticsBuilder gameStats1 \u003d new GameStatisticsBuilder(\"pokemon\");"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats1.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 10), ABRA);"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats1.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10),"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                BUTTERFREE);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats1.addDataPoint(GameDataPoint.createSkipData(10), ABRA);"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertFalse(gameStats1.build().isAllCorrect());"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        GameStatisticsBuilder gameStats \u003d new GameStatisticsBuilder(\"pokemon\");"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"abra\"), 10), ABRA);"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        gameStats.addDataPoint(GameDataPoint.createGuessData(new Guess(\"butterfree\"), 10),"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "                BUTTERFREE);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(gameStats, gameStats);"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(gameStats, 1);"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 94,
         "author": {
           "gitId": "jascxx"
         },
@@ -124576,7 +125998,354 @@
     ],
     "authorContributionMap": {
       "dragontho": 4,
-      "jascxx": 53
+      "jascxx": 90
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/statistics/ScoreDataTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "package seedu.address.statistics;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertNotEquals;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "public class ScoreDataTest {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void constructor() {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(new ScoreData(ScoreData.MAX_SCORE + 100), new ScoreData(ScoreData.MAX_SCORE));"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(new ScoreData(ScoreData.MIN_SCORE - 100), new ScoreData(ScoreData.MIN_SCORE));"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        ScoreData sd1 \u003d new ScoreData(10);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        ScoreData sd2 \u003d new ScoreData(10);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        ScoreData sd3 \u003d new ScoreData(20);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(sd1, sd2);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(sd1, sd3);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertNotEquals(sd1, 10);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void max() {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        ScoreData sd1 \u003d new ScoreData(10);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        ScoreData sd2 \u003d new ScoreData(20);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(ScoreData.max(sd1, sd2), sd2);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jascxx": 32
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/statistics/ScoreGradeTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "package seedu.address.statistics;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "public class ScoreGradeTest {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public void getGrade() {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(ScoreGrade.getGrade(ScoreData.MAX_SCORE), ScoreGrade.HIGH);"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(ScoreGrade.getGrade(ScoreData.MIN_SCORE), ScoreGrade.LOW);"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "        assertEquals(ScoreGrade.getGrade(ScoreGrade.MEDIUM.getMinScore()), ScoreGrade.MEDIUM);"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jascxx": 15
     }
   },
   {

@@ -30011,709 +30011,673 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "import dream.fcard.gui.Gui;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
           "gitId": "huiminlim"
         },
         "content": "import dream.fcard.model.exceptions.IndexNotFoundException;"
       },
       {
-        "lineNumber": 5,
+        "lineNumber": 4,
         "author": {
           "gitId": "AHaliq"
         },
         "content": "import dream.fcard.util.json.JsonInterface;"
       },
       {
-        "lineNumber": 6,
+        "lineNumber": 5,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "import dream.fcard.util.json.jsontypes.JsonValue;"
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 6,
         "author": {
           "gitId": "AHaliq"
         },
         "content": ""
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 7,
         "author": {
           "gitId": "AHaliq"
         },
         "content": "/**"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 8,
         "author": {
           "gitId": "AHaliq"
         },
         "content": " * Interface all flash card types must implement."
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 9,
         "author": {
           "gitId": "AHaliq"
         },
         "content": " */"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 10,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "public abstract class FlashCard implements JsonInterface, Comparable\u003cFlashCard\u003e {"
       },
       {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
         "lineNumber": 12,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    protected String front;"
+        "content": "    /** Text to display in front of FlashCard */"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    protected String back;"
+        "content": "    protected String front;"
       },
       {
         "lineNumber": 14,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "    protected Integer priority;"
-      },
-      {
-        "lineNumber": 15,
         "author": {
           "gitId": "AHaliq"
         },
         "content": ""
       },
       {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    /** Text to display in back of FlashCard */"
+      },
+      {
         "lineNumber": 16,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
-        "content": "    //@@author nattanyz"
+        "content": "    protected String back;"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "AHaliq"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
-        "content": "     * Renders front of this flash card."
+        "content": "    /** Number indicating priority level of FlashCard. */"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "    protected Integer priority;"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "AHaliq"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "AHaliq"
         },
-        "content": "    public void renderFront() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "        Gui.renderFront(this);"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     * Renders back of this flash card"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    public void renderBack() {"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "        Gui.renderBack(this);"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    //@@author nattanyz"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "nattanyz"
+          "gitId": "AHaliq"
         },
         "content": "     * Evaluate if the input matches the card"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 23,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 24,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "AHaliq"
         },
         "content": "     * @param in input"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 25,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "AHaliq"
         },
         "content": "     * @return true if its a valid match"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 26,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "AHaliq"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 27,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    public abstract Boolean evaluate(String in) throws IndexNotFoundException;"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 28,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 29,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 30,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * Returns front text of card."
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 31,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 32,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * @return String of front text of card."
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 33,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 34,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    public abstract String getFront();"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 35,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 36,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 37,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * Return back text of card."
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 38,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 39,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * @return String of back text of card."
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 40,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 41,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    public abstract String getBack();"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 42,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 43,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 44,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * Edits the front text of card."
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 45,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 46,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * @param newText String of new text to replace in front."
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 47,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 48,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    public abstract void editFront(String newText);"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 49,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 50,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 51,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * Edits the back text of card."
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 52,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 53,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * @param newText String of new text to replace in back."
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 54,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 55,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    public abstract void editBack(String newText);"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 56,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 57,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 58,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * Create JsonValue out of this Flashcard."
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 59,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 60,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * @return JsonValue of flashcard."
       },
       {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    public JsonValue toJson() {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return null;"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Returns an integer value after checking if this card has higher priority than other card."
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * If this card has higher priority, return a positive number."
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * If this card has lower priority, return a negative number."
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @param otherCard"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @return"
+      },
+      {
         "lineNumber": 74,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     */"
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    @Override"
       },
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
-        "content": "    public JsonValue toJson() {"
+        "content": "    public int compareTo(FlashCard otherCard) {"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
-        "content": "        return null;"
+        "content": "        return this.priority - otherCard.getPriority();"
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    }"
       },
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    /**"
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     * Checks if this card has higher priority than other card."
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     * If this card has higher priority, return a positive number."
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     * If this card has lower priority, return a negative number."
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     * @param otherCard"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     * @return"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    public int compareTo(FlashCard otherCard) {"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "        return this.priority - otherCard.getPriority();"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * Returns priority level of flashcard."
       },
       {
-        "lineNumber": 95,
+        "lineNumber": 82,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 96,
+        "lineNumber": 83,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     * @return integer value of priorirty level."
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 84,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 85,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    public int getPriority() {"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 86,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "        return priority;"
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 87,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 88,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 89,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "huiminlim"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Returns boolean value after checking if FlashCard has choice parameters."
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * If FlashCard has choice parameters (in ArrayList), return true."
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Else return false."
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @return Boolean value, true if FlashCard has choices, else return false."
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    public abstract boolean hasChoices();"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "timothyleong97"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "nattanyz": 88,
-      "AHaliq": 6,
-      "timothyleong97": 2,
-      "huiminlim": 6
+      "AHaliq": 13,
+      "timothyleong97": 3,
+      "huiminlim": 81
     }
   },
   {
@@ -31430,6 +31394,83 @@
       {
         "lineNumber": 102,
         "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Returns boolean value false."
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Since no choices exist in this class."
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @return Boolean value false."
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    public boolean hasChoices() {"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
           "gitId": "timothyleong97"
         },
         "content": "}"
@@ -31438,7 +31479,7 @@
     "authorContributionMap": {
       "AHaliq": 23,
       "timothyleong97": 3,
-      "huiminlim": 76
+      "huiminlim": 87
     }
   },
   {
@@ -32101,13 +32142,90 @@
         "author": {
           "gitId": "huiminlim"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Returns boolean value false."
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Since no choices exist in this class."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @return Boolean value false."
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    public boolean hasChoices() {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "huiminlim"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
       "AHaliq": 11,
       "timothyleong97": 2,
-      "huiminlim": 81
+      "huiminlim": 92
     }
   },
   {
@@ -32469,532 +32587,532 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        // Answer index is 1-based."
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // Answer index is 1-based."
+        "content": "        try {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        try {"
+        "content": "            answerIndex \u003d Integer.parseInt(back);"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            answerIndex \u003d Integer.parseInt(back);"
+        "content": "        } catch (NumberFormatException f) {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        } catch (NumberFormatException f) {"
+        "content": "            throw new NumberFormatException(\"Choice provided is invalid - \" + answerIndex);"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new NumberFormatException(\"Choice provided is invalid - \" + answerIndex);"
+        "content": "        }"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        priority \u003d LOW_PRIORITY;"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        priority \u003d LOW_PRIORITY;"
+        "content": "    }"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "    //@author"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "     * Constructor of MCQ card, with front, back string, choices and priority level."
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Constructor of MCQ card, with front, back string, choices and priority level."
+        "content": "     *"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "     * @param frontString String of front text of card."
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param frontString String of front text of card."
+        "content": "     * @param backString  String of back text of card."
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param backString  String of back text of card."
+        "content": "     * @param choicesArg  Choices available for user to choose."
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param choicesArg  Choices available for user to choose."
+        "content": "     * @throws DuplicateInChoicesException Throw exception when duplicates exist in choices."
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @throws DuplicateInChoicesException Throw exception when duplicates exist in choices."
+        "content": "     */"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "    //@@author huiminlim"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@@author huiminlim"
+        "content": "    public MultipleChoiceCard(String frontString, String backString, ArrayList\u003cString\u003e choicesArg, int priorityLevel)"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public MultipleChoiceCard(String frontString, String backString, ArrayList\u003cString\u003e choicesArg, int priorityLevel)"
+        "content": "            throws DuplicateInChoicesException {"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throws DuplicateInChoicesException {"
+        "content": "        super(frontString, backString);"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        super(frontString, backString);"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        // Checks if choices contain duplicate"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // Checks if choices contain duplicate"
+        "content": "        boolean hasDuplicateInChoice \u003d hasChoiceContainDuplicate(choicesArg);"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        boolean hasDuplicateInChoice \u003d hasChoiceContainDuplicate(choicesArg);"
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        if (hasDuplicateInChoice) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        if (hasDuplicateInChoice) {"
+        "content": "            throw new DuplicateInChoicesException(\"Duplicates found in choices provided.\");"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new DuplicateInChoicesException(\"Duplicates found in choices provided.\");"
+        "content": "        }"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        choices \u003d choicesArg;"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        choices \u003d choicesArg;"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        try {"
+        "content": "            answerIndex \u003d Integer.parseInt(back);"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            answerIndex \u003d Integer.parseInt(back);"
+        "content": "        } catch (NumberFormatException f) {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        } catch (NumberFormatException f) {"
+        "content": "            throw new NumberFormatException(\"Choice provided is invalid - \" + answerIndex);"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new NumberFormatException(\"Choice provided is invalid - \" + answerIndex);"
+        "content": "        }"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        priority \u003d priorityLevel;"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        priority \u003d priorityLevel;"
+        "content": "    }"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "    //@author"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "     * Returns JsonValue of flashcard."
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Returns JsonValue of flashcard."
+        "content": "     *"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "     * @return JsonValue of flashcard."
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return JsonValue of flashcard."
+        "content": "     */"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "    @Override"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    @Override"
+        "content": "    public JsonValue toJson() {"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public JsonValue toJson() {"
+        "content": "        try {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        try {"
+        "content": "            JsonObject obj \u003d super.toJson().getObject();"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            JsonObject obj \u003d super.toJson().getObject();"
+        "content": ""
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "            JsonArray choicesJson \u003d new JsonArray();"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            JsonArray choicesJson \u003d new JsonArray();"
+        "content": "            for (String option : choices) {"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            for (String option : choices) {"
+        "content": "                choicesJson.add(option);"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "                choicesJson.add(option);"
+        "content": "            }"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            }"
+        "content": "            obj.put(Schema.TYPE_FIELD, Schema.MULTIPLE_CHOICE_TYPE);"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            obj.put(Schema.TYPE_FIELD, Schema.MULTIPLE_CHOICE_TYPE);"
+        "content": "            obj.put(Schema.CHOICES_FIELD, choicesJson);"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            obj.put(Schema.CHOICES_FIELD, choicesJson);"
+        "content": "            return new JsonValue(obj);"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            return new JsonValue(obj);"
+        "content": "        } catch (JsonWrongValueException e) {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        } catch (JsonWrongValueException e) {"
+        "content": "            System.out.println(\"Inherited FrontBackCard unexpected json object\");"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            System.out.println(\"Inherited FrontBackCard unexpected json object\");"
+        "content": "        }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "        return super.toJson();"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return super.toJson();"
+        "content": "    }"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "     * Evaluates if user input answer is correct."
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Render the front of card to GUI node."
+        "content": "     *"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *."
+        "content": "     * @param in String input provided by user."
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "     * @return Boolean, if correct return true, else return false."
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@@author huiminlim"
+        "content": "     * @throws IndexNotFoundException Throw exception when input provided by user is not a valid choice."
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    @Override"
+        "content": "     */"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public void renderFront() {"
+        "content": "    //@@author huiminlim"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // Shuffle choices first"
+        "content": "    @Override"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        shuffleChoices();"
+        "content": "    public Boolean evaluate(String in) throws IndexNotFoundException {"
       },
       {
         "lineNumber": 127,
@@ -33008,98 +33126,98 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        super.renderFront();"
+        "content": "        int userAnswer \u003d -1;"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "        // User answer is 1-based indexing"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "            userAnswer \u003d Integer.parseInt(in);"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Evaluates if user input answer is correct."
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "        } catch (NumberFormatException n) {"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param in String input provided by user."
+        "content": "            throw new NumberFormatException(\"Choice provided is invalid - \" + answerIndex);"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return Boolean, if correct return true, else return false."
+        "content": "        }"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @throws IndexNotFoundException Throw exception when input provided by user is not a valid choice."
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "        // Assume options must be a non-negative integer"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@@author huiminlim"
+        "content": "        if (isNotValidChoice(answerIndex)) {"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    @Override"
+        "content": "            throw new IndexNotFoundException(\"Choice provided is invalid - \" + userAnswer);"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public Boolean evaluate(String in) throws IndexNotFoundException {"
+        "content": "        }"
       },
       {
         "lineNumber": 142,
@@ -33113,98 +33231,98 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        int userAnswer \u003d -1;"
+        "content": "        return userAnswer \u003d\u003d displayChoicesAnswerIndex;"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // User answer is 1-based indexing"
+        "content": "    //@author"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        try {"
+        "content": ""
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            userAnswer \u003d Integer.parseInt(in);"
+        "content": "    /**"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     * Get the String of front of MultipleChoiceCard."
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        } catch (NumberFormatException n) {"
+        "content": "     *"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new NumberFormatException(\"Choice provided is invalid - \" + answerIndex);"
+        "content": "     * @return String of text in front of MultipleChoiceCard."
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "     */"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    //@author huiminlim"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // Assume options must be a non-negative integer"
+        "content": "    public String getFront() {"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        if (isNotValidChoice(answerIndex)) {"
+        "content": "        return front;"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new IndexNotFoundException(\"Choice provided is invalid - \" + userAnswer);"
+        "content": "    }"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "    //@author"
       },
       {
         "lineNumber": 157,
@@ -33218,189 +33336,189 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return userAnswer \u003d\u003d displayChoicesAnswerIndex;"
+        "content": "    /**"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "     * Get the String of back of MultipleChoiceCard."
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "     *"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     * @return String of text in back of MultipleChoiceCard."
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "     */"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Checks if ArrayList of choices contain duplicates."
+        "content": "    //@author huiminlim"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Returns true if duplicates exist, false if no duplicates."
+        "content": "    public String getBack() {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "        return back;"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param choiceSet ArrayList of possible String of choices to check."
+        "content": "    }"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return Boolean true if ArrayList of choices have duplicates, false if no duplicates."
+        "content": ""
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@@author huiminlim"
+        "content": "     * Get the String text of choice given the index of the choice."
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    private boolean hasChoiceContainDuplicate(ArrayList\u003cString\u003e choiceSet) {"
+        "content": "     *"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        HashMap\u003cString, Integer\u003e choiceMap \u003d new HashMap\u003c\u003e();"
+        "content": "     * @param indexProvided Integer index of targeted choice to obtain."
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     * @return String of text of targeted option."
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        for (int i \u003d 0; i \u003c choiceSet.size(); i++) {"
+        "content": "     * @throws IndexNotFoundException If index \u003e\u003d number of choices or \u003c 0."
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            String choiceText \u003d choiceSet.get(i).trim();"
+        "content": "     */"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    //@author huiminlim"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            boolean hasChoice \u003d choiceMap.containsKey(choiceText);"
+        "content": "    public String getSpecificChoice(int indexProvided) throws IndexNotFoundException {"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        if (isNotValidChoice(indexProvided)) {"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            if (hasChoice) {"
+        "content": "            throw new IndexNotFoundException(\"Choice index provided is invalid - \" + indexProvided);"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "                return true;"
+        "content": "        }"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            } else {"
+        "content": ""
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "                choiceMap.put(choiceText, 1);"
+        "content": "        // Use chocies indexing - 0-based indexing"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            }"
+        "content": "        // choice index is the index that works with the Arraylist"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "        int choiceIndex \u003d indexProvided - 1;"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return false;"
+        "content": "        return choices.get(choiceIndex);"
       },
       {
         "lineNumber": 185,
@@ -33435,7 +33553,7 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Edits the front text of the MultipleChoiceCard."
+        "content": "     *"
       },
       {
         "lineNumber": 190,
@@ -33449,7 +33567,7 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param newText String of text to replace the front of MultipleChoiceCard."
+        "content": "     * @return"
       },
       {
         "lineNumber": 192,
@@ -33463,21 +33581,21 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@@author huiminlim"
+        "content": "    public ArrayList\u003cString\u003e getListOfChoices() {"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public void editFront(String newText) {"
+        "content": "        shuffleChoices();"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        front \u003d newText;"
+        "content": "        return displayChoices;"
       },
       {
         "lineNumber": 196,
@@ -33491,84 +33609,84 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": ""
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "     * Shuffles the choices of choices and updates the index of correct answer."
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Edits the back text of the MultipleChoiceCard."
+        "content": "     *"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "     * @return"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param newText String of text to replace the back of MultipleChoiceCard."
+        "content": "     */"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "    //@author huiminlim"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author huiminlim"
+        "content": "    private void shuffleChoices() {"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public void editBack(String newText) {"
+        "content": "        // Obtain String of correct answer before sorting"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        back \u003d newText;"
+        "content": "        String correctAnswer \u003d choices.get(answerIndex);"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "        displayChoices \u003d generateCopyOfChoices();"
       },
       {
         "lineNumber": 209,
@@ -33582,357 +33700,357 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "        Collections.shuffle(displayChoices);"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Edits one of string in choices, given new text and index."
+        "content": ""
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "        // Find the index of the correct answer after sorting"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param indexProvided Integer index of targeted choice to edit."
+        "content": "        for (int i \u003d 0; i \u003c displayChoices.size(); i++) {"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param newChoice     String text of new choice option to replace current choice."
+        "content": "            String currentChoice \u003d displayChoices.get(i);"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @throws IndexNotFoundException If index \u003e\u003d number of choices or \u003c 0."
+        "content": ""
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "            boolean isCurrentChoiceEqualAnswer \u003d correctAnswer.equals(currentChoice);"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author huiminlim"
+        "content": ""
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public void editChoice(int indexProvided, String newChoice) throws IndexNotFoundException {"
+        "content": "            if (isCurrentChoiceEqualAnswer) {"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        if (isNotValidChoice(indexProvided)) {"
+        "content": "                displayChoicesAnswerIndex \u003d i + 1;"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new IndexNotFoundException(\"Choice index provided is invalid - \" + indexProvided);"
+        "content": "                break;"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // choice index is the index that works with the Arraylist"
+        "content": "    }"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        int choiceIndex \u003d indexProvided - 1;"
+        "content": "    //@author"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        choices.add(choiceIndex, newChoice);"
+        "content": ""
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        choices.remove(choiceIndex + 1);"
+        "content": "    /**"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "     * @return"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "     */"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    //@@author huiminlim"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "    private ArrayList\u003cString\u003e generateCopyOfChoices() {"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Checks if the given choice index provided by the user is correct."
+        "content": "        ArrayList\u003cString\u003e newList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Note: the user provided index is 1-based indexing."
+        "content": "        for (int i \u003d 0; i \u003c choices.size(); i++) {"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Valid indexes include 1, 2, 3, ..., choices."
+        "content": "            String newStringObject \u003d choices.get(i);"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "            newList.add(newStringObject);"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param choiceIndex"
+        "content": "        }"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return boolean true if not in valid range, false if in valid range."
+        "content": "        return newList;"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author huiminlim"
+        "content": "    //@author"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    private boolean isNotValidChoice(int choiceIndex) {"
+        "content": ""
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return choiceIndex \u003e\u003d 1 \u0026\u0026 choiceIndex \u003c\u003d choices.size();"
+        "content": "    /**"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "     * Edits the front text of the MultipleChoiceCard."
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "     *"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     * @param newText String of text to replace the front of MultipleChoiceCard."
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "     */"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Shuffles the choices of choices and updates the index of correct answer."
+        "content": "    //@@author huiminlim"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "    public void editFront(String newText) {"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return"
+        "content": "        front \u003d newText;"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author huiminlim"
+        "content": "    //@author"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    private void shuffleChoices() {"
+        "content": ""
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // Obtain String of correct answer before sorting"
+        "content": "    /**"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        String correctAnswer \u003d choices.get(answerIndex);"
+        "content": "     * Edits the back text of the MultipleChoiceCard."
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     *"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        displayChoices \u003d generateCopyOfChoices();"
+        "content": "     * @param newText String of text to replace the back of MultipleChoiceCard."
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        Collections.shuffle(displayChoices);"
+        "content": "    //@author huiminlim"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    public void editBack(String newText) {"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // Find the index of the correct answer after sorting"
+        "content": "        back \u003d newText;"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        for (int i \u003d 0; i \u003c displayChoices.size(); i++) {"
+        "content": "    }"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            String currentChoice \u003d displayChoices.get(i);"
+        "content": "    //@author"
       },
       {
         "lineNumber": 261,
@@ -33946,458 +34064,500 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            boolean isCurrentChoiceEqualAnswer \u003d correctAnswer.equals(currentChoice);"
+        "content": "    /**"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     * Edits one of string in choices, given new text and index."
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            if (isCurrentChoiceEqualAnswer) {"
+        "content": "     *"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "                displayChoicesAnswerIndex \u003d i + 1;"
+        "content": "     * @param indexProvided Integer index of targeted choice to edit."
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "                break;"
+        "content": "     * @param newChoice     String text of new choice option to replace current choice."
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            }"
+        "content": "     * @throws IndexNotFoundException If index \u003e\u003d number of choices or \u003c 0."
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "     */"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "    //@author huiminlim"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "    public void editSpecificChoice(int indexProvided, String newChoice) throws IndexNotFoundException {"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        if (isNotValidChoice(indexProvided)) {"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "            throw new IndexNotFoundException(\"Choice index provided is invalid - \" + indexProvided);"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return"
+        "content": "        }"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@@author huiminlim"
+        "content": "        // choice index is the index that works with the Arraylist"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    private ArrayList\u003cString\u003e generateCopyOfChoices() {"
+        "content": "        int choiceIndex \u003d indexProvided - 1;"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        ArrayList\u003cString\u003e newList \u003d new ArrayList\u003c\u003e();"
+        "content": "        choices.add(choiceIndex, newChoice);"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        for (int i \u003d 0; i \u003c choices.size(); i++) {"
+        "content": "        choices.remove(choiceIndex + 1);"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            String newStringObject \u003d choices.get(i);"
+        "content": "    }"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            newList.add(newStringObject);"
+        "content": "    //@author"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return newList;"
+        "content": "    /**"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "     * Returns boolean value true."
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "     * Since choices exist in this class."
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     *"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "     * @return Boolean value true."
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Get the String text of choice given the index of the choice."
+        "content": "     */"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "    @Override"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param indexProvided Integer index of targeted choice to obtain."
+        "content": "    public boolean hasChoices() {"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return String of text of targeted option."
+        "content": "        return true;"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @throws IndexNotFoundException If index \u003e\u003d number of choices or \u003c 0."
+        "content": "    }"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "    //@author"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author huiminlim"
+        "content": ""
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public String getChoice(int indexProvided) throws IndexNotFoundException {"
+        "content": "    /**"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        if (isNotValidChoice(indexProvided)) {"
+        "content": "     * Checks if ArrayList of choices contain duplicates."
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new IndexNotFoundException(\"Choice index provided is invalid - \" + indexProvided);"
+        "content": "     * Returns true if duplicates exist, false if no duplicates."
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "     *"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "     * @param choiceSet ArrayList of possible String of choices to check."
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // Use chocies indexing - 0-based indexing"
+        "content": "     * @return Boolean true if ArrayList of choices have duplicates, false if no duplicates."
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        // choice index is the index that works with the Arraylist"
+        "content": "     */"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        int choiceIndex \u003d indexProvided - 1;"
+        "content": "    //@@author huiminlim"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return choices.get(choiceIndex);"
+        "content": "    private boolean hasChoiceContainDuplicate(ArrayList\u003cString\u003e choiceSet) {"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "        HashMap\u003cString, Integer\u003e choiceMap \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": ""
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        for (int i \u003d 0; i \u003c choiceSet.size(); i++) {"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "            String choiceText \u003d choiceSet.get(i).trim();"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Get the String of front of MultipleChoiceCard."
+        "content": ""
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "            boolean hasChoice \u003d choiceMap.containsKey(choiceText);"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return String of text in front of MultipleChoiceCard."
+        "content": ""
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "            if (hasChoice) {"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author huiminlim"
+        "content": "                return true;"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public String getFront() {"
+        "content": "            } else {"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return front;"
+        "content": "                choiceMap.put(choiceText, 1);"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "        }"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        return false;"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Get the String of back of MultipleChoiceCard."
+        "content": "    //@author"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return String of text in back of MultipleChoiceCard."
+        "content": "    /**"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "     * Checks if the given choice index provided by the user is correct."
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author huiminlim"
+        "content": "     * Note: the user provided index is 1-based indexing."
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public String getBack() {"
+        "content": "     * Valid indexes include 1, 2, 3, ..., choices."
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return back;"
+        "content": "     *"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "     * @param choiceIndex"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    //@author"
+        "content": "     * @return boolean true if not in valid range, false if in valid range."
       },
       {
         "lineNumber": 327,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 328,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    //@author huiminlim"
+      },
+      {
+        "lineNumber": 329,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    private boolean isNotValidChoice(int choiceIndex) {"
+      },
+      {
+        "lineNumber": 330,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return choiceIndex \u003e\u003d 1 \u0026\u0026 choiceIndex \u003c\u003d choices.size();"
+      },
+      {
+        "lineNumber": 331,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 332,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    //@author"
+      },
+      {
+        "lineNumber": 333,
         "author": {
           "gitId": "huiminlim"
         },
@@ -34406,7 +34566,7 @@
     ],
     "authorContributionMap": {
       "AHaliq": 23,
-      "huiminlim": 304
+      "huiminlim": 310
     }
   },
   {

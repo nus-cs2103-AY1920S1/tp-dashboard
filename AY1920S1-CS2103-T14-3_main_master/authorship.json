@@ -52803,7 +52803,7 @@
         "author": {
           "gitId": "jolynnn8D"
         },
-        "content": "            + \"Example: \" + COMMAND_WORD + \"1\";"
+        "content": "            + \"Example: \" + COMMAND_WORD + \" 1\";"
       },
       {
         "lineNumber": 22,
@@ -53307,9 +53307,9 @@
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "        + \": View the flashcard identified by the index number used in the displayed flashcard list.\\n\""
+        "content": "        + \": Quiz the flashcard identified by the index number used in the displayed flashcard list.\\n\""
       },
       {
         "lineNumber": 21,
@@ -53321,37 +53321,37 @@
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "        + \"Parameters: INDEX (must be a positive integer)\\n\""
+        "content": "        + \"The quiz command should be preceded by a flip command to answer the flashcard. \\n\""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": "        + \"Example: \" + COMMAND_WORD + \" 1\";"
+        "content": "        + \"Parameters: INDEX (must be a positive integer)\\n\""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        + \"Example: \" + COMMAND_WORD + \" 1\";"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_INVALID_FLASHCARD_INDEX \u003d \"The index you entered is invalid!\";"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_DELETE_FLASHCARD_SUCCESS \u003d \"The flashcard is shown below.\";"
+        "content": "    public static final String MESSAGE_INVALID_FLASHCARD_INDEX \u003d \"The index you entered is invalid!\";"
       },
       {
         "lineNumber": 27,
@@ -53579,8 +53579,8 @@
       }
     ],
     "authorContributionMap": {
-      "-": 45,
-      "jolynnn8D": 13
+      "-": 44,
+      "jolynnn8D": 14
     }
   },
   {
@@ -54815,9 +54815,9 @@
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + AddCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 45,
@@ -55004,8 +55004,8 @@
     ],
     "authorContributionMap": {
       "lzw12345": 2,
-      "-": 38,
-      "jolynnn8D": 22,
+      "-": 37,
+      "jolynnn8D": 23,
       "Akimatsu98": 8
     }
   },
@@ -56748,9 +56748,9 @@
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE), e);"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + DeleteCommand.MESSAGE_USAGE), e);"
       },
       {
         "lineNumber": 26,
@@ -56775,8 +56775,257 @@
       }
     ],
     "authorContributionMap": {
-      "-": 24,
-      "Akimatsu98": 4
+      "-": 23,
+      "Akimatsu98": 4,
+      "jolynnn8D": 1
+    }
+  },
+  {
+    "path": "src/main/java/seedu/flashcard/logic/parser/DeleteTagCommandParser.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.flashcard.logic.parser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.flashcard.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.flashcard.logic.parser.CliSyntax.PREFIX_TAG;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.stream.Stream;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.flashcard.logic.commands.DeleteTagCommand;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.flashcard.logic.commands.ListCardByTagCommand;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.flashcard.logic.parser.exceptions.ParseException;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.flashcard.model.tag.Tag;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * Parses the user inputs into a {@code DeleteTagCommand}"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class DeleteTagCommandParser implements Parser\u003cDeleteTagCommand\u003e {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public DeleteTagCommand parse(String args) throws ParseException {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ArgumentMultimap argMultimap \u003d ArgumentTokenizer.tokenize(args, PREFIX_TAG);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (!arePrefixesPresent(argMultimap, PREFIX_TAG) || !argMultimap.getPreamble().isEmpty()) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jolynnn8D"
+        },
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jolynnn8D"
+        },
+        "content": "                    + ListCardByTagCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Tag tag \u003d ParserUtil.parseTag(argMultimap.getValue(PREFIX_TAG).get());"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return new DeleteTagCommand(tag);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return Stream.of(prefixes).allMatch(prefix -\u003e argumentMultimap.getValue(prefix).isPresent());"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 32,
+      "jolynnn8D": 2
     }
   },
   {
@@ -57094,9 +57343,9 @@
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE), pe);"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + EditCommand.MESSAGE_USAGE), pe);"
       },
       {
         "lineNumber": 46,
@@ -57500,8 +57749,8 @@
     ],
     "authorContributionMap": {
       "lzw12345": 15,
-      "-": 75,
-      "jolynnn8D": 12
+      "-": 74,
+      "jolynnn8D": 13
     }
   },
   {
@@ -57679,9 +57928,9 @@
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.MESSAGE_USAGE));"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + FindCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 26,
@@ -57720,8 +57969,8 @@
       }
     ],
     "authorContributionMap": {
-      "-": 28,
-      "jolynnn8D": 2
+      "-": 27,
+      "jolynnn8D": 3
     }
   },
   {
@@ -58039,9 +58288,9 @@
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + HelpCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 46,
@@ -58423,9 +58672,9 @@
       }
     ],
     "authorContributionMap": {
-      "lzw12345": 46,
+      "lzw12345": 45,
       "-": 43,
-      "jolynnn8D": 9,
+      "jolynnn8D": 10,
       "Akimatsu98": 1
     }
   },
@@ -58571,7 +58820,7 @@
         "author": {
           "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT));"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + FlipCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 21,
@@ -58597,6 +58846,296 @@
     ],
     "authorContributionMap": {
       "jolynnn8D": 23
+    }
+  },
+  {
+    "path": "src/main/java/seedu/flashcard/logic/parser/ListCardByTagCommandParser.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.flashcard.logic.parser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.flashcard.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.flashcard.logic.parser.CliSyntax.PREFIX_TAG;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.Set;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.stream.Stream;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.flashcard.logic.commands.ListCardByTagCommand;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.flashcard.logic.parser.exceptions.ParseException;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.flashcard.model.tag.Tag;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * Parses input arguments to generate {@code ListCardByTagCommandParser}"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class ListCardByTagCommandParser implements Parser\u003cListCardByTagCommand\u003e {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Parses the string of arguments to be listed by tags."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * @param args string containing the parameters for the target tags"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * @return new {@code ListCardByTagCommand}"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public ListCardByTagCommand parse(String args) throws ParseException {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ArgumentMultimap argMultimap \u003d ArgumentTokenizer.tokenize(args, PREFIX_TAG);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (!arePrefixesPresent(argMultimap, PREFIX_TAG) || !argMultimap.getPreamble().isEmpty()) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "jolynnn8D"
+        },
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "jolynnn8D"
+        },
+        "content": "                    + ListCardByTagCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Set\u003cTag\u003e tagList \u003d ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return new ListCardByTagCommand(tagList);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return Stream.of(prefixes).allMatch(prefix -\u003e argumentMultimap.getValue(prefix).isPresent());"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 38,
+      "jolynnn8D": 2
     }
   },
   {
@@ -59848,7 +60387,7 @@
         "author": {
           "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, QuizCommand.MESSAGE_USAGE), e);"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + QuizCommand.MESSAGE_USAGE), e);"
       },
       {
         "lineNumber": 26,
@@ -60087,9 +60626,9 @@
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, StatsCommand.MESSAGE_USAGE));"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + StatsCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 31,
@@ -60198,7 +60737,8 @@
       }
     ],
     "authorContributionMap": {
-      "lzw12345": 45
+      "lzw12345": 44,
+      "jolynnn8D": 1
     }
   },
   {
@@ -60378,7 +60918,7 @@
         "author": {
           "gitId": "jolynnn8D"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewCommand.MESSAGE_USAGE), e);"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT + ViewCommand.MESSAGE_USAGE), e);"
       },
       {
         "lineNumber": 26,
