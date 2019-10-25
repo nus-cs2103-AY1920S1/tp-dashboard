@@ -126,6 +126,20 @@
             "deletions": 168
           }
         ]
+      },
+      {
+        "insertions": 225,
+        "deletions": 55,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "97bc3472a4cfcef2ddd1ab5479767d8fecb1f10d",
+            "messageTitle": "Update UG and DG (#117)",
+            "messageBody": "* Add UML diagrams and change a method name\r\n\r\n* Update UG and DG\r\n\r\n* Fix checkstyle error\r\n",
+            "insertions": 225,
+            "deletions": 55
+          }
+        ]
       }
     ],
     "briyanii": [
@@ -471,6 +485,48 @@
             "deletions": 1189
           }
         ]
+      },
+      {
+        "insertions": 549,
+        "deletions": 317,
+        "date": "2019-10-25",
+        "commitResults": [
+          {
+            "hash": "84a41b85c6844d746b710780898a74cb69857d0d",
+            "messageTitle": "Updates to documentation of alias feature, syntaxhighlight feature, and UI",
+            "messageBody": "and added uml diagrams.\nUI and documentation currently a WIP\n",
+            "insertions": 246,
+            "deletions": 15
+          },
+          {
+            "hash": "aed90236a096f6c406332b00539c64750df2207d",
+            "messageTitle": "Rename non-code or url instance of AddressBook to Moolah",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 3
+          },
+          {
+            "hash": "27d179c9a2d173ac690db4153e4dcad844aee903",
+            "messageTitle": "New uml diagrams for UI changes, Alias feature, SyntaxHighlighting feature",
+            "messageBody": "",
+            "insertions": 298,
+            "deletions": 1
+          },
+          {
+            "hash": "f7ec1281b5a027f5495a402f3d76a1f640e5234f",
+            "messageTitle": "Updates to documentation of alias feature, syntaxhighlight feature, and UI",
+            "messageBody": "and added uml diagrams.\nUI and documentation currently a WIP\n",
+            "insertions": 1,
+            "deletions": 0
+          },
+          {
+            "hash": "54a658302943117f4de37c06a87240da8a0e3f5b",
+            "messageTitle": "Rename non-code or url instance of AddressBook to Moolah",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 298
+          }
+        ]
       }
     ],
     "qweiping31415": [
@@ -573,8 +629,8 @@
         ]
       },
       {
-        "insertions": 258,
-        "deletions": 12,
+        "insertions": 466,
+        "deletions": 140,
         "date": "2019-10-24",
         "commitResults": [
           {
@@ -597,6 +653,13 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 2
+          },
+          {
+            "hash": "cb4387210cb8fd2153137d97a6dc3aab6aa26f3e",
+            "messageTitle": "Merge UG (#118)",
+            "messageBody": "* Update UG for Statistics component\r\n\r\n* Refine Sequence Diagrams in DG for Statistics component\r\n",
+            "insertions": 208,
+            "deletions": 128
           }
         ]
       }
@@ -1070,6 +1133,27 @@
             "deletions": 26
           }
         ]
+      },
+      {
+        "insertions": 231,
+        "deletions": 209,
+        "date": "2019-10-25",
+        "commitResults": [
+          {
+            "hash": "bb4d0b1aae881e6dda30cea738c72516de14d36d",
+            "messageTitle": "Refactor AddressBook to MooLah in UG, DG and source code (#123)",
+            "messageBody": "* Add unit tests for Budget class\r\n\r\n* Add unit tests for Percentage class\r\n\r\n* Add unit tests for Percentage class (supplement to previous commit)\r\n\r\n* Add unit tests for AddBudgetCommand\r\n\r\n* Add unit tests for AddBudgetCommandParser\r\n\r\n* Add unit tests for UniqueBudgetList\r\n\r\n* Add unit tests for JsonAdaptedBudget\r\n\r\n* Add unit tests for SwitchBudgetCommand\r\n\r\n* Add unit tests for SwitchBudgetCommandParser\r\n\r\n* Update UniqueBudgetList to automatically set newly added budget as primary\r\n\r\n* Add Budget field to Expense\r\n\r\n* Update AddExpense method in AddressBook to suit the new Expense with a Budget field\r\n\r\nSpecifically,\r\nstep 1: check primary budget - if null, add default and set primary, if yes - do nothing\r\nstep 2: check expense\u0027s budget - if null, add to primary budget, if yes - add to corresponding budget\r\nstep 3: add expense to expenses list\r\n\r\n* Cosmetic changes: Remove extra whitespace\r\n\r\n* Check null parameters in JsonAdaptedBudget constructor\r\n\r\n* Update EditCommand following the changes to Expense class (new budgetName field)\r\n\r\n* Add method to check which expenses are within current budget period\r\n\r\nOther changes:\r\n- add method to update the proportion used\r\n- check for duplicate expense before adding\r\n- change expired condition to include end date\r\n- increase default budget limit\r\n- cosmetic changes to make code more concise\r\n\r\n* Change Expense\u0027s budgetName field type from String to Description\r\n\r\n* Update tests following the addition of budgetName field to Expense class\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update Percentage class such that percentage larger than 1 will be treated as 1 instead of throwing an exception\r\n\r\n* Fix unit test failures due to addition of Category field to Expense\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update DG: Budget feature (with class, sequence, activity diagrams)\r\n\r\n* Fix checkstyle errors\r\n\r\n* Cosmetic changes\r\n\r\n* Fix minor GUI bug\r\n\r\n* Update version number for release\r\n\r\n* Improve DG:Budget formatting\r\n\r\n* Update DG:Budget and UML diagrams\r\n\r\n* Refactor AddressBook to MooLah in UG, DG and source code\r\n",
+            "insertions": 189,
+            "deletions": 185
+          },
+          {
+            "hash": "f1d021b274e6a25c607d768c79ff3204eb544ab5",
+            "messageTitle": "Update UG \u0026 DG: introduction, budget command syntax, formatting (#124)",
+            "messageBody": "* Add unit tests for Budget class\r\n\r\n* Add unit tests for Percentage class\r\n\r\n* Add unit tests for Percentage class (supplement to previous commit)\r\n\r\n* Add unit tests for AddBudgetCommand\r\n\r\n* Add unit tests for AddBudgetCommandParser\r\n\r\n* Add unit tests for UniqueBudgetList\r\n\r\n* Add unit tests for JsonAdaptedBudget\r\n\r\n* Add unit tests for SwitchBudgetCommand\r\n\r\n* Add unit tests for SwitchBudgetCommandParser\r\n\r\n* Update UniqueBudgetList to automatically set newly added budget as primary\r\n\r\n* Add Budget field to Expense\r\n\r\n* Update AddExpense method in AddressBook to suit the new Expense with a Budget field\r\n\r\nSpecifically,\r\nstep 1: check primary budget - if null, add default and set primary, if yes - do nothing\r\nstep 2: check expense\u0027s budget - if null, add to primary budget, if yes - add to corresponding budget\r\nstep 3: add expense to expenses list\r\n\r\n* Cosmetic changes: Remove extra whitespace\r\n\r\n* Check null parameters in JsonAdaptedBudget constructor\r\n\r\n* Update EditCommand following the changes to Expense class (new budgetName field)\r\n\r\n* Add method to check which expenses are within current budget period\r\n\r\nOther changes:\r\n- add method to update the proportion used\r\n- check for duplicate expense before adding\r\n- change expired condition to include end date\r\n- increase default budget limit\r\n- cosmetic changes to make code more concise\r\n\r\n* Change Expense\u0027s budgetName field type from String to Description\r\n\r\n* Update tests following the addition of budgetName field to Expense class\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update Percentage class such that percentage larger than 1 will be treated as 1 instead of throwing an exception\r\n\r\n* Fix unit test failures due to addition of Category field to Expense\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update DG: Budget feature (with class, sequence, activity diagrams)\r\n\r\n* Fix checkstyle errors\r\n\r\n* Cosmetic changes\r\n\r\n* Fix minor GUI bug\r\n\r\n* Update version number for release\r\n\r\n* Improve DG:Budget formatting\r\n\r\n* Update DG:Budget and UML diagrams\r\n\r\n* Refactor AddressBook to MooLah in UG, DG and source code\r\n\r\n* Update UG \u0026 DG: introduction, budget command syntax, formatting\r\n",
+            "insertions": 42,
+            "deletions": 24
+          }
+        ]
       }
     ],
     "ryoarmanda": [
@@ -1174,49 +1258,50 @@
     ]
   },
   "authorFinalContributionMap": {
-    "czkay": 1372,
-    "briyanii": 5234,
-    "qweiping31415": 1711,
-    "anqichen9856": 3305,
-    "ryoarmanda": 1128
+    "czkay": 1592,
+    "briyanii": 5437,
+    "qweiping31415": 1853,
+    "anqichen9856": 3384,
+    "ryoarmanda": 1106
   },
   "authorFileTypeContributionMap": {
     "czkay": {
-      "docs": 54,
+      "docs": 176,
       "tests": 183,
-      "functional": 1135
+      "functional": 1125,
+      "other": 108
     },
     "briyanii": {
-      "docs": 53,
-      "tests": 1948,
-      "functional": 3230,
-      "other": 3
+      "docs": 254,
+      "tests": 1923,
+      "functional": 3220,
+      "other": 40
     },
     "qweiping31415": {
-      "docs": 159,
-      "tests": 230,
-      "functional": 1155,
-      "other": 167
+      "docs": 229,
+      "tests": 231,
+      "functional": 1158,
+      "other": 235
     },
     "anqichen9856": {
-      "docs": 548,
-      "tests": 1386,
-      "functional": 1192,
-      "other": 179
+      "docs": 460,
+      "tests": 1475,
+      "functional": 1269,
+      "other": 180
     },
     "ryoarmanda": {
       "docs": 30,
-      "tests": 482,
-      "functional": 520,
+      "tests": 468,
+      "functional": 512,
       "other": 96
     }
   },
   "authorContributionVariance": {
-    "czkay": 41955.598,
-    "briyanii": 2300121.8,
-    "qweiping31415": 63796.68,
-    "anqichen9856": 236053.69,
-    "ryoarmanda": 14841.917
+    "czkay": 42028.36,
+    "briyanii": 2257860.5,
+    "qweiping31415": 67460.61,
+    "anqichen9856": 233338.36,
+    "ryoarmanda": 14569.48
   },
   "authorDisplayNameMap": {
     "czkay": "CS2103T-T11-1 CHONG ...  KANG",

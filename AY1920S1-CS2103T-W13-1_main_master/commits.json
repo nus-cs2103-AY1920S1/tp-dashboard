@@ -149,8 +149,8 @@
         ]
       },
       {
-        "insertions": 38,
-        "deletions": 5,
+        "insertions": 528,
+        "deletions": 584,
         "date": "2019-10-24",
         "commitResults": [
           {
@@ -166,6 +166,20 @@
             "messageBody": "",
             "insertions": 0,
             "deletions": 1
+          },
+          {
+            "hash": "65a85316a1db1b6018723ad319341160a9ee56b0",
+            "messageTitle": "Update tests for model package (#68)",
+            "messageBody": "* Update Module unit tests\r\n\r\n* Update ModuleBookTest\r\n\r\n* Update ModelManagerTest\r\n",
+            "insertions": 201,
+            "deletions": 250
+          },
+          {
+            "hash": "226bafae34ae59641e24d1a8279eacf3b106e380",
+            "messageTitle": "Update tests for storage package (#69)",
+            "messageBody": "* Update JsonSerializableModuleBookTest\r\n\r\n* Update JsonAdaptedModuleTest\r\n\r\n* Fix and update JsonModuleBookStorageTest\r\n\r\n* Update StorageManagerTest\r\n",
+            "insertions": 289,
+            "deletions": 329
           }
         ]
       }
@@ -365,26 +379,40 @@
             "deletions": 72
           }
         ]
+      },
+      {
+        "insertions": 206,
+        "deletions": 371,
+        "date": "2019-10-25",
+        "commitResults": [
+          {
+            "hash": "0396487191c9198b23e95e55879de5e6e10484fc",
+            "messageTitle": "Refactor Add command. (#70)",
+            "messageBody": "* Added Model#findArchivedModue and Module#findTrackedModule.\r\nAdded ModelManager#findArchivedModue and ModelManager#findTrackedModule.\r\nChanged AddCommand ViewCommand to use findArchivedModule and findTrackedModule.\r\nChanged AddCommandParser to use Predicate\u003cModule\u003e.\r\n\r\n* Added SameModuleCodePredicate.java.\r\nChanged AddCommandParser.java and ViewCommand.java to use SameModulePredicate.java.\r\nFixed AddCommandParserTest.java\r\n\r\n* Fixed ModuleBookParserTest#parseCommand_add()\r\n\r\n* Fixed AddCommandTest.java\r\n\r\n* Fixed checkstyle\r\n\r\n* Changed implementation of ViewCommand to look nicer.\r\n\r\n* Removed redundant code.\r\n\r\n* Removed unused imports.\r\n",
+            "insertions": 206,
+            "deletions": 371
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "geshuming": 1527,
-    "Kzrthikz": 817,
+    "geshuming": 1871,
+    "Kzrthikz": 771,
     "bitterg0d": 7,
     "alexwxh": 727,
-    "CowSaysBaa": 3876
+    "CowSaysBaa": 3185
   },
   "authorFileTypeContributionMap": {
     "geshuming": {
       "docs": 156,
-      "tests": 547,
-      "functional": 641,
+      "tests": 901,
+      "functional": 631,
       "other": 183
     },
     "Kzrthikz": {
       "docs": 173,
-      "tests": 160,
+      "tests": 114,
       "functional": 400,
       "other": 84
     },
@@ -401,17 +429,17 @@
     },
     "CowSaysBaa": {
       "docs": 121,
-      "tests": 2004,
-      "functional": 1564,
+      "tests": 1252,
+      "functional": 1625,
       "other": 187
     }
   },
   "authorContributionVariance": {
-    "geshuming": 37059.55,
-    "Kzrthikz": 16604.55,
-    "bitterg0d": 5.1178703,
-    "alexwxh": 5932.4062,
-    "CowSaysBaa": 2215804.5
+    "geshuming": 58357.57,
+    "Kzrthikz": 16287.848,
+    "bitterg0d": 5.017601,
+    "alexwxh": 5819.395,
+    "CowSaysBaa": 2173721.2
   },
   "authorDisplayNameMap": {
     "geshuming": "CS2103T-W13-1 GE SH ... UMING",

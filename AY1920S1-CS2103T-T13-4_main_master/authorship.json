@@ -73660,7 +73660,7 @@
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String SPECIAL_CHARACTERS \u003d \"\\\\(\\\\.\\\\-_~!\\\\$\u0026\u0027\\\\*\\\\+,;\u003d:@\\\\)\";"
+        "content": "    private static final String SPECIAL_CHARACTERS \u003d \"\\\\(\\\\.\\\\-_~!\\\\$\u0026\u0027\\\\*\\\\+,;\u003d:@\\\\)\"; // (.-_~!$\u0026\u0027*+,;\u003d:@)"
       },
       {
         "lineNumber": 13,
@@ -73772,203 +73772,203 @@
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String REGEX_URL_SCHEME \u003d \"^((http(s?))|(ftp)|(file))://\";"
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "    // alphanumeric and special characters"
+        "content": "    // encoded ASCII character %FF, where FF are two hexadecimal digits"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String URL_CHARACTERS \u003d \"[\\\\w\" + SPECIAL_CHARACTERS + \"]\";"
+        "content": "    private static final String ENCODED_ASCII_CHARACTER \u003d \"(%[0-9a-fA-F]{2})\";"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    // alphanumeric and special characters excluding period \u0027.\u0027"
+        "content": "    // alphanumeric, special, or encoded characters"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String NON_PERIOD_URL_CHARACTERS \u003d \"[\\\\w\" + NON_PERIOD_SPECIAL_CHARACTERS + \"]\";"
+        "content": "    private static final String URL_CHARACTERS \u003d \"([\\\\w\" + SPECIAL_CHARACTERS + \"]|\" + ENCODED_ASCII_CHARACTER + \")\";"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String REGEX_URL_AUTHORITY \u003d"
+        "content": "    // alphanumeric and special characters excluding period \u0027.\u0027"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "            NON_PERIOD_URL_CHARACTERS + URL_CHARACTERS + \"*\" + NON_PERIOD_URL_CHARACTERS;"
+        "content": "    private static final String NON_PERIOD_URL_CHARACTERS \u003d \"([\\\\w\" + NON_PERIOD_SPECIAL_CHARACTERS + \"]|\""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String REGEX_URL_PATH_SEGMENT \u003d \"/\" + URL_CHARACTERS + \"+\";"
+        "content": "            + ENCODED_ASCII_CHARACTER + \")\";"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String REGEX_URL_PATH \u003d \"(\" + REGEX_URL_PATH_SEGMENT + \")*\"; // zero or more path segments"
+        "content": "    // URL characters and \u0027/\u0027 and \u0027?\u0027"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String REGEX_URL_QUERY \u003d \"(\\\\?\" + URL_CHARACTERS + \"+)?\"; // optional query"
+        "content": "    private static final String QUERY_AND_FRAGMENT_CHARACTERS \u003d \"([\\\\w\" + SPECIAL_CHARACTERS + \"/?]|\""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    private static final String REGEX_URL_FRAGMENT \u003d \"(#\" + URL_CHARACTERS + \"+)?\"; // optional fragment"
+        "content": "            + ENCODED_ASCII_CHARACTER + \")\";"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    public static final String VALIDATION_REGEX \u003d REGEX_URL_SCHEME + REGEX_URL_AUTHORITY"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "            + REGEX_URL_PATH + REGEX_URL_QUERY + REGEX_URL_FRAGMENT + \"/?$\";"
+        "content": "    private static final String REGEX_URL_SCHEME \u003d \"^((http(s?))|(ftp)|(file))://\";"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "    private static final String REGEX_URL_AUTHORITY \u003d"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "    public final String value;"
+        "content": "            NON_PERIOD_URL_CHARACTERS + URL_CHARACTERS + \"*\" + NON_PERIOD_URL_CHARACTERS;"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "    private static final String REGEX_URL_PATH_SEGMENT \u003d \"/\" + URL_CHARACTERS + \"+\";"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "    /**"
+        "content": "    private static final String REGEX_URL_PATH \u003d \"(\" + REGEX_URL_PATH_SEGMENT + \")*\"; // zero or more path segments"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "     * Constructs a {@code Url}."
+        "content": "    private static final String REGEX_URL_QUERY \u003d \"(\\\\?\" + QUERY_AND_FRAGMENT_CHARACTERS + \"+)?\"; // optional query"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "     *"
+        "content": "    private static final String REGEX_URL_FRAGMENT \u003d \"(#\" + QUERY_AND_FRAGMENT_CHARACTERS + \"+)?\"; // optional fragment"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "     * @param url A valid URL."
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "     */"
+        "content": "    public static final String VALIDATION_REGEX \u003d REGEX_URL_SCHEME + REGEX_URL_AUTHORITY"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    public Url(String url) {"
+        "content": "            + REGEX_URL_PATH + REGEX_URL_QUERY + REGEX_URL_FRAGMENT + \"/?$\";"
       },
       {
         "lineNumber": 50,
-        "author": {
-          "gitId": "dorcastan"
-        },
-        "content": "        requireNonNull(url);"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "dorcastan"
-        },
-        "content": "        checkArgument(isValidUrl(url), MESSAGE_CONSTRAINTS);"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "dorcastan"
-        },
-        "content": "        value \u003d url;"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public final String value;"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
         "content": "    /**"
       },
       {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "     * Constructs a {@code Url}."
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *"
+      },
+      {
         "lineNumber": 56,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "     * Returns if a given string is a URL."
+        "content": "     * @param url A valid URL."
       },
       {
         "lineNumber": 57,
@@ -73982,150 +73982,213 @@
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    public static boolean isValidUrl(String test) {"
+        "content": "    public Url(String url) {"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "        return test.matches(VALIDATION_REGEX);"
+        "content": "        requireNonNull(url);"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "    }"
+        "content": "        checkArgument(isValidUrl(url), MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "        value \u003d url;"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "    public String toString() {"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "        return value;"
+        "content": "    /**"
       },
       {
         "lineNumber": 65,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "    }"
+        "content": "     * Returns if a given string is a URL."
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "    @Override"
+        "content": "    public static boolean isValidUrl(String test) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        return test.matches(VALIDATION_REGEX);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "dorcastan"
-        },
-        "content": "                || (other instanceof Url // instanceof handles nulls"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "dorcastan"
-        },
-        "content": "                \u0026\u0026 value.equals(((Url) other).value)); // state check"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "-"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 75,
+        "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "    public int hashCode() {"
+        "content": "    public String toString() {"
       },
       {
-        "lineNumber": 76,
+        "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "        return value.hashCode();"
+        "content": "        return value;"
       },
       {
-        "lineNumber": 77,
+        "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 78,
+        "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
         "lineNumber": 79,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "                || (other instanceof Url // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "                \u0026\u0026 value.equals(((Url) other).value)); // state check"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public int hashCode() {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return value.hashCode();"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
@@ -74133,8 +74196,8 @@
       }
     ],
     "authorContributionMap": {
-      "dorcastan": 42,
-      "-": 37
+      "dorcastan": 52,
+      "-": 36
     }
   },
   {
@@ -140590,21 +140653,21 @@
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    public void isValidUrl() {"
+        "content": "    public void isValidUrl_nullUrl_throwsException() {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        // null url"
+        "content": "        assertThrows(NullPointerException.class, () -\u003e Url.isValidUrl(null));"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertThrows(NullPointerException.class, () -\u003e Url.isValidUrl(null));"
+        "content": "    }"
       },
       {
         "lineNumber": 26,
@@ -140618,210 +140681,210 @@
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        // blank url"
+        "content": "    @Test"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"\")); // empty string"
+        "content": "    public void isValidUrl_invalidUrl_returnsFalse() {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\" \")); // spaces only"
+        "content": "        // blank url"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "        assertFalse(Url.isValidUrl(\"\")); // empty string"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        // invalid compulsory parts"
+        "content": "        assertFalse(Url.isValidUrl(\" \")); // spaces only"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"example.com\")); // missing scheme"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"abc://example.com\")); // invalid scheme"
+        "content": "        // invalid scheme"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://\")); // missing authority"
+        "content": "        assertFalse(Url.isValidUrl(\"example.com\")); // missing scheme"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://a\")); // authority too short"
+        "content": "        assertFalse(Url.isValidUrl(\"abc://example.com\")); // invalid scheme"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://.example.com\")); // authority starts with a period"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example.com.\")); // authority ends with a period"
+        "content": "        // invalid authority"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\" http://peterjack.example.com\")); // leading space"
+        "content": "        assertFalse(Url.isValidUrl(\"https://\")); // missing authority"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://peterjack.example.com \")); // trailing space"
+        "content": "        assertFalse(Url.isValidUrl(\"https://a\")); // authority too short"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://peter jack.example.com\")); // spaces in authority"
+        "content": "        assertFalse(Url.isValidUrl(\"https://.example.com\")); // authority starts with a period"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example?.com/path?query\")); // \u0027?\u0027 symbol in authority"
+        "content": "        assertFalse(Url.isValidUrl(\"https://example.com.\")); // authority ends with a period"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "        assertFalse(Url.isValidUrl(\" http://peterjack.example.com\")); // leading space"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        // invalid optional parts"
+        "content": "        assertFalse(Url.isValidUrl(\"https://peterjack.example.com \")); // trailing space"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example.com//\")); // empty path segment"
+        "content": "        assertFalse(Url.isValidUrl(\"https://peter jack.example.com\")); // spaces in authority"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example.com?\")); // empty query"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example.com#\")); // empty fragment"
+        "content": "        // invalid optional parts"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example.com??example\")); // double \u0027?\u0027 symbol"
+        "content": "        assertFalse(Url.isValidUrl(\"https://example.com//\")); // empty path segment"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example.com##example\")); // double \u0027#\u0027 symbol"
+        "content": "        assertFalse(Url.isValidUrl(\"https://example.com?\")); // empty query"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example.com#example1#example\")); // double fragment"
+        "content": "        assertFalse(Url.isValidUrl(\"https://example.com#\")); // empty fragment"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertFalse(Url.isValidUrl(\"https://example.com#example1?example\")); // fragment before query"
+        "content": "        assertFalse(Url.isValidUrl(\"https://example.com##example\")); // double \u0027#\u0027 symbol"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "        assertFalse(Url.isValidUrl(\"https://example.com#example1#example\")); // double fragment"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        // valid url scheme"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"http://example.com\"));"
+        "content": "        // invalid characters"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com\"));"
+        "content": "        assertFalse(Url.isValidUrl(\"https://example.com/%\")); // \u0027%\u0027 without hexadecimal characters"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"ftp://example.com\"));"
+        "content": "        assertFalse(Url.isValidUrl(\"https://example.com/%Gz\")); // invalid hexadecimal characters"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"file://example.com\"));"
+        "content": "    }"
       },
       {
         "lineNumber": 57,
@@ -140835,185 +140898,248 @@
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        // valid url - different parts present"
+        "content": "    @Test"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://mark.com/\")); // ends with slash"
+        "content": "    public void isValidUrl_validUrl_returnsTrue() {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/path?query#index.html\")); // all parts present"
+        "content": "        // valid url scheme"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/some/path/should/work\")); // multiple path segments"
+        "content": "        assertTrue(Url.isValidUrl(\"http://example.com\"));"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/check.php?my-query\")); // path segment and query"
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com\"));"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/check.php#fragment-to-show\")); // path segment and fragment"
+        "content": "        assertTrue(Url.isValidUrl(\"ftp://example.com\"));"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com?my-query\")); // query alone"
+        "content": "        assertTrue(Url.isValidUrl(\"file://example.com\"));"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com?my-query/\")); // query with slash"
+        "content": ""
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com#fragment-to-show\")); // fragment alone"
+        "content": "        // valid url - different parts present"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "        assertTrue(Url.isValidUrl(\"https://mark.com/\")); // ends with slash"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        // valid url - lengths"
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/path?query#index.html\")); // all parts present"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://ab\")); // minimal authority"
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/some/path/should/work\")); // multiple path segments"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"http://ab/a\")); // minimal path"
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/check.php?my-query\")); // path segment and query"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"http://ab?a\")); // minimal query"
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/check.php#fragment-to-show\")); // path segment and fragment"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"http://ab#a\")); // minimal fragment"
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com?my-query\")); // query alone"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://peter_jack.very-very-very-long-example.com\")); // long authority"
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com?my-query/\")); // query with slash"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://peter_jack.example.com/very-very-very-long-path.php\")); // long path"
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com#fragment-to-show\")); // fragment alone"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://peter_jack.example.com?very\u003dvery-very\u0026query\u003dlong\")); // long query"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://peter_jack.example.com#very-very-very-long-fragment\")); // long fragment"
+        "content": "        // valid url - lengths"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "        assertTrue(Url.isValidUrl(\"https://ab\")); // minimal authority"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        // valid url - special characters"
+        "content": "        assertTrue(Url.isValidUrl(\"http://ab/a\")); // minimal path"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"http://!$\u0026\u0027*+,;\u003d:()@-_.~\")); // special characters in authority"
+        "content": "        assertTrue(Url.isValidUrl(\"http://ab?a\")); // minimal query"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/!$\u0026\u0027*+,;\u003d:()@-_~.\")); // special characters in path"
+        "content": "        assertTrue(Url.isValidUrl(\"http://ab#a\")); // minimal fragment"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com?!$\u0026\u0027*+,;\u003d:()@-_~.\")); // special characters in query"
+        "content": "        assertTrue(Url.isValidUrl(\"https://peter_jack.very-very-very-long-example.com\")); // long authority"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "        assertTrue(Url.isValidUrl(\"https://example.com#!$\u0026\u0027*+,;\u003d:()@-_~.\")); // special characters in response"
+        "content": "        assertTrue(Url.isValidUrl(\"https://peter_jack.example.com/very-very-very-long-path.php\")); // long path"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "    }"
+        "content": "        assertTrue(Url.isValidUrl(\"https://peter_jack.example.com?very\u003dvery-very\u0026query\u003dlong\")); // long query"
       },
       {
         "lineNumber": 84,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "        assertTrue(Url.isValidUrl(\"https://peter_jack.example.com#very-very-very-long-fragment\")); // long fragment"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "        // valid url - special characters"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "        assertTrue(Url.isValidUrl(\"http://!$\u0026\u0027*+,;\u003d:()@-_.~\")); // special characters in authority"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/!$\u0026\u0027*+,;\u003d:()@-_~.\")); // special characters in path"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com?!$\u0026\u0027*+,;\u003d:()@-_~./?\")); // special characters in query"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com#!$\u0026\u0027*+,;\u003d:()@-_~./?\")); // special characters in response"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "        assertTrue(Url.isValidUrl(\"https://example.com/%FF-%12-%1a\")); // hexadecimal encoded characters"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 93,
         "author": {
           "gitId": "dorcastan"
         },
@@ -141021,7 +141147,7 @@
       }
     ],
     "authorContributionMap": {
-      "dorcastan": 84
+      "dorcastan": 93
     }
   },
   {

@@ -4878,525 +4878,525 @@
       {
         "lineNumber": 437,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "\u003d\u003d Documentation"
+        "content": "[[Implementation]]"
       },
       {
         "lineNumber": 438,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d [Feature] Search feature"
       },
       {
         "lineNumber": 439,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
+        "content": "\u003d\u003d\u003d\u003d Implementation"
       },
       {
         "lineNumber": 440,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "The `searchCommand` extends `Command` and uses `SearchCommandParser` to process the command entered by the user."
       },
       {
         "lineNumber": 441,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "\u003d\u003d Testing"
+        "content": ""
       },
       {
         "lineNumber": 442,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "Given below is an example usage scenario and how the search mechanism behaves at each step."
       },
       {
         "lineNumber": 443,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
+        "content": ""
       },
       {
         "lineNumber": 444,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "Step 1. The user launches the application and executes `search n/Joker` command to search for a show with the name \"Joker\"."
       },
       {
         "lineNumber": 445,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "\u003d\u003d Dev Ops"
+        "content": ""
       },
       {
         "lineNumber": 446,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "Step 2. Entering the command calls SearchCommandParser#parse()."
       },
       {
         "lineNumber": 447,
         "author": {
-          "gitId": "-"
-        },
-        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
-      },
-      {
-        "lineNumber": 448,
-        "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
+        "lineNumber": 448,
+        "author": {
+          "gitId": "michelleykw"
+        },
+        "content": "Step 3. A new `SearchCommand` is created, with the list containing the name of the show to be searched as a field of `SearchCommand`."
+      },
+      {
         "lineNumber": 449,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 450,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "\u003d\u003d Product Scope"
+        "content": "Step 4. The `SearchCommand#execute()` method is called, referencing the current model."
       },
       {
         "lineNumber": 451,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 452,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "*Target user profile*:"
+        "content": "Step 5. The `SearchCommand#searchByName()` method is called, referencing the current model."
       },
       {
         "lineNumber": 453,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 454,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "* Users who are tidy and organised"
+        "content": "Step 6. The `SearchCommand#addShowFromWatchListIfSameNameAs()` method is called, referencing the current model and name of search to be searched from the list of names."
       },
       {
         "lineNumber": 455,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "* Forgetful person who has a need to keep track of what movies, tv series they would like to watch"
+        "content": ""
       },
       {
         "lineNumber": 456,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "* Tech-savvy users who prefer desktop apps over other types"
+        "content": "Step 7. The `Model#getShowIfHasName()` method is called and any show with the name to be searched is added to the `filteredShowList`."
       },
       {
         "lineNumber": 457,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "* User can type fast"
+        "content": ""
       },
       {
         "lineNumber": 458,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "* User prefers typing over mouse input"
+        "content": "Step 8. The `SearchCommand#addShowToSearchResult()` method is called and shows from the `filteredShowList` is added to the `searchResult`."
       },
       {
         "lineNumber": 459,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "* User is reasonably comfortable using CLI apps"
+        "content": ""
       },
       {
         "lineNumber": 460,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "* Movie/TV series lover"
+        "content": "Step 9. The `SearchCommand#addShowFromOnlineIfSameNameAs()` method is also called, referencing the name of show to be searched from the list of names."
       },
       {
         "lineNumber": 461,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 462,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "*Value proposition*:"
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 463,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "If the user is not connected online, a new `OnlineConnectionException` is thrown."
       },
       {
         "lineNumber": 464,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "EZWatchList provides a unique, clean and simple way of organizing and keeping track of your watchlist. All in one solution to your problem."
+        "content": ""
       },
       {
         "lineNumber": 465,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "Step 10. The `SearchCommand#addOnlineMovieSearchedByNameToResults()` method is called, referencing the name of show to be searched."
       },
       {
         "lineNumber": 466,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 467,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "\u003d\u003d User Stories"
+        "content": ""
       },
       {
         "lineNumber": 468,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "//The following sequence diagram shows how the search operation works:"
       },
       {
         "lineNumber": 469,
         "author": {
-          "gitId": "-"
-        },
-        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
-      },
-      {
-        "lineNumber": 470,
-        "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
+        "lineNumber": 470,
+        "author": {
+          "gitId": "michelleykw"
+        },
+        "content": "//image::SearchSequenceDiagram.png[]"
+      },
+      {
         "lineNumber": 471,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "[width\u003d\"59%\",cols\u003d\"22%,\u003c23%,\u003c25%,\u003c30%\",options\u003d\"header\",]"
+        "content": ""
       },
       {
         "lineNumber": 472,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": "//_Figure 1: Sequence Diagram for `SearchCommand`_"
       },
       {
         "lineNumber": 473,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "|Priority |As a ... |I want to ... |So that I can..."
+        "content": ""
       },
       {
         "lineNumber": 474,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *` |forgetful person | keep track of the shows to watch|I won’t forget about them."
+        "content": "The following activity diagram summarises the workflow of Search:"
       },
       {
         "lineNumber": 475,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 476,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *` |very neat and organised movie lover |can organise the movies I’ve watched in categories/groups | watch them again."
+        "content": "image::SearchActivityDiagram.png[]"
       },
       {
         "lineNumber": 477,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 478,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *` |As an organised person| sort the movies and tv shows into genres | easily find a show from a genre that I want to watch."
+        "content": "_Figure 2: Activity Diagram of `SearchCommand`_"
       },
       {
         "lineNumber": 479,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 480,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *` |As a movie lover |mark movies in the watchlist as “watched” | keep track of what I have watched"
+        "content": "In Figure 2, the user first launches the app. After the user input a search command, the program runs and shows the list of shows found in the search page."
       },
       {
         "lineNumber": 481,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 482,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *`| As a fickle person | delete a movie from the watchlist if I don’t feel like watching it anymore| my watchlist will not be cluttered with movies that I have no interest in watching anymore."
+        "content": "\u003d\u003d\u003d\u003d Design Considerations"
       },
       {
         "lineNumber": 483,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 484,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *` |Someone who loves keeping records | keep track of how many movies or tv series I have watched |"
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How `SearchCommand` takes in the information to be searched for"
       },
       {
         "lineNumber": 485,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "** Current choice: Takes in a hash map from `SearchCommandParser` and gets the list of information to be searched for."
       },
       {
         "lineNumber": 486,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *` |tech-savvy  |do any task as quickly as possible| experience is pleasant and quick."
+        "content": "*** Pros: Easy to implement and make use of."
       },
       {
         "lineNumber": 487,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "*** Cons: Certain list might be redundant as there might have no information in them."
       },
       {
         "lineNumber": 488,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *` | App user | categorize and search based on distinct things | everything is neat and pleasing."
+        "content": ""
       },
       {
         "lineNumber": 489,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How Search searches for the shows"
       },
       {
         "lineNumber": 490,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* * *` | App user | track where I am specifically in the series | I can remember where I am for that show."
+        "content": "** Current choice: Checks if the user choose to search by name, actor or both, then filter them accordingly."
       },
       {
         "lineNumber": 491,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "*** Pros: Easy to implement and make use of."
       },
       {
         "lineNumber": 492,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* *`|movie lover who likes to think about the message conveyed in the movie  |I can note down some of my thoughts for every movie after watching |"
+        "content": "*** Cons: User has to input either a name or actor to be searched."
       },
       {
         "lineNumber": 493,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "*** Cons: Logic is repetitive when searching based on actor or name."
       },
       {
         "lineNumber": 494,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "michelleykw"
         },
-        "content": "|`* *` | a movie critic| can track my thoughts and criticism of movie easily | it is organised."
+        "content": ""
       },
       {
         "lineNumber": 495,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Documentation"
       },
       {
         "lineNumber": 496,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *` | a movie/drama lover who also likes music | can note down the name of the soundtrack in the movie in a place specially for that. |"
+        "content": ""
       },
       {
         "lineNumber": 497,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
       },
       {
         "lineNumber": 498,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`| a movie lover | rate a movie that I have watched | I can know what movies I liked to watch"
+        "content": ""
       },
       {
         "lineNumber": 499,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Testing"
       },
       {
         "lineNumber": 500,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`| a movie lover | can know about all the movies | I would be able to watch them in the cinemas when they are out."
+        "content": ""
       },
       {
         "lineNumber": 501,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
       },
       {
         "lineNumber": 502,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`| a movie lover | look up for shows to watch from the recommendations |I will not have to manually search online."
+        "content": ""
       },
       {
         "lineNumber": 503,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Dev Ops"
       },
       {
         "lineNumber": 504,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`| a movie lover | I can search for movies that I have added to the watchlist| I can easily find the movie that I want to watch."
+        "content": ""
       },
       {
         "lineNumber": 505,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
       },
       {
         "lineNumber": 506,
         "author": {
-          "gitId": "wongchuankai"
-        },
-        "content": "|`* *`| looking for new movies| search for some recommendations| I can watch it when I am free."
-      },
-      {
-        "lineNumber": 507,
-        "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 507,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
         "lineNumber": 508,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`| a movie lover | search for movies that I have added to the watchlist| easily find the movie that I want to watch."
+        "content": "\u003d\u003d Product Scope"
       },
       {
         "lineNumber": 509,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 510,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`| a movie lover | can keep track of the number of times I have watched a movie |I can find out which movie I liked watching the best."
+        "content": "*Target user profile*:"
       },
       {
         "lineNumber": 511,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -5405,49 +5405,49 @@
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": "|`* *` | a movie lover |check the ratings of each movie I have watched |I can recommend them to my friends."
+        "content": "* Users who are tidy and organised"
       },
       {
         "lineNumber": 513,
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": ""
+        "content": "* Forgetful person who has a need to keep track of what movies, tv series they would like to watch"
       },
       {
         "lineNumber": 514,
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": "|`* *`|a tv show addict | I can put my favourite shows in |  I can enjoy watching it next time."
+        "content": "* Tech-savvy users who prefer desktop apps over other types"
       },
       {
         "lineNumber": 515,
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": ""
+        "content": "* User can type fast"
       },
       {
         "lineNumber": 516,
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": "|`* *`| unorganised person | I can rank the movies that I want to watch into different priorities | I can easily know what are the movies that I desperately want to watch."
+        "content": "* User prefers typing over mouse input"
       },
       {
         "lineNumber": 517,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": ""
+        "content": "* User is reasonably comfortable using CLI apps"
       },
       {
         "lineNumber": 518,
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": "|`* *` |unorganised person | can sort movies that I want to watch into the date they were added |I can clear the movies that have been lingering at the back of my mind the longest."
+        "content": "* Movie/TV series lover"
       },
       {
         "lineNumber": 519,
@@ -5461,12 +5461,12 @@
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": "|`* *` | does reviews | keep track of movies and write reviews for the show I have watched  |I can have a positive criticism."
+        "content": "*Value proposition*:"
       },
       {
         "lineNumber": 521,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
         "content": ""
       },
@@ -5475,77 +5475,77 @@
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": "|`* *` | someone who forget to watch tv series/movies | I can have an alarm that alert me to watch videos on time.|"
+        "content": "EZWatchList provides a unique, clean and simple way of organizing and keeping track of your watchlist. All in one solution to your problem."
       },
       {
         "lineNumber": 523,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 524,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *` |As someone who has a deadline to watch movies | I can plan and add deadlines to watch movies.|"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 525,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d User Stories"
       },
       {
         "lineNumber": 526,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`|As a lover of multiple mediums| I can combine all these different mediums in the same platform | I can keep track of everything in the same place."
+        "content": ""
       },
       {
         "lineNumber": 527,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
       },
       {
         "lineNumber": 528,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`| As a statistics lover| I can view the statistics of the shows I watched | I can gain insight of my viewing habits."
+        "content": ""
       },
       {
         "lineNumber": 529,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "[width\u003d\"59%\",cols\u003d\"22%,\u003c23%,\u003c25%,\u003c30%\",options\u003d\"header\",]"
       },
       {
         "lineNumber": 530,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": "|`* *`| forgetful person| I can add shows I’ve watched to see a virtual library of things I’ve completed| I can log it like a book in a bookcase."
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 531,
         "author": {
-          "gitId": "wongchuankai"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "|Priority |As a ... |I want to ... |So that I can..."
       },
       {
         "lineNumber": 532,
         "author": {
           "gitId": "wongchuankai"
         },
-        "content": "|`* *`| As an app user| I can see the date I’ve inputted the specific object| I can remember when I completed."
+        "content": "|`* * *` |forgetful person | keep track of the shows to watch|I won’t forget about them."
       },
       {
         "lineNumber": 533,
@@ -5557,679 +5557,679 @@
       {
         "lineNumber": 534,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": ""
+        "content": "|`* * *` |very neat and organised movie lover |can organise the movies I’ve watched in categories/groups | watch them again."
       },
       {
         "lineNumber": 535,
         "author": {
           "gitId": "-"
         },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": ""
       },
       {
         "lineNumber": 536,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": ""
+        "content": "|`* * *` |As an organised person| sort the movies and tv shows into genres | easily find a show from a genre that I want to watch."
       },
       {
         "lineNumber": 537,
         "author": {
-          "gitId": "-"
-        },
-        "content": "_{More to be added}_"
-      },
-      {
-        "lineNumber": 538,
-        "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
         "content": ""
       },
       {
+        "lineNumber": 538,
+        "author": {
+          "gitId": "wongchuankai"
+        },
+        "content": "|`* * *` |As a movie lover |mark movies in the watchlist as “watched” | keep track of what I have watched"
+      },
+      {
         "lineNumber": 539,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 540,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "\u003d\u003d Use Cases"
+        "content": "|`* * *`| As a fickle person | delete a movie from the watchlist if I don’t feel like watching it anymore| my watchlist will not be cluttered with movies that I have no interest in watching anymore."
       },
       {
         "lineNumber": 541,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
         "content": ""
       },
       {
         "lineNumber": 542,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "(For all use cases below, the *System* is the `Ezwatchlist` and the *Actor* is the `user`, unless specified otherwise)"
+        "content": "|`* * *` |Someone who loves keeping records | keep track of how many movies or tv series I have watched |"
       },
       {
         "lineNumber": 543,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
         "content": ""
       },
       {
         "lineNumber": 544,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "[discrete]"
+        "content": "|`* * *` |tech-savvy  |do any task as quickly as possible| experience is pleasant and quick."
       },
       {
         "lineNumber": 545,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "\u003d\u003d\u003d Use case: Add Movie"
+        "content": ""
       },
       {
         "lineNumber": 546,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": ""
+        "content": "|`* * *` | App user | categorize and search based on distinct things | everything is neat and pleasing."
       },
       {
         "lineNumber": 547,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "*MSS*"
+        "content": ""
       },
       {
         "lineNumber": 548,
+        "author": {
+          "gitId": "wongchuankai"
+        },
+        "content": "|`* * *` | App user | track where I am specifically in the series | I can remember where I am for that show."
+      },
+      {
+        "lineNumber": 549,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 549,
-        "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "1.  User navigates to the main page"
-      },
-      {
         "lineNumber": 550,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "2.  User enters \u0027Add\u0027 command"
+        "content": "|`* *`|movie lover who likes to think about the message conveyed in the movie  |I can note down some of my thoughts for every movie after watching |"
       },
       {
         "lineNumber": 551,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "3.  User enters the movie name"
+        "content": ""
       },
       {
         "lineNumber": 552,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "4.  Ezwatchlist will display a list of movies found"
+        "content": "|`* *` | a movie critic| can track my thoughts and criticism of movie easily | it is organised."
       },
       {
         "lineNumber": 553,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "5.  User enters the index given by the list"
+        "content": ""
       },
       {
         "lineNumber": 554,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "6.  Ezwatchlist will add the movie to their watchlist"
+        "content": "|`* *` | a movie/drama lover who also likes music | can note down the name of the soundtrack in the movie in a place specially for that. |"
       },
       {
         "lineNumber": 555,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 556,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "Use case ends."
+        "content": "|`* *`| a movie lover | rate a movie that I have watched | I can know what movies I liked to watch"
       },
       {
         "lineNumber": 557,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
         "content": ""
       },
       {
         "lineNumber": 558,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "*Extensions*"
+        "content": "|`* *`| a movie lover | can know about all the movies | I would be able to watch them in the cinemas when they are out."
       },
       {
         "lineNumber": 559,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
         "content": ""
       },
       {
         "lineNumber": 560,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "[none]"
+        "content": "|`* *`| a movie lover | look up for shows to watch from the recommendations |I will not have to manually search online."
       },
       {
         "lineNumber": 561,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "* 3a. No movie is found"
+        "content": ""
       },
       {
         "lineNumber": 562,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "[none]"
+        "content": "|`* *`| a movie lover | I can search for movies that I have added to the watchlist| I can easily find the movie that I want to watch."
       },
       {
         "lineNumber": 563,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "** 3a1. User enter movie information himself."
+        "content": ""
       },
       {
         "lineNumber": 564,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "** 3a2. User saves the movie"
+        "content": "|`* *`| looking for new movies| search for some recommendations| I can watch it when I am free."
       },
       {
         "lineNumber": 565,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 566,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "Use case ends."
+        "content": "|`* *`| a movie lover | search for movies that I have added to the watchlist| easily find the movie that I want to watch."
       },
       {
         "lineNumber": 567,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
         "content": ""
       },
       {
         "lineNumber": 568,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "[none]"
+        "content": "|`* *`| a movie lover | can keep track of the number of times I have watched a movie |I can find out which movie I liked watching the best."
       },
       {
         "lineNumber": 569,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "* 5a. The given index is invalid."
+        "content": ""
       },
       {
         "lineNumber": 570,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "[none]"
+        "content": "|`* *` | a movie lover |check the ratings of each movie I have watched |I can recommend them to my friends."
       },
       {
         "lineNumber": 571,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "** 5a1. System shows an error message."
+        "content": ""
       },
       {
         "lineNumber": 572,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "+"
+        "content": "|`* *`|a tv show addict | I can put my favourite shows in |  I can enjoy watching it next time."
       },
       {
         "lineNumber": 573,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "Use case resumes at step 4."
+        "content": ""
       },
       {
         "lineNumber": 574,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": ""
+        "content": "|`* *`| unorganised person | I can rank the movies that I want to watch into different priorities | I can easily know what are the movies that I desperately want to watch."
       },
       {
         "lineNumber": 575,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 576,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "\u003d\u003d\u003d Use case: Mark as watched"
+        "content": "|`* *` |unorganised person | can sort movies that I want to watch into the date they were added |I can clear the movies that have been lingering at the back of my mind the longest."
       },
       {
         "lineNumber": 577,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "*MSS*"
+        "content": ""
       },
       {
         "lineNumber": 578,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": ""
+        "content": "|`* *` | does reviews | keep track of movies and write reviews for the show I have watched  |I can have a positive criticism."
       },
       {
         "lineNumber": 579,
         "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "1.  User navigates to the main page"
-      },
-      {
-        "lineNumber": 580,
-        "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "2.  User enters \u0027Watched\u0027 command giving the index of the item"
-      },
-      {
-        "lineNumber": 581,
-        "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "3.  Ezwatchlist will mark that item as watched"
-      },
-      {
-        "lineNumber": 582,
-        "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "+"
-      },
-      {
-        "lineNumber": 583,
-        "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "Use case ends."
-      },
-      {
-        "lineNumber": 584,
-        "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
         "content": ""
       },
       {
+        "lineNumber": 580,
+        "author": {
+          "gitId": "wongchuankai"
+        },
+        "content": "|`* *` | someone who forget to watch tv series/movies | I can have an alarm that alert me to watch videos on time.|"
+      },
+      {
+        "lineNumber": 581,
+        "author": {
+          "gitId": "wongchuankai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 582,
+        "author": {
+          "gitId": "wongchuankai"
+        },
+        "content": "|`* *` |As someone who has a deadline to watch movies | I can plan and add deadlines to watch movies.|"
+      },
+      {
+        "lineNumber": 583,
+        "author": {
+          "gitId": "wongchuankai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 584,
+        "author": {
+          "gitId": "wongchuankai"
+        },
+        "content": "|`* *`|As a lover of multiple mediums| I can combine all these different mediums in the same platform | I can keep track of everything in the same place."
+      },
+      {
         "lineNumber": 585,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "*Extensions*"
+        "content": ""
       },
       {
         "lineNumber": 586,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "[none]"
+        "content": "|`* *`| As a statistics lover| I can view the statistics of the shows I watched | I can gain insight of my viewing habits."
       },
       {
         "lineNumber": 587,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "* 2a. The given index is invalid."
+        "content": ""
       },
       {
         "lineNumber": 588,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "[none]"
+        "content": "|`* *`| forgetful person| I can add shows I’ve watched to see a virtual library of things I’ve completed| I can log it like a book in a bookcase."
       },
       {
         "lineNumber": 589,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "wongchuankai"
         },
-        "content": "** 2a1. System shows an error message."
+        "content": ""
       },
       {
         "lineNumber": 590,
         "author": {
-          "gitId": "-"
+          "gitId": "wongchuankai"
         },
-        "content": "+"
+        "content": "|`* *`| As an app user| I can see the date I’ve inputted the specific object| I can remember when I completed."
       },
       {
         "lineNumber": 591,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 592,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 593,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "[discrete]"
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 594,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Use case: Search locally"
+        "content": ""
       },
       {
         "lineNumber": 595,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "*MSS*"
+        "content": "_{More to be added}_"
       },
       {
         "lineNumber": 596,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 597,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "1.  User navigates to the main page"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 598,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "2.  User enters \u0027search\u0027 command giving the name of the item"
+        "content": "\u003d\u003d Use Cases"
       },
       {
         "lineNumber": 599,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "3.  Ezwatchlist will bring the user to a search page with items found in a list"
+        "content": ""
       },
       {
         "lineNumber": 600,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "4.  User enters View command of the index of the item."
+        "content": "(For all use cases below, the *System* is the `Ezwatchlist` and the *Actor* is the `user`, unless specified otherwise)"
       },
       {
         "lineNumber": 601,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "5.  Ezwatchlist will bring that item into details page"
+        "content": ""
       },
       {
         "lineNumber": 602,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "+"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 603,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "Use case ends."
+        "content": "\u003d\u003d\u003d Use case: Add Movie"
       },
       {
         "lineNumber": 604,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 605,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "*Extensions*"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 606,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 607,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "* 2a. The given name is not found."
+        "content": "1.  User navigates to the main page"
       },
       {
         "lineNumber": 608,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[none]"
+        "content": "2.  User enters \u0027Add\u0027 command"
       },
       {
         "lineNumber": 609,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "** 2a1. System shows an error message."
+        "content": "3.  User enters the movie name"
       },
       {
         "lineNumber": 610,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "+"
+        "content": "4.  Ezwatchlist will display a list of movies found"
       },
       {
         "lineNumber": 611,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "Use case ends."
+        "content": "5.  User enters the index given by the list"
       },
       {
         "lineNumber": 612,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "6.  Ezwatchlist will add the movie to their watchlist"
       },
       {
         "lineNumber": 613,
         "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "[none]"
-      },
-      {
-        "lineNumber": 614,
-        "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "* 4a. The given index is not valid."
-      },
-      {
-        "lineNumber": 615,
-        "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "[none]"
-      },
-      {
-        "lineNumber": 616,
-        "author": {
-          "gitId": "tswuxia"
-        },
-        "content": "** 4a1. System shows an error message."
-      },
-      {
-        "lineNumber": 617,
-        "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
         "content": "+"
       },
       {
+        "lineNumber": 614,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Use case ends."
+      },
+      {
+        "lineNumber": 615,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 616,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "*Extensions*"
+      },
+      {
+        "lineNumber": 617,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
         "lineNumber": 618,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "Use case resumes at step 3."
+        "content": "[none]"
       },
       {
         "lineNumber": 619,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "* 3a. No movie is found"
       },
       {
         "lineNumber": 620,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 621,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[discrete]"
+        "content": "** 3a1. User enter movie information himself."
       },
       {
         "lineNumber": 622,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "\u003d\u003d\u003d Use case: Edit item"
+        "content": "** 3a2. User saves the movie"
       },
       {
         "lineNumber": 623,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "*MSS*"
+        "content": "+"
       },
       {
         "lineNumber": 624,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 625,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "1.  User navigates to the main page."
+        "content": ""
       },
       {
         "lineNumber": 626,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "2.  User enters \u0027edit\u0027 command giving the name of the item."
+        "content": "[none]"
       },
       {
         "lineNumber": 627,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "3.  Ezwatchlist will bring the user to a details page of the item entered."
+        "content": "* 5a. The given index is invalid."
       },
       {
         "lineNumber": 628,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "4.  User edits the details of the item."
+        "content": "[none]"
       },
       {
         "lineNumber": 629,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "5.  User saves the edits."
+        "content": "** 5a1. System shows an error message."
       },
       {
         "lineNumber": 630,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
         "content": "+"
       },
@@ -6238,7 +6238,7 @@
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "Use case ends."
+        "content": "Use case resumes at step 4."
       },
       {
         "lineNumber": 632,
@@ -6252,217 +6252,217 @@
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "*Extensions*"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 634,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[none]"
+        "content": "\u003d\u003d\u003d Use case: Mark as watched"
       },
       {
         "lineNumber": 635,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "* 2a. The given name is not found."
+        "content": "*MSS*"
       },
       {
         "lineNumber": 636,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 637,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "** 2a1. System shows an error message."
+        "content": "1.  User navigates to the main page"
       },
       {
         "lineNumber": 638,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "+"
+        "content": "2.  User enters \u0027Watched\u0027 command giving the index of the item"
       },
       {
         "lineNumber": 639,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "Use case ends."
+        "content": "3.  Ezwatchlist will mark that item as watched"
       },
       {
         "lineNumber": 640,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 641,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 642,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 643,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "\u003d\u003d\u003d Use case: Delete item"
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 644,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "*MSS*"
+        "content": "[none]"
       },
       {
         "lineNumber": 645,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "* 2a. The given index is invalid."
       },
       {
         "lineNumber": 646,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "1.  User navigates to the page containing the item to be deleted."
+        "content": "[none]"
       },
       {
         "lineNumber": 647,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "2.  User enters \u0027delete\u0027 command giving the name of the item."
+        "content": "** 2a1. System shows an error message."
       },
       {
         "lineNumber": 648,
         "author": {
-          "gitId": "tswuxia"
+          "gitId": "-"
         },
-        "content": "3.  Ezwatchlist asks for confirmation from the user."
+        "content": "+"
       },
       {
         "lineNumber": 649,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "4.  User confirms."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 650,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "5.  Ezwatchlist deletes the item."
+        "content": ""
       },
       {
         "lineNumber": 651,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "+"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 652,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "Use case ends."
+        "content": "\u003d\u003d\u003d Use case: Search locally"
       },
       {
         "lineNumber": 653,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "*MSS*"
       },
       {
         "lineNumber": 654,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "*Extensions*"
+        "content": ""
       },
       {
         "lineNumber": 655,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[none]"
+        "content": "1.  User navigates to the main page"
       },
       {
         "lineNumber": 656,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "* 2a. The given name is not found."
+        "content": "2.  User enters \u0027search\u0027 command giving the name of the item"
       },
       {
         "lineNumber": 657,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[none]"
+        "content": "3.  Ezwatchlist will bring the user to a search page with items found in a list"
       },
       {
         "lineNumber": 658,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "** 2a1. System shows an error message."
+        "content": "4.  User enters View command of the index of the item."
       },
       {
         "lineNumber": 659,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "+"
+        "content": "5.  Ezwatchlist will bring that item into details page"
       },
       {
         "lineNumber": 660,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "Use case ends."
+        "content": "+"
       },
       {
         "lineNumber": 661,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 662,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 663,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "* 3a. User cancels the deletion."
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 664,
@@ -6476,483 +6476,483 @@
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "** Use case ends."
+        "content": "* 2a. The given name is not found."
       },
       {
         "lineNumber": 666,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 667,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "** 2a1. System shows an error message."
       },
       {
         "lineNumber": 668,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "[discrete]"
+        "content": "+"
       },
       {
         "lineNumber": 669,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "\u003d\u003d\u003d Use case: Statistics"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 670,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "*MSS*"
+        "content": ""
       },
       {
         "lineNumber": 671,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 672,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "1.  User navigates to the statistics page"
+        "content": "* 4a. The given index is not valid."
       },
       {
         "lineNumber": 673,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "2.  Ezwatchlist displays the information."
+        "content": "[none]"
       },
       {
         "lineNumber": 674,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "+"
+        "content": "** 4a1. System shows an error message."
       },
       {
         "lineNumber": 675,
         "author": {
           "gitId": "tswuxia"
         },
-        "content": "Use case ends."
+        "content": "+"
       },
       {
         "lineNumber": 676,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "Use case resumes at step 3."
       },
       {
         "lineNumber": 677,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
         "content": ""
       },
       {
         "lineNumber": 678,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
         "content": ""
       },
       {
         "lineNumber": 679,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
-        "content": "[appendix]"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 680,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
-        "content": "\u003d\u003d Non Functional Requirements"
+        "content": "\u003d\u003d\u003d Use case: Edit item"
       },
       {
         "lineNumber": 681,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "*MSS*"
       },
       {
         "lineNumber": 682,
         "author": {
-          "gitId": "-"
-        },
-        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has Java `11` or above installed."
-      },
-      {
-        "lineNumber": 683,
-        "author": {
-          "gitId": "heze8"
-        },
-        "content": ".  Should be able to hold up to 1000 movies in the watchlist without a noticeable sluggishness in performance for typical usage."
-      },
-      {
-        "lineNumber": 684,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
-      },
-      {
-        "lineNumber": 685,
-        "author": {
-          "gitId": "heze8"
-        },
-        "content": ".  The user interface should be intuitive enough for users who are not IT-savvy."
-      },
-      {
-        "lineNumber": 686,
-        "author": {
-          "gitId": "heze8"
-        },
-        "content": ".  Compliance with data, security, copyright laws."
-      },
-      {
-        "lineNumber": 687,
-        "author": {
-          "gitId": "heze8"
-        },
-        "content": ".  The application will be offline-friendly with online data being the only functionality missing."
-      },
-      {
-        "lineNumber": 688,
-        "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
         "content": ""
       },
       {
+        "lineNumber": 683,
+        "author": {
+          "gitId": "tswuxia"
+        },
+        "content": "1.  User navigates to the main page."
+      },
+      {
+        "lineNumber": 684,
+        "author": {
+          "gitId": "tswuxia"
+        },
+        "content": "2.  User enters \u0027edit\u0027 command giving the name of the item."
+      },
+      {
+        "lineNumber": 685,
+        "author": {
+          "gitId": "tswuxia"
+        },
+        "content": "3.  Ezwatchlist will bring the user to a details page of the item entered."
+      },
+      {
+        "lineNumber": 686,
+        "author": {
+          "gitId": "tswuxia"
+        },
+        "content": "4.  User edits the details of the item."
+      },
+      {
+        "lineNumber": 687,
+        "author": {
+          "gitId": "tswuxia"
+        },
+        "content": "5.  User saves the edits."
+      },
+      {
+        "lineNumber": 688,
+        "author": {
+          "gitId": "tswuxia"
+        },
+        "content": "+"
+      },
+      {
         "lineNumber": 689,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
-        "content": "_{More to be added}_"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 690,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
         "content": ""
       },
       {
         "lineNumber": 691,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
-        "content": "[appendix]"
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 692,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
-        "content": "\u003d\u003d Glossary"
+        "content": "[none]"
       },
       {
         "lineNumber": 693,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[details-page]] Details page::"
+        "content": "* 2a. The given name is not found."
       },
       {
         "lineNumber": 694,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "The page that shows the details of shows, which the user may then add it to the watchlist if interested."
+        "content": "[none]"
       },
       {
         "lineNumber": 695,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "** 2a1. System shows an error message."
       },
       {
         "lineNumber": 696,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[edit-page]] Edit page::"
+        "content": "+"
       },
       {
         "lineNumber": 697,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "The page where the user can edit the shows that they have added."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 698,
         "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
         "content": ""
       },
       {
         "lineNumber": 699,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[main-page]] Main Page / Watchlist page::"
+        "content": ""
       },
       {
         "lineNumber": 700,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "The default main page with the WatchList tab that contains a list of shows that the user wishes to watch"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 701,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Use case: Delete item"
       },
       {
         "lineNumber": 702,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[movies]] Movie::"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 703,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "A cinema film"
+        "content": ""
       },
       {
         "lineNumber": 704,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "1.  User navigates to the page containing the item to be deleted."
       },
       {
         "lineNumber": 705,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[progress-bar]] Progress Bar::"
+        "content": "2.  User enters \u0027delete\u0027 command giving the name of the item."
       },
       {
         "lineNumber": 706,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "A visible bar for users to see how many episodes of TV Series have been watched"
+        "content": "3.  Ezwatchlist asks for confirmation from the user."
       },
       {
         "lineNumber": 707,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "4.  User confirms."
       },
       {
         "lineNumber": 708,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[search-command]] Search command `search [keyword]`::"
+        "content": "5.  Ezwatchlist deletes the item."
       },
       {
         "lineNumber": 709,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "This command brings the user to a search page with keyword input"
+        "content": "+"
       },
       {
         "lineNumber": 710,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 711,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[search-page]] Search page::"
+        "content": ""
       },
       {
         "lineNumber": 712,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "The page where the user searches for shows to be added or to view their information"
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 713,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 714,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[show-index]] Show index::"
+        "content": "* 2a. The given name is not found."
       },
       {
         "lineNumber": 715,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "The number reference for the show in the pages"
+        "content": "[none]"
       },
       {
         "lineNumber": 716,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "** 2a1. System shows an error message."
       },
       {
         "lineNumber": 717,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[shows]] Shows::"
+        "content": "+"
       },
       {
         "lineNumber": 718,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "Movies or TV series"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 719,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
         "content": ""
       },
       {
         "lineNumber": 720,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[statistics-page]] Statistics page::"
+        "content": "[none]"
       },
       {
         "lineNumber": 721,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "The page that shows the statistics of user, such as total number of movies / TV series watched"
+        "content": "* 3a. User cancels the deletion."
       },
       {
         "lineNumber": 722,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 723,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[tag]] Tag::"
+        "content": "** Use case ends."
       },
       {
         "lineNumber": 724,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "A short remark about the show or user’s feelings towards the show"
+        "content": ""
       },
       {
         "lineNumber": 725,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
         "content": ""
       },
       {
         "lineNumber": 726,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[tv-series]] TV Series::"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 727,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "A television program which consists of several episodes that are broadcast in regular intervals"
+        "content": "\u003d\u003d\u003d Use case: Statistics"
       },
       {
         "lineNumber": 728,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": ""
+        "content": "*MSS*"
       },
       {
         "lineNumber": 729,
         "author": {
-          "gitId": "michelleykw"
-        },
-        "content": "[[view-command]] View command `view [index]`::"
-      },
-      {
-        "lineNumber": 730,
-        "author": {
-          "gitId": "michelleykw"
-        },
-        "content": "This command brings the user to the details page of the show with the specified show index"
-      },
-      {
-        "lineNumber": 731,
-        "author": {
-          "gitId": "-"
+          "gitId": "tswuxia"
         },
         "content": ""
       },
       {
+        "lineNumber": 730,
+        "author": {
+          "gitId": "tswuxia"
+        },
+        "content": "1.  User navigates to the statistics page"
+      },
+      {
+        "lineNumber": 731,
+        "author": {
+          "gitId": "tswuxia"
+        },
+        "content": "2.  Ezwatchlist displays the information."
+      },
+      {
         "lineNumber": 732,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "[[watched-page]] Watched page::"
+        "content": "+"
       },
       {
         "lineNumber": 733,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "tswuxia"
         },
-        "content": "The page where the user can access to view the list of shows indicated as watched"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 734,
@@ -6964,79 +6964,79 @@
       {
         "lineNumber": 735,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "-"
         },
-        "content": "[[watchlist]] Watchlist::"
+        "content": ""
       },
       {
         "lineNumber": 736,
         "author": {
-          "gitId": "michelleykw"
+          "gitId": "-"
         },
-        "content": "The list of shows that the user wishes to watch in the future."
+        "content": ""
       },
       {
         "lineNumber": 737,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[appendix]"
       },
       {
         "lineNumber": 738,
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": "\u003d\u003d Non Functional Requirements"
       },
       {
         "lineNumber": 739,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Product Survey"
+        "content": ""
       },
       {
         "lineNumber": 740,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has Java `11` or above installed."
       },
       {
         "lineNumber": 741,
         "author": {
-          "gitId": "-"
+          "gitId": "heze8"
         },
-        "content": "*Product Name*"
+        "content": ".  Should be able to hold up to 1000 movies in the watchlist without a noticeable sluggishness in performance for typical usage."
       },
       {
         "lineNumber": 742,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
       },
       {
         "lineNumber": 743,
         "author": {
-          "gitId": "-"
+          "gitId": "heze8"
         },
-        "content": "Author: ..."
+        "content": ".  The user interface should be intuitive enough for users who are not IT-savvy."
       },
       {
         "lineNumber": 744,
         "author": {
-          "gitId": "-"
+          "gitId": "heze8"
         },
-        "content": ""
+        "content": ".  Compliance with data, security, copyright laws."
       },
       {
         "lineNumber": 745,
         "author": {
-          "gitId": "-"
+          "gitId": "heze8"
         },
-        "content": "Pros:"
+        "content": ".  The application will be offline-friendly with online data being the only functionality missing."
       },
       {
         "lineNumber": 746,
@@ -7050,315 +7050,315 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": "_{More to be added}_"
       },
       {
         "lineNumber": 748,
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": ""
       },
       {
         "lineNumber": 749,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[appendix]"
       },
       {
         "lineNumber": 750,
         "author": {
           "gitId": "-"
         },
-        "content": "Cons:"
+        "content": "\u003d\u003d Glossary"
       },
       {
         "lineNumber": 751,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "[[details-page]] Details page::"
       },
       {
         "lineNumber": 752,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "* ..."
+        "content": "The page that shows the details of shows, which the user may then add it to the watchlist if interested."
       },
       {
         "lineNumber": 753,
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": ""
       },
       {
         "lineNumber": 754,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "[[edit-page]] Edit page::"
       },
       {
         "lineNumber": 755,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "[appendix]"
+        "content": "The page where the user can edit the shows that they have added."
       },
       {
         "lineNumber": 756,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Instructions for Manual Testing"
+        "content": ""
       },
       {
         "lineNumber": 757,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "[[main-page]] Main Page / Watchlist page::"
       },
       {
         "lineNumber": 758,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "Given below are instructions to test the app manually."
+        "content": "The default main page with the WatchList tab that contains a list of shows that the user wishes to watch"
       },
       {
         "lineNumber": 759,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 760,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "[NOTE]"
+        "content": "[[movies]] Movie::"
       },
       {
         "lineNumber": 761,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+        "content": "A cinema film"
       },
       {
         "lineNumber": 762,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 763,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "\u003d\u003d\u003d Launch and Shutdown"
+        "content": "[[progress-bar]] Progress Bar::"
       },
       {
         "lineNumber": 764,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "A visible bar for users to see how many episodes of TV Series have been watched"
       },
       {
         "lineNumber": 765,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ". Initial launch"
+        "content": ""
       },
       {
         "lineNumber": 766,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "[[search-command]] Search command `search [keyword]`::"
       },
       {
         "lineNumber": 767,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ".. Download the jar file and copy into an empty folder"
+        "content": "This command brings the user to a search page with keyword input"
       },
       {
         "lineNumber": 768,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ".. Double-click the jar file +"
+        "content": ""
       },
       {
         "lineNumber": 769,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+        "content": "[[search-page]] Search page::"
       },
       {
         "lineNumber": 770,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "The page where the user searches for shows to be added or to view their information"
       },
       {
         "lineNumber": 771,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ". Saving window preferences"
+        "content": ""
       },
       {
         "lineNumber": 772,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "[[show-index]] Show index::"
       },
       {
         "lineNumber": 773,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
+        "content": "The number reference for the show in the pages"
       },
       {
         "lineNumber": 774,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ".. Re-launch the app by double-clicking the jar file. +"
+        "content": ""
       },
       {
         "lineNumber": 775,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "   Expected: The most recent window size and location is retained."
+        "content": "[[shows]] Shows::"
       },
       {
         "lineNumber": 776,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "Movies or TV series"
       },
       {
         "lineNumber": 777,
         "author": {
-          "gitId": "-"
-        },
-        "content": "_{ more test cases ... }_"
-      },
-      {
-        "lineNumber": 778,
-        "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
+        "lineNumber": 778,
+        "author": {
+          "gitId": "michelleykw"
+        },
+        "content": "[[statistics-page]] Statistics page::"
+      },
+      {
         "lineNumber": 779,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "\u003d\u003d\u003d Deleting a person"
+        "content": "The page that shows the statistics of user, such as total number of movies / TV series watched"
       },
       {
         "lineNumber": 780,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
         "content": ""
       },
       {
         "lineNumber": 781,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ". Deleting a person while all persons are listed"
+        "content": "[[tag]] Tag::"
       },
       {
         "lineNumber": 782,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "A short remark about the show or user’s feelings towards the show"
       },
       {
         "lineNumber": 783,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+        "content": ""
       },
       {
         "lineNumber": 784,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ".. Test case: `delete 1` +"
+        "content": "[[tv-series]] TV Series::"
       },
       {
         "lineNumber": 785,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+        "content": "A television program which consists of several episodes that are broadcast in regular intervals"
       },
       {
         "lineNumber": 786,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ".. Test case: `delete 0` +"
+        "content": ""
       },
       {
         "lineNumber": 787,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+        "content": "[[view-command]] View command `view [index]`::"
       },
       {
         "lineNumber": 788,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ".. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +"
+        "content": "This command brings the user to the details page of the show with the specified show index"
       },
       {
         "lineNumber": 789,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: Similar to previous."
+        "content": ""
       },
       {
         "lineNumber": 790,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "[[watched-page]] Watched page::"
       },
       {
         "lineNumber": 791,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "_{ more test cases ... }_"
+        "content": "The page where the user can access to view the list of shows indicated as watched"
       },
       {
         "lineNumber": 792,
@@ -7370,37 +7370,37 @@
       {
         "lineNumber": 793,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": "\u003d\u003d\u003d Saving data"
+        "content": "[[watchlist]] Watchlist::"
       },
       {
         "lineNumber": 794,
         "author": {
-          "gitId": "-"
+          "gitId": "michelleykw"
         },
-        "content": ""
+        "content": "The list of shows that the user wishes to watch in the future."
       },
       {
         "lineNumber": 795,
         "author": {
           "gitId": "-"
         },
-        "content": ". Dealing with missing/corrupted data files"
+        "content": ""
       },
       {
         "lineNumber": 796,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[appendix]"
       },
       {
         "lineNumber": 797,
         "author": {
           "gitId": "-"
         },
-        "content": ".. _{explain how to simulate a missing/corrupted file and the expected behavior}_"
+        "content": "\u003d\u003d Product Survey"
       },
       {
         "lineNumber": 798,
@@ -7414,14 +7414,420 @@
         "author": {
           "gitId": "-"
         },
+        "content": "*Product Name*"
+      },
+      {
+        "lineNumber": 800,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 801,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Author: ..."
+      },
+      {
+        "lineNumber": 802,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 803,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Pros:"
+      },
+      {
+        "lineNumber": 804,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 805,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* ..."
+      },
+      {
+        "lineNumber": 806,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* ..."
+      },
+      {
+        "lineNumber": 807,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 808,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Cons:"
+      },
+      {
+        "lineNumber": 809,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 810,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* ..."
+      },
+      {
+        "lineNumber": 811,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* ..."
+      },
+      {
+        "lineNumber": 812,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 813,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
+        "lineNumber": 814,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 815,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 816,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Given below are instructions to test the app manually."
+      },
+      {
+        "lineNumber": 817,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 818,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[NOTE]"
+      },
+      {
+        "lineNumber": 819,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+      },
+      {
+        "lineNumber": 820,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 821,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Launch and Shutdown"
+      },
+      {
+        "lineNumber": 822,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 823,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Initial launch"
+      },
+      {
+        "lineNumber": 824,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 825,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Download the jar file and copy into an empty folder"
+      },
+      {
+        "lineNumber": 826,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Double-click the jar file +"
+      },
+      {
+        "lineNumber": 827,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+      },
+      {
+        "lineNumber": 828,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 829,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Saving window preferences"
+      },
+      {
+        "lineNumber": 830,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 831,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
+      },
+      {
+        "lineNumber": 832,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Re-launch the app by double-clicking the jar file. +"
+      },
+      {
+        "lineNumber": 833,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: The most recent window size and location is retained."
+      },
+      {
+        "lineNumber": 834,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 835,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{ more test cases ... }_"
+      },
+      {
+        "lineNumber": 836,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 837,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Deleting a person"
+      },
+      {
+        "lineNumber": 838,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 839,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Deleting a person while all persons are listed"
+      },
+      {
+        "lineNumber": 840,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 841,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+      },
+      {
+        "lineNumber": 842,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Test case: `delete 1` +"
+      },
+      {
+        "lineNumber": 843,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+      },
+      {
+        "lineNumber": 844,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Test case: `delete 0` +"
+      },
+      {
+        "lineNumber": 845,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+      },
+      {
+        "lineNumber": 846,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +"
+      },
+      {
+        "lineNumber": 847,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: Similar to previous."
+      },
+      {
+        "lineNumber": 848,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 849,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{ more test cases ... }_"
+      },
+      {
+        "lineNumber": 850,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 851,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Saving data"
+      },
+      {
+        "lineNumber": 852,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 853,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Dealing with missing/corrupted data files"
+      },
+      {
+        "lineNumber": 854,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 855,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. _{explain how to simulate a missing/corrupted file and the expected behavior}_"
+      },
+      {
+        "lineNumber": 856,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 857,
+        "author": {
+          "gitId": "-"
+        },
         "content": "_{ more test cases ... }_"
       }
     ],
     "authorContributionMap": {
-      "wongchuankai": 65,
+      "wongchuankai": 66,
       "jcjjjared": 46,
-      "michelleykw": 41,
-      "tswuxia": 176,
+      "michelleykw": 99,
+      "tswuxia": 175,
       "heze8": 72,
       "-": 399
     }

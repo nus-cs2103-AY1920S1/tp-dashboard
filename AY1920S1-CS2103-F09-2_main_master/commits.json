@@ -63,6 +63,209 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 199,
+        "deletions": 54,
+        "date": "2019-10-23",
+        "commitResults": [
+          {
+            "hash": "303eb9e446a37c4b0ef90a09cd2ccf8fc4215ff9",
+            "messageTitle": "create Gui and GuiSettings classes. refactoring: improve abstraction in MainWindow class. move colour and text styles to GuiSettings.",
+            "messageBody": "",
+            "insertions": 199,
+            "deletions": 54
+          }
+        ]
+      },
+      {
+        "insertions": 735,
+        "deletions": 1347,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "818a5fbd600bfb16365d6b84ddc40dc922c310b2",
+            "messageTitle": "remove show() and fillInnerParts() methods in UiManager. add sizing and more text styles to GuiSettings. refactor MainWindow to use min height and width defined in GuiSettings. add setupCommandBox() and setupScene() in MainWindow.",
+            "messageBody": "",
+            "insertions": 163,
+            "deletions": 27
+          },
+          {
+            "hash": "64e692b914d8ab17d404244f0b38b0ca5b117e5a",
+            "messageTitle": "refactor: remove spacing and padding parameters from initializeContainers() and setupContainerPadding() in MainWindow. remove fillInnerParts() method. make containers and components in MainWindow private.",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 26
+          },
+          {
+            "hash": "06e10776135ff307b38dd4a4f912963df4be5b9a",
+            "messageTitle": "add method for testing UI components. verify that old title will be removed before new title is added.",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 0
+          },
+          {
+            "hash": "80a37b0b6a073e6a90d81c68e4b9cc0924934690",
+            "messageTitle": "link MainWindow and Gui classes.first implementation of FlashCardDisplay. verify that FlashCardDisplay can be displayed.",
+            "messageBody": "",
+            "insertions": 35,
+            "deletions": 8
+          },
+          {
+            "hash": "3640ffdee8f4c4b9ef9b225eede4a1cea2021ea2",
+            "messageTitle": "change windowContents from VBox to GridPane (may undo later)",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 12
+          },
+          {
+            "hash": "0c08bc697015ee81f7898b12896421effc0e0685",
+            "messageTitle": "change FlashCardDisplay to extend HBox instead of VBox. add TextFlow around flashCardText to allow wrapping.",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 4
+          },
+          {
+            "hash": "bbe9ca16549a1746cc683713f46e259d07e95970",
+            "messageTitle": "use setPrefSize to let FlashCardDisplay have desired dimensions",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 5
+          },
+          {
+            "hash": "b82808e092af46219a68fbc3a3211a509e4aa3c8",
+            "messageTitle": "try to add commandTextField.setOnAction, pending team mate\u0027s reply",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 2
+          },
+          {
+            "hash": "c20c861519971efb05bb3bfe2be2973018f7c642",
+            "messageTitle": "add dependency between Gui, UiManager, MainWindow and State (to be refactored)",
+            "messageBody": "",
+            "insertions": 23,
+            "deletions": 6
+          },
+          {
+            "hash": "cd830db73e2db3895303453c03be392b6597b7de",
+            "messageTitle": "use no-arg constructor of State temporarily. shift application icon to GuiSettings. remove showAlertDialogAndWait and showFatalErrorDialogAndShutDown methods in UiManager (unused).",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 39
+          },
+          {
+            "hash": "aacb8d6880dc7bcb3b5ad6eabfe2fffd6f34a0b5",
+            "messageTitle": "refactor: make Gui comply with singleton design pattern. make all methods in Gui static to be accessible from other classes. rename applicationIcon to APPLICATION_ICON. make renderFront() and renderBack() non-abstract in FlashCard class.",
+            "messageBody": "",
+            "insertions": 53,
+            "deletions": 68
+          },
+          {
+            "hash": "83079d2b0b5a4565d48b37f7493a252dad7d3aae",
+            "messageTitle": "add event handler for commandTextField",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 10
+          },
+          {
+            "hash": "bf7d7a757cc2266bccba03d948d7609cd3cad415",
+            "messageTitle": "delete unused UiPart abstract class and unused UI components (CommandBox, HelpWindow, ResultDisplay, StatusBarFooter, MainWindowOld). not staged: changes to MainApp and StorageManager for testing purrposes.",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 449
+          },
+          {
+            "hash": "d8aa82988d0f19338e0dfe1f63d6fada726653fb",
+            "messageTitle": "delete unused fxml and css files",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 539
+          },
+          {
+            "hash": "4c749c3dcbd27d7e00f429d10f4617481224e886",
+            "messageTitle": "create UiComponent interface for UI components. organise components in package. modify FlashCardDisplay. create new class: CommandTextField.",
+            "messageBody": "",
+            "insertions": 56,
+            "deletions": 30
+          },
+          {
+            "hash": "2ad2c7707b207888ebb438ec0c58c635fd313893",
+            "messageTitle": "refactor: rename primaryUIColour and secondaryUIColour to primaryUiColour and secondaryUiColour. add backgroundColour in GuiSettings.",
+            "messageBody": "",
+            "insertions": 35,
+            "deletions": 26
+          },
+          {
+            "hash": "825aa39747faa3c8ece43135032e3c7f562a88ac",
+            "messageTitle": "add TitleBar class",
+            "messageBody": "",
+            "insertions": 59,
+            "deletions": 35
+          },
+          {
+            "hash": "80e4733348d6c28e2b3994fbec0812733e388edd",
+            "messageTitle": "add CommandTextFieldPlaceholder and ScrollablePane classes. replace GridPane with ScrollPane.",
+            "messageBody": "",
+            "insertions": 89,
+            "deletions": 47
+          },
+          {
+            "hash": "e55ac9082de74f911067c26cd45e96c466101735",
+            "messageTitle": "add javadoc comments",
+            "messageBody": "",
+            "insertions": 85,
+            "deletions": 14
+          },
+          {
+            "hash": "c33a99a1f4d40f9a52f8c4932fee5b425c91acbb",
+            "messageTitle": "update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 46,
+        "deletions": 69,
+        "date": "2019-10-25",
+        "commitResults": [
+          {
+            "hash": "530431f945b7f9353b0ad32d48bc8c5aaf2adc40",
+            "messageTitle": "checkstyle fixes",
+            "messageBody": "",
+            "insertions": 31,
+            "deletions": 35
+          },
+          {
+            "hash": "73dcd14c20eeb83d4980920ab9920ad4e56805a9",
+            "messageTitle": "more fixes for checkstyle",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 7
+          },
+          {
+            "hash": "292a606390c2703718a16f7b234535c68baad875",
+            "messageTitle": "remove unused MainWindowTest causing travis to fail",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 18
+          },
+          {
+            "hash": "175bda3cca19bb38dad7e88b573a31d7eda72b22",
+            "messageTitle": "last checkstyle fix",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 0
+          },
+          {
+            "hash": "1163e0148475db233ede9a68fea2ba32947e4497",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 9
+          }
+        ]
       }
     ],
     "AHaliq": [
@@ -387,6 +590,132 @@
             "deletions": 9
           }
         ]
+      },
+      {
+        "insertions": 44,
+        "deletions": 4,
+        "date": "2019-10-22",
+        "commitResults": [
+          {
+            "hash": "bda6a8aa9af112a6a9a2f67c00fb5846427bee94",
+            "messageTitle": "updated Storage developer guide",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 3
+          },
+          {
+            "hash": "0ac42389e9d4295faca0a0012b52ffdaaefb29d1",
+            "messageTitle": "updated common classes",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "4aa84853e4e115122433617683557897f749454d",
+            "messageTitle": "added json parser activity diagram",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 233,
+        "deletions": 16,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "0efd004a4d97da78c04fde2cb875c1d65f32a98f",
+            "messageTitle": "made loadDeck public",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "faf61da6c8ff186e4fed5e12bb6953a92db6bf40",
+            "messageTitle": "addDeck can take in deck objects",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 0
+          },
+          {
+            "hash": "a9cdd8a4b605c3dfc8024d4661c756aa0b1e8210",
+            "messageTitle": "added getFileName method",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 0
+          },
+          {
+            "hash": "3ae488730c0567eb9a2860626eb1ee3d81a625f1",
+            "messageTitle": "implemented import",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 4
+          },
+          {
+            "hash": "220afe0fd6d37c29962c921e8e73433f8dab69e5",
+            "messageTitle": "implement test for import",
+            "messageBody": "",
+            "insertions": 50,
+            "deletions": 0
+          },
+          {
+            "hash": "046573896bb14fd78bbb7556f9b545aba1f29139",
+            "messageTitle": "added erroneous import export commands and tests for them",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 1
+          },
+          {
+            "hash": "bf54b820e1ec8a373e13de8fa005a89d0e84b202",
+            "messageTitle": "implemented export",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 5
+          },
+          {
+            "hash": "b1e9bd9854f5a85faffe694c24a72a9646439b9d",
+            "messageTitle": "implemented test for export",
+            "messageBody": "",
+            "insertions": 37,
+            "deletions": 0
+          },
+          {
+            "hash": "90d59b41d4bb396780fbb4a11b94cd7a0bcf5ea2",
+            "messageTitle": "fixed checkstyle errors",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "8d7bfb6cd7f24f62c52ceb6dd2e1caa7bc13e465",
+            "messageTitle": "implemented and tested root command",
+            "messageBody": "",
+            "insertions": 55,
+            "deletions": 1
+          },
+          {
+            "hash": "5b72f3f941029d0f6c5168635ff8d00872b59000",
+            "messageTitle": "fixed checkstyleerrors",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "f7c24f64b427c9cee7b54bfc998b6b0ed30d1010",
+            "messageTitle": "made test more general to pass travis",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "bb2e5e73943a1ba19b86ac9df494fdd01161c863",
+            "messageTitle": "create directory so travis has it when testing",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 1
+          }
+        ]
       }
     ],
     "PhireHandy": [
@@ -536,6 +865,55 @@
             "messageBody": "",
             "insertions": 6,
             "deletions": 6
+          }
+        ]
+      },
+      {
+        "insertions": 106,
+        "deletions": 33,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "65c068f85535d9e59618c6b3aa752f14e01894c6",
+            "messageTitle": "Added ExamRunnerActivity Diagram and updated DG slidely",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 0
+          },
+          {
+            "hash": "600e794240b48c1baba69bfa9a81c357834633cc",
+            "messageTitle": "Fixed checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 20
+          },
+          {
+            "hash": "a0656c070b65bbeddc23051750132085ebd4f520",
+            "messageTitle": "Changed architecture to accomodate nextCard method",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 8
+          },
+          {
+            "hash": "268dc9f791273670b206109470613228c4ca6592",
+            "messageTitle": "Updated DG with implementation of test mechanism",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 0
+          },
+          {
+            "hash": "7520e2363392a24e1701df7011015eec36a91dcd",
+            "messageTitle": "Incorporated the score to become a Result object",
+            "messageBody": "",
+            "insertions": 26,
+            "deletions": 5
+          },
+          {
+            "hash": "218528791e90e515bd64d4203424ffed98edd83f",
+            "messageTitle": "Added Javadocs",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 0
           }
         ]
       }
@@ -971,6 +1349,48 @@
             "messageTitle": "Update FileImporterTest.java",
             "messageBody": "Changed double backslashes to forward slash for system compatibility issues\n",
             "insertions": 1,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 4,
+        "deletions": 4,
+        "date": "2019-10-18",
+        "commitResults": [
+          {
+            "hash": "6d0c0d5076d559f0de43582ec1f68155cc5ba33b",
+            "messageTitle": "Change double backslashes to forward slash",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
+          }
+        ]
+      },
+      {
+        "insertions": 95,
+        "deletions": 2,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "8ac186b37de64adf8176d05d0c3fd8bd0e06122c",
+            "messageTitle": "Add diagrams and writeup",
+            "messageBody": "",
+            "insertions": 92,
+            "deletions": 0
+          },
+          {
+            "hash": "24d93eb527dcef3b3753b87f07c31f12ee49262a",
+            "messageTitle": "Update JSCardActivityDiagram.puml",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "5caa9e4f921331d18840b2680cbf4ebc5e9cfda2",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "removed the separator from merge conflict\n",
+            "insertions": 2,
             "deletions": 1
           }
         ]
@@ -1629,76 +2049,440 @@
         ]
       },
       {
-        "insertions": 156,
-        "deletions": 254,
-        "date": "2019-10-22",
+        "insertions": 0,
+        "deletions": 7,
+        "date": "2019-10-18",
         "commitResults": [
           {
-            "hash": "a356c2d01d440c29e85e8803f8e0442d91c16a54",
-            "messageTitle": "Revert \"GUI initial implementation\"",
-            "messageBody": "",
-            "insertions": 156,
-            "deletions": 247
-          },
-          {
-            "hash": "3b46bc737e63f55abeecd0d5cbd159f36ccd34aa",
+            "hash": "e14e74eee0bb7a3240b096ecb56fc7438081873e",
             "messageTitle": "Delete .\\src\\test\\java\\dream\\fcard\\util\\data\\Test.java",
             "messageBody": "",
             "insertions": 0,
             "deletions": 7
           }
         ]
+      },
+      {
+        "insertions": 329,
+        "deletions": 131,
+        "date": "2019-10-20",
+        "commitResults": [
+          {
+            "hash": "268f0029b2cbeb46bf0154e852d1b5c754788354",
+            "messageTitle": "Edit: javadoc comments",
+            "messageBody": "",
+            "insertions": 147,
+            "deletions": 68
+          },
+          {
+            "hash": "aa79b2c21e666f0aba3567176964eadf69080ad1",
+            "messageTitle": "Edit: rectify compilation error",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "696e287ad1dd8f2cba4def5b1dd960421f316809",
+            "messageTitle": "Edit: rectify compilation error",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "9828a58f1a23e58df98292f1ff568934a376a6d7",
+            "messageTitle": "Added: FlashCard documentation",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 12
+          },
+          {
+            "hash": "e310d42de2a4ac7ab1166d9e40f89656ceb7f269",
+            "messageTitle": "Add: randomize MCQ choices",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 10
+          },
+          {
+            "hash": "2be79bb3e8d59d39860f61c78c5d00c2b6489b26",
+            "messageTitle": "Edit: changed exam runner to handle exception for mcq test",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 13
+          },
+          {
+            "hash": "f76fed0d1db6918f880c5809cf312df0bcc26443",
+            "messageTitle": "Removed: mcq tests to handle randomize",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 0
+          },
+          {
+            "hash": "5ed3511caa3ac12331e9080304f4505bd68b0301",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 2
+          },
+          {
+            "hash": "57218ba9a2f9dd4de0856c9214a20c19c755fa7b",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "03028f791ec51d0d2c13416ddd236f16a2a40db4",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 2
+          },
+          {
+            "hash": "6c10b2b632f2ea048075c792d51e3b3b5bb77b1c",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "b313ba14a3dd598c799eabaa6956497721357441",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "f6008aad75f214d0cefcb73295e102279e522c2a",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 1
+          },
+          {
+            "hash": "afa6c2d6bcf1c7607d67111ddfa30c13e784bc7e",
+            "messageTitle": "Added: functionality to prevent duplicates in MCQ choices",
+            "messageBody": "",
+            "insertions": 36,
+            "deletions": 10
+          },
+          {
+            "hash": "d424846613f809c0b6d604565308d684beb9c91c",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 6
+          },
+          {
+            "hash": "ea37536611f8e2cc625ead77ba06fd3ae84786e1",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 117,
+        "deletions": 32,
+        "date": "2019-10-22",
+        "commitResults": [
+          {
+            "hash": "18b18285087625791200f6e448c3000e46d74f83",
+            "messageTitle": "Added: MCQ Randomizer",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 4
+          },
+          {
+            "hash": "599efe08b6a1e7dc6d938b0cd22ff4f31a6ddbb0",
+            "messageTitle": "Edit: checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 2
+          },
+          {
+            "hash": "0e2d7f294477edff0d82adc817c4871908dc2484",
+            "messageTitle": "Refactor some methods for MCQ card",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 4
+          },
+          {
+            "hash": "260fedbe74fac9765c7cd77cd0307f3a23efa944",
+            "messageTitle": "Added: authorship",
+            "messageBody": "",
+            "insertions": 33,
+            "deletions": 1
+          },
+          {
+            "hash": "313310b0c9b241164d97937f335c718c11affbf8",
+            "messageTitle": "Edit: Convert flashcard from interface to class",
+            "messageBody": "",
+            "insertions": 51,
+            "deletions": 21
+          }
+        ]
+      },
+      {
+        "insertions": 352,
+        "deletions": 51,
+        "date": "2019-10-23",
+        "commitResults": [
+          {
+            "hash": "5ecb2e0d347d81cab3d246aa3fcc31636367edd2",
+            "messageTitle": "Edit: Create new copy of chocies in MCQ, sort",
+            "messageBody": "",
+            "insertions": 193,
+            "deletions": 9
+          },
+          {
+            "hash": "7f4e59838b85d82ea18aaf563770503e0308ca1f",
+            "messageTitle": "Fix: checkstyle",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 10
+          },
+          {
+            "hash": "217ae4e55f8ae5be6126e10fa6db0bfd347a2634",
+            "messageTitle": "Add: priority implementation for cards",
+            "messageBody": "",
+            "insertions": 51,
+            "deletions": 13
+          },
+          {
+            "hash": "6305fc7fe6b7016b0a013d0c71b0a9bae3f86922",
+            "messageTitle": "Add: handling input of priority of cards",
+            "messageBody": "",
+            "insertions": 57,
+            "deletions": 5
+          },
+          {
+            "hash": "d1a2dcd0b4cd5714428d58638047559d65464e92",
+            "messageTitle": "Edit: checkstyle",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 9
+          },
+          {
+            "hash": "1fc75825d27dd39d7e7b05a224435760df8ec18c",
+            "messageTitle": "Add: test subset method added for examrunner",
+            "messageBody": "",
+            "insertions": 37,
+            "deletions": 0
+          },
+          {
+            "hash": "c609f7aa0db56c83783aa0471e9ed7b110e7f78f",
+            "messageTitle": "Fix: checkstyle",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 438,
+        "deletions": 297,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "d881abbf5cf40cb8ddcf8ff92e7b21c824a0d47a",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 3
+          },
+          {
+            "hash": "39ad441be09df079de5297a78221fe2d2e84fca4",
+            "messageTitle": "Update AboutUs.adoc",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "362c3e83f8498f874ab2f64dccf5c4abf5843f57",
+            "messageTitle": "Update UserGuide.adoc",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 30
+          },
+          {
+            "hash": "11fee5d7cfb1d6d25fbacb10d89f938c9015b2ad",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 18
+          },
+          {
+            "hash": "edbdf19264ddcf8f481609ae6c83b5920fae1398",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "095c65afe6f30b0f84e437af355ddc7846bdd70a",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 2
+          },
+          {
+            "hash": "ac7ff0ed38c74cd564ac8230fa975c87d68bed28",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 103
+          },
+          {
+            "hash": "3df90129181d0803862a4f80a3495316f073df04",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 157,
+            "deletions": 44
+          },
+          {
+            "hash": "357c8ee02ef62ef0c8a7d2a355d5de9fabf01b6d",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 0
+          },
+          {
+            "hash": "75f2cc0040e0fbfc8f2af325b7aaebf85e5a38bf",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "94f66b645cc850a735abc52f5e12b3033daca082",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "1aebc9e8a52d5aca9a09780e41076bb64946e00f",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 0
+          },
+          {
+            "hash": "2a089860af5c69d79e9f68a8c8bbc8987539cd8b",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 5
+          },
+          {
+            "hash": "83def2976bebd8a5758f5487afb5552ae26fe13e",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 29,
+            "deletions": 4
+          },
+          {
+            "hash": "bf06c1c37413d1edc78598737e2d79ee713c9017",
+            "messageTitle": "Update DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
+          },
+          {
+            "hash": "0f2711a056b703fdae27fc40571b31a4aa296285",
+            "messageTitle": "Edit: Windows filepath",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 1
+          },
+          {
+            "hash": "0d9c02bd2861cdcb785a0c44db220c5a7477eeca",
+            "messageTitle": "Fix: indexing for user vs deck or states or choices",
+            "messageBody": "",
+            "insertions": 65,
+            "deletions": 26
+          },
+          {
+            "hash": "c958c0fb545fa013349f48f6b07a70aecb5dd2d3",
+            "messageTitle": "Fix: indexing for user vs deck or states or choices",
+            "messageBody": "",
+            "insertions": 38,
+            "deletions": 20
+          },
+          {
+            "hash": "c8852c792207b0353722debb31099fd0a7ccee94",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "7db223700176363f8456aee4478bbbb6de1085ab",
+            "messageTitle": "Add: documentation for flashcards and deck and state",
+            "messageBody": "",
+            "insertions": 57,
+            "deletions": 27
+          },
+          {
+            "hash": "285092a2e47719b0f98f42799f1931986e0b32fd",
+            "messageTitle": "Add: documentation for flashcards and deck and state",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "nattanyz": 77,
-    "AHaliq": 1877,
-    "PhireHandy": 128,
-    "shawnpunchew11": 70,
-    "timothyleong97": 441,
-    "huiminlim": 624
+    "nattanyz": 886,
+    "AHaliq": 1986,
+    "PhireHandy": 118,
+    "shawnpunchew11": 136,
+    "timothyleong97": 507,
+    "huiminlim": 1476
   },
   "authorFileTypeContributionMap": {
     "nattanyz": {
-      "docs": 76,
+      "docs": 81,
       "tests": 0,
-      "functional": 1
+      "functional": 805
     },
     "AHaliq": {
-      "docs": 4,
-      "tests": 264,
-      "functional": 1609
+      "docs": 33,
+      "tests": 382,
+      "functional": 1571
     },
     "PhireHandy": {
       "docs": 1,
       "tests": 0,
-      "functional": 127
+      "functional": 117
     },
     "shawnpunchew11": {
-      "docs": 4,
+      "docs": 34,
       "tests": 0,
-      "functional": 66
+      "functional": 102
     },
     "timothyleong97": {
-      "docs": 87,
+      "docs": 133,
       "tests": 84,
-      "functional": 262,
-      "other": 8
+      "functional": 248,
+      "other": 42
     },
     "huiminlim": {
-      "docs": 212,
-      "tests": 84,
-      "functional": 328
+      "docs": 421,
+      "tests": 127,
+      "functional": 928
     }
   },
   "authorContributionVariance": {
-    "nattanyz": 4844.7188,
-    "AHaliq": 67423.805,
-    "PhireHandy": 1292.5741,
-    "shawnpunchew11": 838.50964,
-    "timothyleong97": 1665199.0,
-    "huiminlim": 31006.088
+    "nattanyz": 88978.84,
+    "AHaliq": 64224.074,
+    "PhireHandy": 1217.7667,
+    "shawnpunchew11": 1138.2417,
+    "timothyleong97": 1567007.5,
+    "huiminlim": 40754.55
   },
   "authorDisplayNameMap": {
     "nattanyz": "CS2103-F09-2 TAN Y ... TALIE",

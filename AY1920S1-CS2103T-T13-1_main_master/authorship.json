@@ -3120,107 +3120,107 @@
       {
         "lineNumber": 156,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "// tag::undoredo[]"
+        "content": "\u003d\u003d\u003d Matching feature"
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d [Proposed] Undo/Redo feature"
+        "content": "This section describes how the matching feature is implemented."
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d Proposed Implementation"
+        "content": ""
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Matching is done by accessing `Patient` and `Donor` in `ModelManager`, then creating"
       },
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "The undo/redo mechanism is facilitated by `VersionedAddressBook`."
+        "content": "`MatchedPatient` and `MatchedDonor` objects to store the match results. The `MatchedPatient` and `MatchedDonor` objects"
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`."
+        "content": "are stored in a separate `listOfMatches` list."
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "Additionally, it implements the following operations:"
+        "content": ""
       },
       {
         "lineNumber": 163,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "To facilitate the matching, the following methods were added to `ModelManager`:"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "* `VersionedAddressBook#commit()` -- Saves the current address book state in its history."
+        "content": ""
       },
       {
         "lineNumber": 165,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "* `VersionedAddressBook#undo()` -- Restores the previous address book state from its history."
+        "content": "* `ModelManager#matchDonors(Patient patient)` -- Matches all Donors in ORGANice with the specified Patient."
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "* `VersionedAddressBook#redo()` -- Restores a previously undone address book state from its history."
+        "content": "For each Donor that matches the Patient, a `MatchedDonor` objected is created and stored."
       },
       {
         "lineNumber": 167,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "* `ModelManager#matchPatients()` -- Matches all Donors with all Patients."
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively."
+        "content": ""
       },
       {
         "lineNumber": 169,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "After matching the patients and donors, the `MainWindow` decides which list to display via the `CommandResult#isMatch`"
       },
       {
         "lineNumber": 170,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "Given below is an example usage scenario and how the undo/redo mechanism behaves at each step."
+        "content": "method."
       },
       {
         "lineNumber": 171,
@@ -3232,37 +3232,37 @@
       {
         "lineNumber": 172,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state."
+        "content": "\u003d\u003d\u003d\u003d Design considerations"
       },
       {
         "lineNumber": 173,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Bugs introduced"
       },
       {
         "lineNumber": 174,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "image::UndoRedoState0.png[]"
+        "content": "This section explains why the current implementation is chosen."
       },
       {
         "lineNumber": 175,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Previously, the matching feature was implemented by storing match results in the"
       },
       {
         "lineNumber": 176,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state."
+        "content": "`Patient` and `Donor` objects."
       },
       {
         "lineNumber": 177,
@@ -3274,23 +3274,23 @@
       {
         "lineNumber": 178,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "image::UndoRedoState1.png[]"
+        "content": "Each `Patient` and `Donor` has a `isMatch()` method, which checks if the match results should be displayed"
       },
       {
         "lineNumber": 179,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "or if the `Patient` and `Donor` attributes should be displayed. The match results will be displayed when `isMatch()`"
       },
       {
         "lineNumber": 180,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "Step 3. The user executes `add n/David ...` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`."
+        "content": "evaluates to `true`."
       },
       {
         "lineNumber": 181,
@@ -3302,44 +3302,44 @@
       {
         "lineNumber": 182,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "image::UndoRedoState2.png[]"
+        "content": "It was discovered that there were many bugs introduced via this approach. The root cause of the bugs could not be"
       },
       {
         "lineNumber": 183,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "identified."
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "[NOTE]"
+        "content": ""
       },
       {
         "lineNumber": 185,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`."
+        "content": "// tag::formmode[]"
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Add person `Form` mode feature"
       },
       {
         "lineNumber": 187,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state."
+        "content": "\u003d\u003d\u003d\u003d Implementation"
       },
       {
         "lineNumber": 188,
@@ -3351,107 +3351,107 @@
       {
         "lineNumber": 189,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "image::UndoRedoState3.png[]"
+        "content": "The `Form` mode mechanism is facilitated by `FormUiManager`."
       },
       {
         "lineNumber": 190,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "It modifies the `CommandBox` as well as `PersonPanelListPlaceholder` each time a user input a specific attribute."
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "[NOTE]"
+        "content": "Additionally, it implements the following operations:"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "If the `currentStatePointer` is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo."
+        "content": ""
       },
       {
         "lineNumber": 193,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "* `FormUiManager#getPersonField()` -- Modifies `CommandBox` and prompts the user to input a specific attribute."
       },
       {
         "lineNumber": 194,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "The following sequence diagram shows how the undo operation works:"
+        "content": "* `FormUiManager#setPersonDetails()` -- Sets the value for all required attributes of a specific type of person."
       },
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "* `FormUiManager#addDoctorToList()` -- Adds a doctor to the person list."
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "image::UndoSequenceDiagram.png[]"
+        "content": "* `FormUiManager#addPatientToList()` -- Adds a patient to the person list."
       },
       {
         "lineNumber": 197,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "* `FormUiManager#addDonorToList()` -- Adds a donor to the person list."
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "NOTE: The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram."
+        "content": ""
       },
       {
         "lineNumber": 199,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "These operations are exposed in the `Logic` interface when the specific command is invoked by the user."
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "The `redo` command does the opposite -- it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state."
+        "content": ""
       },
       {
         "lineNumber": 201,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "Given below is an example usage scenario and how the `Form` mode mechanism behaves at each step:"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "[NOTE]"
+        "content": ""
       },
       {
         "lineNumber": 203,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone address book states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo."
+        "content": "Step 1. The user launches the application for the first time."
       },
       {
         "lineNumber": 204,
@@ -3463,9 +3463,9 @@
       {
         "lineNumber": 205,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged."
+        "content": "Step 2. The user executes `add t/doctor` command to add a doctor in a `Form` mode. The `add` command calls `AddressBookParser#parseCommand()` that will return a new `AddCommand` instance."
       },
       {
         "lineNumber": 206,
@@ -3477,9 +3477,9 @@
       {
         "lineNumber": 207,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "image::UndoRedoState4.png[]"
+        "content": "Step 3. The `LogicManager` executes the command and notice that the `Command` is a `Form` type command and thus will create a new `FormUiManager` instance."
       },
       {
         "lineNumber": 208,
@@ -3491,9 +3491,9 @@
       {
         "lineNumber": 209,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add n/David ...` command. This is the behavior that most modern desktop applications follow."
+        "content": "Step 4. The `FormUiManager` changes the display of the application based on the type of the person specified in Step 1 by modifying the content of the `PersonListPanelPlaceholder` as well as the `CommandExecutor` in the `CommandBox` object by calling `FormUiManager#getPersonFields()`."
       },
       {
         "lineNumber": 210,
@@ -3505,9 +3505,9 @@
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "image::UndoRedoState5.png[]"
+        "content": "Step 5. The user inputs the attribute that is prompted until all the required attributes are specified."
       },
       {
         "lineNumber": 212,
@@ -3519,9 +3519,9 @@
       {
         "lineNumber": 213,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "The following activity diagram summarizes what happens when a user executes a new command:"
+        "content": "Step 6. The user confirms the details of the person and `FormUiManager#setPersonDetails()` will be called and depending on the type of the person specified, calling `FormUiManager#addDoctorToList()`, or `FormUiManager#addPatientToList()`, or `FormUiManager#addDonorToList()` respectively."
       },
       {
         "lineNumber": 214,
@@ -3533,9 +3533,9 @@
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "image::CommitActivityDiagram.png[]"
+        "content": "Step 7. `FormUiManager` calls the `AddressBookParser#parseCommand()` to add the person and save it in the `Storage` interface."
       },
       {
         "lineNumber": 216,
@@ -3575,9 +3575,9 @@
       {
         "lineNumber": 221,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "* **Alternative 1 (current choice):** Saves the entire address book."
+        "content": "* **Alternative 1 (current choice):** Use the same `add` command to do the `Form` mode."
       },
       {
         "lineNumber": 222,
@@ -3589,30 +3589,30 @@
       {
         "lineNumber": 223,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "** Cons: May have performance issues in terms of memory usage."
+        "content": "** Cons: May not be the best approach since one command will have two different modes."
       },
       {
         "lineNumber": 224,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "* **Alternative 2:** Individual command knows how to undo/redo by itself."
+        "content": "* **Alternative 2:** Use a new command for the `Form` mode."
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "** Pros: Will use less memory (e.g. for `delete`, just save the person being deleted)."
+        "content": "** Pros: Will be less confusing for the user since there is a separate command for `Form` mode"
       },
       {
         "lineNumber": 226,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "** Cons: We must ensure that the implementation of each individual command are correct."
+        "content": "** Cons: We must creates a new parser and command classes just to deal with another `add` functionality."
       },
       {
         "lineNumber": 227,
@@ -3624,9 +3624,9 @@
       {
         "lineNumber": 228,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Data structure to support the undo/redo commands"
+        "content": "// end::formmode[]"
       },
       {
         "lineNumber": 229,
@@ -3640,70 +3640,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* **Alternative 1 (current choice):** Use a list to store the history of address book states."
+        "content": "// tag::dataencryption[]"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project."
+        "content": "\u003d\u003d\u003d [Proposed] Data Encryption"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "** Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both `HistoryManager` and `VersionedAddressBook`."
+        "content": ""
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "* **Alternative 2:** Use `HistoryManager` for undo/redo"
+        "content": "_{Explain here how the data encryption feature will be implemented}_"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "** Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase."
+        "content": ""
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things."
+        "content": "// end::dataencryption[]"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "// end::undoredo[]"
+        "content": ""
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Logging"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "// tag::dataencryption[]"
+        "content": ""
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d [Proposed] Data Encryption"
+        "content": "We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations."
       },
       {
         "lineNumber": 240,
@@ -3717,21 +3717,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "_{Explain here how the data encryption feature will be implemented}_"
+        "content": "* The logging level can be controlled using the `logLevel` setting in the configuration file (See \u003c\u003cImplementation-Configuration\u003e\u003e)"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "// end::dataencryption[]"
+        "content": "* Currently log messages are output through: `Console` and to a `.log` file."
       },
       {
         "lineNumber": 244,
@@ -3745,7 +3745,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Logging"
+        "content": "*Logging Levels*"
       },
       {
         "lineNumber": 246,
@@ -3759,49 +3759,49 @@
         "author": {
           "gitId": "-"
         },
-        "content": "We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations."
+        "content": "* `SEVERE` : Critical problem detected which may possibly cause the termination of the application"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `WARNING` : Can continue, but with caution"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "* The logging level can be controlled using the `logLevel` setting in the configuration file (See \u003c\u003cImplementation-Configuration\u003e\u003e)"
+        "content": "* `INFO` : Information showing the noteworthy actions by the App"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level"
+        "content": "* `FINE` : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "* Currently log messages are output through: `Console` and to a `.log` file."
+        "content": ""
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[[Implementation-Configuration]]"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "*Logging Levels*"
+        "content": "\u003d\u003d\u003d Configuration"
       },
       {
         "lineNumber": 254,
@@ -3815,49 +3815,49 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `SEVERE` : Critical problem detected which may possibly cause the termination of the application"
+        "content": "Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`)."
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "* `WARNING` : Can continue, but with caution"
+        "content": ""
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "* `INFO` : Information showing the noteworthy actions by the App"
+        "content": "\u003d\u003d Documentation"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "* `FINE` : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size"
+        "content": ""
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "[[Implementation-Configuration]]"
+        "content": ""
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Configuration"
+        "content": "\u003d\u003d Testing"
       },
       {
         "lineNumber": 262,
@@ -3871,7 +3871,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`)."
+        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
       },
       {
         "lineNumber": 264,
@@ -3885,7 +3885,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Documentation"
+        "content": "\u003d\u003d Dev Ops"
       },
       {
         "lineNumber": 266,
@@ -3899,7 +3899,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
+        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
       },
       {
         "lineNumber": 268,
@@ -3913,70 +3913,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Testing"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Product Scope"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
+        "content": ""
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "*Target user profile*:"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Dev Ops"
+        "content": ""
       },
       {
         "lineNumber": 274,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "* hospital administrative staff who need to find matches between patients and organ donors"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
+        "content": "* prefer desktop apps over other types"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* can type fast"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": "* prefers typing over mouse input"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Product Scope"
+        "content": "* is reasonably comfortable using CLI apps"
       },
       {
         "lineNumber": 279,
@@ -3988,9 +3988,9 @@
       {
         "lineNumber": 280,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "*Target user profile*:"
+        "content": "*Value proposition*: find matches between a patient and potential organ donors faster than a typical mouse/GUI driven app"
       },
       {
         "lineNumber": 281,
@@ -4002,121 +4002,121 @@
       {
         "lineNumber": 282,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
-        "content": "* hospital administrative staff who need to find matches between patients and organ donors"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "* prefer desktop apps over other types"
+        "content": "\u003d\u003d User Stories"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": "* can type fast"
+        "content": ""
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": "* prefers typing over mouse input"
+        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "* is reasonably comfortable using CLI apps"
+        "content": ""
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 288,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "*Value proposition*: find matches between a patient and potential organ donors faster than a typical mouse/GUI driven app"
-      },
-      {
-        "lineNumber": 289,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 290,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "[appendix]"
-      },
-      {
-        "lineNumber": 291,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d User Stories"
-      },
-      {
-        "lineNumber": 292,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 293,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
-      },
-      {
-        "lineNumber": 294,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 295,
-        "author": {
-          "gitId": "-"
-        },
         "content": "[width\u003d\"59%\",cols\u003d\"22%,\u003c23%,\u003c25%,\u003c30%\",options\u003d\"header\",]"
       },
       {
-        "lineNumber": 296,
+        "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
         "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
-        "lineNumber": 297,
+        "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
         "content": "|Priority |As a ... |I want to ... |So that I can..."
       },
       {
-        "lineNumber": 298,
+        "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
         "content": "|`* * *` |new user |see usage instructions |refer to instructions when I forget how to use the App"
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "|`* * *` |user |add a new patient/donor/doctor |"
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "|`* * *` |user |delete a patient/donor/doctor |remove entries that I no longer need"
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "|`* * *` |user |find a patient/donor/doctor using certain keywords |locate details of persons without having to go through the entire list"
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "|`* * *` |user |find potential donors for a patient |help the patient find a donor as fast as possible"
       },
       {
         "lineNumber": 299,
@@ -4130,12 +4130,12 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * *` |user |add a new patient/donor/doctor |"
+        "content": "|`* * *` |user |process a patient and a donor |prepare them for the surgery process"
       },
       {
         "lineNumber": 301,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
         "content": ""
       },
@@ -4144,12 +4144,12 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * *` |user |delete a patient/donor/doctor |remove entries that I no longer need"
+        "content": "|`* * *` |user |see list of a particular patient\u0027s potential donors|know list of potential donors for a particular patient"
       },
       {
         "lineNumber": 303,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
         "content": ""
       },
@@ -4158,7 +4158,7 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * *` |user |find a patient/donor/doctor using certain keywords |locate details of persons without having to go through the entire list"
+        "content": "|`* * *` |user |see list of all patients/donors/doctors|"
       },
       {
         "lineNumber": 305,
@@ -4172,7 +4172,7 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * *` |user |find potential donors for a patient |help the patient find a donor as fast as possible"
+        "content": "|`* * *` |careless user |edit a patient/donor/doctor|"
       },
       {
         "lineNumber": 307,
@@ -4186,12 +4186,12 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * *` |user |process a patient and a donor |prepare them for the surgery process"
+        "content": "|`* * *` |user |mark a match as done|know that a particular match has undergone a surgery"
       },
       {
         "lineNumber": 309,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4200,12 +4200,12 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * *` |user |see list of a particular patient\u0027s potential donors|know list of potential donors for a particular patient"
+        "content": "|`* * *` |user |sort the potential donors by success rate/priority|match a patient with the best possible donor"
       },
       {
         "lineNumber": 311,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4214,7 +4214,7 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * *` |user |see list of all patients/donors/doctors|"
+        "content": "|`* * ` |user |add multiple data using external file|reduce the time to add in a data into the system"
       },
       {
         "lineNumber": 313,
@@ -4228,54 +4228,54 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * *` |careless user |edit a patient/donor/doctor|"
+        "content": "|`* * ` |user |find a patient/donor/doctor with incomplete keywords|reduce the time to type in the whole keyword"
       },
       {
         "lineNumber": 315,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 316,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
-        "content": "|`* * *` |user |mark a match as done|know that a particular match has undergone a surgery"
+        "content": ""
       },
       {
         "lineNumber": 317,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "_{More to be added}_"
       },
       {
         "lineNumber": 318,
         "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "|`* * *` |user |sort the potential donors by success rate/priority|match a patient with the best possible donor"
-      },
-      {
-        "lineNumber": 319,
-        "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 319,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
         "lineNumber": 320,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
-        "content": "|`* * ` |user |add multiple data using external file|reduce the time to add in a data into the system"
+        "content": "\u003d\u003d Use Cases"
       },
       {
         "lineNumber": 321,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4284,28 +4284,28 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "|`* * ` |user |find a patient/donor/doctor with incomplete keywords|reduce the time to type in the whole keyword"
+        "content": "(For all use cases below, the *System* is the `ORGANice` and the *Actor* is the `user`, unless specified otherwise)"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": ""
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[discrete]"
       },
       {
         "lineNumber": 325,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "_{More to be added}_"
+        "content": "\u003d\u003d\u003d Use case: Add patient/donor/doctor in a form mode"
       },
       {
         "lineNumber": 326,
@@ -4317,114 +4317,114 @@
       {
         "lineNumber": 327,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "[appendix]"
+        "content": "*MSS:*"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Use Cases"
+        "content": ""
       },
       {
         "lineNumber": 329,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "1.  User requests to add a patient/doctor/donor in a form mode."
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "(For all use cases below, the *System* is the `ORGANice` and the *Actor* is the `user`, unless specified otherwise)"
+        "content": "2.  ORGANice shows a form depending on the type of person specified by the User."
       },
       {
         "lineNumber": 331,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "3.  OGRANice prompts the User to type in the required attributes one at a time."
       },
       {
         "lineNumber": 332,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "[discrete]"
+        "content": "4.  User inputs in the attribute of the person prompted by ORGANice."
       },
       {
         "lineNumber": 333,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "\u003d\u003d\u003d Use case: Delete patient/donor/doctor"
-      },
-      {
-        "lineNumber": 334,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 335,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "*MSS*"
-      },
-      {
-        "lineNumber": 336,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 337,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "1.  User requests to list patients/donors/doctors"
-      },
-      {
-        "lineNumber": 338,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "2.  ORGANice shows a list of patients/donors/doctors"
-      },
-      {
-        "lineNumber": 339,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "3.  User requests to delete a specific patient/donor/doctor in the list"
-      },
-      {
-        "lineNumber": 340,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "4.  ORGANice deletes the patient/donor/doctor"
-      },
-      {
-        "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
         "content": "+"
       },
       {
-        "lineNumber": 342,
+        "lineNumber": 334,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "[none]Steps 3-4 are repeated until the user has inputted all the required attributes for a specific type of person."
+      },
+      {
+        "lineNumber": 335,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "5.  ORGANice prompts the User to confirm the attributes of the person."
+      },
+      {
+        "lineNumber": 336,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "6.  User confirms the attributes specified."
+      },
+      {
+        "lineNumber": 337,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "7.  ORGANice adds the person to the list."
+      },
+      {
+        "lineNumber": 338,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 339,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
         "content": "Use case ends."
+      },
+      {
+        "lineNumber": 341,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 342,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "*Extensions:*"
       },
       {
         "lineNumber": 343,
@@ -4436,44 +4436,44 @@
       {
         "lineNumber": 344,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "*Extensions*"
+        "content": "4a. The attribute that the User tries to input is not valid."
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 346,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "[none]"
+        "content": "* 4a1. ORGANice shows a warning to the User and specifies the pattern of a valid input."
       },
       {
         "lineNumber": 347,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "* 2a. The list is empty."
+        "content": "* 4a2. User inputs a new value for the attribute."
       },
       {
         "lineNumber": 348,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "+"
+        "content": "* Steps 4a1-4a2 are repeated until the input data is valid for the current attribute prompted by ORGANice."
       },
       {
         "lineNumber": 349,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "Use case ends."
+        "content": "* Use case resumes from step 3 if there are more attributes to fill in, if not it will resumes from step 5."
       },
       {
         "lineNumber": 350,
@@ -4487,42 +4487,42 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "* 3a. The given NRIC is invalid."
+        "content": "*a. At any time, User chooses to abort the form."
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": "[none]"
       },
       {
         "lineNumber": 353,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "[none]"
+        "content": "* *a1. ORGANice nullifies the form."
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "** 3a1. ORGANice shows an error message."
+        "content": "* Use case ends."
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 356,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "Use case resumes at step 2."
+        "content": "\u003d\u003d\u003d Use case: Match a patient and a donor"
       },
       {
         "lineNumber": 357,
@@ -4534,14 +4534,14 @@
       {
         "lineNumber": 358,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Use case: Match a patient and a donor"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 359,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4550,467 +4550,467 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "*MSS*"
+        "content": "1.  User requests to list potential donors for a particular patient"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "2.  ORGANice shows a list of potential donors for the patient"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "1.  User requests to list potential donors for a particular patient"
+        "content": "3.  User requests to process the patient with a specified donor"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "2.  ORGANice shows a list of potential donors for the patient"
+        "content": "4.  ORGANice matches the patient and the specified donor"
       },
       {
         "lineNumber": 364,
         "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "3.  User requests to process the patient with a specified donor"
-      },
-      {
-        "lineNumber": 365,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "4.  ORGANice matches the patient and the specified donor"
-      },
-      {
-        "lineNumber": 366,
-        "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": "+"
       },
       {
-        "lineNumber": 367,
+        "lineNumber": 365,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": "Use case ends."
       },
       {
+        "lineNumber": 366,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 367,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "*Extensions*"
+      },
+      {
         "lineNumber": 368,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 369,
         "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": "*Extensions*"
-      },
-      {
-        "lineNumber": 370,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 371,
-        "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": "[none]"
       },
       {
-        "lineNumber": 372,
+        "lineNumber": 370,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": "* 2a. The list is empty."
       },
       {
-        "lineNumber": 373,
+        "lineNumber": 371,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": "+"
       },
       {
-        "lineNumber": 374,
+        "lineNumber": 372,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
         "content": "Use case ends."
       },
       {
+        "lineNumber": 373,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 374,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "\u003d\u003d\u003d Use case: List all patients/donors/doctors"
+      },
+      {
         "lineNumber": 375,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "Yen-Peng"
         },
         "content": ""
       },
       {
         "lineNumber": 376,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "_{More to be added}_"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 377,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
         "content": ""
       },
       {
         "lineNumber": 378,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "[appendix]"
+        "content": "1.  User requests to list patients/donors/doctors."
       },
       {
         "lineNumber": 379,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "\u003d\u003d Non Functional Requirements"
+        "content": "2.  ORGANice shows the list of patients/donors/doctors."
       },
       {
         "lineNumber": 380,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 381,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has Java `11` or above installed."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 382,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ".  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage."
+        "content": ""
       },
       {
         "lineNumber": 383,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 384,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "Yen-Peng"
         },
-        "content": ".  The system should be usable by a novice."
+        "content": ""
       },
       {
         "lineNumber": 385,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "Yen-Peng"
         },
-        "content": ".  The source code should be \u003c\u003copen-source,open source\u003e\u003e."
+        "content": "[none]"
       },
       {
         "lineNumber": 386,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "Yen-Peng"
         },
-        "content": ".  The user interface should be intuitive enough for users who are not IT-savvy."
+        "content": "* 1a. ORGANice detects an invalid parameter."
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": "_{More to be added}_"
+        "content": "[none]"
       },
       {
         "lineNumber": 389,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "** 1a1. ORGANice requests for correct parameter."
       },
       {
         "lineNumber": 390,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "[appendix]"
+        "content": "+"
       },
       {
         "lineNumber": 391,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "\u003d\u003d Glossary"
+        "content": "** 1a2. User enters correct parameter."
       },
       {
         "lineNumber": 392,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 393,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "[[mainstream-os]] Mainstream OS::"
+        "content": "Steps 1a1-1a2 are repeated until the data entered are correct."
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": "Windows, Linux, Unix, OS-X"
+        "content": "+"
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Use case resumes at step 2."
       },
       {
         "lineNumber": 396,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
-        "content": "[[open-source]] Open Source::"
+        "content": ""
       },
       {
         "lineNumber": 397,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "Yen-Peng"
         },
-        "content": "Software for which the original source code is made freely available and may be redistributed and modified."
+        "content": "\u003d\u003d\u003d Use case: Sort"
       },
       {
         "lineNumber": 398,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
         "content": ""
       },
       {
         "lineNumber": 399,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "[appendix]"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 400,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "\u003d\u003d Instructions for Manual Testing"
+        "content": ""
       },
       {
         "lineNumber": 401,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "1.  User requests to sort the list of donors of a particular patient."
       },
       {
         "lineNumber": 402,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "Given below are instructions to test the app manually."
+        "content": "2.  ORGANice sorts the list of donors according to the parameters."
       },
       {
         "lineNumber": 403,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 404,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "[NOTE]"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 405,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+        "content": ""
       },
       {
         "lineNumber": 406,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 407,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "\u003d\u003d\u003d Launch and Shutdown"
+        "content": ""
       },
       {
         "lineNumber": 408,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 409,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ". Initial launch"
+        "content": "* 1a. ORGANice detects invalid parameter(s)."
       },
       {
         "lineNumber": 410,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 411,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ".. Download the jar file and copy into an empty folder"
+        "content": "[none]"
       },
       {
         "lineNumber": 412,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ".. Double-click the jar file +"
+        "content": "** 1a1. ORGANice prompts for valid parameter(s)."
       },
       {
         "lineNumber": 413,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+        "content": "+"
       },
       {
         "lineNumber": 414,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "** 1a2. User enters correct parameter(s)."
       },
       {
         "lineNumber": 415,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ". Saving window preferences"
+        "content": "+"
       },
       {
         "lineNumber": 416,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "Steps 1a1-1a2 are repeated until the data entered are correct."
       },
       {
         "lineNumber": 417,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
+        "content": "+"
       },
       {
         "lineNumber": 418,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ".. Re-launch the app by double-clicking the jar file. +"
+        "content": "Use case resumes at step 2."
       },
       {
         "lineNumber": 419,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": "   Expected: The most recent window size and location is retained."
+        "content": "+"
       },
       {
         "lineNumber": 420,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": ""
+        "content": "Given below is the Sequence Diagram for the interactions with the `Logic` component for the `execute(sort/rate)`"
       },
       {
         "lineNumber": 421,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": "_{ more test cases ... }_"
+        "content": "+"
       },
       {
         "lineNumber": 422,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": ""
+        "content": ".Structure of the Logic Component when executing `sort` command"
       },
       {
         "lineNumber": 423,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": "\u003d\u003d\u003d Deleting a person"
+        "content": "+"
       },
       {
         "lineNumber": 424,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": ""
+        "content": "image::SortSequenceDiagram.png[width\u003d790]"
       },
       {
         "lineNumber": 425,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": ". Deleting a person while all persons are listed"
+        "content": "+"
       },
       {
         "lineNumber": 426,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
         "content": ""
       },
@@ -5019,77 +5019,77 @@
         "author": {
           "gitId": "-"
         },
-        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+        "content": "_{More to be added}_"
       },
       {
         "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Test case: `delete 1` +"
+        "content": ""
       },
       {
         "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+        "content": "[appendix]"
       },
       {
         "lineNumber": 430,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Test case: `delete 0` +"
+        "content": "\u003d\u003d Non Functional Requirements"
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+        "content": ""
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +"
+        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has Java `11` or above installed."
       },
       {
         "lineNumber": 433,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: Similar to previous."
+        "content": ".  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage."
       },
       {
         "lineNumber": 434,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
       },
       {
         "lineNumber": 435,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "_{ more test cases ... }_"
+        "content": ".  The system should be usable by a novice."
       },
       {
         "lineNumber": 436,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": ".  The source code should be \u003c\u003copen-source,open source\u003e\u003e."
       },
       {
         "lineNumber": 437,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "\u003d\u003d\u003d Saving data"
+        "content": ".  The user interface should be intuitive enough for users who are not IT-savvy."
       },
       {
         "lineNumber": 438,
@@ -5103,7 +5103,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": ". Dealing with missing/corrupted data files"
+        "content": "_{More to be added}_"
       },
       {
         "lineNumber": 440,
@@ -5117,17 +5117,374 @@
         "author": {
           "gitId": "-"
         },
-        "content": ".. _{explain how to simulate a missing/corrupted file and the expected behavior}_"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Glossary"
       },
       {
         "lineNumber": 443,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 444,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[[mainstream-os]] Mainstream OS::"
+      },
+      {
+        "lineNumber": 445,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Windows, Linux, Unix, OS-X"
+      },
+      {
+        "lineNumber": 446,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 447,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "[[open-source]] Open Source::"
+      },
+      {
+        "lineNumber": 448,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "Software for which the original source code is made freely available and may be redistributed and modified."
+      },
+      {
+        "lineNumber": 449,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 450,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
+        "lineNumber": 451,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 452,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 453,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Given below are instructions to test the app manually."
+      },
+      {
+        "lineNumber": 454,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 455,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[NOTE]"
+      },
+      {
+        "lineNumber": 456,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+      },
+      {
+        "lineNumber": 457,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 458,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Launch and Shutdown"
+      },
+      {
+        "lineNumber": 459,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 460,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Initial launch"
+      },
+      {
+        "lineNumber": 461,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 462,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Download the jar file and copy into an empty folder"
+      },
+      {
+        "lineNumber": 463,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Double-click the jar file +"
+      },
+      {
+        "lineNumber": 464,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+      },
+      {
+        "lineNumber": 465,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 466,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Saving window preferences"
+      },
+      {
+        "lineNumber": 467,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 468,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
+      },
+      {
+        "lineNumber": 469,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Re-launch the app by double-clicking the jar file. +"
+      },
+      {
+        "lineNumber": 470,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: The most recent window size and location is retained."
+      },
+      {
+        "lineNumber": 471,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 472,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{ more test cases ... }_"
+      },
+      {
+        "lineNumber": 473,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 474,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Deleting a person"
+      },
+      {
+        "lineNumber": 475,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 476,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Deleting a person while all persons are listed"
+      },
+      {
+        "lineNumber": 477,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 478,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+      },
+      {
+        "lineNumber": 479,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Test case: `delete 1` +"
+      },
+      {
+        "lineNumber": 480,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+      },
+      {
+        "lineNumber": 481,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Test case: `delete 0` +"
+      },
+      {
+        "lineNumber": 482,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+      },
+      {
+        "lineNumber": 483,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +"
+      },
+      {
+        "lineNumber": 484,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: Similar to previous."
+      },
+      {
+        "lineNumber": 485,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 486,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{ more test cases ... }_"
+      },
+      {
+        "lineNumber": 487,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 488,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Saving data"
+      },
+      {
+        "lineNumber": 489,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 490,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Dealing with missing/corrupted data files"
+      },
+      {
+        "lineNumber": 491,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 492,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. _{explain how to simulate a missing/corrupted file and the expected behavior}_"
+      },
+      {
+        "lineNumber": 493,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 494,
         "author": {
           "gitId": "-"
         },
@@ -5135,9 +5492,12 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 55,
+      "WilliamRyank": 77,
+      "C-likethis123": 21,
       "TheRealRavager": 1,
-      "-": 387
+      "-": 347,
+      "Yen-Peng": 41,
+      "SimNee": 7
     }
   },
   {
@@ -7330,7 +7690,7 @@
       {
         "lineNumber": 174,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
         "content": ""
       },
@@ -7386,44 +7746,44 @@
       {
         "lineNumber": 182,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "ORGANice will prompt the user to type in each attribute, one by one."
+        "content": "When the user type in the command above, a form will be displayed. For example, if a user wants to add a patient,"
       },
       {
         "lineNumber": 183,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "type `add t/patient` to the command box. The form will be as below:"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "In the display box, there will be a form that reflects the attributes typed by the user."
+        "content": ""
       },
       {
         "lineNumber": 185,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "image::form.png[width\u003d\"790\"]"
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "After the inputs are added, ORGANice will display a template that shows what the user data will look like"
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "if the changes are finalised. Press the Enter key to confirm the changes."
+        "content": "ORGANice will prompt the user to type in each attribute, one by one until all the fields are filled."
       },
       {
         "lineNumber": 188,
@@ -7435,28 +7795,28 @@
       {
         "lineNumber": 189,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "For example, when a user wants to add a patient, the display box will prompt the user to enter the patient\u0027s name."
       },
       {
         "lineNumber": 190,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "For the user to add a patient that is named \"John Doe\", type `John Doe` and then press enter."
       },
       {
         "lineNumber": 191,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "\u003d\u003d\u003d Listing persons : `list`"
+        "content": "After entering the name, the patient\u0027s name will be displayed in the form, as shown below."
       },
       {
         "lineNumber": 192,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -7465,33 +7825,33 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "Shows a list of all doctors, donors, or patients in ORGANice, depending on the type of person specified. Shows all"
+        "content": "image::nameField.png[width\u003d\"790\"]"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "persons in ORGANice if no type is specified"
+        "content": ""
       },
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "Inputs for each attribute will be checked, if it is a valid input then the user input will automatically reflected"
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "Format: `list`"
+        "content": "on the form, if it is not valid, ORGANice will show a warning to the user."
       },
       {
         "lineNumber": 197,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
         "content": ""
       },
@@ -7500,26 +7860,26 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "Optional parameters: Type parameter - `t/TYPE`"
+        "content": "The following screenshot shows the warning that ORGANice will give to the user if the input is not valid:"
       },
       {
         "lineNumber": 199,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
         "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "Examples:"
+        "content": "image::wrongInput.png[width\u003d\"790\"]"
       },
       {
         "lineNumber": 201,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
         "content": ""
       },
@@ -7528,68 +7888,68 @@
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "* `list`"
+        "content": "After all of the attributes have been specified, the user can type `/done` to add the person to the ORGANice list of persons"
       },
       {
         "lineNumber": 203,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "* `list t/patient`"
+        "content": "or `/abort` if the user decided not to add the person into the list."
       },
       {
         "lineNumber": 204,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
         "content": ""
       },
       {
         "lineNumber": 205,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": "\u003d\u003d\u003d Editing a person : `edit`"
+        "content": "image::allField.png[width\u003d\"790\"]"
       },
       {
         "lineNumber": 206,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
         "content": ""
       },
       {
         "lineNumber": 207,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "Edits the information of the person with the specified NRIC to the attributes specified."
+        "content": "When the user typed `/done` the UI will changed back to it\u0027s original state and shows a success message suggesting that"
       },
       {
         "lineNumber": 208,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "It is up to the user to specify which attributes should be updated. +"
+        "content": "the user has successfully added a new person into the list."
       },
       {
         "lineNumber": 209,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
         "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "Format: `edit ic/**NRIC**`"
+        "content": "image::addSuccess.png[width\u003d\"790\"]"
       },
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -7598,7 +7958,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Optional parameters: any parameter from the \u003c\u003cList of Attributes\u003e\u003e"
+        "content": "\u003d\u003d\u003d Listing persons : `list`"
       },
       {
         "lineNumber": 213,
@@ -7610,133 +7970,133 @@
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "WilliamRyank"
         },
-        "content": "After editing, ORGANice will display a form to show what information will be stored about"
+        "content": "Shows a list of all doctors, donors, or patients in ORGANice, depending on the type of person specified. Shows all"
       },
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "Yen-Peng"
         },
-        "content": "the person after confirming the changes. The user is free to edit the fields before"
+        "content": "persons in ORGANice if no type is specified."
       },
       {
         "lineNumber": 216,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "changes are confirmed."
+        "content": ""
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Format: `list`"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 219,
         "author": {
-          "gitId": "-"
+          "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "Optional parameters: Type parameter - `t/TYPE`"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `edit ic/S8732457G p/91234567` +"
+        "content": ""
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Edits the phone number of the specified patient to be `91234567`."
+        "content": "Examples:"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `edit ic/S8732457G n/Betsy Crower b/A` +"
+        "content": ""
       },
       {
         "lineNumber": 223,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "Yen-Peng"
         },
-        "content": "Edits the name and blood type of the specified donor to be `Betsy Crower` and `A` respectively."
+        "content": "* `list` +"
       },
       {
         "lineNumber": 224,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "Lists all patients, doctors and donors in the records."
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "-"
+          "gitId": "Yen-Peng"
         },
-        "content": "\u003d\u003d\u003d Locating persons by name: `find`"
+        "content": "* `list t/patient` +"
       },
       {
         "lineNumber": 226,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Lists all patients only."
+      },
+      {
+        "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 227,
-        "author": {
-          "gitId": "C-likethis123"
-        },
-        "content": "Finds persons whose attributes contain any of the given keywords."
-      },
-      {
         "lineNumber": 228,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "A list of patient/donor/doctor\u0027s information whose attributes partially match the keywords"
+        "content": "\u003d\u003d\u003d Editing a person : `edit`"
       },
       {
         "lineNumber": 229,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "will be displayed. +"
+        "content": ""
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Edits the information of the person with the specified NRIC to the attributes specified."
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Format: `find`"
+        "content": "It is up to the user to specify which attributes should be updated. +"
       },
       {
         "lineNumber": 232,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -7745,7 +8105,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Optional parameters: any parameter from \u003c\u003cList of Attributes\u003e\u003e"
+        "content": "Format: `edit ic/**NRIC**`"
       },
       {
         "lineNumber": 234,
@@ -7757,100 +8117,100 @@
       {
         "lineNumber": 235,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Optional parameters: any parameter from the \u003c\u003cList of Attributes\u003e\u003e"
       },
       {
         "lineNumber": 236,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 237,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "* The search is case insensitive. e.g `hans` will match `Hans`"
+        "content": "After editing, ORGANice will display a form to show what information will be stored about"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* Persons matching at least one attribute will be returned. +"
+        "content": "the person after confirming the changes. The user is free to edit the fields before"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "e.g. `a/28 n/Hans Bo` will return people whose attributes are `n/Hans Gruber`, `n/Bo Yang`,"
+        "content": "changes are confirmed."
       },
       {
         "lineNumber": 240,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "`a/28 n/Jane`"
+        "content": ""
       },
       {
         "lineNumber": 241,
-        "author": {
-          "gitId": "C-likethis123"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 242,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "****"
-      },
-      {
-        "lineNumber": 243,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
         "content": "Examples:"
       },
       {
-        "lineNumber": 245,
+        "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* `edit ic/S8732457G p/91234567` +"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "Edits the phone number of the specified patient to be `91234567`."
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* `edit ic/S8732457G n/Betsy Crower b/A` +"
+      },
+      {
         "lineNumber": 246,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `find t/patient n/Lim` +"
+        "content": "Edits the name and blood type of the specified donor to be `Betsy Crower` and `A` respectively."
       },
       {
         "lineNumber": 247,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "Returns any patient whose name contains \u0027Lim\u0027"
+        "content": ""
       },
       {
         "lineNumber": 248,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Locating persons by name: `find`"
       },
       {
         "lineNumber": 249,
@@ -7862,58 +8222,58 @@
       {
         "lineNumber": 250,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "// tag::delete[]"
+        "content": "Finds persons whose attributes contain any of the given keywords."
       },
       {
         "lineNumber": 251,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d Deleting a person : `delete`"
+        "content": "A list of patient/donor/doctor\u0027s information whose attributes partially match the keywords"
       },
       {
         "lineNumber": 252,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "will be displayed. +"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Deletes the specified person from ORGANice."
+        "content": ""
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Match history of a deleted patient or donor with other patients/donors will be removed. +"
+        "content": "Format: `find`"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Format: `delete ic/**NRIC**`"
+        "content": ""
       },
       {
         "lineNumber": 256,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Optional parameters: any parameter from \u003c\u003cList of Attributes\u003e\u003e"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Example:"
+        "content": ""
       },
       {
         "lineNumber": 258,
@@ -7925,161 +8285,161 @@
       {
         "lineNumber": 259,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "`delete ic/S98654322D` +"
+        "content": "****"
       },
       {
         "lineNumber": 260,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* The search is case insensitive. e.g `hans` will match `Hans`"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Deletes a person with the NRIC S98654322D in ORGANice."
+        "content": "* Persons matching at least one attribute will be returned. +"
       },
       {
         "lineNumber": 262,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "e.g. `a/28 n/Hans Bo` will return people whose attributes are `n/Hans Gruber`, `n/Bo Yang`,"
       },
       {
         "lineNumber": 263,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "`a/28 n/Jane`"
       },
       {
         "lineNumber": 264,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "// end::delete[]"
+        "content": ""
       },
       {
         "lineNumber": 265,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Detecting matches: `match`"
+        "content": "****"
       },
       {
         "lineNumber": 266,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 267,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "Currently, ORGANice only supports kidney matching. Refer to \u003c\u003cFAQ\u003e\u003e to know the"
+        "content": "Examples:"
       },
       {
         "lineNumber": 268,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "procedure for kidney matching."
+        "content": ""
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "* `find t/patient n/Lim` +"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "This command displays a list of patient-donor pairs that passes both the blood type and tissue"
+        "content": "Returns any patient whose name contains \u0027Lim\u0027"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "typing tests. +"
+        "content": ""
       },
       {
         "lineNumber": 272,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 273,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "-"
         },
-        "content": "To get a list of patients and their number of matches, the format is: `match ic/all`"
+        "content": "// tag::delete[]"
       },
       {
         "lineNumber": 274,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Deleting a person : `delete`"
       },
       {
         "lineNumber": 275,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "To get a list of potential matches a patient has with a donor, the format is: `match ic/**NRIC**`"
+        "content": ""
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Deletes the specified person from ORGANice."
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Each match is accompanied by a success rate number,"
+        "content": "Match history of a deleted patient or donor with other patients/donors will be removed. +"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "which indicates the degree of compatibility"
+        "content": "Format: `delete ic/**NRIC**`"
       },
       {
         "lineNumber": 279,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "between the patient and donor. +"
+        "content": ""
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "This is so that the doctors can schedule for cross matching between the patient-donor pair."
+        "content": "Example:"
       },
       {
         "lineNumber": 281,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -8088,7 +8448,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Matches can be sorted. Refer to \u003c\u003cSorting matches\u003e\u003e for more information."
+        "content": "`delete ic/S98654322D` +"
       },
       {
         "lineNumber": 283,
@@ -8102,35 +8462,35 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d Sorting matches"
+        "content": "Deletes a person with the NRIC S98654322D in ORGANice."
       },
       {
         "lineNumber": 285,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "Users can specify how they want the patient-donor pairs to be sorted. +"
+        "content": ""
       },
       {
         "lineNumber": 286,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "Sorting is done by passing in optional parameters to the `match` command. +"
+        "content": ""
       },
       {
         "lineNumber": 287,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "// end::delete[]"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Matches can be sorted according to three categories:"
+        "content": "\u003d\u003d\u003d Detecting matches: `match`"
       },
       {
         "lineNumber": 289,
@@ -8144,105 +8504,105 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "1. Success rate of match"
+        "content": "Currently, ORGANice only supports kidney matching. Refer to \u003c\u003cFAQ\u003e\u003e for a better understanding of the"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "2. Priority of patient"
+        "content": "procedure for kidney matching."
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "3. Date of expiry of donors\u0027 organs"
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "This command displays a list of patient-donor pairs that passes both the blood type and tissue"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "To return a sorted list of patient-donor pairs, include the `sort/` flag in the command. +"
+        "content": "typing tests. +"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Format:"
+        "content": ""
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "`match ic/**NRIC** sort/[rate/priority/expiry]`"
+        "content": "There are two types of match commands. The following list explains each type of match command and describes the result"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "of executing each type of command:"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Typing this command causes the application to display a list of matches sorted"
+        "content": ""
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "according to the specified criteria. More than one sorting criteria can be included."
+        "content": "* To get a list of patients and their number of matches, the format is: `match ic/all`"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "* To get a list of potential matches a patient has with a donor, the format is: `match ic/**NRIC**`"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Each match is accompanied by a success rate number,"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `match ic/S7778983D sort/rate`"
+        "content": "which indicates the degree of compatibility"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `match ic/S7778983D sort/rate, priority, expiry`"
+        "content": "between the patient and donor. +"
       },
       {
         "lineNumber": 305,
@@ -8256,91 +8616,91 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Matching a specific patient"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d Processing potential matches: `processing`"
+        "content": "For example, a user wants to match a specific patient called \"John Doe\" and his NRIC is \"S1234568R\"."
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "//TODO: change to shorter term that captures the meaning"
+        "content": ""
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": ". Type `match ic/S1234568R` in the command box and press Enter."
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "After finding a list of matches, the hospital is free to schedule a cross-matching test between"
+        "content": ""
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "a specific donor and patient. +"
+        "content": ". The list of donors and their success rate are displayed as shown in the screenshot below."
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "After typing this command, the following changes occur:"
+        "content": "image::MatchingDonorsDisplayed.png[width\u003d790]"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* the patient and donor statuses will be set to \u0027under cross matching\u0027"
+        "content": ""
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* the patient and donor will not be included in matching with other donor and patients until a status update."
+        "content": ""
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Matching all patients to all donors"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Format: `processing icP/**PATIENT NRIC** icD/**DONOR NRIC**` +"
+        "content": "For example, a user wants to find how many donors matches each patient in ORGANice."
       },
       {
         "lineNumber": 319,
@@ -8354,91 +8714,91 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Example:"
+        "content": ". Type `match ic/all` in the command box and press Enter."
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "`processing icP/S6764235G icD/S1234567D`"
+        "content": ""
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": ". The list of patients and the number of matching donors each patient have are displayed in the screenshot below."
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d Mark as done : `done`"
+        "content": "image::Patient Matches Displayed.png[width\u003d790]"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "After the hospital has the results of the cross matching test, they can"
+        "content": ""
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "update the results in ORGANice. Cross matching tests have two possible results: pass or fail."
+        "content": ""
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Matches can be sorted. Refer to \u003c\u003cSorting matches\u003e\u003e for more information."
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Format: `done icP/**NRIC OF PATIENT** icD/**NRIC OF DONOR** res/[pass/fail]`"
+        "content": ""
       },
       {
         "lineNumber": 330,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "Yen-Peng"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Sorting matches: `sort`"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "`icP/**NRIC OF PATIENT**` refers to the NRIC of the patient, while `icD/**NRIC OF DONOR**`"
+        "content": "Users can specify how they want the patient-donor pairs to be sorted. +"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "refers to the NRIC of the donor."
+        "content": "Sorting is done by passing in optional parameters to the `match` command. +"
       },
       {
         "lineNumber": 333,
@@ -8452,7 +8812,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "The following section outlines what happens based on the two results: +"
+        "content": "Matches can be sorted according to three categories:"
       },
       {
         "lineNumber": 335,
@@ -8466,49 +8826,49 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "If the result of the cross matching is a \u0027pass\u0027:"
+        "content": "1. Success rate of match"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "2. Priority of patient"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ". It is up to the hospital staff to schedule an organ transplant surgery"
+        "content": "3. Date of expiry of donors\u0027 organs"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "between the patient and donor."
+        "content": ""
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ". Mark the patient and donor as \u0027done\u0027, based on the command format."
+        "content": "To return a sorted list of patient-donor pairs, include the `sort/` flag in the command. +"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ". After running the command, the system removes the patient and donor from the matching pool."
+        "content": "Format:"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "The patient and donor statuses will be marked to \u0027done\u0027."
+        "content": "`match ic/**NRIC** sort/[rate/priority/expiry]`"
       },
       {
         "lineNumber": 343,
@@ -8522,14 +8882,14 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Typing this command causes the application to display a list of matches sorted"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "If the result of the cross matching is a \u0027fail\u0027: +"
+        "content": "according to the specified criteria. More than one sorting criteria can be included."
       },
       {
         "lineNumber": 346,
@@ -8543,7 +8903,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ". Run the command based on the given format"
+        "content": "Examples:"
       },
       {
         "lineNumber": 348,
@@ -8557,14 +8917,14 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ". The patient and donor will be added back to the matching pool for"
+        "content": "* `match ic/S7778983D sort/rate`"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "match detection with other patients and donors."
+        "content": "* `match ic/S7778983D sort/rate, priority, expiry`"
       },
       {
         "lineNumber": 351,
@@ -8578,140 +8938,140 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ". The patient-donor pair will not be considered a potential match in future match detection."
+        "content": ""
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Processing potential matches: `processing`"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "//TODO: change to shorter term that captures the meaning"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Example:"
+        "content": ""
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "After finding a list of matches, the hospital is free to schedule a cross-matching test between"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `done icP/S7896432A icD/S4578902G res/pass`"
+        "content": "a specific donor and patient. +"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `done icP/S7896432A icD/S4578902G res/fail`"
+        "content": ""
       },
       {
         "lineNumber": 359,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "After typing this command, the following changes occur:"
       },
       {
         "lineNumber": 360,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
         "content": ""
       },
       {
         "lineNumber": 361,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": "\u003d\u003d\u003d Exiting the program : `exit`"
+        "content": "* A list will be generated to show the necessary tasks the hospital need to do for the respective donor and patient."
       },
       {
         "lineNumber": 362,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": ""
+        "content": "* The list will be unique to the specific donor and patient pair"
       },
       {
         "lineNumber": 363,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": "Exits the program. +"
+        "content": "* The list can be updated using `done** TASK NUMBER**` +"
       },
       {
         "lineNumber": 364,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "Format: `exit`"
+        "content": ""
       },
       {
         "lineNumber": 365,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": ""
+        "content": "The list will be saved after the command `exit` is executed. The page will then stop displaying the list."
       },
       {
         "lineNumber": 366,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": "\u003d\u003d\u003d Saving the data"
+        "content": ""
       },
       {
         "lineNumber": 367,
         "author": {
-          "gitId": "-"
+          "gitId": "SimNee"
         },
-        "content": ""
+        "content": "Format: `processing ic/**PATIENT NRIC** ic/**DONOR NRIC**` +"
       },
       {
         "lineNumber": 368,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "SimNee"
         },
-        "content": "Data is saved in the hard disk automatically after any command that changes the data. +"
+        "content": "The order of the NRICs does not matter."
       },
       {
         "lineNumber": 369,
         "author": {
-          "gitId": "-"
-        },
-        "content": "There is no need to save manually."
-      },
-      {
-        "lineNumber": 370,
-        "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
         "content": ""
       },
       {
-        "lineNumber": 371,
+        "lineNumber": 370,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d Detecting duplicates"
+        "content": "Example:"
+      },
+      {
+        "lineNumber": 371,
+        "author": {
+          "gitId": "SimNee"
+        },
+        "content": "`processing ic/S6764235G ic/S1234567D`"
       },
       {
         "lineNumber": 372,
@@ -8725,14 +9085,14 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "When adding a person, ORGANice will detect if the input is a duplicate of another person in the list."
+        "content": ""
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "A duplicate is defined as: Two persons of the same type who have the same NRIC."
+        "content": "\u003d\u003d\u003d Mark as done : `done`"
       },
       {
         "lineNumber": 375,
@@ -8746,14 +9106,14 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "When a duplicate is detected, ORGANice will indicate that there is such a person in ORGANice so the inputs"
+        "content": "After the hospital has the results of the cross matching test, they can"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "should be changed."
+        "content": "update the results in ORGANice. Cross matching tests have two possible results: pass or fail."
       },
       {
         "lineNumber": 378,
@@ -8767,7 +9127,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d Future improvements"
+        "content": "Format: `done icP/**NRIC OF PATIENT** icD/**NRIC OF DONOR** res/[pass/fail]`"
       },
       {
         "lineNumber": 380,
@@ -8781,14 +9141,14 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "This section describes features that can be added or improved in version 2.0."
+        "content": "`icP/**NRIC OF PATIENT**` refers to the NRIC of the patient, while `icD/**NRIC OF DONOR**`"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "It is further divided into two sub-sections: **Proposed New Features** and **Proposed Extensions**."
+        "content": "refers to the NRIC of the donor."
       },
       {
         "lineNumber": 383,
@@ -8802,7 +9162,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d Proposed New Features"
+        "content": "The following section outlines what happens based on the two results: +"
       },
       {
         "lineNumber": 385,
@@ -8816,7 +9176,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "This section describes features that can be added to ORGANice in version 2.0."
+        "content": "If the result of the cross matching is a \u0027pass\u0027:"
       },
       {
         "lineNumber": 387,
@@ -8830,35 +9190,35 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d\u003d Filtering persons: `filter`"
+        "content": ". It is up to the hospital staff to schedule an organ transplant surgery"
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "between the patient and donor."
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Filters a patient/doctor/donor by specific attributes."
+        "content": ". Mark the patient and donor as \u0027done\u0027, based on the command format."
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": ". After running the command, the system removes the patient and donor from the matching pool."
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Format: `filter [patient/donor/doctor] [options]`"
+        "content": "The patient and donor statuses will be marked to \u0027done\u0027."
       },
       {
         "lineNumber": 393,
@@ -8872,70 +9232,70 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Returns a list of patients/doctors/doctors that has the specified attributes."
+        "content": ""
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "If the result of the cross matching is a \u0027fail\u0027: +"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": ". Run the command based on the given format"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `filter t/patient g/M`"
+        "content": ""
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* `filter t/donor g/M n/Chua`"
+        "content": ". The patient and donor will be added back to the matching pool for"
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "match detection with other patients and donors."
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d Proposed Extensions"
+        "content": ""
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": ". The patient-donor pair will not be considered a potential match in future match detection."
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "This section describes features that can be improved on and its proposed improvements."
+        "content": ""
       },
       {
         "lineNumber": 404,
@@ -8949,7 +9309,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d\u003d Mass addition of data"
+        "content": "Example:"
       },
       {
         "lineNumber": 406,
@@ -8963,96 +9323,96 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Add more than one patient/doctor/donor from data in a specified text file."
+        "content": "* `done icP/S7896432A icD/S4578902G res/pass`"
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "* `done icP/S7896432A icD/S4578902G res/fail`"
       },
       {
         "lineNumber": 409,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "A duplicate is defined as: two persons of the same type having the same ID."
+        "content": ""
       },
       {
         "lineNumber": 410,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "When a duplicate is detected, it prompts the user to change the data in the text file."
+        "content": ""
       },
       {
         "lineNumber": 411,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Exiting the program : `exit`"
       },
       {
         "lineNumber": 412,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d Supporting more types of transplants"
+        "content": ""
       },
       {
         "lineNumber": 413,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Exits the program. +"
       },
       {
         "lineNumber": 414,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "Currently ORGANice has patient-donor matching for kidneys only. Future versions can include matching for +"
+        "content": "Format: `exit`"
       },
       {
         "lineNumber": 415,
         "author": {
-          "gitId": "C-likethis123"
-        },
-        "content": "more types of organs."
-      },
-      {
-        "lineNumber": 416,
-        "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 416,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Saving the data"
+      },
+      {
         "lineNumber": 417,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d Processing a match: `process`"
+        "content": ""
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Data is saved in the hard disk automatically after any command that changes the data. +"
       },
       {
         "lineNumber": 419,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "Emails the doctor in charge of a patient when an organ match for the patient is found."
+        "content": "There is no need to save manually."
       },
       {
         "lineNumber": 420,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -9061,7 +9421,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Format: `process **NRIC**`"
+        "content": "\u003d\u003d\u003d Detecting duplicates"
       },
       {
         "lineNumber": 422,
@@ -9075,70 +9435,70 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d\u003d\u003d Advanced find"
+        "content": "When adding a person, ORGANice will detect if the input is a duplicate of another person in the list."
       },
       {
         "lineNumber": 424,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "A duplicate is defined as: Two persons of the same type who have the same NRIC."
       },
       {
         "lineNumber": 425,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "Finding in v2.0 is more advanced with the implementation of fuzzy search and partial matching of keywords."
+        "content": ""
       },
       {
         "lineNumber": 426,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "When a duplicate is detected, ORGANice will indicate that there is such a person in ORGANice so the inputs"
       },
       {
         "lineNumber": 427,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "should be changed."
       },
       {
         "lineNumber": 428,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d FAQ"
+        "content": ""
       },
       {
         "lineNumber": 429,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "\u003d\u003d Future improvements"
       },
       {
         "lineNumber": 430,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "*Q*: How do I transfer my data to another computer? +"
+        "content": ""
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "*A*: Install the app in the other computer and overwrite the empty data file it creates with the file +"
+        "content": "This section describes features that can be added or improved in version 2.0."
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "that contains the data of your previous ORGANice folder."
+        "content": "It is further divided into two sub-sections: **Proposed New Features** and **Proposed Extensions**."
       },
       {
         "lineNumber": 433,
@@ -9152,77 +9512,77 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "*Q*: What are the steps to find a patient-donor kidney match? +"
+        "content": "\u003d\u003d\u003d Proposed New Features"
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "*A*: There are three steps to finding a patient-donor match:"
+        "content": ""
       },
       {
         "lineNumber": 436,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "This section describes features that can be added to ORGANice in version 2.0."
       },
       {
         "lineNumber": 437,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "1. Do a blood test to determine donor and patient blood type."
+        "content": ""
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "2. Do a tissue typing test to determine the HLA antigens of the patient and the donor."
+        "content": "\u003d\u003d\u003d\u003d Filtering persons: `filter`"
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "3. Do a cross match, which is a trial transfusion."
+        "content": ""
       },
       {
         "lineNumber": 440,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Filters a patient/doctor/donor by specific attributes."
       },
       {
         "lineNumber": 441,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d Command Summary"
+        "content": ""
       },
       {
         "lineNumber": 442,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Format: `filter [patient/donor/doctor] [options]`"
       },
       {
         "lineNumber": 443,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "This section summarises the commands to use this application. The following list"
+        "content": ""
       },
       {
         "lineNumber": 444,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "contains the summary of the commands."
+        "content": "Returns a list of patients/doctors/doctors that has the specified attributes."
       },
       {
         "lineNumber": 445,
@@ -9236,140 +9596,140 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Add (Normal Mode):*"
+        "content": "Examples:"
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "** Add patient: `add t/patient n/NAME o/ORGAN b/BLOOD TYPE tt/TISSUE TYPE p/PHONE pr/PRIORITY ic/NRIC d/DOCTOR a/AGE`"
+        "content": ""
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "** Add donor: `add t/donor n/**NAME** o/**ORGAN** b/**BLOOD TYPE** tt/**TISSUE TYPE**"
+        "content": "* `filter t/patient g/M`"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "p/**PHONE** ic/**NRIC** exp/**EXPIRY** a/**AGE**`"
+        "content": "* `filter t/donor g/M n/Chua`"
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "** Add doctor: `add t/doctor n/**NAME** ic/**NRIC** p/**PHONE*`"
+        "content": ""
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Proposed Extensions"
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Add (System Prompt Mode)*: `add t/**TYPE**`"
+        "content": ""
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "This section describes features that can be improved on and its proposed improvements."
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Delete* : `delete ic/**NRIC**` +"
+        "content": ""
       },
       {
         "lineNumber": 455,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Edit* : `edit ic/**NRIC**`"
+        "content": "\u003d\u003d\u003d\u003d Mass addition of data"
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "** Optional parameters: any parameter from \u003c\u003cList of Attributes\u003e\u003e"
+        "content": ""
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Find* : `find`"
+        "content": "Add more than one patient/doctor/donor from data in a specified text file."
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "** Optional parameters: any parameter from \u003c\u003cList of Attributes\u003e\u003e"
+        "content": ""
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Match* : `match [all/ic]`"
+        "content": "A duplicate is defined as: two persons of the same type having the same ID."
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "** Optional parameters: `sort/[rate/expiry/priority]` +"
+        "content": "When a duplicate is detected, it prompts the user to change the data in the text file."
       },
       {
         "lineNumber": 461,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Processing*: `processing icP/**NRIC of Patient** icD/**NRIC OF DONOR**`"
+        "content": ""
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *List* : `list t/**TYPE**`"
+        "content": "\u003d\u003d\u003d\u003d Supporting more types of transplants"
       },
       {
         "lineNumber": 463,
         "author": {
-          "gitId": "-"
+          "gitId": "C-likethis123"
         },
-        "content": "* *Help* : `help`"
+        "content": ""
       },
       {
         "lineNumber": 464,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Done* : `done icP/**NRIC of Patient** icD/**NRIC OF DONOR** `"
+        "content": "Currently ORGANice has patient-donor matching for kidneys only. Future versions can include matching for +"
       },
       {
         "lineNumber": 465,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* *Exit* : `exit`"
+        "content": "more types of organs."
       },
       {
         "lineNumber": 466,
@@ -9383,7 +9743,7 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "\u003d\u003d Glossary"
+        "content": "\u003d\u003d\u003d\u003d Processing a match: `process`"
       },
       {
         "lineNumber": 468,
@@ -9397,75 +9757,75 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "This section contains a list of words used in this user guide and its intended meaning."
+        "content": "Emails the doctor in charge of a patient when an organ match for the patient is found."
       },
       {
         "lineNumber": 470,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "It is meant to clarify the meaning and context of the words used in this user guide."
+        "content": ""
       },
       {
         "lineNumber": 471,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Format: `process **NRIC**`"
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* user: refers to hospital administration staff who are using this desktop application"
+        "content": ""
       },
       {
         "lineNumber": 473,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Advanced find"
       },
       {
         "lineNumber": 474,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* person: refers to doctors, patients or donors"
+        "content": ""
       },
       {
         "lineNumber": 475,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "Finding in v2.0 is more advanced with the implementation of fuzzy search and partial matching of keywords."
       },
       {
         "lineNumber": 476,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "* blood type match: refers to a donor and patient whose blood types are compatible."
+        "content": ""
       },
       {
         "lineNumber": 477,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 478,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": "* tissue match: refers to a donor and patient whose tissues match"
+        "content": "\u003d\u003d FAQ"
       },
       {
         "lineNumber": 479,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -9474,42 +9834,42 @@
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* cross match: a trial blood transfusion, where donor and patient\u0027s blood are mixed in a test tube to check +"
+        "content": "*Q*: How do I transfer my data to another computer? +"
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "for harmful interactions between patient and donor\u0027s blood"
+        "content": "*A*: Install the app in the other computer and overwrite the empty data file it creates with the file +"
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "that contains the data of your previous ORGANice folder."
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* potential match: refers to a donor-patient pair whose organs pass the blood test and tissue typing test."
+        "content": ""
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": ""
+        "content": "*Q*: What are the steps to find a patient-donor kidney match? +"
       },
       {
         "lineNumber": 485,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "* match: refers to a donor-patient pair whose organs pass all three matching tests"
+        "content": "*A*: There are three steps to finding a patient-donor match:"
       },
       {
         "lineNumber": 486,
@@ -9523,13 +9883,1504 @@
         "author": {
           "gitId": "C-likethis123"
         },
+        "content": "1. Do a blood test to determine donor and patient blood type."
+      },
+      {
+        "lineNumber": 488,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "2. Do a tissue typing test to determine the HLA antigens of the patient and the donor."
+      },
+      {
+        "lineNumber": 489,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "3. Do a cross match, which is a trial transfusion."
+      },
+      {
+        "lineNumber": 490,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 491,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Command Summary"
+      },
+      {
+        "lineNumber": 492,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 493,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "This section summarises the commands to use this application. The following list"
+      },
+      {
+        "lineNumber": 494,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "contains the summary of the commands."
+      },
+      {
+        "lineNumber": 495,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 496,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Add (Normal Mode):*"
+      },
+      {
+        "lineNumber": 497,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "** Add patient: `add t/patient n/NAME o/ORGAN b/BLOOD TYPE tt/TISSUE TYPE p/PHONE pr/PRIORITY ic/NRIC d/DOCTOR a/AGE`"
+      },
+      {
+        "lineNumber": 498,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "** Add donor: `add t/donor n/**NAME** o/**ORGAN** b/**BLOOD TYPE** tt/**TISSUE TYPE**"
+      },
+      {
+        "lineNumber": 499,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "p/**PHONE** ic/**NRIC** exp/**EXPIRY** a/**AGE**`"
+      },
+      {
+        "lineNumber": 500,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "** Add doctor: `add t/doctor n/**NAME** ic/**NRIC** p/**PHONE*`"
+      },
+      {
+        "lineNumber": 501,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 502,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Add (System Prompt Mode)*: `add t/**TYPE**`"
+      },
+      {
+        "lineNumber": 503,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 504,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Delete* : `delete ic/**NRIC**` +"
+      },
+      {
+        "lineNumber": 505,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Edit* : `edit ic/**NRIC**`"
+      },
+      {
+        "lineNumber": 506,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "** Optional parameters: any parameter from \u003c\u003cList of Attributes\u003e\u003e"
+      },
+      {
+        "lineNumber": 507,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Find* : `find`"
+      },
+      {
+        "lineNumber": 508,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "** Optional parameters: any parameter from \u003c\u003cList of Attributes\u003e\u003e"
+      },
+      {
+        "lineNumber": 509,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Match* : `match [all/ic]`"
+      },
+      {
+        "lineNumber": 510,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "** Optional parameters: `sort/[rate/expiry/priority]` +"
+      },
+      {
+        "lineNumber": 511,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Processing*: `processing icP/**NRIC of Patient** icD/**NRIC OF DONOR**`"
+      },
+      {
+        "lineNumber": 512,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *List* : `list t/**TYPE**`"
+      },
+      {
+        "lineNumber": 513,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* *Help* : `help`"
+      },
+      {
+        "lineNumber": 514,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Done* : `done icP/**NRIC of Patient** icD/**NRIC OF DONOR** `"
+      },
+      {
+        "lineNumber": 515,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* *Exit* : `exit`"
+      },
+      {
+        "lineNumber": 516,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 517,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "\u003d\u003d Glossary"
+      },
+      {
+        "lineNumber": 518,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 519,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "This section contains a list of words used in this user guide and its intended meaning."
+      },
+      {
+        "lineNumber": 520,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "It is meant to clarify the meaning and context of the words used in this user guide."
+      },
+      {
+        "lineNumber": 521,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 522,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* user: refers to hospital administration staff who are using this desktop application"
+      },
+      {
+        "lineNumber": 523,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 524,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* person: refers to doctors, patients or donors"
+      },
+      {
+        "lineNumber": 525,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 526,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* blood type match: refers to a donor and patient whose blood types are compatible."
+      },
+      {
+        "lineNumber": 527,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 528,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* tissue match: refers to a donor and patient whose tissues match"
+      },
+      {
+        "lineNumber": 529,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 530,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* cross match: a trial blood transfusion, where donor and patient\u0027s blood are mixed in a test tube to check +"
+      },
+      {
+        "lineNumber": 531,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "for harmful interactions between patient and donor\u0027s blood"
+      },
+      {
+        "lineNumber": 532,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 533,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* potential match: refers to a donor-patient pair whose organs pass the blood test and tissue typing test."
+      },
+      {
+        "lineNumber": 534,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 535,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "* match: refers to a donor-patient pair whose organs pass all three matching tests"
+      },
+      {
+        "lineNumber": 536,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 537,
+        "author": {
+          "gitId": "C-likethis123"
+        },
         "content": "* duplicate: refers to two persons of the same type which have the same NRIC"
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 5,
-      "C-likethis123": 385,
-      "-": 97
+      "WilliamRyank": 27,
+      "C-likethis123": 399,
+      "-": 97,
+      "Yen-Peng": 6,
+      "SimNee": 8
+    }
+  },
+  {
+    "path": "docs/diagrams/ModelClassDiagram.puml",
+    "fileType": "other",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "@startuml"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!include style.puml"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam arrowThickness 1.1"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam arrowColor MODEL_COLOR"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam classBackgroundColor MODEL_COLOR"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Package Model \u003c\u003cRectangle\u003e\u003e{"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Interface ReadOnlyAddressBook \u003c\u003cInterface\u003e\u003e"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Interface Model \u003c\u003cInterface\u003e\u003e"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Interface ObservableList \u003c\u003cInterface\u003e\u003e"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class AddressBook"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class ReadOnlyAddressBook"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class Model"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class ModelManager"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class UserPrefs"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class ReadOnlyUserPrefs"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Package Person {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class Person"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Type"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Nric"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class Name"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class Phone"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class UniquePersonList"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Package Doctor {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Doctor"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Package Patient {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Patient"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Priority"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class DoctorInCharge"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Age"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class BloodType"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class TissueType"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Organ"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Package Donor{"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Donor"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Age"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class BloodType"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class TissueType"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class Organ"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Class OrganExpiryDate"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Class HiddenOutside #FFFFFF"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "HiddenOutside ..\u003e Model"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "AddressBook .up.|\u003e ReadOnlyAddressBook"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ModelManager .up.|\u003e Model"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Model .right.\u003e ObservableList"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ModelManager o--\u003e \"1\" AddressBook"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ModelManager o-left-\u003e \"1\" UserPrefs"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "UserPrefs .up.|\u003e ReadOnlyUserPrefs"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Doctor .up.|\u003e Person"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Patient .up.|\u003e Person"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Donor .up.|\u003e Person"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "AddressBook *--\u003e \"1\" UniquePersonList"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "UniquePersonList o--\u003e \"*\" Person"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Person *--\u003e Name"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Person *--\u003e Phone"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Person *--\u003e Type"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Person *--\u003e Nric"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Patient *--\u003e Priority"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Patient *--\u003e DoctorInCharge"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Patient *--\u003e Age"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Patient *--\u003e BloodType"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Patient *--\u003e TissueType"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Patient *--\u003e Organ"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Donor *--\u003e OrganExpiryDate"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Donor *--\u003e Age"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Donor *--\u003e BloodType"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Donor *--\u003e TissueType"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Donor *--\u003e Organ"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Type -[hidden]down-\u003e Nric"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Nric -[hidden]down-\u003e Name"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Name -[hidden]down-\u003e Phone"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "Age -[hidden]down-\u003e BloodType"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "BloodType -[hidden]down-\u003e TissueType"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "TissueType -[hidden]down-\u003e Organ"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "rgan -[hidden]right-\u003e Priority"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ModelManager --\u003e\"1\" Person : filtered list"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "@enduml"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 45,
+      "Yen-Peng": 46
+    }
+  },
+  {
+    "path": "docs/diagrams/SortSequenceDiagram.puml",
+    "fileType": "other",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "@startuml"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "!include style.puml"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "box Logic LOGIC_COLOR_T1"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "participant \":LogicManager\" as LogicManager LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "participant \":AddressBookParser\" as AddressBookParser LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "participant \":MatchCommandParser\" as MatchCommandParser LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "participant \"s:MatchCommand\" as MatchCommand LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "participant \":CommandResult\" as CommandResult LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "end box"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "box Model MODEL_COLOR_T1"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "participant \":ModelManager\" as ModelManager MODEL_COLOR"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "end box"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "[-\u003e LogicManager : execute(\"sort/rate\")"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "activate LogicManager"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "LogicManager -\u003e AddressBookParser : parseCommand(\"sort/rate\")"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "activate AddressBookParser"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "create MatchCommandParser"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "AddressBookParser -\u003e MatchCommandParser"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "activate MatchCommandParser"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "MatchCommandParser --\u003e AddressBookParser"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "deactivate MatchCommandParser"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "AddressBookParser -\u003e MatchCommandParser : parse(\"rate\")"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "activate MatchCommandParser"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "create MatchCommand"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "MatchCommandParser -\u003e MatchCommand"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "activate MatchCommand"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "MatchCommand --\u003e MatchCommandParser : s"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "deactivate MatchCommand"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "MatchCommandParser --\u003e AddressBookParser : s"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "deactivate MatchCommandParser"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "\u0027Hidden arrow to position the destroy marker below the end of the activation bar."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "MatchCommandParser -[hidden]-\u003e AddressBookParser"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "destroy MatchCommandParser"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "AddressBookParser --\u003e LogicManager : s"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "deactivate AddressBookParser"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "LogicManager -\u003e MatchCommand : execute()"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "activate MatchCommand"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "MatchCommand -\u003e ModelManager : sortBySuccessRate()"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "activate ModelManager"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "ModelManager --\u003e MatchCommand"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "deactivate ModelManager"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "create CommandResult"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "MatchCommand -\u003e CommandResult"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "activate CommandResult"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "CommandResult --\u003e MatchCommand"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "deactivate CommandResult"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "MatchCommand --\u003e LogicManager : result"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "deactivate MatchCommand"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "[\u003c--LogicManager"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "deactivate LogicManager"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Yen-Peng"
+        },
+        "content": "@enduml"
+      }
+    ],
+    "authorContributionMap": {
+      "Yen-Peng": 69
     }
   },
   {
