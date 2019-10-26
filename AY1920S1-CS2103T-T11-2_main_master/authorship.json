@@ -36753,145 +36753,152 @@
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "chrischenhui"
+          "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
+        "content": "import seedu.address.logic.parser.Parser;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": ""
+        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": " * Parses input arguments and creates a new RemoveCommand object"
+        "content": "/**"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": " */"
+        "content": " * Parses input arguments and creates a new RemoveCommand object"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "public class RemoveCommandParser {"
+        "content": " */"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "chrischenhui"
+          "gitId": "sreesubbash"
         },
-        "content": "    /**"
+        "content": "public class RemoveCommandParser implements Parser\u003cRemoveCommand\u003e {"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "     * Parses the given {@code String} of arguments in the context of the RemoveCommand"
+        "content": "    /**"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "     * and returns an RemoveCommand object for execution."
+        "content": "     * Parses the given {@code String} of arguments in the context of the RemoveCommand"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "     *"
+        "content": "     * and returns an RemoveCommand object for execution."
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     *"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "    public RemoveCommand parse(String name) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "        String trimmedArgs \u003d name.trim();"
+        "content": "    public RemoveCommand parse(String name) throws ParseException {"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "        if (trimmedArgs.isEmpty()) {"
+        "content": "        String trimmedArgs \u003d name.trim();"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "            throw new ParseException("
+        "content": "        if (trimmedArgs.isEmpty()) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, CreateCommand.MESSAGE_USAGE));"
+        "content": "            throw new ParseException("
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "        }"
+        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, CreateCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "        return new RemoveCommand(trimmedArgs);"
+        "content": "        }"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "chrischenhui"
         },
-        "content": "    }"
+        "content": "        return new RemoveCommand(trimmedArgs);"
       },
       {
         "lineNumber": 27,
+        "author": {
+          "gitId": "chrischenhui"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
         "author": {
           "gitId": "chrischenhui"
         },
@@ -36899,8 +36906,8 @@
       }
     ],
     "authorContributionMap": {
-      "sreesubbash": 1,
-      "chrischenhui": 26
+      "sreesubbash": 3,
+      "chrischenhui": 25
     }
   },
   {
@@ -114580,6 +114587,211 @@
     }
   },
   {
+    "path": "src/test/java/seedu/address/logic/parser/ParserManagerTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "package seedu.address.logic.parser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import org.junit.jupiter.api.AfterEach;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import org.junit.jupiter.api.BeforeEach;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import seedu.address.logic.util.ModeEnum;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "class ParserManagerTest {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    private ParserManager parserManager;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    void setUp() {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        parserManager \u003d new ParserManager();"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    @AfterEach"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    void tearDown() {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    void getMode() {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        assertTrue(parserManager.getMode() \u003d\u003d ModeEnum.HOME);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "sreesubbash": 28
+    }
+  },
+  {
     "path": "src/test/java/seedu/address/logic/parser/ParserUtilTest.java",
     "fileType": "tests",
     "lines": [
@@ -116313,6 +116525,127 @@
       "sreesubbash": 94,
       "jascxx": 1,
       "-": 5
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/logic/parser/load/RemoveCommandParserTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "package seedu.address.logic.parser.load;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "public class RemoveCommandParserTest {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    public void parse_successful_delete() {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        assertTrue(true);"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "sreesubbash": 16
     }
   },
   {

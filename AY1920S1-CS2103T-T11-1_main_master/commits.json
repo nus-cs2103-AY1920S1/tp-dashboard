@@ -1142,8 +1142,8 @@
         ]
       },
       {
-        "insertions": 231,
-        "deletions": 209,
+        "insertions": 627,
+        "deletions": 581,
         "date": "2019-10-25",
         "commitResults": [
           {
@@ -1159,6 +1159,13 @@
             "messageBody": "* Add unit tests for Budget class\r\n\r\n* Add unit tests for Percentage class\r\n\r\n* Add unit tests for Percentage class (supplement to previous commit)\r\n\r\n* Add unit tests for AddBudgetCommand\r\n\r\n* Add unit tests for AddBudgetCommandParser\r\n\r\n* Add unit tests for UniqueBudgetList\r\n\r\n* Add unit tests for JsonAdaptedBudget\r\n\r\n* Add unit tests for SwitchBudgetCommand\r\n\r\n* Add unit tests for SwitchBudgetCommandParser\r\n\r\n* Update UniqueBudgetList to automatically set newly added budget as primary\r\n\r\n* Add Budget field to Expense\r\n\r\n* Update AddExpense method in AddressBook to suit the new Expense with a Budget field\r\n\r\nSpecifically,\r\nstep 1: check primary budget - if null, add default and set primary, if yes - do nothing\r\nstep 2: check expense\u0027s budget - if null, add to primary budget, if yes - add to corresponding budget\r\nstep 3: add expense to expenses list\r\n\r\n* Cosmetic changes: Remove extra whitespace\r\n\r\n* Check null parameters in JsonAdaptedBudget constructor\r\n\r\n* Update EditCommand following the changes to Expense class (new budgetName field)\r\n\r\n* Add method to check which expenses are within current budget period\r\n\r\nOther changes:\r\n- add method to update the proportion used\r\n- check for duplicate expense before adding\r\n- change expired condition to include end date\r\n- increase default budget limit\r\n- cosmetic changes to make code more concise\r\n\r\n* Change Expense\u0027s budgetName field type from String to Description\r\n\r\n* Update tests following the addition of budgetName field to Expense class\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update Percentage class such that percentage larger than 1 will be treated as 1 instead of throwing an exception\r\n\r\n* Fix unit test failures due to addition of Category field to Expense\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update DG: Budget feature (with class, sequence, activity diagrams)\r\n\r\n* Fix checkstyle errors\r\n\r\n* Cosmetic changes\r\n\r\n* Fix minor GUI bug\r\n\r\n* Update version number for release\r\n\r\n* Improve DG:Budget formatting\r\n\r\n* Update DG:Budget and UML diagrams\r\n\r\n* Refactor AddressBook to MooLah in UG, DG and source code\r\n\r\n* Update UG \u0026 DG: introduction, budget command syntax, formatting\r\n",
             "insertions": 42,
             "deletions": 24
+          },
+          {
+            "hash": "5a066369ea7261d66db610f908565a5ea0aa77f3",
+            "messageTitle": "Fully refactor AddressBook to MooLah (#126)",
+            "messageBody": "* Add unit tests for Budget class\r\n\r\n* Add unit tests for Percentage class\r\n\r\n* Add unit tests for Percentage class (supplement to previous commit)\r\n\r\n* Add unit tests for AddBudgetCommand\r\n\r\n* Add unit tests for AddBudgetCommandParser\r\n\r\n* Add unit tests for UniqueBudgetList\r\n\r\n* Add unit tests for JsonAdaptedBudget\r\n\r\n* Add unit tests for SwitchBudgetCommand\r\n\r\n* Add unit tests for SwitchBudgetCommandParser\r\n\r\n* Update UniqueBudgetList to automatically set newly added budget as primary\r\n\r\n* Add Budget field to Expense\r\n\r\n* Update AddExpense method in AddressBook to suit the new Expense with a Budget field\r\n\r\nSpecifically,\r\nstep 1: check primary budget - if null, add default and set primary, if yes - do nothing\r\nstep 2: check expense\u0027s budget - if null, add to primary budget, if yes - add to corresponding budget\r\nstep 3: add expense to expenses list\r\n\r\n* Cosmetic changes: Remove extra whitespace\r\n\r\n* Check null parameters in JsonAdaptedBudget constructor\r\n\r\n* Update EditCommand following the changes to Expense class (new budgetName field)\r\n\r\n* Add method to check which expenses are within current budget period\r\n\r\nOther changes:\r\n- add method to update the proportion used\r\n- check for duplicate expense before adding\r\n- change expired condition to include end date\r\n- increase default budget limit\r\n- cosmetic changes to make code more concise\r\n\r\n* Change Expense\u0027s budgetName field type from String to Description\r\n\r\n* Update tests following the addition of budgetName field to Expense class\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update Percentage class such that percentage larger than 1 will be treated as 1 instead of throwing an exception\r\n\r\n* Fix unit test failures due to addition of Category field to Expense\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update DG: Budget feature (with class, sequence, activity diagrams)\r\n\r\n* Fix checkstyle errors\r\n\r\n* Cosmetic changes\r\n\r\n* Fix minor GUI bug\r\n\r\n* Update version number for release\r\n\r\n* Improve DG:Budget formatting\r\n\r\n* Update DG:Budget and UML diagrams\r\n\r\n* Refactor AddressBook to MooLah in UG, DG and source code\r\n\r\n* Update UG \u0026 DG: introduction, budget command syntax, formatting\r\n\r\n* Fully refactor AddressBook to MooLah\r\n\r\n* Rename AddressBook to Moolah in Javadoc comments\r\n* Rename AddressBook to Moolah in tests\r\n* Rename AddressBook to Moolah in parameter names\r\n* Change AddressBook logo image to MooLah logo\r\n* Arrange tests into packages corresponding to those in main\r\n",
+            "insertions": 396,
+            "deletions": 372
           }
         ]
       }
@@ -1265,41 +1272,41 @@
     ]
   },
   "authorFinalContributionMap": {
-    "czkay": 1592,
-    "briyanii": 5437,
-    "qweiping31415": 1853,
-    "anqichen9856": 3383,
-    "ryoarmanda": 1106
+    "czkay": 1574,
+    "briyanii": 5359,
+    "qweiping31415": 1855,
+    "anqichen9856": 3722,
+    "ryoarmanda": 1099
   },
   "authorFileTypeContributionMap": {
     "czkay": {
       "docs": 176,
-      "tests": 183,
-      "functional": 1125,
+      "tests": 172,
+      "functional": 1118,
       "other": 108
     },
     "briyanii": {
       "docs": 254,
-      "tests": 1923,
-      "functional": 3220,
+      "tests": 1889,
+      "functional": 3176,
       "other": 40
     },
     "qweiping31415": {
       "docs": 229,
       "tests": 231,
-      "functional": 1158,
+      "functional": 1160,
       "other": 235
     },
     "anqichen9856": {
       "docs": 459,
-      "tests": 1475,
-      "functional": 1269,
+      "tests": 1599,
+      "functional": 1484,
       "other": 180
     },
     "ryoarmanda": {
       "docs": 30,
-      "tests": 468,
-      "functional": 512,
+      "tests": 458,
+      "functional": 515,
       "other": 96
     }
   },
@@ -1307,7 +1314,7 @@
     "czkay": 42028.36,
     "briyanii": 2258015.2,
     "qweiping31415": 67460.61,
-    "anqichen9856": 233338.36,
+    "anqichen9856": 254529.64,
     "ryoarmanda": 14569.48
   },
   "authorDisplayNameMap": {

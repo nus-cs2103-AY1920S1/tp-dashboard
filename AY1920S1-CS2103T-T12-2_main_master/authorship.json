@@ -23944,12 +23944,139 @@
       {
         "lineNumber": 68,
         "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * Returns true if {@code s} represents a non-negative unsigned integer"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * e.g. 0, 1, 2, 3, ..., {@code Integer.MAX_VALUE} \u003cbr\u003e"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * Will return false for any other non-null string input"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * e.g. empty string, \"-1\", \"+1\", and \" 2 \" (untrimmed), \"3 0\" (contains whitespace), \"1 a\" (contains letters)"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * @throws NullPointerException if {@code s} is null."
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public static boolean isNonNegativeUnsignedInteger(String s) {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        requireNonNull(s);"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            int value \u003d Integer.parseInt(s);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            return value \u003e\u003d 0 \u0026\u0026 !s.startsWith(\"+\"); // \"+1\" is successfully parsed by Integer#parseInt(String)"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        } catch (NumberFormatException nfe) {"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
           "gitId": "-"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
+      "MackyMaguire": 18,
       "SoilingRogue": 2,
       "-": 66
     }
@@ -38513,9 +38640,9 @@
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "etlow"
+          "gitId": "MackyMaguire"
         },
-        "content": "     * Creates a FoodCommand to add the specified {@code Food}"
+        "content": "     * Creates a AddFoodCommand to add the specified {@code Food}"
       },
       {
         "lineNumber": 42,
@@ -38694,8 +38821,451 @@
       }
     ],
     "authorContributionMap": {
-      "etlow": 58,
-      "MackyMaguire": 8
+      "etlow": 57,
+      "MackyMaguire": 9
+    }
+  },
+  {
+    "path": "src/main/java/seedu/deliverymans/logic/commands/restaurant/AddRatingCommand.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "package seedu.deliverymans.logic.commands.restaurant;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import static java.util.Objects.requireNonNull;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import static seedu.deliverymans.model.Model.PREDICATE_SHOW_ALL_RESTAURANTS;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.logic.commands.Command;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.logic.commands.CommandResult;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.logic.commands.exceptions.CommandException;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.model.Model;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.model.restaurant.Rating;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.model.restaurant.Restaurant;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": " * Adds a rating to the restaurant in editing mode."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "public class AddRatingCommand extends Command {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"rate\";"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            + \": Adds a rating to the restaurant in editing mode currently.\\n\""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            + \"Parameters: RATING (must be a non-negative integer from 0 to 5)\\n\""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            + \"Example: \" + COMMAND_WORD + \" 1\";"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public static final String MESSAGE_ADD_RATING_SUCCESS \u003d \"Added Rating to: %1$s\";"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    private final Rating rating;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * Creates a AddRatingCommand to add the specified {@code Rating}"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public AddRatingCommand(Rating rating) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        this.rating \u003d rating;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        requireNonNull(model);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        Restaurant restaurant \u003d model.getEditingRestaurantList().get(0);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        Rating oldRating \u003d restaurant.getRating();"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        double newRatingValue \u003d Rating.getRatingValue(oldRating.rating)"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "                + Rating.getRatingValue(rating.rating);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        Rating newRating \u003d new Rating(String.format(\"%.3f\", newRatingValue),"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "                oldRating.numberOfRatings + 1);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        Restaurant newRestaurant \u003d new Restaurant(restaurant.getName(), restaurant.getLocation(), newRating,"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "                restaurant.getTags(), restaurant.getMenu());"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        model.setRestaurant(restaurant, newRestaurant);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        model.setEditingRestaurant(newRestaurant);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        model.updateFilteredRestaurantList(PREDICATE_SHOW_ALL_RESTAURANTS);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        model.updateEditingRestaurantList(PREDICATE_SHOW_ALL_RESTAURANTS);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        return new CommandResult(String.format(MESSAGE_ADD_RATING_SUCCESS, newRestaurant));"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "                || (other instanceof AddRatingCommand // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "                \u0026\u0026 rating.equals(((AddRatingCommand) other).rating)); // state check"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "MackyMaguire": 62
     }
   },
   {
@@ -40008,231 +40578,231 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.commons.util.CollectionUtil;"
+        "content": "import javafx.collections.ObservableList;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.logic.commands.Command;"
+        "content": "import seedu.deliverymans.commons.util.CollectionUtil;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.logic.commands.CommandResult;"
+        "content": "import seedu.deliverymans.logic.commands.Command;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.logic.commands.exceptions.CommandException;"
+        "content": "import seedu.deliverymans.logic.commands.CommandResult;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.model.Model;"
+        "content": "import seedu.deliverymans.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.model.Name;"
+        "content": "import seedu.deliverymans.model.Model;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.model.Tag;"
+        "content": "import seedu.deliverymans.model.Name;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.model.location.Location;"
+        "content": "import seedu.deliverymans.model.Tag;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.model.restaurant.Restaurant;"
+        "content": "import seedu.deliverymans.model.food.Food;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "import seedu.deliverymans.model.location.Location;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "/**"
+        "content": "import seedu.deliverymans.model.restaurant.Restaurant;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": " * Edits details of the restaurant in editing mode."
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "public class EditDetailsCommand extends Command {"
+        "content": " * Edits details of the restaurant in editing mode."
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"editdetails\";"
+        "content": " */"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "public class EditDetailsCommand extends Command {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Edits the details of the restaurant \""
+        "content": "    public static final String COMMAND_WORD \u003d \"editdetails\";"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + \"in editing mode currently. \""
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + \"Existing values will be overwritten by the input values.\\n\""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Edits the details of the restaurant \""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + \"Parameters: \""
+        "content": "            + \"in editing mode currently. \""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + \"[\" + PREFIX_NAME + \"NAME] \""
+        "content": "            + \"Existing values will be overwritten by the input values.\\n\""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + \"[\" + PREFIX_LOCATION + \"LOCATION] \""
+        "content": "            + \"Parameters: \""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + \"[\" + PREFIX_TAG + \"TAG]...\\n\""
+        "content": "            + \"[\" + PREFIX_NAME + \"NAME] \""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + \"Example: \" + COMMAND_WORD + \" \""
+        "content": "            + \"[\" + PREFIX_LOCATION + \"LOCATION] \""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + PREFIX_NAME + \"KFC \""
+        "content": "            + \"[\" + PREFIX_TAG + \"TAG]...\\n\""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + PREFIX_LOCATION + \"Woodlands\";"
+        "content": "            + \"Example: \" + COMMAND_WORD + \" \""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            + PREFIX_NAME + \"KFC \""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static final String MESSAGE_EDIT_RESTAURANT_SUCCESS \u003d \"Edited Restaurant: %1$s\";"
+        "content": "            + PREFIX_LOCATION + \"Woodlands\";"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static final String MESSAGE_NOT_EDITED \u003d \"At least one field to edit must be provided.\";"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static final String MESSAGE_DUPLICATE_RESTAURANT \u003d \"This restaurant already exists in the \""
+        "content": "    public static final String MESSAGE_EDIT_RESTAURANT_SUCCESS \u003d \"Edited Restaurant: %1$s\";"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            + \"restaurant database.\";"
+        "content": "    public static final String MESSAGE_NOT_EDITED \u003d \"At least one field to edit must be provided.\";"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_DUPLICATE_RESTAURANT \u003d \"This restaurant already exists in the \""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    private final EditRestaurantDescriptor editRestaurantDescriptor;"
+        "content": "            + \"restaurant database.\";"
       },
       {
         "lineNumber": 47,
@@ -40246,294 +40816,294 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "    private final EditRestaurantDescriptor editRestaurantDescriptor;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * @param editRestaurantDescriptor details to edit the restaurant with"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public EditDetailsCommand(EditRestaurantDescriptor editRestaurantDescriptor) {"
+        "content": "     * @param editRestaurantDescriptor details to edit the restaurant with"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        requireNonNull(editRestaurantDescriptor);"
+        "content": "     */"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    public EditDetailsCommand(EditRestaurantDescriptor editRestaurantDescriptor) {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.editRestaurantDescriptor \u003d new EditRestaurantDescriptor(editRestaurantDescriptor);"
+        "content": "        requireNonNull(editRestaurantDescriptor);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        this.editRestaurantDescriptor \u003d new EditRestaurantDescriptor(editRestaurantDescriptor);"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    @Override"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        Restaurant restaurantToEdit \u003d model.getEditingRestaurantList().get(0);"
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        Restaurant editedRestaurant \u003d createEditedRestaurant(restaurantToEdit, editRestaurantDescriptor);"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        Restaurant restaurantToEdit \u003d model.getEditingRestaurantList().get(0);"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (!restaurantToEdit.isSameRestaurant(editedRestaurant) \u0026\u0026 model.hasRestaurant(editedRestaurant)) {"
+        "content": "        Restaurant editedRestaurant \u003d createEditedRestaurant(restaurantToEdit, editRestaurantDescriptor);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new CommandException(MESSAGE_DUPLICATE_RESTAURANT);"
+        "content": ""
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "        if (!restaurantToEdit.isSameRestaurant(editedRestaurant) \u0026\u0026 model.hasRestaurant(editedRestaurant)) {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            throw new CommandException(MESSAGE_DUPLICATE_RESTAURANT);"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        model.setRestaurant(restaurantToEdit, editedRestaurant);"
+        "content": "        }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        model.setEditingRestaurant(editedRestaurant);"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        model.updateFilteredRestaurantList(PREDICATE_SHOW_ALL_RESTAURANTS);"
+        "content": "        model.setRestaurant(restaurantToEdit, editedRestaurant);"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        model.updateEditingRestaurantList(PREDICATE_SHOW_ALL_RESTAURANTS);"
+        "content": "        model.setEditingRestaurant(editedRestaurant);"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        model.updateFilteredRestaurantList(PREDICATE_SHOW_ALL_RESTAURANTS);"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_RESTAURANT_SUCCESS, editedRestaurant));"
+        "content": "        model.updateEditingRestaurantList(PREDICATE_SHOW_ALL_RESTAURANTS);"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_RESTAURANT_SUCCESS, editedRestaurant));"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Creates and returns a {@code Restaurant} with the details of {@code restaurantToEdit}"
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * edited with {@code editRestaurantDescriptor}."
+        "content": "    /**"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "     * Creates and returns a {@code Restaurant} with the details of {@code restaurantToEdit}"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    private static Restaurant createEditedRestaurant(Restaurant restaurantToEdit,"
+        "content": "     * edited with {@code editRestaurantDescriptor}."
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                                                     EditRestaurantDescriptor editRestaurantDescriptor) {"
+        "content": "     */"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        assert restaurantToEdit !\u003d null;"
+        "content": "    private static Restaurant createEditedRestaurant(Restaurant restaurantToEdit,"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "                                                     EditRestaurantDescriptor editRestaurantDescriptor) {"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        Name updatedName \u003d editRestaurantDescriptor.getName().orElse(restaurantToEdit.getName());"
+        "content": "        assert restaurantToEdit !\u003d null;"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        Location updatedLocation \u003d editRestaurantDescriptor.getLocation().orElse(restaurantToEdit.getLocation());"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        Set\u003cTag\u003e updatedTags \u003d editRestaurantDescriptor.getTags().orElse(restaurantToEdit.getTags());"
+        "content": "        Name updatedName \u003d editRestaurantDescriptor.getName().orElse(restaurantToEdit.getName());"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        Location updatedLocation \u003d editRestaurantDescriptor.getLocation().orElse(restaurantToEdit.getLocation());"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        return new Restaurant(updatedName, updatedLocation, updatedTags);"
+        "content": "        Set\u003cTag\u003e updatedTags \u003d editRestaurantDescriptor.getTags().orElse(restaurantToEdit.getTags());"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": "        ObservableList\u003cFood\u003e originalMenu \u003d restaurantToEdit.getMenu();"
       },
       {
         "lineNumber": 90,
@@ -40547,77 +41117,77 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "        return new Restaurant(updatedName, updatedLocation, updatedTags, originalMenu);"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Stores the details to edit the restaurant with. Each non-empty field value will replace the"
+        "content": "    }"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * corresponding field value of the restaurant."
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static class EditRestaurantDescriptor {"
+        "content": "     * Stores the details to edit the restaurant with. Each non-empty field value will replace the"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        private Name name;"
+        "content": "     * corresponding field value of the restaurant."
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        private Location location;"
+        "content": "     */"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        private Set\u003cTag\u003e tags;"
+        "content": "    public static class EditRestaurantDescriptor {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        private Name name;"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public EditRestaurantDescriptor() {"
+        "content": "        private Location location;"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "        private Set\u003cTag\u003e tags;"
       },
       {
         "lineNumber": 102,
@@ -40631,448 +41201,448 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        /**"
+        "content": "        public EditRestaurantDescriptor() {"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         * Copy constructor."
+        "content": "        }"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         */"
+        "content": "        /**"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public EditRestaurantDescriptor(EditRestaurantDescriptor toCopy) {"
+        "content": "         * Copy constructor."
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            setName(toCopy.name);"
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            setLocation(toCopy.location);"
+        "content": "         */"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            setTags(toCopy.tags);"
+        "content": "        public EditRestaurantDescriptor(EditRestaurantDescriptor toCopy) {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "            setName(toCopy.name);"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            setLocation(toCopy.location);"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        /**"
+        "content": "            setTags(toCopy.tags);"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         * Returns true if at least one field is edited."
+        "content": "        }"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         */"
+        "content": ""
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public boolean isAnyFieldEdited() {"
+        "content": "        /**"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return CollectionUtil.isAnyNonNull(name, location, tags);"
+        "content": "         * Returns true if at least one field is edited."
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "         */"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        public boolean isAnyFieldEdited() {"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public void setName(Name name) {"
+        "content": "            return CollectionUtil.isAnyNonNull(name, location, tags);"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            this.name \u003d name;"
+        "content": "        }"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        public void setName(Name name) {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public Optional\u003cName\u003e getName() {"
+        "content": "            this.name \u003d name;"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return Optional.ofNullable(name);"
+        "content": "        }"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        public Optional\u003cName\u003e getName() {"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public void setLocation(Location location) {"
+        "content": "            return Optional.ofNullable(name);"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            this.location \u003d location;"
+        "content": "        }"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        public void setLocation(Location location) {"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public Optional\u003cLocation\u003e getLocation() {"
+        "content": "            this.location \u003d location;"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return Optional.ofNullable(location);"
+        "content": "        }"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        public Optional\u003cLocation\u003e getLocation() {"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        /**"
+        "content": "            return Optional.ofNullable(location);"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
+        "content": "        }"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": ""
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         */"
+        "content": "        /**"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
+        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "         */"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        /**"
+        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
+        "content": "        }"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         * if modification is attempted."
+        "content": ""
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
+        "content": "        /**"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "         */"
+        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
+        "content": "         * if modification is attempted."
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
+        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "         */"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        @Override"
+        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        public boolean equals(Object other) {"
+        "content": "        }"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            // short circuit if same object"
+        "content": ""
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            if (other \u003d\u003d this) {"
+        "content": "        @Override"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                return true;"
+        "content": "        public boolean equals(Object other) {"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            }"
+        "content": "            // short circuit if same object"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            // instanceof handles nulls"
+        "content": "                return true;"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            if (!(other instanceof EditRestaurantDescriptor)) {"
+        "content": "            }"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                return false;"
+        "content": ""
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            }"
+        "content": "            // instanceof handles nulls"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            if (!(other instanceof EditRestaurantDescriptor)) {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            // state check"
+        "content": "                return false;"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            EditRestaurantDescriptor e \u003d (EditRestaurantDescriptor) other;"
+        "content": "            }"
       },
       {
         "lineNumber": 167,
@@ -41086,38 +41656,59 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return getName().equals(e.getName())"
+        "content": "            // state check"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                    \u0026\u0026 getLocation().equals(e.getLocation())"
+        "content": "            EditRestaurantDescriptor e \u003d (EditRestaurantDescriptor) other;"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                    \u0026\u0026 getTags().equals(e.getTags());"
+        "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "            return getName().equals(e.getName())"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": "                    \u0026\u0026 getLocation().equals(e.getLocation())"
       },
       {
         "lineNumber": 173,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "                    \u0026\u0026 getTags().equals(e.getTags());"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 176,
         "author": {
           "gitId": "MackyMaguire"
         },
@@ -41125,7 +41716,7 @@
       }
     ],
     "authorContributionMap": {
-      "MackyMaguire": 173
+      "MackyMaguire": 176
     }
   },
   {
@@ -47643,1160 +48234,1293 @@
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "import seedu.deliverymans.model.restaurant.Rating;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
-        "content": " * Contains utility methods used for parsing strings in the various *Parser classes."
+        "content": "/**"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": " * Contains utility methods used for parsing strings in the various *Parser classes."
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "public class ParserUtil {"
+        "content": " */"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "public class ParserUtil {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_INVALID_INDEX \u003d \"Index is not a non-zero unsigned integer.\";"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_INVALID_INDEX \u003d \"Index provided is not a non-zero unsigned integer.\";"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "    public static final String MESSAGE_INVALID_RATING \u003d \"Rating provided is not a non-zero unsigned integer.\";"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "     * trimmed."
+        "content": "    /**"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
-        "content": "     *"
+        "content": "     * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @throws ParseException if the specified index is invalid (not non-zero unsigned integer)."
+        "content": "     * trimmed."
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "-"
+          "gitId": "charliechoong"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static Index parseIndex(String oneBasedIndex) throws ParseException {"
+        "content": "     * @throws ParseException if the specified index is invalid (not non-zero unsigned integer)."
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "        String trimmedIndex \u003d oneBasedIndex.trim();"
+        "content": "     */"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {"
+        "content": "    public static Index parseIndex(String oneBasedIndex) throws ParseException {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "            throw new ParseException(MESSAGE_INVALID_INDEX);"
+        "content": "        String trimmedIndex \u003d oneBasedIndex.trim();"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "        return Index.fromOneBased(Integer.parseInt(trimmedIndex));"
+        "content": "            throw new ParseException(MESSAGE_INVALID_INDEX);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return Index.fromOneBased(Integer.parseInt(trimmedIndex));"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Parses a {@code String name} into a {@code Name}."
+        "content": ""
       },
       {
         "lineNumber": 44,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * Parses {@code rating} into an {@code Rating} and returns it. Leading and trailing whitespaces will be"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * trimmed."
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * @throws ParseException if the specified rating is invalid (not non-zero unsigned integer)."
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public static Rating parseRating(String rating) throws ParseException {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        String trimmedRating \u003d rating.trim();"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        if (!StringUtil.isNonNegativeUnsignedInteger(trimmedRating)) {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            throw new ParseException(MESSAGE_INVALID_RATING);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        if (!Rating.isValidRating(trimmedRating)) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            throw new ParseException(Rating.MESSAGE_CONSTRAINTS);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        return new Rating(trimmedRating);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Parses a {@code String name} into a {@code Name}."
+      },
+      {
+        "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
         "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
         "content": "     * @throws ParseException if the given {@code name} is invalid."
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
         "content": "    public static Name parseName(String name) throws ParseException {"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
         "content": "        requireNonNull(name);"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
         "content": "        String trimmedName \u003d name.trim();"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
         "content": "        if (!Name.isValidName(trimmedName)) {"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
         "content": "            throw new ParseException(Name.MESSAGE_CONSTRAINTS);"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
         "content": "        return new Name(trimmedName);"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 76,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 77,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     * Parses {@code Collection\u003cString\u003e names} into a {@code Set\u003cName\u003e}."
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 78,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 79,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "    public static ArrayList\u003cName\u003e parseNames(Collection\u003cString\u003e names) throws ParseException {"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 80,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        requireNonNull(names);"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 81,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        final ArrayList\u003cName\u003e nameSet \u003d new ArrayList\u003c\u003e();"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 82,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        for (String tagName : names) {"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 83,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "            nameSet.add(parseName(tagName));"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 84,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 85,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        return nameSet;"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 86,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 87,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": ""
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 88,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 89,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "     * Parses a {@code String name} into a {@code Location}."
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 90,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 91,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 92,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "     * @throws ParseException if the given {@code location} is invalid."
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 93,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 75,
+        "lineNumber": 94,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "    public static Location parseLocation(String location) throws ParseException {"
       },
       {
-        "lineNumber": 76,
+        "lineNumber": 95,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "        requireNonNull(location);"
       },
       {
-        "lineNumber": 77,
+        "lineNumber": 96,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "        String trimmedLocation \u003d location.trim();"
       },
       {
-        "lineNumber": 78,
+        "lineNumber": 97,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "        if (!LocationMap.isValidLocation(trimmedLocation)) {"
       },
       {
-        "lineNumber": 79,
+        "lineNumber": 98,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "            throw new ParseException(LocationMap.MESSAGE_CONSTRAINTS);"
       },
       {
-        "lineNumber": 80,
+        "lineNumber": 99,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 81,
+        "lineNumber": 100,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "        return LocationMap.getLocation(trimmedLocation).get();"
       },
       {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     * Parses a {@code String phone} into a {@code Phone}."
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     * Leading and trailing whitespaces will be trimmed."
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     * @throws ParseException if the given {@code phone} is invalid."
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    public static Phone parsePhone(String phone) throws ParseException {"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        requireNonNull(phone);"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        String trimmedPhone \u003d phone.trim();"
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        if (!Phone.isValidPhone(trimmedPhone)) {"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            throw new ParseException(Phone.MESSAGE_CONSTRAINTS);"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        return new Phone(trimmedPhone);"
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     * Parses a {@code String tag} into a {@code Tag}."
-      },
-      {
         "lineNumber": 101,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": "     * Leading and trailing whitespaces will be trimmed."
+        "content": "    }"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @throws ParseException if the given {@code tag} is invalid."
+        "content": "    /**"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "     * Parses a {@code String phone} into a {@code Phone}."
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static Tag parseTag(String tag) throws ParseException {"
+        "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "        requireNonNull(tag);"
+        "content": "     *"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "        String trimmedTag \u003d tag.trim();"
+        "content": "     * @throws ParseException if the given {@code phone} is invalid."
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!Tag.isValidTagName(trimmedTag)) {"
+        "content": "     */"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "            throw new ParseException(Tag.MESSAGE_CONSTRAINTS);"
+        "content": "    public static Phone parsePhone(String phone) throws ParseException {"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        requireNonNull(phone);"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "        return new Tag(trimmedTag);"
+        "content": "        String trimmedPhone \u003d phone.trim();"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        if (!Phone.isValidPhone(trimmedPhone)) {"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            throw new ParseException(Phone.MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Parses {@code Collection\u003cString\u003e tags} into a {@code Set\u003cTag\u003e}."
+        "content": "        return new Phone(trimmedPhone);"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static Set\u003cTag\u003e parseTags(Collection\u003cString\u003e tags) throws ParseException {"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "        requireNonNull(tags);"
+        "content": "    /**"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "        final Set\u003cTag\u003e tagSet \u003d new HashSet\u003c\u003e();"
+        "content": "     * Parses a {@code String tag} into a {@code Tag}."
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "        for (String tagName : tags) {"
+        "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "            tagSet.add(parseTag(tagName));"
+        "content": "     *"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "     * @throws ParseException if the given {@code tag} is invalid."
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "        return tagSet;"
+        "content": "     */"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    public static Tag parseTag(String tag) throws ParseException {"
       },
       {
         "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        requireNonNull(tag);"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        String trimmedTag \u003d tag.trim();"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (!Tag.isValidTagName(trimmedTag)) {"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            throw new ParseException(Tag.MESSAGE_CONSTRAINTS);"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return new Tag(trimmedTag);"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Parses {@code Collection\u003cString\u003e tags} into a {@code Set\u003cTag\u003e}."
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static Set\u003cTag\u003e parseTags(Collection\u003cString\u003e tags) throws ParseException {"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        requireNonNull(tags);"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final Set\u003cTag\u003e tagSet \u003d new HashSet\u003c\u003e();"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        for (String tagName : tags) {"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            tagSet.add(parseTag(tagName));"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return tagSet;"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 144,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": ""
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 145,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 127,
+        "lineNumber": 146,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     * Parses {@code String bool} into a {@code boolean}."
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 147,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 148,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "    public static boolean parseBoolean(String bool) throws ParseException {"
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 149,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        requireNonNull(bool);"
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 150,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        String trimmedBool \u003d bool.trim();"
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 151,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        boolean isCompleted \u003d Boolean.parseBoolean(trimmedBool);"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 152,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        if (!isCompleted \u0026\u0026 trimmedBool.equalsIgnoreCase(\"false\")) {"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 153,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "            throw new ParseException(\"Completed should be true or false\");"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 154,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 155,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        return isCompleted;"
       },
       {
-        "lineNumber": 137,
-        "author": {
-          "gitId": "SoilingRogue"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 138,
-        "author": {
-          "gitId": "SoilingRogue"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 139,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "     * Parses a {@code String price} into a {@code BigDecimal}."
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "     * Leading and trailing whitespaces will be trimmed."
-      },
-      {
-        "lineNumber": 142,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 143,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "     * @throws ParseException if the given {@code price} is invalid."
-      },
-      {
-        "lineNumber": 144,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 145,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "    public static BigDecimal parsePrice(String price) throws ParseException {"
-      },
-      {
-        "lineNumber": 146,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "        requireNonNull(price);"
-      },
-      {
-        "lineNumber": 147,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "        String trimmedPrice \u003d price.trim();"
-      },
-      {
-        "lineNumber": 148,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 149,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "            return new BigDecimal(trimmedPrice);"
-      },
-      {
-        "lineNumber": 150,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "        } catch (NumberFormatException e) {"
-      },
-      {
-        "lineNumber": 151,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "            throw new ParseException(e.getMessage(), e);"
-      },
-      {
-        "lineNumber": 152,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 153,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 154,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 155,
-        "author": {
-          "gitId": "etlow"
-        },
-        "content": "    /**"
-      },
-      {
         "lineNumber": 156,
         "author": {
-          "gitId": "etlow"
+          "gitId": "SoilingRogue"
         },
-        "content": "     * Parses a {@code String duration} in seconds into a {@code Duration}."
+        "content": "    }"
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "etlow"
+          "gitId": "SoilingRogue"
         },
-        "content": "     * Leading and trailing whitespaces will be trimmed."
+        "content": ""
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "etlow"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "etlow"
         },
-        "content": "     * @throws ParseException if the given {@code duration} is invalid."
+        "content": "     * Parses a {@code String price} into a {@code BigDecimal}."
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "etlow"
         },
-        "content": "     */"
+        "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "etlow"
         },
-        "content": "    public static Duration parseSeconds(String seconds) throws ParseException {"
+        "content": "     *"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "etlow"
         },
-        "content": "        requireNonNull(seconds);"
+        "content": "     * @throws ParseException if the given {@code price} is invalid."
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "etlow"
         },
-        "content": "        String trimmedSeconds \u003d seconds.trim();"
+        "content": "     */"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "etlow"
         },
-        "content": "        try {"
+        "content": "    public static BigDecimal parsePrice(String price) throws ParseException {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "etlow"
         },
-        "content": "            return Duration.ofSeconds(Long.parseLong(trimmedSeconds));"
+        "content": "        requireNonNull(price);"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "etlow"
         },
-        "content": "        } catch (NumberFormatException e) {"
+        "content": "        String trimmedPrice \u003d price.trim();"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "etlow"
         },
-        "content": "            throw new ParseException(e.getMessage(), e);"
+        "content": "        try {"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "etlow"
         },
-        "content": "        }"
+        "content": "            return new BigDecimal(trimmedPrice);"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "etlow"
         },
-        "content": "    }"
+        "content": "        } catch (NumberFormatException e) {"
       },
       {
         "lineNumber": 170,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "            throw new ParseException(e.getMessage(), e);"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "     * Parses a {@code String duration} in seconds into a {@code Duration}."
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "     * Leading and trailing whitespaces will be trimmed."
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "     * @throws ParseException if the given {@code duration} is invalid."
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "    public static Duration parseSeconds(String seconds) throws ParseException {"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "        requireNonNull(seconds);"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "        String trimmedSeconds \u003d seconds.trim();"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "            return Duration.ofSeconds(Long.parseLong(trimmedSeconds));"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "        } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "            throw new ParseException(e.getMessage(), e);"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 189,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": ""
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 190,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 191,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     * Parses a {@code Collection\u003cString\u003e tags} in seconds into a {@code ArrayList\u003cInteger\u003e}."
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 192,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 193,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 194,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     * @throws ParseException if the given {@code Collection\u003cString\u003e tags} is invalid."
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 195,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 177,
+        "lineNumber": 196,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "    public static ArrayList\u003cInteger\u003e parseQuantity(Collection\u003cString\u003e tags) throws ParseException {"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 197,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        requireNonNull(tags);"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 198,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        final ArrayList\u003cInteger\u003e tagSet \u003d new ArrayList\u003c\u003e();"
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 199,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        for (String tagName : tags) {"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 200,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "            tagSet.add(Integer.parseInt(tagName));"
       },
       {
-        "lineNumber": 182,
+        "lineNumber": 201,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 183,
+        "lineNumber": 202,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "        return tagSet;"
       },
       {
-        "lineNumber": 184,
+        "lineNumber": 203,
         "author": {
           "gitId": "SoilingRogue"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
@@ -48806,9 +49530,9 @@
     "authorContributionMap": {
       "etlow": 33,
       "ryantay232": 1,
-      "MackyMaguire": 19,
+      "MackyMaguire": 39,
       "SoilingRogue": 42,
-      "-": 85,
+      "-": 84,
       "charliechoong": 5
     }
   },
@@ -58333,9 +59057,9 @@
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "etlow"
+          "gitId": "MackyMaguire"
         },
-        "content": " * Parses input arguments and creates a new AddCommand object"
+        "content": " * Parses input arguments and creates a new AddFoodCommand object"
       },
       {
         "lineNumber": 27,
@@ -58584,8 +59308,220 @@
       }
     ],
     "authorContributionMap": {
-      "etlow": 56,
-      "MackyMaguire": 5
+      "etlow": 55,
+      "MackyMaguire": 6
+    }
+  },
+  {
+    "path": "src/main/java/seedu/deliverymans/logic/parser/restaurant/AddRatingCommandParser.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "package seedu.deliverymans.logic.parser.restaurant;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import static seedu.deliverymans.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.logic.commands.restaurant.AddRatingCommand;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.logic.parser.Parser;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.logic.parser.ParserUtil;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.logic.parser.exceptions.ParseException;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.model.restaurant.Rating;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": " * Parses input arguments and creates a new AddRatingCommand object"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "public class AddRatingCommandParser implements Parser\u003cAddRatingCommand\u003e {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * Parses the given {@code String} of arguments in the context of the AddRatingCommand"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * and returns an AddRatingCommand object for execution."
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public AddRatingCommand parse(String args) throws ParseException {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            Rating rating \u003d ParserUtil.parseRating(args);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            return new AddRatingCommand(rating);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        } catch (ParseException pe) {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            throw new ParseException("
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddRatingCommand.MESSAGE_USAGE), pe);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "MackyMaguire": 29
     }
   },
   {
@@ -60238,339 +61174,367 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.logic.commands.restaurant.DeleteFoodCommand;"
+        "content": "import seedu.deliverymans.logic.commands.restaurant.AddRatingCommand;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.logic.commands.restaurant.EditDetailsCommand;"
+        "content": "import seedu.deliverymans.logic.commands.restaurant.DeleteFoodCommand;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.logic.commands.restaurant.ExitEditCommand;"
+        "content": "import seedu.deliverymans.logic.commands.restaurant.EditDetailsCommand;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.logic.commands.universal.HelpCommand;"
+        "content": "import seedu.deliverymans.logic.commands.restaurant.ExitEditCommand;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import seedu.deliverymans.logic.parser.exceptions.ParseException;"
+        "content": "import seedu.deliverymans.logic.commands.universal.HelpCommand;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "import seedu.deliverymans.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": " * Parses user input in editing context"
+        "content": "/**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": " */"
+        "content": " * Parses user input in editing context"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "public class EditingParser {"
+        "content": " */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "public class EditingParser {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Used for initial separation of command word and args."
+        "content": "    /**"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "     * Used for initial separation of command word and args."
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    private static final Pattern BASIC_COMMAND_FORMAT \u003d Pattern.compile(\"(?\u003ccommandWord\u003e\\\\S+)(?\u003carguments\u003e.*)\");"
+        "content": "     */"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    private static final Pattern BASIC_COMMAND_FORMAT \u003d Pattern.compile(\"(?\u003ccommandWord\u003e\\\\S+)(?\u003carguments\u003e.*)\");"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Parses user input into command for execution."
+        "content": "    /**"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     *"
+        "content": "     * Parses user input into command for execution."
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * @param userInput full user input string"
+        "content": "     *"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * @return the command based on the user input"
+        "content": "     * @param userInput full user input string"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     * @return the command based on the user input"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public Command parseCommand(String userInput) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(userInput.trim());"
+        "content": "    public Command parseCommand(String userInput) throws ParseException {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (!matcher.matches()) {"
+        "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(userInput.trim());"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
+        "content": "        if (!matcher.matches()) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final String commandWord \u003d matcher.group(\"commandWord\");"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final String arguments \u003d matcher.group(\"arguments\");"
+        "content": "        final String commandWord \u003d matcher.group(\"commandWord\");"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        final String arguments \u003d matcher.group(\"arguments\");"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        switch (commandWord) {"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        case EditDetailsCommand.COMMAND_WORD:"
+        "content": "        switch (commandWord) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return new EditDetailsCommandParser().parse(arguments);"
+        "content": "        case EditDetailsCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            return new EditDetailsCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        case AddFoodCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return new AddFoodCommandParser().parse(arguments);"
+        "content": "        case AddFoodCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            return new AddFoodCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        case DeleteFoodCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return new DeleteFoodCommandParser().parse(arguments);"
+        "content": "        case AddRatingCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            return new AddRatingCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        case ExitEditCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return new ExitEditCommand();"
+        "content": "        case DeleteFoodCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            return new DeleteFoodCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        default:"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new ParseException(MESSAGE_UNKNOWN_COMMAND);"
+        "content": "        case ExitEditCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "            return new ExitEditCommand();"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 59,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        default:"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "            throw new ParseException(MESSAGE_UNKNOWN_COMMAND);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
         "author": {
           "gitId": "MackyMaguire"
         },
@@ -60578,7 +61542,7 @@
       }
     ],
     "authorContributionMap": {
-      "MackyMaguire": 59
+      "MackyMaguire": 63
     }
   },
   {
@@ -93892,154 +94856,154 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "import static seedu.deliverymans.commons.util.AppUtil.checkArgument;"
+        "content": ""
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "import java.util.Objects;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": " * Represents a Rating"
+        "content": "/**"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": " */"
+        "content": " * Represents a Rating"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "public class Rating {"
+        "content": " */"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "public class Rating {"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            \"Rating should be an integer from 0 to 5\";"
+        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static final String VALIDATION_REGEX \u003d \"\\\\d{1}\";"
+        "content": "            \"Rating should be an integer from 0 to 5\";"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    public static final String VALIDATION_REGEX \u003d \"\\\\d{1}\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public final String numberOfRatings;"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public final String rating;"
+        "content": "    public final int numberOfRatings;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    public final String rating;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Constructs a {@code Rating}."
+        "content": "    /**"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     *"
+        "content": "     * Constructs a {@code Rating}."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * @param rating A valid rating."
+        "content": "     *"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "     * @param rating A valid rating."
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public Rating(String rating) {"
+        "content": "     */"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        requireNonNull(rating);"
+        "content": "    public Rating(String rating) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        checkArgument(isValidRating(rating), MESSAGE_CONSTRAINTS);"
+        "content": "        requireNonNull(rating);"
       },
       {
         "lineNumber": 26,
@@ -94053,7 +95017,7 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.numberOfRatings \u003d \"0\";"
+        "content": "        this.numberOfRatings \u003d 1;"
       },
       {
         "lineNumber": 28,
@@ -94116,297 +95080,325 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public Rating(String rating, String numberOfRatings) {"
+        "content": "    public Rating(String rating, int numberOfRatings) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        requireNonNull(rating, numberOfRatings);"
+        "content": "        requireNonNull(rating);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        checkArgument(isValidRating(rating), MESSAGE_CONSTRAINTS);"
+        "content": "        this.rating \u003d rating;"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.rating \u003d rating;"
+        "content": "        this.numberOfRatings \u003d numberOfRatings;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.numberOfRatings \u003d numberOfRatings;"
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "     * Returns true if a given string is a valid rating."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Returns true if a given string is a valid rating."
+        "content": "     */"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "    public static boolean isValidRating(String rating) {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static boolean isValidRating(String rating) {"
+        "content": "        boolean matchRegex \u003d rating.matches(VALIDATION_REGEX);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        boolean matchRegex \u003d rating.matches(VALIDATION_REGEX);"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        if (matchRegex) {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (matchRegex) {"
+        "content": "            double value \u003d getRatingValue(rating);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            double value \u003d getRatingValue(rating);"
+        "content": "            boolean matchRange \u003d (value \u003c\u003d 5) \u0026\u0026 (value \u003e\u003d 0);"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            boolean matchRange \u003d (value \u003c\u003d 5) \u0026\u0026 (value \u003e\u003d 0);"
+        "content": "            return matchRange;"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return matchRange;"
+        "content": "        } else {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        } else {"
+        "content": "            return false;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            return false;"
+        "content": "        }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    public static double getRatingValue(String rating) {"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static double getRatingValue(String rating) {"
+        "content": "        return Double.parseDouble(rating);"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        return Double.parseDouble(rating);"
+        "content": "    }"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    @Override"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public String toString() {"
+        "content": "        if (numberOfRatings \u003d\u003d 0) {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        return rating;"
+        "content": "            return \"0\";"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            return String.format(\"%.1f\", getRatingValue(rating) / numberOfRatings);"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    @Override"
+        "content": "        }"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                || (other instanceof Rating // instanceof handles nulls"
+        "content": "    @Override"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                \u0026\u0026 rating.equals(((Rating) other).rating)); // state check"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "                || (other instanceof Rating // instanceof handles nulls"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    @Override"
+        "content": "                \u0026\u0026 rating.equals(((Rating) other).rating)"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public int hashCode() {"
+        "content": "                \u0026\u0026 numberOfRatings \u003d\u003d ((Rating) other).numberOfRatings); // state check"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        return rating.hashCode();"
+        "content": "    }"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 78,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public int hashCode() {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        return Objects.hash(rating, numberOfRatings);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 82,
         "author": {
           "gitId": "MackyMaguire"
         },
@@ -94414,7 +95406,7 @@
       }
     ],
     "authorContributionMap": {
-      "MackyMaguire": 78
+      "MackyMaguire": 82
     }
   },
   {
@@ -94713,7 +95705,7 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.rating \u003d new Rating(\"0\");"
+        "content": "        this.rating \u003d new Rating(\"0\", 0);"
       },
       {
         "lineNumber": 43,
@@ -94769,7 +95761,7 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.rating \u003d new Rating(\"0\");"
+        "content": "        this.rating \u003d new Rating(\"0\", 0);"
       },
       {
         "lineNumber": 51,
@@ -109895,7 +110887,7 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    private final List\u003cseedu.deliverymans.storage.JsonAdaptedTag\u003e tagged \u003d new ArrayList\u003c\u003e();"
+        "content": "    private final List\u003cJsonAdaptedTag\u003e tagged \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 32,
@@ -109958,7 +110950,7 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                           @JsonProperty(\"tagged\") List\u003cseedu.deliverymans.storage.JsonAdaptedTag\u003e tagged) {"
+        "content": "                           @JsonProperty(\"tagged\") List\u003cJsonAdaptedTag\u003e tagged) {"
       },
       {
         "lineNumber": 41,
@@ -110077,7 +111069,7 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                .map(seedu.deliverymans.storage.JsonAdaptedTag::new)"
+        "content": "                .map(JsonAdaptedTag::new)"
       },
       {
         "lineNumber": 58,
@@ -110360,6 +111352,295 @@
     }
   },
   {
+    "path": "src/main/java/seedu/deliverymans/storage/restaurant/JsonAdaptedRating.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "package seedu.deliverymans.storage.restaurant;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import com.fasterxml.jackson.annotation.JsonCreator;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import com.fasterxml.jackson.annotation.JsonProperty;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "import seedu.deliverymans.model.restaurant.Rating;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": " * Jackson-friendly version of {@link Rating}."
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "class JsonAdaptedRating {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    private final int numberOfRatings;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    private final String rating;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * Constructs a {@code JsonAdaptedRating} with the given {@code rating}."
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    @JsonCreator"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public JsonAdaptedRating(@JsonProperty(\"rating\") String rating,"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "                           @JsonProperty(\"num\") int numberOfRatings) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        this.rating \u003d rating;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        this.numberOfRatings \u003d numberOfRatings;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * Converts a given {@code Rating} into this class for Jackson use."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public JsonAdaptedRating(Rating source) {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        numberOfRatings \u003d source.numberOfRatings;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        rating \u003d source.rating;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     * Converts this Jackson-friendly adapted rating object into the model\u0027s {@code Rating} object."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    public Rating toModelType() {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "        return new Rating(rating, numberOfRatings);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "MackyMaguire": 40
+    }
+  },
+  {
     "path": "src/main/java/seedu/deliverymans/storage/restaurant/JsonAdaptedRestaurant.java",
     "fileType": "functional",
     "lines": [
@@ -110578,612 +111859,584 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    private final String rating;"
+        "content": "    private final JsonAdaptedRating rating;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    private final List\u003cJsonAdaptedTag\u003e tagged \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    private final List\u003cJsonAdaptedTag\u003e tagged \u003d new ArrayList\u003c\u003e();"
+        "content": "    private final List\u003cJsonAdaptedFood\u003e menu \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    private final List\u003cJsonAdaptedFood\u003e menu \u003d new ArrayList\u003c\u003e();"
+        "content": "    //private final List\u003cJsonAdaptedOrder\u003e order \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    //private final List\u003cJsonAdaptedOrder\u003e order \u003d new ArrayList\u003c\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "     * Constructs a {@code JsonAdaptedRestaurant} with the given restaurant details."
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Constructs a {@code JsonAdaptedRestaurant} with the given restaurant details."
+        "content": "     */"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "    @JsonCreator"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    @JsonCreator"
+        "content": "    public JsonAdaptedRestaurant(@JsonProperty(\"name\") String name, @JsonProperty(\"location\") String location,"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public JsonAdaptedRestaurant(@JsonProperty(\"name\") String name, @JsonProperty(\"location\") String location,"
+        "content": "                             @JsonProperty(\"rating\") JsonAdaptedRating rating,"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                             @JsonProperty(\"rating\") String rating,"
+        "content": "                             @JsonProperty(\"tagged\") List\u003cJsonAdaptedTag\u003e tagged,"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                             @JsonProperty(\"tagged\") List\u003cJsonAdaptedTag\u003e tagged,"
+        "content": "                             @JsonProperty(\"menu\") List\u003cJsonAdaptedFood\u003e menu) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                             @JsonProperty(\"menu\") List\u003cJsonAdaptedFood\u003e menu) {"
+        "content": "        this.name \u003d name;"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.name \u003d name;"
+        "content": "        this.location \u003d location;"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.location \u003d location;"
+        "content": "        this.rating \u003d rating;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        this.rating \u003d rating;"
+        "content": "        if (tagged !\u003d null) {"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (tagged !\u003d null) {"
+        "content": "            this.tagged.addAll(tagged);"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            this.tagged.addAll(tagged);"
+        "content": "        }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "        if (menu !\u003d null) {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (menu !\u003d null) {"
+        "content": "            this.menu.addAll(menu);"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            this.menu.addAll(menu);"
+        "content": "        }"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "     * Converts a given {@code Restaurant} into this class for Jackson use."
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Converts a given {@code Restaurant} into this class for Jackson use."
+        "content": "     */"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "    public JsonAdaptedRestaurant(Restaurant source) {"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public JsonAdaptedRestaurant(Restaurant source) {"
+        "content": "        name \u003d source.getName().fullName;"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        name \u003d source.getName().fullName;"
+        "content": "        location \u003d source.getLocation().name;"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        location \u003d source.getLocation().name;"
+        "content": "        rating \u003d new JsonAdaptedRating(source.getRating());"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        rating \u003d source.getRating().rating;"
+        "content": "        tagged.addAll(source.getTags().stream()"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        tagged.addAll(source.getTags().stream()"
+        "content": "                .map(JsonAdaptedTag::new)"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                .map(JsonAdaptedTag::new)"
+        "content": "                .collect(Collectors.toList()));"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                .collect(Collectors.toList()));"
+        "content": "        menu.addAll(source.getMenu().stream()"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        menu.addAll(source.getMenu().stream()"
+        "content": "                .map(JsonAdaptedFood::new)"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                .map(JsonAdaptedFood::new)"
+        "content": "                .collect(Collectors.toList()));"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                .collect(Collectors.toList()));"
+        "content": "    }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    /**"
+        "content": "     * Converts this Jackson-friendly adapted restaurant object into the model\u0027s {@code Restaurant} object."
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Converts this Jackson-friendly adapted restaurant object into the model\u0027s {@code Restaurant} object."
+        "content": "     *"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     *"
+        "content": "     * @throws IllegalValueException if there were any data constraints violated in the adapted restaurant."
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * @throws IllegalValueException if there were any data constraints violated in the adapted restaurant."
+        "content": "     */"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "    public Restaurant toModelType() throws IllegalValueException {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public Restaurant toModelType() throws IllegalValueException {"
+        "content": "        final List\u003cTag\u003e restaurantTags \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final List\u003cTag\u003e restaurantTags \u003d new ArrayList\u003c\u003e();"
+        "content": "        final List\u003cFood\u003e restaurantMenu \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final List\u003cFood\u003e restaurantMenu \u003d new ArrayList\u003c\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        for (JsonAdaptedTag tag : tagged) {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        for (JsonAdaptedTag tag : tagged) {"
+        "content": "            restaurantTags.add(tag.toModelType());"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            restaurantTags.add(tag.toModelType());"
+        "content": "        }"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        for (JsonAdaptedFood food : menu) {"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        for (JsonAdaptedFood food : menu) {"
+        "content": "            restaurantMenu.add(food.toModelType());"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            restaurantMenu.add(food.toModelType());"
+        "content": "        }"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        if (name \u003d\u003d null) {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (name \u003d\u003d null) {"
+        "content": "            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));"
+        "content": "        }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "        if (!Name.isValidName(name)) {"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (!Name.isValidName(name)) {"
+        "content": "            throw new IllegalValueException(Name.MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new IllegalValueException(Name.MESSAGE_CONSTRAINTS);"
+        "content": "        }"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "        final Name modelName \u003d new Name(name);"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final Name modelName \u003d new Name(name);"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        if (location \u003d\u003d null) {"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (location \u003d\u003d null) {"
+        "content": "            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,"
+        "content": "                    Location.class.getSimpleName()));"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "                    Location.class.getSimpleName()));"
+        "content": "        }"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "        if (!LocationMap.isValidLocation(location)) {"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (!LocationMap.isValidLocation(location)) {"
+        "content": "            throw new IllegalValueException(LocationMap.MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new IllegalValueException(LocationMap.MESSAGE_CONSTRAINTS);"
+        "content": "        }"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "        final Location modelLocation \u003d LocationMap.getLocation(location).get();"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final Location modelLocation \u003d LocationMap.getLocation(location).get();"
+        "content": ""
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        if (rating \u003d\u003d null) {"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (rating \u003d\u003d null) {"
+        "content": "            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Rating.class.getSimpleName()));"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Rating.class.getSimpleName()));"
+        "content": "        }"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        if (!Rating.isValidRating(rating)) {"
+        "content": "        final Rating modelRating \u003d rating.toModelType();"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            throw new IllegalValueException(Rating.MESSAGE_CONSTRAINTS);"
+        "content": "        final Set\u003cTag\u003e modelTags \u003d new HashSet\u003c\u003e(restaurantTags);"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        }"
+        "content": "        final ObservableList\u003cFood\u003e modelMenu \u003d FXCollections.observableArrayList();"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final Rating modelRating \u003d new Rating(rating);"
+        "content": "        modelMenu.addAll(restaurantMenu);"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "        return new Restaurant(modelName, modelLocation, modelRating, modelTags, modelMenu);"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        final Set\u003cTag\u003e modelTags \u003d new HashSet\u003c\u003e(restaurantTags);"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "        final ObservableList\u003cFood\u003e modelMenu \u003d FXCollections.observableArrayList();"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "        modelMenu.addAll(restaurantMenu);"
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "        return new Restaurant(modelName, modelLocation, modelRating, modelTags, modelMenu);"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 114,
         "author": {
           "gitId": "MackyMaguire"
         },
@@ -111191,7 +112444,7 @@
       }
     ],
     "authorContributionMap": {
-      "MackyMaguire": 118
+      "MackyMaguire": 114
     }
   },
   {
@@ -120901,7 +122154,7 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        rating.setText(\"Rating: \" + restaurant.getRating().rating);"
+        "content": "        rating.setText(\"Rating: \" + restaurant.getRating().toString());"
       },
       {
         "lineNumber": 49,

@@ -41204,574 +41204,574 @@
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "import thrift.ui.TransactionListPanel;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": " * Clones a transaction specified by its index in THRIFT."
+        "content": "/**"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": " */"
+        "content": " * Clones a transaction specified by its index in THRIFT."
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "public class CloneCommand extends NonScrollingCommand implements Undoable {"
+        "content": " */"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "public class CloneCommand extends ScrollingCommand implements Undoable {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"clone\";"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "    public static final String COMMAND_WORD \u003d \"clone\";"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "lightz96"
+          "gitId": "lye-jw"
         },
-        "content": "    public static final String HELP_MESSAGE \u003d COMMAND_WORD"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "lightz96"
         },
-        "content": "            + \": Clones the transaction specified by its index number used in the displayed transaction list.\\n\""
+        "content": "    public static final String HELP_MESSAGE \u003d COMMAND_WORD"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "lightz96"
         },
-        "content": "            + \"Format: \""
+        "content": "            + \": Clones the transaction specified by its index number used in the displayed transaction list.\\n\""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "lightz96"
         },
-        "content": "            + COMMAND_WORD + \" \" + CliSyntax.PREFIX_INDEX + \"INDEX (must be a positive integer)\\n\""
+        "content": "            + \"Format: \""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "lightz96"
         },
-        "content": "            + \"Possible usage of \" + COMMAND_WORD + \": \\n\""
+        "content": "            + COMMAND_WORD + \" \" + CliSyntax.PREFIX_INDEX + \"INDEX (must be a positive integer)\\n\""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "lightz96"
         },
-        "content": "            + \"To clone the transaction at index 8 in the displayed transaction list: \""
+        "content": "            + \"Possible usage of \" + COMMAND_WORD + \": \\n\""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lightz96"
         },
-        "content": "            + COMMAND_WORD + \" \" + CliSyntax.PREFIX_INDEX + \"8\";"
+        "content": "            + \"To clone the transaction at index 8 in the displayed transaction list: \""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "lightz96"
         },
-        "content": ""
+        "content": "            + COMMAND_WORD + \" \" + CliSyntax.PREFIX_INDEX + \"8\";"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "lye-jw"
+          "gitId": "lightz96"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            + \": Clones the transaction specified by its index number used in the displayed transaction list.\\n\""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            + \"Parameters: \" + CliSyntax.PREFIX_INDEX + \"INDEX (must be a positive integer)\\n\""
+        "content": "            + \": Clones the transaction specified by its index number used in the displayed transaction list.\\n\""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            + \"Example: \" + COMMAND_WORD + \" \" + CliSyntax.PREFIX_INDEX + \"1\";"
+        "content": "            + \"Parameters: \" + CliSyntax.PREFIX_INDEX + \"INDEX (must be a positive integer)\\n\""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "            + \"Example: \" + COMMAND_WORD + \" \" + CliSyntax.PREFIX_INDEX + \"1\";"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    public static final String MESSAGE_CLONE_TRANSACTION_SUCCESS \u003d \"Cloned transaction: %1$s\";"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_CLONE_TRANSACTION_SUCCESS \u003d \"Cloned transaction: %1$s\";"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    private final Index targetIndex;"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    private Transaction clonedTransaction;"
+        "content": "    private final Index targetIndex;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "    private Transaction clonedTransaction;"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     * Creates a CloneCommand instance to clone an {@code Expense} or {@code Income}"
+        "content": "    /**"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     *"
+        "content": "     * Creates a CloneCommand instance to clone an {@code Expense} or {@code Income}"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     * @param targetIndex from the displayed list of the transaction to be cloned"
+        "content": "     *"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     */"
+        "content": "     * @param targetIndex from the displayed list of the transaction to be cloned"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    public CloneCommand(Index targetIndex) {"
+        "content": "     */"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        requireNonNull(targetIndex);"
+        "content": "    public CloneCommand(Index targetIndex) {"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        this.targetIndex \u003d targetIndex;"
+        "content": "        requireNonNull(targetIndex);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        this.clonedTransaction \u003d null;"
+        "content": "        this.targetIndex \u003d targetIndex;"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    }"
+        "content": "        this.clonedTransaction \u003d null;"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    public CommandResult execute(Model model, TransactionListPanel transactionListPanel) throws CommandException {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        List\u003cTransaction\u003e lastShownList \u003d model.getFilteredTransactionList();"
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "        List\u003cTransaction\u003e lastShownList \u003d model.getFilteredTransactionList();"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        if (targetIndex.getZeroBased() \u003e\u003d lastShownList.size()) {"
+        "content": ""
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_TRANSACTION_DISPLAYED_INDEX);"
+        "content": "        if (targetIndex.getZeroBased() \u003e\u003d lastShownList.size()) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        }"
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_TRANSACTION_DISPLAYED_INDEX);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        Transaction transactionToClone \u003d lastShownList.get(targetIndex.getZeroBased());"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        clonedTransaction \u003d createClonedTransaction(transactionToClone);"
+        "content": "        Transaction transactionToClone \u003d lastShownList.get(targetIndex.getZeroBased());"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        if (clonedTransaction instanceof Expense) {"
+        "content": "        clonedTransaction \u003d createClonedTransaction(transactionToClone);"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            model.addExpense((Expense) clonedTransaction);"
+        "content": "        if (clonedTransaction instanceof Expense) {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        } else if (clonedTransaction instanceof Income) {"
+        "content": "            model.addExpense((Expense) clonedTransaction);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            model.addIncome((Income) clonedTransaction);"
+        "content": "        } else if (clonedTransaction instanceof Income) {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        }"
+        "content": "            model.addIncome((Income) clonedTransaction);"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_CLONE_TRANSACTION_SUCCESS, clonedTransaction));"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    }"
+        "content": "        // Use null comparison instead of requireNonNull(transactionListPanel) as current JUnit tests are unable to"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "        // handle JavaFX initialization"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    /**"
+        "content": "        if (model.isInView(clonedTransaction) \u0026\u0026 transactionListPanel !\u003d null) {"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     * Creates a clone of the transaction at {@link #targetIndex} of the displayed list."
+        "content": "            transactionListPanel.getTransactionListView().scrollTo(clonedTransaction);"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     *"
+        "content": "        }"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     * @param transactionToClone {@link Transaction} that a clone should be created of, with current Date."
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     * @return {@link Expense} or {@link Income} clone of {@code transactionToClone} containing current Date."
+        "content": "        return new CommandResult(String.format(MESSAGE_CLONE_TRANSACTION_SUCCESS, clonedTransaction));"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    private Transaction createClonedTransaction(Transaction transactionToClone) {"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        Description clonedDescription \u003d transactionToClone.getDescription();"
+        "content": "     * Creates a clone of the transaction at {@link #targetIndex} of the displayed list."
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        Value clonedValue \u003d transactionToClone.getValue();"
+        "content": "     *"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        Remark clonedRemark \u003d transactionToClone.getRemark();"
+        "content": "     * @param transactionToClone {@link Transaction} that a clone should be created of, with current Date."
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        Set\u003cTag\u003e clonedTags \u003d transactionToClone.getTags();"
+        "content": "     * @return {@link Expense} or {@link Income} clone of {@code transactionToClone} containing current Date."
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        TransactionDate currentDate \u003d new TransactionDate(DATE_FORMATTER.format(new Date()));"
+        "content": "     */"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        if (transactionToClone instanceof Expense) {"
+        "content": "    private Transaction createClonedTransaction(Transaction transactionToClone) {"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            return new Expense(clonedDescription, clonedValue, clonedRemark, currentDate, clonedTags);"
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        } else {"
+        "content": "        Description clonedDescription \u003d transactionToClone.getDescription();"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            return new Income(clonedDescription, clonedValue, clonedRemark, currentDate, clonedTags);"
+        "content": "        Value clonedValue \u003d transactionToClone.getValue();"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        }"
+        "content": "        Remark clonedRemark \u003d transactionToClone.getRemark();"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    }"
+        "content": "        Set\u003cTag\u003e clonedTags \u003d transactionToClone.getTags();"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "        TransactionDate currentDate \u003d new TransactionDate(DATE_FORMATTER.format(new Date()));"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    @Override"
+        "content": "        if (transactionToClone instanceof Expense) {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "            return new Expense(clonedDescription, clonedValue, clonedRemark, currentDate, clonedTags);"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "        } else {"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "                || (other instanceof CloneCommand // instanceof handles nulls"
+        "content": "            return new Income(clonedDescription, clonedValue, clonedRemark, currentDate, clonedTags);"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "                \u0026\u0026 targetIndex.equals(((CloneCommand) other).targetIndex)); // state check"
+        "content": "        }"
       },
       {
         "lineNumber": 106,
@@ -41799,101 +41799,150 @@
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    public void undo(Model model) {"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        requireNonNull(model);"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        model.deleteLastTransaction();"
+        "content": "                || (other instanceof CloneCommand // instanceof handles nulls"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 targetIndex.equals(((CloneCommand) other).targetIndex)); // state check"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    public void redo(Model model) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 116,
         "author": {
-          "gitId": "lightz96"
+          "gitId": "lye-jw"
         },
-        "content": "        requireAllNonNull(model, clonedTransaction);"
+        "content": "    public void undo(Model model) {"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        if (clonedTransaction instanceof Expense) {"
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            model.addExpense((Expense) clonedTransaction);"
+        "content": "        model.deleteLastTransaction();"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        } else if (clonedTransaction instanceof Income) {"
+        "content": "    }"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            model.addIncome((Income) clonedTransaction);"
+        "content": ""
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "    }"
+        "content": "    public void redo(Model model) {"
       },
       {
         "lineNumber": 123,
+        "author": {
+          "gitId": "lightz96"
+        },
+        "content": "        requireAllNonNull(model, clonedTransaction);"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "        if (clonedTransaction instanceof Expense) {"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "            model.addExpense((Expense) clonedTransaction);"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "        } else if (clonedTransaction instanceof Income) {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "            model.addIncome((Income) clonedTransaction);"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 130,
         "author": {
           "gitId": "lye-jw"
         },
@@ -41901,7 +41950,7 @@
       }
     ],
     "authorContributionMap": {
-      "lye-jw": 113,
+      "lye-jw": 120,
       "lightz96": 10
     }
   },
@@ -49257,7 +49306,7 @@
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        if (transactionListPanel !\u003d null) {"
+        "content": "        if (model.isInView(updatedTransaction) \u0026\u0026 transactionListPanel !\u003d null) {"
       },
       {
         "lineNumber": 119,
@@ -52350,45 +52399,38 @@
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     * Returns the preamble (text before the first valid prefix) with index \"i/\" prefix attached. Trims any"
+        "content": "     * Returns the index specified with the \"i/\" prefix."
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     * leading/trailing spaces."
+        "content": "     */"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "     */"
+        "content": "    public String getIndexFromCommand() throws ParseException {"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "    public String getPreambleIncludeIndex() throws ParseException {"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "limerencee"
-        },
         "content": "        return getSingleValue(CliSyntax.PREFIX_INDEX).orElse(\"\");"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 85,
         "author": {
           "gitId": "lye-jw"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
@@ -52396,7 +52438,7 @@
       }
     ],
     "authorContributionMap": {
-      "limerencee": 3,
+      "limerencee": 2,
       "krusagiz": 19,
       "lye-jw": 6,
       "-": 59
@@ -54038,7 +54080,7 @@
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            Index index \u003d ParserUtil.parseIndex(argMultimap.getPreambleIncludeIndex());"
+        "content": "            Index index \u003d ParserUtil.parseIndex(argMultimap.getIndexFromCommand());"
       },
       {
         "lineNumber": 26,
@@ -54656,9 +54698,9 @@
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "            Index index \u003d ParserUtil.parseIndex(argMultimap.getPreambleIncludeIndex());"
+        "content": "            Index index \u003d ParserUtil.parseIndex(argMultimap.getIndexFromCommand());"
       },
       {
         "lineNumber": 26,
@@ -54718,7 +54760,8 @@
       }
     ],
     "authorContributionMap": {
-      "limerencee": 11,
+      "limerencee": 10,
+      "lye-jw": 1,
       "-": 22
     }
   },
@@ -59449,7 +59492,7 @@
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            index \u003d ParserUtil.parseIndex(argMultimap.getPreambleIncludeIndex());"
+        "content": "            index \u003d ParserUtil.parseIndex(argMultimap.getIndexFromCommand());"
       },
       {
         "lineNumber": 36,
@@ -59503,292 +59546,299 @@
       {
         "lineNumber": 43,
         "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "        // Besides Tags, multiple repeated fields not allowed for more comprehensible results"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
           "gitId": "limerencee"
         },
         "content": "        if (argMultimap.getValue(CliSyntax.PREFIX_NAME).isPresent()) {"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 45,
         "author": {
           "gitId": "lye-jw"
         },
         "content": "            updateTransactionDescriptor.setDescription(ParserUtil.parseDescription("
       },
       {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": "                argMultimap.getValue(CliSyntax.PREFIX_NAME).get()));"
-      },
-      {
         "lineNumber": 46,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        }"
+        "content": "                argMultimap.getSingleValue(CliSyntax.PREFIX_NAME).get()));"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 48,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
         "author": {
           "gitId": "limerencee"
         },
         "content": "        if (argMultimap.getValue(CliSyntax.PREFIX_VALUE).isPresent()) {"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 50,
         "author": {
           "gitId": "lye-jw"
         },
         "content": "            updateTransactionDescriptor.setValue(ParserUtil.parseValue("
       },
       {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": "                    argMultimap.getValue(CliSyntax.PREFIX_VALUE).get()));"
-      },
-      {
         "lineNumber": 51,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        }"
+        "content": "                    argMultimap.getSingleValue(CliSyntax.PREFIX_VALUE).get()));"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "        if (argMultimap.getValue(CliSyntax.PREFIX_REMARK).isPresent()) {"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "            updateTransactionDescriptor.setRemark(ParserUtil.parseRemark("
+        "content": "        if (argMultimap.getValue(CliSyntax.PREFIX_REMARK).isPresent()) {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "                    argMultimap.getValue(CliSyntax.PREFIX_REMARK).get()"
+        "content": "            updateTransactionDescriptor.setRemark(ParserUtil.parseRemark("
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "            ));"
+        "content": "                    argMultimap.getSingleValue(CliSyntax.PREFIX_REMARK).get()"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "        }"
+        "content": "            ));"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "limerencee"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "lye-jw"
+          "gitId": "limerencee"
         },
-        "content": "        parseTagsForUpdate(argMultimap.getAllValues(CliSyntax.PREFIX_TAG))"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "                .ifPresent(updateTransactionDescriptor::setTags);"
+        "content": "        parseTagsForUpdate(argMultimap.getAllValues(CliSyntax.PREFIX_TAG))"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "                .ifPresent(updateTransactionDescriptor::setTags);"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "lye-jw"
+          "gitId": "limerencee"
         },
-        "content": "        if (!updateTransactionDescriptor.isAnyFieldUpdated()) {"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "            throw new ParseException(UpdateCommand.MESSAGE_NOT_UPDATED);"
+        "content": "        if (!updateTransactionDescriptor.isAnyFieldUpdated()) {"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(UpdateCommand.MESSAGE_NOT_UPDATED);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "limerencee"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 66,
+        "author": {
+          "gitId": "limerencee"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
         "author": {
           "gitId": "lye-jw"
         },
         "content": "        return new UpdateCommand(index, updateTransactionDescriptor);"
       },
       {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 68,
         "author": {
           "gitId": "limerencee"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "     * Parses {@code Collection\u003cString\u003e tags} into a {@code Set\u003cTag\u003e} if {@code tags} is non-empty."
+        "content": "    /**"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "     * If {@code tags} contain only one element which is an empty string, it will be parsed into a"
+        "content": "     * Parses {@code Collection\u003cString\u003e tags} into a {@code Set\u003cTag\u003e} if {@code tags} is non-empty."
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "     * {@code Set\u003cTag\u003e} containing zero tags."
+        "content": "     * If {@code tags} contain only one element which is an empty string, it will be parsed into a"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "     */"
+        "content": "     * {@code Set\u003cTag\u003e} containing zero tags."
       },
       {
         "lineNumber": 74,
+        "author": {
+          "gitId": "limerencee"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 75,
         "author": {
           "gitId": "lye-jw"
         },
         "content": "    private Optional\u003cSet\u003cTag\u003e\u003e parseTagsForUpdate(Collection\u003cString\u003e tags) throws ParseException {"
       },
       {
-        "lineNumber": 75,
+        "lineNumber": 76,
         "author": {
           "gitId": "limerencee"
         },
         "content": "        assert tags !\u003d null;"
       },
       {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 77,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "        if (tags.isEmpty()) {"
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "            return Optional.empty();"
+        "content": "        if (tags.isEmpty()) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "        }"
+        "content": "            return Optional.empty();"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "        Collection\u003cString\u003e tagSet \u003d tags.size() \u003d\u003d 1 \u0026\u0026 tags.contains(\"\") ? Collections.emptySet() : tags;"
+        "content": "        }"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "        return Optional.of(ParserUtil.parseTags(tagSet));"
+        "content": "        Collection\u003cString\u003e tagSet \u003d tags.size() \u003d\u003d 1 \u0026\u0026 tags.contains(\"\") ? Collections.emptySet() : tags;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "    }"
+        "content": "        return Optional.of(ParserUtil.parseTags(tagSet));"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "limerencee"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 84,
+        "author": {
+          "gitId": "limerencee"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 85,
         "author": {
           "gitId": "limerencee"
         },
@@ -59796,8 +59846,8 @@
       }
     ],
     "authorContributionMap": {
-      "limerencee": 61,
-      "lye-jw": 23
+      "limerencee": 58,
+      "lye-jw": 27
     }
   },
   {
@@ -73598,9 +73648,9 @@
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "                    + \"accepts up to 2 decimal digits.\\nValue should also be lesser than 1 billion.\";"
+        "content": "                    + \"accepts up to 2 decimal digits.\\nValue should also be less than 1 billion.\";"
       },
       {
         "lineNumber": 20,
@@ -74269,7 +74319,8 @@
       }
     ],
     "authorContributionMap": {
-      "limerencee": 112,
+      "limerencee": 111,
+      "lye-jw": 1,
       "lightz96": 2
     }
   },
@@ -125653,9 +125704,9 @@
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "    public void parse_invalidPreamble_failure() {"
+        "content": "    public void parse_invalidIndex_failure() {"
       },
       {
         "lineNumber": 42,
@@ -125772,9 +125823,9 @@
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "    public void parse_invalidValue_failure() {"
+        "content": "    public void parse_invalidParam_failure() {"
       },
       {
         "lineNumber": 59,
@@ -125842,30 +125893,30 @@
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "        // valid value followed by invalid value. The test case for invalid value followed by valid value"
+        "content": "        // valid value followed by invalid value."
       },
       {
         "lineNumber": 69,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": "        // is tested at {@code parse_invalidValueFollowedByValidValue_success()}"
-      },
-      {
-        "lineNumber": 70,
         "author": {
           "gitId": "lye-jw"
         },
         "content": "        assertParseFailure(parser, \" i/1\""
       },
       {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "                + CommandTestUtil.VALUE_LAKSA + CommandTestUtil.INVALID_VALUE,"
+      },
+      {
         "lineNumber": 71,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "                + CommandTestUtil.VALUE_LAKSA + CommandTestUtil.INVALID_VALUE, Value.VALUE_CONSTRAINTS);"
+        "content": "                String.format(ArgumentMultimap.WARNING_NOT_SINGULAR_FORMAT, CliSyntax.PREFIX_VALUE));"
       },
       {
         "lineNumber": 72,
@@ -126290,268 +126341,268 @@
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "    public void parse_multipleRepeatedFields_acceptsLast() {"
+        "content": "    public void parse_fieldsOutOfOrder_success() {"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        Index targetIndex \u003d TypicalIndexes.INDEX_THIRD_TRANSACTION;"
+        "content": "        Index targetIndex \u003d TypicalIndexes.INDEX_FIRST_TRANSACTION;"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        String userInput \u003d CommandTestUtil.INDEX_TOKEN + targetIndex.getOneBased() + CommandTestUtil.DESC_LAKSA"
+        "content": "        String userInput \u003d CommandTestUtil.INDEX_TOKEN + targetIndex.getOneBased()"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "                + CommandTestUtil.VALUE_LAKSA + CommandTestUtil.TAG_LAKSA"
+        "content": "                + CommandTestUtil.TAG_AIRPODS + CommandTestUtil.VALUE_AIRPODS + CommandTestUtil.REMARK_AIRPODS"
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "                + CommandTestUtil.DESC_AIRPODS + CommandTestUtil.VALUE_AIRPODS"
+        "content": "                + CommandTestUtil.TAG_BURSARY + CommandTestUtil.DESC_AIRPODS;"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "                + CommandTestUtil.TAG_AIRPODS;"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": ""
+        "content": "        UpdateTransactionDescriptor descriptor \u003d new UpdateTransactionDescriptorBuilder()"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        UpdateTransactionDescriptor descriptor \u003d new UpdateTransactionDescriptorBuilder()"
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "lye-jw"
-        },
         "content": "                .withDescription(CommandTestUtil.VALID_DESCRIPTION_AIRPODS)"
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 140,
         "author": {
           "gitId": "limerencee"
         },
         "content": "                .withValue(CommandTestUtil.VALID_VALUE_AIRPODS)"
       },
       {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "                .withRemark(CommandTestUtil.VALID_REMARK_AIRPODS)"
+      },
+      {
         "lineNumber": 142,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "                .withTags(CommandTestUtil.VALID_TAG_ACCESSORY, CommandTestUtil.VALID_TAG_LUNCH)"
+        "content": "                .withTags(CommandTestUtil.VALID_TAG_ACCESSORY, CommandTestUtil.VALID_TAG_AWARD).build();"
       },
       {
         "lineNumber": 143,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "                .build();"
+        "content": "        UpdateCommand expectedCommand \u003d new UpdateCommand(targetIndex, descriptor);"
       },
       {
         "lineNumber": 144,
         "author": {
-          "gitId": "lye-jw"
+          "gitId": "limerencee"
         },
-        "content": "        UpdateCommand expectedCommand \u003d new UpdateCommand(targetIndex, descriptor);"
+        "content": ""
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "limerencee"
         },
-        "content": ""
+        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
+        "content": "    }"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "limerencee"
         },
-        "content": ""
+        "content": "    @Test"
       },
       {
         "lineNumber": 149,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "    @Test"
+        "content": "    public void parse_multipleRepeatedFields_throwsParseException() {"
       },
       {
         "lineNumber": 150,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "    public void parse_invalidValueFollowedByValidValue_success() {"
+        "content": "        Index targetIndex \u003d TypicalIndexes.INDEX_THIRD_TRANSACTION;"
       },
       {
         "lineNumber": 151,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "        // no other valid values specified"
+        "content": "        String userInput \u003d CommandTestUtil.INDEX_TOKEN + targetIndex.getOneBased() + CommandTestUtil.DESC_LAKSA"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "        Index targetIndex \u003d TypicalIndexes.INDEX_FIRST_TRANSACTION;"
+        "content": "                + CommandTestUtil.VALUE_LAKSA + CommandTestUtil.TAG_LAKSA"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "lye-jw"
         },
-        "content": "        String userInput \u003d CommandTestUtil.INDEX_TOKEN + targetIndex.getOneBased()"
+        "content": "                + CommandTestUtil.DESC_AIRPODS + CommandTestUtil.VALUE_AIRPODS"
       },
       {
         "lineNumber": 154,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "                + CommandTestUtil.INVALID_VALUE + CommandTestUtil.VALUE_AIRPODS;"
+        "content": "                + CommandTestUtil.TAG_AIRPODS;"
       },
       {
         "lineNumber": 155,
-        "author": {
-          "gitId": "lye-jw"
-        },
-        "content": "        UpdateTransactionDescriptor descriptor \u003d new UpdateTransactionDescriptorBuilder()"
-      },
-      {
-        "lineNumber": 156,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": "                .withValue(CommandTestUtil.VALID_VALUE_AIRPODS).build();"
-      },
-      {
-        "lineNumber": 157,
-        "author": {
-          "gitId": "lye-jw"
-        },
-        "content": "        UpdateCommand expectedCommand \u003d new UpdateCommand(targetIndex, descriptor);"
-      },
-      {
-        "lineNumber": 158,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
-      },
-      {
-        "lineNumber": 159,
         "author": {
           "gitId": "limerencee"
         },
         "content": ""
       },
       {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "        // Repeated fields error message pinpoints first repeated field"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "        String repeatedFieldsMessage \u003d String.format(ArgumentMultimap.WARNING_NOT_SINGULAR_FORMAT,"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": "                CliSyntax.PREFIX_NAME);"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "lye-jw"
+        },
+        "content": ""
+      },
+      {
         "lineNumber": 160,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "        // other valid values specified"
+        "content": "        assertParseFailure(parser, userInput, repeatedFieldsMessage);"
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "lye-jw"
+          "gitId": "limerencee"
         },
-        "content": "        userInput \u003d CommandTestUtil.INDEX_TOKEN + targetIndex.getOneBased() + CommandTestUtil.DESC_LAKSA"
+        "content": "    }"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "                + CommandTestUtil.INVALID_VALUE + CommandTestUtil.VALUE_LAKSA;"
+        "content": ""
       },
       {
         "lineNumber": 163,
         "author": {
-          "gitId": "lye-jw"
+          "gitId": "limerencee"
         },
-        "content": "        descriptor \u003d new UpdateTransactionDescriptorBuilder()"
+        "content": "    @Test"
       },
       {
         "lineNumber": 164,
         "author": {
-          "gitId": "lye-jw"
+          "gitId": "limerencee"
         },
-        "content": "                .withDescription(CommandTestUtil.VALID_DESCRIPTION_LAKSA)"
+        "content": "    public void parse_resetTags_success() {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "                .withValue(CommandTestUtil.VALID_VALUE_LAKSA)"
+        "content": "        Index targetIndex \u003d TypicalIndexes.INDEX_THIRD_TRANSACTION;"
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "                .build();"
+        "content": "        String userInput \u003d CommandTestUtil.INDEX_TOKEN + targetIndex.getOneBased() + TAG_EMPTY;"
       },
       {
         "lineNumber": 167,
         "author": {
-          "gitId": "lye-jw"
+          "gitId": "limerencee"
         },
-        "content": "        expectedCommand \u003d new UpdateCommand(targetIndex, descriptor);"
+        "content": ""
       },
       {
         "lineNumber": 168,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
+        "content": "        UpdateTransactionDescriptor descriptor \u003d new UpdateTransactionDescriptorBuilder().withTags().build();"
       },
       {
         "lineNumber": 169,
         "author": {
-          "gitId": "limerencee"
+          "gitId": "lye-jw"
         },
-        "content": "    }"
+        "content": "        UpdateCommand expectedCommand \u003d new UpdateCommand(targetIndex, descriptor);"
       },
       {
         "lineNumber": 170,
@@ -126565,73 +126616,17 @@
         "author": {
           "gitId": "limerencee"
         },
-        "content": "    @Test"
+        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "limerencee"
         },
-        "content": "    public void parse_resetTags_success() {"
-      },
-      {
-        "lineNumber": 173,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": "        Index targetIndex \u003d TypicalIndexes.INDEX_THIRD_TRANSACTION;"
-      },
-      {
-        "lineNumber": 174,
-        "author": {
-          "gitId": "lye-jw"
-        },
-        "content": "        String userInput \u003d CommandTestUtil.INDEX_TOKEN + targetIndex.getOneBased() + TAG_EMPTY;"
-      },
-      {
-        "lineNumber": 175,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 176,
-        "author": {
-          "gitId": "lye-jw"
-        },
-        "content": "        UpdateTransactionDescriptor descriptor \u003d new UpdateTransactionDescriptorBuilder().withTags().build();"
-      },
-      {
-        "lineNumber": 177,
-        "author": {
-          "gitId": "lye-jw"
-        },
-        "content": "        UpdateCommand expectedCommand \u003d new UpdateCommand(targetIndex, descriptor);"
-      },
-      {
-        "lineNumber": 178,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 179,
-        "author": {
-          "gitId": "limerencee"
-        },
-        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
-      },
-      {
-        "lineNumber": 180,
-        "author": {
-          "gitId": "limerencee"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 173,
         "author": {
           "gitId": "limerencee"
         },
@@ -126639,8 +126634,8 @@
       }
     ],
     "authorContributionMap": {
-      "limerencee": 126,
-      "lye-jw": 55
+      "limerencee": 104,
+      "lye-jw": 69
     }
   },
   {

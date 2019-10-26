@@ -1919,8 +1919,8 @@
         ]
       },
       {
-        "insertions": 96,
-        "deletions": 15,
+        "insertions": 237,
+        "deletions": 77,
         "date": "2019-10-22",
         "commitResults": [
           {
@@ -1929,6 +1929,62 @@
             "messageBody": "",
             "insertions": 77,
             "deletions": 6
+          },
+          {
+            "hash": "86b54348ab1c0ea50ef3a0ea81d7e6a07f256a0b",
+            "messageTitle": "Add a usage method for priority command",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "63ed83ee65a66b46ae6e353df71c0322e1be37d5",
+            "messageTitle": "Create a class to schedule the priority command",
+            "messageBody": "",
+            "insertions": 47,
+            "deletions": 0
+          },
+          {
+            "hash": "ca5486fdc35ebd18507d1020e463b6445d1855dd",
+            "messageTitle": "Make method public so that it could be used in other class",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "6dfc5e3f4513b04621df019949132d00ef4106ac",
+            "messageTitle": "Edit to be able to take in time for priority mode",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "aef84a1b80541f0c238563112af1f9091d2fce79",
+            "messageTitle": "Fix javadocs",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "d3e0b8bf3feb9acc65bc9e79be10a208a83fbdc1",
+            "messageTitle": "Create a parser class to parse the priority command",
+            "messageBody": "",
+            "insertions": 35,
+            "deletions": 0
+          },
+          {
+            "hash": "3107806b7c99650d1e0561e49b38a8c37533618b",
+            "messageTitle": "Refactor code to follow SLAP",
+            "messageBody": "",
+            "insertions": 42,
+            "deletions": 27
+          },
+          {
+            "hash": "c565f7589ea8870bd666315bc67a0bd0b544a580",
+            "messageTitle": "Fix to use the underlying observable list methods",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 31
           },
           {
             "hash": "334ceeeedfb91a6d7fbba9afdb3ea933f0b6f7b2",
@@ -1940,8 +1996,8 @@
         ]
       },
       {
-        "insertions": 190,
-        "deletions": 5,
+        "insertions": 250,
+        "deletions": 28,
         "date": "2019-10-23",
         "commitResults": [
           {
@@ -1959,6 +2015,34 @@
             "deletions": 1
           },
           {
+            "hash": "ccaae3ca42a09d0d2213356c8fb19008f0c2ec65",
+            "messageTitle": "Fix scheduled priority mode to update list",
+            "messageBody": "",
+            "insertions": 43,
+            "deletions": 22
+          },
+          {
+            "hash": "5f64831427cf42a4c6730f92ff2cc667e179afe4",
+            "messageTitle": "Handle the removal of timer when exiting the app",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
+          },
+          {
+            "hash": "854ff8b601d6fdebd2be4859907c9d46167a39e8",
+            "messageTitle": "Remove unrequired imports",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "5f8aa0590b8e52712bd1f88de444837b08e28c69",
+            "messageTitle": "Create method to handle destroying timer thread",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 0
+          },
+          {
             "hash": "342637a823a22a549cd71bdaaa97e1a4c4613f2c",
             "messageTitle": "Edit priority mode segment within developer guide",
             "messageBody": "",
@@ -1968,8 +2052,8 @@
         ]
       },
       {
-        "insertions": 33,
-        "deletions": 46,
+        "insertions": 49,
+        "deletions": 51,
         "date": "2019-10-24",
         "commitResults": [
           {
@@ -1998,6 +2082,34 @@
             "messageTitle": "Fix developer guide checkstyle",
             "messageBody": "",
             "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "309654a3442b298099dfa75b8596211a06d094a9",
+            "messageTitle": "Fix code base on review given",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 20,
+        "deletions": 25,
+        "date": "2019-10-25",
+        "commitResults": [
+          {
+            "hash": "a1effd9d47a6e593ae3dad7df79443673e243900",
+            "messageTitle": "Fix priority mode",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 24
+          },
+          {
+            "hash": "b7cca2293657f0fb9641f8cfa6ed74857faa0ad1",
+            "messageTitle": "Remove unnecessary files",
+            "messageBody": "",
+            "insertions": 0,
             "deletions": 1
           }
         ]
@@ -2609,40 +2721,40 @@
     ]
   },
   "authorFinalContributionMap": {
-    "blimyj": 1059,
-    "lrchema": 776,
-    "mannggoo": 2012,
-    "sianghwee": 1954,
-    "Icesiolz": 1377
+    "blimyj": 1056,
+    "lrchema": 768,
+    "mannggoo": 2009,
+    "sianghwee": 2086,
+    "Icesiolz": 1378
   },
   "authorFileTypeContributionMap": {
     "blimyj": {
       "docs": 8,
       "tests": 42,
-      "functional": 947,
+      "functional": 944,
       "other": 62
     },
     "lrchema": {
       "docs": 118,
       "tests": 14,
-      "functional": 609,
+      "functional": 601,
       "other": 35
     },
     "mannggoo": {
       "docs": 145,
       "tests": 470,
-      "functional": 1397
+      "functional": 1394
     },
     "sianghwee": {
       "docs": 179,
       "tests": 42,
-      "functional": 1641,
+      "functional": 1773,
       "other": 92
     },
     "Icesiolz": {
       "docs": 12,
       "tests": 5,
-      "functional": 1327,
+      "functional": 1328,
       "other": 33
     }
   },
@@ -2650,7 +2762,7 @@
     "blimyj": 59369.047,
     "lrchema": 13257.81,
     "mannggoo": 354531.0,
-    "sianghwee": 81425.41,
+    "sianghwee": 82609.14,
     "Icesiolz": 26352.477
   },
   "authorDisplayNameMap": {
