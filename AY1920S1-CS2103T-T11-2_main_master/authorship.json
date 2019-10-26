@@ -23156,165 +23156,6 @@
     }
   },
   {
-    "path": "src/main/java/seedu/address/logic/commands/appcommands/ExitCommand.java",
-    "fileType": "functional",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "chrischenhui"
-        },
-        "content": "package seedu.address.logic.commands.appcommands;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "sreesubbash"
-        },
-        "content": "import seedu.address.logic.commands.AppCommand;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "sreesubbash"
-        },
-        "content": "import seedu.address.logic.commands.CommandResult;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "import seedu.address.model.Model;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "-"
-        },
-        "content": " * Terminates the program."
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "-"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "sreesubbash"
-        },
-        "content": "public class ExitCommand extends AppCommand {"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    public static final String COMMAND_WORD \u003d \"exit\";"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "jascxx"
-        },
-        "content": "    public static final String MESSAGE_EXIT_ACKNOWLEDGEMENT \u003d \"Exiting App as requested ...\";"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    public CommandResult execute(Model model) {"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        return new CommandResult(MESSAGE_EXIT_ACKNOWLEDGEMENT, false, true);"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "sreesubbash": 3,
-      "jascxx": 1,
-      "chrischenhui": 1,
-      "-": 16
-    }
-  },
-  {
     "path": "src/main/java/seedu/address/logic/commands/appcommands/FindCommand.java",
     "fileType": "functional",
     "lines": [
@@ -26714,6 +26555,164 @@
     ],
     "authorContributionMap": {
       "chrischenhui": 56
+    }
+  },
+  {
+    "path": "src/main/java/seedu/address/logic/commands/loadcommands/ExitCommand.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "package seedu.address.logic.commands.loadcommands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import seedu.address.logic.commands.AppCommand;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "import seedu.address.logic.commands.CommandResult;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.address.model.Model;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * Terminates the program."
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "public class ExitCommand extends AppCommand {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"exit\";"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jascxx"
+        },
+        "content": "    public static final String MESSAGE_EXIT_ACKNOWLEDGEMENT \u003d \"Exiting App as requested ...\";"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public CommandResult execute(Model model) {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return new CommandResult(MESSAGE_EXIT_ACKNOWLEDGEMENT, false, true);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "sreesubbash": 4,
+      "jascxx": 1,
+      "-": 16
     }
   },
   {
@@ -31156,70 +31155,70 @@
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.appcommands.ExitCommand;"
+        "content": "import seedu.address.logic.commands.appcommands.FindCommand;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.appcommands.FindCommand;"
+        "content": "import seedu.address.logic.commands.appcommands.HelpCommand;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.appcommands.HelpCommand;"
+        "content": "import seedu.address.logic.commands.appcommands.ListCommand;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.appcommands.ListCommand;"
+        "content": "import seedu.address.logic.commands.exceptions.ModeSwitchException;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.exceptions.ModeSwitchException;"
+        "content": "import seedu.address.logic.commands.gamecommands.GuessCommand;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.gamecommands.GuessCommand;"
+        "content": "import seedu.address.logic.commands.gamecommands.SkipCommand;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.gamecommands.SkipCommand;"
+        "content": "import seedu.address.logic.commands.gamecommands.StopCommand;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.gamecommands.StopCommand;"
+        "content": "import seedu.address.logic.commands.loadcommands.BankCommand;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.loadcommands.BankCommand;"
+        "content": "import seedu.address.logic.commands.loadcommands.CreateCommand;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.commands.loadcommands.CreateCommand;"
+        "content": "import seedu.address.logic.commands.loadcommands.ExitCommand;"
       },
       {
         "lineNumber": 25,
@@ -31716,35 +31715,35 @@
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "            temp.add(ExitCommand.class, null);"
+        "content": "            temp.add(HelpCommand.class, null);"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "            temp.add(HelpCommand.class, null);"
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "sreesubbash"
-        },
         "content": "            return temp;"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 97,
         "author": {
           "gitId": "dragontho"
         },
         "content": "        case HOME:"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 98,
         "author": {
           "gitId": "sreesubbash"
         },
         "content": "            temp.add(BankCommand.class, BankCommandParser.class);"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            temp.add(ExitCommand.class, null);"
       },
       {
         "lineNumber": 100,
@@ -108529,9 +108528,9 @@
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "chrischenhui"
+          "gitId": "sreesubbash"
         },
-        "content": "//import static seedu.address.logic.commands.appcommands.ExitCommand.MESSAGE_EXIT_ACKNOWLEDGEMENT;"
+        "content": "//import static seedu.address.logic.commands.loadcommands.ExitCommand.MESSAGE_EXIT_ACKNOWLEDGEMENT;"
       },
       {
         "lineNumber": 5,
@@ -108557,9 +108556,9 @@
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "chrischenhui"
+          "gitId": "sreesubbash"
         },
-        "content": "//import seedu.address.logic.commands.appcommands.ExitCommand;"
+        "content": "//import seedu.address.logic.commands.loadcommands.ExitCommand;"
       },
       {
         "lineNumber": 9,
@@ -108654,7 +108653,8 @@
       }
     ],
     "authorContributionMap": {
-      "chrischenhui": 11,
+      "sreesubbash": 2,
+      "chrischenhui": 9,
       "-": 10
     }
   },
@@ -114651,21 +114651,21 @@
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "import seedu.address.logic.util.ModeEnum;"
+        "content": "import seedu.address.logic.commands.exceptions.ModeSwitchException;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": ""
+        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "class ParserManagerTest {"
+        "content": "import seedu.address.logic.util.ModeEnum;"
       },
       {
         "lineNumber": 12,
@@ -114679,7 +114679,7 @@
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    private ParserManager parserManager;"
+        "content": "class ParserManagerTest {"
       },
       {
         "lineNumber": 14,
@@ -114693,94 +114693,430 @@
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    @BeforeEach"
+        "content": "    private ParserManager parserManager;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    void setUp() {"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "        parserManager \u003d new ParserManager();"
+        "content": "    @BeforeEach"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    }"
+        "content": "    void setUp() {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": ""
+        "content": "        parserManager \u003d new ParserManager();"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    @AfterEach"
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    void tearDown() {"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    }"
+        "content": "    @AfterEach"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": ""
+        "content": "    void tearDown() {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    void getMode() {"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "        assertTrue(parserManager.getMode() \u003d\u003d ModeEnum.HOME);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "    }"
+        "content": "    void getHomeMode() {"
       },
       {
         "lineNumber": 28,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        assertTrue(parserManager.getMode() \u003d\u003d ModeEnum.HOME);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    void getOpenMode() {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            parserManager.updateState(true, true);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            parserManager.parseCommand(\"open\");"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        } catch (ParseException e) {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            e.printStackTrace();"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        } catch (ModeSwitchException e) {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            e.printStackTrace();"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        System.err.println(parserManager.getMode());"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        assertTrue(parserManager.getMode() \u003d\u003d ModeEnum.OPEN);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    void getGameMode() {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            parserManager.parseCommand(\"bank sample\");"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            parserManager.updateState(true, true);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            parserManager.parseCommand(\"open\");"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            parserManager.parseCommand(\"start\");"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        } catch (ParseException e) {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            e.printStackTrace();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        } catch (ModeSwitchException e) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            e.printStackTrace();"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        System.err.println(parserManager.getMode());"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        assertTrue(parserManager.getMode() \u003d\u003d ModeEnum.GAME);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    void getSettingsMode() {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            parserManager.updateState(true, true);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            parserManager.parseCommand(\"settings\");"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        } catch (ParseException e) {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            e.printStackTrace();"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        } catch (ModeSwitchException e) {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "            e.printStackTrace();"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        System.err.println(parserManager.getMode());"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "        assertTrue(parserManager.getMode() \u003d\u003d ModeEnum.SETTINGS);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "sreesubbash"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
         "author": {
           "gitId": "sreesubbash"
         },
@@ -114788,7 +115124,7 @@
       }
     ],
     "authorContributionMap": {
-      "sreesubbash": 28
+      "sreesubbash": 76
     }
   },
   {
@@ -115958,7 +116294,7 @@
         "author": {
           "gitId": "sreesubbash"
         },
-        "content": "//import seedu.address.logic.commands.appcommands.ExitCommand;"
+        "content": "//import seedu.address.logic.commands.loadcommands.ExitCommand;"
       },
       {
         "lineNumber": 21,

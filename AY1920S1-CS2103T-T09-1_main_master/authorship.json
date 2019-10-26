@@ -66297,9 +66297,9 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "KxxMxxx"
+          "gitId": "-"
         },
-        "content": " * Represents an Accommodation in the trip planner."
+        "content": " * Represents an Activity in the trip planner."
       },
       {
         "lineNumber": 13,
@@ -66439,185 +66439,178 @@
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": ""
+        "content": "        return otherActivity !\u003d null"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "        return otherActivity !\u003d null"
+        "content": "                \u0026\u0026 otherActivity.getName().equals(getName())"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "                \u0026\u0026 otherActivity.getName().equals(getName())"
+        "content": "                \u0026\u0026 (otherActivity.getAddress().equals(getAddress()));"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "                \u0026\u0026 (otherActivity.getAddress().equals(getAddress()));"
+        "content": "    }"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "    /**"
+        "content": "     * Returns true if both activities have the same identity and data fields."
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "     * Returns true if both activities have the same identity and data fields."
+        "content": "     * This defines a stronger notion of equality between two activities."
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "     * This defines a stronger notion of equality between two activities."
+        "content": "     */"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "     */"
+        "content": "    @Override"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "    @Override"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "            return true;"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "            return true;"
+        "content": "        }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": ""
+        "content": "        if (!(other instanceof Activity)) {"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "        if (!(other instanceof Activity)) {"
+        "content": "            return false;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "            return false;"
+        "content": "        }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": ""
+        "content": "        Activity otherActivity \u003d (Activity) other;"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "        Activity otherActivity \u003d (Activity) other;"
+        "content": "        return otherActivity.getName().equals(getName())"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "        return otherActivity.getName().equals(getName())"
+        "content": "                \u0026\u0026 otherActivity.getAddress().equals(getAddress())"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "                \u0026\u0026 otherActivity.getAddress().equals(getAddress())"
+        "content": "                \u0026\u0026 otherActivity.getTags().equals(getTags())"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "                \u0026\u0026 otherActivity.getTags().equals(getTags())"
+        "content": "                \u0026\u0026 otherActivity.getContact().equals(getContact());"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "KxxMxxx"
         },
-        "content": "                \u0026\u0026 otherActivity.getContact().equals(getContact());"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "KxxMxxx"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 57,
         "author": {
           "gitId": "KxxMxxx"
         },
@@ -66625,7 +66618,8 @@
       }
     ],
     "authorContributionMap": {
-      "KxxMxxx": 58
+      "KxxMxxx": 56,
+      "-": 1
     }
   },
   {
@@ -98434,696 +98428,752 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_NAME_AMY \u003d \"Amy Bee\";"
+        "content": "    public static final String VALID_ACTIVITY_NAME_A \u003d \"Visit Temple\";"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_NAME_BOB \u003d \"Bob Choo\";"
+        "content": "    public static final String VALID_ACTIVITY_NAME_B \u003d \"Sushi class\";"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_PHONE_AMY \u003d \"11111111\";"
+        "content": "    public static final String VALID_ACTIVITY_ADDRESS_A \u003d \"Kyoto\";"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_PHONE_BOB \u003d \"22222222\";"
+        "content": "    public static final String VALID_ACTIVITY_ADDRESS_B \u003d \"Tokyo\";"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_EMAIL_AMY \u003d \"amy@example.com\";"
+        "content": "    public static final String VALID_TAG_SIGHTSEEING \u003d \"sightseeing\";"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_EMAIL_BOB \u003d \"bob@example.com\";"
+        "content": "    public static final String VALID_TAG_LESSON \u003d \"lesson\";"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_ADDRESS_AMY \u003d \"Block 312, Amy Street 1\";"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_ADDRESS_BOB \u003d \"Block 123, Bobby Street 3\";"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_TAG_HUSBAND \u003d \"husband\";"
+        "content": "    public static final String VALID_NAME_AMY \u003d \"Amy Bee\";"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String VALID_TAG_FRIEND \u003d \"friend\";"
+        "content": "    public static final String VALID_NAME_BOB \u003d \"Bob Choo\";"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String VALID_PHONE_AMY \u003d \"11111111\";"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String NAME_DESC_AMY \u003d \" \" + PREFIX_NAME + VALID_NAME_AMY;"
+        "content": "    public static final String VALID_PHONE_BOB \u003d \"22222222\";"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String NAME_DESC_BOB \u003d \" \" + PREFIX_NAME + VALID_NAME_BOB;"
+        "content": "    public static final String VALID_EMAIL_AMY \u003d \"amy@example.com\";"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String PHONE_DESC_AMY \u003d \" \" + PREFIX_PHONE + VALID_PHONE_AMY;"
+        "content": "    public static final String VALID_EMAIL_BOB \u003d \"bob@example.com\";"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String PHONE_DESC_BOB \u003d \" \" + PREFIX_PHONE + VALID_PHONE_BOB;"
+        "content": "    public static final String VALID_ADDRESS_AMY \u003d \"Block 312, Amy Street 1\";"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String EMAIL_DESC_AMY \u003d \" \" + PREFIX_EMAIL + VALID_EMAIL_AMY;"
+        "content": "    public static final String VALID_ADDRESS_BOB \u003d \"Block 123, Bobby Street 3\";"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String EMAIL_DESC_BOB \u003d \" \" + PREFIX_EMAIL + VALID_EMAIL_BOB;"
+        "content": "    public static final String VALID_TAG_HUSBAND \u003d \"husband\";"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String ADDRESS_DESC_AMY \u003d \" \" + PREFIX_ADDRESS + VALID_ADDRESS_AMY;"
+        "content": "    public static final String VALID_TAG_FRIEND \u003d \"friend\";"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String ADDRESS_DESC_BOB \u003d \" \" + PREFIX_ADDRESS + VALID_ADDRESS_BOB;"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String TAG_DESC_FRIEND \u003d \" \" + PREFIX_TAG + VALID_TAG_FRIEND;"
+        "content": "    public static final String NAME_DESC_AMY \u003d \" \" + PREFIX_NAME + VALID_NAME_AMY;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String TAG_DESC_HUSBAND \u003d \" \" + PREFIX_TAG + VALID_TAG_HUSBAND;"
+        "content": "    public static final String NAME_DESC_BOB \u003d \" \" + PREFIX_NAME + VALID_NAME_BOB;"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String PHONE_DESC_AMY \u003d \" \" + PREFIX_PHONE + VALID_PHONE_AMY;"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String INVALID_NAME_DESC \u003d \" \" + PREFIX_NAME + \"James\u0026\"; // \u0027\u0026\u0027 not allowed in names"
+        "content": "    public static final String PHONE_DESC_BOB \u003d \" \" + PREFIX_PHONE + VALID_PHONE_BOB;"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String INVALID_PHONE_DESC \u003d \" \" + PREFIX_PHONE + \"911a\"; // \u0027a\u0027 not allowed in phones"
+        "content": "    public static final String EMAIL_DESC_AMY \u003d \" \" + PREFIX_EMAIL + VALID_EMAIL_AMY;"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String INVALID_EMAIL_DESC \u003d \" \" + PREFIX_EMAIL + \"bob!yahoo\"; // missing \u0027@\u0027 symbol"
+        "content": "    public static final String EMAIL_DESC_BOB \u003d \" \" + PREFIX_EMAIL + VALID_EMAIL_BOB;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String INVALID_ADDRESS_DESC \u003d \" \" + PREFIX_ADDRESS; // empty string not allowed for addresses"
+        "content": "    public static final String ADDRESS_DESC_AMY \u003d \" \" + PREFIX_ADDRESS + VALID_ADDRESS_AMY;"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String INVALID_TAG_DESC \u003d \" \" + PREFIX_TAG + \"hubby*\"; // \u0027*\u0027 not allowed in tags"
+        "content": "    public static final String ADDRESS_DESC_BOB \u003d \" \" + PREFIX_ADDRESS + VALID_ADDRESS_BOB;"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String TAG_DESC_FRIEND \u003d \" \" + PREFIX_TAG + VALID_TAG_FRIEND;"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String PREAMBLE_WHITESPACE \u003d \"\\t  \\r  \\n\";"
+        "content": "    public static final String TAG_DESC_HUSBAND \u003d \" \" + PREFIX_TAG + VALID_TAG_HUSBAND;"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String PREAMBLE_NON_EMPTY \u003d \"NonEmptyPreamble\";"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String INVALID_NAME_DESC \u003d \" \" + PREFIX_NAME + \"James\u0026\"; // \u0027\u0026\u0027 not allowed in names"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "KxxMxxx"
+          "gitId": "-"
         },
-        "content": "    public static final EditContactCommand.EditContactDescriptor DESC_AMY;"
+        "content": "    public static final String INVALID_PHONE_DESC \u003d \" \" + PREFIX_PHONE + \"911a\"; // \u0027a\u0027 not allowed in phones"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "KxxMxxx"
+          "gitId": "-"
         },
-        "content": "    public static final EditContactCommand.EditContactDescriptor DESC_BOB;"
+        "content": "    public static final String INVALID_EMAIL_DESC \u003d \" \" + PREFIX_EMAIL + \"bob!yahoo\"; // missing \u0027@\u0027 symbol"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String INVALID_ADDRESS_DESC \u003d \" \" + PREFIX_ADDRESS; // empty string not allowed for addresses"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "    static {"
+        "content": "    public static final String INVALID_TAG_DESC \u003d \" \" + PREFIX_TAG + \"hubby*\"; // \u0027*\u0027 not allowed in tags"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "OneArmyj"
+          "gitId": "-"
         },
-        "content": "        DESC_AMY \u003d new EditContactDescriptorBuilder().withName(VALID_NAME_AMY)"
+        "content": ""
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "                .withPhone(VALID_PHONE_AMY).withEmail(VALID_EMAIL_AMY).withAddress(VALID_ADDRESS_AMY)"
+        "content": "    public static final String PREAMBLE_WHITESPACE \u003d \"\\t  \\r  \\n\";"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "                .withTags(VALID_TAG_FRIEND).build();"
+        "content": "    public static final String PREAMBLE_NON_EMPTY \u003d \"NonEmptyPreamble\";"
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "OneArmyj"
+          "gitId": "-"
         },
-        "content": "        DESC_BOB \u003d new EditContactDescriptorBuilder().withName(VALID_NAME_BOB)"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "-"
+          "gitId": "KxxMxxx"
         },
-        "content": "                .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB)"
+        "content": "    public static final EditContactCommand.EditContactDescriptor DESC_AMY;"
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "-"
+          "gitId": "KxxMxxx"
         },
-        "content": "                .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();"
+        "content": "    public static final EditContactCommand.EditContactDescriptor DESC_BOB;"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    static {"
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "-"
+          "gitId": "OneArmyj"
         },
-        "content": "    /**"
+        "content": "        DESC_AMY \u003d new EditContactDescriptorBuilder().withName(VALID_NAME_AMY)"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Executes the given {@code command}, confirms that \u003cbr\u003e"
+        "content": "                .withPhone(VALID_PHONE_AMY).withEmail(VALID_EMAIL_AMY).withAddress(VALID_ADDRESS_AMY)"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "     * - the returned {@link CommandResult} matches {@code expectedCommandResult} \u003cbr\u003e"
+        "content": "                .withTags(VALID_TAG_FRIEND).build();"
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "-"
+          "gitId": "OneArmyj"
         },
-        "content": "     * - the {@code actualModel} matches {@code expectedModel}"
+        "content": "        DESC_BOB \u003d new EditContactDescriptorBuilder().withName(VALID_NAME_BOB)"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "                .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB)"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static void assertCommandSuccess(Command command, Model actualModel, CommandResult expectedCommandResult,"
+        "content": "                .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "            Model expectedModel) {"
+        "content": "    }"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "        try {"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "            CommandResult result \u003d command.execute(actualModel);"
+        "content": "    /**"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "            assertEquals(expectedCommandResult, result);"
+        "content": "     * Executes the given {@code command}, confirms that \u003cbr\u003e"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "            assertEquals(expectedModel, actualModel);"
+        "content": "     * - the returned {@link CommandResult} matches {@code expectedCommandResult} \u003cbr\u003e"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "        } catch (CommandException ce) {"
+        "content": "     * - the {@code actualModel} matches {@code expectedModel}"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "            throw new AssertionError(\"Execution of command should not fail.\", ce);"
+        "content": "     */"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    public static void assertCommandSuccess(Command command, Model actualModel, CommandResult expectedCommandResult,"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            Model expectedModel) {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "            CommandResult result \u003d command.execute(actualModel);"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Convenience wrapper to {@link #assertCommandSuccess(Command, Model, CommandResult, Model)}"
+        "content": "            assertEquals(expectedCommandResult, result);"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "     * that takes a string {@code expectedMessage}."
+        "content": "            assertEquals(expectedModel, actualModel);"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        } catch (CommandException ce) {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static void assertCommandSuccess(Command command, Model actualModel, String expectedMessage,"
+        "content": "            throw new AssertionError(\"Execution of command should not fail.\", ce);"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "            Model expectedModel) {"
+        "content": "        }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "        CommandResult expectedCommandResult \u003d new CommandResult(expectedMessage);"
+        "content": "    }"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertCommandSuccess(command, actualModel, expectedCommandResult, expectedModel);"
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Convenience wrapper to {@link #assertCommandSuccess(Command, Model, CommandResult, Model)}"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "     * that takes a string {@code expectedMessage}."
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Executes the given {@code command}, confirms that \u003cbr\u003e"
+        "content": "     */"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "     * - a {@code CommandException} is thrown \u003cbr\u003e"
+        "content": "    public static void assertCommandSuccess(Command command, Model actualModel, String expectedMessage,"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "     * - the CommandException message matches {@code expectedMessage} \u003cbr\u003e"
+        "content": "            Model expectedModel) {"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "OneArmyj"
+          "gitId": "-"
         },
-        "content": "     * - the address book, filtered contacts list and selected contacts in {@code actualModel} remain unchanged"
+        "content": "        CommandResult expectedCommandResult \u003d new CommandResult(expectedMessage);"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        assertCommandSuccess(command, actualModel, expectedCommandResult, expectedModel);"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static void assertCommandFailure(Command command, Model actualModel, String expectedMessage) {"
+        "content": "    }"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "        // we are unable to defensively copy the model for comparison later, so we can"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "        // only do so by copying its components."
+        "content": "    /**"
       },
       {
         "lineNumber": 107,
         "author": {
-          "gitId": "OneArmyj"
+          "gitId": "-"
         },
-        "content": "        ContactManager expectedContactManager \u003d new ContactManager(actualModel.getContacts());"
+        "content": "     * Executes the given {@code command}, confirms that \u003cbr\u003e"
       },
       {
         "lineNumber": 108,
         "author": {
-          "gitId": "OneArmyj"
+          "gitId": "-"
         },
-        "content": "        List\u003cContact\u003e expectedFilteredList \u003d new ArrayList\u003c\u003e(actualModel.getFilteredContactList());"
+        "content": "     * - a {@code CommandException} is thrown \u003cbr\u003e"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * - the CommandException message matches {@code expectedMessage} \u003cbr\u003e"
       },
       {
         "lineNumber": 110,
         "author": {
-          "gitId": "-"
+          "gitId": "OneArmyj"
         },
-        "content": "        assertThrows(CommandException.class, expectedMessage, () -\u003e command.execute(actualModel));"
+        "content": "     * - the address book, filtered contacts list and selected contacts in {@code actualModel} remain unchanged"
       },
       {
         "lineNumber": 111,
-        "author": {
-          "gitId": "OneArmyj"
-        },
-        "content": "        assertEquals(expectedContactManager, actualModel.getContacts());"
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "OneArmyj"
-        },
-        "content": "        assertEquals(expectedFilteredList, actualModel.getFilteredContactList());"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "OneArmyj"
-        },
-        "content": "     * Updates {@code model}\u0027s filtered list to show only the contacts at the given {@code targetIndex} in the"
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     * {@code model}\u0027s address book."
-      },
-      {
-        "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static void assertCommandFailure(Command command, Model actualModel, String expectedMessage) {"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // we are unable to defensively copy the model for comparison later, so we can"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // only do so by copying its components."
+      },
+      {
+        "lineNumber": 115,
         "author": {
           "gitId": "OneArmyj"
         },
-        "content": "    public static void showContactAtIndex(Model model, Index targetIndex) {"
+        "content": "        ContactManager expectedContactManager \u003d new ContactManager(actualModel.getContacts());"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "OneArmyj"
+        },
+        "content": "        List\u003cContact\u003e expectedFilteredList \u003d new ArrayList\u003c\u003e(actualModel.getFilteredContactList());"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertThrows(CommandException.class, expectedMessage, () -\u003e command.execute(actualModel));"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "OneArmyj"
         },
-        "content": "        assertTrue(targetIndex.getZeroBased() \u003c model.getFilteredContactList().size());"
+        "content": "        assertEquals(expectedContactManager, actualModel.getContacts());"
       },
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "-"
+          "gitId": "OneArmyj"
         },
-        "content": ""
+        "content": "        assertEquals(expectedFilteredList, actualModel.getFilteredContactList());"
       },
       {
         "lineNumber": 121,
-        "author": {
-          "gitId": "OneArmyj"
-        },
-        "content": "        Contact contact \u003d model.getFilteredContactList().get(targetIndex.getZeroBased());"
-      },
-      {
-        "lineNumber": 122,
-        "author": {
-          "gitId": "OneArmyj"
-        },
-        "content": "        final String[] splitName \u003d contact.getName().toString().split(\"\\\\s+\");"
-      },
-      {
-        "lineNumber": 123,
-        "author": {
-          "gitId": "OneArmyj"
-        },
-        "content": "        model.updateFilteredContactList(new NameContainsKeywordsPredicate(Arrays.asList(splitName[0])));"
-      },
-      {
-        "lineNumber": 124,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "OneArmyj"
-        },
-        "content": "        assertEquals(1, model.getFilteredContactList().size());"
-      },
-      {
-        "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "OneArmyj"
+        },
+        "content": "     * Updates {@code model}\u0027s filtered list to show only the contacts at the given {@code targetIndex} in the"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * {@code model}\u0027s address book."
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "OneArmyj"
+        },
+        "content": "    public static void showContactAtIndex(Model model, Index targetIndex) {"
+      },
+      {
         "lineNumber": 127,
+        "author": {
+          "gitId": "OneArmyj"
+        },
+        "content": "        assertTrue(targetIndex.getZeroBased() \u003c model.getFilteredContactList().size());"
+      },
+      {
+        "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 129,
+        "author": {
+          "gitId": "OneArmyj"
+        },
+        "content": "        Contact contact \u003d model.getFilteredContactList().get(targetIndex.getZeroBased());"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "OneArmyj"
+        },
+        "content": "        final String[] splitName \u003d contact.getName().toString().split(\"\\\\s+\");"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "OneArmyj"
+        },
+        "content": "        model.updateFilteredContactList(new NameContainsKeywordsPredicate(Arrays.asList(splitName[0])));"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "OneArmyj"
+        },
+        "content": "        assertEquals(1, model.getFilteredContactList().size());"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
@@ -99133,7 +99183,7 @@
     "authorContributionMap": {
       "OneArmyj": 18,
       "KxxMxxx": 2,
-      "-": 108
+      "-": 116
     }
   },
   {
@@ -117842,6 +117892,2198 @@
     "authorContributionMap": {
       "OneArmyj": 3,
       "-": 9
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/testutil/accommodation/AccommodationBuilder.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "package seedu.address.testutil.accommodation;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.HashSet;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.Set;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.contact.Contact;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.field.Address;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.field.Name;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.itineraryitem.accommodation.Accommodation;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.tag.Tag;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.util.SampleDataUtil;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.testutil.ContactBuilder;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": " * A utility class to help with building Accommodation objects."
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "public class AccommodationBuilder {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final String DEFAULT_NAME \u003d \"Alice Pauline Home\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final String DEFAULT_ADDRESS \u003d \"123, Jurong West Ave 6, #08-111\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final String DEFAULT_ACCOMMODATION_NAME \u003d \"Sam Smith\";"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final String DEFAULT_ACCOMMODATION_PHONE \u003d \"91170081\";"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final String DEFAULT_ACCOMMODATION_EMAIL \u003d \"sam1987@gmail.com\";"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final String DEFAULT_ACCOMMODATION_ADDRESS \u003d \"456, Bukit Batok st 53, #03-21\";"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final String[] DEFAULT_ACCOMMODATION_TAGS \u003d {\"Jurong\", \"Cool\", \"Cheap\"};"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    private Name name;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    private Address address;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    private Contact contact;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    private Set\u003cTag\u003e tags;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public AccommodationBuilder() {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        name \u003d new Name(DEFAULT_NAME);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        address \u003d new Address(DEFAULT_ADDRESS);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        contact \u003d new ContactBuilder().withName(DEFAULT_ACCOMMODATION_NAME).withPhone(DEFAULT_ACCOMMODATION_PHONE)"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "                .withEmail(DEFAULT_ACCOMMODATION_EMAIL).withAddress(DEFAULT_ACCOMMODATION_ADDRESS).build();"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        tags \u003d SampleDataUtil.getTagSet(DEFAULT_ACCOMMODATION_TAGS);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Initializes the AccommodationBuilder with the data of {@code contactToCopy}."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public AccommodationBuilder(Accommodation accommodationToCopy) {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        name \u003d accommodationToCopy.getName();"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        address \u003d accommodationToCopy.getAddress();"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        contact \u003d accommodationToCopy.getContact().orElse(null);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        tags \u003d new HashSet\u003c\u003e(accommodationToCopy.getTags());"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Sets the {@code Name} of the {@code Contact} that we are building."
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public AccommodationBuilder withName(String name) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        this.name \u003d new Name(name);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Sets the {@code Address} of the {@code Contact} that we are building."
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public AccommodationBuilder withAddress(String address) {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        this.address \u003d new Address(address);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Sets the {@code Phone} of the {@code Contact} that we are building."
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public AccommodationBuilder withContact(String name, String phone, String email, String address, String... tags) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        this.contact \u003d new ContactBuilder().withName(name).withEmail(email)"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "                .withPhone(phone).withAddress(address).withTags(tags).build();"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Sets the {@code Phone} of the {@code Contact} that we are building."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public AccommodationBuilder withContact(Contact contact) {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        this.contact \u003d contact;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Parses the {@code tags} into a {@code Set\u003cTag\u003e} and set it to the {@code Contact} that we are building."
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public AccommodationBuilder withTags(String ... tags) {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        this.tags \u003d SampleDataUtil.getTagSet(tags);"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public Accommodation build() {"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return new Accommodation(name, address, contact, tags);"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "1nefootstep": 97
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/testutil/accommodation/AccommodationUtil.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "package seedu.address.testutil.accommodation;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.Set;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.logic.commands.AddAccommodationCommand;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.logic.commands.EditAccommodationCommand.EditAccommodationDescriptor;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.itineraryitem.accommodation.Accommodation;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.tag.Tag;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": " * A utility class for Accommodation."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "public class AccommodationUtil {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Returns an add command string for adding the {@code contacts}."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static String getAddAccommodationCommand(Accommodation accommodation) {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return AddAccommodationCommand.COMMAND_WORD + \" \""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "                + AddAccommodationCommand.SECOND_COMMAND_WORD + \" \""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "                + getAccommodationDetails(accommodation);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Returns the part of command string for the given {@code accommodation}\u0027s details."
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static String getAccommodationDetails(Accommodation accommodation) {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        StringBuilder sb \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        sb.append(PREFIX_NAME + accommodation.getName().toString() + \" \");"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        sb.append(PREFIX_ADDRESS + accommodation.getAddress().toString() + \" \");"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        accommodation.getContact().ifPresent("
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            contact -\u003e sb.append(PREFIX_PHONE + contact.getPhone().toString() + \" \")"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        accommodation.getTags().stream().forEach("
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            s -\u003e sb.append(PREFIX_TAG + s.tagName + \" \")"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return sb.toString();"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Returns the part of command string for the given {@code EditAccommodationDescriptor}\u0027s details."
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static String getEditAccommodationDescriptorDetails(EditAccommodationDescriptor descriptor) {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        StringBuilder sb \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.getName().ifPresent(name -\u003e sb.append(PREFIX_NAME).append(name.toString()).append(\" \"));"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.getPhone().ifPresent(phone -\u003e sb.append(PREFIX_PHONE).append(phone.value).append(\" \"));"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.getAddress().ifPresent(address -\u003e sb.append(PREFIX_ADDRESS).append(address.value).append(\" \"));"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        if (descriptor.getTags().isPresent()) {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            Set\u003cTag\u003e tags \u003d descriptor.getTags().get();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            if (tags.isEmpty()) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "                sb.append(PREFIX_TAG);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "                tags.forEach(s -\u003e sb.append(PREFIX_TAG).append(s.tagName).append(\" \"));"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return sb.toString();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "1nefootstep": 63
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/testutil/accommodation/EditAccommodationDescriptorBuilder.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "package seedu.address.testutil.accommodation;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.Set;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.stream.Collectors;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.stream.Stream;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.logic.commands.EditAccommodationCommand.EditAccommodationDescriptor;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.contact.Phone;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.field.Address;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.field.Name;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.itineraryitem.accommodation.Accommodation;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.tag.Tag;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": " * A utility class to help with building EditContactDescriptor objects."
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "public class EditAccommodationDescriptorBuilder {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    private EditAccommodationDescriptor descriptor;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public EditAccommodationDescriptorBuilder() {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor \u003d new EditAccommodationDescriptor();"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public EditAccommodationDescriptorBuilder(EditAccommodationDescriptor descriptor) {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        this.descriptor \u003d new EditAccommodationDescriptor(descriptor);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Returns an {@code EditContactDescriptor} with fields containing {@code contacts}\u0027s details"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public EditAccommodationDescriptorBuilder(Accommodation accommodation) {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor \u003d new EditAccommodationDescriptor();"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.setName(accommodation.getName());"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        accommodation.getContact().ifPresent(contact -\u003e descriptor.setPhone(contact.getPhone()));"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.setAddress(accommodation.getAddress());"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.setTags(accommodation.getTags());"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Sets the {@code Name} of the {@code EditContactDescriptor} that we are building."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public EditAccommodationDescriptorBuilder withName(String name) {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.setName(new Name(name));"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Sets the {@code Phone} of the {@code EditContactDescriptor} that we are building."
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public EditAccommodationDescriptorBuilder withPhone(String phone) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.setPhone(new Phone(phone));"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Sets the {@code Address} of the {@code EditContactDescriptor} that we are building."
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public EditAccommodationDescriptorBuilder withAddress(String address) {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.setAddress(new Address(address));"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Parses the {@code tags} into a {@code Set\u003cTag\u003e} and set it to the {@code EditContactDescriptor}"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * that we are building."
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public EditAccommodationDescriptorBuilder withTags(String... tags) {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        Set\u003cTag\u003e tagSet \u003d Stream.of(tags).map(Tag::new).collect(Collectors.toSet());"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        descriptor.setTags(tagSet);"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public EditAccommodationDescriptor build() {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return descriptor;"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "1nefootstep": 77
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/testutil/accommodation/TypicalAccommodations.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "package seedu.address.testutil.accommodation;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_AMY;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.Model;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.ModelManager;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.model.itineraryitem.accommodation.Accommodation;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "import seedu.address.testutil.TypicalContacts;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": " * A utility class containing a list of {@code Contact} objects to be used in tests."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "public class TypicalAccommodations {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation ALICE \u003d new AccommodationBuilder().withName(\"Alice Pauline\")"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withAddress(\"123, Jurong West Ave 6, #08-111\").withContact(TypicalContacts.ALICE)"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withTags(\"Jurong\", \"Cool\", \"Cheap\").build();"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation BENSON \u003d new AccommodationBuilder().withName(\"Benson Meier Home\")"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withAddress(\"311, Clementi Ave 2, #02-25\")"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withContact(TypicalContacts.BENSON).withTags(\"Near Mrt\", \"Cozy\").build();"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation CARL \u003d new AccommodationBuilder().withName(\"Carl Kurz Home\")"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withContact(TypicalContacts.CARL).withAddress(\"wall street\").build();"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation DANIEL \u003d new AccommodationBuilder().withName(\"Daniel Meier Home\")"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withContact(TypicalContacts.DANIEL).withAddress(\"10th street\").withTags(\"friends\").build();"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation ELLE \u003d new AccommodationBuilder().withName(\"Elle Meyer Home\")"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withContact(TypicalContacts.ELLE).withAddress(\"michegan ave\").build();"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation FIONA \u003d new AccommodationBuilder().withName(\"Fiona Kunz Home\")"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withContact(TypicalContacts.FIONA).withAddress(\"little tokyo\").build();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation GEORGE \u003d new AccommodationBuilder().withName(\"George Best Home\")"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withContact(TypicalContacts.GEORGE).withAddress(\"4th street\").build();"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    // Manually added"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation HOON \u003d new AccommodationBuilder().withName(\"Hoon Meier\")"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withContact(TypicalContacts.HOON).withAddress(\"little india\").build();"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation IDA \u003d new AccommodationBuilder().withName(\"Ida Mueller\")"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withContact(TypicalContacts.IDA).withAddress(\"chicago ave\").build();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    // Manually added - Contact\u0027s details found in {@code CommandTestUtil}"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation AMY \u003d new AccommodationBuilder().withName(VALID_NAME_AMY)"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withAddress(VALID_ADDRESS_AMY).withTags(VALID_TAG_FRIEND).build();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final Accommodation BOB \u003d new AccommodationBuilder().withName(VALID_NAME_BOB)"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            .withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static final String KEYWORD_MATCHING_MEIER \u003d \"Meier\"; // A keyword that matches MEIER"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    private TypicalAccommodations() {} // prevents instantiation"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     * Returns an {@code Model} with all the typical accommodations."
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static Model getTypicalAccommodations() {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        Model ab \u003d new ModelManager();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        for (Accommodation accommodation : getTypicalContacts()) {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "            ab.addAccommodation(accommodation);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return ab;"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    public static List\u003cAccommodation\u003e getTypicalContacts() {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "        return new ArrayList\u003c\u003e(Arrays.asList(ALICE, BENSON, CARL, DANIEL, ELLE, FIONA, GEORGE));"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "1nefootstep"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "1nefootstep": 71
     }
   }
 ]

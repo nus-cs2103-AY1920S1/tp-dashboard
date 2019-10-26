@@ -12319,9 +12319,9 @@
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "-"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_UNKNOWN_COMMAND \u003d \"Unknown command\";"
+        "content": "    public static final String MESSAGE_UNKNOWN_COMMAND \u003d \"I have no clue what you just said\";"
       },
       {
         "lineNumber": 9,
@@ -12347,47 +12347,54 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_ITEM_LISTED_OVERVIEW \u003d \"%1$d items listed!\";"
+        "content": "    public static final String MESSAGE_ITEM_LISTED_OVERVIEW \u003d \"Here you go, %1$d items listed!\";"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_NOTHING_TO_UNDO \u003d \"Nothing to undo\";"
+        "content": "    public static final String MESSAGE_NOTHING_TO_UNDO \u003d \"Nothing to undo, buddy.\""
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_INVALID_FAST_REMINDER_FORMAT \u003d \"Don\u0027t you remember?\""
+        "content": "            + \" Maybe try actually doing something first\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            + \"It should be in the format of \\\"(Positive Integer).(Time unit).later\\\"\""
+        "content": "    public static final String MESSAGE_INVALID_FAST_REMINDER_FORMAT \u003d \"Don\u0027t you remember?\""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            + \"Eg. \\\"3.hour.later\\\" or \\\"10.min.later\\\"\";"
+        "content": "            + \"It should be in the format of \\\"(Positive Integer).(Time unit).later\\\"\""
       },
       {
         "lineNumber": 17,
+        "author": {
+          "gitId": "mannggoo"
+        },
+        "content": "            + \"Eg. \\\"3.hour.later\\\" or \\\"10.min.later\\\"\";"
+      },
+      {
+        "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
@@ -12395,10 +12402,9 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 1,
+      "lrchema": 4,
       "mannggoo": 4,
-      "sianghwee": 1,
-      "-": 11,
+      "-": 10,
       "Icesiolz": 1
     }
   },
@@ -21792,9 +21798,9 @@
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"New Event added: %1$s\";"
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Oh great, new Event added: %1$s \\nDon\u0027t forget about it!\";"
       },
       {
         "lineNumber": 18,
@@ -22064,8 +22070,8 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 5,
-      "mannggoo": 49,
+      "lrchema": 6,
+      "mannggoo": 48,
       "Icesiolz": 1
     }
   },
@@ -22174,229 +22180,236 @@
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"New Reminder added: %1$s\";"
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Fine, I\u0027ll remind you. New Reminder added: %1$s\""
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": ""
+        "content": "            + \"\\nIt\u0027s like you need a keeper\";"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    public AddReminderCommand(Item item) {"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        super(item);"
+        "content": "    public AddReminderCommand(Item item) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    }"
+        "content": "        super(item);"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    public CommandResult execute(ItemModel model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    public CommandResult execute(ItemModel model) throws CommandException {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        // Check if item already exists, else, add it to the model."
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        if (model.hasItem(toAdd)) {"
+        "content": "        // Check if item already exists, else, add it to the model."
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            throw new CommandException(MESSAGE_DUPLICATE_ITEM);"
+        "content": "        if (model.hasItem(toAdd)) {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        } else {"
+        "content": "            throw new CommandException(MESSAGE_DUPLICATE_ITEM);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            model.addItem(toAdd);"
+        "content": "        } else {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            model.addItem(toAdd);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        // Notify Ui to change the view the that of the newly added item."
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        try {"
+        "content": "        // Notify Ui to change the view the that of the newly added item."
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            model.setVisualList(SHOW_REMINDER_VIEW);"
+        "content": "        try {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        } catch (Exception e) {"
+        "content": "            model.setVisualList(SHOW_REMINDER_VIEW);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            // should not enter here as itemType is definitely valid."
+        "content": "        } catch (Exception e) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            // should not enter here as itemType is definitely valid."
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        //return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));"
+        "content": ""
       },
       {
         "lineNumber": 40,
+        "author": {
+          "gitId": "mannggoo"
+        },
+        "content": "        //return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));"
+      },
+      {
+        "lineNumber": 41,
         "author": {
           "gitId": "Icesiolz"
         },
         "content": "        return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 42,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 43,
         "author": {
           "gitId": "lrchema"
         },
         "content": ""
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 44,
         "author": {
           "gitId": "lrchema"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 45,
         "author": {
           "gitId": "lrchema"
         },
         "content": "    public String getCommandWord() {"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 46,
         "author": {
           "gitId": "lrchema"
         },
         "content": "        return COMMAND_WORD;"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 47,
         "author": {
           "gitId": "lrchema"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 48,
         "author": {
           "gitId": "mannggoo"
         },
@@ -22404,8 +22417,8 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 5,
-      "mannggoo": 41,
+      "lrchema": 7,
+      "mannggoo": 40,
       "Icesiolz": 1
     }
   },
@@ -22514,9 +22527,9 @@
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"New Task added: %1$s\";"
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"New Task added: %1$s\\nDon\u0027t just watch it pile up!\";"
       },
       {
         "lineNumber": 16,
@@ -22744,8 +22757,8 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 5,
-      "mannggoo": 41,
+      "lrchema": 6,
+      "mannggoo": 40,
       "Icesiolz": 1
     }
   },
@@ -22854,9 +22867,9 @@
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Item list has been cleared!\";"
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Item list has been cleared! (About time, isn\u0027t it?)\";"
       },
       {
         "lineNumber": 16,
@@ -23014,9 +23027,9 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 16,
+      "lrchema": 17,
       "mannggoo": 2,
-      "sianghwee": 2,
+      "sianghwee": 1,
       "-": 17
     }
   },
@@ -23895,9 +23908,9 @@
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_DELETE_ITEM_SUCCESS \u003d \"Deleted Item: %1$s\";"
+        "content": "    public static final String MESSAGE_DELETE_ITEM_SUCCESS \u003d \"Finally! Deleted Item: %1$s\";"
       },
       {
         "lineNumber": 26,
@@ -24181,8 +24194,8 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 13,
-      "mannggoo": 7,
+      "lrchema": 14,
+      "mannggoo": 6,
       "sianghwee": 2,
       "-": 43
     }
@@ -24369,9 +24382,9 @@
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_COMPLETE_ITEM_SUCCESS \u003d \"Completed Item: %1$s\";"
+        "content": "    public static final String MESSAGE_COMPLETE_ITEM_SUCCESS \u003d \"Finally! Completed Item: %1$s\";"
       },
       {
         "lineNumber": 27,
@@ -24697,8 +24710,8 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 15,
-      "sianghwee": 57
+      "lrchema": 16,
+      "sianghwee": 56
     }
   },
   {
@@ -25391,1692 +25404,1699 @@
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_EDIT_ITEM_SUCCESS \u003d \"Edited Item: %1$s\";"
+        "content": "    public static final String MESSAGE_EDIT_ITEM_SUCCESS \u003d \"Edited Item: %1$s,\""
       },
       {
         "lineNumber": 49,
+        "author": {
+          "gitId": "lrchema"
+        },
+        "content": "            + \" because someone couldn\u0027t make up their mind\";"
+      },
+      {
+        "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
         "content": "    public static final String MESSAGE_NOT_EDITED \u003d \"At least one field to edit must be provided.\";"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 51,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "    public static final String MESSAGE_DUPLICATE_ITEM \u003d \"This item already exists in the item list.\";"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
         "content": "    private final Index index;"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 54,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "    private final EditItemDescriptor editItemDescriptor;"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "lrchema"
-        },
-        "content": "    private Item oldItem;"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    private Item editedItem;"
+        "content": "    private Item oldItem;"
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "-"
+          "gitId": "lrchema"
         },
-        "content": ""
+        "content": "    private Item editedItem;"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param index of the person in the filtered person list to edit"
+        "content": "    /**"
       },
       {
         "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * @param index of the person in the filtered person list to edit"
+      },
+      {
+        "lineNumber": 61,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "     * @param editItemDescriptor details to edit the person with"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 63,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "    public EditCommand(Index index, EditItemDescriptor editItemDescriptor) {"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
         "content": "        requireNonNull(index);"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 65,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        requireNonNull(editItemDescriptor);"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
         "content": "        this.index \u003d index;"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 68,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        this.editItemDescriptor \u003d new EditItemDescriptor(editItemDescriptor);"
       },
       {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 72,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "    public CommandResult execute(ItemModel model) throws CommandException {"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
         "content": "        requireNonNull(model);"
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 74,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "        VisualizeList lastShownList \u003d model.getVisualList();"
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 75,
+        "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
         "content": "        if (index.getZeroBased() \u003e\u003d lastShownList.size()) {"
       },
       {
-        "lineNumber": 76,
+        "lineNumber": 77,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            throw new CommandException(Messages.MESSAGE_INVALID_ITEM_DISPLAYED_INDEX);"
       },
       {
-        "lineNumber": 77,
+        "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 78,
+        "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 79,
+        "lineNumber": 80,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        Item oldItem \u003d lastShownList.get(index.getZeroBased());"
       },
       {
-        "lineNumber": 80,
+        "lineNumber": 81,
         "author": {
           "gitId": "lrchema"
         },
         "content": "        this.oldItem \u003d oldItem;"
       },
       {
-        "lineNumber": 81,
+        "lineNumber": 82,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        Item editedItem \u003d createEditedItem(oldItem, editItemDescriptor, lastShownList);"
       },
       {
-        "lineNumber": 82,
+        "lineNumber": 83,
         "author": {
           "gitId": "lrchema"
         },
         "content": "        this.editedItem \u003d editedItem;"
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "mannggoo"
-        },
-        "content": "        model.replaceItem(oldItem, editedItem);"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_ITEM_SUCCESS, editedItem));"
+        "content": "        model.replaceItem(oldItem, editedItem);"
       },
       {
         "lineNumber": 86,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "    }"
+        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_ITEM_SUCCESS, editedItem));"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "lrchema"
+          "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    public void reverse(ItemModel model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "        model.replaceItem(editedItem, oldItem);"
+        "content": "    public void reverse(ItemModel model) throws CommandException {"
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "-"
+          "gitId": "lrchema"
         },
-        "content": "    }"
+        "content": "        model.replaceItem(editedItem, oldItem);"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "     * Create a new Item with the new edited details."
+        "content": "    /**"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @param itemToEdit old item to edit"
+        "content": "     * Create a new Item with the new edited details."
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @param editItemDescriptor details to edit the item with"
+        "content": "     * @param itemToEdit old item to edit"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @param lastShownList the last list shown to the user, set by the model"
+        "content": "     * @param editItemDescriptor details to edit the item with"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @return a new Item with the edited details"
+        "content": "     * @param lastShownList the last list shown to the user, set by the model"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @throws CommandException representing failure to create new edited item"
+        "content": "     * @return a new Item with the edited details"
       },
       {
         "lineNumber": 100,
+        "author": {
+          "gitId": "mannggoo"
+        },
+        "content": "     * @throws CommandException representing failure to create new edited item"
+      },
+      {
+        "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 102,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "    private static Item createEditedItem(Item itemToEdit, EditItemDescriptor editItemDescriptor,"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 103,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "                                         VisualizeList lastShownList) throws CommandException {"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 104,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        assert itemToEdit !\u003d null;"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "mannggoo"
-        },
-        "content": "        ItemDescription updatedDescription \u003d editItemDescriptor"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                .getDescription()"
+        "content": "        ItemDescription updatedDescription \u003d editItemDescriptor"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                .orElse(itemToEdit.getItemDescription());"
+        "content": "                .getDescription()"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        Optional\u003cTask\u003e updatedTask \u003d Optional.ofNullable(editItemDescriptor"
+        "content": "                .orElse(itemToEdit.getItemDescription());"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                .getTask()"
+        "content": "        Optional\u003cTask\u003e updatedTask \u003d Optional.ofNullable(editItemDescriptor"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                .orElse(itemToEdit"
+        "content": "                .getTask()"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                        .getTask()"
+        "content": "                .orElse(itemToEdit"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                        .orElse(null)));"
+        "content": "                        .getTask()"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        Optional\u003cEvent\u003e updatedEvent \u003d Optional.ofNullable(editItemDescriptor"
+        "content": "                        .orElse(null)));"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                .getEvent()"
+        "content": "        Optional\u003cEvent\u003e updatedEvent \u003d Optional.ofNullable(editItemDescriptor"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                .orElse(itemToEdit"
+        "content": "                .getEvent()"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                        .getEvent()"
+        "content": "                .orElse(itemToEdit"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                        .orElse(null)));"
+        "content": "                        .getEvent()"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        Optional\u003cReminder\u003e updatedReminder \u003d Optional.ofNullable(editItemDescriptor"
+        "content": "                        .orElse(null)));"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                .getReminder()"
+        "content": "        Optional\u003cReminder\u003e updatedReminder \u003d Optional.ofNullable(editItemDescriptor"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                .orElse(itemToEdit"
+        "content": "                .getReminder()"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                        .getReminder()"
+        "content": "                .orElse(itemToEdit"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                        .orElse(null)));"
+        "content": "                        .getReminder()"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        Set\u003cTag\u003e updatedTags \u003d editItemDescriptor.getTags().orElse(itemToEdit.getTags());"
+        "content": "                        .orElse(null)));"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        Set\u003cTag\u003e updatedTags \u003d editItemDescriptor.getTags().orElse(itemToEdit.getTags());"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        ItemBuilder itemBuilder \u003d new ItemBuilder();"
+        "content": ""
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        itemBuilder.setItemDescription(updatedDescription);"
+        "content": "        ItemBuilder itemBuilder \u003d new ItemBuilder();"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        itemBuilder.setTags(updatedTags);"
+        "content": "        itemBuilder.setItemDescription(updatedDescription);"
       },
       {
         "lineNumber": 128,
         "author": {
-          "gitId": "blimyj"
+          "gitId": "mannggoo"
         },
-        "content": "        itemBuilder.setItemPriority(editItemDescriptor.getPriority().orElse(Priority.MEDIUM));"
+        "content": "        itemBuilder.setTags(updatedTags);"
       },
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": ""
+        "content": "        itemBuilder.setItemPriority(editItemDescriptor.getPriority().orElse(Priority.MEDIUM));"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        if (updatedTask.isPresent()) {"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            itemBuilder.setTask(updatedTask.get());"
+        "content": "        if (updatedTask.isPresent()) {"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            itemBuilder.setTask(updatedTask.get());"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        if (updatedEvent.isPresent()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            itemBuilder.setEvent(updatedEvent.get());"
+        "content": "        if (updatedEvent.isPresent()) {"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            itemBuilder.setEvent(updatedEvent.get());"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        if (updatedReminder.isPresent()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            itemBuilder.setReminder(updatedReminder.get());"
+        "content": "        if (updatedReminder.isPresent()) {"
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            itemBuilder.setReminder(updatedReminder.get());"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        if (editItemDescriptor.getHasDeleteTask()) {"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            itemBuilder.setTask(null);"
+        "content": "        if (editItemDescriptor.getHasDeleteTask()) {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            itemBuilder.setTask(null);"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        if (editItemDescriptor.getHasDeleteEvent()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            itemBuilder.setEvent(null);"
+        "content": "        if (editItemDescriptor.getHasDeleteEvent()) {"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            itemBuilder.setEvent(null);"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        if (editItemDescriptor.getHasDeleteReminder()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            itemBuilder.setReminder(null);"
+        "content": "        if (editItemDescriptor.getHasDeleteReminder()) {"
       },
       {
         "lineNumber": 148,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            itemBuilder.setReminder(null);"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 150,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        Item updatedItem;"
+        "content": ""
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        try {"
+        "content": "        Item updatedItem;"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            updatedItem \u003d itemBuilder.build();"
+        "content": "        try {"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        } catch (IllegalArgumentException e) {"
+        "content": "            updatedItem \u003d itemBuilder.build();"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            throw new CommandException(e.getMessage());"
+        "content": "        } catch (IllegalArgumentException e) {"
       },
       {
         "lineNumber": 155,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            throw new CommandException(e.getMessage());"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 158,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        return updatedItem;"
       },
       {
-        "lineNumber": 158,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 162,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "     * Create a new EditItemDescriptor that edits the details of an item."
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 164,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "    public static class EditItemDescriptor {"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 165,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        private ItemDescription description;"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 166,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        private Task task;"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 167,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        private Event event;"
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 168,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        private Reminder reminder;"
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 169,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        private Priority priority;"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
         "content": "        private Set\u003cTag\u003e tags;"
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 171,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        private boolean hasDeleteTask \u003d false;"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 172,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        private boolean hasDeleteEvent \u003d false;"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 173,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        private boolean hasDeleteReminder \u003d false;"
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 175,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        public EditItemDescriptor() {}"
       },
       {
-        "lineNumber": 175,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Copy constructor."
+        "content": "        /**"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": "         * Copy constructor."
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 180,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public EditItemDescriptor(EditItemDescriptor toCopy) {"
+        "content": "         */"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            setDescription(toCopy.description);"
+        "content": "        public EditItemDescriptor(EditItemDescriptor toCopy) {"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            setTask(toCopy.task);"
+        "content": "            setDescription(toCopy.description);"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            setEvent(toCopy.event);"
+        "content": "            setTask(toCopy.task);"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            setReminder(toCopy.reminder);"
+        "content": "            setEvent(toCopy.event);"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            setPriority(toCopy.priority);"
+        "content": "            setReminder(toCopy.reminder);"
       },
       {
         "lineNumber": 186,
+        "author": {
+          "gitId": "mannggoo"
+        },
+        "content": "            setPriority(toCopy.priority);"
+      },
+      {
+        "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
         "content": "            setTags(toCopy.tags);"
       },
       {
-        "lineNumber": 187,
+        "lineNumber": 188,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            setHasDeleteTask(toCopy.hasDeleteTask);"
       },
       {
-        "lineNumber": 188,
+        "lineNumber": 189,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            setHasDeleteEvent(toCopy.hasDeleteEvent);"
       },
       {
-        "lineNumber": 189,
+        "lineNumber": 190,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            setHasDeleteReminder(toCopy.hasDeleteReminder);"
       },
       {
-        "lineNumber": 190,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Returns true if at least one field is edited."
+        "content": "        /**"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "         * Returns true if at least one field is edited."
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "        public boolean isAnyFieldEdited() {"
+        "content": "         */"
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "            return CollectionUtil.isAnyNonNull(description, task, event, reminder, priority, tags);"
+        "content": "        public boolean isAnyFieldEdited() {"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return CollectionUtil.isAnyNonNull(description, task, event, reminder, priority, tags);"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        public void setDescription(ItemDescription description) {"
+        "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.description \u003d description;"
+        "content": "        public void setDescription(ItemDescription description) {"
       },
       {
         "lineNumber": 201,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            this.description \u003d description;"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 203,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public Optional\u003cItemDescription\u003e getDescription() {"
+        "content": ""
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return Optional.ofNullable(description);"
+        "content": "        public Optional\u003cItemDescription\u003e getDescription() {"
       },
       {
         "lineNumber": 205,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(description);"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 207,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public void setTask(Task task) {"
+        "content": ""
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.task \u003d task;"
+        "content": "        public void setTask(Task task) {"
       },
       {
         "lineNumber": 209,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            this.task \u003d task;"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public Optional\u003cTask\u003e getTask() {"
+        "content": ""
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return Optional.ofNullable(task);"
+        "content": "        public Optional\u003cTask\u003e getTask() {"
       },
       {
         "lineNumber": 213,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(task);"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public void setEvent(Event event) {"
+        "content": ""
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.event \u003d event;"
+        "content": "        public void setEvent(Event event) {"
       },
       {
         "lineNumber": 217,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            this.event \u003d event;"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 219,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public Optional\u003cEvent\u003e getEvent() {"
+        "content": ""
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return Optional.ofNullable(event);"
+        "content": "        public Optional\u003cEvent\u003e getEvent() {"
       },
       {
         "lineNumber": 221,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(event);"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 223,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public void setReminder(Reminder reminder) {"
+        "content": ""
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.reminder \u003d reminder;"
+        "content": "        public void setReminder(Reminder reminder) {"
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            this.reminder \u003d reminder;"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 227,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public Optional\u003cReminder\u003e getReminder() {"
+        "content": ""
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return Optional.ofNullable(reminder);"
+        "content": "        public Optional\u003cReminder\u003e getReminder() {"
       },
       {
         "lineNumber": 229,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(reminder);"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 231,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public void setPriority(Priority priority) {"
+        "content": ""
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.priority \u003d priority;"
+        "content": "        public void setPriority(Priority priority) {"
       },
       {
         "lineNumber": 233,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            this.priority \u003d priority;"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 235,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public Optional\u003cPriority\u003e getPriority() {"
+        "content": ""
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return Optional.ofNullable(priority);"
+        "content": "        public Optional\u003cPriority\u003e getPriority() {"
       },
       {
         "lineNumber": 237,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(priority);"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
+        "content": "        /**"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
+        "content": "         */"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
+        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
+        "content": "        /**"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "         * if modification is attempted."
+        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
+        "content": "         * if modification is attempted."
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
+        "content": "         */"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
+        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 256,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public boolean hasAnyDelete() {"
+        "content": ""
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return (hasDeleteEvent || hasDeleteReminder || hasDeleteTask);"
+        "content": "        public boolean hasAnyDelete() {"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return (hasDeleteEvent || hasDeleteReminder || hasDeleteTask);"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        public void setHasDeleteTask(boolean bool) {"
+        "content": ""
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.hasDeleteTask \u003d bool;"
+        "content": "        public void setHasDeleteTask(boolean bool) {"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            this.hasDeleteTask \u003d bool;"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        public boolean getHasDeleteTask() {"
+        "content": ""
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return this.hasDeleteTask;"
+        "content": "        public boolean getHasDeleteTask() {"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return this.hasDeleteTask;"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        public void setHasDeleteEvent(boolean bool) {"
+        "content": ""
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.hasDeleteEvent \u003d bool;"
+        "content": "        public void setHasDeleteEvent(boolean bool) {"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            this.hasDeleteEvent \u003d bool;"
       },
       {
         "lineNumber": 271,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 272,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public boolean getHasDeleteEvent() {"
+        "content": ""
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return this.hasDeleteEvent;"
+        "content": "        public boolean getHasDeleteEvent() {"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return this.hasDeleteEvent;"
       },
       {
         "lineNumber": 275,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 276,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public void setHasDeleteReminder(boolean bool) {"
+        "content": ""
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.hasDeleteReminder \u003d bool;"
+        "content": "        public void setHasDeleteReminder(boolean bool) {"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            this.hasDeleteReminder \u003d bool;"
       },
       {
         "lineNumber": 279,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 280,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "-"
         },
-        "content": "        public boolean getHasDeleteReminder() {"
+        "content": ""
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            return this.hasDeleteReminder;"
+        "content": "        public boolean getHasDeleteReminder() {"
       },
       {
         "lineNumber": 282,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            return this.hasDeleteReminder;"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 284,
         "author": {
-          "gitId": "lrchema"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    public String getCommandWord() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "        return COMMAND_WORD;"
+        "content": "    public String getCommandWord() {"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    }"
+        "content": "        return COMMAND_WORD;"
       },
       {
         "lineNumber": 289,
+        "author": {
+          "gitId": "lrchema"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
@@ -27084,9 +27104,8 @@
       }
     ],
     "authorContributionMap": {
-      "blimyj": 1,
-      "lrchema": 13,
-      "mannggoo": 152,
+      "lrchema": 16,
+      "mannggoo": 151,
       "sianghwee": 3,
       "-": 120
     }
@@ -27175,9 +27194,9 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "-"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_EXIT_ACKNOWLEDGEMENT \u003d \"Exiting Address Book as requested ...\";"
+        "content": "    public static final String MESSAGE_EXIT_ACKNOWLEDGEMENT \u003d \"ELISee you again!\";"
       },
       {
         "lineNumber": 13,
@@ -27237,9 +27256,10 @@
       }
     ],
     "authorContributionMap": {
+      "lrchema": 1,
       "mannggoo": 2,
       "sianghwee": 1,
-      "-": 17
+      "-": 16
     }
   },
   {
@@ -27893,28 +27913,28 @@
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "lrchema"
         },
-        "content": "    private static final String PRIORITY_MODE_ON \u003d \"Priority mode activated\";"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "lrchema"
         },
-        "content": "    private static final String PRIORITY_MODE_OFF \u003d \"Priority mode deactivated\";"
+        "content": "    private static final String PRIORITY_MODE_ON \u003d \"Priority mode activated, just manage this one task, that\u0027ll do.\";"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "lrchema"
         },
-        "content": "    private static final String PRIORITY_MODE_ERROR \u003d \"Priority mode can only be activated on task pane\";"
+        "content": "    private static final String PRIORITY_MODE_OFF \u003d \"Priority mode deactivated! Not so stressed anymore, are you?\";"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "lrchema"
         },
         "content": ""
       },
@@ -27923,164 +27943,178 @@
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "    @Override"
+        "content": "    private static final String PRIORITY_MODE_ERROR \u003d \"Priority mode can only be activated on task pane\";"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "    public CommandResult execute(ItemModel model) {"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "        try {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "            boolean status \u003d model.togglePriorityMode();"
+        "content": "    public CommandResult execute(ItemModel model) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "            return new CommandResult((status ? PRIORITY_MODE_ON : PRIORITY_MODE_OFF));"
+        "content": "        try {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "        } catch (IllegalListException e) {"
+        "content": "            boolean status \u003d model.togglePriorityMode();"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "            return new CommandResult(PRIORITY_MODE_ERROR);"
+        "content": "            return new CommandResult((status ? PRIORITY_MODE_ON : PRIORITY_MODE_OFF));"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "        }"
+        "content": "        } catch (IllegalListException e) {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "    }"
+        "content": "            return new CommandResult(PRIORITY_MODE_ERROR);"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "lrchema"
+          "gitId": "sianghwee"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "lrchema"
+          "gitId": "sianghwee"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    public void reverse(ItemModel model) throws CommandException {"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "        try {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "            model.togglePriorityMode();"
+        "content": "    public void reverse(ItemModel model) throws CommandException {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "        } catch (IllegalListException e) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "            e.printStackTrace();"
+        "content": "            model.togglePriorityMode();"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "        }"
+        "content": "        } catch (IllegalListException e) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    }"
+        "content": "            e.printStackTrace();"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "lrchema"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    public String getCommandWord() {"
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "        return COMMAND_WORD;"
+        "content": "    @Override"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    }"
+        "content": "    public String getCommandWord() {"
       },
       {
         "lineNumber": 41,
+        "author": {
+          "gitId": "lrchema"
+        },
+        "content": "        return COMMAND_WORD;"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "lrchema"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 43,
         "author": {
           "gitId": "sianghwee"
         },
@@ -28088,8 +28122,8 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 16,
-      "sianghwee": 25
+      "lrchema": 20,
+      "sianghwee": 23
     }
   },
   {
@@ -28727,9 +28761,9 @@
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "lrchema"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Switched view to %1$s\";"
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Switched view to %1$s, because somebody couldn\u0027t use the mouse\";"
       },
       {
         "lineNumber": 26,
@@ -29076,8 +29110,8 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 12,
-      "mannggoo": 27,
+      "lrchema": 13,
+      "mannggoo": 26,
       "Icesiolz": 35
     }
   },
@@ -29618,31 +29652,38 @@
         "author": {
           "gitId": "lrchema"
         },
-        "content": "            return new CommandResult(\"Undo [\" + lastDone.getCommandWord() + \"] command successful!\");"
+        "content": "            return new CommandResult(\"Undo [\" + lastDone.getCommandWord() + \"] command successful!\""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "        }"
+        "content": "                    + \" Try to do it right this time..\");"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "lrchema"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "lrchema"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 31,
+        "author": {
+          "gitId": "lrchema"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
         "author": {
           "gitId": "lrchema"
         },
@@ -29650,7 +29691,7 @@
       }
     ],
     "authorContributionMap": {
-      "lrchema": 29,
+      "lrchema": 30,
       "mannggoo": 2
     }
   },

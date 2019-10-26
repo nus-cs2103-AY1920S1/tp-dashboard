@@ -28289,171 +28289,199 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import seedu.address.logic.commands.FilterCommand;"
+        "content": "import java.util.Arrays;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import seedu.address.model.person.TagMatchesPredicate;"
+        "content": "import seedu.address.logic.commands.FilterCommand;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "/**"
+        "content": "import seedu.address.model.person.TagMatchesPredicate;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": " * Parses input arguments and creates a new FilterCommand object"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "public class FilterCommandParser implements Parser\u003cFilterCommand\u003e {"
+        "content": " * Parses input arguments and creates a new FilterCommand object"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    /**"
+        "content": "public class FilterCommandParser implements Parser\u003cFilterCommand\u003e {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "     * Parses the given {@code String} of arguments in the context of the FilterCommand"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "     * and returns a FilterCommand object for execution."
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     * Parses the given {@code String} of arguments in the context of the FilterCommand"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "     */"
+        "content": "     * and returns a FilterCommand object for execution."
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public FilterCommand parse(String args) throws ParseException {"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        String trimmedArgs \u003d args.trim();"
+        "content": "     */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        if (trimmedArgs.isEmpty()) {"
+        "content": "    public FilterCommand parse(String args) throws ParseException {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            throw new ParseException("
+        "content": "        String trimmedArgs \u003d args.trim();"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterCommand.MESSAGE_USAGE));"
+        "content": "        if (trimmedArgs.isEmpty()) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        }"
+        "content": "            throw new ParseException("
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        return new FilterCommand(new TagMatchesPredicate(trimmedArgs));"
+        "content": "        }"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        String[] tagQueries \u003d trimmedArgs.split(\"\\\\s+\");"
       },
       {
         "lineNumber": 29,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        return new FilterCommand(new TagMatchesPredicate(Arrays.asList(tagQueries)));"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
         "author": {
           "gitId": "hellodommy"
         },
@@ -28461,7 +28489,7 @@
       }
     ],
     "authorContributionMap": {
-      "hellodommy": 29
+      "hellodommy": 33
     }
   },
   {
@@ -37279,70 +37307,70 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import java.util.function.Predicate;"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "import java.util.function.Predicate;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import seedu.address.model.tag.Tag;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "import seedu.address.commons.util.StringUtil;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": " * Tests that any of a {@code Person}\u0027s {@code Tag} matches any of the keywords given."
+        "content": "/**"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": " */"
+        "content": " * Tests that any of a {@code Person}\u0027s {@code Tag} matches any of the keywords given."
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "public class TagMatchesPredicate implements Predicate\u003cPerson\u003e {"
+        "content": " */"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "public class TagMatchesPredicate implements Predicate\u003cPerson\u003e {"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    private final String tagQuery;"
+        "content": "    private final List\u003cString\u003e tagQueries;"
       },
       {
         "lineNumber": 13,
@@ -37356,14 +37384,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public TagMatchesPredicate(String tagQuery) {"
+        "content": "    public TagMatchesPredicate(List\u003cString\u003e tagQueries) {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        this.tagQuery \u003d tagQuery;"
+        "content": "        this.tagQueries \u003d tagQueries;"
       },
       {
         "lineNumber": 16,
@@ -37398,108 +37426,94 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        boolean contains \u003d false;"
+        "content": "        String allTags \u003d person.getTags().toString()"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        for (Tag tag : person.getTags()) {"
+        "content": "                .replaceAll(\"\\\\[|\\\\]\", \"\").replaceAll(\",\", \" \");"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            if ((tag.tagName).equalsIgnoreCase(tagQuery)) {"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "                contains \u003d true;"
+        "content": "        return tagQueries.stream()"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            }"
+        "content": "                .anyMatch(keyword -\u003e StringUtil.containsWordIgnoreCase(allTags, keyword));"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        return contains;"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    @Override"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "                || (other instanceof TagMatchesPredicate // instanceof handles nulls"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "                \u0026\u0026 tagQueries.equals(((TagMatchesPredicate) other).tagQueries)); // state check"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "                || (other instanceof TagMatchesPredicate // instanceof handles nulls"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "hellodommy"
-        },
-        "content": "                \u0026\u0026 tagQuery.equals(((TagMatchesPredicate) other).tagQuery)); // state check"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "hellodommy"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 33,
         "author": {
           "gitId": "hellodommy"
         },
@@ -37507,7 +37521,7 @@
       }
     ],
     "authorContributionMap": {
-      "hellodommy": 35
+      "hellodommy": 33
     }
   },
   {
@@ -64259,346 +64273,360 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate firstPredicate \u003d new TagMatchesPredicate(\"first\");"
+        "content": "        TagMatchesPredicate firstPredicate \u003d"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate secondPredicate \u003d new TagMatchesPredicate(\"second\");"
+        "content": "                new TagMatchesPredicate(Collections.singletonList(\"first\"));"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        TagMatchesPredicate secondPredicate \u003d"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        FilterCommand filterFirstCommand \u003d new FilterCommand(firstPredicate);"
+        "content": "                new TagMatchesPredicate(Collections.singletonList(\"second\"));"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        FilterCommand filterSecondCommand \u003d new FilterCommand(secondPredicate);"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        FilterCommand filterFirstCommand \u003d new FilterCommand(firstPredicate);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // same object -\u003e returns true"
+        "content": "        FilterCommand filterSecondCommand \u003d new FilterCommand(secondPredicate);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertTrue(filterFirstCommand.equals(filterFirstCommand));"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        // same object -\u003e returns true"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // same values -\u003e returns true"
+        "content": "        assertTrue(filterFirstCommand.equals(filterFirstCommand));"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        FilterCommand findFirstCommandCopy \u003d new FilterCommand(firstPredicate);"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertTrue(filterFirstCommand.equals(findFirstCommandCopy));"
+        "content": "        // same values -\u003e returns true"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        FilterCommand findFirstCommandCopy \u003d new FilterCommand(firstPredicate);"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // different types -\u003e returns false"
+        "content": "        assertTrue(filterFirstCommand.equals(findFirstCommandCopy));"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertFalse(filterFirstCommand.equals(1));"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        // different types -\u003e returns false"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // null -\u003e returns false"
+        "content": "        assertFalse(filterFirstCommand.equals(1));"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertFalse(filterFirstCommand \u003d\u003d null);"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        // null -\u003e returns false"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // different person -\u003e returns false"
+        "content": "        assertFalse(filterFirstCommand \u003d\u003d null);"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertFalse(filterFirstCommand.equals(filterSecondCommand));"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": "        // different person -\u003e returns false"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertFalse(filterFirstCommand.equals(filterSecondCommand));"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void execute_zeroKeywords_noPersonFound() {"
+        "content": ""
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate predicate \u003d preparePredicate(\" \");"
+        "content": "    @Test"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        FilterCommand command \u003d new FilterCommand(predicate);"
+        "content": "    public void execute_zeroKeywords_noPersonFound() {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        String expectedMessage \u003d command.getNoMatchMessage();"
+        "content": "        TagMatchesPredicate predicate \u003d preparePredicate(\" \");"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        expectedModel.updateFilteredPersonList(predicate);"
+        "content": "        FilterCommand command \u003d new FilterCommand(predicate);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertCommandSuccess(command, model, expectedMessage, expectedModel);"
+        "content": "        String expectedMessage \u003d command.getNoMatchMessage();"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertEquals(Collections.emptyList(), model.getFilteredPersonList());"
+        "content": "        expectedModel.updateFilteredPersonList(predicate);"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": "        assertCommandSuccess(command, model, expectedMessage, expectedModel);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertEquals(Collections.emptyList(), model.getFilteredPersonList());"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void execute_multipleKeywords_multiplePersonsFound() {"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        String expectedMessage \u003d String.format(MESSAGE_PERSONS_LISTED_OVERVIEW, 3);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate predicate \u003d preparePredicate(\"friends\");"
+        "content": "    public void execute_multipleKeywords_multiplePersonsFound() {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        FilterCommand command \u003d new FilterCommand(predicate);"
+        "content": "        String expectedMessage \u003d String.format(MESSAGE_PERSONS_LISTED_OVERVIEW, 3);"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        expectedModel.updateFilteredPersonList(predicate);"
+        "content": "        TagMatchesPredicate predicate \u003d preparePredicate(\"friends colleagues\");"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertCommandSuccess(command, model, expectedMessage, expectedModel);"
+        "content": "        FilterCommand command \u003d new FilterCommand(predicate);"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertEquals(Arrays.asList(ALICE, BENSON, DANIEL), model.getFilteredPersonList());"
+        "content": "        expectedModel.updateFilteredPersonList(predicate);"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": "        assertCommandSuccess(command, model, expectedMessage, expectedModel);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertEquals(Arrays.asList(ALICE, BENSON, DANIEL), model.getFilteredPersonList());"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "     * Parses {@code userInput} into a {@code NameContainsKeywordsPredicate}."
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    private TagMatchesPredicate preparePredicate(String userInput) {"
+        "content": "     * Parses {@code userInput} into a {@code TagMatchesPredicate}."
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        return new TagMatchesPredicate(userInput.trim());"
+        "content": "     */"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": "    private TagMatchesPredicate preparePredicate(String userInput) {"
       },
       {
         "lineNumber": 82,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        return new TagMatchesPredicate(Arrays.asList(userInput.split(\"\\\\s+\")));"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 84,
         "author": {
           "gitId": "hellodommy"
         },
@@ -64606,7 +64634,7 @@
       }
     ],
     "authorContributionMap": {
-      "hellodommy": 79,
+      "hellodommy": 81,
       "jeunhoe": 3
     }
   },
@@ -66990,7 +67018,7 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        String tagQuery \u003d \"foo\";"
+        "content": "        List\u003cString\u003e tagQueries \u003d Arrays.asList(\"foo\", \"bar\", \"baz\");"
       },
       {
         "lineNumber": 85,
@@ -67004,14 +67032,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "                FilterCommand.COMMAND_WORD + \" \" + tagQuery);"
+        "content": "                FilterCommand.COMMAND_WORD + \" \" + tagQueries.stream().collect(Collectors.joining(\" \")));"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertEquals(new FilterCommand(new TagMatchesPredicate(tagQuery)), command);"
+        "content": "        assertEquals(new FilterCommand(new TagMatchesPredicate(tagQueries)), command);"
       },
       {
         "lineNumber": 88,
@@ -68775,7 +68803,7 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": "import java.util.Arrays;"
       },
       {
         "lineNumber": 8,
@@ -68789,28 +68817,28 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import seedu.address.logic.commands.FilterCommand;"
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import seedu.address.model.person.TagMatchesPredicate;"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "import seedu.address.logic.commands.FilterCommand;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "public class FilterCommandParserTest {"
+        "content": "import seedu.address.model.person.TagMatchesPredicate;"
       },
       {
         "lineNumber": 13,
@@ -68824,7 +68852,7 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    private FilterCommandParser parser \u003d new FilterCommandParser();"
+        "content": "public class FilterCommandParserTest {"
       },
       {
         "lineNumber": 15,
@@ -68838,115 +68866,129 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    @Test"
+        "content": "    private FilterCommandParser parser \u003d new FilterCommandParser();"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void parse_emptyArg_throwsParseException() {"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertParseFailure(parser, \"     \", String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterCommand.MESSAGE_USAGE));"
+        "content": "    @Test"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": "    public void parse_emptyArg_throwsParseException() {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertParseFailure(parser, \"     \", String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void parse_validArgs_returnsFindCommand() {"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // no leading and trailing whitespaces"
+        "content": "    @Test"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        FilterCommand expectedFilterCommand \u003d"
+        "content": "    public void parse_validArgs_returnsFilterCommand() {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "                new FilterCommand(new TagMatchesPredicate(\"friend\"));"
+        "content": "        // no leading and trailing whitespaces"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertParseSuccess(parser, \"friend\", expectedFilterCommand);"
+        "content": "        FilterCommand expectedFilterCommand \u003d"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "                new FilterCommand(new TagMatchesPredicate(Arrays.asList(\"captain\", \"freestyle\")));"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // multiple whitespaces between keywords"
+        "content": "        assertParseSuccess(parser, \"captain freestyle\", expectedFilterCommand);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertParseSuccess(parser, \" \\n friend \\n \\t\", expectedFilterCommand);"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": "        // multiple whitespaces between keywords"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertParseSuccess(parser, \" \\n captain \\n \\t freestyle  \\t\", expectedFilterCommand);"
       },
       {
         "lineNumber": 32,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
         "author": {
           "gitId": "hellodommy"
         },
@@ -68954,7 +68996,7 @@
       }
     ],
     "authorContributionMap": {
-      "hellodommy": 32
+      "hellodommy": 34
     }
   },
   {
@@ -71742,21 +71784,21 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": "import java.util.Arrays;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "import java.util.Collections;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "import seedu.address.testutil.PersonBuilder;"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 9,
@@ -71770,7 +71812,7 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "public class TagMatchesPredicateTest {"
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 11,
@@ -71784,98 +71826,98 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    @Test"
+        "content": "import seedu.address.testutil.PersonBuilder;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void equals() {"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        String firstPredicateKeyword \u003d \"first\";"
+        "content": "public class TagMatchesPredicateTest {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        String secondPredicateKeyword \u003d \"second\";"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "    @Test"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate firstPredicate \u003d new TagMatchesPredicate(firstPredicateKeyword);"
+        "content": "    public void equals() {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate secondPredicate \u003d new TagMatchesPredicate(secondPredicateKeyword);"
+        "content": "        List\u003cString\u003e firstPredicateKeywordList \u003d Collections.singletonList(\"first\");"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        List\u003cString\u003e secondPredicateKeywordList \u003d Arrays.asList(\"first\", \"second\");"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // same object -\u003e returns true"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertTrue(firstPredicate.equals(firstPredicate));"
+        "content": "        TagMatchesPredicate firstPredicate \u003d new TagMatchesPredicate(firstPredicateKeywordList);"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        TagMatchesPredicate secondPredicate \u003d new TagMatchesPredicate(secondPredicateKeywordList);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // same values -\u003e returns true"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate firstPredicateCopy \u003d new TagMatchesPredicate(firstPredicateKeyword);"
+        "content": "        // same object -\u003e returns true"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertTrue(firstPredicate.equals(firstPredicateCopy));"
+        "content": "        assertTrue(firstPredicate.equals(firstPredicate));"
       },
       {
         "lineNumber": 26,
@@ -71889,63 +71931,63 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // different types -\u003e returns false"
+        "content": "        // same values -\u003e returns true"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertFalse(firstPredicate.equals(1));"
+        "content": "        TagMatchesPredicate firstPredicateCopy \u003d new TagMatchesPredicate(firstPredicateKeywordList);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertTrue(firstPredicate.equals(firstPredicateCopy));"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // null -\u003e returns false"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertFalse(firstPredicate \u003d\u003d null);"
+        "content": "        // different types -\u003e returns false"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertFalse(firstPredicate.equals(1));"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // different person -\u003e returns false"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertFalse(firstPredicate.equals(secondPredicate));"
+        "content": "        // null -\u003e returns false"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": "        assertFalse(firstPredicate.equals(null));"
       },
       {
         "lineNumber": 36,
@@ -71959,147 +72001,147 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    @Test"
+        "content": "        // different person -\u003e returns false"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void test_tagMatchesQuery_returnsTrue() {"
+        "content": "        assertFalse(firstPredicate.equals(secondPredicate));"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // One keyword"
+        "content": "    }"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate predicate \u003d new TagMatchesPredicate(\"friend\");"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertTrue(predicate.test(new PersonBuilder().withTags(\"friend\").build()));"
+        "content": "    @Test"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "    public void test_tagMatchesQuery_returnsTrue() {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // Mixed-case keywords"
+        "content": "        // One tag"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        predicate \u003d new TagMatchesPredicate(\"FRIEND\");"
+        "content": "        TagMatchesPredicate predicate \u003d new TagMatchesPredicate(Collections.singletonList(\"captain\"));"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertTrue(predicate.test(new PersonBuilder().withTags(\"friend\").build()));"
+        "content": "        assertTrue(predicate.test(new PersonBuilder().withTags(\"captain\").build()));"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        // Multiple tag"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    @Test"
+        "content": "        predicate \u003d new TagMatchesPredicate(Arrays.asList(\"captain\", \"freestyle\"));"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void test_tagDoesNotMatchQuery_returnsFalse() {"
+        "content": "        assertTrue(predicate.test(new PersonBuilder().withTags(\"captain\", \"freestyle\").build()));"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // Zero keywords"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        TagMatchesPredicate predicate \u003d new TagMatchesPredicate(\"\");"
+        "content": "        // Only one matching tag"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertFalse(predicate.test(new PersonBuilder().withTags(\"friend\").build()));"
+        "content": "        predicate \u003d new TagMatchesPredicate(Arrays.asList(\"captain\", \"freestyle\"));"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertTrue(predicate.test(new PersonBuilder().withTags(\"captain\", \"butterfly\").build()));"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        // Non-matching keyword"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        predicate \u003d new TagMatchesPredicate(\"colleague\");"
+        "content": "        // Mixed-case tags"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        assertFalse(predicate.test(new PersonBuilder().withTags(\"college\").build()));"
+        "content": "        predicate \u003d new TagMatchesPredicate(Arrays.asList(\"cApTaIn\", \"FrEeStYlE\"));"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        assertTrue(predicate.test(new PersonBuilder().withTags(\"captain\", \"freestyle\").build()));"
       },
       {
         "lineNumber": 58,
@@ -72113,11 +72155,88 @@
         "author": {
           "gitId": "hellodommy"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    public void test_tagDoesNotMatchQuery_returnsFalse() {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        // Zero tags"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        TagMatchesPredicate predicate \u003d new TagMatchesPredicate(Collections.emptyList());"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        assertFalse(predicate.test(new PersonBuilder().withTags(\"captain\").build()));"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        // Non-matching tag"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        predicate \u003d new TagMatchesPredicate(Arrays.asList(\"captain\"));"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        assertFalse(predicate.test(new PersonBuilder().withTags(\"butterfly\", \"injured\").build()));"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "hellodommy"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "hellodommy": 59
+      "hellodommy": 70
     }
   },
   {
@@ -76984,9 +77103,9 @@
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "ChangUo79"
+          "gitId": "hellodommy"
         },
-        "content": "            .withTags(\"friends\").withPhoto(\"alice.png\")"
+        "content": "            .withTags(\"colleagues\").withPhoto(\"alice.png\")"
       },
       {
         "lineNumber": 32,
@@ -77340,7 +77459,8 @@
       }
     ],
     "authorContributionMap": {
-      "ChangUo79": 16,
+      "ChangUo79": 15,
+      "hellodommy": 1,
       "-": 65
     }
   },

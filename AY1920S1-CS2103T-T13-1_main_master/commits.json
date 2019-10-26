@@ -214,8 +214,8 @@
         ]
       },
       {
-        "insertions": 26,
-        "deletions": 22,
+        "insertions": 2057,
+        "deletions": 31,
         "date": "2019-10-26",
         "commitResults": [
           {
@@ -224,6 +224,13 @@
             "messageBody": "* Fix typo in user guide\r\n\r\n* Edit Introduction and Features Sections\r\n",
             "insertions": 26,
             "deletions": 22
+          },
+          {
+            "hash": "06833a68875181405613e8be20ab08a9058bda8b",
+            "messageTitle": "Implement minimal version of Matching (#115)",
+            "messageBody": "* Create MatchCommandParser to parse MatchCommands\r\n\r\nMatchCommands are meant to match patients to suitable donors\r\nin the system.\r\n\r\n* Add function to parse match commands\r\n\r\n* Add skeleton of MatchCommand\r\n\r\n* Add matching functionality to MatchCommand\r\n\r\nThis is an intermediate implementation of MatchCommand, which\r\nis executed to match a patient with Donors in the Donor pool.\r\nCurrently when this command is executed, it displays all donors which\r\nmatches the specified patient.\r\n\r\nCurrently in this implementation, a match happens when patient and donor\u0027s\r\nblood types are compatible and they pass the tissue typing test.\r\n\r\n* Modify AddressBook.java to find and return Patient\r\n\r\n* Retrieves specified Patient from PersonList\r\n\r\n* Add blood type tests\r\n\r\n* Add tissue typing tests\r\n\r\n* Fix broken build\r\n\r\n* Make edits based on PR Review\r\n\r\n* Add unit test for MatchCommand\r\n\r\n* Create a MatchCard to display Match Results\r\n\r\n* Update PersonList with Match Results\r\n\r\n* Render MatchCard to display matches\r\n\r\n* Store results of matches\r\n\r\n* Add NumberOfMatches to track matches of Patients\r\n\r\n* Edit PersonListPanel to display matches\r\n\r\n* Add MatchedDonor to represent matching donors\r\n\r\n* Add MatchedPatient to represent number of matches\r\n\r\nA MatchedPatient contains a Patient\u0027s details and the number\r\nof matching donors with the Patient\r\n\r\n* Edit Donor and Patient match result details\r\n\r\nPreviously, match results are stored in the Donor and Patient class.\r\nWith this commit, match results are no longer stored in\r\nDonor and Patient classes, but are stored in MatchedDonor\r\nand MatchedPatient classes.\r\n\r\n* Change PersonListPanel for MatchCommands\r\n\r\nPreviously, matches and people were stored in the Logic\u0027s\r\nfilteredPersonsList. This resulted in bugs when rendering the\r\nmatches and people.\r\n\r\nThe solution is to create a separate list to store matches. The\r\nMainWindow will select the list to display.\r\n\r\n* Add a new list to store matches\r\n\r\n* Add Matching functionality\r\n\r\nThe changes support matching individual Patients and all Patients\r\n\r\n* Fixed failing build\r\n\r\n* Add unit tests for MatchCommandParser.java\r\n\r\n* Fix coding style\r\n\r\n* Make change to messages\r\n\r\n* Add additional tests to ModelManagerTest.java\r\n\r\n* Add unit tests for MatchedPatient.java\r\n\r\n* Make changes to MatchedPatient equals method\r\n\r\n* Add unit test for MatchedDonor.java\r\n\r\n* Edit equality check for MatchDonor\r\n\r\n* Add unit tests for AddressBook and UniquePersonList\r\n\r\n* Add tests for LogicManager\r\n\r\n* Add integration tests for CommandResult and MatchCommand\r\n\r\n* Modify test data for correct matching test results\r\n\r\n* Modify ModelManager methods and CommandTestUtil\r\n",
+            "insertions": 2031,
+            "deletions": 9
           }
         ]
       }
@@ -474,8 +481,8 @@
     ]
   },
   "authorFinalContributionMap": {
-    "WilliamRyank": 2618,
-    "C-likethis123": 1398,
+    "WilliamRyank": 2614,
+    "C-likethis123": 3424,
     "TheRealRavager": 1495,
     "Yen-Peng": 519,
     "SimNee": 351
@@ -483,13 +490,13 @@
   "authorFileTypeContributionMap": {
     "WilliamRyank": {
       "docs": 104,
-      "tests": 1534,
+      "tests": 1530,
       "functional": 980
     },
     "C-likethis123": {
       "docs": 428,
-      "tests": 463,
-      "functional": 507
+      "tests": 1553,
+      "functional": 1443
     },
     "TheRealRavager": {
       "docs": 15,
@@ -511,7 +518,7 @@
   },
   "authorContributionVariance": {
     "WilliamRyank": 118807.56,
-    "C-likethis123": 24546.375,
+    "C-likethis123": 105200.49,
     "TheRealRavager": 198433.02,
     "Yen-Peng": 1797.5757,
     "SimNee": 2152.4824
