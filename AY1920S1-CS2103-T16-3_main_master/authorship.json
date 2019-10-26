@@ -4818,448 +4818,448 @@
       {
         "lineNumber": 409,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "// tag::export/import"
       },
       {
         "lineNumber": 410,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 411,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "\u003d\u003d\u003d  Export/Import feature"
       },
       {
         "lineNumber": 412,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "\u003d\u003d\u003d\u003d Export"
       },
       {
         "lineNumber": 413,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "The user may not want to export everything in the Meme storage to a directory. The Stage command"
       },
       {
         "lineNumber": 414,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "functionality introduces flexibility for the user to stage and shortlist which memes he wants to export,"
       },
       {
         "lineNumber": 415,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "which will be in the staging area under the export tab. When the user accidentally stages a meme, he can"
       },
       {
         "lineNumber": 416,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "either use the undo command or the Unstage command. When the user finally confirms the memes to be export"
       },
       {
         "lineNumber": 417,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "in the staging area, the user can execute the ExportCommand with a provided directory path. The"
       },
       {
         "lineNumber": 418,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "following sequence diagram illustrates the execution of the `Stage Command` and `Emport Command`:"
       },
       {
         "lineNumber": 419,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 420,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "image::StageSequenceDiagram.png[]"
       },
       {
         "lineNumber": 421,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "image::ExportSequenceDiagram.png[]"
       },
       {
         "lineNumber": 422,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 423,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "\u003d\u003d\u003d\u003d Import"
       },
       {
         "lineNumber": 424,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "The user can use the `Load Command` to batch load all memes in the correct picture format into the import"
       },
       {
         "lineNumber": 425,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "context. However, the memes are not immediately imported to storage because there may be memes in the directory"
       },
       {
         "lineNumber": 426,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "that the user does not wish to import. Furthermore, the user may want to set descriptions and tag them before"
       },
       {
         "lineNumber": 427,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "it gets populated into the meme storage. Hence, the user is allowed to use Edit Command and Delete Command"
       },
       {
         "lineNumber": 428,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "in the import context to finalise the memes in the import context before executing the import command."
       },
       {
         "lineNumber": 429,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "The import command will then populate all of the memes in the staging area to the memes storage, followed"
       },
       {
         "lineNumber": 430,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "by clearing the memes in the import context."
       },
       {
         "lineNumber": 431,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 432,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "\u003d\u003d\u003d\u003d Current Implementation"
       },
       {
         "lineNumber": 433,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "Export and Import do not share the same UniqueMemeList as that in the Meme context."
       },
       {
         "lineNumber": 434,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 435,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "While the user is selecting which meme to stage, the user should have a visual reference all the existing memes."
       },
       {
         "lineNumber": 436,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "Hence, the `Stage Command` works in the Meme Context, and the user is able to stage by the Meme Index."
       },
       {
         "lineNumber": 437,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "On the contrary, the unstage command is only available in the export tab, where the user can reference which"
       },
       {
         "lineNumber": 438,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "memes to delete using the index in the export tab."
       },
       {
         "lineNumber": 439,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 440,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "\u2028Step 1. The user enters the import tab"
       },
       {
         "lineNumber": 441,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 442,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "Step 2. The user executes LoadCommand and provide a directory path."
       },
       {
         "lineNumber": 443,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "Weme will find files which are in valid format (e.g. png) and create a new memes"
       },
       {
         "lineNumber": 444,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "based on the given file path. The memes will be added into the import tab which is visible to the user."
       },
       {
         "lineNumber": 445,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 446,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "Step 3. The user executes edit 1 d/Description t/newly added meme to edit the"
       },
       {
         "lineNumber": 447,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "description and tag of the newly added meme based on its index in the import area."
       },
       {
         "lineNumber": 448,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "This change will also be reflected visually."
       },
       {
         "lineNumber": 449,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 450,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "Step 4. User executes import, and weme will transfer the memes from the import list into"
       },
       {
         "lineNumber": 451,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "the memeList, which is now viewable in the meme tab. The memes in the import tab are cleared"
       },
       {
         "lineNumber": 452,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "so that the user can continue importing the memes in a new directory."
       },
       {
         "lineNumber": 453,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 454,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "The following activity diagram summaries the load and import process:"
       },
       {
         "lineNumber": 455,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 456,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "image::ImportActivityDiagram.png[]"
       },
       {
         "lineNumber": 457,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 458,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "\u003d\u003d\u003d\u003d Design Consideration"
       },
       {
         "lineNumber": 459,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 460,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Storage of the imported and exported meme"
       },
       {
         "lineNumber": 461,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 462,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "* **Alternative 1 (current choice):** Use 3 separate UniqueMemeList to store memes in the meme,"
       },
       {
         "lineNumber": 463,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "export and import tab separately."
       },
       {
         "lineNumber": 464,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "** Pros: Straightforward Implementation. Lesser dependency among the 3 different context."
       },
       {
         "lineNumber": 465,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "** Cons: Repetitive method involved in retrieving the 3 different list using model."
       },
       {
         "lineNumber": 466,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "* **Alternative 2:** Use a single UniqueMemeList to store the memes, and introduce a flag attribute"
       },
       {
         "lineNumber": 467,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "to distinguish between staged meme, imported meme and ordinary meme."
       },
       {
         "lineNumber": 468,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "** Pros: Lesser methods defined to retrieve 3 different UniqueMemeList, and a minimalist design."
       },
       {
         "lineNumber": 469,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "** Cons: More coupling involved and the list can get very large, hence iterating through it may cause lagging."
       },
       {
         "lineNumber": 470,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
       {
         "lineNumber": 471,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": "// end::export/import[]"
       },
       {
         "lineNumber": 472,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
@@ -5532,7 +5532,7 @@
       {
         "lineNumber": 511,
         "author": {
-          "gitId": "-"
+          "gitId": "LivingOnEdge"
         },
         "content": ""
       },
@@ -8261,10 +8261,10 @@
       }
     ],
     "authorContributionMap": {
-      "LivingOnEdge": 66,
+      "LivingOnEdge": 131,
       "moziliar": 50,
       "jonchan51": 67,
-      "-": 428,
+      "-": 363,
       "gary-lgy": 251,
       "cutieprobe": 38
     }
@@ -12650,6 +12650,570 @@
     }
   },
   {
+    "path": "docs/diagrams/ExportSequenceDiagram.puml",
+    "fileType": "other",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "@startuml"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "scale 1.5"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "!include style.puml"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "box Logic LOGIC_COLOR_T1"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":LogicManager\" as LogicManager LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":ExportParser\" as ExportParser LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":MemeExportCommandParser\" as MemeExportCommandParser LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":MemeExportCommand\" as MemeExportCommand LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "end box"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "box Model MODEL_COLOR_T1"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":ModelManager\" as ModelManager  MODEL_COLOR"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":VersionedMemeBook\" as MemeBook MODEL_COLOR"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "end box"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "box File STORAGE_COLOR_T1"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \"FileUtil\" as FileUtil STORAGE_COLOR"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "end box"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "[-\u003e LogicManager : execute(\"export\")"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate LogicManager"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "LogicManager -\u003e ExportParser : parseCommand(\"export\")"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate ExportParser"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "ExportParser -\u003e MemeExportCommandParser : parse(exportPath)"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate MemeExportCommandParser"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "create MemeExportCommand"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeExportCommandParser -\u003e MemeExportCommand"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate MemeExportCommand"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeExportCommand --\u003e MemeExportCommandParser"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate MemeExportCommand"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeExportCommandParser --\u003e ExportParser"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate MemeExportCommandParser"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "ExportParser --\u003e LogicManager"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate ExportParser"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "LogicManager -\u003e MemeExportCommand : execute(model)"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate MemeExportCommand"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeExportCommand -\u003e ModelManager : exportMeme(path)"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate ModelManager"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "ModelManager -\u003e MemeBook : export(path)"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate MemeBook"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeBook -\u003e FileUtil : export(list, path)"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate FileUtil"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "FileUtil --\u003e MemeBook"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate FileUtil"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeBook --\u003e ModelManager"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate MemeBook"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "ModelManager --\u003e MemeExportCommand"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate ModelManager"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeExportCommand --\u003e LogicManager : CommandResult(success)"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate MemeExportCommand"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "[\u003c--LogicManager"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate LogicManager"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "@enduml"
+      }
+    ],
+    "authorContributionMap": {
+      "LivingOnEdge": 59
+    }
+  },
+  {
+    "path": "docs/diagrams/ImportActivityDiagram.puml",
+    "fileType": "other",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "@startuml"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "start"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ":User enters import tab;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "\u0027Since the beta syntax does not support placing the condition outside the"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "\u0027diamond we place it as the true branch instead."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "repeat"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ":User loads a given directory;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "if () then ([User wants to edit loaded meme])"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "    :User edits loaded meme;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "else ([User wants to delete loaded meme])"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "    :User deletes loaded meme;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "endif"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ":User imports meme into meme storage;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "repeat while () is ([User wants to continue loading])"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "stop"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "@enduml"
+      }
+    ],
+    "authorContributionMap": {
+      "LivingOnEdge": 19
+    }
+  },
+  {
     "path": "docs/diagrams/LikeMemeSequenceDiagram.puml",
     "fileType": "other",
     "lines": [
@@ -14503,6 +15067,393 @@
     ],
     "authorContributionMap": {
       "gary-lgy": 26
+    }
+  },
+  {
+    "path": "docs/diagrams/StageSequenceDiagram.puml",
+    "fileType": "other",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "@startuml"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "scale 1.5"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "!include style.puml"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "box Logic LOGIC_COLOR_T1"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":LogicManager\" as LogicManager LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":WemeParser\" as WemeParser LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":MemeStageCommandParser\" as MemeStageCommandParser LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":MemeStageCommand\" as MemeStageCommand LOGIC_COLOR"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "end box"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "box Model MODEL_COLOR_T1"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":ModelManager\" as ModelManager  MODEL_COLOR"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \":VersionedMemeBook\" as MemeBook MODEL_COLOR"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "participant \"exportList:UniqueMemeList\" as UniqueMemeList MODEL_COLOR"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "end box"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "[-\u003e LogicManager : execute(\"stage 1\")"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate LogicManager"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "LogicManager -\u003e WemeParser : parseCommand(\"stage 1\")"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate WemeParser"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "WemeParser -\u003e MemeStageCommandParser : parse(\"1\")"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate MemeStageCommandParser"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "create MemeStageCommand"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeStageCommandParser -\u003e MemeStageCommand"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate MemeStageCommand"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeStageCommand --\u003e MemeStageCommandParser"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate MemeStageCommand"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeStageCommandParser --\u003e WemeParser"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate MemeStageCommandParser"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "WemeParser --\u003e LogicManager"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate WemeParser"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "LogicManager -\u003e MemeStageCommand : execute(model)"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate MemeStageCommand"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeStageCommand -\u003e ModelManager : stageMeme(meme)"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate ModelManager"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "ModelManager -\u003e MemeBook : stageMeme(meme)"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate MemeBook"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeBook -\u003e UniqueMemeList : add(meme)"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "activate UniqueMemeList"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "UniqueMemeList --\u003e MemeBook"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate UniqueMemeList"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeBook --\u003e ModelManager"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate MemeBook"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "ModelManager --\u003e MemeStageCommand"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate ModelManager"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "MemeStageCommand --\u003e LogicManager : CommandResult(success)"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate MemeStageCommand"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "[\u003c--LogicManager"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "deactivate LogicManager"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "LivingOnEdge"
+        },
+        "content": "@enduml"
+      }
+    ],
+    "authorContributionMap": {
+      "LivingOnEdge": 54
     }
   },
   {

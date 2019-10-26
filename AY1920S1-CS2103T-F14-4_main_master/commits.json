@@ -277,6 +277,20 @@
             "deletions": 11
           }
         ]
+      },
+      {
+        "insertions": 368,
+        "deletions": 100,
+        "date": "2019-10-26",
+        "commitResults": [
+          {
+            "hash": "58c1c27a9ccb2471e60afc3e7a24c5f02822f75d",
+            "messageTitle": "Idmanager and refractor code. (#113)",
+            "messageBody": "* Added IdManager. To be used for storage of Last Unique Id used by Task,Customer and Driver.\r\n\r\n* Added JsonAdaptedDriver\r\n\r\n* Added JsonAdaptedDriver.\r\n\r\n* Refractor AddCommand and EditCommand for Driver and Customer to take in unique id.\r\n\r\n* Updated DeleteIdCommand, setDriver method in Task.\r\n-setDriver in Task will now adjust Status and EventTime accordingly.\r\n-DeleteIdCommand will now prevent deletion of driver or customer who are already allocated to a task.\r\n\r\n* Updated EditTaskCommand.\r\n-if edited date is before today, then don\u0027t allow.\r\n\r\n* Updated after review.\r\n",
+            "insertions": 368,
+            "deletions": 100
+          }
+        ]
       }
     ],
     "ArgVampir": [
@@ -474,9 +488,9 @@
     ]
   },
   "authorFinalContributionMap": {
-    "SamYJ2606": 910,
-    "cheeyou": 1048,
-    "junnbang": 2463,
+    "SamYJ2606": 880,
+    "cheeyou": 992,
+    "junnbang": 2817,
     "ArgVampir": 88,
     "tysng": 1721
   },
@@ -484,18 +498,18 @@
     "SamYJ2606": {
       "docs": 86,
       "tests": 29,
-      "functional": 571,
+      "functional": 541,
       "other": 224
     },
     "cheeyou": {
       "docs": 8,
       "tests": 31,
-      "functional": 1009
+      "functional": 953
     },
     "junnbang": {
       "docs": 548,
-      "tests": 59,
-      "functional": 1705,
+      "tests": 69,
+      "functional": 2049,
       "other": 151
     },
     "ArgVampir": {
@@ -511,11 +525,11 @@
     }
   },
   "authorContributionVariance": {
-    "SamYJ2606": 16935.854,
-    "cheeyou": 19297.777,
-    "junnbang": 59101.277,
-    "ArgVampir": 727.2867,
-    "tysng": 25175.922
+    "SamYJ2606": 16293.997,
+    "cheeyou": 18562.082,
+    "junnbang": 59790.66,
+    "ArgVampir": 699.8028,
+    "tysng": 24286.084
   },
   "authorDisplayNameMap": {
     "SamYJ2606": "CS2103T-F14-4 SAM Y ... G JEK",

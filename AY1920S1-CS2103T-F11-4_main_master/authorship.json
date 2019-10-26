@@ -29789,6 +29789,1746 @@
     }
   },
   {
+    "path": "src/main/java/seedu/address/logic/commands/questioncommands/EditQuestionCommand.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "package seedu.address.logic.commands.questioncommands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static java.util.Objects.requireNonNull;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_ANSWER;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_DIFFICULTY;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_QUESTION;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_SUBJECT;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.model.Model.PREDICATE_SHOW_ALL_QUESTIONS;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import java.util.Optional;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.commons.core.Messages;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.commons.core.index.Index;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.commons.util.CollectionUtil;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.Command;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.CommandResult;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.exceptions.CommandException;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.Model;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.question.Answer;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.question.Difficulty;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.question.Question;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.question.QuestionBody;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.question.Subject;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " * Edits the details of an existing question."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "public class EditQuestionCommand extends Command {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"editq\";"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Edits the details of the question identified \""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"by the index number used in the displayed question list. \""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"Existing values will be overwritten by the input values.\\n\""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"Parameters: INDEX (must be a positive integer) \""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"[\" + PREFIX_QUESTION + \"QUESTION] \""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"[\" + PREFIX_ANSWER + \"ANSWER] \""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"[\" + PREFIX_SUBJECT + \"SUBJECT] \""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"[\" + PREFIX_DIFFICULTY + \"DIFFICULTY] \""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"Example: \" + COMMAND_WORD + \" 1 + 1 \u003d \""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + PREFIX_ANSWER + \"2\""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + PREFIX_SUBJECT + \"Math\";"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public static final String MESSAGE_EDIT_QUESTION_SUCCESS \u003d \"Edited Question: %1$s\";"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public static final String MESSAGE_NOT_EDITED \u003d \"At least one field to edit must be provided.\";"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public static final String MESSAGE_DUPLICATE_QUESTION \u003d \"This question already exists in NUStudy.\";"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    private final Index index;"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    private final EditQuestionDescriptor editQuestionDescriptor;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * @param index of the question in the filtered question list to edit"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * @param editQuestionDescriptor details to edit the question with"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public EditQuestionCommand(Index index, EditQuestionDescriptor editQuestionDescriptor) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        requireNonNull(index);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        requireNonNull(editQuestionDescriptor);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        this.index \u003d index;"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        this.editQuestionDescriptor \u003d new EditQuestionDescriptor(editQuestionDescriptor);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        requireNonNull(model);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        List\u003cQuestion\u003e lastShownList \u003d model.getFilteredQuestionList();"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (index.getZeroBased() \u003e\u003d lastShownList.size()) {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_QUESTION_DISPLAYED_INDEX);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        Question questionToEdit \u003d lastShownList.get(index.getZeroBased());"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        Question editedQuestion \u003d createEditedQuestion(questionToEdit, editQuestionDescriptor);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (!questionToEdit.isSameQuestion(editedQuestion) \u0026\u0026 model.hasQuestion(editedQuestion)) {"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            throw new CommandException(MESSAGE_DUPLICATE_QUESTION);"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        model.setQuestion(questionToEdit, editedQuestion);"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        model.updateFilteredQuestionList(PREDICATE_SHOW_ALL_QUESTIONS);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_QUESTION_SUCCESS, editedQuestion));"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * Creates and returns a {@code Question} with the details of {@code questionToEdit}"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * edited with {@code editQuestionDescriptor}."
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    private static Question createEditedQuestion(Question questionToEdit,"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                                                 EditQuestionDescriptor editQuestionDescriptor) {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        assert questionToEdit !\u003d null;"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        QuestionBody updatedQuestionBody \u003d editQuestionDescriptor.getQuestionBody()"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                .orElse(questionToEdit.getQuestionBody());"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        Answer updatedAnswer \u003d editQuestionDescriptor.getAnswer().orElse(questionToEdit.getAnswer());"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        Subject updatedSubject \u003d editQuestionDescriptor.getSubject().orElse(questionToEdit.getSubject());"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        Difficulty updatedDifficulty \u003d editQuestionDescriptor.getDifficulty().orElse(questionToEdit.getDifficulty());"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        return new Question(updatedQuestionBody, updatedAnswer, updatedSubject, updatedDifficulty);"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        // short circuit if same object"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (other \u003d\u003d this) {"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (!(other instanceof EditQuestionCommand)) {"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        // state check"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        EditQuestionCommand e \u003d (EditQuestionCommand) other;"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        return index.equals(e.index)"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                \u0026\u0026 editQuestionDescriptor.equals(e.editQuestionDescriptor);"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * Stores the details to edit the question with. Each non-empty field value will replace the"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * corresponding field value of the question."
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public static class EditQuestionDescriptor {"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        private QuestionBody questionBody;"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        private Answer answer;"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        private Subject subject;"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        private Difficulty address;"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public EditQuestionDescriptor() {}"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "         * Copy constructor."
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "         * A defensive copy of {@code tags} is used internally."
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public EditQuestionDescriptor(EditQuestionDescriptor toCopy) {"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            setQuestionBody(toCopy.questionBody);"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            setAnswer(toCopy.answer);"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            setSubject(toCopy.subject);"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            setDifficulty(toCopy.address);"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "         * Returns true if at least one field is edited."
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public boolean isAnyFieldEdited() {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return CollectionUtil.isAnyNonNull(questionBody, answer, subject, address);"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public void setQuestionBody(QuestionBody questionBody) {"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            this.questionBody \u003d questionBody;"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public Optional\u003cQuestionBody\u003e getQuestionBody() {"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return Optional.ofNullable(questionBody);"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public void setAnswer(Answer answer) {"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            this.answer \u003d answer;"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public Optional\u003cAnswer\u003e getAnswer() {"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return Optional.ofNullable(answer);"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public void setSubject(Subject subject) {"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            this.subject \u003d subject;"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public Optional\u003cSubject\u003e getSubject() {"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return Optional.ofNullable(subject);"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public void setDifficulty(Difficulty address) {"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            this.address \u003d address;"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public Optional\u003cDifficulty\u003e getDifficulty() {"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return Optional.ofNullable(address);"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        @Override"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            // short circuit if same object"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            if (other \u003d\u003d this) {"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                return true;"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            if (!(other instanceof EditQuestionDescriptor)) {"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                return false;"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            // state check"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            EditQuestionDescriptor e \u003d (EditQuestionDescriptor) other;"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return getQuestionBody().equals(e.getQuestionBody())"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    \u0026\u0026 getAnswer().equals(e.getAnswer())"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    \u0026\u0026 getSubject().equals(e.getSubject())"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    \u0026\u0026 getDifficulty().equals(e.getDifficulty());"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ShirleyWangxt": 203
+    }
+  },
+  {
+    "path": "src/main/java/seedu/address/logic/commands/questioncommands/FindQuestionCommand.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "package seedu.address.logic.commands.questioncommands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static java.util.Objects.requireNonNull;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.commons.core.Messages;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.Command;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.CommandResult;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.Model;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.question.BodyContainsKeywordsPredicate;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " * Finds and lists all questions in address book whose bodies contains any of the argument keywords."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " * Keyword matching is case insensitive."
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "public class FindQuestionCommand extends Command {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"findq\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Finds all questions whose bodies contain any of \""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"the specified keywords (case-insensitive) and displays them as a list with index numbers.\\n\""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"Parameters: KEYWORD [MORE_KEYWORDS]...\\n\""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            + \"Example: \" + COMMAND_WORD + \" 1 + 1 \u003d\";"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    private final BodyContainsKeywordsPredicate predicate;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public FindQuestionCommand(BodyContainsKeywordsPredicate predicate) {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        this.predicate \u003d predicate;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public CommandResult execute(Model model) {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        requireNonNull(model);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        model.updateFilteredQuestionList(predicate);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        return new CommandResult("
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                String.format(Messages.MESSAGE_QUESTIONS_LISTED_OVERVIEW, model.getFilteredQuestionList().size()));"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                || (other instanceof FindQuestionCommand // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                \u0026\u0026 predicate.equals(((FindQuestionCommand) other).predicate)); // state check"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ShirleyWangxt": 43
+    }
+  },
+  {
     "path": "src/main/java/seedu/address/logic/commands/questioncommands/ListQuestionCommand.java",
     "fileType": "functional",
     "lines": [
@@ -35103,364 +36843,364 @@
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": "import seedu.address.logic.commands.questioncommands.ListQuestionCommand;"
+        "content": "import seedu.address.logic.commands.questioncommands.EditQuestionCommand;"
       },
       {
         "lineNumber": 21,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.questioncommands.FindQuestionCommand;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.questioncommands.ListQuestionCommand;"
+      },
+      {
+        "lineNumber": 23,
         "author": {
           "gitId": "Auxinnn"
         },
         "content": "import seedu.address.logic.commands.quiz.QuizModeCommand;"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 24,
         "author": {
           "gitId": "irene-lly"
         },
         "content": "import seedu.address.logic.commands.statistics.GetQnsCommand;"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 25,
         "author": {
           "gitId": "irene-lly"
         },
         "content": "import seedu.address.logic.commands.statistics.GetReportCommand;"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 26,
         "author": {
           "gitId": "irene-lly"
         },
         "content": "import seedu.address.logic.commands.statistics.GetStatisticsCommand;"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 27,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.commands.task.AddTaskForNoteCommand;"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.commands.task.AddTaskForQuestionCommand;"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 29,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.commands.task.ClearTaskCommand;"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 30,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.commands.task.DeleteTaskCommand;"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 31,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.commands.task.DoneTaskCommand;"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.address.logic.parser.exceptions.ParseException;"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 33,
         "author": {
           "gitId": "Parcly-Taxel"
         },
         "content": "import seedu.address.logic.parser.note.AddNoteCommandParser;"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 34,
         "author": {
           "gitId": "Parcly-Taxel"
         },
         "content": "import seedu.address.logic.parser.note.DeleteNoteCommandParser;"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 35,
         "author": {
           "gitId": "Parcly-Taxel"
         },
         "content": "import seedu.address.logic.parser.note.EditNoteCommandParser;"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 36,
         "author": {
           "gitId": "Parcly-Taxel"
         },
         "content": "import seedu.address.logic.parser.note.FindNoteCommandParser;"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 37,
         "author": {
           "gitId": "ShirleyWangxt"
         },
         "content": "import seedu.address.logic.parser.questionparser.AddQuestionCommandParser;"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 38,
         "author": {
           "gitId": "ShirleyWangxt"
         },
         "content": "import seedu.address.logic.parser.questionparser.DeleteQuestionCommandParser;"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 39,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.questionparser.EditQuestionCommandParser;"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.questionparser.FindQuestionCommandParser;"
+      },
+      {
+        "lineNumber": 41,
         "author": {
           "gitId": "Auxinnn"
         },
         "content": "import seedu.address.logic.parser.quiz.QuizModeCommandParser;"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 42,
         "author": {
           "gitId": "irene-lly"
         },
         "content": "import seedu.address.logic.parser.statistics.GetQnsCommandParser;"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 43,
         "author": {
           "gitId": "irene-lly"
         },
         "content": "import seedu.address.logic.parser.statistics.GetReportCommandParser;"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 44,
         "author": {
           "gitId": "irene-lly"
         },
         "content": "import seedu.address.logic.parser.statistics.GetStatisticsCommandParser;"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 45,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.parser.task.AddTaskForNoteCommandParser;"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 46,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.parser.task.AddTaskForQuestionCommandParser;"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 47,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.parser.task.DeleteTaskCommandParser;"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 48,
         "author": {
           "gitId": "shuiyao-sg"
         },
         "content": "import seedu.address.logic.parser.task.DoneTaskCommandParser;"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "-"
-        },
-        "content": " * Parses user input."
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "-"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "Parcly-Taxel"
-        },
-        "content": "public class AppDataParser {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": " * Parses user input."
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Used for initial separation of command word and args."
+        "content": " */"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "-"
+          "gitId": "Parcly-Taxel"
         },
-        "content": "     */"
+        "content": "public class AppDataParser {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static final Pattern BASIC_COMMAND_FORMAT \u003d Pattern.compile(\"(?\u003ccommandWord\u003e\\\\S+)(?\u003carguments\u003e.*)\");"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "     * Used for initial separation of command word and args."
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Parses user input into command for execution."
+        "content": "     */"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": "    private static final Pattern BASIC_COMMAND_FORMAT \u003d Pattern.compile(\"(?\u003ccommandWord\u003e\\\\S+)(?\u003carguments\u003e.*)\");"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param userInput full user input string"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return the command based on the user input"
+        "content": "    /**"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     * Parses user input into command for execution."
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "    public Command parseCommand(String userInput) throws ParseException {"
+        "content": "     * @param userInput full user input string"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(userInput.trim());"
+        "content": "     * @return the command based on the user input"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!matcher.matches()) {"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
+        "content": "     */"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    public Command parseCommand(String userInput) throws ParseException {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(userInput.trim());"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String commandWord \u003d matcher.group(\"commandWord\");"
+        "content": "        if (!matcher.matches()) {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String arguments \u003d matcher.group(\"arguments\");"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "        switch (commandWord) {"
+        "content": "        }"
       },
       {
         "lineNumber": 72,
@@ -35472,460 +37212,530 @@
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "Parcly-Taxel"
+          "gitId": "-"
         },
-        "content": "        case AddNoteCommand.COMMAND_WORD:"
+        "content": "        final String commandWord \u003d matcher.group(\"commandWord\");"
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "Parcly-Taxel"
+          "gitId": "-"
         },
-        "content": "            return new AddNoteCommandParser().parse(arguments);"
+        "content": "        final String arguments \u003d matcher.group(\"arguments\");"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        switch (commandWord) {"
       },
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "Parcly-Taxel"
+          "gitId": "-"
         },
-        "content": "        case EditNoteCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "Parcly-Taxel"
         },
-        "content": "            return new EditNoteCommandParser().parse(arguments);"
+        "content": "        case AddNoteCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "-"
+          "gitId": "Parcly-Taxel"
         },
-        "content": ""
+        "content": "            return new AddNoteCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "Parcly-Taxel"
+          "gitId": "-"
         },
-        "content": "        case DeleteNoteCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "Parcly-Taxel"
         },
-        "content": "            return new DeleteNoteCommandParser().parse(arguments);"
+        "content": "        case EditNoteCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "-"
+          "gitId": "Parcly-Taxel"
         },
-        "content": ""
+        "content": "            return new EditNoteCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "Parcly-Taxel"
+          "gitId": "-"
         },
-        "content": "        case ClearNoteCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "Parcly-Taxel"
         },
-        "content": "            return new ClearNoteCommand();"
+        "content": "        case DeleteNoteCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "-"
+          "gitId": "Parcly-Taxel"
         },
-        "content": ""
+        "content": "            return new DeleteNoteCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "Parcly-Taxel"
+          "gitId": "-"
         },
-        "content": "        case FindNoteCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "Parcly-Taxel"
         },
-        "content": "            return new FindNoteCommandParser().parse(arguments);"
+        "content": "        case ClearNoteCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "-"
+          "gitId": "Parcly-Taxel"
         },
-        "content": ""
+        "content": "            return new ClearNoteCommand();"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "Parcly-Taxel"
+          "gitId": "-"
         },
-        "content": "        case ListNoteCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "Parcly-Taxel"
         },
-        "content": "            return new ListNoteCommand();"
+        "content": "        case FindNoteCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "-"
+          "gitId": "Parcly-Taxel"
         },
-        "content": ""
+        "content": "            return new FindNoteCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "        case ExitCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "-"
+          "gitId": "Parcly-Taxel"
         },
-        "content": "            return new ExitCommand();"
+        "content": "        case ListNoteCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "-"
+          "gitId": "Parcly-Taxel"
         },
-        "content": ""
+        "content": "            return new ListNoteCommand();"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "        case HelpCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "            return new HelpCommand();"
+        "content": "        case ExitCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            return new ExitCommand();"
       },
       {
         "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        case HelpCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return new HelpCommand();"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 101,
         "author": {
           "gitId": "Auxinnn"
         },
         "content": "        case QuizModeCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 102,
         "author": {
           "gitId": "Auxinnn"
         },
         "content": "            return new QuizModeCommandParser().parse(arguments);"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 103,
         "author": {
           "gitId": "Auxinnn"
         },
         "content": ""
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 104,
         "author": {
           "gitId": "irene-lly"
         },
         "content": "        case GetStatisticsCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 105,
         "author": {
           "gitId": "irene-lly"
         },
         "content": "            return new GetStatisticsCommandParser().parse(arguments);"
       },
       {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "irene-lly"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "irene-lly"
-        },
-        "content": "        case GetQnsCommand.COMMAND_WORD:"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "irene-lly"
-        },
-        "content": "            return new GetQnsCommandParser().parse(arguments);"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "irene-lly"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 106,
         "author": {
           "gitId": "irene-lly"
         },
-        "content": "        case GetReportCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "irene-lly"
         },
-        "content": "            return new GetReportCommandParser().parse(arguments);"
+        "content": "        case GetQnsCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "irene-lly"
         },
-        "content": ""
+        "content": "            return new GetQnsCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "ShirleyWangxt"
-        },
-        "content": "        case AddQuestionCommand.COMMAND_WORD:"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "ShirleyWangxt"
-        },
-        "content": "            return new AddQuestionCommandParser().parse(arguments);"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "ShirleyWangxt"
+          "gitId": "irene-lly"
         },
         "content": ""
       },
       {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "irene-lly"
+        },
+        "content": "        case GetReportCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "irene-lly"
+        },
+        "content": "            return new GetReportCommandParser().parse(arguments);"
+      },
+      {
         "lineNumber": 112,
         "author": {
-          "gitId": "ShirleyWangxt"
+          "gitId": "irene-lly"
         },
-        "content": "        case DeleteQuestionCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": "            return new DeleteQuestionCommandParser().parse(arguments);"
+        "content": "        case AddQuestionCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": ""
+        "content": "            return new AddQuestionCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": "        case ListQuestionCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": "            return new ListQuestionCommand();"
+        "content": "        case DeleteQuestionCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": ""
+        "content": "            return new DeleteQuestionCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
-        "content": "        case AddTaskForNoteCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 119,
         "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
-        "content": "            return new AddTaskForNoteCommandParser().parse(arguments);"
+        "content": "        case ListQuestionCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
-        "content": ""
+        "content": "            return new ListQuestionCommand();"
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
-        "content": "        case AddTaskForQuestionCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
-        "content": "            return new AddTaskForQuestionCommandParser().parse(arguments);"
+        "content": "        case EditQuestionCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
-        "content": ""
+        "content": "            return new EditQuestionCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "shuiyao-sg"
-        },
-        "content": "        case DoneTaskCommand.COMMAND_WORD:"
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "shuiyao-sg"
-        },
-        "content": "            return new DoneTaskCommandParser().parse(arguments);"
-      },
-      {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
         "content": ""
       },
       {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        case FindQuestionCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            return new FindQuestionCommandParser().parse(arguments);"
+      },
+      {
         "lineNumber": 127,
         "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
-        "content": "        case DeleteTaskCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            return new DeleteTaskCommandParser().parse(arguments);"
+        "content": "        case AddTaskForNoteCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "            return new AddTaskForNoteCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        case ClearTaskCommand.COMMAND_WORD:"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            return new ClearTaskCommand();"
+        "content": "        case AddTaskForQuestionCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "            return new AddTaskForQuestionCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 133,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        case DoneTaskCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "            return new DoneTaskCommandParser().parse(arguments);"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        case DeleteTaskCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "            return new DeleteTaskCommandParser().parse(arguments);"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        case ClearTaskCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "            return new ClearTaskCommand();"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
         "content": "        default:"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
         "content": "            throw new ParseException(MESSAGE_UNKNOWN_COMMAND);"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
@@ -35937,7 +37747,7 @@
       "shuiyao-sg": 24,
       "Auxinnn": 5,
       "irene-lly": 15,
-      "ShirleyWangxt": 14,
+      "ShirleyWangxt": 24,
       "-": 57
     }
   },
@@ -39567,6 +41377,724 @@
     ],
     "authorContributionMap": {
       "ShirleyWangxt": 31
+    }
+  },
+  {
+    "path": "src/main/java/seedu/address/logic/parser/questionparser/EditQuestionCommandParser.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "package seedu.address.logic.parser.questionparser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static java.util.Objects.requireNonNull;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_ANSWER;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_DIFFICULTY;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_QUESTION;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_SUBJECT;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.commons.core.index.Index;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.questioncommands.EditQuestionCommand;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.questioncommands.EditQuestionCommand.EditQuestionDescriptor;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.ArgumentMultimap;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.ArgumentTokenizer;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.Parser;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.ParserUtil;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " * Parses input arguments and creates a new EditQuestionCommand object."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "public class EditQuestionCommandParser implements Parser\u003cEditQuestionCommand\u003e {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * Parses the given {@code String} of arguments in the context of the EditQuestionCommand"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * and returns an EditCommand object for execution."
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public EditQuestionCommand parse(String args) throws ParseException {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        requireNonNull(args);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        ArgumentMultimap argMultimap \u003d"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                ArgumentTokenizer.tokenize(args, PREFIX_QUESTION, PREFIX_ANSWER, PREFIX_SUBJECT, PREFIX_DIFFICULTY);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        Index index;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            index \u003d ParserUtil.parseIndex(argMultimap.getPreamble());"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        } catch (ParseException pe) {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditQuestionCommand.MESSAGE_USAGE),"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    pe);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        EditQuestionDescriptor editQuestionDescriptor \u003d new EditQuestionDescriptor();"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (argMultimap.getValue(PREFIX_QUESTION).isPresent()) {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            editQuestionDescriptor.setQuestionBody(ParserUtil.parseQuestionBody(argMultimap"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    .getValue(PREFIX_QUESTION).get()));"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (argMultimap.getValue(PREFIX_ANSWER).isPresent()) {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            editQuestionDescriptor.setAnswer(ParserUtil.parseAnswer(argMultimap"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    .getValue(PREFIX_ANSWER).get()));"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (argMultimap.getValue(PREFIX_SUBJECT).isPresent()) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            editQuestionDescriptor.setSubject(ParserUtil.parseSubject(argMultimap"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    .getValue(PREFIX_SUBJECT).get()));"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (argMultimap.getValue(PREFIX_DIFFICULTY).isPresent()) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            editQuestionDescriptor.setDifficulty(ParserUtil.parseDifficulty(argMultimap"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    .getValue(PREFIX_DIFFICULTY).get()));"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (!editQuestionDescriptor.isAnyFieldEdited()) {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            throw new ParseException(EditQuestionCommand.MESSAGE_NOT_EDITED);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        return new EditQuestionCommand(index, editQuestionDescriptor);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ShirleyWangxt": 66
+    }
+  },
+  {
+    "path": "src/main/java/seedu/address/logic/parser/questionparser/FindQuestionCommandParser.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "package seedu.address.logic.parser.questionparser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.commands.questioncommands.FindQuestionCommand;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.Parser;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "import seedu.address.model.question.BodyContainsKeywordsPredicate;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " * Parses input arguments and creates a new FindQuestionCommand object"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "public class FindQuestionCommandParser implements Parser\u003cFindQuestionCommand\u003e {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * Parses the given {@code String} of arguments in the context of the FindQuestionCommand"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * and returns a FindQuestionCommand object for execution."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public FindQuestionCommand parse(String args) throws ParseException {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        String trimmedArgs \u003d args.trim();"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        if (trimmedArgs.isEmpty()) {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "            throw new ParseException("
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindQuestionCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        String[] nameKeywords \u003d trimmedArgs.split(\"\\\\s+\");"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "        return new FindQuestionCommand(new BodyContainsKeywordsPredicate(Arrays.asList(nameKeywords)));"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ShirleyWangxt": 34
     }
   },
   {
@@ -43731,9 +46259,9 @@
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "shuiyao-sg"
+          "gitId": "ShirleyWangxt"
         },
-        "content": "     * @param title The note with the same tile to be retrieved."
+        "content": "     * @param title The note with the same title to be retrieved."
       },
       {
         "lineNumber": 124,
@@ -45502,10 +48030,10 @@
     ],
     "authorContributionMap": {
       "Parcly-Taxel": 53,
-      "shuiyao-sg": 67,
+      "shuiyao-sg": 66,
       "Auxinnn": 89,
       "irene-lly": 36,
-      "ShirleyWangxt": 53,
+      "ShirleyWangxt": 54,
       "-": 77
     }
   },
@@ -54254,6 +56782,226 @@
     "authorContributionMap": {
       "Auxinnn": 47,
       "ShirleyWangxt": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/address/model/question/BodyContainsKeywordsPredicate.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "package seedu.address.model.question;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.function.Predicate;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.address.commons.util.StringUtil;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": " * Tests that a {@code Question}\u0027s {@code QuestionBody} matches any of the keywords given."
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "public class BodyContainsKeywordsPredicate implements Predicate\u003cQuestion\u003e {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private final List\u003cString\u003e keywords;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public BodyContainsKeywordsPredicate(List\u003cString\u003e keywords) {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.keywords \u003d keywords;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "    public boolean test(Question question) {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return keywords.stream()"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                .anyMatch(keyword -\u003e StringUtil.containsWordIgnoreCase(question.getQuestionBody().body, keyword));"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                || (other instanceof BodyContainsKeywordsPredicate // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ShirleyWangxt"
+        },
+        "content": "                \u0026\u0026 keywords.equals(((BodyContainsKeywordsPredicate) other).keywords)); // state check"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ShirleyWangxt": 8,
+      "-": 22
     }
   },
   {
@@ -72329,21 +75077,21 @@
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": "        answer.setText(question.getAnswer().answer);"
+        "content": "        answer.setText(\"A: \" + question.getAnswer().answer);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": "        subject.setText(question.getSubject().subject);"
+        "content": "        subject.setText(\"S: \" + question.getSubject().subject);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "ShirleyWangxt"
         },
-        "content": "        difficulty.setText(question.getDifficulty().difficulty);"
+        "content": "        difficulty.setText(\"D: \" + question.getDifficulty().difficulty);"
       },
       {
         "lineNumber": 38,

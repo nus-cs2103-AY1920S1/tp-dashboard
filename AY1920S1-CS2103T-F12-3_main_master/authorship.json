@@ -130622,6 +130622,239 @@
     }
   },
   {
+    "path": "src/test/java/tagline/logic/parser/note/DeleteNoteParserTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "package tagline.logic.parser.note;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.parser.CommandParserTestUtil.assertParseFailure;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.parser.CommandParserTestUtil.assertParseSuccess;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.logic.commands.note.DeleteNoteCommand;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.note.NoteId;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "class DeleteNoteParserTest {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    private DeleteNoteParser parser \u003d new DeleteNoteParser();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void parse_validArgs_returnsDeleteNoteCommand() {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseSuccess(parser, \"1\", new DeleteNoteCommand(new NoteId(1)));"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void parse_invalidArgs_throwsParseException() {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"a\", String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                DeleteNoteCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"-1\", String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                DeleteNoteCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"10a\", String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                DeleteNoteCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shiweing": 32
+    }
+  },
+  {
     "path": "src/test/java/tagline/logic/parser/note/NoteCommandParserTest.java",
     "fileType": "tests",
     "lines": [
@@ -130686,129 +130919,192 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.Note;"
+        "content": "import tagline.logic.commands.note.DeleteNoteCommand;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.NoteIdCounter;"
+        "content": "import tagline.model.note.Note;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.testutil.NoteBuilder;"
+        "content": "import tagline.model.note.NoteId;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.testutil.NoteUtil;"
+        "content": "import tagline.model.note.NoteIdCounter;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "import tagline.testutil.NoteBuilder;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "class NoteCommandParserTest {"
+        "content": "import tagline.testutil.NoteUtil;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    private final NoteCommandParser parser \u003d new NoteCommandParser();"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "class NoteCommandParserTest {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    @Test"
+        "content": "    private final NoteCommandParser parser \u003d new NoteCommandParser();"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public void parseCommand_create() throws Exception {"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        // Set note id counter so generated id is DEFAULT_NOTEID"
+        "content": "    @Test"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        NoteIdCounter.setCount(DEFAULT_NOTEID - 1);"
+        "content": "    public void parseCommand_create() throws Exception {"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        // Set note id counter so generated id is DEFAULT_NOTEID"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        Note note \u003d new NoteBuilder().build();"
+        "content": "        NoteIdCounter.setCount(DEFAULT_NOTEID - 1);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        CreateNoteCommand command \u003d (CreateNoteCommand) parser.parseCommand(NoteUtil.getCreateCommand(note));"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        assertEquals(new CreateNoteCommand(note), command);"
+        "content": "        Note note \u003d new NoteBuilder().build();"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "        CreateNoteCommand command \u003d (CreateNoteCommand) parser.parseCommand(NoteUtil.getCreateCommand(note));"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        assertEquals(new CreateNoteCommand(note), command);"
       },
       {
         "lineNumber": 27,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void parseCommand_delete() throws Exception {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        NoteId noteId \u003d new NoteId(1);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        DeleteNoteCommand command \u003d (DeleteNoteCommand) parser.parseCommand("
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                DeleteNoteCommand.COMMAND_WORD + \" \" + noteId.toString());"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertEquals(new DeleteNoteCommand(noteId), command);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
         "author": {
           "gitId": "shiweing"
         },
@@ -130816,11 +131112,11 @@
       }
     ],
     "authorContributionMap": {
-      "shiweing": 27
+      "shiweing": 36
     }
   },
   {
-    "path": "src/test/java/tagline/logic/parser/note/NoteCommandParserTestUtil.java",
+    "path": "src/test/java/tagline/logic/parser/note/NoteParserUtilTest.java",
     "fileType": "tests",
     "lines": [
       {
@@ -130842,255 +131138,136 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+        "content": "import static tagline.logic.parser.note.NoteParserUtil.MESSAGE_INVALID_INDEX;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "import static tagline.testutil.Assert.assertThrows;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.logic.commands.Command;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.logic.parser.Parser;"
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.logic.parser.exceptions.ParseException;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "import tagline.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "shiweing"
         },
-        "content": " * Contains helper methods for testing command parsers."
+        "content": "class NoteParserUtilTest {"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "shiweing"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "public class NoteCommandParserTestUtil {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    public void parseIndex_invalidInput_throwsParseException() {"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": "        assertThrows(ParseException.class, () -\u003e NoteParserUtil.parseIndex(\"a\"));"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Asserts that the parsing of {@code userInput} by {@code parser} is successful and the command created"
+        "content": "    }"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * equals to {@code expectedCommand}."
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": "    @Test"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static void assertParseSuccess(Parser parser, String userInput, Command expectedCommand) {"
+        "content": "    public void parseIndex_outOfRangeInput_throwsParseException() {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        try {"
+        "content": "        assertThrows(ParseException.class, MESSAGE_INVALID_INDEX, ()"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            Command command \u003d parser.parse(userInput);"
+        "content": "            -\u003e NoteParserUtil.parseIndex(String.valueOf(Long.MAX_VALUE + 1)));"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            assertEquals(expectedCommand, command);"
+        "content": "    }"
       },
       {
         "lineNumber": 22,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "        } catch (ParseException pe) {"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "            throw new IllegalArgumentException(\"Invalid userInput.\", pe);"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "     * Asserts that the parsing of {@code userInput} by {@code parser} is unsuccessful and the error message"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "     * equals to {@code expectedMessage}."
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "    public static void assertParseFailure(Parser parser, String userInput, String expectedMessage) {"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "            parser.parse(userInput);"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "            throw new AssertionError(\"The expected ParseException was not thrown.\");"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "        } catch (ParseException pe) {"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "            assertEquals(expectedMessage, pe.getMessage());"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 39,
         "author": {
           "gitId": "shiweing"
         },
@@ -131098,7 +131275,7 @@
       }
     ],
     "authorContributionMap": {
-      "shiweing": 39
+      "shiweing": 22
     }
   },
   {
