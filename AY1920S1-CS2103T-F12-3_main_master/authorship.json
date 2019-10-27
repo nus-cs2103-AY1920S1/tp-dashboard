@@ -32574,434 +32574,434 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import java.util.List;"
+        "content": "import java.util.Optional;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import java.util.Optional;"
+        "content": "import java.util.Set;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import java.util.Set;"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "import tagline.commons.core.Messages;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.commons.core.Messages;"
+        "content": "import tagline.commons.util.CollectionUtil;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.commons.util.CollectionUtil;"
+        "content": "import tagline.logic.commands.CommandResult;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.logic.commands.CommandResult;"
+        "content": "import tagline.logic.commands.CommandResult.ViewType;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.logic.commands.CommandResult.ViewType;"
+        "content": "import tagline.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.logic.commands.exceptions.CommandException;"
+        "content": "import tagline.model.Model;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.Model;"
+        "content": "import tagline.model.note.Content;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.Content;"
+        "content": "import tagline.model.note.Note;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.Note;"
+        "content": "import tagline.model.note.NoteId;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.NoteId;"
+        "content": "import tagline.model.note.TimeCreated;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.NoteIdEqualsTargetIdPredicate;"
+        "content": "import tagline.model.note.TimeLastEdited;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.TimeCreated;"
+        "content": "import tagline.model.note.Title;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.TimeLastEdited;"
+        "content": "import tagline.model.tag.Tag;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.Title;"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.tag.Tag;"
+        "content": "/**"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": " * Edits the details of an existing note in the address book."
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "/**"
+        "content": " */"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shiweing"
         },
-        "content": " * Edits the details of an existing note in the address book."
+        "content": "public class EditNoteCommand extends NoteCommand {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shiweing"
         },
-        "content": " */"
+        "content": "    public static final String COMMAND_WORD \u003d \"edit\";"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "public class EditNoteCommand extends NoteCommand {"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"edit\";"
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Edits the details of the note identified \""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "            + \"by the note index number. \""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Edits the details of the note identified \""
+        "content": "            + \"Existing values will be overwritten by the input values.\\n\""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"by the note index number. \""
+        "content": "            + \"Parameters: NOTE_ID (must be a positive integer) \""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"Existing values will be overwritten by the input values.\\n\""
+        "content": "            + \"[\" + PREFIX_TITLE + \"TITLE \""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"Parameters: NOTE_ID (must be a positive integer) \""
+        "content": "            + \"[\" + PREFIX_CONTENT + \"CONTENT \\n\""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"[\" + PREFIX_TITLE + \"TITLE \""
+        "content": "            + \"Example: \" + COMMAND_WORD + \" 1 \""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"[\" + PREFIX_CONTENT + \"CONTENT \\n\""
+        "content": "            + PREFIX_TITLE + \" New title \""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"Example: \" + COMMAND_WORD + \" 1 \""
+        "content": "            + PREFIX_CONTENT + \" New content \";"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + PREFIX_TITLE + \" New title \""
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + PREFIX_CONTENT + \" New content \";"
+        "content": "    public static final String MESSAGE_EDIT_NOTE_SUCCESS \u003d \"Edited Note: %1$s\";"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "    public static final String MESSAGE_EDIT_NOTE_SUCCESS \u003d \"Edited Note: %1$s\";"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "shiweing"
-        },
         "content": "    public static final String MESSAGE_NOT_EDITED \u003d \"At least one field to edit must be provided.\";"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 45,
         "author": {
           "gitId": "tanlk99"
         },
         "content": "    public static final String MESSAGE_DUPLICATE_NOTE \u003d \"The edited note is identical to the original.\";"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 46,
         "author": {
           "gitId": "shiweing"
         },
         "content": ""
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 47,
         "author": {
           "gitId": "shiweing"
         },
         "content": "    private final NoteId noteId;"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 48,
         "author": {
           "gitId": "shiweing"
         },
         "content": "    private final EditNoteDescriptor editNoteDescriptor;"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 49,
         "author": {
           "gitId": "shiweing"
         },
         "content": ""
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 50,
         "author": {
           "gitId": "shiweing"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 51,
         "author": {
           "gitId": "shiweing"
         },
         "content": "     * @param noteId of the person in the filtered person list to edit"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 52,
         "author": {
           "gitId": "shiweing"
         },
         "content": "     * @param editNoteDescriptor details to edit the person with"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 53,
         "author": {
           "gitId": "shiweing"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 54,
         "author": {
           "gitId": "shiweing"
         },
         "content": "    public EditNoteCommand(NoteId noteId, EditNoteDescriptor editNoteDescriptor) {"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 55,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        requireNonNull(noteId);"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 56,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        requireNonNull(editNoteDescriptor);"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 57,
         "author": {
           "gitId": "shiweing"
         },
         "content": ""
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 58,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        this.noteId \u003d noteId;"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 59,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        this.editNoteDescriptor \u003d editNoteDescriptor;"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 60,
         "author": {
           "gitId": "shiweing"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 61,
         "author": {
           "gitId": "shiweing"
         },
         "content": ""
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 62,
         "author": {
           "gitId": "shiweing"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 63,
         "author": {
           "gitId": "shiweing"
         },
         "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 64,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        requireNonNull(model);"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 65,
         "author": {
           "gitId": "shiweing"
         },
         "content": ""
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 66,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        // Check for invalid note id"
       },
       {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        Optional\u003cNote\u003e noteFound \u003d model.findNote(noteId);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
         "lineNumber": 69,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        NoteIdEqualsTargetIdPredicate predicate \u003d new NoteIdEqualsTargetIdPredicate(noteId);"
+        "content": "        if (noteFound.isEmpty()) {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        model.updateFilteredNoteList(predicate);"
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_NOTE_INDEX);"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        List\u003cNote\u003e filteredList \u003d model.getFilteredNoteList();"
+        "content": "        }"
       },
       {
         "lineNumber": 72,
@@ -33015,210 +33015,210 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        if (filteredList.size() \u003d\u003d 0) {"
+        "content": "        Note noteToEdit \u003d noteFound.get();"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_NOTE_INDEX);"
+        "content": "        Note editedNote \u003d createEditedNote(noteToEdit, editNoteDescriptor);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 76,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "        Note noteToEdit \u003d filteredList.get(0);"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": "        Note editedNote \u003d createEditedNote(noteToEdit, editNoteDescriptor);"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "shiweing"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 80,
         "author": {
           "gitId": "tanlk99"
         },
         "content": "        assert noteToEdit.getNoteId().equals(editedNote.getNoteId());"
       },
       {
-        "lineNumber": 81,
+        "lineNumber": 77,
         "author": {
           "gitId": "tanlk99"
         },
         "content": "        if (noteToEdit.isUniqueNote(editedNote)) {"
       },
       {
-        "lineNumber": 82,
+        "lineNumber": 78,
         "author": {
           "gitId": "shiweing"
         },
         "content": "            throw new CommandException(MESSAGE_DUPLICATE_NOTE);"
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 79,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 80,
         "author": {
           "gitId": "shiweing"
         },
         "content": ""
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 81,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        model.setNote(noteToEdit, editedNote);"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 82,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        model.updateFilteredNoteList(PREDICATE_SHOW_ALL_NOTES);"
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 83,
         "author": {
           "gitId": "shiweing"
         },
         "content": "        return new CommandResult(String.format(MESSAGE_EDIT_NOTE_SUCCESS, editedNote), ViewType.NOTE);"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 84,
         "author": {
           "gitId": "shiweing"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 85,
         "author": {
           "gitId": "shiweing"
         },
         "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // short circuit if same object"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": "            return true;"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Creates and returns a {@code Person} with the details of {@code personToEdit}"
+        "content": "        }"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * edited with {@code editPersonDescriptor}."
+        "content": ""
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": "        // instanceof handles nulls"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    private static Note createEditedNote(Note noteToEdit, EditNoteDescriptor editNoteDescriptor) {"
+        "content": "        if (!(other instanceof EditNoteCommand)) {"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        assert noteToEdit !\u003d null;"
+        "content": "            return false;"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        NoteId noteId \u003d noteToEdit.getNoteId();"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        Title updateTitle \u003d editNoteDescriptor.getTitle().orElse(noteToEdit.getTitle());"
+        "content": "        // state check"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        Content updatedContent \u003d editNoteDescriptor.getContent().orElse(noteToEdit.getContent());"
+        "content": "        EditNoteCommand e \u003d (EditNoteCommand) other;"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        TimeCreated timeCreated \u003d noteToEdit.getTimeCreated();"
+        "content": "        return noteId.equals(e.noteId)"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        TimeLastEdited editTime \u003d new TimeLastEdited();"
+        "content": "                \u0026\u0026 editNoteDescriptor.equals(e.editNoteDescriptor);"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        Set\u003cTag\u003e updateTags \u003d editNoteDescriptor.getTags().orElse(noteToEdit.getTags());"
+        "content": "    }"
       },
       {
         "lineNumber": 103,
@@ -33232,91 +33232,91 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        return new Note(noteId, updateTitle, updatedContent, timeCreated, editTime, updateTags);"
+        "content": "    /**"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "     * Creates and returns a {@code Person} with the details of {@code personToEdit}"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "     * edited with {@code editPersonDescriptor}."
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": "     */"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Stores the details to edit the person with. Each non-empty field value will replace the"
+        "content": "    private static Note createEditedNote(Note noteToEdit, EditNoteDescriptor editNoteDescriptor) {"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * corresponding field value of the person."
+        "content": "        assert noteToEdit !\u003d null;"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static class EditNoteDescriptor {"
+        "content": "        NoteId noteId \u003d noteToEdit.getNoteId();"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        private Title title;"
+        "content": "        Title updateTitle \u003d editNoteDescriptor.getTitle().orElse(noteToEdit.getTitle());"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        private Content content;"
+        "content": "        Content updatedContent \u003d editNoteDescriptor.getContent().orElse(noteToEdit.getContent());"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        private Set\u003cTag\u003e tags;"
+        "content": "        TimeCreated timeCreated \u003d noteToEdit.getTimeCreated();"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        TimeLastEdited editTime \u003d new TimeLastEdited();"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public EditNoteDescriptor() {}"
+        "content": "        Set\u003cTag\u003e updateTags \u003d editNoteDescriptor.getTags().orElse(noteToEdit.getTags());"
       },
       {
         "lineNumber": 117,
@@ -33330,500 +33330,598 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        /**"
+        "content": "        return new Note(noteId, updateTitle, updatedContent, timeCreated, editTime, updateTags);"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         * Copy constructor."
+        "content": "    }"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": ""
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         */"
+        "content": "    /**"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public EditNoteDescriptor(EditNoteDescriptor toCopy) {"
+        "content": "     * Stores the details to edit the person with. Each non-empty field value will replace the"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            setTitle(toCopy.title);"
+        "content": "     * corresponding field value of the person."
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            setContent(toCopy.content);"
+        "content": "     */"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            setTags(toCopy.tags);"
+        "content": "    public static class EditNoteDescriptor {"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "        private Title title;"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        private Content content;"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        /**"
+        "content": "        private Set\u003cTag\u003e tags;"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         * Returns true if at least one field is edited."
+        "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         */"
+        "content": "        public EditNoteDescriptor() {}"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public boolean isAnyFieldEdited() {"
+        "content": ""
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            return CollectionUtil.isAnyNonNull(title, content, tags);"
+        "content": "        /**"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "         * Copy constructor."
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "         */"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public Optional\u003cTitle\u003e getTitle() {"
+        "content": "        public EditNoteDescriptor(EditNoteDescriptor toCopy) {"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            return Optional.ofNullable(title);"
+        "content": "            setTitle(toCopy.title);"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "            setContent(toCopy.content);"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "            setTags(toCopy.tags);"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public void setTitle(Title title) {"
+        "content": "        }"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            this.title \u003d title;"
+        "content": ""
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "        /**"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "         * Returns true if at least one field is edited."
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public Optional\u003cContent\u003e getContent() {"
+        "content": "         */"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            return Optional.ofNullable(content);"
+        "content": "        public boolean isAnyFieldEdited() {"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "            return CollectionUtil.isAnyNonNull(title, content, tags);"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public void setContent(Content content) {"
+        "content": ""
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            this.content \u003d content;"
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "        public Optional\u003cTitle\u003e getTitle() {"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "            return Optional.ofNullable(title);"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        /**"
+        "content": "        }"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
+        "content": ""
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         * if modification is attempted."
+        "content": "        public void setTitle(Title title) {"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
+        "content": "            this.title \u003d title;"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         */"
+        "content": "        }"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
+        "content": ""
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
+        "content": "        public Optional\u003cContent\u003e getContent() {"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(content);"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
+        "content": "        public void setContent(Content content) {"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": "            this.content \u003d content;"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "         */"
+        "content": "        }"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
+        "content": ""
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
+        "content": "        /**"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "         * if modification is attempted."
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        @Override"
+        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        public boolean equals(Object other) {"
+        "content": "         */"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            // short circuit if same object"
+        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            if (other \u003d\u003d this) {"
+        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "                return true;"
+        "content": "        }"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        /**"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            // instanceof handles nulls"
+        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            if (!(other instanceof EditNoteDescriptor)) {"
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "                return false;"
+        "content": "         */"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            }"
+        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            // state check"
+        "content": "        }"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            EditNoteDescriptor e \u003d (EditNoteDescriptor) other;"
+        "content": ""
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        @Override"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            return getTitle().equals(e.getTitle())"
+        "content": "        public boolean equals(Object other) {"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "                    \u0026\u0026 getContent().equals(e.getContent())"
+        "content": "            // short circuit if same object"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "                    \u0026\u0026 getTags().equals(e.getTags());"
+        "content": "            if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "                return true;"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 189,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            if (!(other instanceof EditNoteDescriptor)) {"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                return false;"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            // state check"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            EditNoteDescriptor e \u003d (EditNoteDescriptor) other;"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            return getTitle().equals(e.getTitle())"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                    \u0026\u0026 getContent().equals(e.getContent())"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                    \u0026\u0026 getTags().equals(e.getTags());"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 203,
         "author": {
           "gitId": "shiweing"
         },
@@ -33831,7 +33929,7 @@
       }
     ],
     "authorContributionMap": {
-      "shiweing": 186,
+      "shiweing": 200,
       "tanlk99": 3
     }
   },
@@ -44384,297 +44482,290 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.Content;"
+        "content": "import tagline.model.note.NoteId;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.NoteId;"
+        "content": "import tagline.model.note.Title;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.Title;"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "/**"
+        "content": " * Parses input arguments and creates a new EditNoteCommand object"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shiweing"
         },
-        "content": " * Parses input arguments and creates a new EditNoteCommand object"
+        "content": " */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shiweing"
         },
-        "content": " */"
+        "content": "public class EditNoteParser implements Parser\u003cEditNoteCommand\u003e {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "public class EditNoteParser implements Parser\u003cEditNoteCommand\u003e {"
+        "content": "    /**"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": "     * Parses the given {@code String} of arguments in the context of the EditNoteCommand"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Parses the given {@code String} of arguments in the context of the EditNoteCommand"
+        "content": "     * and returns an EditNoteCommand object for execution."
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * and returns an EditNoteCommand object for execution."
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     */"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": "    public EditNoteCommand parse(String args) throws ParseException {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public EditNoteCommand parse(String args) throws ParseException {"
+        "content": "        requireNonNull(args);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        requireNonNull(args);"
+        "content": "        ArgumentMultimap argMultimap \u003d"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        ArgumentMultimap argMultimap \u003d"
+        "content": "                ArgumentTokenizer.tokenize(args, PREFIX_TITLE, PREFIX_CONTENT, PREFIX_TAG);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "                ArgumentTokenizer.tokenize(args, PREFIX_TITLE, PREFIX_CONTENT, PREFIX_TAG);"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        NoteId noteId;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        NoteId noteId;"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        try {"
+        "content": "            noteId \u003d NoteParserUtil.parseIndex(argMultimap.getPreamble());"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            noteId \u003d NoteParserUtil.parseIndex(argMultimap.getPreamble());"
+        "content": "        } catch (ParseException pe) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        } catch (ParseException pe) {"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditNoteCommand.MESSAGE_USAGE), pe);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditNoteCommand.MESSAGE_USAGE), pe);"
+        "content": "        }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        EditNoteDescriptor editNoteDescriptor \u003d new EditNoteDescriptor();"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        EditNoteDescriptor editNoteDescriptor \u003d new EditNoteDescriptor();"
+        "content": "        if (argMultimap.getValue(PREFIX_TITLE).isPresent()) {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        if (argMultimap.getValue(PREFIX_TITLE).isPresent()) {"
+        "content": "            editNoteDescriptor.setTitle(new Title(argMultimap.getValue(PREFIX_TITLE).get()));"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            editNoteDescriptor.setTitle(new Title(argMultimap.getValue(PREFIX_TITLE).get()));"
+        "content": "        }"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "        if (argMultimap.getValue(PREFIX_CONTENT).isPresent()) {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        if (argMultimap.getValue(PREFIX_CONTENT).isPresent()) {"
+        "content": "            editNoteDescriptor.setContent(NoteParserUtil.parseContent(argMultimap.getValue(PREFIX_CONTENT).get()));"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            editNoteDescriptor.setContent(new Content(argMultimap.getValue(PREFIX_CONTENT).get()));"
+        "content": "        }"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "        /* TO ADD TAGS WHEN TAG IMPLEMENTED */"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        /* TO ADD TAGS WHEN TAG IMPLEMENTED */"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        if (!editNoteDescriptor.isAnyFieldEdited()) {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        if (!editNoteDescriptor.isAnyFieldEdited()) {"
+        "content": "            throw new ParseException(EditNoteCommand.MESSAGE_NOT_EDITED);"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            throw new ParseException(EditNoteCommand.MESSAGE_NOT_EDITED);"
+        "content": "        }"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        return new EditNoteCommand(noteId, editNoteDescriptor);"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        return new EditNoteCommand(noteId, editNoteDescriptor);"
+        "content": "    }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "shiweing"
-        },
         "content": ""
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 56,
         "author": {
           "gitId": "shiweing"
         },
@@ -44682,7 +44773,7 @@
       }
     ],
     "authorContributionMap": {
-      "shiweing": 57
+      "shiweing": 56
     }
   },
   {
@@ -68769,7 +68860,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d \"NoteId numbers should only contain numbers\";"
+        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d \"NoteId numbers should only contain positive numbers\";"
       },
       {
         "lineNumber": 14,
@@ -68811,388 +68902,402 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    //public final String value;"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": "     * Constructs a {@code NoteId}."
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Constructs a {@code NoteId}."
+        "content": "     *"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     *"
+        "content": "     * @param idNumber A valid phone number."
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * @param idNumber A valid phone number."
+        "content": "     */"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": "    public NoteId(long idNumber) {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public NoteId(long idNumber) {"
+        "content": "        requireNonNull(idNumber);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        requireNonNull(idNumber);"
+        "content": "        value \u003d Long.valueOf(idNumber);"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        //checkArgument(isValidNoteId(idNumber), MESSAGE_CONSTRAINTS);"
+        "content": "    }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        value \u003d Long.valueOf(idNumber);"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "    public NoteId(String idNumber) {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        requireNonNull(idNumber);"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    // this constructor supports storage"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    // is this a point of failure? should i be using a factory method?"
+        "content": "        checkArgument(isValidNoteId(idNumber), MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public NoteId(String idNumber) {"
+        "content": "        value \u003d Long.valueOf(idNumber);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        requireNonNull(idNumber);"
+        "content": "    }"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        checkArgument(isValidNoteId(idNumber), MESSAGE_CONSTRAINTS);"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        value \u003d Long.valueOf(idNumber);"
+        "content": "    public NoteId() {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "        value \u003d NoteIdCounter.incrementThenGetValue();"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public NoteId() {"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        value \u003d NoteIdCounter.incrementThenGetValue();"
+        "content": "    public Long toLong() {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "        return value;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    // This part is to convert the Long to String for Storage"
+        "content": ""
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public String getStorageString() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        return value.toString();"
+        "content": "     * @return String format of note id for storage."
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    public String getStorageString() {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": "        return value.toString();"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Returns true if a given string is a valid noteID number."
+        "content": "    }"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static boolean isValidNoteId(String test) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        return test.matches(VALIDATION_REGEX);"
+        "content": "     * Returns true if a given string is a valid noteID number."
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    public static boolean isValidNoteId(String test) {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    @Override"
+        "content": "        return test.matches(VALIDATION_REGEX);"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public String toString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        String formattedNoteId \u003d String.format(\"%05d\", value);"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        return formattedNoteId; //String.valueOf(value);"
+        "content": "    @Override"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        return String.format(\"%05d\", value);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    @Override"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "                || (other instanceof NoteId // instanceof handles nulls"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "                \u0026\u0026 value.equals(((NoteId) other).value)); // state check"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "                || (other instanceof NoteId // instanceof handles nulls"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "                \u0026\u0026 value.equals(((NoteId) other).value)); // state check"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public int hashCode() {"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        return value.hashCode();"
+        "content": "    @Override"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        return value.hashCode();"
       },
       {
         "lineNumber": 74,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
         "author": {
           "gitId": "shiweing"
         },
@@ -69200,7 +69305,7 @@
       }
     ],
     "authorContributionMap": {
-      "shiweing": 74
+      "shiweing": 76
     }
   },
   {
@@ -119393,294 +119498,294 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.logic.commands.exceptions.CommandException;"
+        "content": "import tagline.logic.commands.CommandResult.ViewType;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.Model;"
+        "content": "import tagline.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.Note;"
+        "content": "import tagline.model.Model;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.NoteBook;"
+        "content": "import tagline.model.note.Note;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "import tagline.model.note.NoteId;"
+        "content": "import tagline.model.note.NoteBook;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "import tagline.model.note.NoteId;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shiweing"
         },
-        "content": " * Contains helper methods for testing commands."
+        "content": "/**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shiweing"
         },
-        "content": " */"
+        "content": " * Contains helper methods for testing commands."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "public class NoteCommandTestUtil {"
+        "content": " */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "public class NoteCommandTestUtil {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final long VALID_NOTEID_PROTECTOR \u003d 11;"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_TITLE_PROTECTOR \u003d \"The Protector Initiative\";"
+        "content": "    public static final long VALID_NOTEID_PROTECTOR \u003d 11;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_CONTENT_PROTECTOR \u003d \"Phase 1:\\n A response team comprised \""
+        "content": "    public static final String VALID_TITLE_PROTECTOR \u003d \"The Protector Initiative\";"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"of the most able individuals humankind has to offer. The Initiative will \""
+        "content": "    public static final String VALID_CONTENT_PROTECTOR \u003d \"Phase 1:\\n A response team comprised \""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"defend Earth from imminent global threats that are beyond the warfighting \""
+        "content": "            + \"of the most able individuals humankind has to offer. The Initiative will \""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            + \"capability of conventional military forces.\";"
+        "content": "            + \"defend Earth from imminent global threats that are beyond the warfighting \""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_TIMECREATED_PROTECTOR \u003d \"13-May-1995 15:35:08\";"
+        "content": "            + \"capability of conventional military forces.\";"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_TIMELASTUPDATED_PROTECTOR \u003d \"14-May-1995 09:26:11\";"
+        "content": "    public static final String VALID_TIMECREATED_PROTECTOR \u003d \"13-May-1995 15:35:08\";"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    public static final String VALID_TIMELASTUPDATED_PROTECTOR \u003d \"14-May-1995 09:26:11\";"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final long VALID_NOTEID_INCIDENT \u003d 12;"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_TITLE_INCIDENT \u003d \"Battle of New York\";"
+        "content": "    public static final long VALID_NOTEID_INCIDENT \u003d 12;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_CONTENT_INCIDENT \u003d \"The Battle of New York, also known as \""
+        "content": "    public static final String VALID_TITLE_INCIDENT \u003d \"Battle of New York\";"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        + \"the Attack on New York, the Attack on Midtown Manhattan, the Manhattan Crisis and \""
+        "content": "    public static final String VALID_CONTENT_INCIDENT \u003d \"The Battle of New York, also known as \""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        + \"the Incident, was a major battle between the Avengers and Loki with his borrowed \""
+        "content": "        + \"the Attack on New York, the Attack on Midtown Manhattan, the Manhattan Crisis and \""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        + \"Chitauri army in Manhattan, New York City. According to Loki\u0027s plan, it was his \""
+        "content": "        + \"the Incident, was a major battle between the Avengers and Loki with his borrowed \""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        + \"first battle to subjugate Earth, but the actions of the Avengers neutralized the \""
+        "content": "        + \"Chitauri army in Manhattan, New York City. According to Loki\u0027s plan, it was his \""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        + \"threat of the Chitauri before they could continue the invasion.\";"
+        "content": "        + \"first battle to subjugate Earth, but the actions of the Avengers neutralized the \""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_TIMECREATED_INCIDENT \u003d \"04-May-2012 13:12:34\";"
+        "content": "        + \"threat of the Chitauri before they could continue the invasion.\";"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_TIMELASTUPDATED_INCIDENT \u003d \"16-Oct-2023 08:38:09\";"
+        "content": "    public static final String VALID_TIMECREATED_INCIDENT \u003d \"04-May-2012 13:12:34\";"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    public static final String VALID_TIMELASTUPDATED_INCIDENT \u003d \"16-Oct-2023 08:38:09\";"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_TAG_AVENGERS \u003d \"avengers\";"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String VALID_TAG_MOVIE \u003d \"movie\";"
+        "content": "    public static final String VALID_TAG_AVENGERS \u003d \"avengers\";"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    public static final String VALID_TAG_MOVIE \u003d \"movie\";"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String TITLE_DESC_PROTECTOR \u003d \" \" + PREFIX_TITLE + VALID_TITLE_PROTECTOR;"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String TITLE_DESC_INCIDENT \u003d \" \" + PREFIX_TITLE + VALID_TITLE_INCIDENT;"
+        "content": "    public static final String TITLE_DESC_PROTECTOR \u003d \" \" + PREFIX_TITLE + VALID_TITLE_PROTECTOR;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String CONTENT_DESC_PROTECTOR \u003d \" \" + PREFIX_CONTENT + VALID_CONTENT_PROTECTOR;"
+        "content": "    public static final String TITLE_DESC_INCIDENT \u003d \" \" + PREFIX_TITLE + VALID_TITLE_INCIDENT;"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String CONTENT_DESC_INCIDENT \u003d \" \" + PREFIX_CONTENT + VALID_CONTENT_INCIDENT;"
+        "content": "    public static final String CONTENT_DESC_PROTECTOR \u003d \" \" + PREFIX_CONTENT + VALID_CONTENT_PROTECTOR;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /* TO ADD FOR TAG WHEN TAG IMPLEMENTED */"
+        "content": "    public static final String CONTENT_DESC_INCIDENT \u003d \" \" + PREFIX_CONTENT + VALID_CONTENT_INCIDENT;"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    /* TO ADD FOR TAG WHEN TAG IMPLEMENTED */"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String PREAMBLE_WHITESPACE \u003d \"\\t  \\r  \\n\";"
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String PREAMBLE_NON_EMPTY \u003d \"NonEmptyPreamble\";"
+        "content": "    public static final String INVALID_CONTENT_DESC \u003d \" \" + PREFIX_CONTENT + \" \"; // content cannot be blank"
       },
       {
         "lineNumber": 53,
@@ -119694,311 +119799,332 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final NoteId NON_EXISTING_NOTE_ID \u003d new NoteId(99999);"
+        "content": "    public static final String PREAMBLE_WHITESPACE \u003d \"\\t  \\r  \\n\";"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    public static final String PREAMBLE_NON_EMPTY \u003d \"NonEmptyPreamble\";"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Executes the given {@code command}, confirms that \u003cbr\u003e"
+        "content": "    public static final NoteId NON_EXISTING_NOTE_ID \u003d new NoteId(99999);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * - the returned {@link CommandResult} matches {@code expectedCommandResult} \u003cbr\u003e"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * - the {@code actualModel} matches {@code expectedModel}"
+        "content": "    /**"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": "     * Executes the given {@code command}, confirms that \u003cbr\u003e"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static void assertCommandSuccess(Command command, Model actualModel, CommandResult expectedCommandResult,"
+        "content": "     * - the returned {@link CommandResult} matches {@code expectedCommandResult} \u003cbr\u003e"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            Model expectedModel) {"
+        "content": "     * - the {@code actualModel} matches {@code expectedModel}"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        try {"
+        "content": "     */"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            CommandResult result \u003d command.execute(actualModel);"
+        "content": "    public static void assertCommandSuccess(Command command, Model actualModel, CommandResult expectedCommandResult,"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            assertEquals(expectedCommandResult, result);"
+        "content": "            Model expectedModel) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            assertEquals(expectedModel, actualModel);"
+        "content": "        try {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        } catch (CommandException ce) {"
+        "content": "            CommandResult result \u003d command.execute(actualModel);"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            throw new AssertionError(\"Execution of command should not fail.\", ce);"
+        "content": "            assertEquals(expectedCommandResult, result);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        }"
+        "content": "            assertEquals(expectedModel, actualModel);"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "        } catch (CommandException ce) {"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "            throw new AssertionError(\"Execution of command should not fail.\", ce);"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Convenience wrapper to {@link #assertCommandSuccess(Command, Model, CommandResult, Model)}"
+        "content": "    }"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * that takes a string {@code expectedMessage}."
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static void assertCommandSuccess(Command command, Model actualModel, String expectedMessage,"
+        "content": "     * Convenience wrapper to {@link #assertCommandSuccess(Command, Model, CommandResult, Model)}"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            Model expectedModel) {"
+        "content": "     * that takes a string {@code expectedMessage} and a {@code ViewType} {@code expectedViewType}."
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        CommandResult expectedCommandResult \u003d new CommandResult(expectedMessage);"
+        "content": "     */"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        assertCommandSuccess(command, actualModel, expectedCommandResult, expectedModel);"
+        "content": "    public static void assertCommandSuccess(Command command, Model actualModel, String expectedMessage,"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "                                            ViewType expectedViewType, Model expectedModel) {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        CommandResult expectedCommandResult \u003d new CommandResult(expectedMessage, expectedViewType);"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    /**"
+        "content": "        assertCommandSuccess(command, actualModel, expectedCommandResult, expectedModel);"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * Executes the given {@code command}, confirms that \u003cbr\u003e"
+        "content": "    }"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * - a {@code CommandException} is thrown \u003cbr\u003e"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * - the CommandException message matches {@code expectedMessage} \u003cbr\u003e"
+        "content": "    /**"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     * - the note book, filtered note list and selected contact in {@code actualModel} remain unchanged"
+        "content": "     * Executes the given {@code command}, confirms that \u003cbr\u003e"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "     */"
+        "content": "     * - a {@code CommandException} is thrown \u003cbr\u003e"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static void assertCommandFailure(Command command, Model actualModel, String expectedMessage) {"
+        "content": "     * - the CommandException message matches {@code expectedMessage} \u003cbr\u003e"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        // we are unable to defensively copy the model for comparison later, so we can"
+        "content": "     * - the note book, filtered note list and selected contact in {@code actualModel} remain unchanged"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        // only do so by copying its components."
+        "content": "     */"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        NoteBook expectedNoteBook \u003d new NoteBook(actualModel.getNoteBook());"
+        "content": "    public static void assertCommandFailure(Command command, Model actualModel, String expectedMessage) {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        List\u003cNote\u003e expectedFilteredList \u003d new ArrayList\u003c\u003e(actualModel.getFilteredNoteList());"
+        "content": "        // we are unable to defensively copy the model for comparison later, so we can"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "        // only do so by copying its components."
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        assertThrows(CommandException.class, expectedMessage, () -\u003e command.execute(actualModel));"
+        "content": "        NoteBook expectedNoteBook \u003d new NoteBook(actualModel.getNoteBook());"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        assertEquals(expectedNoteBook, actualModel.getNoteBook());"
+        "content": "        List\u003cNote\u003e expectedFilteredList \u003d new ArrayList\u003c\u003e(actualModel.getFilteredNoteList());"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        assertEquals(expectedFilteredList, actualModel.getFilteredNoteList());"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "        assertThrows(CommandException.class, expectedMessage, () -\u003e command.execute(actualModel));"
       },
       {
         "lineNumber": 98,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertEquals(expectedNoteBook, actualModel.getNoteBook());"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertEquals(expectedFilteredList, actualModel.getFilteredNoteList());"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 101,
         "author": {
           "gitId": "shiweing"
         },
@@ -120006,7 +120132,7 @@
       }
     ],
     "authorContributionMap": {
-      "shiweing": 98
+      "shiweing": 101
     }
   },
   {
@@ -124447,6 +124573,939 @@
     ],
     "authorContributionMap": {
       "shiweing": 80
+    }
+  },
+  {
+    "path": "src/test/java/tagline/logic/commands/note/EditNoteCommandTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "package tagline.logic.commands.note;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.NON_EXISTING_NOTE_ID;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.VALID_CONTENT_INCIDENT;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.VALID_CONTENT_PROTECTOR;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.VALID_TITLE_INCIDENT;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.assertCommandFailure;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.note.EditNoteCommand.EditNoteDescriptor;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.note.EditNoteCommand.MESSAGE_DUPLICATE_NOTE;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.testutil.TypicalIndexes.INDEX_FIRST;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.testutil.TypicalIndexes.INDEX_SECOND;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.testutil.TypicalNotes.getTypicalNoteBook;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.commons.core.Messages;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.logic.commands.CommandResult;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.logic.commands.exceptions.CommandException;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.Model;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.ModelManager;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.UserPrefs;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.note.Note;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.note.NoteId;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.testutil.EditNoteDescriptorBuilder;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.testutil.NoteBuilder;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": " * Contains integration tests (interaction with the Model) and"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": " * unit tests for EditNoteCommand."
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "class EditNoteCommandTest {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    private static final CommandResult.ViewType EDIT_NOTE_COMMAND_VIEW_TYPE \u003d CommandResult.ViewType.NOTE;"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    private Model model \u003d new ModelManager(getTypicalNoteBook(), new UserPrefs());"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void execute_allFieldsSpecified_success() {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        Note originalNote \u003d model.getNoteBook().getNoteList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        Note editedNote \u003d new NoteBuilder().withNoteId(originalNote.getNoteId().toLong())"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                .withTimeLastEdited(originalNote.getTimeLastEdited()).build();"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor descriptor \u003d new EditNoteDescriptorBuilder(editedNote).build();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteCommand editNoteCommand \u003d new EditNoteCommand(originalNote.getNoteId(), descriptor);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // check result manually as TimeLastEdited is dynamically obtained,"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // resulting in failure for assertEquals"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            CommandResult result \u003d editNoteCommand.execute(model);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            Note actualEditedNote \u003d model.getNoteBook().getNoteList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            assertEquals(result.getViewType(), EDIT_NOTE_COMMAND_VIEW_TYPE);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            assertTrue(actualEditedNote.isUniqueNote(editedNote));"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        } catch (CommandException ce) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            throw new AssertionError(\"Execution of command should not fail.\", ce);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void execute_someFieldsSpecified_success() {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        Note originalNote \u003d model.getNoteBook().getNoteList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        Note editedNote \u003d new NoteBuilder(originalNote).withTitle(VALID_TITLE_INCIDENT).build();"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor descriptor \u003d new EditNoteDescriptorBuilder(editedNote).build();"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteCommand editNoteCommand \u003d new EditNoteCommand(originalNote.getNoteId(), descriptor);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // check result manually as TimeLastEdited is dynamically obtained,"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // resulting in failure for assertEquals"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            CommandResult result \u003d editNoteCommand.execute(model);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            Note actualEditedNote \u003d model.getNoteBook().getNoteList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            assertEquals(result.getViewType(), EDIT_NOTE_COMMAND_VIEW_TYPE);"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            assertTrue(actualEditedNote.isUniqueNote(editedNote));"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        } catch (CommandException ce) {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            throw new AssertionError(\"Execution of command should not fail.\", ce);"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void execute_noFieldSpecified_failure() {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        Note originalNote \u003d model.getNoteBook().getNoteList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor descriptor \u003d new EditNoteDescriptor();"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteCommand editNoteCommand \u003d new EditNoteCommand(originalNote.getNoteId(), descriptor);"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertCommandFailure(editNoteCommand, model, MESSAGE_DUPLICATE_NOTE);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void execute_invalidNoteId_failure() {"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        NoteId nonExistingId \u003d NON_EXISTING_NOTE_ID;"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor descriptor \u003d new EditNoteDescriptorBuilder().withContent(VALID_CONTENT_INCIDENT).build();"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteCommand editNoteCommand \u003d new EditNoteCommand(nonExistingId, descriptor);"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertCommandFailure(editNoteCommand, model, Messages.MESSAGE_INVALID_NOTE_INDEX);"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor descriptor \u003d new EditNoteDescriptorBuilder().withContent(VALID_CONTENT_INCIDENT).build();"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        final EditNoteCommand standardCommand \u003d new EditNoteCommand(new NoteId(INDEX_FIRST.getOneBased()), descriptor);"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // same values -\u003e return true"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor copyDescriptor \u003d new EditNoteDescriptorBuilder(descriptor).build();"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteCommand commandWithSameValues \u003d new EditNoteCommand("
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                new NoteId(INDEX_FIRST.getOneBased()), copyDescriptor);"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertTrue(standardCommand.equals(commandWithSameValues));"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // same object -\u003e returns true"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertTrue(standardCommand.equals(standardCommand));"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // null -\u003e returns false"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertFalse(standardCommand.equals(null));"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // different type -\u003e returns false"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertFalse(standardCommand.equals(new ListNoteCommand(null)));"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // different index -\u003e returns false"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertFalse(standardCommand.equals(new EditNoteCommand(new NoteId(INDEX_SECOND.getOneBased()), descriptor)));"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // different descriptor -\u003e returns false"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor differentDescriptor \u003d new EditNoteDescriptorBuilder()"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                .withContent(VALID_CONTENT_PROTECTOR).build();"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertFalse(standardCommand.equals("
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                new EditNoteCommand(new NoteId(INDEX_FIRST.getOneBased()), differentDescriptor)));"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shiweing": 132
     }
   },
   {
@@ -130852,6 +131911,631 @@
     ],
     "authorContributionMap": {
       "shiweing": 32
+    }
+  },
+  {
+    "path": "src/test/java/tagline/logic/parser/note/EditNoteParserTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "package tagline.logic.parser.note;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.CONTENT_DESC_PROTECTOR;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.INVALID_CONTENT_DESC;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.TITLE_DESC_PROTECTOR;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.VALID_CONTENT_PROTECTOR;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.NoteCommandTestUtil.VALID_TITLE_PROTECTOR;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.parser.CommandParserTestUtil.assertParseFailure;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.parser.CommandParserTestUtil.assertParseSuccess;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.logic.commands.note.EditNoteCommand;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.logic.commands.note.EditNoteCommand.EditNoteDescriptor;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.note.Content;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.note.NoteId;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.testutil.EditNoteDescriptorBuilder;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "class EditNoteParserTest {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    private static final String MESSAGE_INVALID_FORMAT \u003d"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "            String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditNoteCommand.MESSAGE_USAGE);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    private EditNoteParser parser \u003d new EditNoteParser();"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void parse_missingParts_failure() {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // no index specified"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, VALID_CONTENT_PROTECTOR, MESSAGE_INVALID_FORMAT);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // no field specified"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"1\", EditNoteCommand.MESSAGE_NOT_EDITED);"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // no index and no field specified"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"\", MESSAGE_INVALID_FORMAT);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void parse_invalidPreamble_failure() {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // negative id"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"-1\" + CONTENT_DESC_PROTECTOR, MESSAGE_INVALID_FORMAT);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // invalid arguments being parsed as preamble"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"1 invalid arguments\", MESSAGE_INVALID_FORMAT);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // invalid prefix being parsed as preamble"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"1 c/note content\", MESSAGE_INVALID_FORMAT);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void parser_invalidValue_failure() {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"1 \" + INVALID_CONTENT_DESC, Content.MESSAGE_CONSTRAINTS);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // invalid content followed by valid title"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseFailure(parser, \"1 \" + INVALID_CONTENT_DESC + TITLE_DESC_PROTECTOR,"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                Content.MESSAGE_CONSTRAINTS);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void parse_allFieldsSpecified_success() {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        NoteId targetNoteId \u003d new NoteId(1);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        String userInput \u003d targetNoteId.toString() + TITLE_DESC_PROTECTOR + CONTENT_DESC_PROTECTOR;"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor descriptor \u003d new EditNoteDescriptorBuilder()"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "                .withContent(VALID_CONTENT_PROTECTOR).withTitle(VALID_TITLE_PROTECTOR).build();"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteCommand expectedCommand \u003d new EditNoteCommand(targetNoteId, descriptor);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public void parse_oneFieldspecified_success() {"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        NoteId targetNoteId \u003d new NoteId(1);"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // title"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        String userInput \u003d targetNoteId.toString() + TITLE_DESC_PROTECTOR;"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteDescriptor descriptor \u003d new EditNoteDescriptorBuilder().withTitle(VALID_TITLE_PROTECTOR).build();"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        EditNoteCommand expectedCommand \u003d new EditNoteCommand(targetNoteId, descriptor);"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        // content"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        userInput \u003d targetNoteId.toString() + CONTENT_DESC_PROTECTOR;"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        descriptor \u003d new EditNoteDescriptorBuilder().withContent(VALID_CONTENT_PROTECTOR).build();"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        expectedCommand \u003d new EditNoteCommand(targetNoteId, descriptor);"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        assertParseSuccess(parser, userInput, expectedCommand);"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shiweing": 88
     }
   },
   {
@@ -148128,7 +149812,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        editedProtector \u003d new NoteBuilder(PROTECTOR).withTimeLastUpdated(VALID_TIMELASTUPDATED_INCIDENT).build();"
+        "content": "        editedProtector \u003d new NoteBuilder(PROTECTOR).withTimeLastEdited(VALID_TIMELASTUPDATED_INCIDENT).build();"
       },
       {
         "lineNumber": 76,
@@ -148359,7 +150043,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        editedProtector \u003d new NoteBuilder(PROTECTOR).withTimeLastUpdated(VALID_TIMELASTUPDATED_INCIDENT).build();"
+        "content": "        editedProtector \u003d new NoteBuilder(PROTECTOR).withTimeLastEdited(VALID_TIMELASTUPDATED_INCIDENT).build();"
       },
       {
         "lineNumber": 109,
@@ -148632,7 +150316,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        editedProtector \u003d new NoteBuilder(PROTECTOR).withTimeLastUpdated(VALID_TIMELASTUPDATED_INCIDENT).build();"
+        "content": "        editedProtector \u003d new NoteBuilder(PROTECTOR).withTimeLastEdited(VALID_TIMELASTUPDATED_INCIDENT).build();"
       },
       {
         "lineNumber": 148,
@@ -160055,6 +161739,428 @@
     }
   },
   {
+    "path": "src/test/java/tagline/testutil/EditNoteDescriptorBuilder.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "package tagline.testutil;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import static tagline.logic.commands.note.EditNoteCommand.EditNoteDescriptor;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.note.Content;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.note.Note;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "import tagline.model.note.Title;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": " * A utility class to help with building EditNoteDescriptor objects."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "public class EditNoteDescriptorBuilder {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    private EditNoteDescriptor descriptor;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public EditNoteDescriptorBuilder() {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        descriptor \u003d new EditNoteDescriptor();"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public EditNoteDescriptorBuilder(EditNoteDescriptor descriptor) {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        this.descriptor \u003d new EditNoteDescriptor(descriptor);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     * Returns an {@code EditNoteDescriptor} with fields containing {@code note}\u0027s details"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public EditNoteDescriptorBuilder(Note note) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        descriptor \u003d new EditNoteDescriptor();"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        descriptor.setTitle(note.getTitle());"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        descriptor.setContent(note.getContent());"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        descriptor.setTags(note.getTags());"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     * Sets the {@code Title} of the {@code EditNoteDescriptor} that we are building."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public EditNoteDescriptorBuilder withTitle(String title) {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        descriptor.setTitle(new Title(title));"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     * Sets the {@code Content} of the {@code EditNoteDescriptor} that we are building."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public EditNoteDescriptorBuilder withContent(String content) {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        descriptor.setContent(new Content(content));"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     * Parses the {@code tags} into a {@code Set\u003cTag\u003e} and set it"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     * to the {@code EditNoteDescriptor} that we are building."
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    // TODO withTags(String.. tags)"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public EditNoteDescriptor build() {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        return descriptor;"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shiweing": 59
+    }
+  },
+  {
     "path": "src/test/java/tagline/testutil/GroupBookBuilder.java",
     "fileType": "tests",
     "lines": [
@@ -161949,35 +164055,35 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String DEFAULT_TITLE \u003d \"The Protector Initiative\";"
+        "content": "    public static final String DEFAULT_TITLE \u003d \"Infinity Stones\";"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public static final String DEFAULT_CONTENT \u003d \"Phase 1:\\n A response team comprised \""
+        "content": "    public static final String DEFAULT_CONTENT \u003d \"The Infinity Stones were six immensely powerful \""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        + \"of the most able individuals humankind has to offer. The Initiative will \""
+        "content": "            + \"gem-like objects tied to different aspects of the universe, created \""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        + \"defend Earth from imminent global threats that are beyond the warfighting \""
+        "content": "            + \"by the Cosmic Entities. Each of the stones possesses unique capabilities \""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        + \"capability of conventional military forces.\";"
+        "content": "            + \"that have been enhanced and altered by various alien civilizations for millennia.\";"
       },
       {
         "lineNumber": 27,
@@ -162530,7 +164636,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public NoteBuilder withTimeLastUpdated(String timestamp) {"
+        "content": "    public NoteBuilder withTimeLastEdited(String timestamp) {"
       },
       {
         "lineNumber": 106,
@@ -162565,31 +164671,87 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    public Note build() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "        return new Note(noteId, title, content, timeCreated, timeLastEdited, tags);"
+        "content": "     * Sets the {@code TimeLastEdited} of the {@code Note} that we are building."
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "shiweing"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "shiweing"
         },
-        "content": ""
+        "content": "    public NoteBuilder withTimeLastEdited(TimeLastEdited timestamp) {"
       },
       {
         "lineNumber": 114,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        this.timeLastEdited \u003d timestamp;"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    public Note build() {"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "        return new Note(noteId, title, content, timeCreated, timeLastEdited, tags);"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "shiweing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 122,
         "author": {
           "gitId": "shiweing"
         },
@@ -162597,7 +164759,7 @@
       }
     ],
     "authorContributionMap": {
-      "shiweing": 113,
+      "shiweing": 121,
       "tanlk99": 1
     }
   },
@@ -165325,7 +167487,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            .withTimeLastUpdated(TIMELASTUPDATED_TIMEHEIST).build();"
+        "content": "            .withTimeLastEdited(TIMELASTUPDATED_TIMEHEIST).build();"
       },
       {
         "lineNumber": 54,
@@ -165360,7 +167522,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            .withTimeLastUpdated(TIMELASTUPDATED_ULTRON).build();"
+        "content": "            .withTimeLastEdited(TIMELASTUPDATED_ULTRON).build();"
       },
       {
         "lineNumber": 59,
@@ -165493,7 +167655,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            .withTimeLastUpdated(TIMELASTUPDATED_TOKYO).build();"
+        "content": "            .withTimeLastEdited(TIMELASTUPDATED_TOKYO).build();"
       },
       {
         "lineNumber": 78,
@@ -165612,7 +167774,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            .withTimeLastUpdated(TIMELASTUPDATED_EARTH).build();"
+        "content": "            .withTimeLastEdited(TIMELASTUPDATED_EARTH).build();"
       },
       {
         "lineNumber": 95,
@@ -165638,9 +167800,9 @@
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "tanlk99"
+          "gitId": "shiweing"
         },
-        "content": "            .withTimeLastUpdated(TIMELASTUPDATED_EARTH).build();"
+        "content": "            .withTimeLastEdited(TIMELASTUPDATED_EARTH).build();"
       },
       {
         "lineNumber": 99,
@@ -165682,7 +167844,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            .withTimeLastUpdated(VALID_TIMELASTUPDATED_PROTECTOR).build();"
+        "content": "            .withTimeLastEdited(VALID_TIMELASTUPDATED_PROTECTOR).build();"
       },
       {
         "lineNumber": 105,
@@ -165717,7 +167879,7 @@
         "author": {
           "gitId": "shiweing"
         },
-        "content": "            .withTimeLastUpdated(VALID_TIMELASTUPDATED_INCIDENT).build();"
+        "content": "            .withTimeLastEdited(VALID_TIMELASTUPDATED_INCIDENT).build();"
       },
       {
         "lineNumber": 110,
@@ -165861,8 +168023,8 @@
       }
     ],
     "authorContributionMap": {
-      "shiweing": 125,
-      "tanlk99": 4
+      "shiweing": 126,
+      "tanlk99": 3
     }
   },
   {

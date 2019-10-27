@@ -60926,782 +60926,789 @@
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "Yoshi275"
+          "gitId": "atharvjoshi"
         },
-        "content": "    private final ObservableList\u003cIncident\u003e internalList \u003d FXCollections.observableArrayList();"
+        "content": "    private static final int NEW_INCIDENT_INSERTION_INDEX \u003d 0; // to add incidents to front of list"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    private final ObservableList\u003cIncident\u003e internalUnmodifiableList \u003d"
+        "content": "    private final ObservableList\u003cIncident\u003e internalList \u003d FXCollections.observableArrayList();"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "            FXCollections.unmodifiableObservableList(internalList);"
+        "content": "    private final ObservableList\u003cIncident\u003e internalUnmodifiableList \u003d"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "            FXCollections.unmodifiableObservableList(internalList);"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * Returns true if the list contains an equivalent Incident as the given argument."
+        "content": "    /**"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     */"
+        "content": "     * Returns true if the list contains an equivalent Incident as the given argument."
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public boolean contains(Incident toCheck) {"
+        "content": "     */"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        requireNonNull(toCheck);"
+        "content": "    public boolean contains(Incident toCheck) {"
       },
       {
         "lineNumber": 38,
+        "author": {
+          "gitId": "Yoshi275"
+        },
+        "content": "        requireNonNull(toCheck);"
+      },
+      {
+        "lineNumber": 39,
         "author": {
           "gitId": "atharvjoshi"
         },
         "content": "        return internalList.stream().anyMatch(toCheck::equals);"
       },
       {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "Yoshi275"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 40,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * Adds a Incident to the list."
+        "content": "    /**"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "Yoshi275"
+          "gitId": "atharvjoshi"
         },
-        "content": "     * The Incident must not already exist in the list."
+        "content": "     * Adds an Incident to the front of the list."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     */"
+        "content": "     * The Incident must not already exist in the list."
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public void add(Incident toAdd) {"
+        "content": "     */"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        requireNonNull(toAdd);"
+        "content": "    public void add(Incident toAdd) {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        if (contains(toAdd)) {"
+        "content": "        requireNonNull(toAdd);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "            throw new DuplicateIncidentException();"
+        "content": "        if (contains(toAdd)) {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        }"
+        "content": "            throw new DuplicateIncidentException();"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        internalList.add(toAdd);"
+        "content": "        }"
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "Yoshi275"
+          "gitId": "atharvjoshi"
         },
-        "content": "    }"
+        "content": "        internalList.add(NEW_INCIDENT_INSERTION_INDEX, toAdd);"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * Replaces the Incident {@code target} in the list with {@code editedIncident}."
+        "content": "    /**"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * {@code target} must exist in the list."
+        "content": "     * Replaces the Incident {@code target} in the list with {@code editedIncident}."
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * The Incident identity of {@code editedIncident} must not be the same as another existing Incident in the list."
+        "content": "     * {@code target} must exist in the list."
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     */"
+        "content": "     * The Incident identity of {@code editedIncident} must not be the same as another existing Incident in the list."
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public void setIncident(Incident target, Incident editedIncident) {"
+        "content": "     */"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        requireAllNonNull(target, editedIncident);"
+        "content": "    public void setIncident(Incident target, Incident editedIncident) {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "        requireAllNonNull(target, editedIncident);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        int index \u003d internalList.indexOf(target);"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        if (index \u003d\u003d -1) {"
+        "content": "        int index \u003d internalList.indexOf(target);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "            throw new IncidentNotFoundException();"
+        "content": "        if (index \u003d\u003d -1) {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        }"
+        "content": "            throw new IncidentNotFoundException();"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 66,
+        "author": {
+          "gitId": "Yoshi275"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
         "author": {
           "gitId": "atharvjoshi"
         },
         "content": "        if (!target.equals(editedIncident) \u0026\u0026 contains(editedIncident)) {"
       },
       {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "Yoshi275"
-        },
-        "content": "            throw new DuplicateIncidentException();"
-      },
-      {
         "lineNumber": 68,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        }"
+        "content": "            throw new DuplicateIncidentException();"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        internalList.set(index, editedIncident);"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    }"
+        "content": "        internalList.set(index, editedIncident);"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * Removes the equivalent Incident from the list."
+        "content": "    /**"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * The Incident must exist in the list."
+        "content": "     * Removes the equivalent Incident from the list."
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     */"
+        "content": "     * The Incident must exist in the list."
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public void remove(Incident toRemove) {"
+        "content": "     */"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        requireNonNull(toRemove);"
+        "content": "    public void remove(Incident toRemove) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        if (!internalList.remove(toRemove)) {"
+        "content": "        requireNonNull(toRemove);"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "            throw new IncidentNotFoundException();"
+        "content": "        if (!internalList.remove(toRemove)) {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        }"
+        "content": "            throw new IncidentNotFoundException();"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public void setIncidents(UniqueIncidentList replacement) {"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        requireNonNull(replacement);"
+        "content": "    public void setIncidents(UniqueIncidentList replacement) {"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        internalList.setAll(replacement.internalList);"
+        "content": "        requireNonNull(replacement);"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    }"
+        "content": "        internalList.setAll(replacement.internalList);"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * Replaces the contents of this list with {@code Incidents}."
+        "content": "    /**"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * {@code Incidents} must not contain duplicate Incidents."
+        "content": "     * Replaces the contents of this list with {@code Incidents}."
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     */"
+        "content": "     * {@code Incidents} must not contain duplicate Incidents."
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public void setIncidents(List\u003cIncident\u003e incidents) {"
+        "content": "     */"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        requireAllNonNull(incidents);"
+        "content": "    public void setIncidents(List\u003cIncident\u003e incidents) {"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        if (!incidentsAreUnique(incidents)) {"
+        "content": "        requireAllNonNull(incidents);"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "            throw new DuplicateIncidentException();"
+        "content": "        if (!incidentsAreUnique(incidents)) {"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        }"
+        "content": "            throw new DuplicateIncidentException();"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        internalList.setAll(incidents);"
+        "content": ""
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    }"
+        "content": "        internalList.setAll(incidents);"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * Returns the backing list as an unmodifiable {@code ObservableList}."
+        "content": "    /**"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     */"
+        "content": "     * Returns the backing list as an unmodifiable {@code ObservableList}."
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public ObservableList\u003cIncident\u003e asUnmodifiableObservableList() {"
+        "content": "     */"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        return internalUnmodifiableList;"
+        "content": "    public ObservableList\u003cIncident\u003e asUnmodifiableObservableList() {"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    }"
+        "content": "        return internalUnmodifiableList;"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public Iterator\u003cIncident\u003e iterator() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        return internalList.iterator();"
+        "content": "    public Iterator\u003cIncident\u003e iterator() {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    }"
+        "content": "        return internalList.iterator();"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "                || (other instanceof UniqueIncidentList // instanceof handles nulls"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "                \u0026\u0026 internalList.equals(((UniqueIncidentList) other).internalList));"
+        "content": "                || (other instanceof UniqueIncidentList // instanceof handles nulls"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 internalList.equals(((UniqueIncidentList) other).internalList));"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    public int hashCode() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        return internalList.hashCode();"
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    }"
+        "content": "        return internalList.hashCode();"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     * Returns true if {@code Incidents} contains only unique Incidents."
+        "content": "    /**"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "     */"
+        "content": "     * Returns true if {@code Incidents} contains only unique Incidents."
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "    private boolean incidentsAreUnique(List\u003cIncident\u003e incidents) {"
+        "content": "     */"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "        for (int i \u003d 0; i \u003c incidents.size() - 1; i++) {"
+        "content": "    private boolean incidentsAreUnique(List\u003cIncident\u003e incidents) {"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "Yoshi275"
         },
-        "content": "            for (int j \u003d i + 1; j \u003c incidents.size(); j++) {"
+        "content": "        for (int i \u003d 0; i \u003c incidents.size() - 1; i++) {"
       },
       {
         "lineNumber": 132,
+        "author": {
+          "gitId": "Yoshi275"
+        },
+        "content": "            for (int j \u003d i + 1; j \u003c incidents.size(); j++) {"
+      },
+      {
+        "lineNumber": 133,
         "author": {
           "gitId": "atharvjoshi"
         },
         "content": "                if (incidents.get(i).equals(incidents.get(j))) {"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 134,
         "author": {
           "gitId": "Yoshi275"
         },
         "content": "                    return false;"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 135,
         "author": {
           "gitId": "Yoshi275"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 136,
         "author": {
           "gitId": "Yoshi275"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 137,
         "author": {
           "gitId": "Yoshi275"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 138,
         "author": {
           "gitId": "Yoshi275"
         },
         "content": "        return true;"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 139,
         "author": {
           "gitId": "Yoshi275"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 140,
         "author": {
           "gitId": "Yoshi275"
         },
         "content": "}"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 141,
         "author": {
           "gitId": "Yoshi275"
         },
@@ -61709,8 +61716,8 @@
       }
     ],
     "authorContributionMap": {
-      "atharvjoshi": 3,
-      "Yoshi275": 137
+      "atharvjoshi": 6,
+      "Yoshi275": 135
     }
   },
   {

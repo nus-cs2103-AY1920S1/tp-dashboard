@@ -378,6 +378,20 @@
             "deletions": 4
           }
         ]
+      },
+      {
+        "insertions": 157,
+        "deletions": 41,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "f4cf1410fa96deeeca944d59f2e57b2fe4a7cc81",
+            "messageTitle": "added logic for deleting people from activities",
+            "messageBody": "",
+            "insertions": 157,
+            "deletions": 41
+          }
+        ]
       }
     ],
     "liakify": [
@@ -1086,8 +1100,8 @@
         ]
       },
       {
-        "insertions": 19,
-        "deletions": 22,
+        "insertions": 209,
+        "deletions": 62,
         "date": "2019-10-18",
         "commitResults": [
           {
@@ -1096,6 +1110,118 @@
             "messageBody": "",
             "insertions": 19,
             "deletions": 22
+          },
+          {
+            "hash": "e16afad5ffecf538f05170f414d75b590fbc31b4",
+            "messageTitle": "Add CommandSubType enum for GUI commands; add prefixes for ListCommand",
+            "messageBody": "",
+            "insertions": 39,
+            "deletions": 24
+          },
+          {
+            "hash": "909e80e6b519086c9ec52463e88e2340f8ef4349",
+            "messageTitle": "Add ListCommandParser; build ListCommand with a CommandSubType",
+            "messageBody": "",
+            "insertions": 80,
+            "deletions": 7
+          },
+          {
+            "hash": "a456fb21a48589da1ad93a43e6c2e65c21a443cd",
+            "messageTitle": "Add tests for ListCommandParser; update ListCommand-related tests",
+            "messageBody": "",
+            "insertions": 71,
+            "deletions": 9
+          }
+        ]
+      },
+      {
+        "insertions": 721,
+        "deletions": 284,
+        "date": "2019-10-22",
+        "commitResults": [
+          {
+            "hash": "88ea63849b721146289c65b305241fd6b6ad2d9b",
+            "messageTitle": "Amend Model, ModelMgr, ActivityBook to execute ListCommand contextually",
+            "messageBody": "",
+            "insertions": 174,
+            "deletions": 76
+          },
+          {
+            "hash": "3d95ab4645269dbeef17dd7ecb5ba63ef59c7ac7",
+            "messageTitle": "Fix activity book not being written to JSON file",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 5
+          },
+          {
+            "hash": "b1650db6d170b48183a67b386888c127c24e6d49",
+            "messageTitle": "Employ defensive coding in ActivityBook; add tests for untested methods",
+            "messageBody": "",
+            "insertions": 61,
+            "deletions": 14
+          },
+          {
+            "hash": "f2899aab4513f9ad1238cd7ff81e196582e2e436",
+            "messageTitle": "Refactor Context; extract ContextType; edit ListCommand to set context",
+            "messageBody": "",
+            "insertions": 76,
+            "deletions": 74
+          },
+          {
+            "hash": "4ca2a38333de1053248de12242cd90ad646a6df4",
+            "messageTitle": "Update UI of PersonCard; fix broken ActivityCommand integration tests",
+            "messageBody": "",
+            "insertions": 95,
+            "deletions": 72
+          },
+          {
+            "hash": "13db8859c1071711d458553de5afc5db89f4480a",
+            "messageTitle": "Convert PersonListPanel to a generic ListPanel class",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 13
+          },
+          {
+            "hash": "dc009b1ee3b7c31f8392b45b78bae080bb862084",
+            "messageTitle": "Extend CommandResult to pass changes in Context to MainWindow in UI",
+            "messageBody": "",
+            "insertions": 55,
+            "deletions": 4
+          },
+          {
+            "hash": "633a6e49008a48f85cd22910112c9f4987470f51",
+            "messageTitle": "Add PersonCard class and FXML files; update stylesheet",
+            "messageBody": "",
+            "insertions": 128,
+            "deletions": 12
+          },
+          {
+            "hash": "7eec08c8c7118a8747d6dfe941b5f92f77f98832",
+            "messageTitle": "Enable MainWindow class to switch UI view based on current Context",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 3
+          },
+          {
+            "hash": "c16e1bd21c9a3c6c1f7183348606341fa3da7664",
+            "messageTitle": "Repair failing tests for ListCommand",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 3
+          },
+          {
+            "hash": "a21c1d5a6ba1180fb8b84aecf19bfa7c9d8e9834",
+            "messageTitle": "Reduce column constraints in Cards to avoid horizontal overflow",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "f1922bc24c05eab44c7dff807c92932a9682c5cb",
+            "messageTitle": "Add additional tests to improve coverage of new methods",
+            "messageBody": "",
+            "insertions": 55,
+            "deletions": 5
           }
         ]
       },
@@ -1503,48 +1629,48 @@
     ]
   },
   "authorFinalContributionMap": {
-    "podocarp": 1394,
-    "liakify": 1127,
-    "JohnNzj": 379,
-    "Aulud": 775,
-    "daekoon": 2050
+    "podocarp": 1501,
+    "liakify": 1041,
+    "JohnNzj": 378,
+    "Aulud": 1610,
+    "daekoon": 2000
   },
   "authorFileTypeContributionMap": {
     "podocarp": {
       "docs": 71,
-      "tests": 595,
-      "functional": 728
+      "tests": 663,
+      "functional": 767
     },
     "liakify": {
       "docs": 91,
-      "tests": 434,
-      "functional": 581,
+      "tests": 405,
+      "functional": 524,
       "other": 21
     },
     "JohnNzj": {
       "docs": 67,
       "tests": 20,
-      "functional": 124,
+      "functional": 123,
       "other": 168
     },
     "Aulud": {
       "docs": 193,
-      "tests": 17,
-      "functional": 397,
+      "tests": 282,
+      "functional": 967,
       "other": 168
     },
     "daekoon": {
       "docs": 92,
-      "tests": 1111,
-      "functional": 810,
+      "tests": 1085,
+      "functional": 786,
       "other": 37
     }
   },
   "authorContributionVariance": {
-    "podocarp": 12942.03,
+    "podocarp": 13311.479,
     "liakify": 10839.283,
     "JohnNzj": 4872.0815,
-    "Aulud": 18109.33,
+    "Aulud": 37997.938,
     "daekoon": 56958.867
   },
   "authorDisplayNameMap": {

@@ -7449,7 +7449,7 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "* Parameters can be in any order."
+        "content": "* Commands are case-sensitive."
       },
       {
         "lineNumber": 63,
@@ -8198,7 +8198,7 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "* For options `add`, you must furnish the options `front` and `back`, and any input to `index` will be ignored"
+        "content": "* For options `remove`, you must furnish the options `index`, which corresponds to the index of the flashcard, and any input to `front` and `back` will be ignored"
       },
       {
         "lineNumber": 170,
@@ -8212,7 +8212,7 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "* For options `remove`, you must furnish the options `index`, which corresponds to the index of the flashcard, and any input to `front` and `back` will be ignored"
+        "content": "* For options `edit`, you must furnish the options `index` (compulsory), as well as `front` and/or `back` depending on the change, and any command that lacks any of the three options will be regarded as an error and no flashcard wil be added"
       },
       {
         "lineNumber": 172,
@@ -8226,12 +8226,12 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "* For options `edit`, you must furnish the options `index` (compulsory), as well as `front` and/or `back` depending on the change, and any command that lacks any of the three options will be regarded as an error and no flashcard wil be added"
+        "content": "* The `index` option must be a positive integer e.g. 1, 2, 3, … and must be less than or equal to the total number of cards in the specified deck"
       },
       {
         "lineNumber": 174,
         "author": {
-          "gitId": "-"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
@@ -8240,33 +8240,33 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "* The `index` option must be a positive integer e.g. 1, 2, 3, … and must be less than or equal to the total number of cards in the specified deck"
-      },
-      {
-        "lineNumber": 176,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 177,
-        "author": {
-          "gitId": "huiminlim"
-        },
         "content": "* Any command with no input to `front`, `back` and `index` will be regarded as an error and no action will be taken"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 176,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "****"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 178,
         "author": {
           "gitId": "huiminlim"
+        },
+        "content": "Format: `edit deck/DECK_NAME action/DESIRED_ACTION [index/CARD_INDEX] [front/NEW_FRONT_TEXT] [back/NEW_BACK_TEXT]`"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
         },
         "content": ""
       },
@@ -8275,12 +8275,12 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "Format: `edit deck/DECK_NAME action/DESIRED_ACTION [index/CARD_INDEX] [front/NEW_FRONT_TEXT] [back/NEW_BACK_TEXT]`"
+        "content": "Examples:"
       },
       {
         "lineNumber": 181,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -8289,49 +8289,49 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "Examples:"
-      },
-      {
-        "lineNumber": 183,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 184,
-        "author": {
-          "gitId": "huiminlim"
-        },
         "content": "* `edit deck/science_deck`"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 183,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "Returns error as no input is added"
       },
       {
-        "lineNumber": 186,
+        "lineNumber": 184,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* `edit deck/science_deck action/edit index/1 front/what is a cell back/a cell is a building block`"
       },
       {
-        "lineNumber": 187,
+        "lineNumber": 185,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "Edits the first flashcard of the deck `science_deck`"
       },
       {
-        "lineNumber": 188,
+        "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
         "content": ""
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d FAQ"
       },
       {
         "lineNumber": 189,
@@ -8345,28 +8345,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d FAQ"
+        "content": "*Q*: How do I transfer my data to another Computer? +"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder."
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "*Q*: How do I transfer my data to another Computer? +"
+        "content": ""
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder."
+        "content": "\u003d\u003d Command Summary"
       },
       {
         "lineNumber": 194,
@@ -8378,110 +8378,96 @@
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d Command Summary"
-      },
-      {
-        "lineNumber": 196,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 197,
-        "author": {
           "gitId": "huiminlim"
         },
         "content": "* *help* `help [command/COMMAND_NAME]` +"
       },
       {
-        "lineNumber": 198,
+        "lineNumber": 196,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "e.g. `help command/view`"
       },
       {
-        "lineNumber": 199,
+        "lineNumber": 197,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* *import* : `import filepath/FILE_NAME`"
       },
       {
-        "lineNumber": 200,
+        "lineNumber": 198,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* *export* : `export deck/DECK_NAME FILE_NAME`"
       },
       {
-        "lineNumber": 201,
+        "lineNumber": 199,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* *stats* : `stats [deck/DECK_NAME]` +"
       },
       {
-        "lineNumber": 202,
+        "lineNumber": 200,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "e.g. `stats deck/science_deck`"
       },
       {
-        "lineNumber": 203,
+        "lineNumber": 201,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* *view* : `view [deck/DECK_NAME]` +"
       },
       {
-        "lineNumber": 204,
+        "lineNumber": 202,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "e.g. `view deck/science_deck`"
       },
       {
-        "lineNumber": 205,
+        "lineNumber": 203,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* *create* : `create deck/DECK_NAME`"
       },
       {
-        "lineNumber": 206,
+        "lineNumber": 204,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* *test* : `test [duration/TIME_LIMIT_ALLOWED] deck/DECK_NAME` +"
       },
       {
-        "lineNumber": 207,
+        "lineNumber": 205,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "e.g. `test deck/science_deck`"
       },
       {
-        "lineNumber": 208,
+        "lineNumber": 206,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* *exit* : `exit`"
       },
       {
-        "lineNumber": 209,
+        "lineNumber": 207,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "* *edit* : `edit deck/DECK_NAME action/DESIRED_ACTION [index/CARD_INDEX] [front/NEW_FRONT_TEXT] [back/NEW_BACK_TEXT]` +"
       },
       {
-        "lineNumber": 210,
+        "lineNumber": 208,
         "author": {
           "gitId": "huiminlim"
         },
@@ -8490,7 +8476,7 @@
     ],
     "authorContributionMap": {
       "timothyleong97": 1,
-      "huiminlim": 110,
+      "huiminlim": 108,
       "-": 99
     }
   },
@@ -24157,94 +24143,59 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public static void takeInput(String input, State state) throws Exception {"
+        "content": "    public static void takeInput(String input, State state) {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        try {"
+        "content": "        //System.out.println(input);"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "            for (Responses r : Responses.values()) {"
+        "content": "        for (Responses r : Responses.values()) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "                if (r.call(input, state)) {"
+        "content": "            if (r.call(input, state)) {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "                    break;"
+        "content": "                break;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "                }"
+        "content": "            }"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        } catch (Exception e) {"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            System.out.println(e.getMessage());"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "huiminlim"
-        },
         "content": "        }"
       },
       {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        //todo: handle exception"
-      },
-      {
-        "lineNumber": 28,
+        "lineNumber": 23,
         "author": {
           "gitId": "PhireHandy"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 24,
         "author": {
           "gitId": "timothyleong97"
         },
@@ -24255,7 +24206,7 @@
       "PhireHandy": 15,
       "AHaliq": 3,
       "timothyleong97": 3,
-      "huiminlim": 8
+      "huiminlim": 3
     }
   },
   {
@@ -24425,1337 +24376,1337 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "import dream.fcard.core.commons.core.LogsCenter;"
+        "content": "import java.util.ArrayList;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "import dream.fcard.logic.respond.exception.DuplicateFoundException;"
+        "content": "import java.util.logging.Logger;"
       },
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "import dream.fcard.logic.storage.StorageManager;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "import dream.fcard.model.Deck;"
+        "content": "import dream.fcard.core.commons.core.LogsCenter;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "import dream.fcard.model.State;"
+        "content": "////import dream.fcard.logic.respond.commands.CreateCommand;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "import dream.fcard.model.cards.FrontBackCard;"
+        "content": "import dream.fcard.logic.respond.exception.DuplicateFoundException;"
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "import dream.fcard.model.exceptions.DeckNotFoundException;"
+        "content": "import dream.fcard.logic.storage.StorageManager;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "import dream.fcard.util.FileReadWrite;"
+        "content": "import dream.fcard.model.Deck;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": ""
+        "content": "import dream.fcard.model.State;"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "/**"
+        "content": "//import dream.fcard.model.StateEnum;"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": " * Enum of regex and response function pairs used by Responder to evaluate input."
+        "content": "import dream.fcard.model.cards.FrontBackCard;"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": " */"
+        "content": "import dream.fcard.model.exceptions.DeckNotFoundException;"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "enum Responses {"
+        "content": "import dream.fcard.model.exceptions.IndexNotFoundException;"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "    HELP(\"(?i)^(help)?(\\\\s)*(command/[\\\\w\\\\p{Punct}]+)?(\\\\s)*\", (commandInput, programState) -\u003e {"
+        "content": "import dream.fcard.util.FileReadWrite;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        System.out.println(\"Current command is HELP\");"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "        /*Print out \"Available commands are:\\n\" +"
+        "content": "/**"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "                \"Help [Command]\\n\" +"
+        "content": " * Enum of regex and response function pairs used by Responder to evaluate input."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "                \"Import FILEPATH\\n\" +"
+        "content": " */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "                \"Root DIRECTORY_PATH\" +"
+        "content": "enum Responses {"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "                \"Export deck/ DECK_NAME path/ DIRECTORY_PATH\\n\" +"
+        "content": "    LOGGER(\".*\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "                \"Stats [deck/DECK_NAME]\\n\" +"
+        "content": "        logger \u003d LogsCenter.getLogger(Responses.class);"
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "                \"View [deck/DECK_NAME]\\n\" +"
+        "content": "        return false;"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "                \"Create deck/DECK_NAME\\n\" +"
+        "content": "    }),"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "                \"Test [duration/TIME_LIMIT_ALLOWED] deck/DECK_NAME\\n\" +"
+        "content": "    HELP(\"(?i)^(help)?(\\\\s)*(command/[\\\\w\\\\p{Punct}]+)?(\\\\s)*\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "                \"Exit\\n\" +"
+        "content": "        System.out.println(\"Current command is HELP\");"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "                \"Edit deck/DECK_NAME action/DESIRED_ACTION [index/CARD_INDEX] [front/NEW_FRONT_TEXT]\" +"
+        "content": "        /*Print out \"Available commands are:\\n\" +"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "                \"[back/NEW_BACK_TEXT]\\n\";"
+        "content": "                \"Help [Command]\\n\" +"
       },
       {
         "lineNumber": 30,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "                \"Import FILEPATH\\n\" +"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "                \"Root DIRECTORY_PATH\" +"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "                \"Export deck/ DECK_NAME path/ DIRECTORY_PATH\\n\" +"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                \"Stats [deck/DECK_NAME]\\n\" +"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                \"View [deck/DECK_NAME]\\n\" +"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                \"Create deck/DECK_NAME\\n\" +"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                \"Test [duration/TIME_LIMIT_ALLOWED] deck/DECK_NAME\\n\" +"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                \"Exit\\n\" +"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                \"Edit deck/DECK_NAME action/DESIRED_ACTION [index/CARD_INDEX] [front/NEW_FRONT_TEXT]\" +"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                \"[back/NEW_BACK_TEXT]\\n\";"
+      },
+      {
+        "lineNumber": 40,
         "author": {
           "gitId": "PhireHandy"
         },
         "content": "         */"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 41,
         "author": {
           "gitId": "PhireHandy"
         },
         "content": "        return true; // capture is valid, end checking other commands"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 42,
         "author": {
           "gitId": "PhireHandy"
         },
         "content": "    }),"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "    ROOT(\"(?i)^r(oot)?(\\\\s)+.+\", (commandInput, programState) -\u003e {"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        String path \u003d FileReadWrite.normalizePath(commandInput.split(\" \")[1].trim());"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        if (FileReadWrite.pathValidDirectory(path)) {"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "            StorageManager.provideRoot(path);"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "            programState.reloadAllDecks(StorageManager.loadDecks());"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "            System.out.println(\"Successfully changed root\");"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "            System.out.println(\"argument is not a valid directory\");"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        return true;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    }),"
+        "content": "    ROOT(\"(?i)^r(oot)?(\\\\s)+.+\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    ROOT_NO_PATH(\"(?i)^r(oot)?(\\\\s)*\", (commandInput, programState) -\u003e {"
+        "content": "        String path \u003d FileReadWrite.normalizePath(commandInput.split(\" \")[1].trim());"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        System.out.println(\"No directory specified, e.g. root ~/Desktop\");"
+        "content": "        if (FileReadWrite.pathValidDirectory(path)) {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        return true;"
+        "content": "            StorageManager.provideRoot(path);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    }),"
+        "content": "            programState.reloadAllDecks(StorageManager.loadDecks());"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    IMPORT(\"(?i)^i(mport)?(\\\\s)+.+\", (commandInput, programState) -\u003e {"
+        "content": "            System.out.println(\"Successfully changed root\");"
       },
       {
         "lineNumber": 49,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "        System.out.println(\"Current command is IMPORT\");"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        String path \u003d commandInput.split(\" \")[1].trim();"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        Deck deck \u003d StorageManager.loadDeck(path);"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        if (deck !\u003d null) {"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "            StorageManager.writeDeck(deck);"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "            programState.addDeck(deck);"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "            System.out.println(\"Successfully added \" + path);"
-      },
-      {
-        "lineNumber": 58,
         "author": {
           "gitId": "AHaliq"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 50,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "            System.out.println(\"File does not exist, or file does not match schema for a deck\");"
+        "content": "            System.out.println(\"argument is not a valid directory\");"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "        return true;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "    }),"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "    ROOT_NO_PATH(\"(?i)^r(oot)?(\\\\s)*\", (commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "        System.out.println(\"No directory specified, e.g. root ~/Desktop\");"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "        return true;"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "    }),"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "    IMPORT(\"(?i)^i(mport)?(\\\\s)+.+\", (commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "        System.out.println(\"Current command is IMPORT\");"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        return true;"
+        "content": "        String path \u003d commandInput.split(\" \")[1].trim();"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "    }),"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    IMPORT_NO_PATH(\"(?i)^i(mport)?(\\\\s)*\", (commandInput, programState) -\u003e {"
+        "content": "        Deck deck \u003d StorageManager.loadDeck(path);"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        System.out.println(\"No path specified, e.g. import ~/Desktop/file.json\");"
+        "content": "        if (deck !\u003d null) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        return true;"
+        "content": "            StorageManager.writeDeck(deck);"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    }),"
+        "content": "            programState.addDeck(deck);"
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "    EXPORT(\"(?i)^exp(ort)?(\\\\s)+deck/(\\\\s)*.+(\\\\s)+path/(\\\\s)*.+\", (commandInput, programState) -\u003e {"
+        "content": "            System.out.println(\"Successfully added \" + path);"
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "        System.out.println(\"Current command is EXPORT\");"
+        "content": "        } else {"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": ""
+        "content": "            System.out.println(\"File does not exist, or file does not match schema for a deck\");"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        String[] parts \u003d commandInput.split(\"deck/\")[1].split(\"path/\");"
+        "content": "        }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        String deckName \u003d parts[0].trim();"
+        "content": "        return true;"
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "PhireHandy"
         },
-        "content": "        String pathName \u003d parts[1].trim();"
+        "content": "    }),"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": ""
+        "content": "    IMPORT_NO_PATH(\"(?i)^i(mport)?(\\\\s)*\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        try {"
+        "content": "        System.out.println(\"No path specified, e.g. import ~/Desktop/file.json\");"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "            Deck d \u003d programState.getDeck(deckName);"
+        "content": "        return true;"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "            FileReadWrite.write(FileReadWrite.resolve(pathName, \"./\" + d.getName() + \".json\"), d.toJson().toString());"
+        "content": "    }),"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "        } catch (DeckNotFoundException e) {"
+        "content": "    EXPORT(\"(?i)^exp(ort)?(\\\\s)+deck/(\\\\s)*.+(\\\\s)+path/(\\\\s)*.+\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "PhireHandy"
         },
-        "content": "            System.out.println(\"Deck does not exist\");"
+        "content": "        System.out.println(\"Current command is EXPORT\");"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": ""
+        "content": "        String[] parts \u003d commandInput.split(\"deck/\")[1].split(\"path/\");"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        return true;"
+        "content": "        String deckName \u003d parts[0].trim();"
       },
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "    }),"
+        "content": "        String pathName \u003d parts[1].trim();"
       },
       {
         "lineNumber": 83,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "    EXPORT_NO_PATH(\"(?i)^exp(ort)?(\\\\s)+deck/(\\\\s)*.+\", (commandInput, programState) -\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        System.out.println(\"No path specified, e.g. export deck/ deckName path/ ~/Desktop\");"
+        "content": "        try {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        return true;"
+        "content": "            Deck d \u003d programState.getDeck(deckName);"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    }),"
+        "content": "            FileReadWrite.write(FileReadWrite.resolve(pathName, \"./\" + d.getName() + \".json\"), d.toJson().toString());"
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "    EXPORT_NO_DECK(\"(?i)^exp(ort)?.*\", (commandInput, programState) -\u003e {"
+        "content": "        } catch (DeckNotFoundException e) {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        System.out.println(\"No deck specified, e.g. export deck/ deckName path/ ~/Desktop\");"
+        "content": "            System.out.println(\"Deck does not exist\");"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        return true;"
+        "content": "        }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    }),"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "    STATS(\"(?i)^(stats)?(\\\\s)*(deck/[\\\\w\\\\p{Punct}]+)?(\\\\s)*\", (commandInput, programState) -\u003e {"
+        "content": "        return true;"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        System.out.println(\"Current command is STATS\");"
+        "content": "    }),"
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        // ArrayList\u003cDeck\u003e allDecks \u003d programState.getDecks();"
+        "content": "    EXPORT_NO_PATH(\"(?i)^exp(ort)?(\\\\s)+deck/(\\\\s)*.+\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "        // String inputName \u003d *name of deck to find*;"
+        "content": "        System.out.println(\"No path specified, e.g. export deck/ deckName path/ ~/Desktop\");"
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "        // for (Deck curr : allDecks) {"
+        "content": "        return true;"
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "        //      if(curr.getName().equals(inputName) {"
+        "content": "    }),"
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        //         System.out.println(curr.getStats());"
+        "content": "    EXPORT_NO_DECK(\"(?i)^exp(ort)?.*\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "        //      }"
+        "content": "        System.out.println(\"No deck specified, e.g. export deck/ deckName path/ ~/Desktop\");"
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "        // }"
+        "content": "        return true;"
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "AHaliq"
         },
-        "content": "        return true; // capture is valid, end checking other commands"
+        "content": "    }),"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "    }),"
+        "content": "    STATS(\"(?i)^(stats)?(\\\\s)*(deck/[\\\\w\\\\p{Punct}]+)?(\\\\s)*\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "    VIEW(\"(?i)^(view)?(\\\\s)*(deck/[\\\\w\\\\p{Punct}]+)?(\\\\s)*\", (commandInput, programState) -\u003e {"
+        "content": "        System.out.println(\"Current command is STATS\");"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        System.out.println(\"Current command is VIEW\");"
+        "content": "        // ArrayList\u003cDeck\u003e allDecks \u003d programState.getDecks();"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        // ArrayList\u003cDeck\u003e allDecks \u003d programState.getDecks();"
+        "content": "        // String inputName \u003d *name of deck to find*;"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        //  String inputName \u003d *name of deck to find*;"
+        "content": "        // for (Deck curr : allDecks) {"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        //  for (Deck curr : allDecks) {"
+        "content": "        //      if(curr.getName().equals(inputName) {"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        //      if(curr.getName().equals(inputName) {"
+        "content": "        //         System.out.println(curr.getStats());"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        //          curr.viewDeck();"
+        "content": "        //      }"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        //      }"
+        "content": "        // }"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        //  }"
+        "content": "        return true; // capture is valid, end checking other commands"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": ""
+        "content": "    }),"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        return true; // capture is valid, end checking other commands"
+        "content": "    VIEW(\"(?i)^(view)?(\\\\s)*(deck/[\\\\S\\\\p{Punct}]+)?(\\\\s)*\", (commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    }),"
+        "content": "        //System.out.println(\"Current command is VIEW\");"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        LogsCenter.getLogger(Responses.class).info(\"Current command is VIEW\");"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    CREATE_DECK(\"(?i)^(create)?(\\\\s)+(deck/[\\\\w\\\\p{Punct}]+){1}(\\\\s)*\", (commandInput, programState) -\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        System.out.println(\"Current command is CREATE\");"
+        "content": "        // ArrayList\u003cDeck\u003e allDecks \u003d programState.getDecks();"
       },
       {
         "lineNumber": 117,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "PhireHandy"
         },
-        "content": ""
+        "content": "        //  String inputName \u003d *name of deck to find*;"
       },
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "PhireHandy"
         },
-        "content": "        // Split according to numerous white spaces in between"
+        "content": "        //  for (Deck curr : allDecks) {"
       },
       {
         "lineNumber": 119,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        String[] userInputFields \u003d commandInput.trim().split(\"\\\\s+\");"
-      },
-      {
-        "lineNumber": 120,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 121,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        // Extract user input field"
-      },
-      {
-        "lineNumber": 122,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        String deckName \u003d userInputFields[1].replaceFirst(\"deck/\", \"\");"
-      },
-      {
-        "lineNumber": 123,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 124,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        boolean isDeckExist \u003d true;"
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        // Check for deck that exist in state with same name"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            Deck deck \u003d programState.getDeck(deckName);"
-      },
-      {
-        "lineNumber": 129,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        } catch (DeckNotFoundException d) {"
-      },
-      {
-        "lineNumber": 130,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            isDeckExist \u003d false;"
-      },
-      {
-        "lineNumber": 131,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            Deck newDeck \u003d new Deck(deckName);"
-      },
-      {
-        "lineNumber": 132,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            programState.addDeck(newDeck);"
-      },
-      {
-        "lineNumber": 133,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 134,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 135,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        if (isDeckExist) {"
-      },
-      {
-        "lineNumber": 136,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            throw new DuplicateFoundException(\"Deck with same name exist in FlashCard Pro already - \" + deckName);"
-      },
-      {
-        "lineNumber": 137,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 138,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 139,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "        return true; // capture is valid, end checking other commands"
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "    }),"
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 142,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "    // expanded create to take in"
-      },
-      {
-        "lineNumber": 143,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "    // compulsory deck"
-      },
-      {
-        "lineNumber": 144,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "    // compulsory set of front/ back/"
-      },
-      {
-        "lineNumber": 145,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "    // only once each"
-      },
-      {
-        "lineNumber": 146,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "    DECK_CREATE_REG_CARD(\"(?i)^(create)?(\\\\s)+\""
-      },
-      {
-        "lineNumber": 147,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            + \"(deck/[\\\\w\\\\p{Punct}]+){1}(\\\\s)*\""
-      },
-      {
-        "lineNumber": 148,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            + \"(front/[\\\\w\\\\p{Punct}]+){1}(\\\\s)*\""
-      },
-      {
-        "lineNumber": 149,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            + \"(back/[\\\\w\\\\p{Punct}]+){1}(\\\\s)*\", (commandInput, programState) -\u003e {"
-      },
-      {
-        "lineNumber": 150,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 151,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                System.out.println(\"Current command is DECK_CREATE_REG_CARD\");"
-      },
-      {
-        "lineNumber": 152,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 153,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                // Split according to numerous white spaces in between"
-      },
-      {
-        "lineNumber": 154,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                String[] userInputFields \u003d commandInput.trim().split(\"\\\\s+\");"
-      },
-      {
-        "lineNumber": 155,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 156,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                // Extract user input field"
-      },
-      {
-        "lineNumber": 157,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                String deckName \u003d userInputFields[1].replaceFirst(\"deck/\", \"\");"
-      },
-      {
-        "lineNumber": 158,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                String front \u003d userInputFields[2].replaceFirst(\"front/\", \"\");"
-      },
-      {
-        "lineNumber": 159,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                String back \u003d userInputFields[3].replaceFirst(\"back/\", \"\");"
-      },
-      {
-        "lineNumber": 160,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 161,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                // Check if deck by the name exist"
-      },
-      {
-        "lineNumber": 162,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                try {"
-      },
-      {
-        "lineNumber": 163,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                    Deck deck \u003d programState.getDeck(deckName);"
-      },
-      {
-        "lineNumber": 164,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                    deck.addNewCard(new FrontBackCard(front, back));"
-      },
-      {
-        "lineNumber": 165,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                } catch (DeckNotFoundException d) {"
-      },
-      {
-        "lineNumber": 166,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                    // Throw exception to responder"
-      },
-      {
-        "lineNumber": 167,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                    throw new DeckNotFoundException(d.getMessage());"
-      },
-      {
-        "lineNumber": 168,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 169,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 170,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                System.out.println(deckName + \" \" + front + \" \" + back);"
-      },
-      {
-        "lineNumber": 171,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 172,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                return true; // capture is valid, end checking other commands"
-      },
-      {
-        "lineNumber": 173,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            }),"
-      },
-      {
-        "lineNumber": 174,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 175,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "    TEST(\"(?i)^(test)?(\\\\\\\\s)+(duration/[\\\\\\\\w\\\\\\\\p{Punct}]+)?(\\\\\\\\s)+(deck/[\\\\\\\\w\\\\\\\\p{Punct}]+){1}(\\\\\\\\s)*\", ("
-      },
-      {
-        "lineNumber": 176,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "            commandInput, programState) -\u003e {"
-      },
-      {
-        "lineNumber": 177,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "        System.out.println(\"Current command is TEST\");"
-      },
-      {
-        "lineNumber": 178,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "        // ArrayList\u003cDeck\u003e allDecks \u003d programState.getDecks();"
-      },
-      {
-        "lineNumber": 179,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "        // String inputName \u003d *name of deck to find*;"
-      },
-      {
-        "lineNumber": 180,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "        // Deck testDeck;"
-      },
-      {
-        "lineNumber": 181,
-        "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "        // for (Deck curr : allDecks) {"
-      },
-      {
-        "lineNumber": 182,
         "author": {
           "gitId": "PhireHandy"
         },
         "content": "        //      if(curr.getName().equals(inputName) {"
       },
       {
-        "lineNumber": 183,
+        "lineNumber": 120,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        //          testDeck \u003d curr;"
+        "content": "        //          curr.viewDeck();"
       },
       {
-        "lineNumber": 184,
+        "lineNumber": 121,
         "author": {
           "gitId": "PhireHandy"
         },
         "content": "        //      }"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 122,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        // }"
+        "content": "        //  }"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        ArrayList\u003cDeck\u003e decks \u003d programState.getDecks();"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        for (int i \u003d 0; i \u003c decks.size(); i++) {"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            System.out.println(\"Deck #1: \" + decks.get(i).getName());"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "        return true; // capture is valid, end checking other commands"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    }),"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    CREATE(\"(?i)^(create)?(\\\\s)+(deck/[\\\\S]+){1}[\\\\s]*\", (commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        //System.out.println(\"Current command is CREATE_DECK\");"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        LogsCenter.getLogger(Responses.class).info(\"Current command is CREATE_DECK\");"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        /*"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        if (programState.getCurrentState() !\u003d StateEnum.DEFAULT) {"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            System.out.println(\"Create not allowed here\");"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        // dont intercept input if not default state"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        // note all commands should have something like this"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        // even import export"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        String deckName \u003d commandInput.split(\"deck/\")[1].trim();"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        LogsCenter.getLogger(Responses.class).info(\"CREATE_DECK: command parsing successful\");"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        if (programState.hasDeck(deckName)) {"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            // REPORT DECK EXISTS"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            LogsCenter.getLogger(Responses.class).warning(\"CREATE_DECK: Deck with same name exist - \" + deckName);"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            //System.out.println(\"Error: Deck with same name exist - \" + deckName);"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            //programState.setCurrentState(StateEnum.CREATE_STATE_FRONT);"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            programState.addDeck(deckName);"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            LogsCenter.getLogger(Responses.class).info(\"CREATED_DECK: Deck added - \" + deckName);"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            // PRINT INSTRUCTIONS TO USER HOW TO CREATE DECK"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        LogsCenter.getLogger(Responses.class).info(\"CREATE_DECK: command execution successful\");"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return true;"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    }),"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    DECK_CREATE_MCQ_CARD(\"(?i)^(create)?(\\\\s)+\""
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(deck/[\\\\S]+){1}(\\\\s)*\""
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(front/[\\\\S\\\\s]+){1}(\\\\s)*\""
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(back/[\\\\S\\\\s]+){1}(\\\\s)*\""
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"((choice/[\\\\S\\\\s]+)(\\\\s)*)+\" , (commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                System.out.println(\"Current command is DECK_CREATE_MCQ_CARD\");"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"Current command is DECK_CREATE_MCQ_CARD\");"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                //System.out.println(commandInput);"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"DECK_CREATE_MCQ_CARD: command execution successful\");"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                return true; // capture is valid, end checking other commands"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            }),"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    // create frontbackcard"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    DECK_CREATE_REG_CARD(\"(?i)^(create)?(\\\\s)+\""
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(deck/[\\\\S\\\\s]+){1}(\\\\s)*\""
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(front/[\\\\S\\\\s]+){1}(\\\\s)*\""
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(back/[\\\\S\\\\s]+){1}(\\\\s)*\", (commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        // *Initiate test with Test Deck*"
+        "content": "                System.out.println(\"Current command is DECK_CREATE_REG_CARD\");"
       },
       {
         "lineNumber": 187,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        return true; // capture is valid, end checking other commands"
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"Current command is DECK_CREATE_REG_CARD\");"
       },
       {
         "lineNumber": 188,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    }),"
+        "content": ""
       },
       {
         "lineNumber": 189,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    EXIT(\"(?i)^(exit)?.\", (commandInput, programState) -\u003e {"
+        "content": "                String userInput \u003d commandInput.replaceFirst(\"create deck/\", \"\");"
       },
       {
         "lineNumber": 190,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        System.out.println(\"Current command is EXIT\");"
+        "content": ""
       },
       {
         "lineNumber": 191,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        // Exit from application"
+        "content": "                String[] userInputFields \u003d userInput.trim().split(\" front/\");"
       },
       {
         "lineNumber": 192,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        return true; // capture is valid, end checking other commands"
+        "content": ""
       },
       {
         "lineNumber": 193,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    }),"
+        "content": "                String deckName \u003d userInputFields[0];"
       },
       {
         "lineNumber": 194,
@@ -25767,285 +25718,1552 @@
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    EDIT(\"(?i)^(edit)?(\\\\s)+(deck/[\\\\w\\\\p{Punct}]+){1}(\\\\s)+(action/[\\\\w\\\\p{Punct}]+){1}(\\\\s)*((\\\\s)+\""
+        "content": "                String[] userCardFields \u003d userInputFields[1].trim().split(\" back/\");"
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "            + \"(index/[\\\\w\\\\p{Punct}]+){1}(\\\\s)*)?((\\\\s)+(front/[\\\\w\\\\p{Punct}]+){1}(\\\\s)*)?((\\\\s)+\""
+        "content": ""
       },
       {
         "lineNumber": 197,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "            + \"(back/[\\\\w\\\\p{Punct}]+))?(\\\\s)*\", ("
+        "content": "                String front \u003d userCardFields[0];"
       },
       {
         "lineNumber": 198,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "            commandInput, programState) -\u003e {"
+        "content": "                String back \u003d userCardFields[1];"
       },
       {
         "lineNumber": 199,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "                System.out.println(\"Current command is EDIT\");"
+        "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "                return true; // capture is valid, end checking other commands"
+        "content": "                //System.out.println(deckName + \" \" + front + \" \" + back);"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            }),"
+        "content": ""
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "                // Check if deck by the name exist"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    UNKNOWN(\".*\", (commandInput, programState) -\u003e {"
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"DECK_CREATE_REG_CARD: command parsing successful\");"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        System.out.println(\"Sorry, I don\u0027t know what is this command.\");"
+        "content": "                try {"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        LogsCenter.getLogger(Responses.class).warning(\"Unknown command entered.\");"
+        "content": "                    Deck deck \u003d programState.getDeck(deckName);"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return false;"
+        "content": "                    deck.addNewCard(new FrontBackCard(front, back));"
       },
       {
         "lineNumber": 207,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    });"
+        "content": ""
       },
       {
         "lineNumber": 208,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "                    LogsCenter.getLogger(Responses.class).info(\"DECK_CREATE_REG_CARD: Card added to \" + deckName);"
       },
       {
         "lineNumber": 209,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    private String regex;"
+        "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    private ResponseFunc func;"
+        "content": "                } catch (DeckNotFoundException d) {"
       },
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "                    // Throw exception to responder"
       },
       {
         "lineNumber": 212,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    Responses(String r, ResponseFunc f) {"
+        "content": "                    LogsCenter.getLogger(Responses.class).warning(\"DECK_CREATE_REG_CARD: Deck not found - \" + deckName);"
       },
       {
         "lineNumber": 213,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        this.regex \u003d r;"
+        "content": "                    throw new DeckNotFoundException(d.getMessage());"
       },
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "        this.func \u003d f;"
+        "content": "                }"
       },
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "PhireHandy"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 216,
-        "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
         "content": ""
       },
       {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"DECK_CREATE_REG_CARD: command execution successful\");"
+      },
+      {
         "lineNumber": 217,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "                return true; // capture is valid, end checking other commands"
       },
       {
         "lineNumber": 218,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "     * Given a string and program state, if string matches regex this enum will call its response"
+        "content": "            }),"
       },
       {
         "lineNumber": 219,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "     * function."
+        "content": ""
       },
       {
         "lineNumber": 220,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 221,
         "author": {
-          "gitId": "PhireHandy"
+          "gitId": "huiminlim"
         },
-        "content": "     * @param i input string"
+        "content": ""
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "     * @param s state object"
+        "content": "    TEST(\"(?i)^(test)?(\\\\\\\\s)+(duration/[\\\\\\\\w\\\\\\\\p{Punct}]+)?(\\\\\\\\s)+(deck/[\\\\\\\\w\\\\\\\\p{Punct}]+){1}(\\\\\\\\s)*\", ("
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "     * @return boolean if the string has matched"
+        "content": "            commandInput, programState) -\u003e {"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "     */"
+        "content": "        System.out.println(\"Current command is TEST\");"
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "PhireHandy"
         },
-        "content": "    public boolean call(String i, State s) throws Exception {"
+        "content": "        // ArrayList\u003cDeck\u003e allDecks \u003d programState.getDecks();"
       },
       {
         "lineNumber": 226,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "PhireHandy"
         },
-        "content": "        try {"
+        "content": "        // String inputName \u003d *name of deck to find*;"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "            if (i.matches(regex)) {"
+        "content": "        // Deck testDeck;"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "                return func.funcCall(i, s);"
+        "content": "        // for (Deck curr : allDecks) {"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "            }"
+        "content": "        //      if(curr.getName().equals(inputName) {"
       },
       {
         "lineNumber": 230,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "PhireHandy"
         },
-        "content": "        } catch (DeckNotFoundException | DuplicateFoundException d) {"
+        "content": "        //          testDeck \u003d curr;"
       },
       {
         "lineNumber": 231,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "PhireHandy"
         },
-        "content": "            throw new Exception(d.getMessage());"
+        "content": "        //      }"
       },
       {
         "lineNumber": 232,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "PhireHandy"
         },
-        "content": "        }"
+        "content": "        // }"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "        return false;"
+        "content": "        // *Initiate test with Test Deck*"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "PhireHandy"
         },
-        "content": "    }"
+        "content": "        return true; // capture is valid, end checking other commands"
       },
       {
         "lineNumber": 235,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    }),"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    EXIT(\"(?i)^(exit)?\", (commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        //System.out.println(\"Current command is EXIT\");"
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        LogsCenter.getLogger(Responses.class).info(\"Current command is EXIT\");"
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "        // Exit from application"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        // Added exit for convenience"
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        System.exit(0);"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "        return true; // capture is valid, end checking other commands"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    }),"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    EDIT_DECK_EDIT_CARD(\"(?i)^(edit)?(\\\\s)+(deck/[\\\\S}]+){1}(\\\\s)+(action/[edit]+){1}((\\\\s)+\""
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(index/[\\\\d]+){1}(\\\\s)*){1}((\\\\s)+(front/[\\\\S\\\\s]+){1}(\\\\s)*)?((\\\\s)?\""
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(back/[\\\\S\\\\s]+))?(\\\\s)?\", ("
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "            commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                //System.out.println(\"Current command is EDIT, edit card in deck\");"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"Current command is EDIT_DECK_EDIT_CARD, edit card in deck\");"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                //System.out.println(commandInput);"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String userFields \u003d commandInput.replaceFirst(\"edit(\\\\s)+deck/\", \"\");"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String[] splitUserFields \u003d userFields.split(\" action/\");"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String deckName \u003d splitUserFields[0].trim();"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                splitUserFields \u003d splitUserFields[1].split(\" index/\");"
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String action \u003d splitUserFields[0].trim();"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                boolean hasFront \u003d splitUserFields[1].contains(\"front/\");"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                boolean hasBack \u003d splitUserFields[1].contains(\"back/\");"
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String index \u003d \"\";"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String front \u003d \"\";"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String back \u003d \"\";"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                if (hasFront \u0026\u0026 hasBack) {"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    //System.out.println(\"detect front and back\");"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    //System.out.println(splitUserFields[0]);"
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    splitUserFields \u003d splitUserFields[1].split(\" front/\");"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    index \u003d splitUserFields[0].trim();"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    //System.out.println(splitUserFields[0]);"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    splitUserFields \u003d splitUserFields[1].split(\" back/\");"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    front \u003d splitUserFields[0].trim();"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    back \u003d splitUserFields[1].trim();"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                if (hasFront \u0026\u0026 !hasBack) {"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    splitUserFields \u003d splitUserFields[1].split(\" front/\");"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    index \u003d splitUserFields[0].trim();"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    front \u003d splitUserFields[1].trim();"
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                if (!hasFront \u0026\u0026 hasBack) {"
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    splitUserFields \u003d splitUserFields[1].split(\" back/\");"
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    index \u003d splitUserFields[0].trim();"
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    back \u003d splitUserFields[1].trim();"
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                if (!hasBack \u0026\u0026 !hasFront) {"
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    LogsCenter.getLogger(Responses.class).warning(\"EDIT_DECK_EDIT_CARD: No changes to front back\");"
+      },
+      {
+        "lineNumber": 299,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    return true;"
+      },
+      {
+        "lineNumber": 300,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 301,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 302,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"EDIT_DECK_EDIT_CARD: command parsing successful\");"
+      },
+      {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                //System.out.println(\"Parsing completed\");"
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                //System.out.println(deckName + \".\" + action + \".\" + index + \".\" + front + \".\" + back + \".\");"
+      },
+      {
+        "lineNumber": 306,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 307,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                try {"
+      },
+      {
+        "lineNumber": 308,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    Deck deck \u003d programState.getDeck(deckName);"
+      },
+      {
+        "lineNumber": 309,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    //System.out.println(\"Deck obtained\");"
+      },
+      {
+        "lineNumber": 310,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 311,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    int parsedInteger \u003d Integer.parseInt(index);"
+      },
+      {
+        "lineNumber": 312,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    //System.out.println(parsedInteger);"
+      },
+      {
+        "lineNumber": 313,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 314,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    if (hasFront) {"
+      },
+      {
+        "lineNumber": 315,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                        deck.editFrontCardFromDeck(front, parsedInteger);"
+      },
+      {
+        "lineNumber": 316,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                        //System.out.println(\"Edit front card successsfullly\");"
+      },
+      {
+        "lineNumber": 317,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 318,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 319,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    if (hasBack) {"
+      },
+      {
+        "lineNumber": 320,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                        deck.editBackCardInDeck(back, parsedInteger);"
+      },
+      {
+        "lineNumber": 321,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                        //System.out.println(\"Edit back card successsfullly\");"
+      },
+      {
+        "lineNumber": 322,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 323,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 324,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    System.out.println(\"Edit card successsfullly\");"
+      },
+      {
+        "lineNumber": 325,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                } catch (DeckNotFoundException d) {"
+      },
+      {
+        "lineNumber": 326,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    System.out.println(\"Error: \" + d.getMessage());"
+      },
+      {
+        "lineNumber": 327,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                } catch (NumberFormatException n) {"
+      },
+      {
+        "lineNumber": 328,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    System.out.println(\"Error: \" + n.getMessage());"
+      },
+      {
+        "lineNumber": 329,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                } catch (IndexNotFoundException i) {"
+      },
+      {
+        "lineNumber": 330,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    System.out.println(\"Error: \" + i.getMessage());"
+      },
+      {
+        "lineNumber": 331,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 332,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 333,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 334,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"EDIT_DECK_EDIT_CARD: command execution successful\");"
+      },
+      {
+        "lineNumber": 335,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                return true; // capture is valid, end checking other commands"
+      },
+      {
+        "lineNumber": 336,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            }),"
+      },
+      {
+        "lineNumber": 337,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 338,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    EDIT_DECK_REMOVE_CARD(\"(?i)^(edit)?(\\\\s)+(deck/[\\\\S}]+){1}(\\\\s)+(action/[remove]+){1}((\\\\s)+\""
+      },
+      {
+        "lineNumber": 339,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(index/[\\\\d]+){1}(\\\\s)*){1}((\\\\s)+(front/[\\\\S\\\\s]+){1}(\\\\s)*)?((\\\\s)*\""
+      },
+      {
+        "lineNumber": 340,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            + \"(back/[\\\\S\\\\s]+))?(\\\\s)*\", ("
+      },
+      {
+        "lineNumber": 341,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 342,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                //System.out.println(\"Current command is EDIT, removing deck\");"
+      },
+      {
+        "lineNumber": 343,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"Current command is EDIT_DECK_REMOVE_CARD, removing deck\");"
+      },
+      {
+        "lineNumber": 344,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 345,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                //System.out.println(commandInput);"
+      },
+      {
+        "lineNumber": 346,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 347,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String userFields \u003d commandInput.replaceFirst(\"edit(\\\\s)+deck/\", \"\");"
+      },
+      {
+        "lineNumber": 348,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String[] splitUserFields \u003d userFields.split(\" action/\");"
+      },
+      {
+        "lineNumber": 349,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 350,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String deckName \u003d splitUserFields[0].trim();"
+      },
+      {
+        "lineNumber": 351,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 352,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                splitUserFields \u003d splitUserFields[1].split(\" index/\");"
+      },
+      {
+        "lineNumber": 353,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String action \u003d splitUserFields[0].trim();"
+      },
+      {
+        "lineNumber": 354,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 355,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                String index \u003d splitUserFields[1].trim();"
+      },
+      {
+        "lineNumber": 356,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 357,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                //System.out.println(deckName + \".\" + action + \".\" + index + \".\");"
+      },
+      {
+        "lineNumber": 358,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"EDIT_DECK_REMOVE_CARD: command parsing successful\");"
+      },
+      {
+        "lineNumber": 359,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                try {"
+      },
+      {
+        "lineNumber": 360,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    Deck deck \u003d programState.getDeck(deckName);"
+      },
+      {
+        "lineNumber": 361,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    int parsedInteger \u003d Integer.parseInt(index);"
+      },
+      {
+        "lineNumber": 362,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    deck.removeCardFromDeck(parsedInteger);"
+      },
+      {
+        "lineNumber": 363,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 364,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                } catch (DeckNotFoundException d) {"
+      },
+      {
+        "lineNumber": 365,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    LogsCenter.getLogger(Responses.class).info(\"EDIT_DECK_REMOVE_CARD: Deck not found \" + deckName);"
+      },
+      {
+        "lineNumber": 366,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    System.out.println(\"In edit command, not deck found - \" + deckName);"
+      },
+      {
+        "lineNumber": 367,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 368,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                } catch (NumberFormatException | IndexNotFoundException n) {"
+      },
+      {
+        "lineNumber": 369,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    LogsCenter.getLogger(Responses.class).info(\"EDIT_DECK_REMOVE_CARD: Invalid index provided\" + index);"
+      },
+      {
+        "lineNumber": 370,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                    System.out.println(n.getMessage());"
+      },
+      {
+        "lineNumber": 371,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 372,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 373,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                LogsCenter.getLogger(Responses.class).info(\"EDIT_DECK_REMOVE_CARD: command execution successful\");"
+      },
+      {
+        "lineNumber": 374,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                return true; // capture is valid, end checking other commands"
+      },
+      {
+        "lineNumber": 375,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            }),"
+      },
+      {
+        "lineNumber": 376,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 377,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    UNKNOWN(\".*\", (commandInput, programState) -\u003e {"
+      },
+      {
+        "lineNumber": 378,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        System.out.println(\"Sorry, I don\u0027t know what is this command.\");"
+      },
+      {
+        "lineNumber": 379,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        //logger.warning(\"Unknown command entered.\");"
+      },
+      {
+        "lineNumber": 380,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 381,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        // violates some rules, but workaround to prevent illegal forward reference"
+      },
+      {
+        "lineNumber": 382,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        LogsCenter.getLogger(Responses.class).warning(\"Unknown command entered.\");"
+      },
+      {
+        "lineNumber": 383,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 384,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 385,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 386,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 387,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    private static Logger logger;"
+      },
+      {
+        "lineNumber": 388,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    private String regex;"
+      },
+      {
+        "lineNumber": 389,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    private ResponseFunc func;"
+      },
+      {
+        "lineNumber": 390,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 391,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    Responses(String r, ResponseFunc f) {"
+      },
+      {
+        "lineNumber": 392,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "        this.regex \u003d r;"
+      },
+      {
+        "lineNumber": 393,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "        this.func \u003d f;"
+      },
+      {
+        "lineNumber": 394,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 395,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 396,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 397,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "     * Given a string and program state, if string matches regex this enum will call its response"
+      },
+      {
+        "lineNumber": 398,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "     * function."
+      },
+      {
+        "lineNumber": 399,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 400,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "     * @param i input string"
+      },
+      {
+        "lineNumber": 401,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "     * @param s state object"
+      },
+      {
+        "lineNumber": 402,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "     * @return boolean if the string has matched"
+      },
+      {
+        "lineNumber": 403,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 404,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    public boolean call(String i, State s) {"
+      },
+      {
+        "lineNumber": 405,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 406,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "            if (i.matches(regex)) {"
+      },
+      {
+        "lineNumber": 407,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "                return func.funcCall(i, s);"
+      },
+      {
+        "lineNumber": 408,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 409,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        } catch (DeckNotFoundException | DuplicateFoundException d) {"
+      },
+      {
+        "lineNumber": 410,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            System.out.println(d.getMessage());"
+      },
+      {
+        "lineNumber": 411,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 412,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            // gui handle"
+      },
+      {
+        "lineNumber": 413,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 414,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 415,
+        "author": {
+          "gitId": "PhireHandy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 416,
         "author": {
           "gitId": "timothyleong97"
         },
@@ -26054,74 +27272,9 @@
     ],
     "authorContributionMap": {
       "AHaliq": 61,
-      "PhireHandy": 94,
+      "PhireHandy": 84,
       "timothyleong97": 3,
-      "huiminlim": 77
-    }
-  },
-  {
-    "path": "src/main/java/dream/fcard/logic/respond/commands/Command.java",
-    "fileType": "functional",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": "package dream.fcard.logic.respond.commands;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": " * Represents a command with hidden internal logic and the ability to be executed."
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": "public abstract class Command {"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "timothyleong97": 8
+      "huiminlim": 268
     }
   },
   {
@@ -26147,28 +27300,28 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "/**"
+        "content": "import dream.fcard.logic.respond.ResponseFunc;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": " * Represents a command that creates a new deck or card (?)."
+        "content": "import dream.fcard.logic.respond.exception.DuplicateFoundException;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": " */"
+        "content": "import dream.fcard.model.State;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "public class CreateCommand extends Command {"
+        "content": "import dream.fcard.model.exceptions.DeckNotFoundException;"
       },
       {
         "lineNumber": 7,
@@ -26182,28 +27335,28 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "/**"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Performs execution of create command."
+        "content": " * Represents a command that creates a new deck or card (?)."
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": " */"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public void execute() {"
+        "content": "public class CreateCommand implements ResponseFunc {"
       },
       {
         "lineNumber": 12,
@@ -26217,17 +27370,38 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "}"
+        "content": "    public boolean funcCall(String i, State s) throws DeckNotFoundException, DuplicateFoundException {"
       },
       {
         "lineNumber": 15,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 18,
         "author": {
           "gitId": "huiminlim"
         },
@@ -26235,7 +27409,7 @@
       }
     ],
     "authorContributionMap": {
-      "huiminlim": 15
+      "huiminlim": 18
     }
   },
   {
@@ -28903,7 +30077,7 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        cards.remove(indexProvided);"
+        "content": "        cards.remove(indexProvided - 1);"
       },
       {
         "lineNumber": 137,
@@ -29022,7 +30196,7 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        FlashCard cardToChange \u003d cards.get(indexProvided);"
+        "content": "        FlashCard cardToChange \u003d cards.get(indexProvided - 1);"
       },
       {
         "lineNumber": 154,
@@ -29148,7 +30322,7 @@
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        FlashCard cardToChange \u003d cards.get(indexProvided);"
+        "content": "        FlashCard cardToChange \u003d cards.get(indexProvided - 1);"
       },
       {
         "lineNumber": 172,
@@ -29955,649 +31129,908 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "    private ArrayList\u003cDeck\u003e decks;"
+        "content": "    private StateEnum currentState;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": ""
+        "content": "    private ArrayList\u003cDeck\u003e decks;"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Constructor to create a State object with no Deck objects."
+        "content": "    /**"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "     * Constructor to create a State object with no Deck objects."
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "    public State() {"
+        "content": "     */"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "        decks \u003d new ArrayList\u003c\u003e();"
+        "content": "    public State() {"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "        currentState \u003d StateEnum.DEFAULT;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": ""
+        "content": "        decks \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "     * Constructor to create a State object with existing Deck objects."
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param initialDecks ArrayList of Deck objects to include in State object."
+        "content": "     * Constructor to create a State object with existing Deck objects."
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "    public State(ArrayList\u003cDeck\u003e initialDecks) {"
+        "content": "     * @param initialDecks ArrayList of Deck objects to include in State object."
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "        decks \u003d initialDecks;"
+        "content": "     */"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    }"
+        "content": "    public State(ArrayList\u003cDeck\u003e initialDecks) {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        currentState \u003d StateEnum.DEFAULT;"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "    /**"
+        "content": "        decks \u003d initialDecks;"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "     * Adds new empty Deck object to decks list."
+        "content": "    }"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public void addDeck(String deckName) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        decks.add(new Deck(deckName));"
+        "content": "     * Adds new empty Deck object to decks list."
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "    public void addDeck(String deckName) {"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "        decks.add(new Deck(deckName));"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "     * Adds a deck object to decks list."
+        "content": "    }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "     * @param deck Deck object to add into State."
+        "content": "    /**"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "     */"
+        "content": "     * Adds a deck object to decks list."
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "    public void addDeck(Deck deck) {"
+        "content": "     *"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "        decks.add(deck);"
+        "content": "     * @param deck Deck object to add into State."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "AHaliq"
         },
-        "content": ""
+        "content": "    public void addDeck(Deck deck) {"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "    /**"
+        "content": "        decks.add(deck);"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "     * Removes the deck from the list of Deck objects, if there is a Deck object with a matching name."
+        "content": "    }"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "huiminlim"
+          "gitId": "AHaliq"
         },
-        "content": "     * Else, throw exception when no Deck object with matching name is found."
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public void removeDeck(String name) throws DeckNotFoundException {"
+        "content": "     * Removes the deck from the list of Deck objects, if there is a Deck object with a matching name."
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        int deckIndex \u003d getDeckIndex(name);"
+        "content": "     * Else, throw exception when no Deck object with matching name is found."
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        if (deckIndex \u003d\u003d -1) {"
+        "content": "     */"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new DeckNotFoundException(\"Deck not found - \" + name);"
+        "content": "    public void removeDeck(String name) throws DeckNotFoundException {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "        int deckIndex \u003d getDeckIndex(name);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        decks.remove(deckIndex);"
+        "content": "        if (deckIndex \u003d\u003d -1) {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "            throw new DeckNotFoundException(\"Deck not found - \" + name);"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "        decks.remove(deckIndex);"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Returns the Deck object that matches in name, if a Deck with matching name exists."
+        "content": "    }"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Else, throw exception when no Deck with matching name is found."
+        "content": ""
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @param name String of name of Deck object looking for."
+        "content": "     * Returns the Deck object that matches in name, if a Deck with matching name exists."
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @return Deck object with name."
+        "content": "     * Else, throw exception when no Deck with matching name is found."
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * @throws DeckNotFoundException Throw exception when no matching Deck with name specified."
+        "content": "     *"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     */"
+        "content": "     * @param name String of name of Deck object looking for."
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    public Deck getDeck(String name) throws DeckNotFoundException {"
+        "content": "     * @return Deck object with name."
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        int indexOfDeck \u003d getDeckIndex(name);"
+        "content": "     * @throws DeckNotFoundException Throw exception when no matching Deck with name specified."
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        if (indexOfDeck \u003d\u003d -1) {"
+        "content": "     */"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "            throw new DeckNotFoundException(\"Deck not found - \" + name);"
+        "content": "    public Deck getDeck(String name) throws DeckNotFoundException {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        }"
+        "content": "        int indexOfDeck \u003d getDeckIndex(name);"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        return decks.get(indexOfDeck);"
+        "content": "        if (indexOfDeck \u003d\u003d -1) {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    }"
+        "content": "            throw new DeckNotFoundException(\"Deck not found - \" + name);"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "    /**"
+        "content": "        return decks.get(indexOfDeck);"
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "AHaliq"
+          "gitId": "huiminlim"
         },
-        "content": "     * Replace all decks with a new set of decks. Used by `root` command."
+        "content": "    }"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "     * @param newDecks new decks"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "    public void reloadAllDecks(ArrayList\u003cDeck\u003e newDecks) {"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "        decks \u003d newDecks;"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "AHaliq"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "AHaliq"
-        },
         "content": ""
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 77,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 78,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "     * Returns the index of a Deck given the Deck name, if a Deck with matching name exists."
+        "content": "     * @return"
       },
       {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "     * Else, return -1 if no Deck with matching name is found."
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "     * \u003cp\u003e"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "     * Note: this method is only used internally for State processing."
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "     * Should not be confused with user seen indexes, since this is 0-based index."
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "     * @param name String of name of Deck."
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "     * @return Integer value of index of Deck stored in list of Deck objects."
-      },
-      {
-        "lineNumber": 92,
+        "lineNumber": 79,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 80,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "    private int getDeckIndex(String name) {"
+        "content": "    public ArrayList\u003cDeck\u003e getDecks() {"
       },
       {
-        "lineNumber": 94,
+        "lineNumber": 81,
         "author": {
           "gitId": "huiminlim"
         },
-        "content": "        for (int i \u003d 0; i \u003c decks.size(); i++) {"
+        "content": "        return decks;"
       },
       {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            Deck currentDeck \u003d decks.get(i);"
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            boolean isUserInputMatchDeckName \u003d currentDeck.getName().equals(name);"
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            if (isUserInputMatchDeckName) {"
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "                return i;"
-      },
-      {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "huiminlim"
-        },
-        "content": "        return -1;"
-      },
-      {
-        "lineNumber": 103,
+        "lineNumber": 82,
         "author": {
           "gitId": "huiminlim"
         },
         "content": "    }"
       },
       {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "     * Replace all decks with a new set of decks. Used by `root` command."
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "     * @param newDecks new decks"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "    public void reloadAllDecks(ArrayList\u003cDeck\u003e newDecks) {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "        decks \u003d newDecks;"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "AHaliq"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Returns the index of a Deck given the Deck name, if a Deck with matching name exists."
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Else, return -1 if no Deck with matching name is found."
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * \u003cp\u003e"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Note: this method is only used internally for State processing."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * Should not be confused with user seen indexes, since this is 0-based index."
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @param name String of name of Deck."
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @return Integer value of index of Deck stored in list of Deck objects."
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    private int getDeckIndex(String name) {"
+      },
+      {
         "lineNumber": 104,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        for (int i \u003d 0; i \u003c decks.size(); i++) {"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            Deck currentDeck \u003d decks.get(i);"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            boolean isUserInputMatchDeckName \u003d currentDeck.getName().equals(name);"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            if (isUserInputMatchDeckName) {"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                return i;"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return -1;"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @return"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    public StateEnum getCurrentState() {"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return currentState;"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @param deckName"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     * @return"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    public boolean hasDeck(String deckName) {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        for (int i \u003d 0; i \u003c decks.size(); i++) {"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            Deck currentDeck \u003d decks.get((i));"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            String currentDeckName \u003d currentDeck.getName();"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            boolean isMatchName \u003d currentDeckName.equals(deckName);"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            if (isMatchName) {"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "                return true;"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    public void setCurrentState(StateEnum newState) {"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "        currentState \u003d newState;"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 141,
         "author": {
           "gitId": "timothyleong97"
         },
@@ -30607,7 +32040,72 @@
     "authorContributionMap": {
       "AHaliq": 30,
       "timothyleong97": 3,
-      "huiminlim": 71
+      "huiminlim": 108
+    }
+  },
+  {
+    "path": "src/main/java/dream/fcard/model/StateEnum.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "package dream.fcard.model;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": " * Enums describing state of program."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "public enum StateEnum {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "    CREATE_STATE_FRONT, CREATE_STATE_BACK, CREATE_INPUT, DEFAULT"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "huiminlim"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "huiminlim": 8
     }
   },
   {

@@ -2998,9 +2998,9 @@
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "dorcastan"
         },
-        "content": "The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow` and \u0027TabView\u0027 components (not shown in the above figure), inherit from the abstract `UiPart` class."
+        "content": "The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `BookmarkListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow` and \u0027TabView\u0027 components (not shown in the above figure), inherit from the abstract `UiPart` class."
       },
       {
         "lineNumber": 93,
@@ -4181,16 +4181,16 @@
       {
         "lineNumber": 261,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "dorcastan"
         },
-        "content": "If the `currentPointer` is at index `markStateRecords.size() - 1`, pointing to the latest address book state, then there"
+        "content": "If the `currentPointer` is at index `markStateRecords.size() - 1`, pointing to the latest Mark state, then there"
       },
       {
         "lineNumber": 262,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "dorcastan"
         },
-        "content": "are no undone address book states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is"
+        "content": "are no undone Mark states to restore. The `redo` command uses `Model#canRedoMark()` to check if this is"
       },
       {
         "lineNumber": 263,
@@ -5812,9 +5812,9 @@
       {
         "lineNumber": 494,
         "author": {
-          "gitId": "TSAI-HSIAO-HAN"
+          "gitId": "dorcastan"
         },
-        "content": "\u003d\u003d\u003d Reminder Feature"
+        "content": "\u003d\u003d\u003d Reminder feature"
       },
       {
         "lineNumber": 495,
@@ -10173,9 +10173,9 @@
       {
         "lineNumber": 1117,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "\u003d\u003d\u003d Deleting a person"
+        "content": "\u003d\u003d\u003d Deleting a bookmark"
       },
       {
         "lineNumber": 1118,
@@ -10187,9 +10187,9 @@
       {
         "lineNumber": 1119,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": ". Deleting a person while all persons are listed"
+        "content": ". Deleting a bookmark while all bookmarks are listed"
       },
       {
         "lineNumber": 1120,
@@ -10201,9 +10201,9 @@
       {
         "lineNumber": 1121,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+        "content": ".. Prerequisites: List all bookmarks using the `list` command. Multiple bookmarks in the list."
       },
       {
         "lineNumber": 1122,
@@ -10215,9 +10215,9 @@
       {
         "lineNumber": 1123,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+        "content": "   Expected: First bookmark is deleted from the list. Details of the deleted bookmark shown in the status message. Timestamp in the status bar is updated."
       },
       {
         "lineNumber": 1124,
@@ -10229,9 +10229,9 @@
       {
         "lineNumber": 1125,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+        "content": "   Expected: No bookmark is deleted. Error details shown in the status message. Status bar remains the same."
       },
       {
         "lineNumber": 1126,
@@ -10319,12 +10319,12 @@
       }
     ],
     "authorContributionMap": {
-      "dorcastan": 182,
-      "TSAI-HSIAO-HAN": 133,
+      "dorcastan": 191,
+      "TSAI-HSIAO-HAN": 132,
       "openorclose": 136,
-      "Na-Nazhou": 175,
-      "kxyoke": 145,
-      "-": 366
+      "Na-Nazhou": 173,
+      "kxyoke": 144,
+      "-": 361
     }
   },
   {
@@ -11936,2963 +11936,2963 @@
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
-        "content": ".  Refer to \u003c\u003cFeatures\u003e\u003e for details"
+        "content": ".  Refer to \u003c\u003cFeatures\u003e\u003e for details of each command."
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
-        "content": "of each command."
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[[Features]]"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "[[Features]]"
+        "content": "\u003d\u003d Features"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Features"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "This section describes the main features of Mark and how to use them."
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "-"
+          "gitId": "dorcastan"
         },
-        "content": "\u003d\u003d\u003d\u003d"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "*Command Format*"
+        "content": "\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "*Command Format*"
       },
       {
         "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "* Words in `UPPER_CASE` are the parameters to be supplied by the user. +"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 63,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "E.g. In the command format `*add* u/URL`, `URL` is a parameter which can be used as `*add* u/https://luminus.nus.edu.sg`."
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 64,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "* Items in square brackets are optional. +"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 65,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "E.g `u/URL [t/TAG]` can be used as"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 66,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "`u/https://luminus.nus.edu.sg t/NUS` or as `u/https://luminus.nus.edu.sg`."
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 67,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "* Default values for optional items are specified with an `\u003d` symbol. +"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 68,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "E.g. When `u/URL [t/TAG\u003dCS2103T]` is specified in the command format, the default value for the tag is `CS2103T` if not"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 69,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "it is not provided."
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 70,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "* Items with `...`​ after them can be used multiple times, including zero times. +"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 71,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "E.g. `[t/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `t/module`,"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 72,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "`t/module t/read-later` etc."
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 73,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "* Parameters can be in any order. +"
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 74,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "E.g. if the command specifies `u/URL n/NAME`, `n/NAME u/URL` is also acceptable."
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
         "content": "\u003d\u003d\u003d\u003d"
       },
       {
-        "lineNumber": 75,
+        "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "\u003d\u003d\u003d Viewing help: *`help`*"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "Shows the list of commands in the bookmark manager."
+        "content": "\u003d\u003d\u003d Viewing help: *`help`*"
       },
       {
         "lineNumber": 78,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "Shows the list of commands in the bookmark manager."
+      },
+      {
+        "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 79,
+        "lineNumber": 80,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: *`help`*"
       },
       {
-        "lineNumber": 80,
+        "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 81,
+        "lineNumber": 82,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Adding a bookmark: *`add`*"
       },
       {
-        "lineNumber": 82,
+        "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 84,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Adds a bookmark to the bookmark manager."
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 86,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Format: `*add* u/URL n/NAME [r/REMARK] [f/FOLDER] [t/TAG]...​`"
       },
       {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 87,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* A bookmark can have any number of tags (including 0)."
+        "content": "****"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* `FOLDER` must be an existing folder (see \u003c\u003cfolder\u003e\u003e)."
+        "content": "* A bookmark can have any number of tags (including 0)."
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* Use the keyword `this` in place of URL to bookmark the current page,"
+        "content": "* `FOLDER` must be an existing folder (see \u003c\u003cfolder\u003e\u003e)."
       },
       {
         "lineNumber": 91,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "* The keyword `this` can be used in place of a URL to bookmark the current page,"
+      },
+      {
+        "lineNumber": 92,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "e.g. `*add* u/this n/Homepage`"
       },
       {
-        "lineNumber": 92,
+        "lineNumber": 93,
         "author": {
           "gitId": "openorclose"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 97,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*add* u/this n/Homepage` +"
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 98,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Bookmarks the current page and names it `Homepage`. The new bookmark contains"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 99,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "a default remark of \"-\" and is added to the root folder since they are not"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 100,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "specified."
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 101,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "* `*add* u/https://nus-cs2103-ay1920s1.github.io/website/ n/Module Website"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 102,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "f/CS2103T r/Contains textbook \u0026 important deadlines` +"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 103,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "Bookmarks the given website, names it `Module Website`, and adds it to the folder `CS2103T`."
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 104,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "The new bookmark\u0027s remark is \"Contains textbook \u0026 important deadlines\"."
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 105,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*add* u/www.youtube.com/watch?v\u003d9AMcN-wkspU n/IntelliJ Tips and Tricks t/video t/watch-later`"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 106,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Bookmarks the given website, names it `IntelliJ Tips and Tricks`. The new bookmark\u0027s tags include"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 107,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "\"video\" and \"watch-later\"."
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 108,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 108,
+        "lineNumber": 109,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "[[folder]]"
       },
       {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "\u003d\u003d\u003d Adding a new folder *`folder`*"
-      },
-      {
         "lineNumber": 110,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Adding a new folder: *`folder`*"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Creates a new folder for organizing bookmarks into."
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Creates a new folder for organizing bookmarks into."
       },
       {
         "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Format: `*folder* FOLDER_NAME [p/PARENT_FOLDER]`"
       },
       {
-        "lineNumber": 114,
+        "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "****"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* `FOLDER_NAME` must not already exist."
+        "content": "****"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* `PARENT_FOLDER` must be an existing folder."
+        "content": "* `FOLDER_NAME` must not already exist."
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* If `PARENT_FOLDER` is not specified, `FOLDER_NAME` will have no parent and will be placed at the root."
+        "content": "* `PARENT_FOLDER` must be an existing folder."
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "****"
+        "content": "* If `PARENT_FOLDER` is not specified, `FOLDER_NAME` will have no parent and will be placed at the root."
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "****"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 122,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": "Examples:"
+      },
+      {
+        "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 124,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "* `*folder* CS2103 p/NUS` +"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 125,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Creates a new folder named `CS2103` under the parent folder `NUS`."
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "\u003d\u003d\u003d Deleting a folder *`folder delete`*"
-      },
-      {
         "lineNumber": 127,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "dorcastan"
         },
-        "content": "//TODO: What happens to the bookmarks under the folder?"
+        "content": "\u003d\u003d\u003d Deleting a folder: *`folder delete`*"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "Deletes the specified folder and its subfolders."
+        "content": "//TODO: What happens to the bookmarks under the folder?"
       },
       {
         "lineNumber": 129,
+        "author": {
+          "gitId": "Na-Nazhou"
+        },
+        "content": "Deletes the specified folder and its subfolders."
+      },
+      {
+        "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 131,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Format: `*folder delete* FOLDER_NAME`"
       },
       {
-        "lineNumber": 131,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 132,
         "author": {
-          "gitId": "-"
+          "gitId": "openorclose"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* `FOLDER_NAME` must be an existing folder."
+        "content": "****"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* If `FOLDER_NAME` contains other folders, those folders will be deleted as well."
+        "content": "* `FOLDER_NAME` must be an existing folder."
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "****"
+        "content": "* If `FOLDER_NAME` contains other folders, those folders will be deleted as well."
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "****"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 139,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "* `*folder delete* CS2103` +"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 141,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Deletes the folder named `CS2103` and all of its subfolders."
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 142,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 143,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Listing all bookmarks: *`list`*"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 145,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Shows a list of all bookmarks in the bookmark manager."
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 147,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*list*`"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 149,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Editing a bookmark: *`edit`*"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 151,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Edits an existing bookmark in the bookmark manager."
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 153,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Format: `*edit* INDEX [u/URL] [n/NAME] [r/REMARK] [f/FOLDER] [t/TAG]...`"
       },
       {
-        "lineNumber": 153,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 154,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* Edits the bookmark at the specified `INDEX`. The index refers to the index"
+        "content": "****"
       },
       {
         "lineNumber": 156,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "* The bookmark at the specified `INDEX` will be edited. The index refers to the index"
+      },
+      {
+        "lineNumber": 157,
         "author": {
           "gitId": "openorclose"
         },
         "content": "number shown in the displayed bookmark list. The index must be a"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 158,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "positive integer `1`, `2`, `3`, …​"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
         "content": "* At least one of the optional fields must be provided."
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
         "content": "* Existing values will be updated to the input values."
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 161,
         "author": {
           "gitId": "openorclose"
         },
         "content": "* When editing tags, the existing tags of the bookmark will be removed i.e"
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 162,
         "author": {
           "gitId": "openorclose"
         },
         "content": "adding of tags is not cumulative."
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 163,
         "author": {
           "gitId": "openorclose"
         },
         "content": "* You can remove all the bookmark’s tags by typing `t/` without specifying"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 164,
         "author": {
           "gitId": "openorclose"
         },
         "content": "any tags after it."
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 165,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
         "content": "****"
       },
       {
-        "lineNumber": 165,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 166,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 167,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
+        },
+        "content": "Examples:"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 169,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*edit* 1 n/CS2103T Website f/AY1920-S1` +"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 170,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Edits the name and folder of the 1st bookmark to be CS2103T Website and AY1920-S1 respectively."
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 171,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 172,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*edit* 2 t/` +"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 173,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Clears all existing tags from the 2nd bookmark."
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 174,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 175,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "[[locating-bookmarks]]"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 176,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Locating bookmarks by name, URL, or tag: *`find`*"
       },
       {
-        "lineNumber": 176,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 177,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
-        "content": "Finds bookmarks that contain any of the given keywords in their name or"
+        "content": ""
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "URL, or that are tagged with the given tag(s)."
+        "content": "Finds bookmarks that contain any of the given keywords in their name or"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "URL, or that are tagged with the given tag(s)."
       },
       {
         "lineNumber": 180,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 181,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*find* [KEYWORD]... [t/TAG]...`"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 182,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 182,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "****"
-      },
-      {
         "lineNumber": 183,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
-        "content": "* At least one keyword or tag must be provided."
+        "content": "****"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* Keyword search is case insensitive. e.g video will match Video."
+        "content": "* At least one keyword or tag must be provided."
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* The order of the keywords does not matter. e.g. `Website Video` will match `Video Website`."
+        "content": "* Keyword search is case insensitive. e.g video will match Video."
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* Keywords are only searched in the URL and name."
+        "content": "* The order of the keywords does not matter. e.g. `Website Video` will match `Video Website`."
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* Words will be partially matched e.g. `Video` will match `Videos`."
+        "content": "* Keywords are only searched in the URL and name."
       },
       {
         "lineNumber": 188,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": "* Words will be partially matched e.g. `Video` will match `Videos`."
+      },
+      {
+        "lineNumber": 189,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* Bookmarks matching at least one search criterion will be returned (i.e. OR search)."
       },
       {
-        "lineNumber": 189,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "****"
-      },
-      {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "****"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 194,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*find* Website Video t/Fun will` +"
       },
       {
-        "lineNumber": 194,
+        "lineNumber": 195,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Returns CS2103T Website, Video Streaming, and all bookmarks tagged with Fun."
       },
       {
-        "lineNumber": 195,
+        "lineNumber": 196,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 196,
+        "lineNumber": 197,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*find* Luminus` +"
       },
       {
-        "lineNumber": 197,
+        "lineNumber": 198,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Returns luminus website and GER1000 LumiNUS"
       },
       {
-        "lineNumber": 198,
+        "lineNumber": 199,
         "author": {
-          "gitId": "-"
+          "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 199,
+        "lineNumber": 200,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*find* CS2103T CS2101 CS2105` +"
       },
       {
-        "lineNumber": 200,
+        "lineNumber": 201,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Returns any bookmark with CS2103T, CS2101, or CS2105 in its name or in its url"
       },
       {
-        "lineNumber": 201,
+        "lineNumber": 202,
         "author": {
-          "gitId": "-"
+          "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 202,
+        "lineNumber": 203,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*find* GitHub t/CS2103T` +"
       },
       {
-        "lineNumber": 203,
+        "lineNumber": 204,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Returns any bookmark with the tag CS2103T or that contains github in either name or URL."
       },
       {
-        "lineNumber": 204,
+        "lineNumber": 205,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 205,
+        "lineNumber": 206,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Deleting a bookmark: *`delete`*"
       },
       {
-        "lineNumber": 206,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 207,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
-        "content": "Deletes the specified bookmark from the bookmark manager."
+        "content": ""
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Deletes the specified bookmark from the bookmark manager."
       },
       {
         "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 210,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*delete* INDEX`"
       },
       {
-        "lineNumber": 210,
+        "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 211,
+        "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 212,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "* Deletes the bookmark at the specified INDEX."
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* The index refers to the index number shown in the displayed bookmark list."
+        "content": "* Deletes the bookmark at the specified INDEX."
       },
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* The index must be a positive integer `1`, `2`, `3`, …​"
+        "content": "* The index refers to the index number shown in the displayed bookmark list."
       },
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "-"
+          "gitId": "kxyoke"
         },
-        "content": "****"
+        "content": "* The index must be a positive integer `1`, `2`, `3`, …​"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "****"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 219,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "-"
         },
-        "content": "* `*list*` +"
+        "content": ""
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "`*delete* 2` +"
+        "content": "* `*list*` +"
       },
       {
         "lineNumber": 221,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": "Deletes the 2nd bookmark in the bookmark manager."
+        "content": "`*delete* 2` +"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Deletes the 2nd bookmark in the bookmark manager."
       },
       {
         "lineNumber": 223,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*find* luminus` +"
+        "content": ""
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "`*delete* 1` +"
+        "content": "* `*find* luminus` +"
       },
       {
         "lineNumber": 225,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "`*delete* 1` +"
+      },
+      {
+        "lineNumber": 226,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Deletes the 1st bookmark in the results of the find command."
       },
       {
-        "lineNumber": 226,
+        "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 227,
+        "lineNumber": 228,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Opening a bookmark: *`goto`*"
       },
       {
-        "lineNumber": 228,
+        "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 229,
+        "lineNumber": 230,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Opens the specified version of the bookmark from the bookmark manager."
       },
       {
-        "lineNumber": 230,
+        "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 231,
+        "lineNumber": 232,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*goto* INDEX [v/VERSION]`"
       },
       {
-        "lineNumber": 232,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 233,
         "author": {
-          "gitId": "-"
+          "gitId": "openorclose"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "* If the flag `v/` is not present, go to the online version."
+        "content": "****"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "* If `v/` is present but `VERSION`  is not specified:"
+        "content": "* If the flag `v/` is not present, go to the online version."
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "the most current version of the bookmark will be opened."
+        "content": "* If `v/` is present but `VERSION`  is not specified:"
       },
       {
         "lineNumber": 237,
         "author": {
-          "gitId": "-"
+          "gitId": "Na-Nazhou"
         },
-        "content": "****"
+        "content": "the most current version of the bookmark will be opened."
       },
       {
         "lineNumber": 238,
         "author": {
-          "gitId": "-"
+          "gitId": "Na-Nazhou"
         },
-        "content": ""
+        "content": "****"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 241,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "-"
         },
-        "content": "* `*list*` +"
+        "content": ""
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "`*goto* 1` +"
+        "content": "* `*list*` +"
       },
       {
         "lineNumber": 243,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "kxyoke"
         },
-        "content": "Opens the first bookmark in the bookmark manager."
+        "content": "`*goto* 1` +"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": ""
+        "content": "Opens the first bookmark in the bookmark manager."
       },
       {
         "lineNumber": 245,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "Na-Nazhou"
         },
-        "content": "* `*list*` +"
+        "content": ""
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "`*goto* 1 v/1` +"
+        "content": "* `*list*` +"
       },
       {
         "lineNumber": 247,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "`*goto* 1 v/1` +"
+      },
+      {
+        "lineNumber": 248,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Opens the first version of the first bookmark in the bookmark manager."
       },
       {
-        "lineNumber": 248,
+        "lineNumber": 249,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 249,
+        "lineNumber": 250,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Opening a bookmark from a reminder: *`goto reminder`*"
       },
       {
-        "lineNumber": 250,
+        "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 251,
+        "lineNumber": 252,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Opens the related bookmark of the specified reminder from the bookmark manager."
       },
       {
-        "lineNumber": 252,
+        "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 253,
+        "lineNumber": 254,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*goto reminder* INDEX`"
       },
       {
-        "lineNumber": 254,
+        "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 255,
-        "author": {
-          "gitId": "Na-Nazhou"
-        },
-        "content": "****"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "* INDEX is the index of the reminder as viewed on the dashboard."
+        "content": "****"
       },
       {
         "lineNumber": 257,
+        "author": {
+          "gitId": "Na-Nazhou"
+        },
+        "content": "* INDEX is the index of the reminder as viewed on the dashboard."
+      },
+      {
+        "lineNumber": 258,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* The index must be a positive integer `1`, `2`, `3`, …​"
       },
       {
-        "lineNumber": 258,
+        "lineNumber": 259,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 259,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 262,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 263,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*goto reminder* 1` +"
       },
       {
-        "lineNumber": 263,
+        "lineNumber": 264,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "If reminder 1 points to bookmark 5, this command is equivalent to"
       },
       {
-        "lineNumber": 264,
+        "lineNumber": 265,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "`*goto* 5`. (i.e. opens the 5th bookmark in the bookmark manager.)"
       },
       {
-        "lineNumber": 265,
+        "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 266,
+        "lineNumber": 267,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Clearing all entries: *`clear`*"
       },
       {
-        "lineNumber": 267,
+        "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 268,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "Clears all entries from the bookmark manager."
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Clears all entries from the bookmark manager."
       },
       {
         "lineNumber": 270,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 271,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*clear*`"
       },
       {
-        "lineNumber": 271,
+        "lineNumber": 272,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 272,
+        "lineNumber": 273,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Undoing previous command: *`undo`*"
       },
       {
-        "lineNumber": 273,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 274,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Restores the list to the state before the previous undoable command was"
+        "content": ""
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "executed."
+        "content": "Restores the list to the state before the previous undoable command was"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "executed."
       },
       {
         "lineNumber": 277,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 278,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*undo*`"
       },
       {
-        "lineNumber": 278,
+        "lineNumber": 279,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 279,
-        "author": {
-          "gitId": "Na-Nazhou"
-        },
-        "content": "****"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "* Undoable commands include commands that modify the bookmark list or"
+        "content": "****"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "reminders, which includes `add`, `edit`, `delete`, `clear`, `reminder`,"
+        "content": "* Undoable commands include commands that modify the bookmark list or"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "`reminder edit`, `reminder delete`, etc)."
+        "content": "reminders, which includes `add`, `edit`, `delete`, `clear`, `reminder`,"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "****"
+        "content": "`reminder edit`, `reminder delete`, etc)."
       },
       {
         "lineNumber": 284,
+        "author": {
+          "gitId": "Na-Nazhou"
+        },
+        "content": "****"
+      },
+      {
+        "lineNumber": 285,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 285,
+        "lineNumber": 286,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Redoing the previously undone command: *`redo`*"
       },
       {
-        "lineNumber": 286,
+        "lineNumber": 287,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 287,
+        "lineNumber": 288,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Reverses the most recent `*undo*` command."
       },
       {
-        "lineNumber": 288,
+        "lineNumber": 289,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 289,
+        "lineNumber": 290,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*redo*`"
       },
       {
-        "lineNumber": 290,
+        "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 291,
+        "lineNumber": 292,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Exiting the program: *`exit`*"
       },
       {
-        "lineNumber": 292,
+        "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 293,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "Exits the program."
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Exits the program."
       },
       {
         "lineNumber": 295,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 296,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*exit*`"
       },
       {
-        "lineNumber": 296,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Saving the data"
+        "content": ""
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Saving the data"
       },
       {
         "lineNumber": 299,
         "author": {
-          "gitId": "dorcastan"
+          "gitId": "-"
         },
-        "content": "Mark data are saved in the hard disk automatically after any command"
+        "content": ""
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "that changes the data."
+        "content": "Mark data are saved in the hard disk automatically after any command"
       },
       {
         "lineNumber": 301,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "that changes the data."
+      },
+      {
+        "lineNumber": 302,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 302,
+        "lineNumber": 303,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "There is no need to save data manually. It is also possible to save"
       },
       {
-        "lineNumber": 303,
+        "lineNumber": 304,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "specific bookmarks with a different file name using the command `*export*`"
       },
       {
-        "lineNumber": 304,
+        "lineNumber": 305,
         "author": {
           "gitId": "openorclose"
         },
         "content": "(see \u003c\u003cexporting-bookmarks\u003e\u003e)."
       },
       {
-        "lineNumber": 305,
+        "lineNumber": 306,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 306,
+        "lineNumber": 307,
         "author": {
           "gitId": "openorclose"
         },
         "content": "[[exporting-bookmarks]]"
       },
       {
-        "lineNumber": 307,
+        "lineNumber": 308,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Exporting bookmarks: *`export`*"
       },
       {
-        "lineNumber": 308,
+        "lineNumber": 309,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 309,
+        "lineNumber": 310,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "Exports the currently displayed list of bookmarks to the hard disk."
       },
       {
-        "lineNumber": 310,
+        "lineNumber": 311,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 311,
+        "lineNumber": 312,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*export* [FILENAME]`"
       },
       {
-        "lineNumber": 312,
+        "lineNumber": 313,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 313,
+        "lineNumber": 314,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 314,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "* {blank}"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "+"
+        "content": "* {blank}"
       },
       {
         "lineNumber": 316,
         "author": {
-          "gitId": "dorcastan"
+          "gitId": "openorclose"
         },
-        "content": "`FILENAME` should not include the file extension. E.g. `myBookmarks` and not"
+        "content": "+"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "`myBookmarks.json`"
+        "content": "`FILENAME` should not include the file extension. E.g. `myBookmarks` and not"
       },
       {
         "lineNumber": 318,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "`myBookmarks.json`"
+      },
+      {
+        "lineNumber": 319,
         "author": {
           "gitId": "openorclose"
         },
         "content": "* If no file name is specified, the default file name is the name of the"
       },
       {
-        "lineNumber": 319,
+        "lineNumber": 320,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "first bookmark followed by “AndOtherBookmarks”. E.g."
       },
       {
-        "lineNumber": 320,
+        "lineNumber": 321,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "`CS2103TWebsiteAndOtherBookmarks.json`"
       },
       {
-        "lineNumber": 321,
+        "lineNumber": 322,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "* The file `FILENAME` is overwritten if it already exists."
       },
       {
-        "lineNumber": 322,
+        "lineNumber": 323,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "* Bookmarks are exported to the folder `[applicationHome]/data/bookmarks/`."
       },
       {
-        "lineNumber": 323,
+        "lineNumber": 324,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 324,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 327,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*list*` +"
+        "content": ""
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "`*export* myBookmarks` +"
+        "content": "* `*list*` +"
       },
       {
         "lineNumber": 329,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "`*export* myBookmarks` +"
+      },
+      {
+        "lineNumber": 330,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Exports all bookmarks in the bookmark manager to a file named"
       },
       {
-        "lineNumber": 330,
+        "lineNumber": 331,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "`myBookmarks.json`."
       },
       {
-        "lineNumber": 331,
+        "lineNumber": 332,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 332,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "* `*find* luminus` +"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "`*export*` +"
+        "content": "* `*find* luminus` +"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "Exports all bookmarks found using `*find*` (e.g. `cs2101Luminus`,"
+        "content": "`*export*` +"
       },
       {
         "lineNumber": 335,
         "author": {
-          "gitId": "dorcastan"
+          "gitId": "kxyoke"
         },
-        "content": "`cs2103TLuminus`, `cs2105Luminus`) to a file named"
+        "content": "Exports all bookmarks found using `*find*` (e.g. `cs2101Luminus`,"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "`cs2101LuminusAndOtherBookmarks.json`."
+        "content": "`cs2103TLuminus`, `cs2105Luminus`) to a file named"
       },
       {
         "lineNumber": 337,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "`cs2101LuminusAndOtherBookmarks.json`."
       },
       {
         "lineNumber": 338,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*find* t/favorite` +"
+        "content": ""
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " `*export* favorites` +"
+        "content": "* `*find* t/favorite` +"
       },
       {
         "lineNumber": 340,
         "author": {
-          "gitId": "dorcastan"
+          "gitId": "kxyoke"
         },
-        "content": "Exports all bookmarks tagged with `favorite` to a file named"
+        "content": " `*export* favorites` +"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "`favorites.json`."
+        "content": "Exports all bookmarks tagged with `favorite` to a file named"
       },
       {
         "lineNumber": 342,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "`favorites.json`."
+      },
+      {
+        "lineNumber": 343,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 343,
+        "lineNumber": 344,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Importing bookmarks: *`import`*"
       },
       {
-        "lineNumber": 344,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 345,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Imports bookmarks from files on the hard disk."
+        "content": ""
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Imports bookmarks from files on the hard disk."
       },
       {
         "lineNumber": 347,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 348,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*import* FILENAME [MORE_FILENAMES]...`"
       },
       {
-        "lineNumber": 348,
+        "lineNumber": 349,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 349,
-        "author": {
-          "gitId": "dorcastan"
-        },
-        "content": "****"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* `FILENAME` should not include the file extension. E.g. `myBookmarks` and not"
+        "content": "****"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "`myBookmarks.json`"
+        "content": "* `FILENAME` should not include the file extension. E.g. `myBookmarks` and not"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* `FILENAME` is case sensitive."
+        "content": "`myBookmarks.json`"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* `FILENAME` should be a file stored in the folder"
+        "content": "* `FILENAME` is case sensitive."
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "`[applicationHome]/data/bookmarks/`."
+        "content": "* `FILENAME` should be a file stored in the folder"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* The file corresponding to `FILENAME` should have a valid format, identical"
+        "content": "`[applicationHome]/data/bookmarks/`."
       },
       {
         "lineNumber": 356,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "* The file corresponding to `FILENAME` should have a valid format, identical"
+      },
+      {
+        "lineNumber": 357,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "to the JSON files produced by `*export*`."
       },
       {
-        "lineNumber": 357,
+        "lineNumber": 358,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 358,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 361,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 362,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*import* myBookmarks` +"
       },
       {
-        "lineNumber": 362,
+        "lineNumber": 363,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "Assuming `mark.jar` is stored in the folder `mark`, imports bookmarks from the"
       },
       {
-        "lineNumber": 363,
+        "lineNumber": 364,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "file `mark/data/bookmarks/myBookmarks.json`"
       },
       {
-        "lineNumber": 364,
+        "lineNumber": 365,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 365,
+        "lineNumber": 366,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*import* myBookmarks nusBookmarks youtubeBookmarks` +"
       },
       {
-        "lineNumber": 366,
+        "lineNumber": 367,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "Imports bookmarks from the files `myBookmarks.json`, `nusBookmarks.json`,"
       },
       {
-        "lineNumber": 367,
+        "lineNumber": 368,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "and `youtubeBookmarks.json`."
       },
       {
-        "lineNumber": 368,
+        "lineNumber": 369,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 369,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "\u003d\u003d\u003d Creating automatic tags: *`autotag`*"
       },
       {
         "lineNumber": 370,
         "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "\u003d\u003d\u003d Creating an automatic tag: *`autotag`*"
+      },
+      {
+        "lineNumber": 371,
+        "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 371,
+        "lineNumber": 372,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "Creates a tag that will be automatically applied to bookmarks which match"
       },
       {
-        "lineNumber": 372,
+        "lineNumber": 373,
         "author": {
           "gitId": "openorclose"
         },
         "content": "the given conditions."
       },
       {
-        "lineNumber": 373,
+        "lineNumber": 374,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 374,
-        "author": {
-          "gitId": "dorcastan"
-        },
-        "content": "Format: `*autotag* TAG_NAME [n/NAME_KEYWORD]... [nn/NOT_NAME_KEYWORD]..."
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "[u/URL_KEYWORD]... [nu/NOT_URL_KEYWORD]... [f/FOLDER] [nf/NOT_FOLDER]..."
+        "content": "Format: `*autotag* TAG_NAME [n/NAME_KEYWORD]... [nn/NOT_NAME_KEYWORD]..."
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "[t/TAG]... [nt/NOT_TAG]...`"
+        "content": "[u/URL_KEYWORD]... [nu/NOT_URL_KEYWORD]... [f/FOLDER]... [nf/NOT_FOLDER]..."
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "[t/TAG]... [nt/NOT_TAG]...`"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* At least one condition (`n/`, `nn/`, `u/`,"
+        "content": "****"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "`nu/`, `f/`, `nf/`, `t/`, or `nt/`) must be specified."
+        "content": "* At least one condition (`n/`, `nn/`, `u/`,"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* If an autotag with name `TAG_NAME` already exists, the user is asked"
+        "content": "`nu/`, `f/`, `nf/`, `t/`, or `nt/`) must be specified."
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "whether conditions for `TAG_NAME` should be overwritten."
+        "content": "* If an autotag with name `TAG_NAME` already exists, the user is asked"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* An autotag is applied when a bookmark matches all of its conditions."
+        "content": "whether conditions for `TAG_NAME` should be overwritten."
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "Hence, if conditions are contradictory, no bookmarks will be tagged by"
+        "content": "* An autotag is applied when a bookmark matches all of its conditions."
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "this autotag. E.g. no bookmarks will match the conditions `u/github.com/mark"
+        "content": "Hence, if conditions are contradictory, no bookmarks will be tagged by"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "nu/github.com/mark`"
+        "content": "this autotag. E.g. no bookmarks will match the conditions `u/github.com/mark"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* `NAME_KEYWORD` and `URL_KEYWORD` are used to match bookmarks in the same way"
+        "content": "nu/github.com/mark`"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "as the keywords in `*find*` (see \u003c\u003clocating-bookmarks\u003e\u003e). E.g. `.nus.edu.sg`."
+        "content": "* `NAME_KEYWORD` and `URL_KEYWORD` are used to match bookmarks in the same way"
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* `NOT_NAME_KEYWORD`, `NOT_URL_KEYWORD`, `NOT_FOLDER`, and `NOT_TAG` are name keywords,"
+        "content": "as the keywords in `*find*` (see \u003c\u003clocating-bookmarks\u003e\u003e). E.g. `.nus.edu.sg`."
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "URL keywords, folders, or tags that bookmarks to be tagged should *not* match."
+        "content": "* `NOT_NAME_KEYWORD`, `NOT_URL_KEYWORD`, `NOT_FOLDER`, and `NOT_TAG` are name keywords,"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "* The tag `TAG_NAME` is still a normal tag. E.g. if an autotag `YouTube` matches"
+        "content": "URL keywords, folders, or tags that bookmarks to be tagged should *not* match."
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "bookmarks with URLs containing `youtube.com`, other bookmarks can still be"
+        "content": "* The tag `TAG_NAME` is still a normal tag. E.g. if an autotag `YouTube` matches"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "tagged with the tag `YouTube`."
+        "content": "bookmarks with URLs containing `youtube.com`, other bookmarks can still be"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "dorcastan"
         },
-        "content": "****"
+        "content": "tagged with the tag `YouTube`."
       },
       {
         "lineNumber": 395,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "****"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 398,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 399,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*autotag* Miscellaneous f/NUS nt/academic nt/admin` +"
       },
       {
-        "lineNumber": 399,
+        "lineNumber": 400,
         "author": {
           "gitId": "dorcastan"
         },
         "content": " Creates an autotag that adds the tag `Miscellaneous` to all bookmarks that are"
       },
       {
-        "lineNumber": 400,
+        "lineNumber": 401,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "in the folder `NUS` but are not tagged with `academic` or `admin`."
       },
       {
-        "lineNumber": 401,
+        "lineNumber": 402,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 402,
+        "lineNumber": 403,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*autotag* Luminus u/luminus` +"
       },
       {
-        "lineNumber": 403,
+        "lineNumber": 404,
         "author": {
           "gitId": "dorcastan"
         },
         "content": " Creates an autotag that adds the tag `Luminus` to all bookmarks with URLs"
       },
       {
-        "lineNumber": 404,
+        "lineNumber": 405,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "containing `luminus`."
       },
       {
-        "lineNumber": 405,
+        "lineNumber": 406,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 406,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "\u003d\u003d\u003d Saving offline Readable copies of bookmarked website: *`cache`*"
       },
       {
         "lineNumber": 407,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Saving an offline copy: *`cache`*"
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Saves the bookmarked website locally for offline viewing."
+        "content": ""
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Saves the bookmarked website locally for offline viewing."
       },
       {
         "lineNumber": 410,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 411,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*cache* INDEX [s/SAVE_NOW] [u/AUTO_UPDATE] [d/VERSION]`"
       },
       {
-        "lineNumber": 411,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 412,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* `INDEX` is the bookmark that you want to save a local copy of"
+        "content": "****"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* `SHOULD_AUTOUPDATE` (default false) if true, it will check daily for any"
+        "content": "* `INDEX` is the bookmark that you want to save a local copy of"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "updates. Any old versions will be archived and users will be able to see"
+        "content": "* `SHOULD_AUTOUPDATE` (default false) if true, it will check daily for any"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "the different versions and delete them / name them"
+        "content": "updates. Any old versions will be archived and users will be able to see"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* If `AUTO_UPDATE` is missing, will not auto update."
+        "content": "the different versions and delete them / name them"
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "* `VERSION` is the version number to be deleted."
+        "content": "* If `AUTO_UPDATE` is missing, will not auto update."
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "****"
+        "content": "* `VERSION` is the version number to be deleted."
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "****"
       },
       {
         "lineNumber": 421,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 423,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 424,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*cache* 1 s/true u/true` +"
       },
       {
-        "lineNumber": 424,
+        "lineNumber": 425,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Saves the bookmark at index 1 locally, and updates it daily."
       },
       {
-        "lineNumber": 425,
+        "lineNumber": 426,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 426,
+        "lineNumber": 427,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*cache* 1` +"
       },
       {
-        "lineNumber": 427,
+        "lineNumber": 428,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Show the list of cached copies."
       },
       {
-        "lineNumber": 428,
+        "lineNumber": 429,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 429,
+        "lineNumber": 430,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*cache* 1 d/2` +"
       },
       {
-        "lineNumber": 430,
+        "lineNumber": 431,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Deletes the cached version at the second index."
       },
       {
-        "lineNumber": 431,
+        "lineNumber": 432,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 432,
+        "lineNumber": 433,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*cache* 1 u/true` +"
       },
       {
-        "lineNumber": 433,
+        "lineNumber": 434,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Manually save a new copy of the site."
       },
       {
-        "lineNumber": 434,
+        "lineNumber": 435,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 435,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "\u003d\u003d\u003d Making annotations on offline copy of bookmarked website: *`annotate`*"
       },
       {
         "lineNumber": 436,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Making annotations on an offline copy: *`annotate`*"
       },
       {
         "lineNumber": 437,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "Adds new annotations on locally saved, offline version of the bookmarked"
+        "content": ""
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "website. When this command is given, the UI will switch to the offline tab showing the results of your command."
+        "content": "Adds new annotations on locally saved, offline version of the bookmarked"
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "With this command, you can highlight a paragraph on the offline document and optionally attach a supplementary"
+        "content": "website. When this command is given, the UI will switch to the offline tab showing the results of your command."
       },
       {
         "lineNumber": 440,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "note to said paragraph. (Notes can be added to justify the highlight or as"
+        "content": "With this command, you can highlight a paragraph on the offline document and optionally attach a supplementary"
       },
       {
         "lineNumber": 441,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "note to said paragraph. (Notes can be added to justify the highlight or as"
+      },
+      {
+        "lineNumber": 442,
         "author": {
           "gitId": "openorclose"
         },
         "content": "content-relevant notes for future reference to bookmark)."
       },
       {
-        "lineNumber": 442,
+        "lineNumber": 443,
         "author": {
           "gitId": "dorcastan"
         },
         "content": ""
       },
       {
-        "lineNumber": 443,
+        "lineNumber": 444,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Overwriting an existing note is possible with this command."
       },
       {
-        "lineNumber": 444,
+        "lineNumber": 445,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 445,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "Format: `*annotate* INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR\u003dyellow]`"
       },
       {
         "lineNumber": 446,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "Format: `*annotate* INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR\u003dyellow]`"
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `INDEX` is the bookmark that you want to annotate offline version of."
+        "content": "****"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `INDEX` is invalid, a warning message will be displayed."
+        "content": " * `INDEX` is the bookmark that you want to annotate offline version of."
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `P_NUM` is the number of the paragraph to be marked."
+        "content": " If `INDEX` is invalid, a warning message will be displayed."
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `P_NUM` is invalid, a warning message will be displayed."
+        "content": " * `P_NUM` is the number of the paragraph to be marked."
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `NOTES` is the content of notes to add."
+        "content": " If `P_NUM` is invalid, a warning message will be displayed."
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `HIGHLIGHT_COLOUR` is either `orange`, `pink`, `green` or `yellow`. This selects"
+        "content": " * `NOTES` is the content of notes to add."
       },
       {
         "lineNumber": 454,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": " * `HIGHLIGHT_COLOUR` is either `orange`, `pink`, `green` or `yellow`. This selects"
+      },
+      {
+        "lineNumber": 455,
         "author": {
           "gitId": "openorclose"
         },
         "content": "the highlight colour to mark out paragraphs. If no colour is specified,"
       },
       {
-        "lineNumber": 455,
+        "lineNumber": 456,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "yellow is the default colour."
       },
       {
-        "lineNumber": 456,
+        "lineNumber": 457,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "If colour provided is invalid, a warning message will be displayed."
       },
       {
-        "lineNumber": 457,
+        "lineNumber": 458,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "****"
       },
       {
-        "lineNumber": 458,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 459,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 461,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* `*annotate* 1 p/2 n/summary of paragraph h/yellow` +"
+        "content": ""
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In offline copy of bookmark 1, highlights paragraph 2 yellow and"
+        "content": "* `*annotate* 1 p/2 n/summary of paragraph h/yellow` +"
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "attaches note with content “summary of paragraph” to the paragraph."
+        "content": "In offline copy of bookmark 1, highlights paragraph 2 yellow and"
       },
       {
         "lineNumber": 464,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "attaches note with content “summary of paragraph” to the paragraph."
       },
       {
         "lineNumber": 465,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate* 1 p/2 h/pink` +"
+        "content": ""
       },
       {
         "lineNumber": 466,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In offline copy of bookmark 1, overwrites any existing highlight and"
+        "content": "* `*annotate* 1 p/2 h/pink` +"
       },
       {
         "lineNumber": 467,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "highlights paragraph 2 with pink. Any notes attached remain attached."
+        "content": "In offline copy of bookmark 1, overwrites any existing highlight and"
       },
       {
         "lineNumber": 468,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "highlights paragraph 2 with pink. Any notes attached remain attached."
+      },
+      {
+        "lineNumber": 469,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 469,
+        "lineNumber": 470,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*annotate* 1 p/2 n/change or add note content` +"
       },
       {
-        "lineNumber": 470,
+        "lineNumber": 471,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "In offline copy of bookmark 1, if paragraph 2 had pre-existing note,"
       },
       {
-        "lineNumber": 471,
+        "lineNumber": 472,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "changes note attached to paragraph 2 to note with content “change or add note content”. Highlight"
       },
       {
-        "lineNumber": 472,
+        "lineNumber": 473,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "colour remains the same. Otherwise, paragraph 2 will be highlighted yellow and"
       },
       {
-        "lineNumber": 473,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "a new note with content \"change or add note content\" will be added to the paragraph."
-      },
-      {
         "lineNumber": 474,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "a new note with content \"change or add note content\" will be added to the paragraph."
       },
       {
         "lineNumber": 475,
@@ -14906,336 +14906,336 @@
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "\u003d\u003d\u003d Deleting annotations on offline copy of bookmarked website: *`annotate delete`*"
+        "content": ""
       },
       {
         "lineNumber": 477,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Deleting annotations on an offline copy: *`annotate delete`*"
       },
       {
         "lineNumber": 478,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "Deletes selected highlights or notes from the offline copy of the given bookmarked website."
+        "content": ""
       },
       {
         "lineNumber": 479,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "When this command is given, the UI will switch to the offline tab showing the results of your command."
+        "content": "Deletes selected highlights or notes from the offline copy of the given bookmarked website."
       },
       {
         "lineNumber": 480,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "You can choose to remove just the notes and/or highlight of a paragraph, or clear all annotations"
+        "content": "When this command is given, the UI will switch to the offline tab showing the results of your command."
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "on an offline copy to revert it to clean slate. You can also choose to remove a note from the"
+        "content": "You can choose to remove just the notes and/or highlight of a paragraph, or clear all annotations"
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "\u003c\u003cstray-notes,_Stray Notes Section_\u003e\u003e. If given paragraph does not have any notes to remove, nothing is performed."
+        "content": "on an offline copy to revert it to clean slate. You can also choose to remove a note from the"
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "\u003c\u003cstray-notes,_Stray Notes Section_\u003e\u003e. If given paragraph does not have any notes to remove, nothing is performed."
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "Format: `*annotate delete* INDEX [p/P_NUM] [n/KEEP_NOTES\u003dfalse] [h/KEEP_HIGHLIGHT\u003dfalse]`"
+        "content": ""
       },
       {
         "lineNumber": 485,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "Format: `*annotate delete* INDEX [p/P_NUM] [n/KEEP_NOTES\u003dfalse] [h/KEEP_HIGHLIGHT\u003dfalse]`"
       },
       {
         "lineNumber": 486,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 487,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* `INDEX` is the bookmark that you want to remove annotations of."
+        "content": "****"
       },
       {
         "lineNumber": 488,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `INDEX` is invalid, a warning message will be displayed."
+        "content": "* `INDEX` is the bookmark that you want to remove annotations of."
       },
       {
         "lineNumber": 489,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* `P_NUM` is the paragraph number or identifier of stray notes to remove. If `P_NUM` is not provided, all annotations"
+        "content": " If `INDEX` is invalid, a warning message will be displayed."
       },
       {
         "lineNumber": 490,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "will be cleared, reverting the offline document to a clean slate."
+        "content": "* `P_NUM` is the paragraph number or identifier of stray notes to remove. If `P_NUM` is not provided, all annotations"
       },
       {
         "lineNumber": 491,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " In the event that an identifier to a stray note is given, the remaining optional fields will be ignored,"
+        "content": "will be cleared, reverting the offline document to a clean slate."
       },
       {
         "lineNumber": 492,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " i.e. that stray note will be deleted."
+        "content": " In the event that an identifier to a stray note is given, the remaining optional fields will be ignored,"
       },
       {
         "lineNumber": 493,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `P_NUM` is invalid, a warning message will be displayed."
+        "content": " i.e. that stray note will be deleted."
       },
       {
         "lineNumber": 494,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* `KEEP_NOTES` is either `true` or `false`. If `true`, the notes of the paragraph will not be deleted (but"
+        "content": " If `P_NUM` is invalid, a warning message will be displayed."
       },
       {
         "lineNumber": 495,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "if the paragraph\u0027s highlight is removed, the notes will be moved to the \u003c\u003cstray-notes,_Stray Notes Section_\u003e\u003e). Otherwise,"
+        "content": "* `KEEP_NOTES` is either `true` or `false`. If `true`, the notes of the paragraph will not be deleted (but"
       },
       {
         "lineNumber": 496,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "the notes will be removed. `KEEP_NOTES` is `false` by default."
+        "content": "if the paragraph\u0027s highlight is removed, the notes will be moved to the \u003c\u003cstray-notes,_Stray Notes Section_\u003e\u003e). Otherwise,"
       },
       {
         "lineNumber": 497,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `KEEP_NOTES` is invalid, `KEEP_NOTES` will be set to `true`."
+        "content": "the notes will be removed. `KEEP_NOTES` is `false` by default."
       },
       {
         "lineNumber": 498,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* `KEEP_HIGHLIGHT` is either `true` or `false`. If `true`, the highlight of the paragraph will not be deleted"
+        "content": " If `KEEP_NOTES` is invalid, `KEEP_NOTES` will be set to `true`."
       },
       {
         "lineNumber": 499,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "(if the paragraph\u0027s note is not removed, the notes will be moved to the \u003c\u003cstray-notes,_Stray Notes Section_\u003e\u003e). Otherwise,"
+        "content": "* `KEEP_HIGHLIGHT` is either `true` or `false`. If `true`, the highlight of the paragraph will not be deleted"
       },
       {
         "lineNumber": 500,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "the highlight will be removed. `KEEP_HIGHLIGHT` is `false` by default."
+        "content": "(if the paragraph\u0027s note is not removed, the notes will be moved to the \u003c\u003cstray-notes,_Stray Notes Section_\u003e\u003e). Otherwise,"
       },
       {
         "lineNumber": 501,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `KEEP_HIGHLIGHT`` is invalid, `KEEP_HIGHLIGHT` will be set to `true`."
+        "content": "the highlight will be removed. `KEEP_HIGHLIGHT` is `false` by default."
       },
       {
         "lineNumber": 502,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "****"
+        "content": " If `KEEP_HIGHLIGHT`` is invalid, `KEEP_HIGHLIGHT` will be set to `true`."
       },
       {
         "lineNumber": 503,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "****"
       },
       {
         "lineNumber": 504,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 505,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 506,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate delete* 1 p/2` +"
+        "content": ""
       },
       {
         "lineNumber": 507,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, removes both the note and highlight from paragraph 2."
+        "content": "* `*annotate delete* 1 p/2` +"
       },
       {
         "lineNumber": 508,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "In the offline copy of bookmark 1, removes both the note and highlight from paragraph 2."
       },
       {
         "lineNumber": 509,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate delete* 1 p/2 n/true` +"
+        "content": ""
       },
       {
         "lineNumber": 510,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, removes the highlight of paragraph 2 and moves the note to _Stray Note Section_."
+        "content": "* `*annotate delete* 1 p/2 n/true` +"
       },
       {
         "lineNumber": 511,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "In the offline copy of bookmark 1, removes the highlight of paragraph 2 and moves the note to _Stray Note Section_."
       },
       {
         "lineNumber": 512,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate delete* 1 p/2 h/true` +"
+        "content": ""
       },
       {
         "lineNumber": 513,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, removes the note of paragraph 2, leaving the highlight untouched."
+        "content": "* `*annotate delete* 1 p/2 h/true` +"
       },
       {
         "lineNumber": 514,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "In the offline copy of bookmark 1, removes the note of paragraph 2, leaving the highlight untouched."
       },
       {
         "lineNumber": 515,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate delete* 1 p/2 n/true h/true` +"
+        "content": ""
       },
       {
         "lineNumber": 516,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "Nothing happens as both the note and highlight are left alone."
+        "content": "* `*annotate delete* 1 p/2 n/true h/true` +"
       },
       {
         "lineNumber": 517,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "Nothing happens as both the note and highlight are left alone."
       },
       {
         "lineNumber": 518,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate delete* 2 p/S1` +"
+        "content": ""
       },
       {
         "lineNumber": 519,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "Deletes stray note S1 from the offline copy of bookmark 2."
+        "content": "* `*annotate delete* 2 p/S1` +"
       },
       {
         "lineNumber": 520,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "Deletes stray note S1 from the offline copy of bookmark 2."
       },
       {
         "lineNumber": 521,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate delete* 1` +"
+        "content": ""
       },
       {
         "lineNumber": 522,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "Removes all annotations of the offline copy of bookmark 1."
+        "content": "* `*annotate delete* 1` +"
       },
       {
         "lineNumber": 523,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "Removes all annotations of the offline copy of bookmark 1."
       },
       {
         "lineNumber": 524,
@@ -15247,352 +15247,352 @@
       {
         "lineNumber": 525,
         "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "\u003d\u003d\u003d Modifying annotations on offline copy of bookmarked website: *`annotate edit`*"
-      },
-      {
-        "lineNumber": 526,
-        "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
+        "lineNumber": 526,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "\u003d\u003d\u003d Modifying annotations on an offline copy: *`annotate edit`*"
+      },
+      {
         "lineNumber": 527,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "Modifies existing annotations on the offline version of the bookmarked"
+        "content": ""
       },
       {
         "lineNumber": 528,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "website. When this command is given, the UI will switch to the offline tab showing the results of your command."
+        "content": "Modifies existing annotations on the offline version of the bookmarked"
       },
       {
         "lineNumber": 529,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "With this command, you can choose to overwrite the existing notes to a particular paragraph with another note, or"
+        "content": "website. When this command is given, the UI will switch to the offline tab showing the results of your command."
       },
       {
         "lineNumber": 530,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "choose to move notes from a paragraph to another paragraph. This command also supports moving"
+        "content": "With this command, you can choose to overwrite the existing notes to a particular paragraph with another note, or"
       },
       {
         "lineNumber": 531,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "a stray note (see Glossary) back to the main text by specifying which paragraph to move it to."
+        "content": "choose to move notes from a paragraph to another paragraph. This command also supports moving"
       },
       {
         "lineNumber": 532,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "a stray note (see Glossary) back to the main text by specifying which paragraph to move it to."
       },
       {
         "lineNumber": 533,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "Format: `*annotate edit* INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]`"
+        "content": ""
       },
       {
         "lineNumber": 534,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "Format: `*annotate edit* INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]`"
       },
       {
         "lineNumber": 535,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 536,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `INDEX` is the bookmark that you want to annotate offline version of."
+        "content": "****"
       },
       {
         "lineNumber": 537,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `INDEX` is invalid, a warning message will be displayed."
+        "content": " * `INDEX` is the bookmark that you want to annotate offline version of."
       },
       {
         "lineNumber": 538,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `P_NUM` is the number of the paragraph or stray note identifier whose annotation is to be edited."
+        "content": " If `INDEX` is invalid, a warning message will be displayed."
       },
       {
         "lineNumber": 539,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `P_NUM` is invalid, a warning message will be displayed."
+        "content": " * `P_NUM` is the number of the paragraph or stray note identifier whose annotation is to be edited."
       },
       {
         "lineNumber": 540,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `NEW_P_NUM` is the number of the paragraph to move any annotation to."
+        "content": " If `P_NUM` is invalid, a warning message will be displayed."
       },
       {
         "lineNumber": 541,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " If `NEW_P_NUM` is invalid, a warning message will be displayed."
+        "content": " * `NEW_P_NUM` is the number of the paragraph to move any annotation to."
       },
       {
         "lineNumber": 542,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `NOTES` is the content of notes to change to. Whenever notes is given, it"
+        "content": " If `NEW_P_NUM` is invalid, a warning message will be displayed."
       },
       {
         "lineNumber": 543,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " replaces any pre-existing note to paragraph `P_NUM`, if applicable."
+        "content": " * `NOTES` is the content of notes to change to. Whenever notes is given, it"
       },
       {
         "lineNumber": 544,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `HIGHLIGHT_COLOUR` is either `orange`, `pink`, `green` or `yellow`. This selects"
+        "content": " replaces any pre-existing note to paragraph `P_NUM`, if applicable."
       },
       {
         "lineNumber": 545,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "the highlight colour to mark out paragraphs. When no colour is specified, if source paragraph is"
+        "content": " * `HIGHLIGHT_COLOUR` is either `orange`, `pink`, `green` or `yellow`. This selects"
       },
       {
         "lineNumber": 546,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "already highlighted, the highlight stays the same colour; otherwise the default colour yellow will be used."
+        "content": "the highlight colour to mark out paragraphs. When no colour is specified, if source paragraph is"
       },
       {
         "lineNumber": 547,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "If colour provided is invalid, a warning message will be displayed."
+        "content": "already highlighted, the highlight stays the same colour; otherwise the default colour yellow will be used."
       },
       {
         "lineNumber": 548,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "If `HIGHLIGHT_COLOUR` is specified with a stray note identifier, nothing happens."
+        "content": "If colour provided is invalid, a warning message will be displayed."
       },
       {
         "lineNumber": 549,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "****"
+        "content": "If `HIGHLIGHT_COLOUR` is specified with a stray note identifier, nothing happens."
       },
       {
         "lineNumber": 550,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "****"
+      },
+      {
+        "lineNumber": 551,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 551,
+        "lineNumber": 552,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Examples:"
       },
       {
-        "lineNumber": 552,
+        "lineNumber": 553,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 553,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "* `*annotate edit* 1 p/2 to/3` +"
       },
       {
         "lineNumber": 554,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, moves both highlight and notes from paragraph 2 to paragraph 3. Highlight of paragraph 2"
+        "content": "* `*annotate edit* 1 p/2 to/3` +"
       },
       {
         "lineNumber": 555,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "will be removed."
+        "content": "In the offline copy of bookmark 1, moves both highlight and notes from paragraph 2 to paragraph 3. Highlight of paragraph 2"
       },
       {
         "lineNumber": 556,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "will be removed."
       },
       {
         "lineNumber": 557,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate edit* 1 p/2 to/3 h/orange` +"
+        "content": ""
       },
       {
         "lineNumber": 558,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, moves note from paragraph 2 to paragraph 3. Highlight of paragraph 2"
+        "content": "* `*annotate edit* 1 p/2 to/3 h/orange` +"
       },
       {
         "lineNumber": 559,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "will be removed and paragraph 3 will be highlighted with orange."
+        "content": "In the offline copy of bookmark 1, moves note from paragraph 2 to paragraph 3. Highlight of paragraph 2"
       },
       {
         "lineNumber": 560,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "will be removed and paragraph 3 will be highlighted with orange."
       },
       {
         "lineNumber": 561,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate edit* 1 p/1 n/new notes` +"
+        "content": ""
       },
       {
         "lineNumber": 562,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, replaces the content of the note for paragraph 1 with \"new notes\"."
+        "content": "* `*annotate edit* 1 p/1 n/new notes` +"
       },
       {
         "lineNumber": 563,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "In the offline copy of bookmark 1, replaces the content of the note for paragraph 1 with \"new notes\"."
       },
       {
         "lineNumber": 564,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate edit* 1 p/1 h/yellow` +"
+        "content": ""
       },
       {
         "lineNumber": 565,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, changes the highlight colour to yellow for paragraph 1."
+        "content": "* `*annotate edit* 1 p/1 h/yellow` +"
       },
       {
         "lineNumber": 566,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "In the offline copy of bookmark 1, changes the highlight colour to yellow for paragraph 1."
       },
       {
         "lineNumber": 567,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "* `*annotate edit* 1 S2 p/1` +"
+        "content": ""
       },
       {
         "lineNumber": 568,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, moves stray notes S2 to paragraph 1. If paragraph 1 had a highlight, highlight"
+        "content": "* `*annotate edit* 1 S2 p/1` +"
       },
       {
         "lineNumber": 569,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "remains and overwrite any existing note with S2 note content. If not default highlight colour yellow is used."
+        "content": "In the offline copy of bookmark 1, moves stray notes S2 to paragraph 1. If paragraph 1 had a highlight, highlight"
       },
       {
         "lineNumber": 570,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "remains and overwrite any existing note with S2 note content. If not default highlight colour yellow is used."
       },
       {
         "lineNumber": 571,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* `*annotate edit* 1 p/2 to/3 n/changing and moving notes` +"
+        "content": ""
       },
       {
         "lineNumber": 572,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "In the offline copy of bookmark 1, paragraph 3 is annotated with the highlight of paragraph 2 and"
+        "content": "* `*annotate edit* 1 p/2 to/3 n/changing and moving notes` +"
       },
       {
         "lineNumber": 573,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "note with content \"changing and moving notes\". Annotation on paragraph 2 is removed."
+        "content": "In the offline copy of bookmark 1, paragraph 3 is annotated with the highlight of paragraph 2 and"
       },
       {
         "lineNumber": 574,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "kxyoke"
         },
-        "content": ""
+        "content": "note with content \"changing and moving notes\". Annotation on paragraph 2 is removed."
       },
       {
         "lineNumber": 575,
@@ -15604,161 +15604,161 @@
       {
         "lineNumber": 576,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "\u003d\u003d\u003d Viewing annotated bookmarked website: *`offline`*"
+        "content": ""
       },
       {
         "lineNumber": 577,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "\u003d\u003d\u003d Viewing an annotated offline copy: *`offline`*"
+      },
+      {
+        "lineNumber": 578,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 578,
+        "lineNumber": 579,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Switches to offline tab and shows offline copy of a selected bookmark. The offline view tab will"
       },
       {
-        "lineNumber": 579,
+        "lineNumber": 580,
         "author": {
           "gitId": "openorclose"
         },
         "content": "show the latest offline copy with annotations by default."
       },
       {
-        "lineNumber": 580,
+        "lineNumber": 581,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 581,
+        "lineNumber": 582,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*offline* INDEX [v/VERSION \u003d current]`"
       },
       {
-        "lineNumber": 582,
+        "lineNumber": 583,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 583,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "****"
       },
       {
         "lineNumber": 584,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* `INDEX` is the bookmark that you want to view notes of"
+        "content": "****"
       },
       {
         "lineNumber": 585,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": " * `VERSION` is the version of the cached version to show. Default is the"
+        "content": "* `INDEX` is the bookmark that you want to view notes of"
       },
       {
         "lineNumber": 586,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": " * `VERSION` is the version of the cached version to show. Default is the"
+      },
+      {
+        "lineNumber": 587,
         "author": {
           "gitId": "openorclose"
         },
         "content": "current version"
       },
       {
-        "lineNumber": 587,
+        "lineNumber": 588,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "****"
       },
       {
-        "lineNumber": 588,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 589,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Examples:"
+        "content": ""
       },
       {
         "lineNumber": 590,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 591,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 592,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*offline* 1` +"
       },
       {
-        "lineNumber": 592,
+        "lineNumber": 593,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Shows annotated offline copy of bookmark 1."
       },
       {
-        "lineNumber": 593,
+        "lineNumber": 594,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 594,
+        "lineNumber": 595,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*offline* 1 v/2` +"
       },
       {
-        "lineNumber": 595,
+        "lineNumber": 596,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Shows the 2nd version of offline copy of bookmark 1. If it is annotated,"
       },
       {
-        "lineNumber": 596,
+        "lineNumber": 597,
         "author": {
           "gitId": "openorclose"
         },
         "content": "then annotations are shown as well."
       },
       {
-        "lineNumber": 597,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 598,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
         "content": ""
       },
@@ -15767,1013 +15767,1013 @@
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "\u003d\u003d\u003d Adding a reminder: *`reminder`*"
+        "content": ""
       },
       {
         "lineNumber": 600,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "\u003d\u003d\u003d Adding a reminder: *`reminder`*"
+      },
+      {
+        "lineNumber": 601,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 601,
+        "lineNumber": 602,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "Adds a reminder of a specified bookmark. You can set the time for the reminder."
       },
       {
-        "lineNumber": 602,
+        "lineNumber": 603,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 603,
+        "lineNumber": 604,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*reminder* INDEX t/TIME_DATE [n/NOTE\u003dOpen]`"
       },
       {
-        "lineNumber": 604,
+        "lineNumber": 605,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 605,
+        "lineNumber": 606,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "****"
       },
       {
-        "lineNumber": 606,
+        "lineNumber": 607,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `INDEX` is the index of the bookmark that you want to add with a reminder."
       },
       {
-        "lineNumber": 607,
+        "lineNumber": 608,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": " * `TIME_DATE` follows `_dd/mm/yyyy HHMM_` format."
       },
       {
-        "lineNumber": 608,
+        "lineNumber": 609,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `NOTE` is the description of the reminder, the default value is Open."
       },
       {
-        "lineNumber": 609,
+        "lineNumber": 610,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 610,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "Examples:"
       },
       {
         "lineNumber": 611,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 612,
         "author": {
-          "gitId": "TSAI-HSIAO-HAN"
+          "gitId": "openorclose"
         },
-        "content": "* `*reminder* 1 t/02/07/2019 2359` +"
+        "content": ""
       },
       {
         "lineNumber": 613,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "Adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019."
+        "content": "* `*reminder* 1 t/02/07/2019 2359` +"
       },
       {
         "lineNumber": 614,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "It reminds you to open the bookmark."
+        "content": "Adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019."
       },
       {
         "lineNumber": 615,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": ""
+        "content": "It reminds you to open the bookmark."
       },
       {
         "lineNumber": 616,
         "author": {
-          "gitId": "TSAI-HSIAO-HAN"
+          "gitId": "openorclose"
         },
-        "content": "* `*reminder* 1 t/02/07/2019 2359 n/Read announcements` +"
+        "content": ""
       },
       {
         "lineNumber": 617,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "Adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019."
+        "content": "* `*reminder* 1 t/02/07/2019 2359 n/Read announcements` +"
       },
       {
         "lineNumber": 618,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "The reminder reminds you to read announcements."
+        "content": "Adds a reminder for bookmark 1, and sets the time of the reminder as 23:59 of 02/07/2019."
       },
       {
         "lineNumber": 619,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": ""
+        "content": "The reminder reminds you to read announcements."
       },
       {
         "lineNumber": 620,
         "author": {
-          "gitId": "-"
+          "gitId": "TSAI-HSIAO-HAN"
         },
         "content": ""
       },
       {
         "lineNumber": 621,
         "author": {
-          "gitId": "-"
+          "gitId": "TSAI-HSIAO-HAN"
         },
         "content": ""
       },
       {
         "lineNumber": 622,
         "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 623,
+        "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Editing a reminder: *`reminder edit`*"
       },
       {
-        "lineNumber": 623,
+        "lineNumber": 624,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "Edits the reminder at the specified index. You can edit either the time or the note of the reminder."
       },
       {
-        "lineNumber": 624,
+        "lineNumber": 625,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 625,
+        "lineNumber": 626,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*reminder edit* INDEX [t/TIME_DATE] [n/NOTE]`"
       },
       {
-        "lineNumber": 626,
+        "lineNumber": 627,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": ""
       },
       {
-        "lineNumber": 627,
+        "lineNumber": 628,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "****"
       },
       {
-        "lineNumber": 628,
+        "lineNumber": 629,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `INDEX` is the index of the reminder you want to edit on the dashboard."
       },
       {
-        "lineNumber": 629,
+        "lineNumber": 630,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "* `TIME_DATE` is the time you want to edit. The time follows `_dd/mm/yyyy HHMM_` format."
       },
       {
-        "lineNumber": 630,
+        "lineNumber": 631,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `NOTE` is the description of the reminder that you want to edit."
       },
       {
-        "lineNumber": 631,
-        "author": {
-          "gitId": "TSAI-HSIAO-HAN"
-        },
-        "content": "****"
-      },
-      {
         "lineNumber": 632,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "Examples:"
+        "content": "****"
       },
       {
         "lineNumber": 633,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 634,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "* `*reminder edit* 1 t/02/07/2019 2359` +"
+        "content": ""
       },
       {
         "lineNumber": 635,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "Edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019."
+        "content": "* `*reminder edit* 1 t/02/07/2019 2359` +"
       },
       {
         "lineNumber": 636,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": ""
+        "content": "Edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019."
       },
       {
         "lineNumber": 637,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "* `*reminder edit* 1 t/02/07/2019 2359 n/Check daily news` +"
+        "content": ""
       },
       {
         "lineNumber": 638,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "Edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019."
+        "content": "* `*reminder edit* 1 t/02/07/2019 2359 n/Check daily news` +"
       },
       {
         "lineNumber": 639,
+        "author": {
+          "gitId": "TSAI-HSIAO-HAN"
+        },
+        "content": "Edits the reminder of index 1. Reset the time of the reminder to 23:59 of 02/07/2019."
+      },
+      {
+        "lineNumber": 640,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Reset the note to Check daily news."
       },
       {
-        "lineNumber": 640,
+        "lineNumber": 641,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 641,
+        "lineNumber": 642,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Deleting a reminder: *`reminder delete`*"
       },
       {
-        "lineNumber": 642,
+        "lineNumber": 643,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 643,
+        "lineNumber": 644,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "Deletes the the reminder at the specified index."
       },
       {
-        "lineNumber": 644,
+        "lineNumber": 645,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 645,
+        "lineNumber": 646,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*reminder delete* INDEX`"
       },
       {
-        "lineNumber": 646,
+        "lineNumber": 647,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": ""
       },
       {
-        "lineNumber": 647,
+        "lineNumber": 648,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "****"
       },
       {
-        "lineNumber": 648,
+        "lineNumber": 649,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `INDEX` is the index of the reminder you want to delete on the dashboard."
       },
       {
-        "lineNumber": 649,
-        "author": {
-          "gitId": "TSAI-HSIAO-HAN"
-        },
-        "content": "****"
-      },
-      {
         "lineNumber": 650,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "Examples:"
+        "content": "****"
       },
       {
         "lineNumber": 651,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 652,
+        "author": {
+          "gitId": "TSAI-HSIAO-HAN"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 653,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*reminder delete* 1` +"
       },
       {
-        "lineNumber": 653,
+        "lineNumber": 654,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "Delete the reminder of index 1."
       },
       {
-        "lineNumber": 654,
+        "lineNumber": 655,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 655,
+        "lineNumber": 656,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Sorting bookmarks: *`sort`*"
       },
       {
-        "lineNumber": 656,
+        "lineNumber": 657,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 657,
+        "lineNumber": 658,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Sorts the displayed bookmarks according to different criterion (name,"
       },
       {
-        "lineNumber": 658,
+        "lineNumber": 659,
         "author": {
           "gitId": "openorclose"
         },
         "content": "order added) and displays them as a list."
       },
       {
-        "lineNumber": 659,
+        "lineNumber": 660,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 660,
+        "lineNumber": 661,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*sort* [CRITERION]`"
       },
       {
-        "lineNumber": 661,
+        "lineNumber": 662,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 662,
+        "lineNumber": 663,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "****"
       },
       {
-        "lineNumber": 663,
+        "lineNumber": 664,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `CRITERION` is the field you use to sort. Acceptable values of `CRITERION`"
       },
       {
-        "lineNumber": 664,
+        "lineNumber": 665,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "are: *name* and *default*. *default* is sorting at the order when the bookmark is added."
       },
       {
-        "lineNumber": 665,
+        "lineNumber": 666,
         "author": {
           "gitId": "kxyoke"
         },
         "content": " * `CRITERION` is case insensitive, e.g. both URL and url are acceptable"
       },
       {
-        "lineNumber": 666,
+        "lineNumber": 667,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "criterion."
       },
       {
-        "lineNumber": 667,
+        "lineNumber": 668,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 668,
-        "author": {
-          "gitId": "openorclose"
-        },
-        "content": "Examples:"
       },
       {
         "lineNumber": 669,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Examples:"
       },
       {
         "lineNumber": 670,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 671,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*sort* name` +"
       },
       {
-        "lineNumber": 671,
+        "lineNumber": 672,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Lists all the bookmarks based on name/alphabetical order."
       },
       {
-        "lineNumber": 672,
+        "lineNumber": 673,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 673,
+        "lineNumber": 674,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*sort* default` +"
       },
       {
-        "lineNumber": 674,
+        "lineNumber": 675,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Sort all the bookmarks based on the order they were added."
       },
       {
-        "lineNumber": 675,
+        "lineNumber": 676,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 676,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "\u003d\u003d\u003d Expanding folder hierarchy: *`expand`*"
       },
       {
         "lineNumber": 677,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Expanding the folder hierarchy: *`expand`*"
       },
       {
         "lineNumber": 678,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Expands the folder hierarchy by the specified number of levels."
+        "content": ""
       },
       {
         "lineNumber": 679,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Expands the folder hierarchy by the specified number of levels."
       },
       {
         "lineNumber": 680,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 681,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*expand* [LEVEL]`"
       },
       {
-        "lineNumber": 681,
+        "lineNumber": 682,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 682,
+        "lineNumber": 683,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 683,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "* `LEVEL` should be an integer. If it is more than zero, folder hierarchy"
       },
       {
         "lineNumber": 684,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "will expand by `LEVEL` number of levels. If `LEVEL` is less than zero,"
+        "content": "* `LEVEL` should be an integer. If it is more than zero, folder hierarchy"
       },
       {
         "lineNumber": 685,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "folder hierarchy will collapse by the given number of levels. If `LEVEL`"
+        "content": "will expand by `LEVEL` number of levels. If `LEVEL` is less than zero,"
       },
       {
         "lineNumber": 686,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "folder hierarchy will collapse by the given number of levels. If `LEVEL`"
+      },
+      {
+        "lineNumber": 687,
         "author": {
           "gitId": "openorclose"
         },
         "content": "is zero, nothing happens."
       },
       {
-        "lineNumber": 687,
+        "lineNumber": 688,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* Current level of display + `LEVEL` must be positive and less than or equal"
       },
       {
-        "lineNumber": 688,
+        "lineNumber": 689,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "to the maximum number of levels."
       },
       {
-        "lineNumber": 689,
+        "lineNumber": 690,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* If `LEVEL` is not specified, expand to the maximum number of levels."
       },
       {
-        "lineNumber": 690,
+        "lineNumber": 691,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "****"
       },
       {
-        "lineNumber": 691,
+        "lineNumber": 692,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 692,
+        "lineNumber": 693,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Examples:"
       },
       {
-        "lineNumber": 693,
+        "lineNumber": 694,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 694,
+        "lineNumber": 695,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*expand* 3` +"
       },
       {
-        "lineNumber": 695,
+        "lineNumber": 696,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Expands the folder hierarchy by 3 levels."
       },
       {
-        "lineNumber": 696,
+        "lineNumber": 697,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 697,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "\u003d\u003d\u003d Collapsing folder hierarchy: *`collapse`*"
       },
       {
         "lineNumber": 698,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Collapsing the folder hierarchy: *`collapse`*"
       },
       {
         "lineNumber": 699,
         "author": {
           "gitId": "openorclose"
         },
-        "content": "Collapses the folder hierarchy by the specified number of levels."
+        "content": ""
       },
       {
         "lineNumber": 700,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
+        "content": "Collapses the folder hierarchy by the specified number of levels."
       },
       {
         "lineNumber": 701,
+        "author": {
+          "gitId": "openorclose"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 702,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*collapse* [LEVEL]`"
       },
       {
-        "lineNumber": 702,
+        "lineNumber": 703,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 703,
+        "lineNumber": 704,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "****"
-      },
-      {
-        "lineNumber": 704,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "* `LEVEL` should be an integer. If it is more than zero, folder hierarchy"
       },
       {
         "lineNumber": 705,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "will collapse by `LEVEL` number of levels. If `LEVEL` is less than zero,"
+        "content": "* `LEVEL` should be an integer. If it is more than zero, folder hierarchy"
       },
       {
         "lineNumber": 706,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "folder hierarchy will expand by the given number of levels. If `LEVEL` is"
+        "content": "will collapse by `LEVEL` number of levels. If `LEVEL` is less than zero,"
       },
       {
         "lineNumber": 707,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "folder hierarchy will expand by the given number of levels. If `LEVEL` is"
+      },
+      {
+        "lineNumber": 708,
         "author": {
           "gitId": "openorclose"
         },
         "content": "zero, nothing happens."
       },
       {
-        "lineNumber": 708,
+        "lineNumber": 709,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* Current level of display + `LEVEL` must be positive and less than or equal"
       },
       {
-        "lineNumber": 709,
+        "lineNumber": 710,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "to the maximum number of levels of the folder hierarchy."
       },
       {
-        "lineNumber": 710,
+        "lineNumber": 711,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* If `LEVEL` is not specified, collapse to show only one level of folders."
       },
       {
-        "lineNumber": 711,
+        "lineNumber": 712,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "****"
       },
       {
-        "lineNumber": 712,
+        "lineNumber": 713,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 713,
+        "lineNumber": 714,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Examples:"
       },
       {
-        "lineNumber": 714,
+        "lineNumber": 715,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 715,
+        "lineNumber": 716,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*collapse* 1` +"
       },
       {
-        "lineNumber": 716,
+        "lineNumber": 717,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Collapses the folder hierarchy by 1 level."
       },
       {
-        "lineNumber": 717,
+        "lineNumber": 718,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 718,
+        "lineNumber": 719,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "\u003d\u003d\u003d Switching \u003c\u003cTabs,tabs\u003e\u003e: *`tab`*"
       },
       {
-        "lineNumber": 719,
+        "lineNumber": 720,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 720,
+        "lineNumber": 721,
         "author": {
           "gitId": "openorclose"
         },
         "content": "Switches the current app view to the tab that corresponds to the given"
       },
       {
-        "lineNumber": 721,
+        "lineNumber": 722,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "index. For your convenience, you can use keywords `dash`, `on` or `off` instead of an index."
       },
       {
-        "lineNumber": 722,
+        "lineNumber": 723,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 723,
+        "lineNumber": 724,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Format: `*tab* INDEX` or `*tab* KEYWORD`"
       },
       {
-        "lineNumber": 724,
+        "lineNumber": 725,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 725,
+        "lineNumber": 726,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "****"
       },
       {
-        "lineNumber": 726,
+        "lineNumber": 727,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `INDEX` is `1`, `2` or `3`, which correspond to the"
       },
       {
-        "lineNumber": 727,
+        "lineNumber": 728,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "\u003c\u003cDashboard,Dashboard\u003e\u003e, Online, and Offline tabs respectively."
-      },
-      {
-        "lineNumber": 728,
-        "author": {
-          "gitId": "kxyoke"
-        },
-        "content": "* `KEYWORD` is `dash`, `on` or `off`, which correspond to the"
       },
       {
         "lineNumber": 729,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "\u003c\u003cDashboard,Dashboard\u003e\u003e, Online, and Offline tabs respectively."
+        "content": "* `KEYWORD` is `dash`, `on` or `off`, which correspond to the"
       },
       {
         "lineNumber": 730,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "\u003c\u003cDashboard,Dashboard\u003e\u003e, Online, and Offline tabs respectively."
+      },
+      {
+        "lineNumber": 731,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "****"
       },
       {
-        "lineNumber": 731,
+        "lineNumber": 732,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 732,
+        "lineNumber": 733,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Examples:"
       },
       {
-        "lineNumber": 733,
+        "lineNumber": 734,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 734,
+        "lineNumber": 735,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*tab* 1` +"
       },
       {
-        "lineNumber": 735,
+        "lineNumber": 736,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Goes to the \u003c\u003cDashboard,Dashboard\u003e\u003e tab."
       },
       {
-        "lineNumber": 736,
+        "lineNumber": 737,
         "author": {
           "gitId": "openorclose"
         },
         "content": ""
       },
       {
-        "lineNumber": 737,
+        "lineNumber": 738,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*tab* on` +"
       },
       {
-        "lineNumber": 738,
+        "lineNumber": 739,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Goes to the Online tab which is a web view."
       },
       {
-        "lineNumber": 739,
+        "lineNumber": 740,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ""
       },
       {
-        "lineNumber": 740,
+        "lineNumber": 741,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* `*tab* 3` +"
       },
       {
-        "lineNumber": 741,
+        "lineNumber": 742,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Goes to the Offline tab which shows the offline copy of bookmarks."
       },
       {
-        "lineNumber": 742,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 743,
         "author": {
-          "gitId": "TSAI-HSIAO-HAN"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -16782,77 +16782,77 @@
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "\u003d\u003d\u003d Automatically completing partially typed commands `[coming in v2.0]`"
+        "content": ""
       },
       {
         "lineNumber": 745,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "Automatically fills in partially typed commands if the command is unique."
+        "content": "\u003d\u003d\u003d Automatically completing partially typed commands `[coming in v2.0]`"
       },
       {
         "lineNumber": 746,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": ""
+        "content": "Automatically fills in partially typed commands if the command is unique."
       },
       {
         "lineNumber": 747,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "\u003d\u003d\u003d Sharing bookmarks and notes via Email/ Telegram `[coming in v2.0]`"
+        "content": ""
       },
       {
         "lineNumber": 748,
         "author": {
           "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": "Shares your bookmarks and notes with your friends via Email or Telegram."
+        "content": "\u003d\u003d\u003d Sharing bookmarks and notes via Email/ Telegram `[coming in v2.0]`"
       },
       {
         "lineNumber": 749,
         "author": {
-          "gitId": "-"
+          "gitId": "TSAI-HSIAO-HAN"
         },
-        "content": ""
+        "content": "Shares your bookmarks and notes with your friends via Email or Telegram."
       },
       {
         "lineNumber": 750,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d FAQ"
+        "content": ""
       },
       {
         "lineNumber": 751,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d FAQ"
       },
       {
         "lineNumber": 752,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "-"
         },
-        "content": "*How do I transfer my data to another Computer?*"
+        "content": ""
       },
       {
         "lineNumber": 753,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": ""
+        "content": "*How do I transfer my data to another Computer?*"
       },
       {
         "lineNumber": 754,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 755,
@@ -16873,147 +16873,147 @@
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 758,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": ""
+        "content": "*What are [[Tabs]] Tabs?*"
       },
       {
         "lineNumber": 759,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "openorclose"
         },
-        "content": "*What are [[Tabs]] Tabs?*"
+        "content": ""
       },
       {
         "lineNumber": 760,
         "author": {
           "gitId": "openorclose"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 761,
-        "author": {
-          "gitId": "Na-Nazhou"
-        },
-        "content": "****"
-      },
-      {
-        "lineNumber": 762,
-        "author": {
-          "gitId": "openorclose"
-        },
         "content": "Different user displays. There are three tabs: dashboard, online view"
       },
       {
-        "lineNumber": 763,
+        "lineNumber": 761,
         "author": {
           "gitId": "openorclose"
         },
         "content": "(web browser), and offline view (caches and notes)."
       },
       {
-        "lineNumber": 764,
-        "author": {
-          "gitId": "Na-Nazhou"
-        },
-        "content": "****"
-      },
-      {
-        "lineNumber": 765,
+        "lineNumber": 762,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ""
       },
       {
-        "lineNumber": 766,
+        "lineNumber": 763,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "****"
+      },
+      {
+        "lineNumber": 764,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "[#imgId-dashboard]"
       },
       {
-        "lineNumber": 767,
+        "lineNumber": 765,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ".Mark\u0027s Dashboard Tab View"
       },
       {
-        "lineNumber": 768,
+        "lineNumber": 766,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "image::ui-screenshots/uimockup1_dashboard.png[@Dashboard Tab View, 600, 400]"
       },
       {
-        "lineNumber": 769,
+        "lineNumber": 767,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ""
       },
       {
-        "lineNumber": 770,
+        "lineNumber": 768,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "[#imgId-online]"
       },
       {
-        "lineNumber": 771,
+        "lineNumber": 769,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ".Mark\u0027s Online Tab View"
       },
       {
-        "lineNumber": 772,
+        "lineNumber": 770,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "image::ui-screenshots/uimockup1_online.png[@Online Tab View, 600, 400]"
       },
       {
-        "lineNumber": 773,
+        "lineNumber": 771,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ""
       },
       {
-        "lineNumber": 774,
+        "lineNumber": 772,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "[#imgId-offline]"
       },
       {
-        "lineNumber": 775,
+        "lineNumber": 773,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ".Mark\u0027s Offline Tab View"
       },
       {
-        "lineNumber": 776,
+        "lineNumber": 774,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "image::ui-screenshots/uimockup1_offline.png[@Offline Tab View, 600, 400]"
       },
       {
-        "lineNumber": 777,
+        "lineNumber": 775,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "****"
+      },
+      {
+        "lineNumber": 776,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ""
+      },
+      {
+        "lineNumber": 777,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "_{ more coming soon }_"
       },
       {
         "lineNumber": 778,
@@ -17025,170 +17025,170 @@
       {
         "lineNumber": 779,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "dorcastan"
         },
-        "content": "*What is the [[Dashboard]] Dashboard?*"
+        "content": "\u003d\u003d Glossary"
       },
       {
         "lineNumber": 780,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "This glossary aims to provide a definition for the special vocabulary used in this user guide."
       },
       {
         "lineNumber": 781,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "****"
+        "content": ""
       },
       {
         "lineNumber": 782,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": "The default tab in view when the application starts. The dashboard"
+        "content": "[[annotation]] Annotation::"
       },
       {
         "lineNumber": 783,
         "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
-        "content": "contains a help section (command summary), favorite tags, current"
+        "content": "A note or highlight that is made on an \u003c\u003coffline-copy, offline copy\u003e\u003e of a bookmark."
       },
       {
         "lineNumber": 784,
         "author": {
-          "gitId": "openorclose"
-        },
-        "content": "reminders, and a view of the folder hierarchy for bookmarks."
-      },
-      {
-        "lineNumber": 785,
-        "author": {
-          "gitId": "Na-Nazhou"
-        },
-        "content": "****"
-      },
-      {
-        "lineNumber": 786,
-        "author": {
-          "gitId": "openorclose"
+          "gitId": "dorcastan"
         },
         "content": ""
       },
       {
+        "lineNumber": 785,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "[[bookmark]] Bookmark::"
+      },
+      {
+        "lineNumber": 786,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "A saved shortcut to a website. In Mark, a bookmark can contain other information besides the website URL,"
+      },
+      {
         "lineNumber": 787,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "dorcastan"
         },
-        "content": "_{ more coming soon }_"
+        "content": "such as reminders, \u003c\u003coffline-copy, offline copies\u003e\u003e and \u003c\u003cannotation, annotations\u003e\u003e."
       },
       {
         "lineNumber": 788,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "dorcastan"
         },
         "content": ""
       },
       {
         "lineNumber": 789,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "dorcastan"
         },
-        "content": "\u003d\u003d Glossary"
+        "content": "[[dashboard]] Dashboard::"
       },
       {
         "lineNumber": 790,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": "This glossary aims to provide a definition for the special vocabulary used in this user guide."
+        "content": "The default tab in view when the application starts. The dashboard"
       },
       {
         "lineNumber": 791,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "openorclose"
         },
-        "content": ""
+        "content": "contains a help section (command summary), favorite tags, current"
       },
       {
         "lineNumber": 792,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "openorclose"
         },
-        "content": "[[offline]] Offline::"
+        "content": "reminders, and a view of the folder hierarchy for bookmarks."
       },
       {
         "lineNumber": 793,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "kxyoke"
         },
-        "content": "Refers to files stored locally on the computer."
+        "content": ""
       },
       {
         "lineNumber": 794,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "dorcastan"
         },
-        "content": ""
+        "content": "[[folder-hierarchy]] Folder Hierarchy::"
       },
       {
         "lineNumber": 795,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "dorcastan"
         },
-        "content": "[[oneline]] Online::"
+        "content": "The structure of folders in Mark. This is displayed in the dashboard tab when the application starts."
       },
       {
         "lineNumber": 796,
-        "author": {
-          "gitId": "Na-Nazhou"
-        },
-        "content": "Refers to having web access, namely to browse the internet."
-      },
-      {
-        "lineNumber": 797,
         "author": {
           "gitId": "kxyoke"
         },
         "content": ""
       },
       {
+        "lineNumber": 797,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "[[offline-copy]] Offline copy::"
+      },
+      {
         "lineNumber": 798,
+        "author": {
+          "gitId": "dorcastan"
+        },
+        "content": "An copy of a bookmarked website that is used for offline viewing. It is stored as a HTML file on the computer."
+      },
+      {
+        "lineNumber": 799,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 800,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "[[stray-notes]] Stray notes::"
       },
       {
-        "lineNumber": 799,
+        "lineNumber": 801,
         "author": {
           "gitId": "Na-Nazhou"
         },
         "content": "Annotated notes that are not attached to an existing paragraph are described as stray."
       },
       {
-        "lineNumber": 800,
+        "lineNumber": 802,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "Stray notes are found in the _Stray Notes Section_ at the bottom of the _Notes_ column on the offline, annotated copy."
-      },
-      {
-        "lineNumber": 801,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 802,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d Command Summary"
       },
       {
         "lineNumber": 803,
@@ -17200,194 +17200,208 @@
       {
         "lineNumber": 804,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "-"
         },
-        "content": "* *Help*: `*help*`"
+        "content": "\u003d\u003d Command Summary"
       },
       {
         "lineNumber": 805,
         "author": {
-          "gitId": "Na-Nazhou"
+          "gitId": "-"
         },
-        "content": "* *Add*: `*add* u/URL n/NAME [r/REMARK] [f/FOLDER] [t/TAG]…​`"
+        "content": ""
       },
       {
         "lineNumber": 806,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *List*: `*list*`"
+        "content": "* *Help*: `*help*`"
       },
       {
         "lineNumber": 807,
         "author": {
           "gitId": "Na-Nazhou"
         },
-        "content": "* *Edit*: `*edit* INDEX [u/URL] [n/NAME] [r/REMARK] [f/FOLDER] [t/TAG]…​`"
+        "content": "* *Add*: `*add* u/URL n/NAME [r/REMARK] [f/FOLDER] [t/TAG]…​`"
       },
       {
         "lineNumber": 808,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Find*: `*find* [KEYWORD]... [t/TAG]...`"
+        "content": "* *List*: `*list*`"
       },
       {
         "lineNumber": 809,
         "author": {
-          "gitId": "kxyoke"
+          "gitId": "Na-Nazhou"
         },
-        "content": "* *Delete*: `*delete* INDEX`"
+        "content": "* *Edit*: `*edit* INDEX [u/URL] [n/NAME] [r/REMARK] [f/FOLDER] [t/TAG]…​`"
       },
       {
         "lineNumber": 810,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Goto*: `*goto* INDEX [v/VERSION]`"
+        "content": "* *Find*: `*find* [KEYWORD]... [t/TAG]...`"
       },
       {
         "lineNumber": 811,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Goto*: `*goto reminder* INDEX`"
+        "content": "* *Delete*: `*delete* INDEX`"
       },
       {
         "lineNumber": 812,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Clear*: `*clear*`"
+        "content": "* *Goto*: `*goto* INDEX [v/VERSION]`"
       },
       {
         "lineNumber": 813,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Undo*: `*undo*`"
+        "content": "* *Goto*: `*goto reminder* INDEX`"
       },
       {
         "lineNumber": 814,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Redo*: `*redo*`"
+        "content": "* *Clear*: `*clear*`"
       },
       {
         "lineNumber": 815,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Exit*: `*exit*`"
+        "content": "* *Undo*: `*undo*`"
       },
       {
         "lineNumber": 816,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Export*: `*export* [FILENAME]`"
+        "content": "* *Redo*: `*redo*`"
       },
       {
         "lineNumber": 817,
         "author": {
           "gitId": "kxyoke"
         },
-        "content": "* *Import*: `*import* FILENAME [MORE_FILENAMES]...`"
+        "content": "* *Exit*: `*exit*`"
       },
       {
         "lineNumber": 818,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "* *Export*: `*export* [FILENAME]`"
+      },
+      {
+        "lineNumber": 819,
+        "author": {
+          "gitId": "kxyoke"
+        },
+        "content": "* *Import*: `*import* FILENAME [MORE_FILENAMES]...`"
+      },
+      {
+        "lineNumber": 820,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "* *Autotag*: `*autotag* TAG_NAME [n/NAME_KEYWORD]... [nn/NOT_NAME_KEYWORD]... [u/URL_KEYWORD]..."
       },
       {
-        "lineNumber": 819,
+        "lineNumber": 821,
         "author": {
           "gitId": "dorcastan"
         },
         "content": "[nu/NOT_URL_KEYWORD]... [f/FOLDER]... [nf/NOT_FOLDER]... [t/TAG]... [nt/NOT_TAG]...`"
       },
       {
-        "lineNumber": 820,
+        "lineNumber": 822,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Cache*: `*cache* INDEX [s/SAVE_NOW] [u/AUTO_UPDATE] [d/VERSION]`"
       },
       {
-        "lineNumber": 821,
+        "lineNumber": 823,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Annotate (add)*: `*annotate* INDEX p/P_NUM [n/NOTES] [h/HIGHLIGHT_COLOUR\u003dyellow]`"
       },
       {
-        "lineNumber": 822,
+        "lineNumber": 824,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Annotate (delete)*: `*annotate delete* INDEX [p/P_NUM] [n/KEEP_NOTES\u003dfalse] [h/KEEP_HIGHLIGHT\u003dfalse]`"
       },
       {
-        "lineNumber": 823,
+        "lineNumber": 825,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Annotate (edit)*: `*annotate edit* INDEX p/P_NUM [to/NEW_P_NUM] [n/NOTES] [h/HIGHLIGHT_COLOUR]`"
       },
       {
-        "lineNumber": 824,
+        "lineNumber": 826,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Offline*: `*offline* INDEX [v/VERSION\u003dcurrent]`"
       },
       {
-        "lineNumber": 825,
+        "lineNumber": 827,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Reminder*: `*reminder* INDEX t/TIME_DATE [n/NOTE\u003dOpen]`"
       },
       {
-        "lineNumber": 826,
+        "lineNumber": 828,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Reminder*: `*reminder edit* INDEX [t/TIME_DATE] [n/NOTE]`"
       },
       {
-        "lineNumber": 827,
+        "lineNumber": 829,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Reminder*: `*reminder delete* INDEX`"
       },
       {
-        "lineNumber": 828,
+        "lineNumber": 830,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Sort*: `*sort* [CRITERION]`"
       },
       {
-        "lineNumber": 829,
+        "lineNumber": 831,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Expand*: `*expand* [LEVEL]`"
       },
       {
-        "lineNumber": 830,
+        "lineNumber": 832,
         "author": {
           "gitId": "kxyoke"
         },
         "content": "* *Collapse*: `*collapse* [LEVEL]`"
       },
       {
-        "lineNumber": 831,
+        "lineNumber": 833,
         "author": {
           "gitId": "kxyoke"
         },
@@ -17395,12 +17409,12 @@
       }
     ],
     "authorContributionMap": {
-      "dorcastan": 70,
-      "openorclose": 246,
-      "TSAI-HSIAO-HAN": 39,
-      "Na-Nazhou": 85,
-      "kxyoke": 289,
-      "-": 102
+      "dorcastan": 101,
+      "openorclose": 228,
+      "TSAI-HSIAO-HAN": 40,
+      "Na-Nazhou": 75,
+      "kxyoke": 278,
+      "-": 111
     }
   },
   {
