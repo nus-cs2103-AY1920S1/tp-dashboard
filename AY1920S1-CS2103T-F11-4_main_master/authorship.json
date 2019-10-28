@@ -23778,6 +23778,34 @@
       {
         "lineNumber": 15,
         "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public static final String MESSAGE_NOTE_NOT_FOUND \u003d \"Sorry. The note is not found in the note list. We cannot add a\""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "            + \" revision task for it.\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public static final String MESSAGE_DUPLICATE_TASK \u003d \"This task already exists\";"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public static final String MESSAGE_TASK_ALREADY_DONE \u003d \"This task has already been marked as done\";"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
           "gitId": "-"
         },
         "content": "}"
@@ -23785,7 +23813,7 @@
     ],
     "authorContributionMap": {
       "Parcly-Taxel": 3,
-      "shuiyao-sg": 1,
+      "shuiyao-sg": 5,
       "Auxinnn": 1,
       "ShirleyWangxt": 2,
       "-": 8
@@ -26981,6 +27009,149 @@
     "authorContributionMap": {
       "Parcly-Taxel": 1,
       "-": 20
+    }
+  },
+  {
+    "path": "src/main/java/seedu/address/logic/commands/exceptions/CommandException.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.address.logic.commands.exceptions;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import seedu.address.logic.commands.Command;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * Represents an error which occurs during execution of a {@link Command}."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class CommandException extends Exception {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public CommandException(String message) {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        super(message);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Constructs a new {@code CommandException} with the specified detail {@code message} and {@code cause}."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public CommandException(String message, Throwable cause) {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        super(message, cause);"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shuiyao-sg": 2,
+      "-": 17
     }
   },
   {
@@ -36172,56 +36343,56 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.logic.commands.Command;"
+        "content": "import seedu.address.commons.core.Messages;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.logic.commands.CommandResult;"
+        "content": "import seedu.address.logic.commands.Command;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.logic.commands.exceptions.CommandException;"
+        "content": "import seedu.address.logic.commands.CommandResult;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.Model;"
+        "content": "import seedu.address.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.Content;"
+        "content": "import seedu.address.model.Model;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.Note;"
+        "content": "import seedu.address.model.note.Content;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.Title;"
+        "content": "import seedu.address.model.note.Note;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.exceptions.NoteNotFoundException;"
+        "content": "import seedu.address.model.note.Title;"
       },
       {
         "lineNumber": 16,
@@ -36305,14 +36476,14 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_DATE + \"DATE\""
+        "content": "            + PREFIX_DATE + \"DATE \""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_TIME + \"TIME\""
+        "content": "            + PREFIX_TIME + \"TIME \""
       },
       {
         "lineNumber": 29,
@@ -36333,7 +36504,7 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_DATE + \"15/10/2019\""
+        "content": "            + PREFIX_DATE + \"15/10/2019 \""
       },
       {
         "lineNumber": 32,
@@ -36480,7 +36651,7 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new NoteNotFoundException();"
+        "content": "            throw new CommandException(Messages.MESSAGE_NOTE_NOT_FOUND);"
       },
       {
         "lineNumber": 53,
@@ -36508,7 +36679,7 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new CommandException(MESSAGE_DUPLICATE_TASK);"
+        "content": "            throw new CommandException(Messages.MESSAGE_DUPLICATE_TASK);"
       },
       {
         "lineNumber": 57,
@@ -36734,203 +36905,203 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.commons.core.index.Index;"
+        "content": "import seedu.address.commons.core.Messages;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.logic.commands.Command;"
+        "content": "import seedu.address.commons.core.index.Index;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.logic.commands.CommandResult;"
+        "content": "import seedu.address.logic.commands.Command;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.logic.commands.exceptions.CommandException;"
+        "content": "import seedu.address.logic.commands.CommandResult;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.logic.parser.ParserUtil;"
+        "content": "import seedu.address.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
+        "content": "import seedu.address.logic.parser.ParserUtil;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.Model;"
+        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.question.Question;"
+        "content": "import seedu.address.model.Model;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.task.Task;"
+        "content": "import seedu.address.model.question.Question;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.task.TaskForQuestion;"
+        "content": "import seedu.address.model.task.Task;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "import seedu.address.model.task.TaskForQuestion;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " * Adds a revision task for question to the task list."
+        "content": "/**"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " */"
+        "content": " * Adds a revision task for question to the task list."
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "public class AddTaskForQuestionCommand extends Command {"
+        "content": " */"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"rq\";"
+        "content": "public class AddTaskForQuestionCommand extends Command {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public static final String COMMAND_WORD \u003d \"rq\";"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds a question revision task to NUStudy. \""
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + \"Parameters: \""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds a question revision task to NUStudy. \""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_INDEX + \"INDEX\""
+        "content": "            + \"Parameters: \""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_DATE + \"DATE\""
+        "content": "            + PREFIX_INDEX + \"INDEX \""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_TIME + \"TIME\""
+        "content": "            + PREFIX_DATE + \"DATE \""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + \"Example: \" + COMMAND_WORD + \" \""
+        "content": "            + PREFIX_TIME + \"TIME \""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_INDEX + \"1\""
+        "content": "            + \"Example: \" + COMMAND_WORD + \" \""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_DATE + \"15/10/2019\""
+        "content": "            + PREFIX_INDEX + \"1 \""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + PREFIX_TIME + \"1500\";"
+        "content": "            + PREFIX_DATE + \"15/10/2019 \""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "            + PREFIX_TIME + \"1500\";"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Revision task added: %1$s\";"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final String MESSAGE_DUPLICATE_TASK \u003d \"This task already exists\";"
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Revision task added: %1$s\";"
       },
       {
         "lineNumber": 42,
@@ -36944,7 +37115,7 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + \"range of 1 and size of question list\";"
+        "content": "            + \" range of 1 and size of question list\";"
       },
       {
         "lineNumber": 44,
@@ -37070,7 +37241,7 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new CommandException(MESSAGE_DUPLICATE_TASK);"
+        "content": "            throw new CommandException(Messages.MESSAGE_DUPLICATE_TASK);"
       },
       {
         "lineNumber": 62,
@@ -38063,213 +38234,241 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final String MESSAGE_TASK_NOT_FOUND \u003d \"The task does not exist\";"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    private final Index targetIndex;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private final Index targetIndex;"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public DoneTaskCommand(Index targetIndex) {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public DoneTaskCommand(Index targetIndex) {"
+        "content": "        requireNonNull(targetIndex);"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireNonNull(targetIndex);"
+        "content": "        this.targetIndex \u003d targetIndex;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.targetIndex \u003d targetIndex;"
+        "content": "    }"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireNonNull(model);"
+        "content": "        List\u003cTask\u003e lastShownList \u003d model.getFilteredTaskList();"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        List\u003cTask\u003e lastShownList \u003d model.getFilteredTaskList();"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        if (targetIndex.getZeroBased() \u003e\u003d lastShownList.size()) {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (targetIndex.getZeroBased() \u003e\u003d lastShownList.size()) {"
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);"
+        "content": "        }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        Task taskDone \u003d lastShownList.get(targetIndex.getZeroBased());"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        Task taskDone \u003d lastShownList.get(targetIndex.getZeroBased());"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        model.markTaskAsDone(taskDone);"
+        "content": "        if (taskDone.getStatus()) {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        model.updateFilteredTaskList(Model.PREDICATE_SHOW_ALL_TASKS);"
+        "content": "            throw new CommandException(Messages.MESSAGE_TASK_ALREADY_DONE);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_SUCCESS, taskDone));"
+        "content": "        }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        model.markTaskAsDone(taskDone);"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "        model.updateFilteredTaskList(Model.PREDICATE_SHOW_ALL_TASKS);"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        return new CommandResult(String.format(MESSAGE_SUCCESS, taskDone));"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                || (other instanceof DoneTaskCommand // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                \u0026\u0026 targetIndex.equals(((DoneTaskCommand) other).targetIndex)); // state check"
+        "content": "    @Override"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 57,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                || (other instanceof DoneTaskCommand // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                \u0026\u0026 targetIndex.equals(((DoneTaskCommand) other).targetIndex)); // state check"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
         "author": {
           "gitId": "shuiyao-sg"
         },
@@ -38277,7 +38476,7 @@
       }
     ],
     "authorContributionMap": {
-      "shuiyao-sg": 57
+      "shuiyao-sg": 61
     }
   },
   {
@@ -66490,7 +66689,7 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                \u0026\u0026 heading.equals(((Heading) other).heading)); // state check"
+        "content": "                \u0026\u0026 this.heading.equals(((Heading) other).getHeading())); // state check"
       },
       {
         "lineNumber": 50,
@@ -66569,742 +66768,742 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import static java.util.Objects.requireNonNull;"
+        "content": "import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;"
+        "content": ""
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "import java.time.LocalDate;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.LocalDate;"
+        "content": "import java.time.LocalTime;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.LocalTime;"
+        "content": "import java.time.format.DateTimeFormatter;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.format.DateTimeFormatter;"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.task.exceptions.RedundantOperationException;"
+        "content": " * Represents a NUStudy revision task."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "/**"
+        "content": "public class Task {"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " * Represents a NUStudy revision task."
+        "content": "    public static final String MESSAGE_DATE_CONSTRAINT \u003d \"Please follow Singapore local date format \u0027dd/MM/yyyy\u0027, \""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " */"
+        "content": "            + \"with 1 \u003c\u003d dd \u003c\u003d 31, 1 \u003c\u003d MM \u003c\u003d 12, 0 \u003c yyyy \u003c 9999\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "public class Task {"
+        "content": "    public static final String MESSAGE_TIME_CONSTRAINT \u003d \"Please follow Singapore local time format \u0027HH/mm\u0027, \""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final String MESSAGE_DATE_CONSTRAINT \u003d \"Please follow Singapore local date format \u0027dd/MM/yyyy\u0027,\""
+        "content": "            + \"with 00 \u003c\u003d HH \u003c\u003d 23, 00 \u003c\u003d mm \u003c\u003d 59\";"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + \"with 1 \u003c\u003d dd \u003c\u003d 31, 1 \u003c\u003d MM \u003c\u003d 12, -9999 \u003c yyyy \u003c 9999\";"
+        "content": "    public static final DateTimeFormatter FORMAT_FILE_DATE_STRING \u003d DateTimeFormatter.ofPattern(\"dd MMMM yyyy\");"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final String MESSAGE_TIME_CONSTRAINT \u003d \"Please follow Singapore local time format \u0027HH/mm\u0027,\""
+        "content": "    public static final DateTimeFormatter FORMAT_FILE_TIME_STRING \u003d DateTimeFormatter.ofPattern(\"HH:mm\");"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            + \"with 00 \u003c\u003d HH \u003c\u003d 23, 00 \u003c\u003d mm \u003c\u003d 59\";"
+        "content": "    public static final DateTimeFormatter FORMAT_USER_INPUT_DATE \u003d DateTimeFormatter.ofPattern(\"dd/MM/yyyy\");"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final DateTimeFormatter FORMAT_FILE_DATE_STRING \u003d DateTimeFormatter.ofPattern(\"dd MMMM yyyy\");"
+        "content": "    public static final DateTimeFormatter FORMAT_USER_INPUT_TIME \u003d DateTimeFormatter.ofPattern(\"HHmm\");"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final DateTimeFormatter FORMAT_FILE_TIME_STRING \u003d DateTimeFormatter.ofPattern(\"HH:mm\");"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final DateTimeFormatter FORMAT_USER_INPUT_DATE \u003d DateTimeFormatter.ofPattern(\"dd/MM/yyyy\");"
+        "content": "    protected Heading heading;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static final DateTimeFormatter FORMAT_USER_INPUT_TIME \u003d DateTimeFormatter.ofPattern(\"HHmm\");"
+        "content": "    private boolean isDone;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    private LocalDate date;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    protected Heading heading;"
+        "content": "    private LocalTime time;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private boolean isDone;"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private LocalDate date;"
+        "content": "    Task(LocalDate date, LocalTime time) {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private LocalTime time;"
+        "content": "        requireAllNonNull(date, time);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        this.isDone \u003d false;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    Task(LocalDate date, LocalTime time) {"
+        "content": "        this.date \u003d date;"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireAllNonNull(date, time);"
+        "content": "        this.time \u003d time;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.isDone \u003d false;"
+        "content": "    }"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.date \u003d date;"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.time \u003d time;"
+        "content": "    public Task(Heading heading, LocalDate date, LocalTime time, boolean isDone) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        requireAllNonNull(heading, date, time, isDone);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        this.heading \u003d heading;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public Task(Heading heading, LocalDate date, LocalTime time, boolean isDone) {"
+        "content": "        this.date \u003d date;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireNonNull(date);"
+        "content": "        this.time \u003d time;"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.heading \u003d heading;"
+        "content": "        this.isDone \u003d isDone;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.date \u003d date;"
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.time \u003d time;"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.isDone \u003d isDone;"
+        "content": "    public static boolean isValidStatusIcon(String status) {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        return status.equals(\"[Y]\") || status.equals(\"[N]\");"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public static boolean isValidStatusIcon(String status) {"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return status.equals(\"[Y]\") || status.equals(\"[N]\");"
+        "content": "    /**"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "     * Gets status icon."
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "     *"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     * @return \"Y\" if done. \"N\" if not done."
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Gets status icon."
+        "content": "     */"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     *"
+        "content": "    public String getStatusIcon() {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @return \"Y\" if done. \"N\" if not done."
+        "content": "        return (isDone ? \"[\" + \"Y\" + \"]\" : \"[\" + \"N\" + \"]\");"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public String getStatusIcon() {"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return (isDone ? \"[\" + \"Y\" + \"]\" : \"[\" + \"N\" + \"]\");"
+        "content": "    @Override"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        return getStatusIcon() + \" \" + heading.toString() + \" by: \""
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "                + getDate().format(FORMAT_FILE_DATE_STRING) + \" \""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public String toString() {"
+        "content": "                + getTime().format(FORMAT_FILE_TIME_STRING);"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return getStatusIcon() + \" \" + heading.toString() + \" by: \""
+        "content": "    }"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                + getDate().format(FORMAT_FILE_DATE_STRING) + \" \""
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                + getTime().format(FORMAT_FILE_TIME_STRING);"
+        "content": "    public LocalDate getDate() {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        return date;"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public LocalDate getDate() {"
+        "content": ""
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return date;"
+        "content": "    public LocalTime getTime() {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        return time;"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public LocalTime getTime() {"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return time;"
+        "content": "    public Heading getHeading() {"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        return heading;"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public Heading getHeading() {"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return heading;"
+        "content": "    @Override"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "            return true;"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        }"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            return true;"
+        "content": "        if (!(other instanceof Task)) {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": "            return false;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (!(other instanceof Task)) {"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            return false;"
+        "content": "        Task otherTask \u003d (Task) other;"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": "        return this.heading.equals(otherTask.getHeading())"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "                \u0026\u0026 getDate().equals(otherTask.getDate())"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        Task otherTask \u003d (Task) other;"
+        "content": "                \u0026\u0026 getTime().equals(otherTask.getTime())"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return heading.equals(otherTask.getHeading())"
+        "content": "                \u0026\u0026 getStatusIcon().equals(otherTask.getStatusIcon());"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                \u0026\u0026 getDate().equals(otherTask.getDate())"
+        "content": "    }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                \u0026\u0026 getTime().equals(otherTask.getTime())"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                \u0026\u0026 getStatusIcon().equals(otherTask.getStatusIcon());"
+        "content": "    /**"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "     * Marks the task as done."
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "     *"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     * @return The done task object."
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Marks the task as done."
+        "content": "     */"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     *"
+        "content": "    public Task markAsDone() {"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @return The done task object."
+        "content": "        this.isDone \u003d true;"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "        return this;"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public Task markAsDone() {"
+        "content": "    }"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (this.isDone) {"
+        "content": ""
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new RedundantOperationException(\"The task has already been marked done\");"
+        "content": "    /**"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": "     * Marks the task as not done."
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        this.isDone \u003d true;"
+        "content": "     *"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return this;"
+        "content": "     * @return The not done task object."
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public Task markAsNotDone() {"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public boolean getStatus() {"
+        "content": "        this.isDone \u003d false;"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return isDone;"
+        "content": "        return this;"
       },
       {
         "lineNumber": 109,
@@ -67318,11 +67517,39 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public boolean getStatus() {"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        return isDone;"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "shuiyao-sg": 110
+      "shuiyao-sg": 114
     }
   },
   {
@@ -67348,28 +67575,28 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.LocalDate;"
+        "content": "import static java.util.Objects.requireNonNull;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.LocalTime;"
+        "content": ""
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "import java.time.LocalDate;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.Note;"
+        "content": "import java.time.LocalTime;"
       },
       {
         "lineNumber": 7,
@@ -67383,171 +67610,192 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "/**"
+        "content": "import seedu.address.model.note.Note;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " * Represents a task for revision of notes."
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "public class TaskForNote extends Task {"
+        "content": " * Represents a task for revision of notes."
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private static final String TYPE \u003d \"NOTE\";"
+        "content": " */"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "public class TaskForNote extends Task {"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "    private static final String TYPE \u003d \"NOTE\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Constructs a new revision task for lecture notes. Date field must be non-null."
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @param note The lecture notes to be revised."
+        "content": "     * Constructs a new revision task for lecture notes. Date field must be non-null."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @param date The date by when the task should be done."
+        "content": "     *"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @param time The time in a day by which the task should be done."
+        "content": "     * @param note The lecture notes to be revised."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "     * @param date The date by when the task should be done."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public TaskForNote(Note note, LocalDate date, LocalTime time) {"
+        "content": "     * @param time The time in a day by which the task should be done."
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        super(date, time);"
+        "content": "     */"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        super.heading \u003d new Heading(note.getTitle().toString());"
+        "content": "    public TaskForNote(Note note, LocalDate date, LocalTime time) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        super(date, time);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        requireNonNull(note);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "        super.heading \u003d new Heading(note.getTitle().toString());"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public String toString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return super.getStatusIcon() + \" \" + TYPE + \" : \" + super.heading.toString() + \" by: \""
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                + super.getDate().format(FORMAT_FILE_DATE_STRING) + \" \""
+        "content": "    @Override"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                + super.getTime().format(FORMAT_FILE_TIME_STRING);"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        return super.getStatusIcon() + \" \" + TYPE + \" : \" + super.heading.toString() + \" by: \""
       },
       {
         "lineNumber": 32,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                + super.getDate().format(FORMAT_FILE_DATE_STRING) + \" \""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                + super.getTime().format(FORMAT_FILE_TIME_STRING);"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
         "author": {
           "gitId": "shuiyao-sg"
         },
@@ -67555,7 +67803,7 @@
       }
     ],
     "authorContributionMap": {
-      "shuiyao-sg": 32
+      "shuiyao-sg": 35
     }
   },
   {
@@ -67581,28 +67829,28 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.LocalDate;"
+        "content": "import static java.util.Objects.requireNonNull;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.LocalTime;"
+        "content": ""
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "import java.time.LocalDate;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.question.Question;"
+        "content": "import java.time.LocalTime;"
       },
       {
         "lineNumber": 7,
@@ -67616,171 +67864,192 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "/**"
+        "content": "import seedu.address.model.question.Question;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " * Represents a task for revision of questions."
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "public class TaskForQuestion extends Task {"
+        "content": " * Represents a task for revision of questions."
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private static final String TYPE \u003d \"QUESTION\";"
+        "content": " */"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "public class TaskForQuestion extends Task {"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "    private static final String TYPE \u003d \"QUESTION\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Constructs a new revision task for questions. Date field must be non-null."
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @param question The question to be revised."
+        "content": "     * Constructs a new revision task for questions. Date field must be non-null."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @param date The date by when the task should be done."
+        "content": "     *"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @param time The time in a day by which the task should be done."
+        "content": "     * @param question The question to be revised."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "     * @param date The date by when the task should be done."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public TaskForQuestion(Question question, LocalDate date, LocalTime time) {"
+        "content": "     * @param time The time in a day by which the task should be done."
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        super(date, time);"
+        "content": "     */"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        super.heading \u003d new Heading(question.getQuestionBody().toString());"
+        "content": "    public TaskForQuestion(Question question, LocalDate date, LocalTime time) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        super(date, time);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        requireNonNull(question);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "        super.heading \u003d new Heading(question.getQuestionBody().toString());"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public String toString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return super.getStatusIcon() + \" \" + TYPE + \" : \" + super.heading.toString() + \" by: \""
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                + super.getDate().format(FORMAT_FILE_DATE_STRING) + \" \""
+        "content": "    @Override"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                + super.getTime().format(FORMAT_FILE_TIME_STRING);"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "        return super.getStatusIcon() + \" \" + TYPE + \" : \" + super.heading.toString() + \" by: \""
       },
       {
         "lineNumber": 32,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                + super.getDate().format(FORMAT_FILE_DATE_STRING) + \" \""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                + super.getTime().format(FORMAT_FILE_TIME_STRING);"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
         "author": {
           "gitId": "shuiyao-sg"
         },
@@ -67788,7 +68057,7 @@
       }
     ],
     "authorContributionMap": {
-      "shuiyao-sg": 32
+      "shuiyao-sg": 35
     }
   },
   {
@@ -67870,864 +68139,948 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.exceptions.NoteNotFoundException;"
+        "content": "import seedu.address.model.task.exceptions.DuplicateTaskException;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.task.exceptions.DuplicateTaskException;"
+        "content": "import seedu.address.model.task.exceptions.TaskNotFoundException;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.task.exceptions.TaskNotFoundException;"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "/**"
+        "content": " * Represents a task list."
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " * Represents a task list."
+        "content": " */"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": " */"
+        "content": "public class TaskList implements Iterable\u003cTask\u003e {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "public class TaskList implements Iterable\u003cTask\u003e {"
+        "content": "    private final ObservableList\u003cTask\u003e internalList \u003d FXCollections.observableArrayList();"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private final ObservableList\u003cTask\u003e internalList \u003d FXCollections.observableArrayList();"
+        "content": "    private final ObservableList\u003cTask\u003e internalUnmodifiableList \u003d"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private final ObservableList\u003cTask\u003e internalUnmodifiableList \u003d"
+        "content": "            FXCollections.unmodifiableObservableList(internalList);"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            FXCollections.unmodifiableObservableList(internalList);"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     * Returns true if the list contains a task which equals with the given argument."
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Returns true if the list contains a task which equals with the given argument."
+        "content": "     */"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "    public boolean contains(Task toCheck) {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public boolean contains(Task toCheck) {"
+        "content": "        requireNonNull(toCheck);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireNonNull(toCheck);"
+        "content": "        return internalList.stream().anyMatch(toCheck::equals);"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return internalList.stream().anyMatch(toCheck::equals);"
+        "content": "    }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     * Adds a revision task to the task list. The task must be different from all existing ones."
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Adds a revision task to the task list. The task must be different from all existing ones."
+        "content": "     */"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "    public void add(Task toAdd) {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public void add(Task toAdd) {"
+        "content": "        requireNonNull(toAdd);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireNonNull(toAdd);"
+        "content": "        if (contains(toAdd)) {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (contains(toAdd)) {"
+        "content": "            throw new DuplicateTaskException();"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new DuplicateTaskException();"
+        "content": "        }"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": "        internalList.add(toAdd);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        internalList.add(toAdd);"
+        "content": "    }"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     * Replaces the existing revision task {@code target} in the list with {@code edited}."
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Replaces the existing revision task {@code target} in the list with {@code edited}."
+        "content": "     * The new task must be different from all existing ones."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * The new task must be different from all existing ones."
+        "content": "     */"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "    public void setTask(Task target, Task edited) {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public void setTask(Task target, Task edited) {"
+        "content": "        requireAllNonNull(target, edited);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireAllNonNull(target, edited);"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        int index \u003d internalList.indexOf(target);"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        int index \u003d internalList.indexOf(target);"
+        "content": "        if (index \u003d\u003d -1) {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (index \u003d\u003d -1) {"
+        "content": "            throw new TaskNotFoundException();"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new NoteNotFoundException();"
+        "content": "        }"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        if (!target.equals(edited) \u0026\u0026 contains(edited)) {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (!target.equals(edited) \u0026\u0026 contains(edited)) {"
+        "content": "            throw new DuplicateTaskException();"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new DuplicateTaskException();"
+        "content": "        }"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        internalList.set(index, edited);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        internalList.set(index, edited);"
+        "content": "    }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     * Removes the equivalent, existing revision task from the list."
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Removes the equivalent, existing revision task from the list."
+        "content": "     */"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "    public void remove(Task toRemove) {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public void remove(Task toRemove) {"
+        "content": "        requireNonNull(toRemove);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireNonNull(toRemove);"
+        "content": "        if (!internalList.remove(toRemove)) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (!internalList.remove(toRemove)) {"
+        "content": "            throw new TaskNotFoundException();"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new TaskNotFoundException();"
+        "content": "        }"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public Task get(int index) {"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public Task get(int index) {"
+        "content": "        return internalList.get(index);"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return internalList.get(index);"
+        "content": "    }"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public void setTasks(TaskList replacement) {"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public void setTasks(TaskList replacement) {"
+        "content": "        requireNonNull(replacement);"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireNonNull(replacement);"
+        "content": "        internalList.setAll(replacement.internalList);"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        internalList.setAll(replacement.internalList);"
+        "content": "    }"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     * Replaces the contents of this list with {@code tasks} containing no duplicates."
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Replaces the contents of this list with {@code tasks} containing no duplicates."
+        "content": "     */"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "    public void setTasks(List\u003cTask\u003e tasks) {"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public void setTasks(List\u003cTask\u003e tasks) {"
+        "content": "        requireAllNonNull(tasks);"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireAllNonNull(tasks);"
+        "content": "        if (!tasksAreUnique(tasks)) {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        //if (!notesAreUnique(tasks)) {"
+        "content": "            throw new DuplicateTaskException();"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        //    throw new DuplicateTitleException();"
+        "content": "        }"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        //}"
+        "content": "        internalList.setAll(tasks);"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        internalList.setAll(tasks);"
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "     * Returns the backing list as an unmodifiable {@code ObservableList}."
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     */"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Returns the backing list as an unmodifiable {@code ObservableList}."
+        "content": "    public ObservableList\u003cTask\u003e asUnmodifiableObservableList() {"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "        return internalUnmodifiableList;"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public ObservableList\u003cTask\u003e asUnmodifiableObservableList() {"
+        "content": "    }"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return internalUnmodifiableList;"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public Iterator\u003cTask\u003e iterator() {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "        return internalList.iterator();"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public Iterator\u003cTask\u003e iterator() {"
+        "content": "    }"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return internalList.iterator();"
+        "content": ""
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "                || (other instanceof TaskList // instanceof handles nulls"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "                \u0026\u0026 internalList.equals(((TaskList) other).internalList));"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                || (other instanceof TaskList // instanceof handles nulls"
+        "content": "    }"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                \u0026\u0026 internalList.equals(((TaskList) other).internalList));"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Override"
+        "content": "        return internalList.hashCode();"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public int hashCode() {"
+        "content": "    }"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        return internalList.hashCode();"
+        "content": ""
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "     * Marks the selected task as done."
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    /**"
+        "content": "     *"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * Marks the selected task as done."
+        "content": "     * @param taskDone The task to be marked as done."
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     *"
+        "content": "     */"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     * @param taskDone The task to be marked as done."
+        "content": "    public void markTaskAsDone(Task taskDone) {"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "     */"
+        "content": "        requireNonNull(taskDone);"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public void markTaskAsDone(Task taskDone) {"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        requireNonNull(taskDone);"
+        "content": "        int index \u003d internalList.indexOf(taskDone);"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        if (index \u003d\u003d -1) {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        int index \u003d internalList.indexOf(taskDone);"
+        "content": "            throw new TaskNotFoundException();"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        if (index \u003d\u003d -1) {"
+        "content": "        }"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            throw new TaskNotFoundException();"
+        "content": "        setTask(taskDone, taskDone.markAsDone());"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        setTask(taskDone, taskDone.markAsDone());"
+        "content": ""
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    public void clear() {"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        internalList.clear();"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public void clear() {"
+        "content": "    }"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        internalList.clear();"
+        "content": ""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 134,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "     * Returns true if {@code tasks} contains only unique tasks."
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    private boolean tasksAreUnique(List\u003cTask\u003e tasks) {"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        for (int i \u003d 0; i \u003c tasks.size() - 1; i++) {"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "            for (int j \u003d i + 1; j \u003c tasks.size(); j++) {"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                if (tasks.get(i).equals(tasks.get(j))) {"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                    return false;"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        return true;"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 146,
         "author": {
           "gitId": "shuiyao-sg"
         },
@@ -68735,7 +69088,7 @@
       }
     ],
     "authorContributionMap": {
-      "shuiyao-sg": 134
+      "shuiyao-sg": 146
     }
   },
   {
@@ -104575,6 +104928,1193 @@
     }
   },
   {
+    "path": "src/test/java/seedu/address/model/task/HeadingTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "package seedu.address.model.task;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertNotEquals;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static seedu.address.testutil.Assert.assertThrows;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "public class HeadingTest {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void constructor_null_throwNullPointerException() {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new Heading(null));"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void constructor_invalidHeading_throwsIllegalArgumentException() {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        String invalidHeading \u003d \"\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(IllegalArgumentException.class, () -\u003e new Heading(invalidHeading));"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void isValidAddress() {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        // null address"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e Heading.isValidHeading(null));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        // invalid addresses"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(Heading.isValidHeading(\"\")); // empty string"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(Heading.isValidHeading(\" \")); // spaces only"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        // valid addresses"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertTrue(Heading.isValidHeading(\"Blk 456, Den Road, #01-355\"));"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertTrue(Heading.isValidHeading(\"-\")); // one character"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertTrue(Heading.isValidHeading(\"Leng Inc; 1234 Market St; San Francisco CA 2349879; USA\")); // long address"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        Heading firstHeading \u003d new Heading(\"Heading\");"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //same object -\u003e return true"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertEquals(firstHeading, firstHeading);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //same heading string but different object reference -\u003e return true"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertEquals(firstHeading, new Heading(\"Heading\"));"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //different object and different string -\u003e return true"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertNotEquals(firstHeading, new Heading(\"heading\"));"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shuiyao-sg": 52
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/model/task/TaskListTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "package seedu.address.model.task;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static seedu.address.testutil.Assert.assertThrows;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_DEFAULT;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_DONE;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_FOR_NOTE;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_MODIFIED_DATE;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_MODIFIED_TIME;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import seedu.address.model.task.exceptions.DuplicateTaskException;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "import seedu.address.model.task.exceptions.TaskNotFoundException;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "public class TaskListTest {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    private final TaskList taskList \u003d new TaskList();"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void contains_nullTask_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e taskList.contains(null));"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void contains_taskNotInList_returnsFalse() {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(taskList.contains(CONAN_TASK_DEFAULT));"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void contains_taskInList_returnsTrue() {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.add(CONAN_TASK_DEFAULT);"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertTrue(taskList.contains(CONAN_TASK_DEFAULT));"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void add_nullTask_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e taskList.add(null));"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void add_duplicateTask_throwsDuplicateTaskException() {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.add(CONAN_TASK_DEFAULT);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(DuplicateTaskException.class, () -\u003e taskList.add(CONAN_TASK_DEFAULT));"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void setTask_nullTargetTask_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e taskList.setTask(null, CONAN_TASK_DEFAULT));"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void setTask_nullEditedTask_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e taskList.setTask(CONAN_TASK_DONE, null));"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void setTask_targetTaskNotInList_throwsTaskNotFoundException() {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(TaskNotFoundException.class, () -\u003e taskList.setTask(CONAN_TASK_DEFAULT, CONAN_TASK_DEFAULT));"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void setTask_editedTaskHasNonUniqueIdentity_throwsDuplicateTaskException() {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.add(CONAN_TASK_DEFAULT);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.add(CONAN_TASK_DONE);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(DuplicateTaskException.class, () -\u003e taskList.setTask(CONAN_TASK_DEFAULT, CONAN_TASK_DONE));"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void setTask_editedTaskHasDifferentDate_success() {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.add(CONAN_TASK_FOR_NOTE);"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.setTask(CONAN_TASK_FOR_NOTE, CONAN_TASK_MODIFIED_DATE);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        TaskList expectedTaskList \u003d new TaskList();"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        expectedTaskList.add(CONAN_TASK_MODIFIED_DATE);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertEquals(taskList, expectedTaskList);"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void setTask_editedTaskHasDifferentTime_success() {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.add(CONAN_TASK_FOR_NOTE);"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.setTask(CONAN_TASK_FOR_NOTE, CONAN_TASK_MODIFIED_TIME);"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        TaskList expectedTaskList \u003d new TaskList();"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        expectedTaskList.add(CONAN_TASK_MODIFIED_TIME);"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertEquals(taskList, expectedTaskList);"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void setTask_editedTaskHasDifferentStatus_success() {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.add(CONAN_TASK_FOR_NOTE);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.setTask(CONAN_TASK_FOR_NOTE, CONAN_TASK_FOR_NOTE.markAsDone());"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        TaskList expectedTaskList \u003d new TaskList();"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        expectedTaskList.add(CONAN_TASK_FOR_NOTE); //isDone field of CONAN_TASK_FOR_NOTE has been changed to true"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertEquals(taskList, expectedTaskList);"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        CONAN_TASK_FOR_NOTE.markAsNotDone();"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void remove_nullTask_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e taskList.remove(null));"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void remove_taskDoesNotExist_throwsTaskNotFoundException() {"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(TaskNotFoundException.class, () -\u003e taskList.remove(CONAN_TASK_DEFAULT));"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void remove_existingTask_removesTask() {"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.add(CONAN_TASK_DEFAULT);"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        taskList.remove(CONAN_TASK_DEFAULT);"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        TaskList expectedTaskList \u003d new TaskList();"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertEquals(taskList, expectedTaskList);"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shuiyao-sg": 115
+    }
+  },
+  {
     "path": "src/test/java/seedu/address/model/task/TaskTest.java",
     "fileType": "tests",
     "lines": [
@@ -104604,70 +106144,70 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import static seedu.address.testutil.Assert.assertThrows;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.LocalDate;"
+        "content": "import static seedu.address.model.task.Task.isValidStatusIcon;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import java.time.LocalTime;"
+        "content": "import static seedu.address.testutil.Assert.assertThrows;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_QUESTION;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_DEFAULT;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.Content;"
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_DONE;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.Note;"
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_MODIFIED_DATE;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "import seedu.address.model.note.Title;"
+        "content": "import static seedu.address.testutil.TypicalAppData.CONAN_TASK_MODIFIED_TIME;"
       },
       {
         "lineNumber": 14,
@@ -104681,7 +106221,7 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "public class TaskTest {"
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 16,
@@ -104695,157 +106235,507 @@
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Test"
+        "content": "import seedu.address.testutil.TaskBuilder;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    void getStatusIcon_default_returnN() {"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        NoteStub note \u003d new NoteStub(new Title(\"Lecture 1\"), new Content(\"Hello World\"));"
+        "content": "public class TaskTest {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        LocalDate date \u003d LocalDate.parse(\"06/07/2019\", Task.FORMAT_USER_INPUT_DATE);"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        LocalTime time \u003d LocalTime.parse(\"1500\", Task.FORMAT_USER_INPUT_TIME);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        assertEquals(new TaskForNote(note, date, time).getStatusIcon(),"
+        "content": "    public void getStatusIcon_default_returnsN() {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "                \"[N]\");"
+        "content": "        assertEquals(new TaskForNote(CONAN, TaskBuilder.DEFAULT_DATE, TaskBuilder.DEFAULT_TIME).getStatusIcon(),"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "                \"[N]\");"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        assertEquals(new TaskForQuestion(CONAN_QUESTION, TaskBuilder.DEFAULT_DATE, TaskBuilder.DEFAULT_TIME)"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    @Test"
+        "content": "                .getStatusIcon(), \"[N]\");"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    public void constructor_null_throwsNullPointerException() {"
+        "content": "        assertEquals(new Task(new Heading(TaskBuilder.DEFAULT_HEADING), TaskBuilder.DEFAULT_DATE,"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        NoteStub note \u003d new NoteStub(new Title(\"Lecture 1\"), new Content(\"Hello World\"));"
+        "content": "                TaskBuilder.DEFAULT_TIME, false).getStatusIcon(), \"[N]\");"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        LocalTime time \u003d LocalTime.parse(\"1500\", Task.FORMAT_USER_INPUT_TIME);"
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        assertThrows(NullPointerException.class, () -\u003e new TaskForNote(note, null, time));"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "    public void constructor_null_throwsNullPointerException() {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    private class NoteStub extends Note {"
+        "content": "        //null date"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": ""
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new TaskForNote(CONAN, null, TaskBuilder.DEFAULT_TIME));"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        private NoteStub(Title title, Content content) {"
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new TaskForQuestion(CONAN_QUESTION, null,"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "            super(title, content);"
+        "content": "                TaskBuilder.DEFAULT_TIME));"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "        }"
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new Task(new Heading(TaskBuilder.DEFAULT_HEADING), null,"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "shuiyao-sg"
         },
-        "content": "    }"
+        "content": "                TaskBuilder.DEFAULT_TIME, false));"
       },
       {
         "lineNumber": 39,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //null time"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new TaskForNote(CONAN, TaskBuilder.DEFAULT_DATE, null));"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new TaskForQuestion(CONAN_QUESTION, TaskBuilder.DEFAULT_DATE,"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                null));"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new Task(new Heading(TaskBuilder.DEFAULT_HEADING),"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                TaskBuilder.DEFAULT_DATE, null, false));"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //null note"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new TaskForNote(null, TaskBuilder.DEFAULT_DATE,"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                TaskBuilder.DEFAULT_TIME));"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //null question"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new TaskForQuestion(null, TaskBuilder.DEFAULT_DATE,"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                TaskBuilder.DEFAULT_TIME));"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //null heading"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e new Task(null, TaskBuilder.DEFAULT_DATE,"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "                TaskBuilder.DEFAULT_TIME, false));"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void isValidStatusIcon_invalidIcon_returnsFalse() {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(isValidStatusIcon(\"hello\"));"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(isValidStatusIcon(\"1\"));"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(isValidStatusIcon(\"\"));"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertTrue(isValidStatusIcon(\"[Y]\"));"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertTrue(isValidStatusIcon(\"[N]\"));"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        // same values -\u003e returns true"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        Task conanCopy \u003d new TaskBuilder(CONAN_TASK_DEFAULT).build();"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertTrue(CONAN_TASK_DEFAULT.equals(conanCopy));"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        // same object -\u003e returns true"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertTrue(CONAN_TASK_DEFAULT.equals(CONAN_TASK_DEFAULT));"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        // different type -\u003e returns false"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(CONAN_TASK_DEFAULT.equals(5));"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        // different date -\u003e returns false"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(CONAN_TASK_DEFAULT.equals(CONAN_TASK_MODIFIED_DATE));"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //different time -\u003e returns false"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(CONAN_TASK_DEFAULT.equals(CONAN_TASK_MODIFIED_TIME));"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        //different status -\u003e returns false"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "        assertFalse(CONAN_TASK_DEFAULT.equals(CONAN_TASK_DONE));"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "shuiyao-sg"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 89,
         "author": {
           "gitId": "shuiyao-sg"
         },
@@ -104853,7 +106743,7 @@
       }
     ],
     "authorContributionMap": {
-      "shuiyao-sg": 39
+      "shuiyao-sg": 89
     }
   },
   {

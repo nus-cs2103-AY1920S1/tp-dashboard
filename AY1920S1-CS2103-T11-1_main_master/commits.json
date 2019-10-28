@@ -226,8 +226,8 @@
         ]
       },
       {
-        "insertions": 3,
-        "deletions": 2,
+        "insertions": 303,
+        "deletions": 156,
         "date": "2019-10-27",
         "commitResults": [
           {
@@ -236,6 +236,55 @@
             "messageBody": "",
             "insertions": 3,
             "deletions": 2
+          },
+          {
+            "hash": "bb0425e49f4d93b13eff8161c74ee6b6b0bd058b",
+            "messageTitle": "Make \u0027Fill\u0027 and \u0027Submit\u0027 logic more robust.",
+            "messageBody": "- Make \u0027fill\u0027 command work on all drafts (complete and incomplete drafts).\n- Set index taken in by \u0027fill\u0027 and \u0027submit\u0027 commands to refer to the last shown incident list on the IMS GUI.\n- Use SLAP to improve code quality of \u0027Find\u0027 and \u0027Submit\u0027 commands.\n- Generalise \u0027ListIncidentsCommand\u0027 to carry out the listing functionalities of \u0027Find\u0027 and \u0027Submit\u0027 commands.\n",
+            "insertions": 300,
+            "deletions": 154
+          }
+        ]
+      },
+      {
+        "insertions": 512,
+        "deletions": 203,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "4c9cf37939caac4e7d14f6e6ff07d8dcdf41cda5",
+            "messageTitle": "Change implementation of Incident class.",
+            "messageBody": "- Make date-time format of incident reports more human reader-friendly.\n- Add unit tests to ensure incident date time formats are enforced.\n- Remove redundant constructor.\n- Modify JsonAdaptedIncident to be compatible with changes to Incident class.\n",
+            "insertions": 194,
+            "deletions": 73
+          },
+          {
+            "hash": "b1b7a03d99defd9970c176033ec9504ab0c0877e",
+            "messageTitle": "Fix code quality issues.",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "f54a1bbe064e480ccb3bb59691ce6b51a09af78d",
+            "messageTitle": "Check code quality issue.",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "a03ab66c3d4307a621b05a5dc130dc5ef30604cb",
+            "messageTitle": "Improve Incident GUI display.",
+            "messageBody": "- Add \u0027status\u0027 badge to visualise incident status changes brought about by `fill` and `submit` commands.\n- Add description, caller number, operator, location, and date time fields in a readable and presentable way to the IncidentListCard.\n",
+            "insertions": 206,
+            "deletions": 78
+          },
+          {
+            "hash": "bb93406f8d37162a2d730b90ab2b234085cab409",
+            "messageTitle": "Update user guide for \u0027fill\u0027 and \u0027submit\u0027 commands.",
+            "messageBody": "- Change Incident toString() method to return IncidentId instead of Incident description. This change necessitated changes in editCommandTest.\n",
+            "insertions": 109,
+            "deletions": 49
           }
         ]
       }
@@ -1811,48 +1860,48 @@
     ]
   },
   "authorFinalContributionMap": {
-    "atharvjoshi": 965,
-    "hellopanda128": 707,
-    "madanalogy": 3512,
-    "Yoshi275": 1426,
-    "tirameshu": 1179
+    "atharvjoshi": 1573,
+    "hellopanda128": 685,
+    "madanalogy": 3505,
+    "Yoshi275": 1334,
+    "tirameshu": 1153
   },
   "authorFileTypeContributionMap": {
     "atharvjoshi": {
-      "docs": 42,
-      "tests": 41,
-      "functional": 882
+      "docs": 101,
+      "tests": 156,
+      "functional": 1316
     },
     "hellopanda128": {
       "docs": 38,
-      "tests": 294,
-      "functional": 375
+      "tests": 286,
+      "functional": 361
     },
     "madanalogy": {
-      "docs": 433,
-      "tests": 1165,
-      "functional": 1770,
+      "docs": 434,
+      "tests": 1158,
+      "functional": 1769,
       "other": 144
     },
     "Yoshi275": {
       "docs": 122,
-      "tests": 161,
-      "functional": 1014,
+      "tests": 156,
+      "functional": 927,
       "other": 129
     },
     "tirameshu": {
-      "docs": 111,
+      "docs": 89,
       "tests": 5,
-      "functional": 978,
+      "functional": 974,
       "other": 85
     }
   },
   "authorContributionVariance": {
-    "atharvjoshi": 14367.061,
-    "hellopanda128": 10420.324,
-    "madanalogy": 85398.01,
-    "Yoshi275": 35498.434,
-    "tirameshu": 26031.496
+    "atharvjoshi": 25590.213,
+    "hellopanda128": 10240.402,
+    "madanalogy": 84050.76,
+    "Yoshi275": 34877.574,
+    "tirameshu": 25586.281
   },
   "authorDisplayNameMap": {
     "atharvjoshi": "CS2103-T11-1 JOSHI ... ABHAY",

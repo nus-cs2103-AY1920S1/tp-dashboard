@@ -394,8 +394,8 @@
         ]
       },
       {
-        "insertions": 23,
-        "deletions": 0,
+        "insertions": 136,
+        "deletions": 221,
         "date": "2019-10-24",
         "commitResults": [
           {
@@ -404,6 +404,97 @@
             "messageBody": "",
             "insertions": 23,
             "deletions": 0
+          },
+          {
+            "hash": "aed6fbd144044f9f72616b513bc5f3ea590f873f",
+            "messageTitle": "implement editing borrower in modelmanager",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 3
+          },
+          {
+            "hash": "06252a77b98717ba63a4c1cd990227d74ea9c83f",
+            "messageTitle": "added condition of checking if borrower id exists",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "db7395479e7ddfd271414212de409bd1d55b5099",
+            "messageTitle": "fix checkstyle errors",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 1
+          },
+          {
+            "hash": "86d6d1c4b2937bdb49f2fb0f9ef0b5d22aca8d80",
+            "messageTitle": "change to return edit borrower command",
+            "messageBody": "",
+            "insertions": 96,
+            "deletions": 214
+          }
+        ]
+      },
+      {
+        "insertions": 65,
+        "deletions": 28,
+        "date": "2019-10-26",
+        "commitResults": [
+          {
+            "hash": "29a1b2c0eca5d79d1dd0a1d6bfb704debf12861c",
+            "messageTitle": "included additional test",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 0
+          },
+          {
+            "hash": "c04c582f9b75e6ef464d61f8938959d87c4f8f34",
+            "messageTitle": "implement getEditBorrowerDescriptor method",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 0
+          },
+          {
+            "hash": "95c660aa7102388c1fd8995b363a60225135591e",
+            "messageTitle": "commented out methods that are not tested",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 12
+          },
+          {
+            "hash": "18ea410e530664e12b9a6012c39fc52cdf836f8a",
+            "messageTitle": "modify editCommandParser test to editBorrowerCommand context",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 10
+          },
+          {
+            "hash": "5dae27e89e981b6f581ff28e217dcabe3e68eacf",
+            "messageTitle": "declare throwing of commandexception at method name",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
+          },
+          {
+            "hash": "7c3a18eee8dadfb5cca97334887e4c6bfa323d98",
+            "messageTitle": "catch CommandException in assertParseSuccess and assertParseFailure",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 1,
+        "deletions": 1,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "70bf568ae616034708a907e827282bdc0e3d3b65",
+            "messageTitle": "remove borrowerId instead of borrower in borrowersMap",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
           }
         ]
       }
@@ -1896,8 +1987,8 @@
         ]
       },
       {
-        "insertions": 31,
-        "deletions": 17,
+        "insertions": 228,
+        "deletions": 61,
         "date": "2019-10-24",
         "commitResults": [
           {
@@ -1906,6 +1997,20 @@
             "messageBody": "",
             "insertions": 7,
             "deletions": 6
+          },
+          {
+            "hash": "7b6aab5c7e873ecb9aea62e5c203cb894dd70db3",
+            "messageTitle": "Add returnDate, renewCount, remainingFineAmount, paidFineAmount into Loan and JsonAdaptedLoan",
+            "messageBody": "",
+            "insertions": 90,
+            "deletions": 8
+          },
+          {
+            "hash": "3b06430d6f4cebc1f722d7d7fc911787b279f0ff",
+            "messageTitle": "Add updateLoan skeleton",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 10
           },
           {
             "hash": "54f914497f8e7fabfda6c3097fae18f7aa73a39d",
@@ -1927,6 +2032,125 @@
             "messageBody": "",
             "insertions": 6,
             "deletions": 1
+          },
+          {
+            "hash": "2f87509a1a14012acc9aac5093d10c8dc50db68d",
+            "messageTitle": "Add return date and fine incurred to return command",
+            "messageBody": "",
+            "insertions": 88,
+            "deletions": 26
+          }
+        ]
+      },
+      {
+        "insertions": 211,
+        "deletions": 78,
+        "date": "2019-10-25",
+        "commitResults": [
+          {
+            "hash": "f725b21462a7d54d04e94d0a27fbf9f7933d28a3",
+            "messageTitle": "Update tests",
+            "messageBody": "",
+            "insertions": 79,
+            "deletions": 8
+          },
+          {
+            "hash": "1a87497434c8bd62f0c3b5a098d0d3b868eae0f4",
+            "messageTitle": "Fix typo",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 17
+          },
+          {
+            "hash": "1b6a43ce9b297d57d8e36d7c184e843403f5cfec",
+            "messageTitle": "Add FineUtilTest",
+            "messageBody": "",
+            "insertions": 48,
+            "deletions": 2
+          },
+          {
+            "hash": "09f704e1bb611d80631066d9d67b90b1032dff1d",
+            "messageTitle": "Update loan tests",
+            "messageBody": "",
+            "insertions": 69,
+            "deletions": 51
+          }
+        ]
+      },
+      {
+        "insertions": 921,
+        "deletions": 37,
+        "date": "2019-10-26",
+        "commitResults": [
+          {
+            "hash": "dc7727eac908c2d0eeb638dcead031ed6d947a71",
+            "messageTitle": "Add RenewCommand",
+            "messageBody": "",
+            "insertions": 195,
+            "deletions": 10
+          },
+          {
+            "hash": "54fc7060ba1516db9263c5b57ea728743048222f",
+            "messageTitle": "Add RenewCommandParser",
+            "messageBody": "",
+            "insertions": 52,
+            "deletions": 12
+          },
+          {
+            "hash": "9b97623b121691457924ac544630937f1d4263bd",
+            "messageTitle": "Add tests for renew",
+            "messageBody": "",
+            "insertions": 368,
+            "deletions": 15
+          },
+          {
+            "hash": "e420a20b341ae18adfedc60c2ba1179f26842d77",
+            "messageTitle": "Implement PayCommand and PayCommandParser",
+            "messageBody": "",
+            "insertions": 306,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 307,
+        "deletions": 37,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "48b21b4fc5c8f01fa84f5f2b606c6402cae400c1",
+            "messageTitle": "Add PayCommandParserTest",
+            "messageBody": "",
+            "insertions": 122,
+            "deletions": 7
+          },
+          {
+            "hash": "ba21bdf335a0a365cb8b032336e0d6288ef3ac92",
+            "messageTitle": "Add PayCommandTest",
+            "messageBody": "",
+            "insertions": 112,
+            "deletions": 2
+          },
+          {
+            "hash": "4637a1b18e05368d13f1bd0c1b8dc60cd7e872a5",
+            "messageTitle": "Update tests",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 0
+          },
+          {
+            "hash": "579eea2579ad54d1cdbdbf510cbb1b73fa7e43a4",
+            "messageTitle": "Update UG according to implementation",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 7
+          },
+          {
+            "hash": "0b66d9d1368520fd696a5a5b2b94c98526c0d636",
+            "messageTitle": "Fix typo and abstracted out Loan methods",
+            "messageBody": "",
+            "insertions": 46,
+            "deletions": 21
           }
         ]
       }
@@ -2483,50 +2707,50 @@
     ]
   },
   "authorFinalContributionMap": {
-    "linyutinglyt": 1687,
-    "hoholyin": 4532,
-    "seeziyang": 3013,
-    "Cronyxx": 1726,
-    "shiyao821": 2490
+    "linyutinglyt": 1820,
+    "hoholyin": 4403,
+    "seeziyang": 4474,
+    "Cronyxx": 1725,
+    "shiyao821": 2472
   },
   "authorFileTypeContributionMap": {
     "linyutinglyt": {
       "docs": 39,
-      "tests": 847,
-      "functional": 798,
+      "tests": 939,
+      "functional": 839,
       "other": 3
     },
     "hoholyin": {
-      "docs": 381,
-      "tests": 2268,
-      "functional": 1693,
+      "docs": 380,
+      "tests": 2179,
+      "functional": 1654,
       "other": 190
     },
     "seeziyang": {
-      "docs": 337,
-      "tests": 1277,
-      "functional": 1210,
+      "docs": 344,
+      "tests": 2002,
+      "functional": 1939,
       "other": 189
     },
     "Cronyxx": {
       "docs": 70,
-      "tests": 697,
-      "functional": 843,
+      "tests": 699,
+      "functional": 840,
       "other": 116
     },
     "shiyao821": {
-      "docs": 262,
-      "tests": 663,
-      "functional": 1424,
+      "docs": 256,
+      "tests": 649,
+      "functional": 1426,
       "other": 141
     }
   },
   "authorContributionVariance": {
-    "linyutinglyt": 25269.75,
-    "hoholyin": 623903.6,
-    "seeziyang": 33315.098,
-    "Cronyxx": 24438.963,
-    "shiyao821": 110324.88
+    "linyutinglyt": 26503.754,
+    "hoholyin": 613079.2,
+    "seeziyang": 48402.766,
+    "Cronyxx": 24021.49,
+    "shiyao821": 108505.875
   },
   "authorDisplayNameMap": {
     "linyutinglyt": "CS2103T-F13-1 LIN Y ... UTING",

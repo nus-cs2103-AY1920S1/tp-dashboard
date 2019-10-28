@@ -37130,16 +37130,16 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d \"Answers should not be blank and cannot be duplicates\";"
+        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d \"Answers should not be blank\";"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "    public static final String VALIDATION_REGEX \u003d \".*\";"
+        "content": "    public static final String VALIDATION_REGEX \u003d \"(.*\\n*.*)*\";"
       },
       {
         "lineNumber": 14,
@@ -37465,9 +37465,9 @@
       }
     ],
     "authorContributionMap": {
-      "wilfredbtan": 56,
+      "wilfredbtan": 54,
       "jxofficial": 2,
-      "khiangleon": 1
+      "khiangleon": 3
     }
   },
   {
@@ -42713,19 +42713,19 @@
         "author": {
           "gitId": "wilfredbtan"
         },
-        "content": "import seedu.revision.model.answerable.Saq;"
+        "content": "import seedu.revision.model.category.Category;"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "jxofficial"
         },
-        "content": "import seedu.revision.model.category.Category;"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "jxofficial"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -42734,70 +42734,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * Contains utility methods for populating {@code AddressBook} with sample data."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": " * Contains utility methods for populating {@code AddressBook} with sample data."
+        "content": " */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "-"
-        },
         "content": "public class SampleDataUtil {"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 22,
         "author": {
           "gitId": "wilfredbtan"
         },
         "content": "    public static Answerable[] getSampleAnswerables() {"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 23,
         "author": {
           "gitId": "wilfredbtan"
         },
         "content": "        Answer defaultCorrectAnswer \u003d new Answer(\"CORRECT\");"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 24,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "        ArrayList\u003cAnswer\u003e defaultCorrectAnswerSet \u003d new ArrayList\u003c\u003e(Arrays.asList(defaultCorrectAnswer));"
+        "content": "        ArrayList\u003cAnswer\u003e defaultCorrectAnswerList \u003d new ArrayList\u003c\u003e(Arrays.asList(defaultCorrectAnswer));"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 25,
         "author": {
           "gitId": "wilfredbtan"
         },
         "content": "        Answer defaultWrongAnswer \u003d new Answer(\"WRONG\");"
       },
       {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "        ArrayList\u003cAnswer\u003e defaultWrongAnswerList \u003d new ArrayList\u003c\u003e(Arrays.asList(defaultWrongAnswer,"
+      },
+      {
         "lineNumber": 27,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "        ArrayList\u003cAnswer\u003e defaultWrongAnswerSet \u003d new ArrayList\u003c\u003e(Arrays.asList(defaultWrongAnswer));"
+        "content": "                defaultWrongAnswer, defaultWrongAnswer));"
       },
       {
         "lineNumber": 28,
@@ -42823,229 +42823,1244 @@
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "            new Mcq(new Question(\"What is being shown?\"), defaultCorrectAnswerSet, defaultWrongAnswerSet,"
+        "content": "            new Mcq(new Question(\"Sample Question\"), defaultCorrectAnswerList, defaultWrongAnswerList,"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "                    new Difficulty(\"3\"), getCategorySet(\"Math\")),"
+        "content": "                    new Difficulty(\"1\"), getCategorySet(\"category 1\", \"category 2\")),"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "            new Mcq(new Question(\"Bernice Yu\"), defaultCorrectAnswerSet, defaultWrongAnswerSet,"
+        "content": "            new Mcq(new Question(\"What type of project is AB3?\"),"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "                    new Difficulty(\"99272758\"), getCategorySet(\"colleagues\", \"friends\")),"
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"Brownfield\"))),"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "            new Mcq(new Question(\"Charlotte Oliveiro\"), defaultCorrectAnswerSet, defaultWrongAnswerSet,"
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"Greenfield\"), new Answer(\"Blackfield\"),"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "                    new Difficulty(\"93210283\"), getCategorySet(\"neighbours\")),"
+        "content": "                            new Answer(\"Whitefield\"))),"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "            new Saq(new Question(\"David Li\"), defaultCorrectAnswerSet,"
+        "content": "                    new Difficulty(\"1\"), getCategorySet(\"introduction\", \"week 2\")),"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "                    new Difficulty(\"91031282\"), getCategorySet(\"family\")),"
+        "content": "            new Mcq(new Question(\"Which of the following is a delight of Software Engineering?\"),"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "            new Saq(new Question(\"Irfan Ibrahim\"), defaultCorrectAnswerSet,"
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "                    new Difficulty(\"92492021\"), getCategorySet(\"classmates\")),"
+        "content": "                            .asList(new Answer(\"What you get of making things that are useful to others\"))),"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "            new Saq(new Question(\"Roy Balakrishnan\"), defaultCorrectAnswerSet,"
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"One must perform perfectly\"),"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "wilfredbtan"
+          "gitId": "khiangleon"
         },
-        "content": "                    new Difficulty(\"92624417\"), getCategorySet(\"colleagues\"))"
+        "content": "                            new Answer(\"One rarely controls the circumstances of his work or goal\"),"
       },
       {
         "lineNumber": 43,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"The dependence upon others\"))),"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"1\"), getCategorySet(\"introduction\", \"pros and cons\", \"week 2\")),"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is a woe of Software Engineering?\"),"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"Finding nitty little bugs\"))),"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"What you get of having to solve puzzles\"),"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"What you get of working in such a tractable medium\"),"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"What you get of having to keep learning always\"))),"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"1\"), getCategorySet(\"introduction\", \"pros and cons\", \"week 2\")),"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"What does IDE stand for?\"),"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"Integrated Development Environment\"))),"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"Integrated Development Editor\"),"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"Interchangeable Development Environment\"),"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"Integrated Development Enhancement\"))),"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"1\"), getCategorySet(\"implementation\", \"IDEs\", \"basic\", \"week 2\")),"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is not true?\"),"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"Test cases can only be determined \""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"by reviewing similar existing systems\"))),"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"SUT stands for Software Under Test\"),"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"A test case failure is a mismatch between the actual behaviour \""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"and the expected behaviour\"),"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"A test case failure may not always indicate a bug/defect in the SUT\"))),"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"3\"), getCategorySet(\"quality assurance\", \"testing\", \"week 2\")),"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is true?\"),"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"A regression is an unintended and undesirable side effect \""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"of a modification\"))),"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"Regression testing is the re-testing of the \""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"software to fix regression bugs\"),"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"Regression testing must be automated\"),"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"Regression testing is less effective when done frequently\"))),"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"2\"), getCategorySet(\"quality assurance\", \"testing\", \"week 2\")),"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is not true?\"),"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"Downloading a copy of a remote repo to your computer is \""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"called forking\"))),"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"A local repo can pull from multiple \""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"remote repositories\"),"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"It is possible to set up a Git server on your own computer\"),"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"A pull request is mechanism for contributing code to a remote repo.\"))),"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"3\"), getCategorySet(\"project management\", \"revision control\", \"week 2\")),"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is not true?\"),"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"Git uses a serial number (matching the exact nano-second a commit \""
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"was created) to uniquely identify a commit.\"))),"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"After you initialize a git repo in a folder, \""
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"all files in that folder are automatically tracked by Git.\"),"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"The git history does not contain everything that happened to the \""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"tracked files. It only contains specific points that you committed to \""
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"the history.\"),"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"Git can show you the difference between two adjacent commits in the \""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"version history.\"))),"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"3\"), getCategorySet(\"project management\", \"revision control\", \"week 2\")),"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is not true?\"),"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"To see the working folder at specific commit, \""
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"we ‘revert’ to that commit.\"))),"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"The git history does not contain everything that \""
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"happened to the tracked files. It only contains specific points that you \""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"committed to the history.\"),"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"After you initialize a git repo in a folder, \""
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"all files in that folder are automatically tracked by Git.\"),"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"Git can show you the difference between two adjacent commits in the \""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"version history.\"))),"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"3\"), getCategorySet(\"project management\", \"revision control\", \"week 2\")),"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is true?\"),"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"One aim of adopting a coding standard is to make the \""
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"entire code base look like it was written by one person.\"))),"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"A developer should understand the importance of \""
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"following a coding standard. However, there is no need to follow one.\"),"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"It is better if each developer followed their own style of coding \""
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"so that the code can be traced to the author easily.\"),"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"A coding standard is universal and not specific to any programming language\"))),"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"2\"), getCategorySet(\"implementation\", \"code quality\", \"week 3\")),"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is true?\"),"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"There are tools that can help to enforce some parts of a \""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"coding standard e.g. indentation rules.\"))),"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"It is better if each developer followed their \""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"own style of coding so that the code can be traced to the author easily.\"),"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"A developer should understand the importance of following a coding standard. \""
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"However, there is no need to follow one.\"),"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"Company\u0027s coding standard can be vastly different from typical \""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"industry practices as long as it is consistent throughout the whole company\"))),"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"2\"), getCategorySet(\"implementation\", \"code quality\", \"week 3\")),"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is true?\"),"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"This variable name is compliant with the coding standard.\\n\""
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"final static int RED \u003d 1;\"))),"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"Names such as i, j, k should not be used as \""
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"variable names as they are not descriptive enough.\"),"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"This variable name is compliant with the coding standard.\\n\""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"boolean processingStatus \u003d false;\"),"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"When wrapping a long statement (an example given below), \""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"one should indent lines using two tabs instead of the usual one tab.\\n\""
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"totalSum \u003d a + b + c\\n          + d + e;\"))),"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"1\"), getCategorySet(\"coding standard\", \"week 3\")),"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is true?\"),"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"Of the two statements below, the first one has the correct spacing.\\n\""
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"a \u003d (b + c) * d;\\na\u003d(b+c)*d;\"))),"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"Wildcard imports (an example given below) \""
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"should not be used unless there are many classes being imported from \""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"the same package.\\nimport java.util.*;\"),"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"This is an acceptable opening sentence for a javadoc header comment.\\n/**\\n\""
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \" * Add the value to the current list.\\n * ...\\n */\"),"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"This indentation is unacceptable:\\nswitch (condition) {\\ncase ABC:\\n    \""
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"statements;\\n    break;\\ndefault:\\n    statements;\\n    break;\\n}\"))),"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"1\"), getCategorySet(\"coding standard\", \"week 3\")),"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is not true?\"),"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"There is no need for developer testing if there are \""
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"separate testers.\"))),"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"Developer testing is the testing done by the \""
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"developers themselves.\"),"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"A downside of developer testing: A developer may subconsciously test \""
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"only situations that she knows to work (i.e. test it too \u0027gently\u0027)\"),"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"It is better to do earlier testing\"))),"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"1\"), getCategorySet(\"quality assurance\", \"testing\", \"week 3\")),"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is not true?\"),"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"A test driver is the person that ‘drives’ (or ‘in charge of’) \""
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"the testing process, usually, a test engineer.\"))),"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"When using JUnit for a class Foo, \""
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"the common practice is to create a FooTest class, which will contain \""
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"various test methods to test the Foo class.\"),"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"The following method name (found in a JUnit test class) is compliant \""
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"with the Java coding standard.\\nintDivision_zeroDivisor_exceptionThrown\"),"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"If the class Box depends on the class Lid, unit testing the Box class \""
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"should be done in isolation from the Lid class.\"))),"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"3\"), getCategorySet(\"quality assurance\", \"testing\", \"week 3\")),"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "            new Mcq(new Question(\"Which of the following is not true?\"),"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            .asList(new Answer(\"Test drivers can be used to isolate the SUT from its dependencies.\"))),"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new ArrayList\u003c\u003e(Arrays.asList(new Answer(\"A stub\u0027s implementation is supposed to be much simpler \""
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"than the component it replaces.\"),"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"The following method name (found in a JUnit test class) is compliant \""
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"with the Java coding standard.\\nintDivision_zeroDivisor_exceptionThrown\"),"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                            new Answer(\"When using JUnit for a class Foo, the common practice is to \""
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"create a FooTest class, which will contain various test methods \""
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                                    + \"to test the Foo class.\"))),"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "khiangleon"
+        },
+        "content": "                    new Difficulty(\"3\"), getCategorySet(\"quality assurance\", \"testing\", \"week 3\"))"
+      },
+      {
+        "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
         "content": "        };"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
         "content": "    public static ReadOnlyAddressBook getSampleAddressBook() {"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
         "content": "        AddressBook sampleAb \u003d new AddressBook();"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 193,
         "author": {
           "gitId": "wilfredbtan"
         },
         "content": "        for (Answerable sampleAnswerable : getSampleAnswerables()) {"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 194,
         "author": {
           "gitId": "wilfredbtan"
         },
         "content": "            sampleAb.addAnswerable(sampleAnswerable);"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
         "content": "        return sampleAb;"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 200,
         "author": {
           "gitId": "jxofficial"
         },
         "content": "     * Returns a category set containing the list of strings given."
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 202,
         "author": {
           "gitId": "jxofficial"
         },
         "content": "    public static Set\u003cCategory\u003e getCategorySet(String... strings) {"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
         "content": "        return Arrays.stream(strings)"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 204,
         "author": {
           "gitId": "jxofficial"
         },
         "content": "                .map(Category::new)"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
         "content": "                .collect(Collectors.toSet());"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
@@ -43053,8 +44068,9 @@
       }
     ],
     "authorContributionMap": {
-      "wilfredbtan": 32,
+      "wilfredbtan": 17,
       "jxofficial": 5,
+      "khiangleon": 160,
       "-": 26
     }
   },

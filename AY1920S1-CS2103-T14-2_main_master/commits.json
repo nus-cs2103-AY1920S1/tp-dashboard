@@ -133,6 +133,20 @@
             "deletions": 105
           }
         ]
+      },
+      {
+        "insertions": 290,
+        "deletions": 14,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "4c3b86f0e4d817a263af22cd0b8bf2cb22f399b3",
+            "messageTitle": "Added ability to import Tutorials via NUSMods url, fixed bugs (#101)",
+            "messageBody": "* Added ability to mark attendance\r\n\r\n* Added stub tests for MarkAttendanceCommand and MarkAttendanceCommandParser\r\n\r\n* Added ability to add multiple pending commands\r\n\r\n* Added ability to mark attendance of all students in a tutorial\r\n\r\n* Added ability for user to input multiple commands\r\n\r\n* Added ability to export attendance\r\n\r\n* Fixed bug where attendance marking is cancelled after no command is inputted\r\nThrows CommandException when invalid week is entered to mark attendance\r\n\r\n* Added index functionality for MarkAttendanceCommand, ExportAttendanceCommand\r\nAdded tests for MarkAttendanceCommand, MarkAttendanceCommandParser,\r\nExportAttendanceCommand, ExportAttendanceCommandParser\r\n\r\n* Added ability to remove Student from Attendance\r\n\r\n* Added Assignment, ability to add/delete Assignments\r\n\r\n* Fixed model.setStudent(), EditCommandTest\r\n\r\n* Added ability to add/delete/edit Events, hourly tracking\r\n\r\n* Added ability to add/delete/edit Events, hourly tracking\r\n\r\n* Add devdocs for Mark Attendance feature\r\n\r\n* Added stub tests for AssignmentCommands, Assignment\r\nAdded ability to set Assignment score\r\n\r\n* Added ability to import Tutorials via NUSMods url\r\nChanged multiple commands input delimiter from \u0027\u0026\u0027 to \u0027+\u0027\r\nFixed bug where updating of events is incorrect when semester start is set to a future date\r\nFixed bug where non index format for SetAssignmentCommand is not parsed correctly\r\n",
+            "insertions": 290,
+            "deletions": 14
+          }
+        ]
       }
     ],
     "Ellieyee": [
@@ -979,21 +993,49 @@
             "deletions": 5
           }
         ]
+      },
+      {
+        "insertions": 252,
+        "deletions": 5,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "80cd3ff80bd8bb601d4ecc3bc3fd4ed7188bc777",
+            "messageTitle": "Add tests for command history (#100)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n",
+            "insertions": 252,
+            "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 168,
+        "deletions": 71,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "6cb11c5f5d3297eb92e93a65c80089a9082d910b",
+            "messageTitle": "Update dev docs (#102)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n",
+            "insertions": 168,
+            "deletions": 71
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 7194,
+    "ZiHawkEye": 7480,
     "Ellieyee": 5355,
-    "AhmadHatziq": 2224,
-    "lumos309": 5187
+    "AhmadHatziq": 2220,
+    "lumos309": 5528
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
       "docs": 28,
       "tests": 2554,
-      "functional": 4585,
-      "other": 27
+      "functional": 4870,
+      "other": 28
     },
     "Ellieyee": {
       "docs": 113,
@@ -1002,23 +1044,23 @@
       "other": 5
     },
     "AhmadHatziq": {
-      "docs": 416,
+      "docs": 418,
       "tests": 320,
-      "functional": 1483,
+      "functional": 1477,
       "other": 5
     },
     "lumos309": {
-      "docs": 103,
-      "tests": 1920,
-      "functional": 2980,
-      "other": 184
+      "docs": 111,
+      "tests": 2098,
+      "functional": 2976,
+      "other": 343
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 165721.14,
-    "Ellieyee": 222259.03,
-    "AhmadHatziq": 46721.12,
-    "lumos309": 52500.5
+    "ZiHawkEye": 162963.67,
+    "Ellieyee": 218790.42,
+    "AhmadHatziq": 45917.23,
+    "lumos309": 51728.188
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",

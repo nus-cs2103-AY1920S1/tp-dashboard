@@ -266,6 +266,139 @@
             "deletions": 9
           }
         ]
+      },
+      {
+        "insertions": 674,
+        "deletions": 374,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "77978bf02ed7ddb746bb917e8312bdcaa40711c4",
+            "messageTitle": "remove UiManager class. refactor linkages between MainApp, Gui and MainWindow",
+            "messageBody": "",
+            "insertions": 53,
+            "deletions": 78
+          },
+          {
+            "hash": "0930e7bca1caf08f4fc8bd5e89c15d769fdb5a8f",
+            "messageTitle": "move MainWindow\u0027s setup-related methods to Gui. add MainWindow\u0027s UI components to GUI. make components static.",
+            "messageBody": "",
+            "insertions": 63,
+            "deletions": 8
+          },
+          {
+            "hash": "96a5f21eb957aa119e9ff3f3f7249c0b7581b174",
+            "messageTitle": "remove MainWindow class. remove references to MainWindow in Gui. complete Gui.setTitle() method.",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 132
+          },
+          {
+            "hash": "df66b26ebe83b0d68a504f65dfd669bbd908cbfc",
+            "messageTitle": "remove getApplicationState() method. add test for showing flashcards with long text. although it can\u0027t be used (circular dependency), documented testing methods used in test package\u0027s GuiTest.java.",
+            "messageBody": "",
+            "insertions": 48,
+            "deletions": 13
+          },
+          {
+            "hash": "6db2070a89f5728802d4ef196af2e3038c2580c2",
+            "messageTitle": "attempt to add Ui interface implemented by Gui, but cannot override static methods.",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 14
+          },
+          {
+            "hash": "799a515e27642d8fb9106fa9d38c2692ad959fec",
+            "messageTitle": "create GuiHelper class. add renderFront and renderBack methods to GuiHelper. refactor renderFront and renderBack in Gui to use GuiHelper. add replace method in ScrollablePane class. add replaceInScrollablePane method to Gui.",
+            "messageBody": "",
+            "insertions": 71,
+            "deletions": 36
+          },
+          {
+            "hash": "81c63fb3f7b4814b0cfa7ed69585dcd6649bd4b0",
+            "messageTitle": "add setState method in CommandTextField. add setCommandTextField method in CommandTextFieldPlaceholder. modify setupCommandTextField() in Gui.",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 7
+          },
+          {
+            "hash": "a17b2b53389feeae334a6f09b481e13554a07f7f",
+            "messageTitle": "add TextBar and StatusBar classes. make TitleBar and StatusBar extend TextBar. add statusTextStyle (+getter and setter) to GuiSettings. show statusBar in GUI. add setStatus method to Gui.",
+            "messageBody": "",
+            "insertions": 123,
+            "deletions": 27
+          },
+          {
+            "hash": "af9a0a0315da32fe753009a1379705a72a63cb84",
+            "messageTitle": "refactor: rename CommandTextFieldPlaceholder to CommandBar to match StatusBar and TitleBar. remove commandTextField as an attribute from CommandBar.",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 11
+          },
+          {
+            "hash": "a116b30e42b75fbe647718c8efba2eaecb15f7fc",
+            "messageTitle": "checkstyle fixes",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 6
+          },
+          {
+            "hash": "9e9d87942a5cf148d2acd7776070143519819345",
+            "messageTitle": "create DeckListView and FlashCardCell classes for implementing viewing a deck in the GUI.",
+            "messageBody": "",
+            "insertions": 41,
+            "deletions": 0
+          },
+          {
+            "hash": "bfd8803754ff286234c6c28a97af314498aced8f",
+            "messageTitle": "add toFlashCardCellList and toFlashCardCell methods in GuiHelper. partially implement DeckListView and FlashCardCell classes.",
+            "messageBody": "",
+            "insertions": 91,
+            "deletions": 4
+          },
+          {
+            "hash": "65929ce14a2aec3770d6a6cfd8e69c0699db7db1",
+            "messageTitle": "refactor: rename setStatus to showStatus. verify that renderDeck works as expected. define errorTextColour in GuiSettings. add showEror in Gui.",
+            "messageBody": "",
+            "insertions": 66,
+            "deletions": 16
+          },
+          {
+            "hash": "036d14d37e1f2dcd0a09543aae6056e42f55b2ab",
+            "messageTitle": "attempt to add choices when displaying front of MultipleChoiceCard, but cannot call getListOfChoices() as it is not defined in FlashCard abstract class",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 0
+          },
+          {
+            "hash": "05ead9533fc4e246fbc9ec37291799a4274a59bc",
+            "messageTitle": "fix checkstyle",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 6
+          },
+          {
+            "hash": "a4465f6bc4a4c0e233f81146794012ec9ffad361",
+            "messageTitle": "fix checkstyle",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 6
+          },
+          {
+            "hash": "a18e3c44184388547878234b834b084e960ae3a5",
+            "messageTitle": "more checkstyle fixes",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 5
+          },
+          {
+            "hash": "2a5c5628123d72fafd20490850eb744c80747246",
+            "messageTitle": "implement showing of choices for MultipleChoiceCard using type casting",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 5
+          }
+        ]
       }
     ],
     "AHaliq": [
@@ -1392,6 +1525,41 @@
             "messageBody": "removed the separator from merge conflict\n",
             "insertions": 2,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 603,
+        "deletions": 52,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "a3970f2a6451c17a954279343d3d5a996c8de112",
+            "messageTitle": "working standalone code editors (#155)",
+            "messageBody": "* working standalone code editors\r\n\r\n* update tests\r\n\r\n* Edited classname\r\n\r\n* Update testData.js\r\n\r\nadd newline\r\n",
+            "insertions": 233,
+            "deletions": 33
+          },
+          {
+            "hash": "457749d5d7a4f87235bf65ada8d3ea6f476ab4cc",
+            "messageTitle": "Add JavaCard and TestCase (#156)",
+            "messageBody": "* working standalone code editors\r\n\r\n* update tests\r\n\r\n* Edited classname\r\n\r\n* Update testData.js\r\n\r\nadd newline\r\n\r\n* Created java card and a test case object\r\n\r\n* Update JavaCard.java\r\n",
+            "insertions": 98,
+            "deletions": 0
+          },
+          {
+            "hash": "4268679b2e845f915ace0ceefef25c82c4364d41",
+            "messageTitle": "Add a JsTestCaseRunner (#157)",
+            "messageBody": "* working standalone code editors\r\n\r\n* update tests\r\n\r\n* Edited classname\r\n\r\n* Update testData.js\r\n\r\nadd newline\r\n\r\n* Created java card and a test case object\r\n\r\n* Update JavaCard.java\r\n\r\n* Create JsTestCaseRunner.java\r\n",
+            "insertions": 61,
+            "deletions": 0
+          },
+          {
+            "hash": "5448118b8bd29e6f912b388dcbdaa1d213a7c6ac",
+            "messageTitle": "Added JsCard Testing functionality (#158)",
+            "messageBody": "* working standalone code editors\r\n\r\n* update tests\r\n\r\n* Edited classname\r\n\r\n* Update testData.js\r\n\r\nadd newline\r\n\r\n* Created java card and a test case object\r\n\r\n* Update JavaCard.java\r\n\r\n* Create JsTestCaseRunner.java\r\n\r\n* Create a test running suite\r\n\r\n* Edit comments\r\n\r\n* Added Testers for JS\r\n\r\n* Create JsTestEvaluator.fxml\r\n",
+            "insertions": 211,
+            "deletions": 19
           }
         ]
       }
@@ -2691,57 +2859,106 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 278,
+        "deletions": 157,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "8f2eac739817465e42f8d90f01b0174a93cbffb7",
+            "messageTitle": "Add: call gui methods in responses for create deck",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 7
+          },
+          {
+            "hash": "a0489fc9f90887e29829b2ad5519e59970020dfe",
+            "messageTitle": "Remove: flashcard evaluate exception",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 0
+          },
+          {
+            "hash": "f21ab58d79fc14c6138caaecdd525f7e128d9772",
+            "messageTitle": "Remove: flashcard evaluate exception",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 5
+          },
+          {
+            "hash": "adfa814a2474ca56401243ef2817cd0ac80733d3",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 9
+          },
+          {
+            "hash": "c2c755764792eb43c67b7e2c6e90e56eab968fcc",
+            "messageTitle": "Debug: edit functionality",
+            "messageBody": "",
+            "insertions": 206,
+            "deletions": 118
+          },
+          {
+            "hash": "0a318838407bc2e2e7ee34fbb3974ed9ed2e0156",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 18
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "nattanyz": 798,
-    "AHaliq": 1971,
-    "PhireHandy": 100,
-    "shawnpunchew11": 136,
-    "timothyleong97": 500,
-    "huiminlim": 1949
+    "nattanyz": 1124,
+    "AHaliq": 1966,
+    "PhireHandy": 99,
+    "shawnpunchew11": 133,
+    "timothyleong97": 1045,
+    "huiminlim": 2089
   },
   "authorFileTypeContributionMap": {
     "nattanyz": {
       "docs": 81,
-      "tests": 0,
-      "functional": 717
+      "tests": 64,
+      "functional": 979
     },
     "AHaliq": {
       "docs": 33,
       "tests": 375,
-      "functional": 1563
+      "functional": 1558
     },
     "PhireHandy": {
       "docs": 1,
       "tests": 0,
-      "functional": 99
+      "functional": 98
     },
     "shawnpunchew11": {
       "docs": 34,
       "tests": 0,
-      "functional": 102
+      "functional": 99
     },
     "timothyleong97": {
       "docs": 133,
-      "tests": 84,
-      "functional": 241,
+      "tests": 83,
+      "functional": 787,
       "other": 42
     },
     "huiminlim": {
       "docs": 419,
       "tests": 135,
-      "functional": 1395
+      "functional": 1535
     }
   },
   "authorContributionVariance": {
-    "nattanyz": 85705.99,
-    "AHaliq": 61849.727,
-    "PhireHandy": 1172.5203,
-    "shawnpunchew11": 1096.9988,
-    "timothyleong97": 1508124.8,
-    "huiminlim": 50613.477
+    "nattanyz": 102118.44,
+    "AHaliq": 60727.094,
+    "PhireHandy": 1151.1345,
+    "shawnpunchew11": 1077.4735,
+    "timothyleong97": 1483738.0,
+    "huiminlim": 51594.43
   },
   "authorDisplayNameMap": {
     "nattanyz": "CS2103-F09-2 TAN Y ... TALIE",

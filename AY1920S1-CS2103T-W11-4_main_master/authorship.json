@@ -28858,9 +28858,9 @@
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "    public static final String MESSAGE_DELETE_MEAL_SUCCESS \u003d \"Deleted Dish: %1$s\";"
+        "content": "    public static final String MESSAGE_DELETE_MEAL_SUCCESS \u003d \"Deleted Meal: %1$s\";"
       },
       {
         "lineNumber": 27,
@@ -29067,8 +29067,8 @@
       }
     ],
     "authorContributionMap": {
-      "iltep64": 10,
-      "fangpinsern": 7,
+      "iltep64": 9,
+      "fangpinsern": 8,
       "-": 38
     }
   },
@@ -29394,268 +29394,268 @@
       {
         "lineNumber": 46,
         "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "    public static final String MESSAGE_EDIT_TAGS_SUCCESS \u003d \"Tags have been updated!\";"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
           "gitId": "-"
         },
         "content": "    public static final String MESSAGE_NOT_EDITED \u003d \"At least one field to edit must be provided.\";"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 48,
         "author": {
           "gitId": "iltep64"
         },
         "content": "    public static final String MESSAGE_DUPLICATE_MEAL \u003d \"This dish already exists in the dish database.\";"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
         "content": "    private final Index index;"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 51,
         "author": {
           "gitId": "iltep64"
         },
         "content": "    private final EditDishDescriptor editDishDescriptor;"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 54,
         "author": {
           "gitId": "iltep64"
         },
         "content": "     * @param index of the dish in the filtered dish list to edit"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 55,
         "author": {
           "gitId": "iltep64"
         },
         "content": "     * @param editDishDescriptor details to edit the dish with"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 57,
         "author": {
           "gitId": "iltep64"
         },
         "content": "    public EditCommand(Index index, EditDishDescriptor editDishDescriptor) {"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
         "content": "        requireNonNull(index);"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 59,
         "author": {
           "gitId": "iltep64"
         },
         "content": "        requireNonNull(editDishDescriptor);"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
         "content": "        this.index \u003d index;"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 62,
         "author": {
           "gitId": "iltep64"
         },
         "content": "        this.editDishDescriptor \u003d new EditDishDescriptor(editDishDescriptor);"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        requireNonNull(model);"
+      },
+      {
+        "lineNumber": 68,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "        ObservableList\u003cMeal\u003e lastShownList \u003d model.getMealLog().getTodayMeals();"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
         "content": "        if (index.getZeroBased() \u003e\u003d lastShownList.size()) {"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 71,
         "author": {
           "gitId": "iltep64"
         },
         "content": "            throw new CommandException(Messages.MESSAGE_INVALID_MEAL_DISPLAYED_INDEX);"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 74,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "        Meal mealToEdit \u003d lastShownList.get(index.getZeroBased());"
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 75,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "        Dish dishPointer \u003d mealToEdit.getDish();"
       },
       {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 76,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        // Original Information. If may be changed down the line"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Name updatedName \u003d dishPointer.getName();"
+        "content": "        // Original Information. If may be changed down the line"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Calorie updatedCalories \u003d dishPointer.getCalories();"
+        "content": "        Name updatedName \u003d dishPointer.getName();"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Set\u003cTag\u003e updatedTags \u003d editDishDescriptor.getTags().orElse(dishPointer.getTags());"
+        "content": "        Calorie updatedCalories \u003d dishPointer.getCalories();"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "        Set\u003cTag\u003e updatedTags \u003d new HashSet\u003cTag\u003e();"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        // Directly update the meal to the one in the dish db"
+        "content": "        updatedTags.addAll(dishPointer.getTags());"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        boolean isDishUpdated \u003d false;"
+        "content": ""
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Dish updatedDish \u003d dishPointer;"
+        "content": "        boolean isTagsEmpty \u003d false;"
       },
       {
         "lineNumber": 84,
@@ -29669,369 +29669,369 @@
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        // Check if both name tags and calorie tags are used."
+        "content": "        if (editDishDescriptor.getTags().isPresent()) {"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        if (editDishDescriptor.getName().isPresent()"
+        "content": "            if (!editDishDescriptor.getTags().get().isEmpty()) {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "                \u0026\u0026 editDishDescriptor.getCalories().isPresent()) {"
+        "content": "                updatedTags.addAll(editDishDescriptor.getTags().get());"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedName \u003d editDishDescriptor.getName().get();"
+        "content": "            } else {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().get();"
+        "content": "                isTagsEmpty \u003d true;"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            if (model.hasDish(new Dish(updatedName, updatedCalories))) {"
+        "content": "                updatedTags \u003d new HashSet\u003cTag\u003e();"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "                updatedDish \u003d model.getDish(new Dish(updatedName, updatedCalories));"
+        "content": "            }"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "                isDishUpdated \u003d true;"
+        "content": "        }"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        } else if (editDishDescriptor.getName().isPresent()) {"
+        "content": "        // Directly update the meal to the one in the dish db"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            // Check if only name tag is used"
+        "content": "        boolean isDishUpdated \u003d false;"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedName \u003d editDishDescriptor.getName().get();"
+        "content": "        Dish updatedDish \u003d dishPointer;"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            // Check if name is present in the dishDB"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            // If not present, do not do anything"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            if (model.hasDishName(updatedName)) {"
+        "content": "        if (editDishDescriptor.getName().isPresent()"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "                updatedDish \u003d model.getDishByName(updatedName);"
+        "content": "                \u0026\u0026 editDishDescriptor.getCalories().isPresent()"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "                isDishUpdated \u003d true;"
+        "content": "                \u0026\u0026 editDishDescriptor.getTags().isPresent()) {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            }"
+        "content": "            updatedName \u003d editDishDescriptor.getName().get();"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().get();"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        } else if (editDishDescriptor.getCalories().isPresent()) {"
+        "content": "            updatedTags \u003d editDishDescriptor.getTags().get();"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            // Check if only calorie tag is used"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().get();"
+        "content": "            updatedDish \u003d new Dish(updatedName, updatedCalories, updatedTags);"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            if (model.hasDish(new Dish(updatedName, updatedCalories))) {"
+        "content": "            isDishUpdated \u003d true;"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "                updatedDish \u003d model.getDish(new Dish(updatedName, updatedCalories));"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "                isDishUpdated \u003d true;"
+        "content": "        } else if (editDishDescriptor.getName().isPresent()"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            }"
+        "content": "                \u0026\u0026 editDishDescriptor.getCalories().isPresent()) {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        }"
+        "content": "            // Check if both name tags and calorie tags are used."
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "            updatedName \u003d editDishDescriptor.getName().get();"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Dish editedDish;"
+        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().get();"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        if (isDishUpdated) {"
+        "content": "            if (model.hasDish(new Dish(updatedName, updatedCalories))) {"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            editedDish \u003d updatedDish;"
+        "content": "                updatedDish \u003d model.getDish(new Dish(updatedName, updatedCalories));"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        } else {"
+        "content": "                isDishUpdated \u003d true;"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            editedDish \u003d new Dish(updatedName, updatedCalories, updatedTags);"
+        "content": "            }"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        }"
+        "content": "        } else if (editDishDescriptor.getName().isPresent()) {"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "            // Check if only name tag is used"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Meal editedMeal \u003d new Meal(editedDish, mealToEdit.getTimestamp());"
+        "content": "            updatedName \u003d editDishDescriptor.getName().get();"
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "            // Check if name is present in the dishDB"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        if (!model.hasDish(editedDish)) {"
+        "content": "            // If not present, do not do anything"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            model.addDish(editedDish);"
+        "content": "            if (model.hasDishName(updatedName)) {"
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        }"
+        "content": "                updatedDish \u003d model.getDishByName(updatedName);"
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "                updatedTags \u003d new HashSet\u003cTag\u003e();"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        model.getMealLog().setMeal(mealToEdit, editedMeal);"
+        "content": "                updatedTags.addAll(updatedDish.getTags());"
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "        model.updateFilteredDishList(PREDICATE_SHOW_ALL_DISHES);"
+        "content": "                if (isTagsEmpty) {"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_MEAL_SUCCESS, mealToEdit, editedMeal));"
+        "content": "                    updatedTags \u003d new HashSet\u003cTag\u003e();"
       },
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "                } else if (editDishDescriptor.getTags().isPresent()) {"
       },
       {
         "lineNumber": 130,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "                    updatedTags.addAll(editDishDescriptor.getTags().get());"
       },
       {
         "lineNumber": 131,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "    /**"
+        "content": "                }"
       },
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "     * Creates and returns a {@code Dish} with the details of {@code dishToEdit}"
+        "content": "                updatedCalories \u003d updatedDish.getCalories();"
       },
       {
         "lineNumber": 133,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "     * edited with {@code editDishDescriptor}."
+        "content": "                updatedName \u003d updatedDish.getName();"
       },
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "     */"
+        "content": "                updatedDish \u003d new Dish(updatedName, updatedCalories, updatedTags);"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "    private static Dish createEditedDish(Dish dishToEdit, EditDishDescriptor editDishDescriptor) {"
+        "content": "                isDishUpdated \u003d true;"
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "        assert dishToEdit !\u003d null;"
+        "content": "            }"
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
         "content": ""
       },
@@ -30040,558 +30040,558 @@
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Name updatedName;"
+        "content": "        } else if (editDishDescriptor.getCalories().isPresent()) {"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Calorie updatedCalories;"
+        "content": "            // Check if only calorie tag is used"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Set\u003cTag\u003e updatedTags;"
+        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().get();"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        Optional\u003cName\u003e updatedNameOptional \u003d editDishDescriptor.getName();"
+        "content": "            if (model.hasDish(new Dish(updatedName, updatedCalories))) {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        if (updatedNameOptional.isPresent()) {"
+        "content": "                updatedDish \u003d model.getDish(new Dish(updatedName, updatedCalories));"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedName \u003d updatedNameOptional.get();"
+        "content": "                updatedTags \u003d new HashSet\u003cTag\u003e();"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().orElse(dishToEdit.getCalories());"
+        "content": "                updatedTags.addAll(updatedDish.getTags());"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedTags \u003d editDishDescriptor.getTags().orElse(dishToEdit.getTags());"
+        "content": "                if (isTagsEmpty) {"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "                    updatedTags \u003d new HashSet\u003cTag\u003e();"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        } else {"
+        "content": "                } else if (editDishDescriptor.getTags().isPresent()) {"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedName \u003d dishToEdit.getName();"
+        "content": "                    updatedTags.addAll(editDishDescriptor.getTags().get());"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().orElse(dishToEdit.getCalories());"
+        "content": "                }"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "            updatedTags \u003d editDishDescriptor.getTags().orElse(dishToEdit.getTags());"
+        "content": "                updatedCalories \u003d updatedDish.getCalories();"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        }"
+        "content": "                updatedName \u003d updatedDish.getName();"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "                updatedDish \u003d new Dish(updatedName, updatedCalories, updatedTags);"
       },
       {
         "lineNumber": 153,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "        return new Dish(updatedName, updatedCalories, updatedTags);"
+        "content": "                isDishUpdated \u003d true;"
       },
       {
         "lineNumber": 154,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 155,
         "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 156,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 157,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    public boolean equals(Object other) {"
-      },
-      {
-        "lineNumber": 158,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        // short circuit if same object"
-      },
-      {
-        "lineNumber": 159,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        if (other \u003d\u003d this) {"
-      },
-      {
-        "lineNumber": 160,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            return true;"
-      },
-      {
-        "lineNumber": 161,
-        "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 156,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
         "content": ""
       },
       {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "        Dish editedDish;"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "        if (isDishUpdated) {"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            editedDish \u003d updatedDish;"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            editedDish \u003d new Dish(updatedName, updatedCalories, updatedTags);"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "        }"
+      },
+      {
         "lineNumber": 163,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 164,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        if (!(other instanceof EditCommand)) {"
+        "content": "        Meal editedMeal \u003d new Meal(editedDish, mealToEdit.getTimestamp());"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "            return false;"
+        "content": ""
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        }"
+        "content": "        if (!model.hasDish(editedDish)) {"
       },
       {
         "lineNumber": 167,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "            model.addDish(editedDish);"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "        // state check"
+        "content": "        }"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "        EditCommand e \u003d (EditCommand) other;"
+        "content": ""
       },
       {
         "lineNumber": 170,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        return index.equals(e.index)"
+        "content": "        model.getMealLog().setMeal(mealToEdit, editedMeal);"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "iltep64"
         },
-        "content": "                \u0026\u0026 editDishDescriptor.equals(e.editDishDescriptor);"
+        "content": "        model.updateFilteredDishList(PREDICATE_SHOW_ALL_DISHES);"
       },
       {
         "lineNumber": 172,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_MEAL_SUCCESS, mealToEdit, editedMeal));"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 175,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "-"
         },
-        "content": "     * Stores the details to edit the dish with. Each non-empty field value will replace the"
+        "content": "    /**"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "iltep64"
         },
-        "content": "     * corresponding field value of the dish."
+        "content": "     * Creates and returns a {@code Dish} with the details of {@code dishToEdit}"
       },
       {
         "lineNumber": 177,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "     * edited with {@code editDishDescriptor}."
+      },
+      {
+        "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 179,
         "author": {
           "gitId": "iltep64"
         },
-        "content": "    public static class EditDishDescriptor {"
-      },
-      {
-        "lineNumber": 179,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        private Name name;"
+        "content": "    private static Dish createEditedDish(Dish dishToEdit, EditDishDescriptor editDishDescriptor) {"
       },
       {
         "lineNumber": 180,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "iltep64"
         },
-        "content": "        private Calorie calories;"
+        "content": "        assert dishToEdit !\u003d null;"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "        private Set\u003cTag\u003e tags;"
+        "content": ""
       },
       {
         "lineNumber": 182,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "        Name updatedName;"
       },
       {
         "lineNumber": 183,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "        public EditDishDescriptor() {}"
+        "content": "        Calorie updatedCalories;"
       },
       {
         "lineNumber": 184,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "        Set\u003cTag\u003e updatedTags;"
       },
       {
         "lineNumber": 185,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        /**"
+        "content": "        Optional\u003cName\u003e updatedNameOptional \u003d editDishDescriptor.getName();"
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "         * Copy constructor."
+        "content": "        if (updatedNameOptional.isPresent()) {"
       },
       {
         "lineNumber": 187,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": "            updatedName \u003d updatedNameOptional.get();"
       },
       {
         "lineNumber": 188,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "         */"
+        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().orElse(dishToEdit.getCalories());"
       },
       {
         "lineNumber": 189,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "        public EditDishDescriptor(EditDishDescriptor toCopy) {"
+        "content": "            updatedTags \u003d editDishDescriptor.getTags().orElse(dishToEdit.getTags());"
       },
       {
         "lineNumber": 190,
         "author": {
-          "gitId": "-"
-        },
-        "content": "            setName(toCopy.name);"
-      },
-      {
-        "lineNumber": 191,
-        "author": {
-          "gitId": "FelixNWJ"
-        },
-        "content": "            setCalories(toCopy.calories);"
-      },
-      {
-        "lineNumber": 192,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            setTags(toCopy.tags);"
-      },
-      {
-        "lineNumber": 193,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 194,
-        "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
         "content": ""
       },
       {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            updatedName \u003d dishToEdit.getName();"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            updatedCalories \u003d editDishDescriptor.getCalories().orElse(dishToEdit.getCalories());"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            updatedTags \u003d editDishDescriptor.getTags().orElse(dishToEdit.getTags());"
+      },
+      {
         "lineNumber": 195,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        /**"
+        "content": "        }"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Returns true if at least one field is edited."
+        "content": ""
       },
       {
         "lineNumber": 197,
         "author": {
-          "gitId": "-"
+          "gitId": "FelixNWJ"
         },
-        "content": "         */"
+        "content": "        return new Dish(updatedName, updatedCalories, updatedTags);"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "        public boolean isAnyFieldEdited() {"
+        "content": "    }"
       },
       {
         "lineNumber": 199,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "-"
         },
-        "content": "            return CollectionUtil.isAnyNonNull(name, calories, tags);"
+        "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "        public void setName(Name name) {"
+        "content": "        // short circuit if same object"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.name \u003d name;"
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return true;"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "        public Optional\u003cName\u003e getName() {"
+        "content": ""
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "            return Optional.ofNullable(name);"
+        "content": "        // instanceof handles nulls"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (!(other instanceof EditCommand)) {"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            return false;"
       },
       {
         "lineNumber": 210,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "-"
         },
-        "content": "        public void setCalories(Calorie calories) {"
+        "content": "        }"
       },
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "FelixNWJ"
-        },
-        "content": "            this.calories \u003d calories;"
-      },
-      {
-        "lineNumber": 212,
-        "author": {
-          "gitId": "FelixNWJ"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 213,
-        "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // state check"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        EditCommand e \u003d (EditCommand) other;"
+      },
+      {
         "lineNumber": 214,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "-"
         },
-        "content": "        public Optional\u003cCalorie\u003e getCalories() {"
+        "content": "        return index.equals(e.index)"
       },
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "iltep64"
         },
-        "content": "            return Optional.ofNullable(calories);"
+        "content": "                \u0026\u0026 editDishDescriptor.equals(e.editDishDescriptor);"
       },
       {
         "lineNumber": 216,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 217,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -30600,217 +30600,217 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": "    /**"
       },
       {
         "lineNumber": 219,
         "author": {
-          "gitId": "-"
+          "gitId": "iltep64"
         },
-        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
+        "content": "     * Stores the details to edit the dish with. Each non-empty field value will replace the"
       },
       {
         "lineNumber": 220,
         "author": {
-          "gitId": "-"
+          "gitId": "iltep64"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": "     * corresponding field value of the dish."
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "     */"
       },
       {
         "lineNumber": 222,
         "author": {
-          "gitId": "-"
+          "gitId": "iltep64"
         },
-        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
+        "content": "    public static class EditDishDescriptor {"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
+        "content": "        private Name name;"
       },
       {
         "lineNumber": 224,
         "author": {
-          "gitId": "-"
+          "gitId": "FelixNWJ"
         },
-        "content": "        }"
+        "content": "        private Calorie calories;"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private Set\u003cTag\u003e tags;"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 227,
         "author": {
-          "gitId": "-"
+          "gitId": "iltep64"
         },
-        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
+        "content": "        public EditDishDescriptor() {}"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "         * if modification is attempted."
+        "content": ""
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
+        "content": "        /**"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "         * Copy constructor."
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
+        "content": "         */"
       },
       {
         "lineNumber": 233,
         "author": {
-          "gitId": "-"
+          "gitId": "iltep64"
         },
-        "content": "        }"
+        "content": "        public EditDishDescriptor(EditDishDescriptor toCopy) {"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            setName(toCopy.name);"
       },
       {
         "lineNumber": 235,
         "author": {
-          "gitId": "-"
+          "gitId": "FelixNWJ"
         },
-        "content": "        @Override"
+        "content": "            setCalories(toCopy.calories);"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "        public boolean equals(Object other) {"
+        "content": "            setTags(toCopy.tags);"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "            // short circuit if same object"
+        "content": "        }"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (other \u003d\u003d this) {"
+        "content": ""
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "                return true;"
+        "content": "        /**"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "         * Returns true if at least one field is edited."
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "         */"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "            // instanceof handles nulls"
+        "content": "        public boolean isAnyFieldEdited() {"
       },
       {
         "lineNumber": 243,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "FelixNWJ"
         },
-        "content": "            if (!(other instanceof EditDishDescriptor)) {"
+        "content": "            return CollectionUtil.isAnyNonNull(name, calories, tags);"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "                return false;"
+        "content": "        }"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        public void setName(Name name) {"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "            // state check"
+        "content": "            this.name \u003d name;"
       },
       {
         "lineNumber": 248,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "-"
         },
-        "content": "            EditDishDescriptor e \u003d (EditDishDescriptor) other;"
+        "content": "        }"
       },
       {
         "lineNumber": 249,
@@ -30824,38 +30824,346 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            return getName().equals(e.getName())"
+        "content": "        public Optional\u003cName\u003e getName() {"
       },
       {
         "lineNumber": 251,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "-"
         },
-        "content": "                    \u0026\u0026 getCalories().equals(e.getCalories())"
+        "content": "            return Optional.ofNullable(name);"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 getTags().equals(e.getTags());"
+        "content": "        }"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 254,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "        public void setCalories(Calorie calories) {"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "            this.calories \u003d calories;"
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "        public Optional\u003cCalorie\u003e getCalories() {"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "            return Optional.ofNullable(calories);"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         * A defensive copy of {@code tags} is used internally."
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         * if modification is attempted."
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        @Override"
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // short circuit if same object"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if (other \u003d\u003d this) {"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                return true;"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "            if (!(other instanceof EditDishDescriptor)) {"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                return false;"
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // state check"
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "            EditDishDescriptor e \u003d (EditDishDescriptor) other;"
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return getName().equals(e.getName())"
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "                    \u0026\u0026 getCalories().equals(e.getCalories())"
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    \u0026\u0026 getTags().equals(e.getTags());"
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 255,
+        "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
@@ -30864,7 +31172,7 @@
     ],
     "authorContributionMap": {
       "iltep64": 45,
-      "fangpinsern": 73,
+      "fangpinsern": 117,
       "-": 121,
       "FelixNWJ": 16
     }
@@ -46745,122 +47053,129 @@
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        return this.dish.getName().toString() + \" \" + this.dish.getCalories().toString() + \"cal\";"
+        "content": "        return this.dish.getName().toString() + \" \""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "                + this.dish.getCalories().toString() + \"cal \" + this.dish.getTags().toString();"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "     * Returns true if both meals of the same name have the same timestamp."
+        "content": "    /**"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "     */"
+        "content": "     * Returns true if both meals of the same name have the same timestamp."
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "    public boolean isSameMeal(Meal otherMeal) {"
+        "content": "     */"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "        if (otherMeal \u003d\u003d this) {"
+        "content": "    public boolean isSameMeal(Meal otherMeal) {"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "            return true;"
+        "content": "        if (otherMeal \u003d\u003d this) {"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "        }"
+        "content": "            return true;"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "        //return otherDish !\u003d null \u0026\u0026 otherDish.getName().equals(getName());"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": ""
+        "content": "        //return otherDish !\u003d null \u0026\u0026 otherDish.getName().equals(getName());"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "        return otherMeal !\u003d null"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "                \u0026\u0026 otherMeal.getDish().equals(getDish())"
+        "content": "        return otherMeal !\u003d null"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "                \u0026\u0026 otherMeal.getTimestamp().equals(getTimestamp());"
+        "content": "                \u0026\u0026 otherMeal.getDish().equals(getDish())"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 otherMeal.getTimestamp().equals(getTimestamp());"
       },
       {
         "lineNumber": 102,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 103,
         "author": {
           "gitId": "iltep64"
         },
@@ -46869,7 +47184,7 @@
     ],
     "authorContributionMap": {
       "iltep64": 81,
-      "fangpinsern": 6,
+      "fangpinsern": 7,
       "FelixNWJ": 15
     }
   },

@@ -352,10 +352,17 @@
         ]
       },
       {
-        "insertions": 213,
-        "deletions": 153,
+        "insertions": 235,
+        "deletions": 179,
         "date": "2019-10-22",
         "commitResults": [
+          {
+            "hash": "24c3b8b48d79c1c15c812d6ab5837f709a6d6979",
+            "messageTitle": "refactor a little, we do not use exceptions for flow control.",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 26
+          },
           {
             "hash": "0d88632a091eafea8b92a43ba2a454741c15e71a",
             "messageTitle": "Make Expense command able to specify people involved, and also update algorithm to obey, and refactored some stuff, and updated tests.",
@@ -874,10 +881,59 @@
         ]
       },
       {
-        "insertions": 286,
-        "deletions": 60,
+        "insertions": 463,
+        "deletions": 454,
+        "date": "2019-10-21",
+        "commitResults": [
+          {
+            "hash": "5020b28bb50e1ef447fa9844f9b8ddf34db13326",
+            "messageTitle": "Add more test for InviteCommandTest",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 0
+          },
+          {
+            "hash": "b88857ef7d1dc3ba46c6f7c568d948cad13917ee",
+            "messageTitle": "Remove changed files",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 454
+          },
+          {
+            "hash": "2f8776a7348461455b3e3b136336db9a723b22ac",
+            "messageTitle": "Add back relevant changed files",
+            "messageBody": "",
+            "insertions": 454,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 300,
+        "deletions": 67,
         "date": "2019-10-22",
         "commitResults": [
+          {
+            "hash": "cc6b1a3c3e11c62e5bfd7315777c6eb6efb6e7fb",
+            "messageTitle": "Abstract method to updateContextAndView in PR #105",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "9f10d17de4a70b5b8c19c8effd7c3b2a5a786f12",
+            "messageTitle": "Remove exceptions so that if encounter invalid person, skips the current one and moves onto the next person Other valid people within same command can still be added.",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 6
+          },
+          {
+            "hash": "a9ad5330fd9b467bd9f2ffe4d7713df743918d14",
+            "messageTitle": "Fix errors due to empty name or name with white spaces",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 0
+          },
           {
             "hash": "29d9acf47db14d9ad03d9d0b1f06dabf0f48eb1a",
             "messageTitle": "Add InviteSequenceDiagram",
@@ -912,6 +968,48 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 15,
+        "deletions": 5,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "0124b4f6eb2102f4fde780cc5ed4f6a091160b22",
+            "messageTitle": "Updated InviteCommand with the newer version of ContextType",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "fa01fb7848c3c82203e0bdba67ef680202fe11f2",
+            "messageTitle": "Update InviteCommand to remove printing of empty line",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 31,
+        "deletions": 15,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "47e6bc65b1ec92b94f3fb35c659aee0b56993a9e",
+            "messageTitle": "Add extra test cases to InviteCommandTest",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 0
+          },
+          {
+            "hash": "1aeb1f1548c0169f3d232b9091aeaca9025aab65",
+            "messageTitle": "Fix checkstyle errors",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 15
           }
         ]
       }
@@ -1629,28 +1727,28 @@
     ]
   },
   "authorFinalContributionMap": {
-    "podocarp": 1501,
-    "liakify": 1041,
-    "JohnNzj": 378,
+    "podocarp": 1511,
+    "liakify": 1037,
+    "JohnNzj": 775,
     "Aulud": 1610,
-    "daekoon": 2000
+    "daekoon": 1996
   },
   "authorFileTypeContributionMap": {
     "podocarp": {
       "docs": 71,
       "tests": 663,
-      "functional": 767
+      "functional": 777
     },
     "liakify": {
       "docs": 91,
       "tests": 405,
-      "functional": 524,
+      "functional": 520,
       "other": 21
     },
     "JohnNzj": {
       "docs": 67,
-      "tests": 20,
-      "functional": 123,
+      "tests": 228,
+      "functional": 312,
       "other": 168
     },
     "Aulud": {
@@ -1662,16 +1760,16 @@
     "daekoon": {
       "docs": 92,
       "tests": 1085,
-      "functional": 786,
+      "functional": 782,
       "other": 37
     }
   },
   "authorContributionVariance": {
-    "podocarp": 13311.479,
-    "liakify": 10839.283,
-    "JohnNzj": 4872.0815,
-    "Aulud": 37997.938,
-    "daekoon": 56958.867
+    "podocarp": 13133.248,
+    "liakify": 10127.466,
+    "JohnNzj": 19586.266,
+    "Aulud": 35349.145,
+    "daekoon": 52862.938
   },
   "authorDisplayNameMap": {
     "podocarp": "CS2103T-W11-2 JIA X ... ODONG",
