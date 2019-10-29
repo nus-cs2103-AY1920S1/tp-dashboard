@@ -73024,269 +73024,276 @@
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    public static final String VALIDATION_REGEX_SINGLE \u003d \"\\\\p{Alnum}+\";"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    public final String value;"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    public final String value;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "     * Constructs an {@code PrevMods}."
+        "content": "    /**"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "     *"
+        "content": "     * Constructs an {@code PrevMods}."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "     * @param prevMods A valid prevMods address."
+        "content": "     *"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "     */"
+        "content": "     * @param prevMods A valid prevMods address."
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    public PrevMods(String prevMods) {"
+        "content": "     */"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        requireNonNull(prevMods);"
+        "content": "    public PrevMods(String prevMods) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        AppUtil.checkArgument(isValidPrevMods(prevMods), MESSAGE_CONSTRAINTS);"
+        "content": "        requireNonNull(prevMods);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        value \u003d prevMods;"
+        "content": "        AppUtil.checkArgument(isValidPrevMods(prevMods), MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    }"
+        "content": "        value \u003d prevMods;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "     * Returns if a given string is a valid prevMods."
+        "content": "    /**"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "     */"
+        "content": "     * Returns if a given string is a valid prevMods."
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    public static boolean isValidPrevMods(String test) {"
+        "content": "     */"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        return test.matches(VALIDATION_REGEX);"
+        "content": "    public static boolean isValidPrevMods(String test) {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    }"
+        "content": "        return (test.matches(VALIDATION_REGEX) || test.matches(VALIDATION_REGEX_SINGLE));"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    public String toString() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        return value;"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    }"
+        "content": "        return value;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "                || (other instanceof PrevMods // instanceof handles nulls"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "                \u0026\u0026 value.equals(((PrevMods) other).value)); // state check"
+        "content": "                || (other instanceof PrevMods // instanceof handles nulls"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 value.equals(((PrevMods) other).value)); // state check"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    public int hashCode() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        return value.hashCode();"
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    }"
+        "content": "        return value.hashCode();"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 53,
+        "author": {
+          "gitId": "MistyRainforest"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
         "author": {
           "gitId": "MistyRainforest"
         },
@@ -73295,7 +73302,7 @@
     ],
     "authorContributionMap": {
       "SendorasLeft": 1,
-      "MistyRainforest": 52
+      "MistyRainforest": 53
     }
   },
   {
@@ -120641,7 +120648,7 @@
         "author": {
           "gitId": "cheongliyuan"
         },
-        "content": "            .withTags(\"A6614133H,A1748370H\").build();"
+        "content": "            .withTags(\"A6614133H\").build();"
       },
       {
         "lineNumber": 20,
@@ -120676,7 +120683,7 @@
         "author": {
           "gitId": "cheongliyuan"
         },
-        "content": "            .withTags(\"A6614133H,A1748370H\").build();"
+        "content": "            .withTags(\"A6614133H\").build();"
       },
       {
         "lineNumber": 25,
@@ -120711,7 +120718,7 @@
         "author": {
           "gitId": "cheongliyuan"
         },
-        "content": "            .withTags(\"A5802229H,A1748370H,A5524592H\").build();"
+        "content": "            .withTags(\"A5802229\").build();"
       },
       {
         "lineNumber": 30,

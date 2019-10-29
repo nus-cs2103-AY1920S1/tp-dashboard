@@ -26465,9 +26465,9 @@
       {
         "lineNumber": 203,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "        return new Slot(trimmedSlot);"
+        "content": "        return Slot.fromString(trimmedSlot);"
       },
       {
         "lineNumber": 204,
@@ -26576,8 +26576,9 @@
       }
     ],
     "authorContributionMap": {
+      "dcshzj": 1,
       "-": 108,
-      "KendrickAng": 110
+      "KendrickAng": 109
     }
   },
   {
@@ -36260,9 +36261,9 @@
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "    public static final Slot DEFAULT_SLOT \u003d new Slot(\"17/10/2019 13:00-14:00\");"
+        "content": "    public static final Slot DEFAULT_SLOT \u003d Slot.fromString(\"17/10/2019 13:00-14:00\");"
       },
       {
         "lineNumber": 27,
@@ -36322,7 +36323,8 @@
       }
     ],
     "authorContributionMap": {
-      "KendrickAng": 34
+      "dcshzj": 1,
+      "KendrickAng": 33
     }
   },
   {
@@ -41506,500 +41508,528 @@
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    public Slot(String slot) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        requireNonNull(slot);"
+        "content": "     * Constructs a {@code Slot} from the enforced format."
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        checkArgument(isValidSlot(slot), MESSAGE_CONSTRAINTS);"
+        "content": "     *"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        final Matcher matcher \u003d SEPARATION_REGEX.matcher(slot);"
+        "content": "     * @param date the date of the slot."
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        if (!matcher.matches()) {"
+        "content": "     * @param start the starting time of the slot."
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            throw new IllegalArgumentException(MESSAGE_CONSTRAINTS);"
+        "content": "     * @param end  the ending time of the slot."
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "        this.date \u003d matcher.group(\"date\");"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "        this.start \u003d matcher.group(\"slot1\");"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "        this.end \u003d matcher.group(\"slot2\");"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "     * Constructs a {@code Slot} from the enforced format."
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "     * @param date the date of the slot."
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "     * @param start the starting time of the slot."
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "     * @param end  the ending time of the slot."
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "KendrickAng"
-        },
         "content": "     */"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 42,
         "author": {
           "gitId": "ChrisKheng"
         },
         "content": "    public Slot(String date, String start, String end) {"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 43,
         "author": {
           "gitId": "KendrickAng"
         },
         "content": "        requireAllNonNull(date, start, end);"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 44,
         "author": {
           "gitId": "KendrickAng"
         },
         "content": "        checkArgument(isValidSlot(String.format(STRING_FORMAT, date, start, end)), MESSAGE_CONSTRAINTS);"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 45,
         "author": {
           "gitId": "ChrisKheng"
         },
         "content": "        this.date \u003d date;"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 46,
         "author": {
           "gitId": "KendrickAng"
         },
         "content": "        this.start \u003d start;"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 47,
         "author": {
           "gitId": "KendrickAng"
         },
         "content": "        this.end \u003d end;"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 48,
         "author": {
           "gitId": "KendrickAng"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 49,
         "author": {
           "gitId": "KendrickAng"
         },
         "content": ""
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 50,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 51,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "     * Returns true if the given slot timing is in valid format and start occurs earlier than end."
+        "content": "     * Factory method for constructing a {@code Slot} from a given String in the enforced format."
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 52,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "     * @param slot The String in the format given in SEPARATION_REGEX."
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "dcshzj"
         },
         "content": "     */"
       },
       {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "    public static Slot fromString(String slot) throws IllegalArgumentException {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "        requireNonNull(slot);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "        checkArgument(isValidSlot(slot), MESSAGE_CONSTRAINTS);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "        final Matcher matcher \u003d SEPARATION_REGEX.matcher(slot);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "        if (!matcher.matches()) {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "            throw new IllegalArgumentException(MESSAGE_CONSTRAINTS);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "        return new Slot(matcher.group(\"date\"), matcher.group(\"slot1\"), matcher.group(\"slot2\"));"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "dcshzj"
+        },
+        "content": "    }"
+      },
+      {
         "lineNumber": 65,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "    public static boolean isValidSlot(String test) {"
+        "content": ""
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        try {"
+        "content": "    /**"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            // split the periods up"
+        "content": "     * Returns true if the given slot timing is in valid format and start occurs earlier than end."
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            final Matcher matcher \u003d SEPARATION_REGEX.matcher(test);"
+        "content": "     */"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            if (!matcher.matches()) {"
+        "content": "    public static boolean isValidSlot(String test) {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "                throw new ParseException(MESSAGE_CONSTRAINTS);"
+        "content": "        try {"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            }"
+        "content": "            // split the periods up"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            final String date \u003d matcher.group(\"date\");"
+        "content": "            final Matcher matcher \u003d SEPARATION_REGEX.matcher(test);"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            final String start \u003d String.format(\"%s %s\", date, matcher.group(\"slot1\"));"
+        "content": "            if (!matcher.matches()) {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            final String end \u003d String.format(\"%s %s\", date, matcher.group(\"slot2\"));"
+        "content": "                throw new ParseException(MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            ZonedDateTime t1 \u003d ZonedDateTime.parse(start, parseFormatter);"
+        "content": "            }"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            ZonedDateTime t2 \u003d ZonedDateTime.parse(end, parseFormatter);"
+        "content": "            final String date \u003d matcher.group(\"date\");"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            // the start must be earlier than the end"
+        "content": "            final String start \u003d String.format(\"%s %s\", date, matcher.group(\"slot1\"));"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            if (t1.compareTo(t2) \u003e 0) {"
+        "content": "            final String end \u003d String.format(\"%s %s\", date, matcher.group(\"slot2\"));"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "                return false;"
+        "content": "            ZonedDateTime t1 \u003d ZonedDateTime.parse(start, parseFormatter);"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            }"
+        "content": "            ZonedDateTime t2 \u003d ZonedDateTime.parse(end, parseFormatter);"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        } catch (Exception e) {"
+        "content": "            // the start must be earlier than the end"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "            return false;"
+        "content": "            if (t1.compareTo(t2) \u003e 0) {"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        }"
+        "content": "                return false;"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        return true;"
+        "content": "            }"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "ChrisKheng"
+          "gitId": "KendrickAng"
         },
-        "content": "    }"
+        "content": "        } catch (Exception e) {"
       },
       {
         "lineNumber": 86,
         "author": {
-          "gitId": "ChrisKheng"
+          "gitId": "KendrickAng"
         },
-        "content": ""
+        "content": "            return false;"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    @Override"
+        "content": "        }"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    public String toString() {"
+        "content": "        return true;"
       },
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "ChrisKheng"
         },
-        "content": "        return String.format(STRING_FORMAT, date, start, end);"
+        "content": "    }"
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "ChrisKheng"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    @Override"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        return String.format(STRING_FORMAT, date, start, end);"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    }"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "                || (other instanceof Slot // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "                \u0026\u0026 date.equals(((Slot) other).date)"
+        "content": "    @Override"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "                \u0026\u0026 start.equals(((Slot) other).start)"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "                \u0026\u0026 end.equals(((Slot) other).end)); // state check"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    }"
+        "content": "                || (other instanceof Slot // instanceof handles nulls"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": ""
+        "content": "                \u0026\u0026 date.equals(((Slot) other).date)"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    @Override"
+        "content": "                \u0026\u0026 start.equals(((Slot) other).start)"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    public int hashCode() {"
+        "content": "                \u0026\u0026 end.equals(((Slot) other).end)); // state check"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        return Objects.hash(date, start, end);"
+        "content": "    }"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 106,
+        "author": {
+          "gitId": "KendrickAng"
+        },
+        "content": "    public int hashCode() {"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "KendrickAng"
+        },
+        "content": "        return Objects.hash(date, start, end);"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "KendrickAng"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "KendrickAng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 110,
         "author": {
           "gitId": "KendrickAng"
         },
@@ -42008,7 +42038,8 @@
     ],
     "authorContributionMap": {
       "ChrisKheng": 5,
-      "KendrickAng": 101
+      "dcshzj": 16,
+      "KendrickAng": 89
     }
   },
   {
@@ -44298,9 +44329,9 @@
       {
         "lineNumber": 107,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "                .map(Slot::new)"
+        "content": "                .map(Slot::fromString)"
       },
       {
         "lineNumber": 108,
@@ -44333,9 +44364,9 @@
     ],
     "authorContributionMap": {
       "mrchensheng21": 31,
-      "dcshzj": 32,
+      "dcshzj": 33,
       "-": 29,
-      "KendrickAng": 19
+      "KendrickAng": 18
     }
   },
   {
@@ -47992,278 +48023,215 @@
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "    private final String date;"
+        "content": "    private final String slot;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    private final String start;"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    private final String end;"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": ""
+        "content": "     * Constructs a {@code JsonAdaptedSlot} with the given {@code slot}s"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    /**"
+        "content": "     */"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "     * Constructs a {@code JsonAdaptedSlot} with the given {@code slot}s."
+        "content": "    @JsonCreator"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "     */"
+        "content": "    public JsonAdaptedSlot(String slot) {"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "    @JsonCreator"
+        "content": "        this.slot \u003d slot;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    public JsonAdaptedSlot(String date, String start, String end) {"
+        "content": "    }"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        this.date \u003d date;"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        this.start \u003d start;"
+        "content": "    /**"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        this.end \u003d end;"
+        "content": "     * Converts a given {@code Slot} into this class for Jackson use."
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": ""
+        "content": "    public JsonAdaptedSlot(Slot source) {"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "    /**"
+        "content": "        this.slot \u003d source.toString();"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "     * Converts a given {@code Slot} into this class for Jackson use."
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    public JsonAdaptedSlot(Slot source) {"
+        "content": "    @JsonValue"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        date \u003d source.date;"
+        "content": "    public String getSlot() {"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "        start \u003d source.start;"
+        "content": "        return this.slot;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        end \u003d source.end;"
+        "content": "    }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    @JsonValue"
+        "content": "     * Converts this Jackson-friendly adapted department object into the model\u0027s {@code Department} object."
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    public String getSlot() {"
+        "content": "     *"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "        return String.format(Slot.STRING_FORMAT, date, start, end);"
+        "content": "     * @throws IllegalValueException if there were any data constraints violated in the adapted department."
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": ""
+        "content": "    public Slot toModelType() throws IllegalValueException {"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "KendrickAng"
+          "gitId": "dcshzj"
         },
-        "content": "    /**"
+        "content": "        return Slot.fromString(this.slot);"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "KendrickAng"
         },
-        "content": "     * Converts this Jackson-friendly adapted department object into the model\u0027s {@code Department} object."
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "     * @throws IllegalValueException if there were any data constraints violated in the adapted department."
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "    public Slot toModelType() throws IllegalValueException {"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "        if (!Slot.isValidSlot(String.format(Slot.STRING_FORMAT, date, start, end))) {"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "            throw new IllegalValueException(Slot.MESSAGE_CONSTRAINTS);"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "KendrickAng"
-        },
-        "content": "        return new Slot(date, start, end);"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "KendrickAng"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 44,
         "author": {
           "gitId": "KendrickAng"
         },
@@ -48271,7 +48239,8 @@
       }
     ],
     "authorContributionMap": {
-      "KendrickAng": 53
+      "dcshzj": 7,
+      "KendrickAng": 37
     }
   },
   {

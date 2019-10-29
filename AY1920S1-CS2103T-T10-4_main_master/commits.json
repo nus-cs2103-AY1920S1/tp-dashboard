@@ -259,6 +259,20 @@
             "deletions": 77
           }
         ]
+      },
+      {
+        "insertions": 889,
+        "deletions": 579,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "79d66d7f0bb46696a8a8a2063b8b8cb37208840e",
+            "messageTitle": "Fix AddNusMods  (#152)",
+            "messageBody": "* Implement caching\r\n\r\n* Add ModuleSummaryList, ImportMods\r\n* Refactor Cache paths\r\n\r\n* Implement importmods in an internal program\r\n* Add nusmods json files\r\n* Refactor FileUtil to add newline when writing to file\r\n* Fix NusmodsParser.parseWeeks logic\r\n\r\n* Fix checkstyle, add logging for initialization of nusmodsdata\r\n\r\n* Fix testutil to consider that FileUtil.writeToFile appends newline to EOF now\r\n\r\n* refactoring ImportMods\r\n\r\n* Change to use model.findPerson in AddNusMod(s)Command\r\n\r\n* Fix lesson\u0027s day not being considered when generating timeslots\r\n\r\n* Extract module-event mapping methods from command to ModuleEventMappingUtil\r\n\r\n* Modify addmods to include exam dates\r\n\r\n* Modify addmods to check for clashing events and trigger UI update\r\n\r\n* Add check for module exam before attempting to generate timeslot\r\n\r\n* Modify Timeslot.isClash to return false on exact edge overlaps\r\n\r\n* Improve ImportMods performance\r\n\r\n* Improve error checking in NusModsParser\r\n* Convert Week.type to enum\r\n\r\n* Improve code quality\r\n\r\n* Remove unused imports\r\n\r\n* merge master\r\n\r\n* Revert \"merge master\"\r\n\r\nThis reverts commit 25656ff78d08ccbd204f4f89ca3ef72269fb0758.\r\n\r\n* Refactor and add error checks\r\n* remove acadYear/semesterNo flags for addmod command (disallow user to specify year/semester since it\u0027s not well supported yet)\r\n* refactor SemesterNo to enum\r\n\r\n* remove unused import\r\n\r\n* Fix SemesterNo enum equality checks\r\n\r\n* Fix cacheTest\r\n\r\n* Fix EOF\r\n",
+            "insertions": 889,
+            "deletions": 579
+          }
+        ]
       }
     ],
     "klementtan": [
@@ -1038,6 +1052,104 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 471,
+        "deletions": 256,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "07cdb07bed447122c691d48185ccd64f9305fff0",
+            "messageTitle": "Add prefix and imagePath util method",
+            "messageBody": "",
+            "insertions": 26,
+            "deletions": 50
+          },
+          {
+            "hash": "c2e8c579707b5de454a18741e33f82cad0d0ec5b",
+            "messageTitle": "Add test case for websocket and gmaps",
+            "messageBody": "",
+            "insertions": 269,
+            "deletions": 40
+          },
+          {
+            "hash": "fa075f3faa7e7da0a07e61ac9b5c83aeb2f13bab",
+            "messageTitle": "Resolve checkstyle",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 12
+          },
+          {
+            "hash": "b404958646602b8b513b1eb306ac2649dd814486",
+            "messageTitle": "Add logger and add prefix of NUS_ to image path",
+            "messageBody": "",
+            "insertions": 43,
+            "deletions": 28
+          },
+          {
+            "hash": "ad80476a9ec6843101e8780e2516b8016fdaaba6",
+            "messageTitle": "Clean up file directory",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 4
+          },
+          {
+            "hash": "207fea9002e85fd7f705d647c5a0a5c4146a8d72",
+            "messageTitle": "initial commit",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 57
+          },
+          {
+            "hash": "c8073adee77db9229d0480d8251fb1106592f727",
+            "messageTitle": "Integrate saveToJson",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 19
+          },
+          {
+            "hash": "5f5ea9545429438ca59ca2cfdebaa019a44e66b9",
+            "messageTitle": "Remove useless code",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 6
+          },
+          {
+            "hash": "b78c94bd41ef7699cb4aa52182640c93695765b1",
+            "messageTitle": "Remove typo",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "a4844395b8a66f2a1e145be45b0a499a2fafd4f7",
+            "messageTitle": "Initial commit",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 14
+          },
+          {
+            "hash": "ef1181f61e7d9817a0b0fc8b4fbf696c3709535e",
+            "messageTitle": "Resolve Bug",
+            "messageBody": "",
+            "insertions": 51,
+            "deletions": 13
+          },
+          {
+            "hash": "4edca6f61f4b8e45cbfc07c6696eccf941f16b52",
+            "messageTitle": "Improve code quality",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 9
+          },
+          {
+            "hash": "e6077708386e9a23c985a87f40e4a69591c9924c",
+            "messageTitle": "Resolve test case",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          }
+        ]
       }
     ],
     "Alvinnyk": [
@@ -1448,10 +1560,45 @@
         ]
       },
       {
-        "insertions": 38,
-        "deletions": 6,
+        "insertions": 1032,
+        "deletions": 1406,
+        "date": "2019-10-19",
+        "commitResults": [
+          {
+            "hash": "9cf4c9f77c3cb1944ecc6f988a96db41866114dc",
+            "messageTitle": "Refactoring model",
+            "messageBody": "",
+            "insertions": 801,
+            "deletions": 1153
+          },
+          {
+            "hash": "d4138878b48f734d2b8190d38be5c5155126b9a0",
+            "messageTitle": "Fixed small bugs and test cases",
+            "messageBody": "",
+            "insertions": 40,
+            "deletions": 36
+          },
+          {
+            "hash": "48eb222d22b7123ad8c04e2046eff2172e919725",
+            "messageTitle": "Fixed checkstyle issues",
+            "messageBody": "",
+            "insertions": 191,
+            "deletions": 217
+          }
+        ]
+      },
+      {
+        "insertions": 80,
+        "deletions": 9,
         "date": "2019-10-23",
         "commitResults": [
+          {
+            "hash": "07316c71cf95d42397eb4e875aa10260d66e6ce8",
+            "messageTitle": "Updated DG with Find Free Timeslot feature",
+            "messageBody": "",
+            "insertions": 41,
+            "deletions": 0
+          },
           {
             "hash": "784afa93c997ec8fa1d1ecec06851c5b4c0aeb5f",
             "messageTitle": "Updated DG with find free timeslot feature",
@@ -1465,6 +1612,13 @@
             "messageBody": "",
             "insertions": 0,
             "deletions": 4
+          },
+          {
+            "hash": "a7f70acc3b2b100d7295daa79a18a26be28eb83c",
+            "messageTitle": "Removed more white space",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 3
           },
           {
             "hash": "71f53abcf7ab82d686e332ba57bd874a73553ace",
@@ -1493,6 +1647,76 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 23,
+        "deletions": 54,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "7e6a4bef86d4bd0e4c9b08f50023efd829ab4644",
+            "messageTitle": "Fixed small bugs",
+            "messageBody": "",
+            "insertions": 23,
+            "deletions": 54
+          }
+        ]
+      },
+      {
+        "insertions": 1512,
+        "deletions": 432,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "3ffc0d6851d964308622fdc9a37927d2c8c968b8",
+            "messageTitle": "Implemented display model manager",
+            "messageBody": "",
+            "insertions": 370,
+            "deletions": 352
+          },
+          {
+            "hash": "b2690d8dfa1e590aee56ae6fe57fb582a8afb121",
+            "messageTitle": "Implemented User model",
+            "messageBody": "",
+            "insertions": 650,
+            "deletions": 45
+          },
+          {
+            "hash": "188023cc3b8f811c0709812190f6bb86ba766a12",
+            "messageTitle": "Implemented Sample Timebook, fixed small bugs",
+            "messageBody": "",
+            "insertions": 439,
+            "deletions": 3
+          },
+          {
+            "hash": "b0a96aee3ed7176a427684e6496777eb61515501",
+            "messageTitle": "Fixed checkstyle issues",
+            "messageBody": "",
+            "insertions": 50,
+            "deletions": 27
+          },
+          {
+            "hash": "17918b9f35da3b4ff07b4d171c2c2b4f1df4145f",
+            "messageTitle": "Fixed tests",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 12,
+        "deletions": 3,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "f867b70e282edd05127ce351995aef12d632ea49",
+            "messageTitle": "Fixed tests",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 3
           }
         ]
       }
@@ -2444,53 +2668,124 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 1579,
+        "deletions": 124,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "0ea2c31c5f89834e8d8cd62499f0c7421e0daeee",
+            "messageTitle": "Rewrite CommandHistory class and added test cases",
+            "messageBody": "",
+            "insertions": 459,
+            "deletions": 78
+          },
+          {
+            "hash": "d1bba571047c472cd4ef288920569f8d6a7c581d",
+            "messageTitle": "Refine CommandArgument class and add test cases",
+            "messageBody": "",
+            "insertions": 121,
+            "deletions": 1
+          },
+          {
+            "hash": "f5f783585086395980585b89105de86cce3dfa02",
+            "messageTitle": "Move Suggester.createUnmodifiableObservableList method to CollectionUtil and add test cases",
+            "messageBody": "",
+            "insertions": 45,
+            "deletions": 4
+          },
+          {
+            "hash": "6001f42222e96135ce4f7dc70ed29876f05c1ce8",
+            "messageTitle": "Remove redundant use of Collections.unmodifiableList",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 36
+          },
+          {
+            "hash": "fb6c51f1d76818f4ca3f40eed13bb25f7cbec1bf",
+            "messageTitle": "Add test cases for SuggestionLogicManager",
+            "messageBody": "",
+            "insertions": 236,
+            "deletions": 1
+          },
+          {
+            "hash": "0c3d2175781febb5c1f51bff3362c7fdafa38bd8",
+            "messageTitle": "Add test cases for various Suggesters",
+            "messageBody": "",
+            "insertions": 689,
+            "deletions": 0
+          },
+          {
+            "hash": "0e60aecbe38a668dfc334cd9716d346c62a4aca9",
+            "messageTitle": "Fix code warning on Suggester testing code",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "cd13aea8e181a0bc7087fe29f691c158ffd03a8d",
+            "messageTitle": "Fix dependency on JUnit 5 params package in gradle build file",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "f21944894236a574e392c4e52a5a9eda9b2e8b08",
+            "messageTitle": "Fix failing test case",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "marqueurs404": 2933,
-    "klementtan": 2246,
-    "Alvinnyk": 7900,
-    "YiJiee": 3596,
-    "aidilfbk": 3058
+    "marqueurs404": 3222,
+    "klementtan": 2445,
+    "Alvinnyk": 9591,
+    "YiJiee": 3398,
+    "aidilfbk": 4503
   },
   "authorFileTypeContributionMap": {
     "marqueurs404": {
       "docs": 214,
-      "tests": 2,
-      "functional": 2677,
+      "tests": 7,
+      "functional": 2961,
       "other": 40
     },
     "klementtan": {
       "docs": 160,
-      "tests": 702,
-      "functional": 1382,
+      "tests": 922,
+      "functional": 1361,
       "other": 2
     },
     "Alvinnyk": {
-      "docs": 75,
-      "tests": 2687,
-      "functional": 5136,
+      "docs": 77,
+      "tests": 2858,
+      "functional": 6654,
       "other": 2
     },
     "YiJiee": {
-      "docs": 172,
-      "tests": 169,
-      "functional": 3252,
+      "docs": 170,
+      "tests": 167,
+      "functional": 3058,
       "other": 3
     },
     "aidilfbk": {
       "docs": 165,
-      "tests": 660,
-      "functional": 2233
+      "tests": 2049,
+      "functional": 2287,
+      "other": 2
     }
   },
   "authorContributionVariance": {
-    "marqueurs404": 439283.2,
-    "klementtan": 61911.305,
-    "Alvinnyk": 680896.4,
-    "YiJiee": 71437.51,
-    "aidilfbk": 52557.215
+    "marqueurs404": 447908.25,
+    "klementtan": 65556.46,
+    "Alvinnyk": 767754.9,
+    "YiJiee": 68598.66,
+    "aidilfbk": 98470.35
   },
   "authorDisplayNameMap": {
     "marqueurs404": "CS2103T-T10-4 ONG P ... ARCUS",

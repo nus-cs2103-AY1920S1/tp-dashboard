@@ -9867,7 +9867,7 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Interested? Jump to \u003c\u003cQuick-Start\u003e\u003e to get started. Enjoy!"
+        "content": "Interested? Refer to \u003c\u003cQuick-Start\u003e\u003e below to get started. Enjoy!"
       },
       {
         "lineNumber": 30,
@@ -10012,9 +10012,9 @@
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "arjavibahety"
+          "gitId": "bernicechio"
         },
-        "content": "* **`delete -w`**`2` : deletes the worker with staff ID W000002"
+        "content": "* **`delete -w`**`2` : deletes the worker with worker ID W000002"
       },
       {
         "lineNumber": 51,
@@ -10082,7 +10082,7 @@
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -10530,7 +10530,7 @@
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "-"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
@@ -11874,7 +11874,7 @@
       {
         "lineNumber": 316,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -11930,7 +11930,7 @@
       {
         "lineNumber": 324,
         "author": {
-          "gitId": "-"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
@@ -12259,7 +12259,7 @@
       {
         "lineNumber": 371,
         "author": {
-          "gitId": "-"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
@@ -13458,21 +13458,21 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d\u003d Administrative"
+        "content": "\u003d\u003d\u003d Document Generation"
       },
       {
         "lineNumber": 543,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d\u003d\u003d Archive entries: `archive` `[coming in v2.0]`"
+        "content": ""
       },
       {
         "lineNumber": 544,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Archive old or irrelevant entries. One entry can be archived at a time, or all entries of a certain specification can be archived at once."
+        "content": "// tag::genReport[]"
       },
       {
         "lineNumber": 545,
@@ -13486,28 +13486,28 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Format:"
+        "content": "\u003d\u003d\u003d\u003d Generate report for a specific body: `genReport`"
       },
       {
         "lineNumber": 547,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "Generate an individual report in a PDF filename `Report \u003cbody_ID\u003e.pdf` located in `Mortago` file."
       },
       {
         "lineNumber": 548,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `archive -flag /id id`"
+        "content": ""
       },
       {
         "lineNumber": 549,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `archive -flag /status status`"
+        "content": "Format: `genReport bodyId`"
       },
       {
         "lineNumber": 550,
@@ -13535,28 +13535,28 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `archive -b /id 2` +"
+        "content": "* `genReport B123` +"
       },
       {
         "lineNumber": 554,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Archives body entry with ID 2"
+        "content": "Outputs the report PDF for body ID B00000123"
       },
       {
         "lineNumber": 555,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `archive -w /status inactive` +"
+        "content": ""
       },
       {
         "lineNumber": 556,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Archives all entries of workers who are inactive"
+        "content": "// end::genReport[]"
       },
       {
         "lineNumber": 557,
@@ -13570,28 +13570,28 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d\u003d\u003d View archived entries: `archives` `[coming in v2.0]`"
+        "content": "// tag::genReports[]"
       },
       {
         "lineNumber": 559,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Display all archived entries."
+        "content": ""
       },
       {
         "lineNumber": 560,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Generate reports for all bodies: `genReports`"
       },
       {
         "lineNumber": 561,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Format: `archives -flag`"
+        "content": "Generate all individual reports in a PDF filename `Report (ALL BODIES).pdf` located in `Mortago` file."
       },
       {
         "lineNumber": 562,
@@ -13605,7 +13605,7 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Example:"
+        "content": "Format: `genReports`"
       },
       {
         "lineNumber": 564,
@@ -13619,47 +13619,47 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `archives -b` +"
+        "content": "// end::genReports[]"
       },
       {
         "lineNumber": 566,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Display of all archived body entries, in order of archive date"
+        "content": ""
       },
       {
         "lineNumber": 567,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `archives -w` +"
+        "content": "// tag::genReportSummary[]"
       },
       {
         "lineNumber": 568,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Display of all archived worker entries, in order of archive date"
+        "content": ""
       },
       {
         "lineNumber": 569,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Generate summary report for all bodies: `genReportSummary`"
       },
       {
         "lineNumber": 570,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": "// tag::feedback[]"
+        "content": "Generate a tabular report overview containing key information for all bodies in a PDF filename `Report Summary.pdf` located in `Mortago` file."
       },
       {
         "lineNumber": 571,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
@@ -13668,91 +13668,91 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d\u003d\u003d Give and view feedback: `feedback`"
+        "content": "Format: `genReportSummary`"
       },
       {
         "lineNumber": 573,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Give workers feedback (for the manager’s own reference), and can display a history of all feedback entered."
+        "content": ""
       },
       {
         "lineNumber": 574,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "// end::genReportSummary[]"
       },
       {
         "lineNumber": 575,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "-"
         },
-        "content": "Format:"
+        "content": ""
       },
       {
         "lineNumber": 576,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "`feedback /id staffID /details details`"
+        "content": "\u003d\u003d\u003d Administrative"
       },
       {
         "lineNumber": 577,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "`feedback`"
+        "content": "\u003d\u003d\u003d\u003d View admission statistics"
       },
       {
         "lineNumber": 578,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "View a line-chart of the number of bodies admitted to the morgue over the past 10 days."
       },
       {
         "lineNumber": 579,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "-"
         },
-        "content": "Example:"
+        "content": ""
       },
       {
         "lineNumber": 580,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "The line-chart is on the main page of the application and is automatically updated when a body is added or deleted."
       },
       {
         "lineNumber": 581,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `feedback /id 10 /details very meticulous` +"
+        "content": "No user command is needed to display it."
       },
       {
         "lineNumber": 582,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Note down feedback for worker with ID W10010 with custom details"
+        "content": ""
       },
       {
         "lineNumber": 583,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `feedback` +"
+        "content": "\u003d\u003d\u003d\u003d Archive entries: `archive` `[coming in v2.0]`"
       },
       {
         "lineNumber": 584,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Display of all feedback entered"
+        "content": "Archive old or irrelevant entries. One entry can be archived at a time, or all entries of a certain specification can be archived at once."
       },
       {
         "lineNumber": 585,
@@ -13764,44 +13764,44 @@
       {
         "lineNumber": 586,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": "// end::feedback[]"
+        "content": "Format:"
       },
       {
         "lineNumber": 587,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
       {
         "lineNumber": 588,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": "// tag::assign[]"
+        "content": "* `archive -flag /id id`"
       },
       {
         "lineNumber": 589,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "* `archive -flag /status status`"
       },
       {
         "lineNumber": 590,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d\u003d\u003d Assign tasks to worker: `assign`"
+        "content": ""
       },
       {
         "lineNumber": 591,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Assign a body and task to a worker."
+        "content": "Example:"
       },
       {
         "lineNumber": 592,
@@ -13815,68 +13815,68 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Format: `assign /bodyId bodyId /staffId workerId /task taskDescription`"
+        "content": "* `archive -b /id 2` +"
       },
       {
         "lineNumber": 594,
         "author": {
-          "gitId": "-"
+          "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "Archives body entry with ID 2"
       },
       {
         "lineNumber": 595,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Example:"
+        "content": "* `archive -w /status inactive` +"
       },
       {
         "lineNumber": 596,
         "author": {
-          "gitId": "-"
+          "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "Archives all entries of workers who are inactive"
       },
       {
         "lineNumber": 597,
         "author": {
-          "gitId": "dalisc"
-        },
-        "content": "\u003d\u003d\u003d\u003d View admission statistics"
-      },
-      {
-        "lineNumber": 598,
-        "author": {
-          "gitId": "dalisc"
-        },
-        "content": "View a line-chart of the number of bodies admitted to the morgue over the past 10 days."
-      },
-      {
-        "lineNumber": 599,
-        "author": {
-          "gitId": "dalisc"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
       {
+        "lineNumber": 598,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "\u003d\u003d\u003d\u003d View archived entries: `archives` `[coming in v2.0]`"
+      },
+      {
+        "lineNumber": 599,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "Display all archived entries."
+      },
+      {
         "lineNumber": 600,
         "author": {
-          "gitId": "dalisc"
+          "gitId": "bernicechio"
         },
-        "content": "The line-chart is on the main page of the application and is automatically updated when a body is added or deleted."
+        "content": ""
       },
       {
         "lineNumber": 601,
         "author": {
-          "gitId": "dalisc"
+          "gitId": "bernicechio"
         },
-        "content": "No user command is needed to display it."
+        "content": "Format: `archives -flag`"
       },
       {
         "lineNumber": 602,
         "author": {
-          "gitId": "dalisc"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
@@ -13885,47 +13885,47 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `assign /bodyId 2 /staffId 1 /task send blood sample to lab for analysis` +"
+        "content": "Example:"
       },
       {
         "lineNumber": 604,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Assigns worker with staff ID W00001 to body with ID B00000002 with a task description."
+        "content": ""
       },
       {
         "lineNumber": 605,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "* `archives -b` +"
       },
       {
         "lineNumber": 606,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": "// end::assign[]"
+        "content": "Display of all archived body entries, in order of archive date"
       },
       {
         "lineNumber": 607,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "* `archives -w` +"
       },
       {
         "lineNumber": 608,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d\u003d Document Generation"
+        "content": "Display of all archived worker entries, in order of archive date"
       },
       {
         "lineNumber": 609,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
@@ -13934,7 +13934,7 @@
         "author": {
           "gitId": "ambervoong"
         },
-        "content": "// tag::genReport[]"
+        "content": "// tag::feedback[]"
       },
       {
         "lineNumber": 611,
@@ -13948,14 +13948,14 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d\u003d\u003d Generate report on the deceased: `genReport`"
+        "content": "\u003d\u003d\u003d\u003d Give and view feedback: `feedback` `[coming in v2.0]`"
       },
       {
         "lineNumber": 613,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Generate an individual report from the app automatically"
+        "content": "Give workers feedback (for the manager’s own reference), and can display a history of all feedback entered."
       },
       {
         "lineNumber": 614,
@@ -13969,21 +13969,21 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Format: `genReport bodyID`"
+        "content": "Format:"
       },
       {
         "lineNumber": 616,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "`feedback /workerId workerId /details details`"
       },
       {
         "lineNumber": 617,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Example:"
+        "content": "`feedback`"
       },
       {
         "lineNumber": 618,
@@ -13997,91 +13997,91 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `genReport B123` +"
+        "content": "Example:"
       },
       {
         "lineNumber": 620,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Outputs the report PDF for body ID B00000123"
+        "content": ""
       },
       {
         "lineNumber": 621,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "* `feedback /id 10 /details very meticulous` +"
       },
       {
         "lineNumber": 622,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": "// end::genReport[]"
+        "content": "Note down feedback for worker with ID W10010 with custom details"
       },
       {
         "lineNumber": 623,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "* `feedback` +"
       },
       {
         "lineNumber": 624,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": "// tag::report[]"
+        "content": "Display of all feedback entered"
       },
       {
         "lineNumber": 625,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
       {
         "lineNumber": 626,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "ambervoong"
         },
-        "content": "\u003d\u003d\u003d\u003d View past individual reports: `report`"
+        "content": "// end::feedback[]"
       },
       {
         "lineNumber": 627,
         "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "Receive details of a past individual report."
-      },
-      {
-        "lineNumber": 628,
-        "author": {
-          "gitId": "bernicechio"
+          "gitId": "ambervoong"
         },
         "content": ""
       },
       {
+        "lineNumber": 628,
+        "author": {
+          "gitId": "ambervoong"
+        },
+        "content": "// tag::assign[]"
+      },
+      {
         "lineNumber": 629,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "ambervoong"
         },
-        "content": "Format: `report bodyID`"
+        "content": ""
       },
       {
         "lineNumber": 630,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Assign tasks to worker: `assign` `[coming in v2.0]`"
       },
       {
         "lineNumber": 631,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Example:"
+        "content": "Assign a body and task to a worker."
       },
       {
         "lineNumber": 632,
@@ -14095,145 +14095,145 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* `report B1` +"
+        "content": "Format: `assign /bodyId bodyId /workerId workerId /task taskDescription`"
       },
       {
         "lineNumber": 634,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "-"
         },
-        "content": "Outputs the past report of body ID B00000001"
+        "content": ""
       },
       {
         "lineNumber": 635,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "Example:"
       },
       {
         "lineNumber": 636,
         "author": {
-          "gitId": "ambervoong"
-        },
-        "content": "// end::report[]"
-      },
-      {
-        "lineNumber": 637,
-        "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
       {
+        "lineNumber": 637,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "* `assign /bodyId 2 /workerId 1 /task send blood sample to lab for analysis` +"
+      },
+      {
         "lineNumber": 638,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
-        "content": "// tag::reports[]"
+        "content": "Assigns worker with worker ID W00001 to body with ID B00000002 with a task description."
       },
       {
         "lineNumber": 639,
         "author": {
-          "gitId": "ambervoong"
+          "gitId": "bernicechio"
         },
         "content": ""
       },
       {
         "lineNumber": 640,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "ambervoong"
         },
-        "content": "\u003d\u003d\u003d\u003d View past reports: `reports`"
+        "content": "// end::assign[]"
       },
       {
         "lineNumber": 641,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "ambervoong"
         },
-        "content": "Receive a list of past reports."
+        "content": ""
       },
       {
         "lineNumber": 642,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Help"
       },
       {
         "lineNumber": 643,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "ambervoong"
         },
-        "content": "Format: `reports`"
+        "content": ""
       },
       {
         "lineNumber": 644,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 645,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "Example: `reports` +"
-      },
-      {
-        "lineNumber": 646,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "Outputs the list of past reports"
-      },
-      {
-        "lineNumber": 647,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 648,
-        "author": {
-          "gitId": "ambervoong"
-        },
-        "content": "// end::reports[]"
-      },
-      {
-        "lineNumber": 649,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 650,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "\u003d\u003d\u003d Help"
-      },
-      {
-        "lineNumber": 651,
-        "author": {
-          "gitId": "ambervoong"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 652,
         "author": {
           "gitId": "ambervoong"
         },
         "content": "// tag::help[]"
       },
       {
-        "lineNumber": 653,
+        "lineNumber": 645,
         "author": {
           "gitId": "ambervoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 646,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "\u003d\u003d\u003d\u003d View all commands: `help` `[coming in v2.0]`"
+      },
+      {
+        "lineNumber": 647,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "View a summary of all available commands and their flags. Use the `-v` flag to view the detailed description of all commands and their flags."
+      },
+      {
+        "lineNumber": 648,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 649,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "Format: `help -flag`"
+      },
+      {
+        "lineNumber": 650,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 651,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "Example: `help -v` +"
+      },
+      {
+        "lineNumber": 652,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "Shows a link to the User Guide."
+      },
+      {
+        "lineNumber": 653,
+        "author": {
+          "gitId": "bernicechio"
         },
         "content": ""
       },
@@ -14242,14 +14242,14 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d\u003d\u003d View all commands: `help`"
+        "content": "3.5.b. Get information about a command: `help command`"
       },
       {
         "lineNumber": 655,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "View a summary of all available commands and their flags. Use the `-v` flag to view the detailed description of all commands and their flags."
+        "content": "View the detailed description of the specified command and its flags, if any."
       },
       {
         "lineNumber": 656,
@@ -14263,7 +14263,7 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Format: `help -flag`"
+        "content": "Format: `help command`"
       },
       {
         "lineNumber": 658,
@@ -14277,14 +14277,14 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Example: `help -v` +"
+        "content": "Example: `help undo` +"
       },
       {
         "lineNumber": 660,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Shows a link to the User Guide."
+        "content": "Shows undo command description."
       },
       {
         "lineNumber": 661,
@@ -14296,30 +14296,30 @@
       {
         "lineNumber": 662,
         "author": {
-          "gitId": "bernicechio"
+          "gitId": "ambervoong"
         },
-        "content": "3.5.b. Get information about a command: `help command`"
+        "content": "// end::help[]"
       },
       {
         "lineNumber": 663,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "View the detailed description of the specified command and its flags, if any."
+        "content": ""
       },
       {
         "lineNumber": 664,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d View help hotlines: `hotlines` `[coming in v2.0]`"
       },
       {
         "lineNumber": 665,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Format: `help command`"
+        "content": "View emergency help hotlines."
       },
       {
         "lineNumber": 666,
@@ -14333,91 +14333,91 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Example: `help undo` +"
+        "content": "Format: `hotlines`"
       },
       {
         "lineNumber": 668,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "Shows undo command description."
+        "content": ""
       },
       {
         "lineNumber": 669,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 670,
-        "author": {
-          "gitId": "ambervoong"
-        },
-        "content": "// end::help[]"
-      },
-      {
-        "lineNumber": 671,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 672,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "\u003d\u003d\u003d\u003d View help hotlines: `hotlines` `[coming in v2.0]`"
-      },
-      {
-        "lineNumber": 673,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "View emergency help hotlines."
-      },
-      {
-        "lineNumber": 674,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 675,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "Format: `hotlines`"
-      },
-      {
-        "lineNumber": 676,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 677,
-        "author": {
-          "gitId": "bernicechio"
-        },
         "content": "Example: `hotlines` +"
       },
       {
-        "lineNumber": 678,
+        "lineNumber": 670,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "Lists emergency help hotlines."
       },
       {
-        "lineNumber": 679,
+        "lineNumber": 671,
         "author": {
           "gitId": "-"
         },
         "content": ""
+      },
+      {
+        "lineNumber": 672,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 673,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d FAQ"
+      },
+      {
+        "lineNumber": 674,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 675,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "*Q*: How do I transfer my data to another Computer? +"
+      },
+      {
+        "lineNumber": 676,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains your Mortago data."
+      },
+      {
+        "lineNumber": 677,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 678,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "*Q*: How do I save my data? +"
+      },
+      {
+        "lineNumber": 679,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "*A*: Mortago\u0027s data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually."
       },
       {
         "lineNumber": 680,
@@ -14429,450 +14429,450 @@
       {
         "lineNumber": 681,
         "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d FAQ"
-      },
-      {
-        "lineNumber": 682,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 683,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "*Q*: How do I transfer my data to another Computer? +"
-      },
-      {
-        "lineNumber": 684,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains your Mortago data."
-      },
-      {
-        "lineNumber": 685,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 686,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "*Q*: How do I save my data? +"
-      },
-      {
-        "lineNumber": 687,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "*A*: Mortago\u0027s data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually."
-      },
-      {
-        "lineNumber": 688,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 689,
-        "author": {
           "gitId": "bernicechio"
         },
         "content": "\u003d\u003d Command Summary"
       },
       {
-        "lineNumber": 690,
+        "lineNumber": 682,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Add* an entry: `add`"
       },
       {
-        "lineNumber": 691,
+        "lineNumber": 683,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** Add a new worker, body, or fridge with the"
       },
       {
-        "lineNumber": 692,
+        "lineNumber": 684,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "`add -flag (/attributeName attributeValue)`"
       },
       {
-        "lineNumber": 693,
+        "lineNumber": 685,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Update* an entry: `update`"
       },
       {
-        "lineNumber": 694,
+        "lineNumber": 686,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** Update the status of each worker, body, or fridge with the `update -flag (/attributeName attributeValue)`"
       },
       {
-        "lineNumber": 695,
+        "lineNumber": 687,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Find* : `find (keyword)...` +"
       },
       {
-        "lineNumber": 696,
+        "lineNumber": 688,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** Find entries using a keyword. +"
       },
       {
-        "lineNumber": 697,
+        "lineNumber": 689,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    Format: `find keyword`"
       },
       {
-        "lineNumber": 698,
+        "lineNumber": 690,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Delete* an entry: `delete`"
       },
       {
-        "lineNumber": 699,
+        "lineNumber": 691,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** Delete a body, worker or fridge entry, indicated by its id number. +"
       },
       {
-        "lineNumber": 700,
+        "lineNumber": 692,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    Format: `delete -flag id`"
       },
       {
-        "lineNumber": 701,
+        "lineNumber": 693,
         "author": {
           "gitId": "-"
         },
         "content": "* *Clear* : `clear`"
       },
       {
-        "lineNumber": 702,
+        "lineNumber": 694,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *View* : `view -flag /id id`"
       },
       {
-        "lineNumber": 703,
+        "lineNumber": 695,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *List* : `list -flag`"
       },
       {
-        "lineNumber": 704,
+        "lineNumber": 696,
         "author": {
           "gitId": "bernicechio"
         },
         "content": ""
       },
       {
-        "lineNumber": 705,
+        "lineNumber": 697,
         "author": {
           "gitId": "shaoyi1997"
         },
         "content": "* *View dashboard* : `dashboard`"
       },
       {
-        "lineNumber": 706,
+        "lineNumber": 698,
         "author": {
           "gitId": "shaoyi1997"
         },
         "content": "    ** Brings the dashboard to the front of the app."
       },
       {
-        "lineNumber": 707,
+        "lineNumber": 699,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *View alerts* : `alerts`"
       },
       {
-        "lineNumber": 708,
+        "lineNumber": 700,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** View all alerts brought up by the app."
       },
       {
-        "lineNumber": 709,
+        "lineNumber": 701,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Sort* : `sort`"
       },
       {
-        "lineNumber": 710,
+        "lineNumber": 702,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** Sort all displayed entries according to a given order. +"
       },
       {
-        "lineNumber": 711,
+        "lineNumber": 703,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    Format: `sort /order order (/idOrder idOrder)`"
       },
       {
-        "lineNumber": 712,
+        "lineNumber": 704,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Filter* : `filter`"
       },
       {
-        "lineNumber": 713,
+        "lineNumber": 705,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** Filter all entries according to the given keyword in any of an entry’s field. +"
       },
       {
-        "lineNumber": 714,
+        "lineNumber": 706,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    Format: `filter (/field keyword)...`"
       },
       {
-        "lineNumber": 715,
+        "lineNumber": 707,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Undo* : `undo`"
       },
       {
-        "lineNumber": 716,
+        "lineNumber": 708,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** Undo the last executed command. +"
       },
       {
-        "lineNumber": 717,
+        "lineNumber": 709,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    Format: `undo`"
       },
       {
-        "lineNumber": 718,
+        "lineNumber": 710,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Redo* : `redo`"
       },
       {
-        "lineNumber": 719,
+        "lineNumber": 711,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    ** Redo the last undone command. +"
       },
       {
-        "lineNumber": 720,
+        "lineNumber": 712,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "    Format: `redo`"
       },
       {
-        "lineNumber": 721,
+        "lineNumber": 713,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Exit*: `exit`"
       },
       {
-        "lineNumber": 722,
+        "lineNumber": 714,
         "author": {
           "gitId": "bernicechio"
         },
         "content": ""
       },
       {
-        "lineNumber": 723,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 724,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "* *Archive entries* : `archive` `[coming in v2.0]`"
-      },
-      {
-        "lineNumber": 725,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "    ** Archive old or irrelevant entries."
-      },
-      {
-        "lineNumber": 726,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "    Format: `archive -flag /id id`, `archive -flag /status status`"
-      },
-      {
-        "lineNumber": 727,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "* *View archived entries* : `archives` `[coming in v2.0]`"
-      },
-      {
-        "lineNumber": 728,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "    ** Display all archived entries."
-      },
-      {
-        "lineNumber": 729,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "    Format: `archives -flag`"
-      },
-      {
-        "lineNumber": 730,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "* *Give and view feedback* : `feedback`"
-      },
-      {
-        "lineNumber": 731,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "    * Give workers feedback and displays a history of all feedback entered."
-      },
-      {
-        "lineNumber": 732,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "    Format: `feedback /id staffID /notes notes`, feedback`"
-      },
-      {
-        "lineNumber": 733,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "* *Assign tasks* : `assign`"
-      },
-      {
-        "lineNumber": 734,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "    ** Assign a body and task to a worker."
-      },
-      {
-        "lineNumber": 735,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "    Format: `assign /bodyId bodyId /staffId workerId /task taskDescription`"
-      },
-      {
-        "lineNumber": 736,
+        "lineNumber": 715,
         "author": {
           "gitId": "bernicechio"
         },
         "content": "* *Generate report* : `genReport`"
       },
       {
+        "lineNumber": 716,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    ** Generate an individual report in a PDF. +"
+      },
+      {
+        "lineNumber": 717,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    Format: `genReport bodyId`"
+      },
+      {
+        "lineNumber": 718,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "* *Generate all reports* : `genReports`"
+      },
+      {
+        "lineNumber": 719,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    ** Generate all individual reports in a PDF. +"
+      },
+      {
+        "lineNumber": 720,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    Format: `genReports`"
+      },
+      {
+        "lineNumber": 721,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "* *Generate summary report* : `genReportSummary`"
+      },
+      {
+        "lineNumber": 722,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    ** Generate an overview for all reports in a PDF. +"
+      },
+      {
+        "lineNumber": 723,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    Format: `genReportSummary`"
+      },
+      {
+        "lineNumber": 724,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 725,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "* *Archive entries* : `archive` `[coming in v2.0]`"
+      },
+      {
+        "lineNumber": 726,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    ** Archive old or irrelevant entries."
+      },
+      {
+        "lineNumber": 727,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    Format: `archive -flag /id id`, `archive -flag /status status`"
+      },
+      {
+        "lineNumber": 728,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "* *View archived entries* : `archives` `[coming in v2.0]`"
+      },
+      {
+        "lineNumber": 729,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    ** Display all archived entries."
+      },
+      {
+        "lineNumber": 730,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    Format: `archives -flag`"
+      },
+      {
+        "lineNumber": 731,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "* *Give and view feedback* : `feedback` `[coming in v2.0]`"
+      },
+      {
+        "lineNumber": 732,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    * Give workers feedback and displays a history of all feedback entered."
+      },
+      {
+        "lineNumber": 733,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    Format: `feedback /workerId workerId /notes notes`, feedback`"
+      },
+      {
+        "lineNumber": 734,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "* *Assign tasks* : `assign` `[coming in v2.0]`"
+      },
+      {
+        "lineNumber": 735,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    ** Assign a body and task to a worker."
+      },
+      {
+        "lineNumber": 736,
+        "author": {
+          "gitId": "bernicechio"
+        },
+        "content": "    Format: `assign /bodyId bodyId /workerId workerId /task taskDescription`"
+      },
+      {
         "lineNumber": 737,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "    ** Generate an individual report from the app automatically"
+        "content": "* *Help summary*: `help` `[coming in v2.0]`"
       },
       {
         "lineNumber": 738,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "    Format: `genReport bodyID`"
+        "content": "    ** Get information about the commands"
       },
       {
         "lineNumber": 739,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* *View a select report* : `report`"
+        "content": "    Format: `help -flag` `[coming in v2.0]`"
       },
       {
         "lineNumber": 740,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "    ** Receive details of a past individual report."
+        "content": "* *Help for specific command* : `help command` `[coming in v2.0]`"
       },
       {
         "lineNumber": 741,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "    Format: `report bodyID`"
+        "content": "* *Help hotlines* : `hotlines` `[coming in v2.0]`"
       },
       {
         "lineNumber": 742,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* *View past reports* : `reports`"
+        "content": ""
       },
       {
         "lineNumber": 743,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "    ** Receive a list of past reports."
+        "content": "\u003d\u003d Glossary"
       },
       {
         "lineNumber": 744,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "    Format: `reports`"
+        "content": "*Attribute* : In Mortago, an attribute is the property of a body, fridge or worker. +"
       },
       {
         "lineNumber": 745,
@@ -14886,63 +14886,63 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "*Body* : a corpse +"
       },
       {
         "lineNumber": 747,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* *Help summary*: `help`"
+        "content": ""
       },
       {
         "lineNumber": 748,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "    ** Get information about the commands"
+        "content": "*Worker* : an employee working in the mortuary +"
       },
       {
         "lineNumber": 749,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "    Format: `help -flag`"
+        "content": ""
       },
       {
         "lineNumber": 750,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* *Help for specific command* : `help command`"
+        "content": "*Fridge* : a refrigerator used to store a body in the mortuary +"
       },
       {
         "lineNumber": 751,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "* *Help hotlines* : `hotlines` `[coming in v2.0]`"
+        "content": ""
       },
       {
         "lineNumber": 752,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": ""
+        "content": "*Command Line Interface (CLI)* : a text-based user interface (UI) used to view and manage computer files +"
       },
       {
         "lineNumber": 753,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "\u003d\u003d Glossary"
+        "content": ""
       },
       {
         "lineNumber": 754,
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "*Attribute* : In Mortago, an attribute is the property of a body, fridge or worker. +"
+        "content": "*Graphical User Interface (GUI)* : an interface through which a user interacts with electronic devices such as computers, hand-held devices and other appliances. This interface uses icons, menus and other visual indicator (graphics) representations to display information and related user controls, unlike text-based interfaces, where data and commands are in text +"
       },
       {
         "lineNumber": 755,
@@ -14956,7 +14956,7 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "*Body/bodies* : a corpse +"
+        "content": "*Operating System (OS)* :the low-level software that supports a computer\u0027s basic functions, such as scheduling tasks and controlling peripherals +"
       },
       {
         "lineNumber": 757,
@@ -14970,38 +14970,10 @@
         "author": {
           "gitId": "bernicechio"
         },
-        "content": "*Command Line Interface (CLI)* : a text-based user interface (UI) used to view and manage computer files +"
+        "content": "*Portable Document Format (PDF)* : a file format for capturing and sending electronic documents in exactly the intended format"
       },
       {
         "lineNumber": 759,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 760,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "*Graphical User Interface (GUI)* : an interface through which a user interacts with electronic devices such as computers, hand-held devices and other appliances. This interface uses icons, menus and other visual indicator (graphics) representations to display information and related user controls, unlike text-based interfaces, where data and commands are in text"
-      },
-      {
-        "lineNumber": 761,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 762,
-        "author": {
-          "gitId": "bernicechio"
-        },
-        "content": "*Operating system (OS)* :the low-level software that supports a computer\u0027s basic functions, such as scheduling tasks and controlling peripherals"
-      },
-      {
-        "lineNumber": 763,
         "author": {
           "gitId": "bernicechio"
         },
@@ -15010,10 +14982,10 @@
     ],
     "authorContributionMap": {
       "shaoyi1997": 74,
-      "dalisc": 28,
-      "arjavibahety": 7,
-      "ambervoong": 161,
-      "bernicechio": 381,
+      "dalisc": 22,
+      "arjavibahety": 6,
+      "ambervoong": 149,
+      "bernicechio": 396,
       "-": 112
     }
   },

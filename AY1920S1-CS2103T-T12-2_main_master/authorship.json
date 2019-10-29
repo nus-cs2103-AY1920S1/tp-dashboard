@@ -8203,9 +8203,9 @@
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "In *DeliveryMANS*, there are 2 types of commands: universal commands and context-specific commands."
+        "content": "**Command Types**"
       },
       {
         "lineNumber": 39,
@@ -8217,37 +8217,37 @@
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": "Universal commands can be used anywhere throughout the application. You can identify universal commands by its \"-\" convention followed by a keyword e.g. `-help`."
+        "content": "* In *DeliveryMANS*, there are 2 types of commands: universal commands and context-specific commands."
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "* Universal commands can be called under any context in the application."
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": "Context-specific commands are commands which are only applicable for a specific context. Commands such as viewing a customer ordering history can only be accessed in the customer context."
+        "content": "* Context-specific commands can only be accessed in a specific context. Context-specific commands comprise customer,"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "restaurant and deliverymen commands, which can only be called under the customer, restaurant and deliverymen context"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "**Command Format**"
+        "content": "respectively."
       },
       {
         "lineNumber": 45,
@@ -8259,100 +8259,100 @@
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": "* Words in `UPPER_CASE` are parameters to be supplied by the user e.g. in `add_order c/CUSTOMER r/RESTAURANT f/FOOD q/QUANTITY`, `CUSTOMER`, `RESTAURANT`, `FOOD` and `QUANTITY` are parameters to be replaced."
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": ""
+        "content": "**Command Format**"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": "\u003e `add_order c/Donald Trump r/KFC f/Chicken Bucket q/100`"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "* Command words for universal commands are prepended with \"-\""
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "* Items with `…` after them can be used multiple times e.g. `f/FOOD...` can be used 1 or more: `f/3 Piece Chicken Meal`, `f/Pepperoni Pizza f/Char Kway Teow` etc."
+        "content": "** Example Usage: `-help`."
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "* Words in `UPPER_CASE` are parameters to be supplied by the user e.g. in `add_order c/CUSTOMER r/RESTAURANT f/FOOD q/QUANTITY`,"
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": "* Items with `[]` are optional and can be ommitted e.g. `[t/TAG]...`"
+        "content": "`CUSTOMER`, `RESTAURANT`, `FOOD` and `QUANTITY` are parameters to be supplied."
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "** Example Usage: `add_order c/Donald Trump r/KFC f/Chicken Bucket q/100`"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "// end::features[]"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "* Items with `…` after them can be used multiple times e.g. `f/FOOD...` can be used 1 or more:"
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "// tag::universalCommand[]"
+        "content": "** Example Usage: `f/3 Piece Chicken Meal` or `f/Pepperoni Pizza f/Char Kway Teow`"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d Universal commands"
+        "content": ""
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "ryantay232"
         },
-        "content": ""
+        "content": "* Items with `[]` are optional and can be ommitted e.g. `[t/TAG]...`"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "These are general commands to assist you in controlling the app, which are not directly related to the customer, restaurant and delivery men."
+        "content": "// end::features[]"
       },
       {
         "lineNumber": 60,
@@ -8366,26 +8366,26 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d\u003d Viewing help `-help`"
+        "content": "// tag::universalCommand[]"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "This generates a list of commands and tips for you."
+        "content": "{nbsp} + "
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
@@ -8394,7 +8394,7 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "Format: `-help`"
+        "content": "\u003d\u003d\u003d Universal commands"
       },
       {
         "lineNumber": 66,
@@ -8406,100 +8406,100 @@
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Help with a specific context: `-help CONTEXT`"
+        "content": "These are general commands to assist you in controlling the app, which are not directly related to the customer,"
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "restaurant and deliverymen."
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "SoilingRogue"
-        },
-        "content": "\u003e `-help customer`"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
         "content": ""
       },
       {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
         "lineNumber": 71,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Help with a specific context command: `-help cxt/CONTEXT cmd/COMMAND`"
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Viewing help `-help`"
       },
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": "\u003e `-help -cxt customer -cmd sort`"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "This generates a list of commands and tips for you."
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": "\u003d\u003d\u003d\u003d Switching context"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "Format: `-help`"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "This command switches to a specific context for you to enter targeted commands. The list of contexts include: customer, deliveryman and restaurant. By default, the application will be in the universal context upon startup."
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "* Help with a specific context: `-help CONTEXT`"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Switching to customer context `-customer`"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "This command switches to the customer context for you to enter customer-specific commands."
+        "content": "** Example: `-help customer`"
       },
       {
         "lineNumber": 81,
@@ -8511,9 +8511,9 @@
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "Format: `-customer`"
+        "content": "* Help with a specific context command: `-help cxt/CONTEXT cmd/COMMAND`"
       },
       {
         "lineNumber": 83,
@@ -8525,114 +8525,114 @@
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Switching to restaurant context `-restaurant`"
+        "content": "** Example: `-help -cxt customer -cmd sort`"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "This command switches to the restaurant context for you to enter restaurant-specific commands."
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "Format: `-restaurant`"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Switching context"
       },
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Switching to deliveryman context `-deliveryman`"
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "This command switches to the deliveryman context for you to enter deliveryman-specific commands."
+        "content": "This command switches to a specific context for you to enter targeted commands. The list of contexts include:"
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "customer, deliveryman and restaurant. By default, the application will be in the universal context upon startup."
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "Format: `-deliveryman`"
+        "content": ""
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d\u003d Switching to customer context `-customer`"
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": "\u003d\u003d\u003d\u003d Adding of orders `-add_order`"
+        "content": "This command switches to the customer context for you to enter customer-specific commands."
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
-        "content": "This command adds a new order to the database to be processed. The deliveryman to deliver the order will be allocated automatically based on the internal algorithms."
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "Format: `-customer`"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "Format: `-add c/CUSTOMER r/RESTAURANT f/FOOD... q/QUANTITY...`"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d\u003d Switching to restaurant context `-restaurant`"
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": "\u003e `add_order c/Donald Trump r/KFC f/Chicken Bucket q/100`"
+        "content": "This command switches to the restaurant context for you to enter restaurant-specific commands."
       },
       {
         "lineNumber": 100,
@@ -8646,12 +8646,12 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "Requirements:"
+        "content": "Format: `-restaurant`"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
         "content": ""
       },
@@ -8660,47 +8660,47 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "* A valid customer `c/CUSTOMER`, restaurant `r/RESTAURANT` and restaurant menu item `f/FOOD` must be provided and exists currently in the database."
+        "content": "\u003d\u003d\u003d\u003d\u003d Switching to deliveryman context `-deliveryman`"
       },
       {
         "lineNumber": 104,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "charliechoong"
         },
-        "content": ""
+        "content": "This command switches to the deliveryman context for you to enter deliveryman-specific commands."
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "* The quantity of food to be delivered also be provided and be greater than 0."
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "Format: `-deliveryman`"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d\u003d Editing of orders `-edit_order`"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "This enables you to edit an order. The order to edit will have to be specified by its index when you are entering the command."
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
@@ -8709,26 +8709,26 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "You can change:"
+        "content": "\u003d\u003d\u003d\u003d Adding of orders `-add_order`"
       },
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "This command adds a new order to the database to be processed. The deliveryman to deliver the order will be allocated"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "* The customer who made the order"
+        "content": "automatically based on the internal algorithms."
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
         "content": ""
       },
@@ -8737,26 +8737,26 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "* The restaurant and/or food ordered"
+        "content": "Format: `-add c/CUSTOMER r/RESTAURANT f/FOOD... q/QUANTITY...`"
       },
       {
         "lineNumber": 115,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
         "content": ""
       },
       {
         "lineNumber": 116,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "* The quantity of the food ordered"
+        "content": "Example:  `add_order c/Donald Trump r/KFC f/Chicken Bucket q/100`"
       },
       {
         "lineNumber": 117,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
         "content": ""
       },
@@ -8765,7 +8765,7 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "* The deliveryman to deliver the order"
+        "content": "Requirements:"
       },
       {
         "lineNumber": 119,
@@ -8777,70 +8777,70 @@
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "* The delivery status of the order"
+        "content": "* A valid customer `c/CUSTOMER`, restaurant `r/RESTAURANT` and restaurant menu item `f/FOOD` must be provided and"
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "exists currently in the database."
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "ryantay232"
         },
-        "content": "Format: `-edit_order i/INDEX [c/CUSTOMER] [r/RESTAURANT] [d/DELIVERYMAN] [f/FOOD]... [q/QUANTITY]... [completed/DELIVERY_STATUS]`"
+        "content": ""
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "* The quantity of food to be delivered also be provided and be greater than 0."
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003e `-edit_order i/1337 d/John Doe completed/true`"
+        "content": ""
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 126,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "Requirements:"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Editing of orders `-edit_order`"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "* The index `i/INDEX` provided must be within the order list size and be greater than or equals to 0."
+        "content": "This enables you to edit an order. The order to edit will have to be specified by its index when you are entering the command."
       },
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
         "content": ""
       },
@@ -8849,7 +8849,7 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "* A customer `c/CUSTOMER`, restaurant `r/RESTAURANT` or restaurant menu item `f/FOOD` provided must be valid and exists currently in the database."
+        "content": "You can change:"
       },
       {
         "lineNumber": 131,
@@ -8863,7 +8863,7 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "* Optional items with \u0027[]\u0027 tags may be ommitted e.g. `[r/RESTAURANT]`. However at least 1 tag has to be present for the order to be edited."
+        "content": "* The customer who made the order"
       },
       {
         "lineNumber": 133,
@@ -8877,12 +8877,12 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "* Delivery status `completed/DELIVERY_STATUS` must be true or false, if present."
+        "content": "* The restaurant and/or food ordered"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "ryantay232"
         },
         "content": ""
       },
@@ -8891,63 +8891,63 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d\u003d Deleting of orders `-delete_order`"
+        "content": "* The quantity of the food ordered"
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "ryantay232"
         },
-        "content": "This command enables you to delete an unwanted/cancelled order in the database by its index."
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "* The deliveryman to deliver the order"
       },
       {
         "lineNumber": 139,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "ryantay232"
         },
-        "content": "Format: `-delete_order INDEX`"
+        "content": ""
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "* The delivery status of the order"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003e `-delete_order 3`"
+        "content": ""
       },
       {
         "lineNumber": 142,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "Format: `-edit_order i/INDEX [c/CUSTOMER] [r/RESTAURANT] [d/DELIVERYMAN] [f/FOOD]... [q/QUANTITY]... [completed/DELIVERY_STATUS]`"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d\u003d Viewing order summary `-order_summary`"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "This command brings up the current order summary for your viewing."
+        "content": "Example: `-edit_order i/1337 d/John Doe completed/true`"
       },
       {
         "lineNumber": 145,
@@ -8961,12 +8961,12 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "Format: `-order_summary`"
+        "content": "Requirements:"
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "ryantay232"
         },
         "content": ""
       },
@@ -8975,89 +8975,89 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d\u003d Undoing command `-undo`"
+        "content": "* The index `i/INDEX` provided must be within the order list size and be greater than or equals to 0."
       },
       {
         "lineNumber": 149,
         "author": {
-          "gitId": "etlow"
+          "gitId": "ryantay232"
         },
-        "content": "This command undoes the effects of a command that you have previously executed."
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
-          "gitId": "etlow"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "* A customer `c/CUSTOMER`, restaurant `r/RESTAURANT` or restaurant menu item `f/FOOD` provided must be valid and exists currently in the database."
       },
       {
         "lineNumber": 151,
         "author": {
-          "gitId": "SoilingRogue"
-        },
-        "content": "Format: `-undo`"
-      },
-      {
-        "lineNumber": 152,
-        "author": {
-          "gitId": "etlow"
+          "gitId": "ryantay232"
         },
         "content": ""
       },
       {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "* Optional items with \u0027[]\u0027 tags may be ommitted e.g. `[r/RESTAURANT]`. However at least 1 tag has to be present for the order to be edited."
+      },
+      {
         "lineNumber": 153,
         "author": {
-          "gitId": "etlow"
+          "gitId": "ryantay232"
         },
-        "content": "Say you have accidentally executed a command and now want to reverse it. Just type `undo` into the"
+        "content": ""
       },
       {
         "lineNumber": 154,
         "author": {
-          "gitId": "etlow"
+          "gitId": "SoilingRogue"
         },
-        "content": "command line and press Enter like any other command. The result pane will then show the following:"
+        "content": "* Delivery status `completed/DELIVERY_STATUS` must be true or false, if present."
       },
       {
         "lineNumber": 155,
         "author": {
-          "gitId": "-"
+          "gitId": "charliechoong"
         },
         "content": ""
       },
       {
         "lineNumber": 156,
         "author": {
-          "gitId": "etlow"
+          "gitId": "MackyMaguire"
         },
-        "content": "Successfully undid: (your previous command here)"
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 158,
         "author": {
-          "gitId": "etlow"
+          "gitId": "SoilingRogue"
         },
-        "content": "The command which you last performed has now been reversed. Subsequent invocations of `undo` will"
+        "content": "\u003d\u003d\u003d\u003d Deleting of orders `-delete_order`"
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "etlow"
+          "gitId": "charliechoong"
         },
-        "content": "reverse commands which you have performed even earlier."
+        "content": "This command enables you to delete an unwanted/cancelled order in the database by its index."
       },
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "-"
+          "gitId": "charliechoong"
         },
         "content": ""
       },
@@ -9066,110 +9066,110 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d\u003d Redoing command `-redo`"
+        "content": "Format: `-delete_order INDEX`"
       },
       {
         "lineNumber": 162,
         "author": {
-          "gitId": "etlow"
+          "gitId": "charliechoong"
         },
-        "content": "This command redoes the effects of a command that you have just undone, in effect undoing an undo."
+        "content": ""
       },
       {
         "lineNumber": 163,
         "author": {
-          "gitId": "etlow"
+          "gitId": "MackyMaguire"
         },
-        "content": "Similarly to `undo`, this command can be used multiple times in succession to bring back multiple"
+        "content": "Example: `-delete_order 3`"
       },
       {
         "lineNumber": 164,
         "author": {
-          "gitId": "etlow"
+          "gitId": "charliechoong"
         },
-        "content": "commands which you have undone earlier."
+        "content": ""
       },
       {
         "lineNumber": 165,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "SoilingRogue"
-        },
-        "content": "Format: `-redo`"
-      },
-      {
-        "lineNumber": 167,
-        "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "\u003d\u003d\u003d\u003d Viewing order summary `-order_summary`"
+      },
+      {
         "lineNumber": 168,
         "author": {
-          "gitId": "etlow"
+          "gitId": "charliechoong"
         },
-        "content": "After performing `redo`, the result pane will show:"
+        "content": "This command brings up the current order summary for your viewing."
       },
       {
         "lineNumber": 169,
         "author": {
-          "gitId": "-"
+          "gitId": "charliechoong"
         },
         "content": ""
       },
       {
         "lineNumber": 170,
         "author": {
-          "gitId": "etlow"
+          "gitId": "SoilingRogue"
         },
-        "content": "Successfully redid: (your previous command here)"
+        "content": "Format: `-order_summary`"
       },
       {
         "lineNumber": 171,
         "author": {
-          "gitId": "-"
+          "gitId": "charliechoong"
         },
         "content": ""
       },
       {
         "lineNumber": 172,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d\u003d Exiting program `-exit`"
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 173,
         "author": {
-          "gitId": "charliechoong"
-        },
-        "content": "This command exits the program."
-      },
-      {
-        "lineNumber": 174,
-        "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 174,
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "Format: `-exit`"
+        "content": "\u003d\u003d\u003d\u003d Undoing command `-undo`"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "This command undoes the effects of a command that you have previously executed."
       },
       {
         "lineNumber": 176,
         "author": {
-          "gitId": "-"
+          "gitId": "etlow"
         },
         "content": ""
       },
@@ -9178,224 +9178,224 @@
         "author": {
           "gitId": "SoilingRogue"
         },
-        "content": "// end::universalCommand[]"
+        "content": "Format: `-undo`"
       },
       {
         "lineNumber": 178,
         "author": {
-          "gitId": "SoilingRogue"
-        },
-        "content": "// tag::customerCommand[]"
-      },
-      {
-        "lineNumber": 179,
-        "author": {
-          "gitId": "-"
+          "gitId": "etlow"
         },
         "content": ""
       },
       {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "Say you have accidentally executed a command and now want to reverse it. Just type `undo` into the"
+      },
+      {
         "lineNumber": 180,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "etlow"
         },
-        "content": "\u003d\u003d\u003d Customer commands"
+        "content": "command line and press Enter like any other command. The result pane will then show the following:"
       },
       {
         "lineNumber": 181,
         "author": {
-          "gitId": "-"
+          "gitId": "etlow"
         },
         "content": ""
       },
       {
         "lineNumber": 182,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "etlow"
         },
-        "content": "These are commands pertaining to customer context of *DeliveryMANS*. The screenshot below shows how the customer context will look like in *DeliveryMANS*."
+        "content": "Successfully undid: (your previous command here)"
       },
       {
         "lineNumber": 183,
         "author": {
-          "gitId": "-"
+          "gitId": "etlow"
         },
         "content": ""
       },
       {
         "lineNumber": 184,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "etlow"
         },
-        "content": " screenshot of finalised DeliveryMANS showing customer list goes here"
+        "content": "The command which you last performed has now been reversed. Subsequent invocations of `undo` will"
       },
       {
         "lineNumber": 185,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "etlow"
         },
-        "content": ""
+        "content": "reverse commands which you have performed even earlier."
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "etlow"
         },
-        "content": "This is a customer and its information."
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 188,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": " screenshot of finalised CustomerCard"
+        "content": ""
       },
       {
         "lineNumber": 189,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Redoing command `-redo`"
       },
       {
         "lineNumber": 190,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "etlow"
         },
-        "content": "\u003d\u003d\u003d\u003d Adding a customer: `add`"
+        "content": "This command redoes the effects of a command that you have just undone, in effect undoing an undo."
       },
       {
         "lineNumber": 191,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "etlow"
         },
-        "content": ""
+        "content": "Similarly to `undo`, this command can be used multiple times in succession to bring back multiple"
       },
       {
         "lineNumber": 192,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "etlow"
         },
-        "content": "This command allows you to add a new customer to the customer list. Name and phone number are necessary to a customer. Tags in customers are optional to include. They are used to specify the customer\u0027s favourite cuisine. Multiple tags can be added to one customer."
+        "content": "commands which you have undone earlier."
       },
       {
         "lineNumber": 193,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "etlow"
         },
         "content": ""
       },
       {
         "lineNumber": 194,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
-        "content": "Format: `add n/NAME p/PHONE [t/TAG]...`"
+        "content": "Format: `-redo`"
       },
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "etlow"
         },
         "content": ""
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "etlow"
         },
-        "content": "\u003e `add n/John Doe p/91234567 t/Japanese t/Noodles`"
+        "content": "After performing `redo`, the result pane will show:"
       },
       {
         "lineNumber": 197,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "etlow"
         },
         "content": ""
       },
       {
         "lineNumber": 198,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "etlow"
         },
-        "content": "\u003d\u003d\u003d\u003d Editing a customer: `edit`"
+        "content": "Successfully redid: (your previous command here)"
       },
       {
         "lineNumber": 199,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "etlow"
         },
         "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": "This command allows you to edit an existing customer in the customer list. The index of a customer needs to be provided while the information to edit are optional. For example, you can edit the customer\u0027s name without editing the phone number."
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 201,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 202,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
-        "content": "Format: `edit INDEX [n/NAME] [p/PHONE] [t/TAGS]...`"
+        "content": "\u003d\u003d\u003d\u003d Exiting program `-exit`"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": ""
+        "content": "This command exits the program."
       },
       {
         "lineNumber": 204,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "charliechoong"
         },
-        "content": "\u003e `edit 1 n/John Hoe p/97654321 t/Indian`"
+        "content": ""
       },
       {
         "lineNumber": 205,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
-        "content": ""
+        "content": "Format: `-exit`"
       },
       {
         "lineNumber": 206,
         "author": {
-          "gitId": "ryantay232"
-        },
-        "content": "\u003d\u003d\u003d\u003d Deleting a customer: `delete`"
-      },
-      {
-        "lineNumber": 207,
-        "author": {
           "gitId": "charliechoong"
         },
         "content": ""
       },
       {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "// end::universalCommand[]"
+      },
+      {
         "lineNumber": 208,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
-        "content": "This command allows you to delete an existing customer in the customer list. The index of a customer needs to be provided."
+        "content": "// tag::customerCommand[]"
       },
       {
         "lineNumber": 209,
@@ -9407,37 +9407,37 @@
       {
         "lineNumber": 210,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": "Format: `delete INDEX`"
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 212,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "SoilingRogue"
         },
-        "content": "\u003e `delete 1`"
+        "content": "\u003d\u003d\u003d Customer commands"
       },
       {
         "lineNumber": 213,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "SoilingRogue"
         },
         "content": ""
       },
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "charliechoong"
         },
-        "content": "\u003d\u003d\u003d\u003d Viewing a customer\u0027s order history: `history`"
+        "content": "These are commands pertaining to customer context of *DeliveryMANS*. The screenshot below shows how the customer context will look like in *DeliveryMANS*."
       },
       {
         "lineNumber": 215,
@@ -9449,9 +9449,9 @@
       {
         "lineNumber": 216,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "charliechoong"
         },
-        "content": "This command allows you to view a customer\u0027s order history. The index of a customer needs to be provided."
+        "content": " screenshot of finalised DeliveryMANS showing customer list goes here"
       },
       {
         "lineNumber": 217,
@@ -9465,12 +9465,12 @@
         "author": {
           "gitId": "ryantay232"
         },
-        "content": "Format: `history INDEX`"
+        "content": "This is a customer and its information."
       },
       {
         "lineNumber": 219,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -9479,138 +9479,138 @@
         "author": {
           "gitId": "ryantay232"
         },
-        "content": "\u003e `history 1`"
+        "content": " screenshot of finalised CustomerCard"
       },
       {
         "lineNumber": 221,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 222,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "// end::customerCommand[]"
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 223,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "-"
         },
-        "content": "// tag::restaurantCommand[]"
+        "content": ""
       },
       {
         "lineNumber": 224,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "ryantay232"
         },
-        "content": "\u003d\u003d\u003d Restaurant commands"
+        "content": "\u003d\u003d\u003d\u003d Adding a customer: `add`"
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 226,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "ryantay232"
         },
-        "content": "Commands in the restaurant context"
+        "content": "This command allows you to add a new customer to the customer list. Name and phone number are necessary to a customer. Tags in customers are optional to include. They are used to specify the customer\u0027s favourite cuisine. Multiple tags can be added to one customer."
       },
       {
         "lineNumber": 227,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 228,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "ryantay232"
         },
-        "content": "\u003d\u003d\u003d\u003d Adding a Restaurant: `add`"
+        "content": "Format: `add n/NAME p/PHONE [t/TAG]...`"
       },
       {
         "lineNumber": 229,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "-"
         },
-        "content": "This command adds a Restaurant to the Restaurant Database."
+        "content": ""
       },
       {
         "lineNumber": 230,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Example: `add n/John Doe p/91234567 t/Japanese t/Noodles`"
       },
       {
         "lineNumber": 231,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "-"
         },
-        "content": "Format: `add n/NAME l/LOCATION [t/TAG]...`"
+        "content": ""
       },
       {
         "lineNumber": 232,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 233,
         "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "Example: `add n/KFC l/Jurong t/FastFood`"
-      },
-      {
-        "lineNumber": 234,
-        "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "ryantay232"
+        },
+        "content": "\u003d\u003d\u003d\u003d Editing a customer: `edit`"
+      },
+      {
         "lineNumber": 235,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d Deleting a Restaurant: `delete`"
+        "content": ""
       },
       {
         "lineNumber": 236,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "ryantay232"
         },
-        "content": "This command deletes the Restaurant identified by the Index in the list of Restaurants from the Restaurant Database"
+        "content": "This command allows you to edit an existing customer in the customer list. The index of a customer needs to be provided while the information to edit are optional. For example, you can edit the customer\u0027s name without editing the phone number."
       },
       {
         "lineNumber": 237,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 238,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "ryantay232"
         },
-        "content": "Format: `delete INDEX`"
+        "content": "Format: `edit INDEX [n/NAME] [p/PHONE] [t/TAGS]...`"
       },
       {
         "lineNumber": 239,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -9619,12 +9619,12 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "Example: `delete 1`"
+        "content": "Example: `edit 1 n/John Hoe p/97654321 t/Indian`"
       },
       {
         "lineNumber": 241,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -9633,21 +9633,21 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d\u003d Entering EditMode: `edit`"
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "This command enters EditMode for the Restaurant identified by the Index in the list of Restaurants."
+        "content": ""
       },
       {
         "lineNumber": 244,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "ryantay232"
         },
-        "content": "Unlocks commands for editing details, adding and removing of Food Items in the menu."
+        "content": "\u003d\u003d\u003d\u003d Deleting a customer: `delete`"
       },
       {
         "lineNumber": 245,
@@ -9659,9 +9659,9 @@
       {
         "lineNumber": 246,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "ryantay232"
         },
-        "content": "Format: `edit INDEX`"
+        "content": "This command allows you to delete an existing customer in the customer list. The index of a customer needs to be provided."
       },
       {
         "lineNumber": 247,
@@ -9673,9 +9673,9 @@
       {
         "lineNumber": 248,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "ryantay232"
         },
-        "content": "Example: `edit 1`"
+        "content": "Format: `delete INDEX`"
       },
       {
         "lineNumber": 249,
@@ -9689,63 +9689,63 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d\u003d Editing a Restaurant (Under EditMode): `editdetails`"
+        "content": "Example: `delete 1`"
       },
       {
         "lineNumber": 251,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "This command edits the details of the Restaurant under EditMode."
-      },
-      {
-        "lineNumber": 252,
         "author": {
           "gitId": "charliechoong"
         },
         "content": ""
       },
       {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
         "lineNumber": 253,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "Format: `editdetails [n/NAME] [l/LOCATION] [t/TAG]…​`"
+        "content": ""
       },
       {
         "lineNumber": 254,
         "author": {
-          "gitId": "-"
+          "gitId": "ryantay232"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Viewing a customer\u0027s order history: `history`"
       },
       {
         "lineNumber": 255,
         "author": {
-          "gitId": "-"
+          "gitId": "charliechoong"
         },
-        "content": "* At least one of the optional fields must be provided."
+        "content": ""
       },
       {
         "lineNumber": 256,
         "author": {
-          "gitId": "-"
+          "gitId": "ryantay232"
         },
-        "content": "* Existing values will be updated to the input values."
+        "content": "This command allows you to view a customer\u0027s order history. The index of a customer needs to be provided."
       },
       {
         "lineNumber": 257,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "charliechoong"
         },
-        "content": "* When editing tags, the existing tags of the restaurant will be removed i.e adding of tags is not cumulative."
+        "content": ""
       },
       {
         "lineNumber": 258,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "ryantay232"
         },
-        "content": "* You can remove all the restaurant’s tags by typing t/ without specifying any tags after it."
+        "content": "Format: `history INDEX`"
       },
       {
         "lineNumber": 259,
@@ -9759,7 +9759,7 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "Example: `editdetails n/New KFC l/Tuas`"
+        "content": "Example: `history 1`"
       },
       {
         "lineNumber": 261,
@@ -9771,21 +9771,21 @@
       {
         "lineNumber": 262,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "SoilingRogue"
         },
-        "content": "\u003d\u003d\u003d\u003d Adding food item (Under EditMode): `add`"
+        "content": "// end::customerCommand[]"
       },
       {
         "lineNumber": 263,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "SoilingRogue"
         },
-        "content": "This command adds a Food item for the Restaurant under EditMode."
+        "content": "// tag::restaurantCommand[]"
       },
       {
         "lineNumber": 264,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
@@ -9794,21 +9794,21 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "Format: `add n/NAME a/PRICE [t/TAG]...`"
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 266,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 267,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "SoilingRogue"
         },
-        "content": "Example: `add n/Chicken a/7.90 t/Popular`"
+        "content": "\u003d\u003d\u003d Restaurant commands"
       },
       {
         "lineNumber": 268,
@@ -9820,58 +9820,58 @@
       {
         "lineNumber": 269,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "charliechoong"
         },
-        "content": "\u003d\u003d\u003d\u003d Removing food item (Under EditMode): `delete`"
+        "content": "Commands in the restaurant context"
       },
       {
         "lineNumber": 270,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "charliechoong"
         },
-        "content": "This command removes the Food item identified by the Index in the Menu list of the Restaurant under EditMode."
+        "content": ""
       },
       {
         "lineNumber": 271,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "Format: `remove INDEX`"
+        "content": ""
       },
       {
         "lineNumber": 273,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Adding a restaurant: `add`"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "Example: `remove 1`"
+        "content": "This command adds a restaurant to the restaurant database."
       },
       {
         "lineNumber": 275,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
         "content": ""
       },
       {
         "lineNumber": 276,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d Deliverymen commands"
+        "content": "Format: `add n/NAME l/LOCATION [t/TAG]...`"
       },
       {
         "lineNumber": 277,
@@ -9883,252 +9883,252 @@
       {
         "lineNumber": 278,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "These are the commands you can use after entering the deliverymen context (via the command `deliverymen`)."
+        "content": "* `LOCATION` can only be one of the following locations: Jurong, Tuas, Woodlands, Bishan, City, Marina, Changi, Punggol."
       },
       {
         "lineNumber": 279,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 280,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d\u003d Adding a deliveryman: `add`"
+        "content": "Example: `add n/KFC l/Jurong t/FastFood`"
       },
       {
         "lineNumber": 281,
         "author": {
-          "gitId": "-"
+          "gitId": "charliechoong"
         },
         "content": ""
       },
       {
         "lineNumber": 282,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "This command allows you to add a new deliveryman to the deliverymen database. Name and phone number are compulsory fields."
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 283,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 284,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "Format: `add n/NAME p/PHONE`"
+        "content": "\u003d\u003d\u003d\u003d Deleting a restaurant: `delete`"
       },
       {
         "lineNumber": 285,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "This command deletes the restaurant at the specified index in the restaurant list from the restaurant database."
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "Example: `add n/John Doe p/91234567`"
+        "content": ""
       },
       {
         "lineNumber": 287,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Format: `delete INDEX`"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "\u003d\u003d\u003d\u003d Editing a deliveryman: `edit`"
+        "content": ""
       },
       {
         "lineNumber": 289,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "* `INDEX` must be a positive integer from 1 to n, the number of restaurants in the restaurant list."
       },
       {
         "lineNumber": 290,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "This command allows you to edit an existing deliveryman in the deliverymen database. You must edit at least one field (eg. name, phone number)."
+        "content": ""
       },
       {
         "lineNumber": 291,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Example: `delete 1`"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "Format: `edit INDEX [n/NAME] [p/PHONE]`"
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 294,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "Example: `edit 1 n/John Hoe p/97654321`"
+        "content": ""
       },
       {
         "lineNumber": 295,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Entering EditMode: `edit`"
       },
       {
         "lineNumber": 296,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d\u003d Deleting a deliveryman: `delete`"
+        "content": "This command enters EditMode for the restaurant identified by the specified index in the restaurant list."
       },
       {
         "lineNumber": 297,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Displays the restaurant\u0027s details and menu."
       },
       {
         "lineNumber": 298,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "This command allows you to delete an existing deliveryman in the deliverymen database. You only have to provide the index of the deliveryman."
+        "content": "Unlocks commands for editing details, adding and removing of food items"
       },
       {
         "lineNumber": 299,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "in the menu, and adding of rating."
       },
       {
         "lineNumber": 300,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": "Format: `delete INDEX`"
+        "content": ""
       },
       {
         "lineNumber": 301,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "image::userguide\\EditMode.png[width\u003d\"790\"]"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "Example: `delete 1`"
+        "content": ""
       },
       {
         "lineNumber": 303,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Format: `edit INDEX`"
       },
       {
         "lineNumber": 304,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "charliechoong"
         },
-        "content": "\u003d\u003d\u003d\u003d Listing available deliverymen"
+        "content": ""
       },
       {
         "lineNumber": 305,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Example: `edit 1`"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "This command allows you to view all the deliverymen who are available for delivery (ie. ready to be assigned food orders)."
+        "content": ""
       },
       {
         "lineNumber": 307,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 308,
         "author": {
-          "gitId": "charliechoong"
-        },
-        "content": "Format: `lista`"
-      },
-      {
-        "lineNumber": 309,
-        "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
+        "lineNumber": 309,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "\u003d\u003d\u003d\u003d Editing restaurant\u0027s details (under EditMode): `editdetails`"
+      },
+      {
         "lineNumber": 310,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "Example: `lista`"
+        "content": "This command edits the details of the restaurant under EditMode."
       },
       {
         "lineNumber": 311,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 312,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d\u003d Entering a specific deliveryman"
+        "content": "image::userguide\\EditDetails.png[width\u003d\"790\"]"
       },
       {
         "lineNumber": 313,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
@@ -10137,49 +10137,49 @@
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "This command allows you to view a deliveryman\u0027s basic information."
+        "content": ""
       },
       {
         "lineNumber": 315,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Format: `editdetails [n/NAME] [l/LOCATION] [t/TAG]…​`"
       },
       {
         "lineNumber": 316,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
-        "content": "Format: `list NAME`"
+        "content": ""
       },
       {
         "lineNumber": 317,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* At least one of the optional fields must be provided."
       },
       {
         "lineNumber": 318,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
-        "content": "Example: `list Stanley Tay`"
+        "content": "* Existing values will be updated to the input values."
       },
       {
         "lineNumber": 319,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "* When editing tags, the existing tags of the restaurant will be removed i.e adding of tags is not cumulative."
       },
       {
         "lineNumber": 320,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "\u003d\u003d\u003d\u003d Assigning order to a deliveryman"
+        "content": "* You can remove all the restaurant’s tags by typing t/ without specifying any tags after it."
       },
       {
         "lineNumber": 321,
@@ -10191,9 +10191,9 @@
       {
         "lineNumber": 322,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "This command allows you to manually assign an order to an available deliveryman."
+        "content": "Example: `editdetails n/New KFC l/Tuas`"
       },
       {
         "lineNumber": 323,
@@ -10205,93 +10205,93 @@
       {
         "lineNumber": 324,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "NOTE: Auto-assignment of orders is enabled by default. Should you wish to manually assign an order, this command can be used."
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 325,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 326,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "Format: `assn NAME #ORDERINDEX`"
+        "content": "\u003d\u003d\u003d\u003d Adding food item (under EditMode): `add`"
       },
       {
         "lineNumber": 327,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "This command adds a food item to the menu of the restaurant under EditMode."
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "Example: `assn Stanley Tay #12`"
+        "content": ""
       },
       {
         "lineNumber": 329,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Format: `add n/NAME a/PRICE [t/TAG]...`"
       },
       {
         "lineNumber": 330,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d Obtaining a list of deliverymen eligible for pay rise"
+        "content": ""
       },
       {
         "lineNumber": 331,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Example: `add n/Chicken a/7.90 t/Recommended`"
       },
       {
         "lineNumber": 332,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
-        "content": "This command allows you to view a list of deliverymen who have met the pre-determined requirements for a pay rise."
+        "content": ""
       },
       {
         "lineNumber": 333,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 334,
         "author": {
-          "gitId": "charliechoong"
-        },
-        "content": "NOTE:  The pre-determined requirements are based on two factors: *delivery rate* and *time in database* of the deliveryman."
-      },
-      {
-        "lineNumber": 335,
-        "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 335,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "\u003d\u003d\u003d\u003d Deleting food item (under EditMode): `delete`"
+      },
+      {
         "lineNumber": 336,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "Format: `payrise`"
+        "content": "This command deletes the food item at the specified index in the menu of the restaurant under EditMode."
       },
       {
         "lineNumber": 337,
@@ -10303,9 +10303,9 @@
       {
         "lineNumber": 338,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "MackyMaguire"
         },
-        "content": "Example: `payrise`"
+        "content": "Format: `remove INDEX`"
       },
       {
         "lineNumber": 339,
@@ -10317,278 +10317,1034 @@
       {
         "lineNumber": 340,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "* `INDEX` must be a positive integer from 1 to n, the number of food items in the restaurant\u0027s menu."
       },
       {
         "lineNumber": 341,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d Command summary"
+        "content": ""
       },
       {
         "lineNumber": 342,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "Example: `remove 1`"
       },
       {
         "lineNumber": 343,
         "author": {
-          "gitId": "charliechoong"
+          "gitId": "-"
         },
-        "content": "**Command:** format"
+        "content": ""
       },
       {
         "lineNumber": 344,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
+        "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 345,
-        "author": {
-          "gitId": "ryantay232"
-        },
-        "content": "* Universal commands"
-      },
-      {
         "lineNumber": 346,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- View help: `-help`"
+        "content": "\u003d\u003d\u003d\u003d Adding a rating (under EditMode): \u0027rate\u0027"
       },
       {
         "lineNumber": 347,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- View order summary: `-order_summary`"
+        "content": "This command adds a rating to the restaurant under EditMode and updates the new average rating of all the ratings"
       },
       {
         "lineNumber": 348,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Add order: `-add c/CUSTOMER r/RESTAURANT f/FOOD... q/QUANTITY...`"
+        "content": "added to date."
       },
       {
         "lineNumber": 349,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Edit order: `-edit_order i/INDEX [c/CUSTOMER] [r/RESTAURANT] [d/DELIVERYMAN] [f/FOOD]... [q/QUANTITY]... [completed/DELIVERY_STATUS]`"
+        "content": ""
       },
       {
         "lineNumber": 350,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Delete order: `-delete_order INDEX`"
+        "content": "image::userguide\\AddRating.png[width\u003d\"790\"]"
       },
       {
         "lineNumber": 351,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Switch to restaurant context: `-restaurant`"
+        "content": ""
       },
       {
         "lineNumber": 352,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Switch to customer context: `-customer`"
+        "content": "Format: `rate RATING`"
       },
       {
         "lineNumber": 353,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Switch to deliverymen context: `-deliverymen`"
+        "content": ""
       },
       {
         "lineNumber": 354,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Undo command: `-undo`"
+        "content": "* `RATING` must be a non-negative integer from 0 to 5."
       },
       {
         "lineNumber": 355,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Redo command: `-redo`"
+        "content": ""
       },
       {
         "lineNumber": 356,
         "author": {
-          "gitId": "SoilingRogue"
+          "gitId": "MackyMaguire"
         },
-        "content": "- Exit application: `-exit`"
+        "content": "Example: `rate 4`"
       },
       {
         "lineNumber": 357,
         "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
         "lineNumber": 358,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": "* Customer commands"
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 359,
         "author": {
-          "gitId": "charliechoong"
-        },
-        "content": "- Add a customer: `add n/NAME p/PHONE [t/TAG]...`"
-      },
-      {
-        "lineNumber": 360,
-        "author": {
-          "gitId": "charliechoong"
-        },
-        "content": "- Edit a customer: `edit INDEX [n/NAME] [p/PHONE] [t/TAGS]...`"
-      },
-      {
-        "lineNumber": 361,
-        "author": {
-          "gitId": "charliechoong"
-        },
-        "content": "- Delete a customer: `delete INDEX`"
-      },
-      {
-        "lineNumber": 362,
-        "author": {
-          "gitId": "charliechoong"
-        },
-        "content": "- View a customer\u0027s order history: `history INDEX`"
-      },
-      {
-        "lineNumber": 363,
-        "author": {
-          "gitId": "-"
+          "gitId": "MackyMaguire"
         },
         "content": ""
       },
       {
+        "lineNumber": 360,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "\u003d\u003d\u003d\u003d Exiting EditMode: \u0027exitedit\u0027"
+      },
+      {
+        "lineNumber": 361,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "This command exits EditMode for the specific restaurant and returns to the list of restaurants"
+      },
+      {
+        "lineNumber": 362,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 363,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "Format: `exitedit`"
+      },
+      {
         "lineNumber": 364,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": "* Restaurant commands"
+        "content": ""
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "- Adding a restaurant: `add n/NAME l/LOCATION [t/TAG]...`"
+        "content": "{nbsp} +"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "- Deleting a restaurant: `delete INDEX`"
+        "content": ""
       },
       {
         "lineNumber": 367,
         "author": {
-          "gitId": "MackyMaguire"
+          "gitId": "SoilingRogue"
         },
-        "content": "- Entering EditMode: `edit INDEX`"
+        "content": "\u003d\u003d\u003d Deliverymen commands"
       },
       {
         "lineNumber": 368,
         "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "- Editing a restaurant: `editdetails [n/NAME] [l/LOCATION] [t/TAG]…​`"
-      },
-      {
-        "lineNumber": 369,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "- Adding food item: `add n/NAME a/PRICE [t/TAG]...`"
-      },
-      {
-        "lineNumber": 370,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "- Removing food item: `delete INDEX`"
-      },
-      {
-        "lineNumber": 371,
-        "author": {
-          "gitId": "-"
+          "gitId": "charliechoong"
         },
         "content": ""
       },
       {
+        "lineNumber": 369,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "These are the commands you can use after entering the deliverymen context (via the command `deliverymen`)."
+      },
+      {
+        "lineNumber": 370,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 371,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
         "lineNumber": 372,
         "author": {
-          "gitId": "ryantay232"
+          "gitId": "MackyMaguire"
         },
-        "content": "* Deliverymen commands"
+        "content": ""
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "- Add a deliveryman: `add n/NAME p/PHONE`"
+        "content": "\u003d\u003d\u003d\u003d Adding a deliveryman: `add`"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "- Delete a deliveryman: `delete INDEX`"
+        "content": ""
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "- Edit a deliveryman: `edit INDEX [n/NAME] [p/PHONE]`"
+        "content": "This command allows you to add a new deliveryman to the deliverymen database. Name and phone number are compulsory fields."
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "- List available deliverymen: `lista`"
+        "content": ""
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "- List specific deliveryman info: `list NAME`"
+        "content": "Format: `add n/NAME p/PHONE`"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "charliechoong"
         },
-        "content": "- Assign order to deliveryman: `assn NAME #orderINDEX`"
+        "content": ""
       },
       {
         "lineNumber": 379,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Example: `add n/John Doe p/91234567`"
+      },
+      {
+        "lineNumber": 380,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 381,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
+        "lineNumber": 382,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 383,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "\u003d\u003d\u003d\u003d Editing a deliveryman: `edit`"
+      },
+      {
+        "lineNumber": 384,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 385,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "This command allows you to edit an existing deliveryman in the deliverymen database. You must edit at least one field (eg. name, phone number)."
+      },
+      {
+        "lineNumber": 386,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 387,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Format: `edit INDEX [n/NAME] [p/PHONE]`"
+      },
+      {
+        "lineNumber": 388,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 389,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Example: `edit 1 n/John Hoe p/97654321`"
+      },
+      {
+        "lineNumber": 390,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 391,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
+        "lineNumber": 392,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 393,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "\u003d\u003d\u003d\u003d Deleting a deliveryman: `delete`"
+      },
+      {
+        "lineNumber": 394,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 395,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "This command allows you to delete an existing deliveryman in the deliverymen database. You only have to provide the index of the deliveryman."
+      },
+      {
+        "lineNumber": 396,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 397,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Format: `delete INDEX`"
+      },
+      {
+        "lineNumber": 398,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 399,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Example: `delete 1`"
+      },
+      {
+        "lineNumber": 400,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 401,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
+        "lineNumber": 402,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 403,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "\u003d\u003d\u003d\u003d Listing available deliverymen"
+      },
+      {
+        "lineNumber": 404,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 405,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "This command allows you to view all the deliverymen who are available for delivery (ie. ready to be assigned food orders)."
+      },
+      {
+        "lineNumber": 406,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 407,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Format: `lista`"
+      },
+      {
+        "lineNumber": 408,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 409,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Example: `lista`"
+      },
+      {
+        "lineNumber": 410,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 411,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
+        "lineNumber": 412,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 413,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "\u003d\u003d\u003d\u003d Entering a specific deliveryman"
+      },
+      {
+        "lineNumber": 414,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 415,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "This command allows you to view a deliveryman\u0027s basic information."
+      },
+      {
+        "lineNumber": 416,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 417,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Format: `list NAME`"
+      },
+      {
+        "lineNumber": 418,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 419,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Example: `list Stanley Tay`"
+      },
+      {
+        "lineNumber": 420,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 421,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
+        "lineNumber": 422,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 423,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "\u003d\u003d\u003d\u003d Assigning order to a deliveryman"
+      },
+      {
+        "lineNumber": 424,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 425,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "This command allows you to manually assign an order to an available deliveryman."
+      },
+      {
+        "lineNumber": 426,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 427,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "NOTE: Auto-assignment of orders is enabled by default. Should you wish to manually assign an order, this command can be used."
+      },
+      {
+        "lineNumber": 428,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 429,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Format: `assn NAME #ORDERINDEX`"
+      },
+      {
+        "lineNumber": 430,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 431,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Example: `assn Stanley Tay #12`"
+      },
+      {
+        "lineNumber": 432,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 433,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
+        "lineNumber": 434,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 435,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "\u003d\u003d\u003d\u003d Obtaining a list of deliverymen eligible for pay rise"
+      },
+      {
+        "lineNumber": 436,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 437,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "This command allows you to view a list of deliverymen who have met the pre-determined requirements for a pay rise."
+      },
+      {
+        "lineNumber": 438,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 439,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "NOTE:  The pre-determined requirements are based on two factors: *delivery rate* and *time in database* of the deliveryman."
+      },
+      {
+        "lineNumber": 440,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 441,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Format: `payrise`"
+      },
+      {
+        "lineNumber": 442,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 443,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "Example: `payrise`"
+      },
+      {
+        "lineNumber": 444,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 445,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 446,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "{nbsp} +"
+      },
+      {
+        "lineNumber": 447,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 448,
+        "author": {
+          "gitId": "ryantay232"
+        },
+        "content": "\u003d\u003d Command summary"
+      },
+      {
+        "lineNumber": 449,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 450,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "**Command:** format"
+      },
+      {
+        "lineNumber": 451,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 452,
+        "author": {
+          "gitId": "ryantay232"
+        },
+        "content": "* Universal commands"
+      },
+      {
+        "lineNumber": 453,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- View help: `-help`"
+      },
+      {
+        "lineNumber": 454,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- View order summary: `-order_summary`"
+      },
+      {
+        "lineNumber": 455,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Add order: `-add c/CUSTOMER r/RESTAURANT f/FOOD... q/QUANTITY...`"
+      },
+      {
+        "lineNumber": 456,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Edit order: `-edit_order i/INDEX [c/CUSTOMER] [r/RESTAURANT] [d/DELIVERYMAN] [f/FOOD]... [q/QUANTITY]... [completed/DELIVERY_STATUS]`"
+      },
+      {
+        "lineNumber": 457,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Delete order: `-delete_order INDEX`"
+      },
+      {
+        "lineNumber": 458,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Switch to restaurant context: `-restaurant`"
+      },
+      {
+        "lineNumber": 459,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Switch to customer context: `-customer`"
+      },
+      {
+        "lineNumber": 460,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Switch to deliverymen context: `-deliverymen`"
+      },
+      {
+        "lineNumber": 461,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Undo command: `-undo`"
+      },
+      {
+        "lineNumber": 462,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Redo command: `-redo`"
+      },
+      {
+        "lineNumber": 463,
+        "author": {
+          "gitId": "SoilingRogue"
+        },
+        "content": "- Exit application: `-exit`"
+      },
+      {
+        "lineNumber": 464,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 465,
+        "author": {
+          "gitId": "ryantay232"
+        },
+        "content": "* Customer commands"
+      },
+      {
+        "lineNumber": 466,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- Add a customer: `add n/NAME p/PHONE [t/TAG]...`"
+      },
+      {
+        "lineNumber": 467,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- Edit a customer: `edit INDEX [n/NAME] [p/PHONE] [t/TAGS]...`"
+      },
+      {
+        "lineNumber": 468,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- Delete a customer: `delete INDEX`"
+      },
+      {
+        "lineNumber": 469,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- View a customer\u0027s order history: `history INDEX`"
+      },
+      {
+        "lineNumber": 470,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 471,
+        "author": {
+          "gitId": "ryantay232"
+        },
+        "content": "* Restaurant commands"
+      },
+      {
+        "lineNumber": 472,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "- Adding a restaurant: `add n/NAME l/LOCATION [t/TAG]...`"
+      },
+      {
+        "lineNumber": 473,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "- Deleting a restaurant: `delete INDEX`"
+      },
+      {
+        "lineNumber": 474,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "- Entering EditMode: `edit INDEX`"
+      },
+      {
+        "lineNumber": 475,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "- Editing a restaurant\u0027s details: `editdetails [n/NAME] [l/LOCATION] [t/TAG]…​`"
+      },
+      {
+        "lineNumber": 476,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "- Adding a food item: `add n/NAME a/PRICE [t/TAG]...`"
+      },
+      {
+        "lineNumber": 477,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "- Deleting a food item: `delete INDEX`"
+      },
+      {
+        "lineNumber": 478,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "- Adding a rating: `rate RATING`"
+      },
+      {
+        "lineNumber": 479,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 480,
+        "author": {
+          "gitId": "ryantay232"
+        },
+        "content": "* Deliverymen commands"
+      },
+      {
+        "lineNumber": 481,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- Add a deliveryman: `add n/NAME p/PHONE`"
+      },
+      {
+        "lineNumber": 482,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- Delete a deliveryman: `delete INDEX`"
+      },
+      {
+        "lineNumber": 483,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- Edit a deliveryman: `edit INDEX [n/NAME] [p/PHONE]`"
+      },
+      {
+        "lineNumber": 484,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- List available deliverymen: `lista`"
+      },
+      {
+        "lineNumber": 485,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- List specific deliveryman info: `list NAME`"
+      },
+      {
+        "lineNumber": 486,
+        "author": {
+          "gitId": "charliechoong"
+        },
+        "content": "- Assign order to deliveryman: `assn NAME #orderINDEX`"
+      },
+      {
+        "lineNumber": 487,
         "author": {
           "gitId": "charliechoong"
         },
@@ -10596,12 +11352,12 @@
       }
     ],
     "authorContributionMap": {
-      "etlow": 14,
-      "ryantay232": 38,
-      "MackyMaguire": 33,
-      "SoilingRogue": 102,
+      "etlow": 21,
+      "ryantay232": 32,
+      "MackyMaguire": 157,
+      "SoilingRogue": 88,
       "-": 65,
-      "charliechoong": 127
+      "charliechoong": 124
     }
   },
   {
@@ -94182,220 +94938,227 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            \"Location should only be one of the following locations\";"
+        "content": "            \"Location should only be one of the following locations: \""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "            + \"Jurong, Tuas, Woodlands, Bishan, City, Marina, Changi\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    private static List\u003cLocation\u003e locations \u003d new ArrayList\u003c\u003e(List.of("
+        "content": ""
       },
       {
         "lineNumber": 16,
+        "author": {
+          "gitId": "MackyMaguire"
+        },
+        "content": "    private static List\u003cLocation\u003e locations \u003d new ArrayList\u003c\u003e(List.of("
+      },
+      {
+        "lineNumber": 17,
         "author": {
           "gitId": "etlow"
         },
         "content": "            new Location(\"Jurong\", 1, 1),"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 18,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "            new Location(\"Tuas\", 1, 1),"
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 19,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "            new Location(\"Woodlands\", 1, 1),"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 20,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "            new Location(\"Bishan\", 1, 1),"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 21,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "            new Location(\"City\", 1, 1),"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 22,
         "author": {
           "gitId": "etlow"
         },
         "content": "            new Location(\"Marina\", 2, 0),"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 23,
         "author": {
           "gitId": "etlow"
         },
         "content": "            new Location(\"Changi\", 3, 1)"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 24,
         "author": {
           "gitId": "etlow"
         },
         "content": "    ));"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 25,
         "author": {
           "gitId": "etlow"
         },
         "content": ""
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 26,
         "author": {
           "gitId": "MackyMaguire"
         },
         "content": "    public static Optional\u003cLocation\u003e getLocation(String name) {"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 27,
         "author": {
           "gitId": "etlow"
         },
         "content": "        String query \u003d name.toLowerCase();"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 28,
         "author": {
           "gitId": "etlow"
         },
         "content": "        return locations.stream()"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 29,
         "author": {
           "gitId": "etlow"
         },
         "content": "                .filter(location -\u003e location.getName().toLowerCase().equals(query))"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 30,
         "author": {
           "gitId": "etlow"
         },
         "content": "                .findAny();"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 31,
         "author": {
           "gitId": "etlow"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 32,
         "author": {
           "gitId": "etlow"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "MackyMaguire"
-        },
-        "content": "    /**"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     * Returns true if a given string is a valid name."
+        "content": "    /**"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "     */"
+        "content": "     * Returns true if a given string is a valid name."
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    public static boolean isValidLocation(String test) {"
+        "content": "     */"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "        return getLocation(test).isPresent();"
+        "content": "    public static boolean isValidLocation(String test) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "    }"
+        "content": "        return getLocation(test).isPresent();"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "etlow"
+          "gitId": "MackyMaguire"
         },
-        "content": "    public double getDistanceBetween(Location a, Location b) {"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "etlow"
         },
-        "content": "        double xDistance \u003d b.getX() - a.getX();"
+        "content": "    public double getDistanceBetween(Location a, Location b) {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "etlow"
         },
-        "content": "        double yDistance \u003d b.getY() - a.getY();"
+        "content": "        double xDistance \u003d b.getX() - a.getX();"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "etlow"
         },
-        "content": "        return Math.sqrt(xDistance * xDistance + yDistance * yDistance);"
+        "content": "        double yDistance \u003d b.getY() - a.getY();"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "etlow"
         },
-        "content": "    }"
+        "content": "        return Math.sqrt(xDistance * xDistance + yDistance * yDistance);"
       },
       {
         "lineNumber": 44,
+        "author": {
+          "gitId": "etlow"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
         "author": {
           "gitId": "etlow"
         },
@@ -94404,7 +95167,7 @@
     ],
     "authorContributionMap": {
       "etlow": 27,
-      "MackyMaguire": 17
+      "MackyMaguire": 18
     }
   },
   {
@@ -121657,21 +122420,21 @@
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            statisticsDisplay \u003d new StatisticsDisplay();"
+        "content": "            //statisticsDisplay \u003d new StatisticsDisplay();"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            statisticsPlaceholder.getChildren().add(statisticsDisplay.getRoot());"
+        "content": "            //statisticsPlaceholder.getChildren().add(statisticsDisplay.getRoot());"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "MackyMaguire"
         },
-        "content": "            statisticsDisplay.setFeedbackToUser(\"THIS PART IS FOR STATISTICS\");"
+        "content": "            //statisticsDisplay.setFeedbackToUser(\"THIS PART IS FOR STATISTICS\\nWORK IN PROGRESS\");"
       },
       {
         "lineNumber": 228,

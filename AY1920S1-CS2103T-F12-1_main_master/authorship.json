@@ -2560,7 +2560,7 @@
       {
         "lineNumber": 103,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -2588,7 +2588,7 @@
       {
         "lineNumber": 107,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -2602,7 +2602,7 @@
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -2616,7 +2616,7 @@
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -2665,7 +2665,7 @@
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -2679,7 +2679,7 @@
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -2693,7 +2693,7 @@
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -2707,7 +2707,7 @@
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -2770,9 +2770,9 @@
       {
         "lineNumber": 133,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "\u003d\u003d\u003d Logic component"
+        "content": "\u003d\u003d\u003d CommandManager component"
       },
       {
         "lineNumber": 134,
@@ -2784,821 +2784,821 @@
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "[[fig-LogicClassDiagram]]"
+        "content": "\u003d\u003d\u003d\u003d Command"
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".Structure of the Logic Component"
+        "content": ""
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "image::LogicClassDiagram.png[]"
+        "content": "A `Command` is defined to be an immutable function, that can be invoked at any time, to perform any set of instructions. After executing the set of instructions, it will optionally return output to be displayed to the user."
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 139,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "*API* :"
+        "content": "In Horo, a `Command` implemented as an abstract class with an abstract `execute()` method. To create a new concrete command, extend from `Command` and implement `execute()`."
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "link:{repoURL}/src/main/java/seedu/address/logic/Logic.java[`Logic.java`]"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": ".Class diagram of Commands"
       },
       {
         "lineNumber": 142,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".  `Logic` uses the `AddressBookParser` class to parse the user command."
+        "content": "image::CommandManager.png[]"
       },
       {
         "lineNumber": 143,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".  This results in a `Command` object which is executed by the `LogicManager`."
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".  The command execution can affect the `Model` (e.g. adding a person)."
+        "content": "If your concrete command requires any dependencies during execution, it is recommended to pass in the dependency from the constructor."
       },
       {
         "lineNumber": 145,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".  The result of the command execution is encapsulated as a `CommandResult` object which is passed back to the `Ui`."
+        "content": ""
       },
       {
         "lineNumber": 146,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".  In addition, the `CommandResult` object can also instruct the `Ui` to perform certain actions, such as displaying help to the user."
+        "content": "For example, if your command needs to be able to access `ModelManager`:"
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 148,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute(\"delete 1\")` API call."
+        "content": "public class MyCommand extends Command {"
       },
       {
         "lineNumber": 149,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "\tprivate final ModelManager model;"
       },
       {
         "lineNumber": 150,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".Interactions Inside the Logic Component for the `delete 1` Command"
+        "content": "\tMyCommand(ModelManager model) {"
       },
       {
         "lineNumber": 151,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "image::DeleteSequenceDiagram.png[]"
+        "content": "\t\tthis.model \u003d model;"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "\t}"
       },
       {
         "lineNumber": 153,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "NOTE: The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram."
+        "content": ""
       },
       {
         "lineNumber": 154,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "\t@Override"
       },
       {
         "lineNumber": 155,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "[[Design-Model]]"
+        "content": "    CommandOutput execute() {"
       },
       {
         "lineNumber": 156,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "\u003d\u003d\u003d Model component"
+        "content": "        this.model.doSomething();"
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "\t\t..."
       },
       {
         "lineNumber": 158,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".Structure of the Model Component"
+        "content": "\t}"
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "image::ModelClassDiagram.png[]"
+        "content": "}"
       },
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "*API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]"
+        "content": ""
       },
       {
         "lineNumber": 162,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 163,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "The `Model`,"
+        "content": "\u003d\u003d\u003d\u003d CommandParser"
       },
       {
         "lineNumber": 164,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 165,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "* stores a `UserPref` object that represents the user\u0027s preferences."
+        "content": "A `CommandParser` is defined to be able to parse a `String` of user input, and return a `Command`."
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "* stores the Address Book data."
+        "content": ""
       },
       {
         "lineNumber": 167,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "* exposes an unmodifiable `ObservableList\u003cPerson\u003e` that can be \u0027observed\u0027 e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change."
+        "content": "In Horo, a `CommandParser` is implemented as a finite state machine (FSM). It parses user input token by token, and it transitions from state to state depending on the next token."
       },
       {
         "lineNumber": 168,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "* does not depend on any of the other three components."
+        "content": ""
       },
       {
         "lineNumber": 169,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "What the FSM is trying to do is tokenize user input into:"
       },
       {
         "lineNumber": 170,
         "author": {
-          "gitId": "-"
-        },
-        "content": "[NOTE]"
-      },
-      {
-        "lineNumber": 171,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "As a more OOP model, we can store a `Tag` list in `Address Book`, which `Person` can reference. This would allow `Address Book` to only require one `Tag` object per unique `Tag`, instead of each `Person` needing their own `Tag` object. An example of how such a model may look like is given below. +"
-      },
-      {
-        "lineNumber": 172,
-        "author": {
-          "gitId": "-"
-        },
-        "content": " +"
-      },
-      {
-        "lineNumber": 173,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "image:BetterModelClassDiagram.png[]"
-      },
-      {
-        "lineNumber": 174,
-        "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "WeomuCat"
+        },
+        "content": "1. `Command keyword`"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "WeomuCat"
+        },
+        "content": "2. `Command phrase(s)`"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "WeomuCat"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "WeomuCat"
+        },
+        "content": "A *command keyword* is defined as the first sequence of consecutive, non-whitespace characters of the user input. For the rest of this guide, a sequence of consecutive, non-whitespace characters will be referred to as a ‘word’. A word can be described in the form of a regular expression (regex) as `[^\\s]+`."
+      },
+      {
         "lineNumber": 175,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "[[Design-Storage]]"
+        "content": ""
       },
       {
         "lineNumber": 176,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "\u003d\u003d\u003d Storage component"
+        "content": "Examples of valid command keywords:"
       },
       {
         "lineNumber": 177,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 178,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ".Structure of the Storage Component"
+        "content": "- `exit`"
       },
       {
         "lineNumber": 179,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "image::StorageClassDiagram.png[]"
+        "content": "- `add_event`"
       },
       {
         "lineNumber": 180,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "- `123`"
       },
       {
         "lineNumber": 181,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "*API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]"
+        "content": "- `😺`"
       },
       {
         "lineNumber": 182,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 183,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "The `Storage` component,"
+        "content": "A *command phrase* is defined as either a word, or multiple words delimited by whitespace surrounded by quotes. Command phrases come after a command keyword."
       },
       {
         "lineNumber": 184,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 185,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "* can save `UserPref` objects in json format and read it back."
+        "content": "Examples of valid command phrases:"
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "* can save the Address Book data in json format and read it back."
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "- `Horse`"
       },
       {
         "lineNumber": 188,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "[[Design-Notification]]"
+        "content": "- `”Homework”`"
       },
       {
         "lineNumber": 189,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "\u003d\u003d\u003d Notification System"
+        "content": "- `”Horo’s Birthday”`"
       },
       {
         "lineNumber": 190,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "(Picture: Notification System)"
+        "content": "- `”24/10/2019 07:00”`"
       },
       {
         "lineNumber": 191,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "- `’24/10/2019 07:00’`"
       },
       {
         "lineNumber": 192,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "Notifications are handled through the NotificationManager, itself found in the Logic component. There does not exist a singular Notification component. Rather, functional classes for the Notification System are have been split across the Logic and UI components, depending on their functionality."
+        "content": "- `--description`"
       },
       {
         "lineNumber": 193,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 194,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "\u003d\u003d\u003d\u003d Logic Classes"
+        "content": "A valid command contains exactly one command keyword, and zero or more command phrases."
       },
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "Logic classes are reponsible for deciding if a notification should be posted. As with other components, their functionality is accessed through the `NotificationManager` class. The `NotificationManager` class maintains a reference to a `NotificationCheckingThread` as well as a `SystemTrayCommunicator`."
+        "content": ""
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "`[keyword] [phrase] [phrase] [phrase] ...`"
       },
       {
         "lineNumber": 197,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "The logic classes of the Notification System can be found under the `notification` package under the `Logic` component."
+        "content": ""
       },
       {
         "lineNumber": 198,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": ".State diagram of CommandParser"
       },
       {
         "lineNumber": 199,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "- The `NotificationCheckingThread` is a daemon thread that runs in parallel with the main application. It checks for new notifications to post every minute."
+        "content": "image::CommandParser.png[]"
       },
       {
         "lineNumber": 200,
         "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "- The `NotificationChecker` is responsible for checking `Model` for any notifications that need to be posted."
-      },
-      {
-        "lineNumber": 201,
-        "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "WeomuCat"
+        },
+        "content": "After tokenizing, the command keyword is sent to a `CommandKeywordParser`, which returns a `CommandBuilder`. The remaining command phrases are sent to the `CommandBuilder`, which returns the `Command` we want."
+      },
+      {
         "lineNumber": 202,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 203,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "\u003d\u003d\u003d\u003d UI Classes"
+        "content": ""
       },
       {
         "lineNumber": 204,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "UI classes are responsible for displaying notifications."
+        "content": "\u003d\u003d\u003d\u003d CommandKeywordParser"
       },
       {
         "lineNumber": 205,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 206,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "The UI classes of the Notification System can be found under the `systemtray` package under the `ui` component."
+        "content": "A `CommandKeywordParser` is defined to be able to parse a command keyword, and return a `CommandBuilder`."
       },
       {
         "lineNumber": 207,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 208,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "- The `PopupListener` class is the main channel of communication between the logic and UI classes. When a notification needs to be posted, it will relay the information from the logic to UI classes."
+        "content": "In Horo, a `CommandKeywordParser` uses a `HashMap` to map a command keyword to a `Supplier\u003cCommandBuilder\u003e`."
       },
       {
         "lineNumber": 209,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "- The `SystemTrayCommunicator` handles posting notifications and displaying the app\u0027s icon on the System Tray."
+        "content": ""
       },
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d CommandBuilder"
       },
       {
         "lineNumber": 212,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "- The `PopupNotification` class carries the information that will be posted on a popup notification."
+        "content": ""
       },
       {
         "lineNumber": 213,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "A `CommandBuilder` is defined to be able to accept an arbitrary amount of command settings, and eventually create a `Command` using those settings."
       },
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "- The `NotificationClickActionListener` is called when the user clicks on a popup notification."
-      },
-      {
-        "lineNumber": 215,
-        "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "WeomuCat"
+        },
+        "content": "In Horo, a `CommandBuilder` is implemented such that the entire definition of a `Command` is in the `CommandBuilder`. The `CommandBuilder` will use those definitions to automagically parse command phrases."
+      },
+      {
         "lineNumber": 216,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 217,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "[[Design-Commons]]"
+        "content": "The definition of a command is split into two parts:"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Common classes"
+        "content": ""
       },
       {
         "lineNumber": 219,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "1. `Command argument(s)`"
       },
       {
         "lineNumber": 220,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "Classes used by multiple components are in the `seedu.addressbook.commons` package."
+        "content": "2. `Command option(s)`"
       },
       {
         "lineNumber": 221,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 222,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "\u003d\u003d Implementation"
+        "content": "A *command option* is defined to have a keyword and a list of arguments."
       },
       {
         "lineNumber": 223,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "An *option’s keyword* is defined to be a command phrase."
       },
       {
         "lineNumber": 224,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "This section describes some noteworthy details on how certain features are implemented."
+        "content": "An *option’s argument* is defined to be a command phrase that is not an option’s keyword. An option’s argument is a command phrase that lies after the option’s keyword."
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 226,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "// tag::undoredo[]"
+        "content": "Example of option’s keyword \u0026 arguments below. The option’s keyword is underlined:"
       },
       {
         "lineNumber": 227,
         "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d\u003d [Proposed] Undo/Redo feature"
-      },
-      {
-        "lineNumber": 228,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d\u003d\u003d Proposed Implementation"
-      },
-      {
-        "lineNumber": 229,
-        "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "WeomuCat"
+        },
+        "content": "- `+++\u003cu\u003e--description\u003c/u\u003e+++ Horse`"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "WeomuCat"
+        },
+        "content": "- `+++\u003cu\u003e--tags\u003c/u\u003e+++ Animal Cat Dog`"
+      },
+      {
         "lineNumber": 230,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "The undo/redo mechanism is facilitated by `UndoRedoManager`. It contains a history (of `EventList` states), stored internally as an `eventListStateList`, as well as a `currentStateIndex`, which contains the index of the current state. `UndoRedoManager` also contains a `mainEventList`, which is the `EventList` that the GUI is in sync with."
+        "content": "- `+++\u003cu\u003e-d\u003c/u\u003e+++ Horse`"
       },
       {
         "lineNumber": 231,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 232,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "It is important that the `Model` works only with the `mainEventList` (and not duplicates) for this reason. To achieve this, `eventListStateList` contains deep-copies of the `mainEventList`, which are created and saved to `eventListStateList` each time a state-changing command that is also not the undo or redo command (such as add_task or delete_task) is being executed. These state-changing commands that are neither undo or redo commands will modify `mainEventList` directly before the deep-copies of the modified `mainEventList` are created and stored."
+        "content": "A *command argument* is defined to be a command phrase that is not an option’s keyword. This is similar to an option’s argument, except that the position of this argument in the user input is important. A command argument is a command phrase that lies after the command keyword, and before any command option’s keywords."
       },
       {
         "lineNumber": 233,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 234,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "Every time an undo or redo occurs, the `mainEventList` is reverted to a past or future state of itself by retrieving its data from the appropriate copy in the list of duplicates. This allows us to always work with the same `EventList` instance throughout the program execution, which is crucial since this particular instance is in sync with the GUI; only changes to this instance are reflected as changes to the GUI."
+        "content": "Example of command’s arguments below. The command’s keyword is underlined."
       },
       {
         "lineNumber": 235,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 236,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "In addition, `UndoRedoManager` implements the following operations:"
+        "content": "- `+++\u003cu\u003eadd_event\u003c/u\u003e+++ Horse “24/10/2019 10:00”`"
       },
       {
         "lineNumber": 237,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "- `+++\u003cu\u003edelete_event\u003c/u\u003e+++ 1 2 3`"
       },
       {
         "lineNumber": 238,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "* `UndoRedoManager#commit()` -- Creates a deep-copy of the mainEventList state and saves that copy to its history using EventList’s copy-constructor"
+        "content": ""
       },
       {
         "lineNumber": 239,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "* `UndoRedoManager#undo()` -- Retrieve mainEventList\u0027s previous state data from its duplicate and restore mainEventList"
+        "content": "\u003d\u003d\u003d\u003d Argument"
       },
       {
         "lineNumber": 240,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "* `UndoRedoManager#redo()` -- Retrieve mainEventList\u0027s future state data from its duplicate and restore mainEventList"
+        "content": ""
       },
       {
         "lineNumber": 241,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "* `UndoRedoManager#clearFutureHistory()` -- Delete all duplicates of `mainEventList` that occur after the index given by the `currentStateIndex` in `eventListStateList`"
+        "content": "A command’s argument and an option’s argument are both considered an `Argument`. An argument will be parsed from a command phrase to another object. The `Argument` class is a generic class, where the type of the class defines what type of object the command phrase be parsed into."
       },
       {
         "lineNumber": 242,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 243,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "These operations are exposed in the `Model` interface as `Model#commitToHistory()`, `Model#undoFromHistory()` and `Model#redoFromHistory()`, and `Model#clearFutureHistory()` respectively."
+        "content": "For example, an `Argument\u003cDateTime\u003e` which receives “24/10/2019 10:00” will be parsed into a `DateTime` object."
       },
       {
         "lineNumber": 244,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
         "content": ""
       },
       {
         "lineNumber": 245,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "Given below is an example usage scenario and how the undo/redo mechanism behaves at each step."
+        "content": ""
       },
       {
         "lineNumber": 246,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Variable Argument"
       },
       {
         "lineNumber": 247,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "WeomuCat"
         },
-        "content": "Step 1. The user runs the program for the first time. The `UndoRedoManager` will be initialized with the initial `mainEventList`. A duplicate of `mainEventList` will be added to `eventListStateList` and the `currentStateIndex` will point to that single `EventList` state in the list."
+        "content": ""
       },
       {
         "lineNumber": 248,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "A `VariableArgument` is a special type of argument. A variable argument will be parsed from a list of command phrases to a list of similar type objects. The `VariableArgument` class is a generic class, where the type of the class defines what types of objects the command phrases should be parsed into. A variable argument can accept zero or more command phrases to be parsed."
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "image::UndoRedoState0.png[]"
+        "content": ""
       },
       {
         "lineNumber": 250,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "For example, a `VariableArgument\u003cInteger\u003e` which receives {1, 2, 3} will be parsed into a list of Integers. `A VariableArgument\u003cInteger\u003e` which receives {} will be parsed into an empty list."
       },
       {
         "lineNumber": 251,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Step 2. The user executes add_event “Suntec City Computer Fair” --at “17/11/2019 12:00”. This add_event command will first call `Model#clearFutureHistory()` in order to discard all future states (in case an undo command was called before) as they are no longer useful. In this case, there are no future states to discard. All other state-changing commands that are not undo or redo will discard future states as well when executed. Then, the event will be added to `mainEventList`. Finally, `Model#commitToHistory()` will be called, causing the modified `mainEventList` to be deep-copied and saved to `eventListStateList`, and the `currentStateIndex` is incremented by one to contain the index of the newly inserted event list state."
+        "content": ""
       },
       {
         "lineNumber": 252,
@@ -3610,9 +3610,9 @@
       {
         "lineNumber": 253,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "image::UndoRedoState1.png[]"
+        "content": "\u003d\u003d\u003d\u003d ArgumentList"
       },
       {
         "lineNumber": 254,
@@ -3624,44 +3624,44 @@
       {
         "lineNumber": 255,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": "[NOTE]"
+        "content": "A command is said to contain a list of arguments, and it’s options are said to contain a list of arguments too. Both are considered an `ArgumentList`. An `ArgumentList` is defined to contain zero or more `Arguments`, and zero or one `VariableArguments`."
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`."
+        "content": ""
       },
       {
         "lineNumber": 257,
         "author": {
-          "gitId": "-"
+          "gitId": "WeomuCat"
         },
-        "content": ""
+        "content": "Additionally, if a variable argument is defined, it will be treated as the last argument in the `ArgumentList`. This is because a variable argument can accept zero or more command phrases, which will prevent other arguments from receiving command phrases if it is not the last argument."
       },
       {
         "lineNumber": 258,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Step 3. Suppose the user decides that adding the task was a mistake. He/she then executes the undo command to rectify the error. The undo command will call `Model#undoFromHistory()`, which will decrement the `currentStateIndex` by one to contain the index of the previous event list state, which `mainEventList` resets its data to."
+        "content": ""
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[[Design-Model]]"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "image::UndoRedoState3.png[]"
+        "content": "\u003d\u003d\u003d Model component"
       },
       {
         "lineNumber": 261,
@@ -3675,14 +3675,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[NOTE]"
+        "content": ".Structure of the Model Component"
       },
       {
         "lineNumber": 263,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "If the `currentStatePointer` is at index 0, pointing to the initial event list state, then there are no previous event list states to restore. The `undo` command uses `Model#canUndoEventList()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo."
+        "content": "image::ModelClassDiagram.png[]"
       },
       {
         "lineNumber": 264,
@@ -3696,7 +3696,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "The following sequence diagram shows how the undo operation works:"
+        "content": "*API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]"
       },
       {
         "lineNumber": 266,
@@ -3710,7 +3710,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "image::UndoSequenceDiagram.png[]"
+        "content": "The `Model`,"
       },
       {
         "lineNumber": 268,
@@ -3724,84 +3724,84 @@
         "author": {
           "gitId": "-"
         },
-        "content": "NOTE: The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram."
+        "content": "* stores a `UserPref` object that represents the user\u0027s preferences."
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* stores the Address Book data."
       },
       {
         "lineNumber": 271,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "The redo command does the opposite — it calls Model#redoFromHistory(), which increments the currentStateIndex by one to contain the index of the previously undone state. The mainEventList then resets its data to this state."
+        "content": "* exposes an unmodifiable `ObservableList\u003cPerson\u003e` that can be \u0027observed\u0027 e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change."
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* does not depend on any of the other three components."
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "[NOTE]"
+        "content": ""
       },
       {
         "lineNumber": 274,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "If the `currentStateIndex` is at index `eventListStateList.size() - 1`, pointing to the latest event list state, then there are no undone event list states to restore. The `redo` command uses `Model#canRedoEventList()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo."
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "As a more OOP model, we can store a `Tag` list in `Address Book`, which `Person` can reference. This would allow `Address Book` to only require one `Tag` object per unique `Tag`, instead of each `Person` needing their own `Tag` object. An example of how such a model may look like is given below. +"
       },
       {
         "lineNumber": 276,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Step 4. The user decides to execute the command list. Non-state-changing commands such as list do not manipulate task and event data. Hence, these commands will not call `Model#clearFutureHistory()` or `Model#commitToHistory()` no changes to the current state have been made. Thus, the `eventListStateList` remains unchanged."
+        "content": " +"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "image:BetterModelClassDiagram.png[]"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "image::UndoRedoState4.png[]"
+        "content": ""
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[[Design-Storage]]"
       },
       {
         "lineNumber": 280,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Step 5. The user executes delete_event 1, which calls `Model#clearFutureHistory()`, deletes the event from `mainEventList`, and then calls `Model#commitToHistory()`. As mentioned in Step 2, all event list states after the `currentStateIndex` will be purged."
+        "content": "\u003d\u003d\u003d Storage component"
       },
       {
         "lineNumber": 281,
@@ -3815,63 +3815,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": "image::UndoRedoState5.png[]"
+        "content": ".Structure of the Storage Component"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "image::StorageClassDiagram.png[]"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": "The following activity diagram summarizes what happens when a user executes a new command:"
+        "content": ""
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "*API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "image::CommitActivityDiagram.png[]"
+        "content": ""
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The `Storage` component,"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d Design Considerations"
+        "content": ""
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* can save `UserPref` objects in json format and read it back."
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How undo \u0026 redo executes"
+        "content": "* can save the Address Book data in json format and read it back."
       },
       {
         "lineNumber": 291,
@@ -3883,219 +3883,219 @@
       {
         "lineNumber": 292,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "* **Alternative 1 (current choice):** Saves the entire address book."
+        "content": "[[Design-Notification]]"
       },
       {
         "lineNumber": 293,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "** Pros: Easy to implement."
+        "content": "\u003d\u003d\u003d Notification System"
       },
       {
         "lineNumber": 294,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "** Cons: May have performance issues in terms of memory usage."
+        "content": "(Picture: Notification System)"
       },
       {
         "lineNumber": 295,
         "author": {
-          "gitId": "-"
-        },
-        "content": "* **Alternative 2:** Individual command knows how to undo/redo by itself."
-      },
-      {
-        "lineNumber": 296,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "** Pros: Will use less memory (e.g. for `delete`, just save the person being deleted)."
-      },
-      {
-        "lineNumber": 297,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "** Cons: We must ensure that the implementation of each individual command are correct."
-      },
-      {
-        "lineNumber": 298,
-        "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "Notifications are handled through the NotificationManager, itself found in the Logic component. There does not exist a singular Notification component. Rather, functional classes for the Notification System are have been split across the Logic and UI components, depending on their functionality."
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "\u003d\u003d\u003d\u003d Logic Classes"
+      },
+      {
         "lineNumber": 299,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Data structure to support the undo/redo commands"
+        "content": "Logic classes are reponsible for deciding if a notification should be posted. As with other components, their functionality is accessed through the `NotificationManager` class. The `NotificationManager` class maintains a reference to a `NotificationCheckingThread` as well as a `SystemTrayCommunicator`."
       },
       {
         "lineNumber": 300,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 301,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "* **Alternative 1 (current choice):** Use a list to store the history of address book states."
+        "content": "The logic classes of the Notification System can be found under the `notification` package under the `Logic` component."
       },
       {
         "lineNumber": 302,
         "author": {
-          "gitId": "-"
-        },
-        "content": "** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project."
-      },
-      {
-        "lineNumber": 303,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "** Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both `HistoryManager` and `VersionedAddressBook`."
-      },
-      {
-        "lineNumber": 304,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "* **Alternative 2:** Use `HistoryManager` for undo/redo"
-      },
-      {
-        "lineNumber": 305,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "** Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase."
-      },
-      {
-        "lineNumber": 306,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things."
-      },
-      {
-        "lineNumber": 307,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "// end::undoredo[]"
-      },
-      {
-        "lineNumber": 308,
-        "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "- The `NotificationCheckingThread` is a daemon thread that runs in parallel with the main application. It checks for new notifications to post every minute."
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "- The `NotificationChecker` is responsible for checking `Model` for any notifications that need to be posted."
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 306,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 307,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "\u003d\u003d\u003d\u003d UI Classes"
+      },
+      {
+        "lineNumber": 308,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "UI classes are responsible for displaying notifications."
+      },
+      {
         "lineNumber": 309,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "// tag::dataencryption[]"
+        "content": ""
       },
       {
         "lineNumber": 310,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d\u003d [Proposed] Data Encryption"
+        "content": "The UI classes of the Notification System can be found under the `systemtray` package under the `ui` component."
       },
       {
         "lineNumber": 311,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 312,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "_{Explain here how the data encryption feature will be implemented}_"
+        "content": "- The `PopupListener` class is the main channel of communication between the logic and UI classes. When a notification needs to be posted, it will relay the information from the logic to UI classes."
       },
       {
         "lineNumber": 313,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 314,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "// end::dataencryption[]"
+        "content": "- The `SystemTrayCommunicator` handles posting notifications and displaying the app\u0027s icon on the System Tray."
       },
       {
         "lineNumber": 315,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 316,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d\u003d Logging"
+        "content": "- The `PopupNotification` class carries the information that will be posted on a popup notification."
       },
       {
         "lineNumber": 317,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 318,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations."
+        "content": "- The `NotificationClickActionListener` is called when the user clicks on a popup notification."
       },
       {
         "lineNumber": 319,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 320,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "* The logging level can be controlled using the `logLevel` setting in the configuration file (See \u003c\u003cImplementation-Configuration\u003e\u003e)"
+        "content": ""
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": "* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level"
+        "content": "[[Design-Commons]]"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "* Currently log messages are output through: `Console` and to a `.log` file."
+        "content": "\u003d\u003d\u003d Common classes"
       },
       {
         "lineNumber": 323,
@@ -4109,7 +4109,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "*Logging Levels*"
+        "content": "Classes used by multiple components are in the `seedu.addressbook.commons` package."
       },
       {
         "lineNumber": 325,
@@ -4123,54 +4123,54 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `SEVERE` : Critical problem detected which may possibly cause the termination of the application"
+        "content": "\u003d\u003d Implementation"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "* `WARNING` : Can continue, but with caution"
+        "content": ""
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "* `INFO` : Information showing the noteworthy actions by the App"
+        "content": "This section describes some noteworthy details on how certain features are implemented."
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "* `FINE` : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size"
+        "content": ""
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "// tag::undoredo[]"
       },
       {
         "lineNumber": 331,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "[[Design-Ics]]"
+        "content": "\u003d\u003d\u003d [Proposed] Undo/Redo feature"
       },
       {
         "lineNumber": 332,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Ics Component"
+        "content": "\u003d\u003d\u003d\u003d Proposed Implementation"
       },
       {
         "lineNumber": 333,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4179,12 +4179,12 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "*API* : link:{repoURL}/src/main/java/seedu/address/ics/IcsParser.java[`IcsParser.java`]"
+        "content": "The undo/redo mechanism is facilitated by `UndoRedoManager`. It contains a history (of `EventList` states), stored internally as an `eventListStateList`, as well as a `currentStateIndex`, which contains the index of the current state. `UndoRedoManager` also contains a `mainEventList`, which is the `EventList` that the GUI is in sync with."
       },
       {
         "lineNumber": 335,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4193,12 +4193,12 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "The ICS component is made up of two parts: ICS file importer, and ICS file exporter."
+        "content": "It is important that the `Model` works only with the `mainEventList` (and not duplicates) for this reason. To achieve this, `eventListStateList` contains deep-copies of the `mainEventList`, which are created and saved to `eventListStateList` each time a state-changing command that is also not the undo or redo command (such as add_task or delete_task) is being executed. These state-changing commands that are neither undo or redo commands will modify `mainEventList` directly before the deep-copies of the modified `mainEventList` are created and stored."
       },
       {
         "lineNumber": 337,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4207,89 +4207,89 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "The file importer makes use of a custom parser that converts files with the `.ics` file extension"
+        "content": "Every time an undo or redo occurs, the `mainEventList` is reverted to a past or future state of itself by retrieving its data from the appropriate copy in the list of duplicates. This allows us to always work with the same `EventList` instance throughout the program execution, which is crucial since this particular instance is in sync with the GUI; only changes to this instance are reflected as changes to the GUI."
       },
       {
         "lineNumber": 339,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "to `EventSource` objects in Horo."
+        "content": ""
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "In addition, `UndoRedoManager` implements the following operations:"
       },
       {
         "lineNumber": 341,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "The file exporter takes the `EventSource` objects stored in the `Model` singleton object and"
+        "content": ""
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "generates ICS String representations of them. Check out the"
+        "content": "* `UndoRedoManager#commit()` -- Creates a deep-copy of the mainEventList state and saves that copy to its history using EventList’s copy-constructor"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "link:https://en.wikipedia.org/wiki/ICalendar[ICalendar Wiki Page] for more information on the specifications."
+        "content": "* `UndoRedoManager#undo()` -- Retrieve mainEventList\u0027s previous state data from its duplicate and restore mainEventList"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "* `UndoRedoManager#redo()` -- Retrieve mainEventList\u0027s future state data from its duplicate and restore mainEventList"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "* `UndoRedoManager#clearFutureHistory()` -- Delete all duplicates of `mainEventList` that occur after the index given by the `currentStateIndex` in `eventListStateList`"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* Can export Horo\u0027s save data as a file"
+        "content": ""
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "The `ICS` Component,with a `.ics` extension."
+        "content": "These operations are exposed in the `Model` interface as `Model#commitToHistory()`, `Model#undoFromHistory()` and `Model#redoFromHistory()`, and `Model#clearFutureHistory()` respectively."
       },
       {
         "lineNumber": 348,
         "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "* Can import other Horo\u0027s save data from a `.ics` file."
-      },
-      {
-        "lineNumber": 349,
-        "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 349,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Given below is an example usage scenario and how the undo/redo mechanism behaves at each step."
+      },
+      {
         "lineNumber": 350,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4298,12 +4298,12 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d Implementation"
+        "content": "Step 1. The user runs the program for the first time. The `UndoRedoManager` will be initialized with the initial `mainEventList`. A duplicate of `mainEventList` will be added to `eventListStateList` and the `currentStateIndex` will point to that single `EventList` state in the list."
       },
       {
         "lineNumber": 352,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4312,56 +4312,56 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[[Implementation-Configuration]]"
+        "content": "image::UndoRedoState0.png[]"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Configuration"
+        "content": ""
       },
       {
         "lineNumber": 355,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "Step 2. The user executes add_event “Suntec City Computer Fair” --at “17/11/2019 12:00”. This add_event command will first call `Model#clearFutureHistory()` in order to discard all future states (in case an undo command was called before) as they are no longer useful. In this case, there are no future states to discard. All other state-changing commands that are not undo or redo will discard future states as well when executed. Then, the event will be added to `mainEventList`. Finally, `Model#commitToHistory()` will be called, causing the modified `mainEventList` to be deep-copied and saved to `eventListStateList`, and the `currentStateIndex` is incremented by one to contain the index of the newly inserted event list state."
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": "Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`)."
+        "content": ""
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "image::UndoRedoState1.png[]"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Documentation"
+        "content": ""
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
+        "content": "If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`."
       },
       {
         "lineNumber": 361,
@@ -4373,9 +4373,9 @@
       {
         "lineNumber": 362,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d Testing"
+        "content": "Step 3. Suppose the user decides that adding the task was a mistake. He/she then executes the undo command to rectify the error. The undo command will call `Model#undoFromHistory()`, which will decrement the `currentStateIndex` by one to contain the index of the previous event list state, which `mainEventList` resets its data to."
       },
       {
         "lineNumber": 363,
@@ -4389,7 +4389,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
+        "content": "image::UndoRedoState3.png[]"
       },
       {
         "lineNumber": 365,
@@ -4403,42 +4403,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Dev Ops"
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 367,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "If the `currentStatePointer` is at index 0, pointing to the initial event list state, then there are no previous event list states to restore. The `undo` command uses `Model#canUndoEventList()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo."
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
+        "content": ""
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The following sequence diagram shows how the undo operation works:"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Product Scope"
+        "content": "image::UndoSequenceDiagram.png[]"
       },
       {
         "lineNumber": 372,
@@ -4452,7 +4452,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "*Target user profile*:"
+        "content": "NOTE: The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram."
       },
       {
         "lineNumber": 374,
@@ -4466,84 +4466,84 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* is a student"
+        "content": "The redo command does the opposite — it calls Model#redoFromHistory(), which increments the currentStateIndex by one to contain the index of the previously undone state. The mainEventList then resets its data to this state."
       },
       {
         "lineNumber": 376,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "* has a need to manage their Events and Tasks for visualization."
+        "content": ""
       },
       {
         "lineNumber": 377,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "* requires reminders for their Events and Tasks."
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 378,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "* prefer desktop apps over other types"
+        "content": "If the `currentStateIndex` is at index `eventListStateList.size() - 1`, pointing to the latest event list state, then there are no undone event list states to restore. The `redo` command uses `Model#canRedoEventList()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo."
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": "* can type fast"
+        "content": ""
       },
       {
         "lineNumber": 380,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "* prefers typing over mouse input"
+        "content": "Step 4. The user decides to execute the command list. Non-state-changing commands such as list do not manipulate task and event data. Hence, these commands will not call `Model#clearFutureHistory()` or `Model#commitToHistory()` no changes to the current state have been made. Thus, the `eventListStateList` remains unchanged."
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": "* is reasonably comfortable using CLI apps"
+        "content": ""
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "image::UndoRedoState4.png[]"
       },
       {
         "lineNumber": 383,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "*Value proposition*: manage Reminders as well as viewing Events and Tasks much faster than a typical mouse/GUI driven app"
+        "content": ""
       },
       {
         "lineNumber": 384,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "Step 5. The user executes delete_event 1, which calls `Model#clearFutureHistory()`, deletes the event from `mainEventList`, and then calls `Model#commitToHistory()`. As mentioned in Step 2, all event list states after the `currentStateIndex` will be purged."
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d User Stories"
+        "content": "image::UndoRedoState5.png[]"
       },
       {
         "lineNumber": 387,
@@ -4557,7 +4557,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
+        "content": "The following activity diagram summarizes what happens when a user executes a new command:"
       },
       {
         "lineNumber": 389,
@@ -4571,154 +4571,154 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[width\u003d\"59%\",cols\u003d\"22%,\u003c23%,\u003c25%,\u003c30%\",options\u003d\"header\",]"
+        "content": "image::CommitActivityDiagram.png[]"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": ""
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": "|Priority |As a ... |I want to ... |So that I can..."
+        "content": "\u003d\u003d\u003d\u003d Design Considerations"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": "|`* * *` |new user |see usage instructions |refer to instructions when I forget how to use the App"
+        "content": ""
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How undo \u0026 redo executes"
       },
       {
         "lineNumber": 395,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |user |add an Event or Task |keep track of an Event or Task that I have in the future"
+        "content": ""
       },
       {
         "lineNumber": 396,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* **Alternative 1 (current choice):** Saves the entire address book."
       },
       {
         "lineNumber": 397,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |user |delete an Event or Task |remove the Event or Task I no longer need."
+        "content": "** Pros: Easy to implement."
       },
       {
         "lineNumber": 398,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "** Cons: May have performance issues in terms of memory usage."
       },
       {
         "lineNumber": 399,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |user |find an Event or Task by name |locate the details of the Event or Task without having to go through the entire list"
+        "content": "* **Alternative 2:** Individual command knows how to undo/redo by itself."
       },
       {
         "lineNumber": 400,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "** Pros: Will use less memory (e.g. for `delete`, just save the person being deleted)."
       },
       {
         "lineNumber": 401,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |user |find an Event or Task by tags|remember the details of the Event or Task that I forget about"
+        "content": "** Cons: We must ensure that the implementation of each individual command are correct."
       },
       {
         "lineNumber": 402,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 403,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |user|undo and redo commands |undo any commands which wrongly inputted"
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Data structure to support the undo/redo commands"
       },
       {
         "lineNumber": 404,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 405,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |user|edit my Events and Tasks |change the details of the event, be it location, date or time"
+        "content": "* **Alternative 1 (current choice):** Use a list to store the history of address book states."
       },
       {
         "lineNumber": 406,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project."
       },
       {
         "lineNumber": 407,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |user that works on multiple computer |port my data between computers |keep track on all my computers."
+        "content": "** Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both `HistoryManager` and `VersionedAddressBook`."
       },
       {
         "lineNumber": 408,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* **Alternative 2:** Use `HistoryManager` for undo/redo"
       },
       {
         "lineNumber": 409,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |student |have constant reminders to track the deadline of my assignments |not forget to complete and submit them"
+        "content": "** Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase."
       },
       {
         "lineNumber": 410,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things."
       },
       {
         "lineNumber": 411,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |student |keep track of how long it takes for me to complete a task |gauge how long I will need to take for future similar tasks"
+        "content": "// end::undoredo[]"
       },
       {
         "lineNumber": 412,
@@ -4730,149 +4730,149 @@
       {
         "lineNumber": 413,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |student with weekly assignments and lectures |have my reminders to be recurring | be reminded without having to input the information in again"
+        "content": "// tag::dataencryption[]"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d [Proposed] Data Encryption"
       },
       {
         "lineNumber": 415,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* * *` |busy student |have a convenient way to visually see my assignments and projects |complete them in the right priority"
+        "content": ""
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "_{Explain here how the data encryption feature will be implemented}_"
       },
       {
         "lineNumber": 417,
         "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "|`* * *` |busy user |be informed if any different events clash with each other |understand which event to prioritize or reschedule"
-      },
-      {
-        "lineNumber": 418,
-        "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 418,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// end::dataencryption[]"
+      },
+      {
         "lineNumber": 419,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* *` |user |add a contacts | add them into Events to remind myself who I am meeting up with"
+        "content": ""
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Logging"
       },
       {
         "lineNumber": 421,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* *` |user |archive my completed Tasks | remind myself if I complete a task but forgot about it"
+        "content": ""
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations."
       },
       {
         "lineNumber": 423,
-        "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "|`* *` |user |create custom commands that contain the execution of multiple sub-commands |quickly input in a command without the need to edit it"
-      },
-      {
-        "lineNumber": 424,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 424,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* The logging level can be controlled using the `logLevel` setting in the configuration file (See \u003c\u003cImplementation-Configuration\u003e\u003e)"
+      },
+      {
         "lineNumber": 425,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* *` |student |visualize my timetable |plan for when it is time to take a break from studying"
+        "content": "* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level"
       },
       {
         "lineNumber": 426,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* Currently log messages are output through: `Console` and to a `.log` file."
       },
       {
         "lineNumber": 427,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`* *` |student |find a time for my project teammates to meet up |schedule a meeting without clashing together with other events"
+        "content": ""
       },
       {
         "lineNumber": 428,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "*Logging Levels*"
       },
       {
         "lineNumber": 429,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`*` |user |import contacts in vCard format| integrate them with my events"
+        "content": ""
       },
       {
         "lineNumber": 430,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* `SEVERE` : Critical problem detected which may possibly cause the termination of the application"
       },
       {
         "lineNumber": 431,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`*` |user |export contacts in vCard format | integrate them with my other computers"
+        "content": "* `WARNING` : Can continue, but with caution"
       },
       {
         "lineNumber": 432,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* `INFO` : Information showing the noteworthy actions by the App"
       },
       {
         "lineNumber": 433,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "|`*` |student |keep track of sub-tasks in a main task | know my current progress in a report"
+        "content": "* `FINE` : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size"
       },
       {
         "lineNumber": 434,
@@ -4884,49 +4884,49 @@
       {
         "lineNumber": 435,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": "[[Design-Ics]]"
       },
       {
         "lineNumber": 436,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Ics Component"
       },
       {
         "lineNumber": 437,
         "author": {
-          "gitId": "-"
-        },
-        "content": "_{More to be added}_"
-      },
-      {
-        "lineNumber": 438,
-        "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
+        "lineNumber": 438,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "*API* : link:{repoURL}/src/main/java/seedu/address/ics/IcsParser.java[`IcsParser.java`]"
+      },
+      {
         "lineNumber": 439,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 440,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d Use Cases"
+        "content": "The ICS component is made up of two parts: ICS file importer, and ICS file exporter."
       },
       {
         "lineNumber": 441,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -4935,47 +4935,47 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "(For all use cases below, the *System* is the `Horo` and the *Actor* is the `user`, unless specified otherwise)"
+        "content": "The file importer makes use of a custom parser that converts files with the `.ics` file extension"
       },
       {
         "lineNumber": 443,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "to `EventSource` objects in Horo."
       },
       {
         "lineNumber": 444,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 445,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d\u003d Use case 1: Add a Task"
+        "content": "The file exporter takes the `EventSource` objects stored in the `Model` singleton object and"
       },
       {
         "lineNumber": 446,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "generates ICS String representations of them. Check out the"
       },
       {
         "lineNumber": 447,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "*MSS*"
+        "content": "link:https://en.wikipedia.org/wiki/ICalendar[ICalendar Wiki Page] for more information on the specifications."
       },
       {
         "lineNumber": 448,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -4984,432 +4984,432 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "1.  User requests to add a Task"
+        "content": ""
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "2.  Horo replies that the Task has been added"
+        "content": "* Can export Horo\u0027s save data as a file"
       },
       {
         "lineNumber": 451,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "The `ICS` Component,with a `.ics` extension."
       },
       {
         "lineNumber": 452,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "Use case ends."
+        "content": "* Can import other Horo\u0027s save data from a `.ics` file."
       },
       {
         "lineNumber": 453,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 454,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "*Extensions*"
+        "content": ""
       },
       {
         "lineNumber": 455,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "\u003d\u003d Implementation"
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* 1a. The user adds additional sub-commands to the Task command"
+        "content": ""
       },
       {
         "lineNumber": 457,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "+"
+        "content": "[[Implementation-Configuration]]"
       },
       {
         "lineNumber": 458,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": "\u003d\u003d\u003d Configuration"
       },
       {
         "lineNumber": 459,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 460,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`)."
       },
       {
         "lineNumber": 461,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "* 2a. The given add Task command is of the wrong format."
+        "content": ""
       },
       {
         "lineNumber": 462,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "+"
+        "content": "\u003d\u003d Documentation"
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 464,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "** 2a1. Horo displays an error message."
+        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
       },
       {
         "lineNumber": 465,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 466,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Use case resumes at step 1."
+        "content": "\u003d\u003d Testing"
       },
       {
         "lineNumber": 467,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 468,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "[discrete]"
+        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
       },
       {
         "lineNumber": 469,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Use case 2: Delete a Task"
+        "content": ""
       },
       {
         "lineNumber": 470,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Dev Ops"
       },
       {
         "lineNumber": 471,
         "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "*MSS*"
-      },
-      {
-        "lineNumber": 472,
-        "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 472,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
+      },
+      {
         "lineNumber": 473,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "1.  User requests to delete a specific Task from the already displayed list"
+        "content": ""
       },
       {
         "lineNumber": 474,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "2.  Horo deletes the Task"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 475,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": "\u003d\u003d Product Scope"
       },
       {
         "lineNumber": 476,
         "author": {
           "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 477,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "*Target user profile*:"
       },
       {
         "lineNumber": 478,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "*Extensions*"
+        "content": ""
       },
       {
         "lineNumber": 479,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "* is a student"
       },
       {
         "lineNumber": 480,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "[none]"
+        "content": "* has a need to manage their Events and Tasks for visualization."
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* 2a. The given delete Task command is of the wrong format."
+        "content": "* requires reminders for their Events and Tasks."
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": "* prefer desktop apps over other types"
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "-"
         },
-        "content": "[none]"
+        "content": "* can type fast"
       },
       {
         "lineNumber": 484,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "** 2a1. Horo displays an error message."
+        "content": "* prefers typing over mouse input"
       },
       {
         "lineNumber": 485,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": "* is reasonably comfortable using CLI apps"
       },
       {
         "lineNumber": 486,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Use case resumes at step 1."
+        "content": ""
       },
       {
         "lineNumber": 487,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "*Value proposition*: manage Reminders as well as viewing Events and Tasks much faster than a typical mouse/GUI driven app"
       },
       {
         "lineNumber": 488,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 489,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Use case 3: Find a Task by name"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 490,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d User Stories"
       },
       {
         "lineNumber": 491,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "*MSS*"
+        "content": ""
       },
       {
         "lineNumber": 492,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
       },
       {
         "lineNumber": 493,
         "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "1.  User requests to find a Task"
-      },
-      {
-        "lineNumber": 494,
-        "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "2.  Horo displays the list of Task with the keywords found in its name"
-      },
-      {
-        "lineNumber": 495,
-        "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "+"
-      },
-      {
-        "lineNumber": 496,
-        "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "Use case ends."
-      },
-      {
-        "lineNumber": 497,
-        "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 494,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[width\u003d\"59%\",cols\u003d\"22%,\u003c23%,\u003c25%,\u003c30%\",options\u003d\"header\",]"
+      },
+      {
+        "lineNumber": 495,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 496,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Priority |As a ... |I want to ... |So that I can..."
+      },
+      {
+        "lineNumber": 497,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|`* * *` |new user |see usage instructions |refer to instructions when I forget how to use the App"
+      },
+      {
         "lineNumber": 498,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "*Extensions*"
+        "content": ""
       },
       {
         "lineNumber": 499,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "|`* * *` |user |add an Event or Task |keep track of an Event or Task that I have in the future"
       },
       {
         "lineNumber": 500,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 501,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* 2a. The given find Task command is of the wrong format."
+        "content": "|`* * *` |user |delete an Event or Task |remove the Event or Task I no longer need."
       },
       {
         "lineNumber": 502,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 503,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "[none]"
+        "content": "|`* * *` |user |find an Event or Task by name |locate the details of the Event or Task without having to go through the entire list"
       },
       {
         "lineNumber": 504,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "** 2a1. Horo displays an error message."
+        "content": ""
       },
       {
         "lineNumber": 505,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "|`* * *` |user |find an Event or Task by tags|remember the details of the Event or Task that I forget about"
       },
       {
         "lineNumber": 506,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Use case resumes at step 1."
+        "content": ""
       },
       {
         "lineNumber": 507,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "|`* * *` |user|undo and redo commands |undo any commands which wrongly inputted"
       },
       {
         "lineNumber": 508,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 509,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d\u003d Use case 4: Undo and Redo commands"
+        "content": "|`* * *` |user|edit my Events and Tasks |change the details of the event, be it location, date or time"
       },
       {
         "lineNumber": 510,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -5418,7 +5418,7 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "*MSS*"
+        "content": "|`* * *` |user that works on multiple computer |port my data between computers |keep track on all my computers."
       },
       {
         "lineNumber": 512,
@@ -5432,259 +5432,259 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "1.  User requests to add an Task"
+        "content": "|`* * *` |student |have constant reminders to track the deadline of my assignments |not forget to complete and submit them"
       },
       {
         "lineNumber": 514,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "2.  Horo replies that the Task has been added"
+        "content": ""
       },
       {
         "lineNumber": 515,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "3.  User requests to undo the command"
+        "content": "|`* * *` |student |keep track of how long it takes for me to complete a task |gauge how long I will need to take for future similar tasks"
       },
       {
         "lineNumber": 516,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "4.  Horo replies that the previous command has been undone"
+        "content": ""
       },
       {
         "lineNumber": 517,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "|`* * *` |student with weekly assignments and lectures |have my reminders to be recurring | be reminded without having to input the information in again"
       },
       {
         "lineNumber": 518,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 519,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "|`* * *` |busy student |have a convenient way to visually see my assignments and projects |complete them in the right priority"
       },
       {
         "lineNumber": 520,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "*Extensions*"
+        "content": ""
       },
       {
         "lineNumber": 521,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "|`* * *` |busy user |be informed if any different events clash with each other |understand which event to prioritize or reschedule"
       },
       {
         "lineNumber": 522,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* 1a. The user adds additional sub-commands to the Task command"
+        "content": ""
       },
       {
         "lineNumber": 523,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "|`* *` |user |add a contacts | add them into Events to remind myself who I am meeting up with"
       },
       {
         "lineNumber": 524,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 525,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "|`* *` |user |archive my completed Tasks | remind myself if I complete a task but forgot about it"
       },
       {
         "lineNumber": 526,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "* 2a. The given add Task command is of the wrong format."
+        "content": ""
       },
       {
         "lineNumber": 527,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "|`* *` |user |create custom commands that contain the execution of multiple sub-commands |quickly input in a command without the need to edit it"
       },
       {
         "lineNumber": 528,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 529,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "** 2a1. Horo displays an error message."
+        "content": "|`* *` |student |visualize my timetable |plan for when it is time to take a break from studying"
       },
       {
         "lineNumber": 530,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "Use case resumes at step 1"
+        "content": ""
       },
       {
         "lineNumber": 531,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "|`* *` |student |find a time for my project teammates to meet up |schedule a meeting without clashing together with other events"
       },
       {
         "lineNumber": 532,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* 4a. User decides the to Redo the added Task"
+        "content": ""
       },
       {
         "lineNumber": 533,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "|`*` |user |import contacts in vCard format| integrate them with my events"
       },
       {
         "lineNumber": 534,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 535,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "** 3a1. Horo replies that the added Task has been redone"
+        "content": "|`*` |user |export contacts in vCard format | integrate them with my other computers"
       },
       {
         "lineNumber": 536,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 537,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "Use case ends"
+        "content": "|`*` |student |keep track of sub-tasks in a main task | know my current progress in a report"
       },
       {
         "lineNumber": 538,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 539,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "[discrete]"
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 540,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Use case 5: Edit a Task"
+        "content": ""
       },
       {
         "lineNumber": 541,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "_{More to be added}_"
       },
       {
         "lineNumber": 542,
         "author": {
-          "gitId": "Kyzure"
-        },
-        "content": "*MSS*"
-      },
-      {
-        "lineNumber": 543,
-        "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 543,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
         "lineNumber": 544,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "1.  User requests to add a Task"
+        "content": "\u003d\u003d Use Cases"
       },
       {
         "lineNumber": 545,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "2.  Horo replies that the Task has been added"
+        "content": ""
       },
       {
         "lineNumber": 546,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "3.  User request to edit a Task with the sub-commands"
+        "content": "(For all use cases below, the *System* is the `Horo` and the *Actor* is the `user`, unless specified otherwise)"
       },
       {
         "lineNumber": 547,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "4.  Horo replies that the Task has been edited"
+        "content": ""
       },
       {
         "lineNumber": 548,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 549,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "Use case ends."
+        "content": "\u003d\u003d\u003d Use case 1: Add a Task"
       },
       {
         "lineNumber": 550,
@@ -5696,14 +5696,14 @@
       {
         "lineNumber": 551,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "*Extensions*"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 552,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -5712,61 +5712,61 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* 1a. The user adds additional sub-commands to the Task command"
+        "content": "1.  User requests to add a Task"
       },
       {
         "lineNumber": 554,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "2.  Horo replies that the Task has been added"
       },
       {
         "lineNumber": 555,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": "+"
       },
       {
         "lineNumber": 556,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 557,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "* 2a. The given add Task command is of the wrong format."
+        "content": ""
       },
       {
         "lineNumber": 558,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 559,
         "author": {
           "gitId": "-"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 560,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "** 2a1. Horo displays an error message."
+        "content": "* 1a. The user adds additional sub-commands to the Task command"
       },
       {
         "lineNumber": 561,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": "+"
       },
@@ -5775,12 +5775,12 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "Use case resumes at step 1."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 563,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -5789,194 +5789,194 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* 4a. The given edit Task command is of the wrong format."
+        "content": ""
       },
       {
         "lineNumber": 565,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "* 2a. The given add Task command is of the wrong format."
       },
       {
         "lineNumber": 566,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "[none]"
+        "content": "+"
       },
       {
         "lineNumber": 567,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "** 4a1. Horo displays an error message."
+        "content": "[none]"
       },
       {
         "lineNumber": 568,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "** 2a1. Horo displays an error message."
       },
       {
         "lineNumber": 569,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "Use case resumes at step 3."
+        "content": "+"
       },
       {
         "lineNumber": 570,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "+"
+        "content": "Use case resumes at step 1."
       },
       {
         "lineNumber": 571,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "_{More to be added}_"
+        "content": ""
       },
       {
         "lineNumber": 572,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "[discrete]"
       },
       {
         "lineNumber": 573,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "[appendix]"
+        "content": "\u003d\u003d\u003d Use case 2: Delete a Task"
       },
       {
         "lineNumber": 574,
         "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d Non Functional Requirements"
-      },
-      {
-        "lineNumber": 575,
-        "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
+        "lineNumber": 575,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "*MSS*"
+      },
+      {
         "lineNumber": 576,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has Java `11` or above installed."
+        "content": ""
       },
       {
         "lineNumber": 577,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ".  Should be able to hold up to 1000 Events and Tasks without a noticeable sluggishness in performance for typical usage."
+        "content": "1.  User requests to delete a specific Task from the already displayed list"
       },
       {
         "lineNumber": 578,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ".  Should function on both `32-bit environment` and `64-bit environment`"
+        "content": "2.  Horo deletes the Task"
       },
       {
         "lineNumber": 579,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": ".  Should work without any internet required."
+        "content": "+"
       },
       {
         "lineNumber": 580,
         "author": {
           "gitId": "-"
         },
-        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 581,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "."
+        "content": ""
       },
       {
         "lineNumber": 582,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 583,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 584,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "_{More to be added}_"
+        "content": "[none]"
       },
       {
         "lineNumber": 585,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "* 2a. The given delete Task command is of the wrong format."
       },
       {
         "lineNumber": 586,
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": "+"
       },
       {
         "lineNumber": 587,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Glossary"
+        "content": "[none]"
       },
       {
         "lineNumber": 588,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "** 2a1. Horo displays an error message."
       },
       {
         "lineNumber": 589,
         "author": {
           "gitId": "-"
         },
-        "content": "[[mainstream-os]] Mainstream OS::"
+        "content": "+"
       },
       {
         "lineNumber": 590,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "Windows, Linux, Unix, OS-X"
+        "content": "Use case resumes at step 1."
       },
       {
         "lineNumber": 591,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -5985,14 +5985,14 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "[[event]] Event::"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 593,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "A thing that happens or takes place during a certain period of time, or of a general time."
+        "content": "\u003d\u003d\u003d Use case 3: Find a Task by name"
       },
       {
         "lineNumber": 594,
@@ -6006,117 +6006,117 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "[[task]] Task::"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 596,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "A piece of work that is to be completed or taken note of."
+        "content": ""
       },
       {
         "lineNumber": 597,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "1.  User requests to find a Task"
       },
       {
         "lineNumber": 598,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "[appendix]"
+        "content": "2.  Horo displays the list of Task with the keywords found in its name"
       },
       {
         "lineNumber": 599,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d Product Survey"
+        "content": "+"
       },
       {
         "lineNumber": 600,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 601,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "*reminder-bot on Discord*"
+        "content": ""
       },
       {
         "lineNumber": 602,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 603,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "Author: JellyWX"
+        "content": ""
       },
       {
         "lineNumber": 604,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 605,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "Pros:"
+        "content": "* 2a. The given find Task command is of the wrong format."
       },
       {
         "lineNumber": 606,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 607,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "* A reminder bot on a popular voice and text chat application"
+        "content": "[none]"
       },
       {
         "lineNumber": 608,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* Capable of parsing english language as compared to CLI styled commands"
+        "content": "** 2a1. Horo displays an error message."
       },
       {
         "lineNumber": 609,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 610,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "Cons:"
+        "content": "Use case resumes at step 1."
       },
       {
         "lineNumber": 611,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -6125,19 +6125,19 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* Lack of visualization of the Events and Tasks"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 613,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* Parsing english language makes it slower to type with a longer requirement as compared to CLI styled commands"
+        "content": "\u003d\u003d\u003d Use case 4: Undo and Redo commands"
       },
       {
         "lineNumber": 614,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -6146,12 +6146,12 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "*Google Calendar*"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 616,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -6160,42 +6160,42 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "Company: Google"
+        "content": "1.  User requests to add an Task"
       },
       {
         "lineNumber": 618,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "2.  Horo replies that the Task has been added"
       },
       {
         "lineNumber": 619,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "Pros:"
+        "content": "3.  User requests to undo the command"
       },
       {
         "lineNumber": 620,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "4.  Horo replies that the previous command has been undone"
       },
       {
         "lineNumber": 621,
         "author": {
-          "gitId": "Kyzure"
+          "gitId": "-"
         },
-        "content": "* A Calendar application that is capable of storing Events and Tasks as well."
+        "content": "+"
       },
       {
         "lineNumber": 622,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* Mostly uses GUI for interaction with user instead of having CLI, favouring to the common crowd."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 623,
@@ -6207,14 +6207,14 @@
       {
         "lineNumber": 624,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "Cons:"
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 625,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
@@ -6223,206 +6223,934 @@
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* Mostly uses GUI for interaction with user instead of having CLI, which does not favour those who prefers CLI."
+        "content": "* 1a. The user adds additional sub-commands to the Task command"
       },
       {
         "lineNumber": 627,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* It requires an account to be usable."
+        "content": "+"
       },
       {
         "lineNumber": 628,
         "author": {
           "gitId": "Kyzure"
         },
-        "content": "* The desktop version requires a browser, which in turn requires Internet and hence not offline."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 629,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 630,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "[appendix]"
+        "content": "* 2a. The given add Task command is of the wrong format."
       },
       {
         "lineNumber": 631,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d Instructions for Manual Testing"
+        "content": "+"
       },
       {
         "lineNumber": 632,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 633,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "Given below are instructions to test the app manually."
+        "content": "** 2a1. Horo displays an error message."
       },
       {
         "lineNumber": 634,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "Use case resumes at step 1"
       },
       {
         "lineNumber": 635,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "[NOTE]"
+        "content": ""
       },
       {
         "lineNumber": 636,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+        "content": "* 4a. User decides the to Redo the added Task"
       },
       {
         "lineNumber": 637,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 638,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "\u003d\u003d\u003d Launch and Shutdown"
+        "content": "[none]"
       },
       {
         "lineNumber": 639,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "** 3a1. Horo replies that the added Task has been redone"
       },
       {
         "lineNumber": 640,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ". Initial launch"
+        "content": "+"
       },
       {
         "lineNumber": 641,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ""
+        "content": "Use case ends"
       },
       {
         "lineNumber": 642,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ".. Download the jar file and copy into an empty folder"
+        "content": ""
       },
       {
         "lineNumber": 643,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ".. Double-click the jar file +"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 644,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+        "content": "\u003d\u003d\u003d Use case 5: Edit a Task"
       },
       {
         "lineNumber": 645,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 646,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
-        "content": ". Saving window preferences"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 647,
         "author": {
-          "gitId": "-"
+          "gitId": "Kyzure"
         },
         "content": ""
       },
       {
         "lineNumber": 648,
         "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "1.  User requests to add a Task"
+      },
+      {
+        "lineNumber": 649,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "2.  Horo replies that the Task has been added"
+      },
+      {
+        "lineNumber": 650,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "3.  User request to edit a Task with the sub-commands"
+      },
+      {
+        "lineNumber": 651,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "4.  Horo replies that the Task has been edited"
+      },
+      {
+        "lineNumber": 652,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "+"
+      },
+      {
+        "lineNumber": 653,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "Use case ends."
+      },
+      {
+        "lineNumber": 654,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 655,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "*Extensions*"
+      },
+      {
+        "lineNumber": 656,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 657,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* 1a. The user adds additional sub-commands to the Task command"
+      },
+      {
+        "lineNumber": 658,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "+"
+      },
+      {
+        "lineNumber": 659,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "Use case ends."
+      },
+      {
+        "lineNumber": 660,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 661,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* 2a. The given add Task command is of the wrong format."
+      },
+      {
+        "lineNumber": 662,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "+"
+      },
+      {
+        "lineNumber": 663,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "[none]"
+      },
+      {
+        "lineNumber": 664,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "** 2a1. Horo displays an error message."
+      },
+      {
+        "lineNumber": 665,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "+"
+      },
+      {
+        "lineNumber": 666,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "Use case resumes at step 1."
+      },
+      {
+        "lineNumber": 667,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 668,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* 4a. The given edit Task command is of the wrong format."
+      },
+      {
+        "lineNumber": 669,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "+"
+      },
+      {
+        "lineNumber": 670,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "[none]"
+      },
+      {
+        "lineNumber": 671,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "** 4a1. Horo displays an error message."
+      },
+      {
+        "lineNumber": 672,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "+"
+      },
+      {
+        "lineNumber": 673,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "Use case resumes at step 3."
+      },
+      {
+        "lineNumber": 674,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "+"
+      },
+      {
+        "lineNumber": 675,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{More to be added}_"
+      },
+      {
+        "lineNumber": 676,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 677,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
+        "lineNumber": 678,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Non Functional Requirements"
+      },
+      {
+        "lineNumber": 679,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 680,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has Java `11` or above installed."
+      },
+      {
+        "lineNumber": 681,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ".  Should be able to hold up to 1000 Events and Tasks without a noticeable sluggishness in performance for typical usage."
+      },
+      {
+        "lineNumber": 682,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ".  Should function on both `32-bit environment` and `64-bit environment`"
+      },
+      {
+        "lineNumber": 683,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ".  Should work without any internet required."
+      },
+      {
+        "lineNumber": 684,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
+      },
+      {
+        "lineNumber": 685,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "."
+      },
+      {
+        "lineNumber": 686,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 687,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 688,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{More to be added}_"
+      },
+      {
+        "lineNumber": 689,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 690,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
+        "lineNumber": 691,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Glossary"
+      },
+      {
+        "lineNumber": 692,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 693,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[[mainstream-os]] Mainstream OS::"
+      },
+      {
+        "lineNumber": 694,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Windows, Linux, Unix, OS-X"
+      },
+      {
+        "lineNumber": 695,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 696,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "[[event]] Event::"
+      },
+      {
+        "lineNumber": 697,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "A thing that happens or takes place during a certain period of time, or of a general time."
+      },
+      {
+        "lineNumber": 698,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 699,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "[[task]] Task::"
+      },
+      {
+        "lineNumber": 700,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "A piece of work that is to be completed or taken note of."
+      },
+      {
+        "lineNumber": 701,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 702,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
+        "lineNumber": 703,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Product Survey"
+      },
+      {
+        "lineNumber": 704,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 705,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "*reminder-bot on Discord*"
+      },
+      {
+        "lineNumber": 706,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 707,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "Author: JellyWX"
+      },
+      {
+        "lineNumber": 708,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 709,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Pros:"
+      },
+      {
+        "lineNumber": 710,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 711,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* A reminder bot on a popular voice and text chat application"
+      },
+      {
+        "lineNumber": 712,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* Capable of parsing english language as compared to CLI styled commands"
+      },
+      {
+        "lineNumber": 713,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 714,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Cons:"
+      },
+      {
+        "lineNumber": 715,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 716,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* Lack of visualization of the Events and Tasks"
+      },
+      {
+        "lineNumber": 717,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* Parsing english language makes it slower to type with a longer requirement as compared to CLI styled commands"
+      },
+      {
+        "lineNumber": 718,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 719,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "*Google Calendar*"
+      },
+      {
+        "lineNumber": 720,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 721,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "Company: Google"
+      },
+      {
+        "lineNumber": 722,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 723,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Pros:"
+      },
+      {
+        "lineNumber": 724,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 725,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* A Calendar application that is capable of storing Events and Tasks as well."
+      },
+      {
+        "lineNumber": 726,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* Mostly uses GUI for interaction with user instead of having CLI, favouring to the common crowd."
+      },
+      {
+        "lineNumber": 727,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 728,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Cons:"
+      },
+      {
+        "lineNumber": 729,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 730,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* Mostly uses GUI for interaction with user instead of having CLI, which does not favour those who prefers CLI."
+      },
+      {
+        "lineNumber": 731,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* It requires an account to be usable."
+      },
+      {
+        "lineNumber": 732,
+        "author": {
+          "gitId": "Kyzure"
+        },
+        "content": "* The desktop version requires a browser, which in turn requires Internet and hence not offline."
+      },
+      {
+        "lineNumber": 733,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 734,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
+        "lineNumber": 735,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 736,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 737,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Given below are instructions to test the app manually."
+      },
+      {
+        "lineNumber": 738,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 739,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[NOTE]"
+      },
+      {
+        "lineNumber": 740,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+      },
+      {
+        "lineNumber": 741,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 742,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Launch and Shutdown"
+      },
+      {
+        "lineNumber": 743,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 744,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Initial launch"
+      },
+      {
+        "lineNumber": 745,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 746,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Download the jar file and copy into an empty folder"
+      },
+      {
+        "lineNumber": 747,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Double-click the jar file +"
+      },
+      {
+        "lineNumber": 748,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+      },
+      {
+        "lineNumber": 749,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 750,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Saving window preferences"
+      },
+      {
+        "lineNumber": 751,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 752,
+        "author": {
           "gitId": "-"
         },
         "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
       },
       {
-        "lineNumber": 649,
+        "lineNumber": 753,
         "author": {
           "gitId": "-"
         },
         "content": ".. Re-launch the app by double-clicking the jar file. +"
       },
       {
-        "lineNumber": 650,
+        "lineNumber": 754,
         "author": {
           "gitId": "-"
         },
         "content": "   Expected: The most recent window size and location is retained."
       },
       {
-        "lineNumber": 651,
+        "lineNumber": 755,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 652,
+        "lineNumber": 756,
         "author": {
           "gitId": "-"
         },
         "content": "_{ more test cases ... }_"
       },
       {
-        "lineNumber": 653,
+        "lineNumber": 757,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 654,
+        "lineNumber": 758,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 655,
+        "lineNumber": 759,
         "author": {
           "gitId": "-"
         },
@@ -6430,8 +7158,9 @@
       }
     ],
     "authorContributionMap": {
-      "Kyzure": 285,
-      "-": 370
+      "Kyzure": 289,
+      "WeomuCat": 113,
+      "-": 357
     }
   },
   {

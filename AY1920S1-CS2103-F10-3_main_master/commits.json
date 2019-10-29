@@ -329,6 +329,48 @@
             "deletions": 2
           }
         ]
+      },
+      {
+        "insertions": 632,
+        "deletions": 747,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "d0f7b4ee80e3feb1f32b8c2bbcd187359350af9c",
+            "messageTitle": "validate EditCommand",
+            "messageBody": "",
+            "insertions": 182,
+            "deletions": 45
+          },
+          {
+            "hash": "494fe7171de326aca6fb02232dddb3bde84e014c",
+            "messageTitle": "change Answer into concrete class",
+            "messageBody": "",
+            "insertions": 203,
+            "deletions": 49
+          },
+          {
+            "hash": "30d231be2cf5fadaaab0e0a0d264a2bec6e61bc9",
+            "messageTitle": "improve edit to allow only true/false for T/F questions. Any x/ is is ommitted.",
+            "messageBody": "",
+            "insertions": 145,
+            "deletions": 483
+          },
+          {
+            "hash": "a45ee5ef14502f5d7737593814a3870f04710674",
+            "messageTitle": "working TrueFalse in quiz mode",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 6
+          },
+          {
+            "hash": "bb4b60b94b36dfb1c74ea998d52cbcac5662f784",
+            "messageTitle": "pass checkstyle",
+            "messageBody": "",
+            "insertions": 94,
+            "deletions": 164
+          }
+        ]
       }
     ],
     "neoshh": [
@@ -485,6 +527,76 @@
             "messageBody": "",
             "insertions": 225,
             "deletions": 148
+          }
+        ]
+      },
+      {
+        "insertions": 14,
+        "deletions": 9,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "217b0d94931d988954ce4c79b2c6c3b95d72e85d",
+            "messageTitle": "Implement UI messages to inform user to type \u0027list\u0027 after: start cat/nosuchcat or escape quiz",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 9
+          }
+        ]
+      },
+      {
+        "insertions": 350,
+        "deletions": 150,
+        "date": "2019-10-25",
+        "commitResults": [
+          {
+            "hash": "107334f1bf78ef57f81db370e32c2c470ee7c5f8",
+            "messageTitle": "Refactor AddCommandParser#validfyQuestionType",
+            "messageBody": "",
+            "insertions": 100,
+            "deletions": 23
+          },
+          {
+            "hash": "487d68f3ab9109f6a0d15419e6db8e3fead02422",
+            "messageTitle": "Refactor AddCommandParser to parse mcq, tf and saq",
+            "messageBody": "",
+            "insertions": 250,
+            "deletions": 127
+          }
+        ]
+      },
+      {
+        "insertions": 47,
+        "deletions": 30,
+        "date": "2019-10-26",
+        "commitResults": [
+          {
+            "hash": "676e5c2d8cdef14ae1ca0bac23de434863ca1f1c",
+            "messageTitle": "Unstable copy for tutor to debug, problems with accessing question type in EditCommandParser",
+            "messageBody": "",
+            "insertions": 47,
+            "deletions": 30
+          }
+        ]
+      },
+      {
+        "insertions": 362,
+        "deletions": 59,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "832b53f843f6e2cbcfd4f1786300a705741a23f0",
+            "messageTitle": "Add TfAnswersGridPane.fxml Add and Edit commands working User forced to input type/ for EditCommandParser, can be easily abused by user because input type/ should be same as the Answerable to be edited JsonAdaptedAnswerable#toModelType not working",
+            "messageBody": "",
+            "insertions": 357,
+            "deletions": 59
+          },
+          {
+            "hash": "8fa90e3396ea06910f7e2de2baa3658f1d2a24c5",
+            "messageTitle": "Resolved missing Answer.java import statements Issues with locating Answerable class",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 0
           }
         ]
       }
@@ -743,21 +855,98 @@
             "deletions": 50
           }
         ]
+      },
+      {
+        "insertions": 1,
+        "deletions": 1,
+        "date": "2019-10-26",
+        "commitResults": [
+          {
+            "hash": "3fe25f8dd44aa39af8133274e65aacf46ac7575a",
+            "messageTitle": "Edited AddCommand help message",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 315,
+        "deletions": 31,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "787b83d0ef0dc8c3cf58c8fbee2add578b133e3f",
+            "messageTitle": "Created RestoreCommand and related files to support restore command",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 0
+          },
+          {
+            "hash": "960897174355d014021b6527851dc9c2e7b046e4",
+            "messageTitle": "Edited RestoreCommand files and MainWindow and RestoreWindow to make restore command have a dummy pop up",
+            "messageBody": "",
+            "insertions": 224,
+            "deletions": 14
+          },
+          {
+            "hash": "fbeb6babf159b9c23d97c5e7490a16b966007a0d",
+            "messageTitle": "Restore command - upon clicking \"yes\" at the pop up will delete the addressbook.json",
+            "messageBody": "",
+            "insertions": 69,
+            "deletions": 17
+          }
+        ]
+      },
+      {
+        "insertions": 42,
+        "deletions": 28,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "2fd679ce8eca7baae46cdcfb3a000152c5f5da0b",
+            "messageTitle": "Pass model file in to mainWindow for Restore",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 13
+          },
+          {
+            "hash": "c1d49f215eb04b4ee6ee76c4991252928e25751a",
+            "messageTitle": "Used SampleDataUtil to restore questions - working",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 15
+          }
+        ]
+      },
+      {
+        "insertions": 5,
+        "deletions": 172,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "912bc0e5a329a4125480019b89026380c344795d",
+            "messageTitle": "Updated Restore Command to remove unnecssary files and removed overloaded commandResult",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 172
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "wilfredbtan": 3321,
+    "wilfredbtan": 3573,
     "neoshh": 78,
-    "jxofficial": 779,
-    "khiangleon": 625,
-    "ShaunNgTX": 269
+    "jxofficial": 1140,
+    "khiangleon": 506,
+    "ShaunNgTX": 386
   },
   "authorFileTypeContributionMap": {
     "wilfredbtan": {
       "docs": 153,
-      "tests": 1301,
-      "functional": 1865,
+      "tests": 1302,
+      "functional": 2116,
       "other": 2
     },
     "neoshh": {
@@ -767,28 +956,28 @@
     },
     "jxofficial": {
       "docs": 31,
-      "tests": 104,
-      "functional": 630,
+      "tests": 111,
+      "functional": 984,
       "other": 14
     },
     "khiangleon": {
       "docs": 14,
-      "tests": 236,
-      "functional": 373,
+      "tests": 231,
+      "functional": 259,
       "other": 2
     },
     "ShaunNgTX": {
       "docs": 11,
       "tests": 0,
-      "functional": 258
+      "functional": 375
     }
   },
   "authorContributionVariance": {
-    "wilfredbtan": 830943.75,
-    "neoshh": 202.86095,
-    "jxofficial": 24368.291,
-    "khiangleon": 7004.092,
-    "ShaunNgTX": 2881.5
+    "wilfredbtan": 825064.44,
+    "neoshh": 195.63654,
+    "jxofficial": 29788.701,
+    "khiangleon": 6759.5864,
+    "ShaunNgTX": 5251.213
   },
   "authorDisplayNameMap": {
     "wilfredbtan": "CS2103-F10-3 WILFR ... Y TAN",
