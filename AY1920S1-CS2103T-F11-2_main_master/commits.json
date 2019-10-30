@@ -674,6 +674,20 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 3146,
+        "deletions": 1351,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "74c023d333dde67480304899ef645169015f70a6",
+            "messageTitle": "Add Replenish List (#122)",
+            "messageBody": "* Rename Item as XpireItem\r\n\r\n* Create new super class Item\r\n\r\n* Rename MethodOfSorting as XpireMethodOfSorting\r\n\r\n* Implement ReplenishMethodOfSorting\r\n\r\n* Add new storage class\r\n\r\n* Allow storage of both lists\r\n\r\n* Add ItemManager\r\n\r\n* Auto-tag items as expired\r\n\r\n* Allow viewing of replenish list\r\n\r\n* Limit commands for replenish list\r\n\r\n* Minify css for speedup\r\n\r\n* Allow tagging for items in replenish list\r\n\r\n* Rename XpireStorage and related classes as ListStorage\r\n\r\n* Clean up storage classes\r\n\r\n* Resolve checkStyleMain errors\r\n\r\n* Resolve checkStyleTest errors\r\n\r\n* Resolve failing tests\r\n\r\n* Rename parser in Logic Manager\r\n\r\n* Update ReplenishCommand\r\n\r\n* Fix bug\r\n\r\n* Fix checkstyle issues\r\n\r\n* Fix checkstyle issues\r\n\r\n* Add shift commands\r\n\r\n* Resolve issues from review and checkstyle\r\n\r\n* Edit stackable commands\r\n\r\n* Disable tagging for replenish list\r\n\r\n* Fix checkstyle\r\n\r\n* Edit shift to main format command message\r\n",
+            "insertions": 3146,
+            "deletions": 1351
+          }
+        ]
       }
     ],
     "febee99": [
@@ -1010,6 +1024,20 @@
             "messageBody": "",
             "insertions": 5,
             "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 508,
+        "deletions": 23,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "3ea6ae9904c0bcdb753782c330e08d7b8df228f7",
+            "messageTitle": "Update recommendations and DG (#121)",
+            "messageBody": "* Add basic diagrams\r\n\r\n* Recommend based on previous list displayed\r\n\r\n* Update DG diagrams for auto-sort and recommendations\r\n\r\n* Reorder DG\r\n\r\n* Increase size of images\r\n\r\n* Edit images\r\n\r\n* Edit DG\r\n",
+            "insertions": 508,
+            "deletions": 23
           }
         ]
       }
@@ -1765,54 +1793,96 @@
             "deletions": 4
           }
         ]
+      },
+      {
+        "insertions": 78,
+        "deletions": 22,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "de75dba71ab0d4d4b8044d3bcac19e90034c6b09",
+            "messageTitle": "Disallow reminder for expired items or before today\u0027s date",
+            "messageBody": "",
+            "insertions": 59,
+            "deletions": 13
+          },
+          {
+            "hash": "4acb214d1c82e3689cc091ec30a6d1ef60025e2e",
+            "messageTitle": "Add J-Unit Tests for set reminder for expired item",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 4
+          },
+          {
+            "hash": "7f7eb75c3633a1253fbf3605b7253745909abe35",
+            "messageTitle": "Fix boundary condition for set reminder",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 20,
+        "deletions": 81,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "e91a58a01c8d9b355b24124d6ea6bc5f66dd1ca7",
+            "messageTitle": "Refactor redundant module",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 81
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "Kalsyc": 1395,
-    "liawsy": 728,
-    "febee99": 2462,
-    "JermyTan": 2696,
-    "xiaoyu-nus": 1439
+    "Kalsyc": 1158,
+    "liawsy": 3739,
+    "febee99": 2483,
+    "JermyTan": 2247,
+    "xiaoyu-nus": 1398
   },
   "authorFileTypeContributionMap": {
     "Kalsyc": {
       "docs": 162,
-      "tests": 755,
-      "functional": 471,
+      "tests": 636,
+      "functional": 353,
       "other": 7
     },
     "liawsy": {
-      "docs": 95,
-      "tests": 287,
-      "functional": 305,
-      "other": 41
+      "docs": 100,
+      "tests": 1085,
+      "functional": 2512,
+      "other": 42
     },
     "febee99": {
-      "docs": 251,
-      "tests": 1102,
-      "functional": 949,
-      "other": 160
+      "docs": 338,
+      "tests": 857,
+      "functional": 721,
+      "other": 567
     },
     "JermyTan": {
-      "docs": 283,
-      "tests": 698,
-      "functional": 1710,
+      "docs": 273,
+      "tests": 574,
+      "functional": 1395,
       "other": 5
     },
     "xiaoyu-nus": {
       "docs": 65,
-      "tests": 467,
-      "functional": 808,
+      "tests": 446,
+      "functional": 788,
       "other": 99
     }
   },
   "authorContributionVariance": {
-    "Kalsyc": 44804.453,
-    "liawsy": 13849.386,
-    "febee99": 507710.16,
-    "JermyTan": 159360.97,
-    "xiaoyu-nus": 15045.132
+    "Kalsyc": 43412.887,
+    "liawsy": 368367.28,
+    "febee99": 492341.47,
+    "JermyTan": 154115.89,
+    "xiaoyu-nus": 14601.981
   },
   "authorDisplayNameMap": {
     "Kalsyc": "CS2103T-F11-2 SIM J ... ARREN",

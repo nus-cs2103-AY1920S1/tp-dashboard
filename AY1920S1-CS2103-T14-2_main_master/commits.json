@@ -147,6 +147,20 @@
             "deletions": 14
           }
         ]
+      },
+      {
+        "insertions": 71,
+        "deletions": 40,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "0efa3a8c08389d0afc5ba0b0f54fccf83528f40a",
+            "messageTitle": "Updated NUSMods data source to API v2, fixed JSON parsing bugs (#104)",
+            "messageBody": "* Added ability to mark attendance\r\n\r\n* Added stub tests for MarkAttendanceCommand and MarkAttendanceCommandParser\r\n\r\n* Added ability to add multiple pending commands\r\n\r\n* Added ability to mark attendance of all students in a tutorial\r\n\r\n* Added ability for user to input multiple commands\r\n\r\n* Added ability to export attendance\r\n\r\n* Fixed bug where attendance marking is cancelled after no command is inputted\r\nThrows CommandException when invalid week is entered to mark attendance\r\n\r\n* Added index functionality for MarkAttendanceCommand, ExportAttendanceCommand\r\nAdded tests for MarkAttendanceCommand, MarkAttendanceCommandParser,\r\nExportAttendanceCommand, ExportAttendanceCommandParser\r\n\r\n* Added ability to remove Student from Attendance\r\n\r\n* Added Assignment, ability to add/delete Assignments\r\n\r\n* Fixed model.setStudent(), EditCommandTest\r\n\r\n* Added ability to add/delete/edit Events, hourly tracking\r\n\r\n* Added ability to add/delete/edit Events, hourly tracking\r\n\r\n* Add devdocs for Mark Attendance feature\r\n\r\n* Added stub tests for AssignmentCommands, Assignment\r\nAdded ability to set Assignment score\r\n\r\n* Added ability to import Tutorials via NUSMods url\r\nChanged multiple commands input delimiter from \u0027\u0026\u0027 to \u0027+\u0027\r\nFixed bug where updating of events is incorrect when semester start is set to a future date\r\nFixed bug where non index format for SetAssignmentCommand is not parsed correctly\r\n\r\n* Updated NUSMods data source to API v2, fixed JSON parsing errors\r\n",
+            "insertions": 71,
+            "deletions": 40
+          }
+        ]
       }
     ],
     "Ellieyee": [
@@ -697,6 +711,20 @@
             "deletions": 153
           }
         ]
+      },
+      {
+        "insertions": 839,
+        "deletions": 63,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "a83cd726299d7cbe81dd50bb973553ed0379885e",
+            "messageTitle": "Add Undo Command (without tests) (#106)",
+            "messageBody": "",
+            "insertions": 839,
+            "deletions": 63
+          }
+        ]
       }
     ],
     "lumos309": [
@@ -1035,46 +1063,67 @@
             "deletions": 71
           }
         ]
+      },
+      {
+        "insertions": 901,
+        "deletions": 52,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "1728d61a36ff44bce4f3272b858be43a185461a3",
+            "messageTitle": "Add missing tests \u0026 update existing ones (#105)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n",
+            "insertions": 731,
+            "deletions": 5
+          },
+          {
+            "hash": "d82ac256147b098aa8d9f08f87ffb434197b9488",
+            "messageTitle": "Add enhanced autocomplete (#107)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n",
+            "insertions": 170,
+            "deletions": 47
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 7479,
-    "Ellieyee": 6390,
-    "AhmadHatziq": 2220,
-    "lumos309": 5528
+    "ZiHawkEye": 7503,
+    "Ellieyee": 6377,
+    "AhmadHatziq": 3018,
+    "lumos309": 6386
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
       "docs": 28,
       "tests": 2554,
-      "functional": 4869,
-      "other": 28
+      "functional": 4894,
+      "other": 27
     },
     "Ellieyee": {
       "docs": 113,
-      "tests": 2788,
-      "functional": 3484,
+      "tests": 2784,
+      "functional": 3475,
       "other": 5
     },
     "AhmadHatziq": {
       "docs": 418,
-      "tests": 320,
-      "functional": 1477,
-      "other": 5
+      "tests": 370,
+      "functional": 2223,
+      "other": 7
     },
     "lumos309": {
       "docs": 111,
-      "tests": 2098,
-      "functional": 2976,
-      "other": 343
+      "tests": 2822,
+      "functional": 3111,
+      "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 160443.12,
-    "Ellieyee": 228051.03,
-    "AhmadHatziq": 45140.266,
-    "lumos309": 51091.043
+    "ZiHawkEye": 157573.1,
+    "Ellieyee": 224692.08,
+    "AhmadHatziq": 56904.824,
+    "lumos309": 62241.85
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",

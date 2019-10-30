@@ -289,6 +289,34 @@
             "deletions": 7
           }
         ]
+      },
+      {
+        "insertions": 461,
+        "deletions": 422,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "f459787832a1de6da8d949f3f381017882624f3a",
+            "messageTitle": "Change dummy data to be populated (#157)",
+            "messageBody": "Dummy data created when a person first uses ORGANice is changed. ",
+            "insertions": 41,
+            "deletions": 11
+          },
+          {
+            "hash": "a8869c34f1adbe475ed156bf74b3f5e162e7be6d",
+            "messageTitle": "Modify existing AB3 diagrams  (#152)",
+            "messageBody": "* Edit diagrams given in existing AB3 Guide\r\n\r\n* Improve explanation of match feature\r\n\r\nChanges to the explanation are as follows:\r\n* Discuss different aspects in the Logic, UI and Model section.\r\n* Include code snippets for better understanding\r\n\r\nTo Do:\r\n* Add sequence diagrams\r\n* Add class diagrams\r\n* Expand on design considerations\r\n\r\n* Edit developer guide\r\n",
+            "insertions": 199,
+            "deletions": 114
+          },
+          {
+            "hash": "5ea2e27b79acb0f68d1484b66aaba7d6bf68a1a3",
+            "messageTitle": "Enhancements to match feature (#141)",
+            "messageBody": "* Add more messages detailing result of each match\r\n\r\nPreviously there were only messages detailing if\r\nthe command succeeded or failed.\r\n\r\nNow some new types of messages are added:\r\n- If the command matches a specific patient, the message\r\ndetails which patient was matched with all donors.\r\n- If no matches were found, the resulting message states that.\r\n- Messages to provide details on how many matches, and for which patient\r\n\r\n* Beautify UI of displayed matches\r\n\r\nThe following changes were made to the UI:\r\n* Success rate is to be displayed in 2 decimal places instead of one long string\r\n* Match results to be displayed in red\r\n* Nric of patient and donor to be prefixed with \"Nric: \" followed\r\nby the NRIC of the person.\r\n\r\n* Create new ModelStub for testing\r\n\r\nPreviously a private ModelStub class was created for both AddCommandTest\r\nand MatchCommandTest. This resulted in duplication of code whenever the\r\nModel implementation changed.\r\n\r\nThis ModelStub class will now be used by all classes, removing the duplication\r\nof code.\r\n\r\n* Edit messages according to PR review\r\n\r\n* Edit tests based on changed messages\r\n\r\n* Edit test cases based on changes\r\n\r\n* Change error thrown in getMatchList\r\n\r\n* Changed AssertionError to assert statements\r\n",
+            "insertions": 221,
+            "deletions": 297
+          }
+        ]
       }
     ],
     "TheRealRavager": [
@@ -449,8 +477,8 @@
         ]
       },
       {
-        "insertions": 51,
-        "deletions": 18,
+        "insertions": 404,
+        "deletions": 28,
         "date": "2019-10-29",
         "commitResults": [
           {
@@ -459,6 +487,13 @@
             "messageBody": "* Update list and sort features ugdg.\r\n\r\n* Update ModelClassDiagram.puml\r\n\r\n* Add SortSequenceDiagram.puml\r\n\r\n* Fix typo in model class diagram\r\n\r\n* Add list activity diagram.\r\n\r\n* Fix checkstyle.\r\n\r\n* Amend diagram.\r\n\r\n* Fix title markdown.\r\n\r\n* Amend dg.\r\n\r\n* Add spacing in dg.\r\n\r\n* Fix diagrams spacing.\r\n\r\n* Update link to user guide in help window.\r\n",
             "insertions": 51,
             "deletions": 18
+          },
+          {
+            "hash": "fe4a31eab57cd034b57f88cf3cf2e28c5087568f",
+            "messageTitle": "Add sort feature (#145)",
+            "messageBody": "* Add sort feature.\r\n\r\n* Add comparators.\r\n\r\n* Add sort command and parser.\r\n\r\n* Update sort list display on window.\r\n\r\n* Fix checkstyle.\r\n\r\n* Fix checkstyle.\r\n\r\n* Fix test checkstyle.\r\n\r\n* Fix checkstyle.\r\n",
+            "insertions": 353,
+            "deletions": 10
           }
         ]
       }
@@ -561,51 +596,66 @@
             "deletions": 59
           }
         ]
+      },
+      {
+        "insertions": 163,
+        "deletions": 188,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "cbee5887e35c4e9bd2614361eb8b895d0ca4e4ca",
+            "messageTitle": "WIP: Crud - update (#119)",
+            "messageBody": "* WIP simple update\r\n\r\n* WIP minimal edit from index to nric done\r\n\r\n* Simple edit with messages amendments\r\n\r\n* WIP fixing test cases\r\n\r\n* Removed some irrelevant test cases and changed edit command to not allow the edit of NRIC and type\r\n\r\n* Fix command usage\r\n\r\n* Fix checkstyle and test\r\n\r\n* Fix error\r\n\r\n* Fix test cases\r\n\r\n* Remove unused import\r\n\r\n* Change\r\n\r\n* Fix checkstyle\r\n",
+            "insertions": 163,
+            "deletions": 188
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "WilliamRyank": 4620,
-    "C-likethis123": 3487,
-    "TheRealRavager": 1461,
-    "Yen-Peng": 553,
-    "SimNee": 782
+    "WilliamRyank": 4590,
+    "C-likethis123": 3769,
+    "TheRealRavager": 1404,
+    "Yen-Peng": 859,
+    "SimNee": 933
   },
   "authorFileTypeContributionMap": {
     "WilliamRyank": {
-      "docs": 152,
-      "tests": 1515,
-      "functional": 2953
+      "docs": 156,
+      "tests": 1490,
+      "functional": 2944
     },
     "C-likethis123": {
-      "docs": 478,
-      "tests": 1576,
-      "functional": 1433
+      "docs": 565,
+      "tests": 1603,
+      "functional": 1504,
+      "other": 97
     },
     "TheRealRavager": {
       "docs": 15,
-      "tests": 931,
-      "functional": 514,
+      "tests": 879,
+      "functional": 509,
       "other": 1
     },
     "Yen-Peng": {
       "docs": 85,
-      "tests": 173,
-      "functional": 159,
+      "tests": 175,
+      "functional": 463,
       "other": 136
     },
     "SimNee": {
-      "docs": 82,
-      "tests": 381,
-      "functional": 319
+      "docs": 78,
+      "tests": 454,
+      "functional": 401
     }
   },
   "authorContributionVariance": {
-    "WilliamRyank": 187871.69,
-    "C-likethis123": 99538.32,
-    "TheRealRavager": 187618.28,
-    "Yen-Peng": 1763.321,
-    "SimNee": 6289.415
+    "WilliamRyank": 184741.3,
+    "C-likethis123": 109245.54,
+    "TheRealRavager": 184270.56,
+    "Yen-Peng": 4838.5674,
+    "SimNee": 8139.6255
   },
   "authorDisplayNameMap": {
     "WilliamRyank": "CS2103T-T13-1 WILLI ... SNADI",

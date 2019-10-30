@@ -142,6 +142,34 @@
             "deletions": 34
           }
         ]
+      },
+      {
+        "insertions": 1116,
+        "deletions": 30,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "0b621a50ce56bf16ece1299ece27cbfa0116ff4f",
+            "messageTitle": "Session Handling (#48)",
+            "messageBody": "* Create Session package\r\n\r\n* Update Participation.java\r\n\r\n* Update UserGuide.adoc\r\n\r\n* Change constructor parameter for Session\r\n\r\n* Setup Session component\r\n\r\n* Create runtime exceptions\r\n\r\n* Add commands to handle session\r\n\r\n* Fix session handling\r\n\r\nSession can now import participations with preloaded attempts, and can continue the previous session from where they are left off.\r\n\r\n* Fix import order for checkstyle\r\n\r\n* Add ObservableValue for SessionInformation to be displayed on frontend\r\n\r\n* Revert \"Add ObservableValue for SessionInformation to be displayed on frontend\"\r\n\r\nThis reverts commit 9a91c3ac2b3b5da44561dfeb2793a66450ff02ed.\r\n\r\n* Allow session to display following lifter and attempt\r\n\r\n* Remove LoadAttemptsCommand, add AddPartCommand\r\n\r\nattempt submission will be required when creating new participation.\r\n\r\n* Update Model and ModelManager\r\n\r\n* Fix checkstyle and optimise imports\r\n\r\n* Optimise imports\r\n",
+            "insertions": 1116,
+            "deletions": 30
+          }
+        ]
+      },
+      {
+        "insertions": 76,
+        "deletions": 17,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "0baa419737c7df9d72d338f307a4a14ec5253ef5",
+            "messageTitle": "Update session command result, create package for competition in logic (#50)",
+            "messageBody": "",
+            "insertions": 76,
+            "deletions": 17
+          }
+        ]
       }
     ],
     "HoWeiChin": [
@@ -233,6 +261,20 @@
             "messageBody": "",
             "insertions": 3,
             "deletions": 3
+          }
+        ]
+      },
+      {
+        "insertions": 268,
+        "deletions": 13,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "64352befaf8fe3703b88ee3b027bedf5c5f48d6e",
+            "messageTitle": "New comp features (#49)",
+            "messageBody": "* New Branch\r\n\r\n* CRUD for Competitions\r\n\r\n* CRUD added to front end\r\n\r\n* UserGuide.adoc fixed\r\n\r\n* checks start/end dates\r\n\r\n* Ranking added\r\n\r\n* Ranking modified\r\n\r\n* Tests issues resolved\r\n\r\n* additional changes made as per pr comments\r\n\r\n* rebased and test bug fixes\r\n",
+            "insertions": 268,
+            "deletions": 13
           }
         ]
       }
@@ -342,42 +384,64 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 2194,
+        "deletions": 2017,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "5b3ef18b9e587b03216c0937f06bbd45f08ca896",
+            "messageTitle": "Scope commands to in/out of session (#51)",
+            "messageBody": "",
+            "insertions": 965,
+            "deletions": 350
+          },
+          {
+            "hash": "dc31afcaf47f39e424cff5022d243350f200150d",
+            "messageTitle": "Refactor file structure and names (#53)",
+            "messageBody": "",
+            "insertions": 1229,
+            "deletions": 1667
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "shawnkoh": 55,
-    "belbel98": 539,
-    "HoWeiChin": 1272,
-    "ooimingsheng": 3120
+    "shawnkoh": 50,
+    "belbel98": 1460,
+    "HoWeiChin": 909,
+    "ooimingsheng": 4914
   },
   "authorFileTypeContributionMap": {
     "shawnkoh": {
       "docs": 0,
       "tests": 0,
-      "functional": 55
+      "functional": 50
     },
     "belbel98": {
-      "docs": 84,
-      "tests": 40,
-      "functional": 415
+      "docs": 106,
+      "tests": 59,
+      "functional": 1295
     },
     "HoWeiChin": {
-      "docs": 150,
-      "tests": 242,
-      "functional": 880
+      "docs": 161,
+      "tests": 196,
+      "functional": 552
     },
     "ooimingsheng": {
-      "docs": 637,
-      "tests": 681,
-      "functional": 1802
+      "docs": 640,
+      "tests": 1177,
+      "functional": 3096,
+      "other": 1
     }
   },
   "authorContributionVariance": {
-    "shawnkoh": 2815.6614,
-    "belbel98": 15425.498,
-    "HoWeiChin": 47546.473,
-    "ooimingsheng": 166414.56
+    "shawnkoh": 2715.1736,
+    "belbel98": 36988.934,
+    "HoWeiChin": 46844.4,
+    "ooimingsheng": 462444.25
   },
   "authorDisplayNameMap": {
     "shawnkoh": "CS2103-T11-3 KOH Z ... SHAWN",

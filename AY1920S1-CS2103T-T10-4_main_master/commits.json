@@ -273,6 +273,27 @@
             "deletions": 579
           }
         ]
+      },
+      {
+        "insertions": 262,
+        "deletions": 127,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "70bd8ff2c434ddd95738affe014d861c824cccac",
+            "messageTitle": "Cache Fix (#158)",
+            "messageBody": "* Implement caching\r\n\r\n* Add ModuleSummaryList, ImportMods\r\n* Refactor Cache paths\r\n\r\n* Implement importmods in an internal program\r\n* Add nusmods json files\r\n* Refactor FileUtil to add newline when writing to file\r\n* Fix NusmodsParser.parseWeeks logic\r\n\r\n* Fix checkstyle, add logging for initialization of nusmodsdata\r\n\r\n* Fix testutil to consider that FileUtil.writeToFile appends newline to EOF now\r\n\r\n* refactoring ImportMods\r\n\r\n* Change to use model.findPerson in AddNusMod(s)Command\r\n\r\n* Fix lesson\u0027s day not being considered when generating timeslots\r\n\r\n* Extract module-event mapping methods from command to ModuleEventMappingUtil\r\n\r\n* Modify addmods to include exam dates\r\n\r\n* Modify addmods to check for clashing events and trigger UI update\r\n\r\n* Add check for module exam before attempting to generate timeslot\r\n\r\n* Modify Timeslot.isClash to return false on exact edge overlaps\r\n\r\n* Improve ImportMods performance\r\n\r\n* Improve error checking in NusModsParser\r\n* Convert Week.type to enum\r\n\r\n* Improve code quality\r\n\r\n* Remove unused imports\r\n\r\n* merge master\r\n\r\n* Revert \"merge master\"\r\n\r\nThis reverts commit 25656ff78d08ccbd204f4f89ca3ef72269fb0758.\r\n\r\n* Refactor and add error checks\r\n* remove acadYear/semesterNo flags for addmod command (disallow user to specify year/semester since it\u0027s not well supported yet)\r\n* refactor SemesterNo to enum\r\n\r\n* remove unused import\r\n\r\n* Fix SemesterNo enum equality checks\r\n\r\n* Fix cacheTest\r\n\r\n* Fix EOF\r\n\r\n* hotfix cache resolution when JAR-ed\r\n\r\n* fix checkstyle\r\n\r\n* Fix test case\r\n",
+            "insertions": 104,
+            "deletions": 47
+          },
+          {
+            "hash": "ce1f129dd862023749fd49a7dfcd3df945407ad2",
+            "messageTitle": "Addmod(s) fixes (#159)",
+            "messageBody": "* Modify addmod and ModuleEventMappingUtil to take lesson type into consideration\r\n\r\n* Fix ModuleEventMappingUtil to factor recess weeks into timeslot generation\r\n",
+            "insertions": 158,
+            "deletions": 80
+          }
+        ]
       }
     ],
     "klementtan": [
@@ -1150,6 +1171,76 @@
             "deletions": 3
           }
         ]
+      },
+      {
+        "insertions": 504,
+        "deletions": 302,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "157adc05ac4bb779d887c38d81b0300e0a42a1e6",
+            "messageTitle": "refactor and add test case",
+            "messageBody": "",
+            "insertions": 258,
+            "deletions": 201
+          },
+          {
+            "hash": "e80ba66eb1d330bfa40a2afbca9d6b824b979f0b",
+            "messageTitle": "Resolve check style",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 20
+          },
+          {
+            "hash": "2547ae78a3249407e284caea533b602bcff7840f",
+            "messageTitle": "Resolve image issue",
+            "messageBody": "",
+            "insertions": 40,
+            "deletions": 29
+          },
+          {
+            "hash": "f5ced2c9a89603a3c937992f51d60f80c0bc9ad9",
+            "messageTitle": "Resolve checky style",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 9
+          },
+          {
+            "hash": "7d70e9f5c62e36da654b6440b14f142a8b8d0527",
+            "messageTitle": "Initial commit",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 15
+          },
+          {
+            "hash": "5f853b79d101cf87542be13f38af3e7d03b3849a",
+            "messageTitle": "Add popup commands",
+            "messageBody": "",
+            "insertions": 56,
+            "deletions": 25
+          },
+          {
+            "hash": "64a238ee0437bc1cfe7583afc63b26bd0719f143",
+            "messageTitle": "Add supported locations",
+            "messageBody": "",
+            "insertions": 116,
+            "deletions": 1
+          },
+          {
+            "hash": "c5833314756e4eaa78e6380b8e6855fffcb12b3d",
+            "messageTitle": "Resolve checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "167bf29d783e021f910270543354ae3e0a2dd2dd",
+            "messageTitle": "Resolve checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          }
+        ]
       }
     ],
     "Alvinnyk": [
@@ -1707,8 +1798,8 @@
         ]
       },
       {
-        "insertions": 12,
-        "deletions": 3,
+        "insertions": 252,
+        "deletions": 123,
         "date": "2019-10-29",
         "commitResults": [
           {
@@ -1717,6 +1808,69 @@
             "messageBody": "",
             "insertions": 12,
             "deletions": 3
+          },
+          {
+            "hash": "d7daa60fd2e5c5ff3e4e1aab9fe10f7ba435f060",
+            "messageTitle": "wip closest location integration",
+            "messageBody": "",
+            "insertions": 78,
+            "deletions": 14
+          },
+          {
+            "hash": "15670b6f2aad2fdb1abae3aa5b0f80308f70f30f",
+            "messageTitle": "Fixed last location generator",
+            "messageBody": "",
+            "insertions": 40,
+            "deletions": 36
+          },
+          {
+            "hash": "7c4dc2a750a4f44fd0eec9df4aff89e261d9a117",
+            "messageTitle": "Edited sample data",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 5
+          },
+          {
+            "hash": "c1ebe6f90da3266d5dd4e57a7abd19eb01e3073c",
+            "messageTitle": "Integrate with gmaps",
+            "messageBody": "",
+            "insertions": 117,
+            "deletions": 65
+          }
+        ]
+      },
+      {
+        "insertions": 294,
+        "deletions": 24,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "f04bb94b8e0bcd51dab0b5c2eafb420296f85e1b",
+            "messageTitle": "Added free timeslot id functionality",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 1
+          },
+          {
+            "hash": "e891e489760af4d875640db9006b1eeb2b924f5c",
+            "messageTitle": "Added delete event functionality",
+            "messageBody": "",
+            "insertions": 131,
+            "deletions": 21
+          },
+          {
+            "hash": "7afda1b7dd86bc8c02c7b2c9795fdc0773f37e05",
+            "messageTitle": "Fixed small bugs",
+            "messageBody": "",
+            "insertions": 144,
+            "deletions": 1
+          },
+          {
+            "hash": "f29da4e5f33afa81e06f8146bf89df0a6d356b8e",
+            "messageTitle": "fixed checkstyle issues",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
           }
         ]
       }
@@ -2304,8 +2458,8 @@
         ]
       },
       {
-        "insertions": 29,
-        "deletions": 50,
+        "insertions": 262,
+        "deletions": 93,
         "date": "2019-10-24",
         "commitResults": [
           {
@@ -2314,6 +2468,20 @@
             "messageBody": "",
             "insertions": 29,
             "deletions": 50
+          },
+          {
+            "hash": "ea290b729b91f9921251f0078a0ed11ef319d407",
+            "messageTitle": "Popup locations implemented",
+            "messageBody": "",
+            "insertions": 66,
+            "deletions": 5
+          },
+          {
+            "hash": "ac0056100c0504045b2f55e06333f63975fc80f7",
+            "messageTitle": "Extended schedule view to see up to 4 weeks in advance",
+            "messageBody": "",
+            "insertions": 167,
+            "deletions": 38
           }
         ]
       },
@@ -2356,6 +2524,174 @@
             "messageBody": "",
             "insertions": 0,
             "deletions": 15
+          }
+        ]
+      },
+      {
+        "insertions": 159,
+        "deletions": 48,
+        "date": "2019-10-26",
+        "commitResults": [
+          {
+            "hash": "67405fcf0bbad532222ee337ecff9a9ed0351fa8",
+            "messageTitle": "Implemented schedule view to view schedules up to 4 weeks in advance",
+            "messageBody": "",
+            "insertions": 159,
+            "deletions": 48
+          }
+        ]
+      },
+      {
+        "insertions": 297,
+        "deletions": 274,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "63f1d5566f2f4b0a09b2939405fe5324e69125d5",
+            "messageTitle": "Refactor stage 1",
+            "messageBody": "",
+            "insertions": 78,
+            "deletions": 40
+          },
+          {
+            "hash": "e4d8f50ed642d1a52482a75a0ae1a8f3b89ef042",
+            "messageTitle": "Refactor stage 2",
+            "messageBody": "",
+            "insertions": 219,
+            "deletions": 234
+          }
+        ]
+      },
+      {
+        "insertions": 1027,
+        "deletions": 225,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "ff968a79ce5d89aed6e51aab0ff35fc00ac58726",
+            "messageTitle": "UI enchantments for personalisation",
+            "messageBody": "",
+            "insertions": 520,
+            "deletions": 57
+          },
+          {
+            "hash": "e3b3a6686b393ff291af2ec3ca3aaa83cbf7345c",
+            "messageTitle": "Modified defaultwindowdisplay. Added user stub as a placeholder for the real user. User has been linked to the defaultwindowdisplay.",
+            "messageBody": "",
+            "insertions": 208,
+            "deletions": 91
+          },
+          {
+            "hash": "25caaf18d95f4bc7f3cd904281077b33239d708d",
+            "messageTitle": "Minor changes to upcoming schedule ui",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 7
+          },
+          {
+            "hash": "24e4d2783aa888f295ab0327363f2f8695f3aeb5",
+            "messageTitle": "Set up TestFX for automated GUI testing.",
+            "messageBody": "",
+            "insertions": 272,
+            "deletions": 3
+          },
+          {
+            "hash": "194b6b068fbf3c707ad99c343bdcbed033417d36",
+            "messageTitle": "Trying support for Travis",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 67
+          }
+        ]
+      },
+      {
+        "insertions": 1012,
+        "deletions": 313,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "3afa32c90fedd9ee5bf68a02315394cc5012566d",
+            "messageTitle": "Merge PR from team repo",
+            "messageBody": "",
+            "insertions": 993,
+            "deletions": 260
+          },
+          {
+            "hash": "d28bf93b7fe66e56b8f0ba2c7cd5799028b1941c",
+            "messageTitle": "initial commit",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 29
+          },
+          {
+            "hash": "ae349e4c5458f801e9bcfc5bfce111d05936064d",
+            "messageTitle": "Delay popup command",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "bf87336d2d67dbe9d005c2528ea9392b01bf7f32",
+            "messageTitle": "Fix checkstyle issues",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 23
+          }
+        ]
+      },
+      {
+        "insertions": 388,
+        "deletions": 283,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "652d40ebac9ea6d3c1af637e6647f9812df4628a",
+            "messageTitle": "merge upstream repo stage 2",
+            "messageBody": "",
+            "insertions": 90,
+            "deletions": 62
+          },
+          {
+            "hash": "4a98fe27d6991b3bf939ca1f10b3e7dd6dd4f55c",
+            "messageTitle": "Merge changes complete",
+            "messageBody": "",
+            "insertions": 81,
+            "deletions": 109
+          },
+          {
+            "hash": "a833676c987b292d699506dc98f93d28b80caf1d",
+            "messageTitle": "Closest location data getting errors.",
+            "messageBody": "",
+            "insertions": 59,
+            "deletions": 35
+          },
+          {
+            "hash": "011a5c784c5bd2f665db52910673e1cc1b0fd0ef",
+            "messageTitle": "Fix checkstyle issues. Integrated with GMaps",
+            "messageBody": "",
+            "insertions": 87,
+            "deletions": 65
+          },
+          {
+            "hash": "421499ecc9ec8bd963a433eb4dcadee6e81f4374",
+            "messageTitle": "Lessen opacity for events that are over",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "d0e5105108752de632da59af6dac163adb1a9ddd",
+            "messageTitle": "Added consistent colors to LocationView window and fixed travis checkstyle issues",
+            "messageBody": "",
+            "insertions": 49,
+            "deletions": 9
+          },
+          {
+            "hash": "953c5f706014768ee59211199ebb3b86f7a861aa",
+            "messageTitle": "Remove duplicates and fix merging issues",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 0
           }
         ]
       }
@@ -2738,54 +3074,103 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 154,
+        "deletions": 141,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "8b6f3a6d897382d63691dc62c839812b53c6cdce",
+            "messageTitle": "Add dynamic resizing of suggestions picker UI element",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 11
+          },
+          {
+            "hash": "48bdd5fd3182d3436ef263acca1f9c6317b9e529",
+            "messageTitle": "Fix user guide heading for addgroup command",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "7f24e4fe63364eb87cade283c5fdc205647d1bed",
+            "messageTitle": "Regroup commands in user guide under four subcategories",
+            "messageBody": "",
+            "insertions": 132,
+            "deletions": 126
+          },
+          {
+            "hash": "6845031ed62909e60a4e24fa4d99c96c13086451",
+            "messageTitle": "Name standardization",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "3dceb0ac689b0d712a8a3738752ededcef155922",
+            "messageTitle": "Update command example in user guide to adhere to the new email prefix for addperson command",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "67457073ab47e6bb119c80cb65d0a89fb07d6396",
+            "messageTitle": "Add link to Command Summary to improve user navigability",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "marqueurs404": 3222,
-    "klementtan": 2445,
-    "Alvinnyk": 9591,
-    "YiJiee": 3398,
-    "aidilfbk": 4503
+    "marqueurs404": 3363,
+    "klementtan": 2685,
+    "Alvinnyk": 9822,
+    "YiJiee": 4718,
+    "aidilfbk": 4611
   },
   "authorFileTypeContributionMap": {
     "marqueurs404": {
-      "docs": 214,
-      "tests": 7,
-      "functional": 2961,
+      "docs": 201,
+      "tests": 21,
+      "functional": 3101,
       "other": 40
     },
     "klementtan": {
-      "docs": 160,
-      "tests": 922,
-      "functional": 1361,
-      "other": 2
+      "docs": 292,
+      "tests": 980,
+      "functional": 1407,
+      "other": 6
     },
     "Alvinnyk": {
-      "docs": 77,
-      "tests": 2858,
-      "functional": 6654,
+      "docs": 48,
+      "tests": 2865,
+      "functional": 6907,
       "other": 2
     },
     "YiJiee": {
-      "docs": 170,
-      "tests": 167,
-      "functional": 3058,
-      "other": 3
+      "docs": 132,
+      "tests": 369,
+      "functional": 4206,
+      "other": 11
     },
     "aidilfbk": {
-      "docs": 165,
+      "docs": 267,
       "tests": 2049,
-      "functional": 2287,
+      "functional": 2293,
       "other": 2
     }
   },
   "authorContributionVariance": {
-    "marqueurs404": 447908.25,
-    "klementtan": 65556.46,
-    "Alvinnyk": 767754.9,
-    "YiJiee": 68598.66,
-    "aidilfbk": 98470.35
+    "marqueurs404": 440709.9,
+    "klementtan": 72168.92,
+    "Alvinnyk": 751094.06,
+    "YiJiee": 117781.18,
+    "aidilfbk": 97379.42
   },
   "authorDisplayNameMap": {
     "marqueurs404": "CS2103T-T10-4 ONG P ... ARCUS",

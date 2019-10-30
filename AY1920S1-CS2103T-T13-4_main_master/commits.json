@@ -980,6 +980,41 @@
             "deletions": 5
           }
         ]
+      },
+      {
+        "insertions": 90,
+        "deletions": 131,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "cad67c0b917c147a3b08335851fe5017d5ff7491",
+            "messageTitle": "Add: Folder import (modify duplicate names)",
+            "messageBody": "Useful methods: updateBookmarks(original, newFolder), importFolders()\nwith tree traversal, generateUnusedFolderName(String).\nCommitting this change in case these methods are needed in future.\n\nTests are broken.\n",
+            "insertions": 60,
+            "deletions": 44
+          },
+          {
+            "hash": "c02a0896515798d3b75515868cfb83224a2ccdf8",
+            "messageTitle": "Revert: Remove folder import",
+            "messageBody": "A bookmark is imported to a folder with the same name (if present), or\na folder for imported bookmarks otherwise.\n",
+            "insertions": 8,
+            "deletions": 75
+          },
+          {
+            "hash": "76e8838250ff7c8fe5d24d6bb6796fbcd0b61c47",
+            "messageTitle": "Fix: Improve code coverage",
+            "messageBody": "Add test coverage for existingBookmarks in MarkImporter#equals().\n",
+            "insertions": 14,
+            "deletions": 2
+          },
+          {
+            "hash": "5e0bf791d42307b7a53a8f81171e49b3aae189c1",
+            "messageTitle": "Update: UserGuide for import",
+            "messageBody": "Clarify how bookmarks are imported (with regard to their folders).\nRemove references to feature that will not be implemented by v1.4.\n",
+            "insertions": 8,
+            "deletions": 10
+          }
+        ]
       }
     ],
     "openorclose": [
@@ -1568,6 +1603,48 @@
             "messageBody": "",
             "insertions": 11,
             "deletions": 22
+          }
+        ]
+      },
+      {
+        "insertions": 183,
+        "deletions": 3,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "6cd7c7ca6e83b26ceada4bd80037371aa600ba4a",
+            "messageTitle": "Add delete cache",
+            "messageBody": "",
+            "insertions": 180,
+            "deletions": 0
+          },
+          {
+            "hash": "bd6d46abf0e1af5c7a535167803ff58504974d77",
+            "messageTitle": "Add visibility modifier",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          }
+        ]
+      },
+      {
+        "insertions": 14,
+        "deletions": 2,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "315b6eaa172e725c8016b2c182f1890824a72b84",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: dorcastan \u003c46101221+dorcastan@users.noreply.github.com\u003e",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "5b20463cb25dc962a6286a0dbac84fd7d0fc560c",
+            "messageTitle": "Add tests",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 0
           }
         ]
       }
@@ -2710,8 +2787,8 @@
         ]
       },
       {
-        "insertions": 5,
-        "deletions": 10,
+        "insertions": 383,
+        "deletions": 93,
         "date": "2019-10-29",
         "commitResults": [
           {
@@ -2727,6 +2804,104 @@
             "messageBody": "",
             "insertions": 3,
             "deletions": 6
+          },
+          {
+            "hash": "8db31d8802c8e3c68bf12b06a19b33c3db718e38",
+            "messageTitle": "Support multiple undo/redo",
+            "messageBody": "",
+            "insertions": 182,
+            "deletions": 57
+          },
+          {
+            "hash": "414aa56a44a03d5fb34b0bf2ff3fad9c11698f1a",
+            "messageTitle": "Add tests for Undo/RedoCommandParser",
+            "messageBody": "",
+            "insertions": 72,
+            "deletions": 0
+          },
+          {
+            "hash": "fb3ec8e15957f541b1761c1503c1ed94c2a9a05e",
+            "messageTitle": "Show max number of steps",
+            "messageBody": "",
+            "insertions": 42,
+            "deletions": 6
+          },
+          {
+            "hash": "5545b1f73fc061bf6615c5b764daee89c0e2587a",
+            "messageTitle": "Add tests for Undo/RedoCommand",
+            "messageBody": "",
+            "insertions": 70,
+            "deletions": 8
+          },
+          {
+            "hash": "d18affa34356630d9b886f31fc9e7316c34d7ade",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: dorcastan \u003c46101221+dorcastan@users.noreply.github.com\u003e",
+            "insertions": 12,
+            "deletions": 12
+          }
+        ]
+      },
+      {
+        "insertions": 417,
+        "deletions": 69,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "3006111460fce45f1484bac723bb7f0a29291173",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 6
+          },
+          {
+            "hash": "f65ca966e83a79c8cf1f432a5e173d1a1962a4ec",
+            "messageTitle": "Add tests for FindCommand",
+            "messageBody": "",
+            "insertions": 304,
+            "deletions": 3
+          },
+          {
+            "hash": "e235eb8b9960dce87cc74d1322f239ef16670c72",
+            "messageTitle": "Remove unnecessary exception",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 2
+          },
+          {
+            "hash": "13b23093b82e8a99bce8937ad70e0410fbc28b6a",
+            "messageTitle": "Update find, favorite, goto, undo, redo sections",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 52
+          },
+          {
+            "hash": "aee943da5a2bb99943d854254251b6c25cc02c24",
+            "messageTitle": "Move sorting bookmarks to v2.0",
+            "messageBody": "",
+            "insertions": 23,
+            "deletions": 1
+          },
+          {
+            "hash": "0210e797ae8413eef0d1a95253bf0c5400a082b8",
+            "messageTitle": "Add undo redo examples",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 0
+          },
+          {
+            "hash": "a16d459750b2cb3a925e7dfca5851dc23d7c5d76",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: TSAI, HSIAO-HAN \u003c46244796+TSAI-HSIAO-HAN@users.noreply.github.com\u003e",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "3d877244eeacc00412e81cfe2100426316a10919",
+            "messageTitle": "Fix formatting",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
           }
         ]
       }
@@ -2971,8 +3146,8 @@
         ]
       },
       {
-        "insertions": 55,
-        "deletions": 21,
+        "insertions": 110,
+        "deletions": 27,
         "date": "2019-10-10",
         "commitResults": [
           {
@@ -2981,6 +3156,13 @@
             "messageBody": "",
             "insertions": 55,
             "deletions": 21
+          },
+          {
+            "hash": "a7b9315eb5f3476b21768fbf5e8379898f097b82",
+            "messageTitle": "Add redirection for invalid urls. - redirection does not work atm (Need to validate the url (url exists check))",
+            "messageBody": "",
+            "insertions": 55,
+            "deletions": 6
           }
         ]
       },
@@ -3333,54 +3515,68 @@
             "deletions": 2
           }
         ]
+      },
+      {
+        "insertions": 3,
+        "deletions": 13,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "c8b232c792a4a414c00690b88bf446497ea7fc16",
+            "messageTitle": "Conform to codacy",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 13
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "dorcastan": 5386,
-    "openorclose": 2486,
-    "TSAI-HSIAO-HAN": 1473,
-    "Na-Nazhou": 2123,
-    "kxyoke": 2185
+    "dorcastan": 5344,
+    "openorclose": 2664,
+    "TSAI-HSIAO-HAN": 1470,
+    "Na-Nazhou": 2822,
+    "kxyoke": 2213
   },
   "authorFileTypeContributionMap": {
     "dorcastan": {
-      "docs": 306,
-      "tests": 2687,
-      "functional": 2078,
+      "docs": 308,
+      "tests": 2683,
+      "functional": 2038,
       "other": 315
     },
     "openorclose": {
-      "docs": 368,
-      "tests": 786,
-      "functional": 1183,
+      "docs": 355,
+      "tests": 879,
+      "functional": 1281,
       "other": 149
     },
     "TSAI-HSIAO-HAN": {
-      "docs": 182,
+      "docs": 179,
       "tests": 523,
       "functional": 732,
       "other": 36
     },
     "Na-Nazhou": {
-      "docs": 277,
-      "tests": 674,
-      "functional": 1085,
+      "docs": 361,
+      "tests": 1111,
+      "functional": 1263,
       "other": 87
     },
     "kxyoke": {
-      "docs": 422,
+      "docs": 395,
       "tests": 235,
-      "functional": 1307,
+      "functional": 1362,
       "other": 221
     }
   },
   "authorContributionVariance": {
-    "dorcastan": 740990.25,
-    "openorclose": 59642.7,
-    "TSAI-HSIAO-HAN": 12163.983,
-    "Na-Nazhou": 30608.295,
-    "kxyoke": 37892.766
+    "dorcastan": 727581.94,
+    "openorclose": 58703.176,
+    "TSAI-HSIAO-HAN": 11975.123,
+    "Na-Nazhou": 35737.4,
+    "kxyoke": 37338.91
   },
   "authorDisplayNameMap": {
     "dorcastan": "CS2103T-T13-4 DORCA ... A TAN",
