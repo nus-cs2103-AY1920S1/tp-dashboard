@@ -16942,6 +16942,925 @@
     }
   },
   {
+    "path": "docs/team/marcusteh1238.adoc",
+    "fileType": "docs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "\u003d Teh Hao Rui Marcus - Project Portfolio"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ":site-section: AboutUs"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ":imagesDir: ../images"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ":stylesDir: ../stylesheets"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ":repoURL: https://github.com/AY1920S1-CS2103T-F12-1/main"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "\u003d\u003d Project Horo - Overview"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "Our group of 5 software engineering students were tasked to enhance or morph"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "a basic command line interface Address Book application for our Software Engineering project."
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "We chose to morph it into a personal time management helper app called **Horo**."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "**Horo** enables users to keep tracks of their upcoming tasks and events,"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "reminding users when a deadline or event draws near,"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "and users can also share their data through iCalendar (ICS) files."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "This is how the main page of our app looks like:"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ".Horo\u0027s Graphical User Interface (GUI)"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "image::HoroMainViewDescription.png[]"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "n this project, my role was to design and implement the code for the export and import commands."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "The following sections illustrate these enhancements in more detail,"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "including some of the relevant documentation I have added"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "to the User Guide and Developer Guide in relation to these enhancements."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "Note the following symbols and formatting used in this document:"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "[cols\u003d\"2,5\"]"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "|`export`  | A grey highlight (called a mark-up) indicates that"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "this is a command that can be inputted into the command line and executed by the application.|"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "\u003d\u003d Summary of Contributions"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "This section summarizes my contributions to the team project, including coding and documentation."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "---"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "_Enhancement added:_ The ability to import and export *Horo*’s Event and Task data through ICS files."
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "- How to use it:"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * The command `export` allows users to export *Horo*’s data into an ICS file."
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "        This file will be in the same directory as the *Horo* app."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * The user may use the command `import \u003cfilepath\u003e`, where `\u003cfilepath\u003e` is the path to the ICS file,"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "        or any other *Horo* save file, in order to import its data to the current app."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "- Justification:"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * If users want to share their event details with their friends,"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "        they can easily do so by exporting *Horo*’s save data, sharing the ICS file,"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "        and having their friends import the save data from the file."
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "- Highlights:"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * As ICS is a widely used format for exporting and importing calendars into various calendar apps,"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "        our app can also import and export data to and from other calendar apps."
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * Although there are existing libraries for ICS files, my code is not dependant on any of them,"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "        as I did not want to introduce bugs into our app, thus I wrote a custom parser that better suited our needs."
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "_Code Contributed:_ I mainly contributed code to the “ics” package of our repository."
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    Click the link link:{repoURL}/blob/master/src/main/java/seedu/address/ics/IcsParser.java[here] for a sample of my code!"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "_Other contributions:_"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "- Project Management"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * Managed the release of v1.1."
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * Came up with the code integration workflow."
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "- Documentation:"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * Added information about the ICS package to the User Guide and Developer Guide. (Pull Requests"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "        link:{repoURL}/pull/11[#11], link:{repoURL}/pull/98[#98])"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "- Team:"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * Reviewed Pull Requests with non-trivial review comments:"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "        link:{repoURL}/pull/51[#51], link:{repoURL}/pull/55[#55]"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * Reported bugs found on Horo in the Discord server."
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "- Tools:"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * Integrated Travis Continuous Integration to the team repository."
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "    * Integrated a Github webhook to the team’s Discord server."
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "\u003d\u003d Contributions to the User Guide"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "As part of the requirements, we had to update the original User Guide with instructions"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "regarding how to use our new features."
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "This section contains an excerpt from the User Guide showing how to use the export command."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "---"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "\u003d\u003d\u003d iCalendar (ICS) Integration"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "Horo stores data in the ICS format. Files saved in this format have the extension `.ics`."
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "This allows for data to be imported to and exported from other calendar applications that also use the `.ics` format."
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "\u003d\u003d\u003d\u003d Export current calendar : `export --directory [\"DIRECTORY\"]`"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ".Export Command"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "image::ExportCommandScreenShot.png[]"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ".Exported File"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "image::ExportFileScreenShot.png[]"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "{empty} +"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "The `export` command exports your current calendar as an ICS file to the specified directory."
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "If no directory is specified, the file will be created in the same directory as Horo."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "{empty} +"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "Format: +"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "`export` +"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "`export --directory [\"DIRECTORY\"]`"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "{empty} +"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "Example: +"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "`export --directory \"C:\\Users\\USER_NAME\\Desktop\\Horo\"`"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "{empty} +"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "\u003d\u003d Contributions to the Developer Guide"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "The following section shows my additions to the Horo Developer Guide for the import and export features."
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "---"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "\u003d\u003d\u003d Ics Component"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "*API* : link:{repoURL}/src/main/java/seedu/address/ics/IcsParser.java[`IcsParser.java`]"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "The ICS component is made up of two parts: ICS file importer, and ICS file exporter."
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "The file importer makes use of a custom parser that converts files with the `.ics` file extension"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "to `EventSource` objects in Horo."
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "The file exporter takes the `EventSource` objects stored in the `Model` singleton object and"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "generates ICS String representations of them. Check out the"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "link:https://en.wikipedia.org/wiki/ICalendar[ICalendar Wiki Page] for more information on the specifications."
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "* Can export Horo\u0027s save data as a file"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "The `ICS` Component,with a `.ics` extension."
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "marcusteh1238"
+        },
+        "content": "* Can import other Horo\u0027s save data from a `.ics` file."
+      }
+    ],
+    "authorContributionMap": {
+      "marcusteh1238": 130
+    }
+  },
+  {
     "path": "src/main/java/seedu/address/MainApp.java",
     "fileType": "functional",
     "lines": [

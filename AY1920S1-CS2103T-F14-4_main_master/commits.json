@@ -335,8 +335,8 @@
         ]
       },
       {
-        "insertions": 309,
-        "deletions": 24,
+        "insertions": 464,
+        "deletions": 138,
         "date": "2019-10-30",
         "commitResults": [
           {
@@ -345,6 +345,13 @@
             "messageBody": "",
             "insertions": 309,
             "deletions": 24
+          },
+          {
+            "hash": "0e127817e8692bf8255af82b2a0cf87d1c8d50f6",
+            "messageTitle": "Added List and Clear Command. Fixed bugs mentioned in issues. (#137)",
+            "messageBody": "* Updated EditTaskCommand to fix replace status problem.\r\n\r\n* Added EditC,EditD, findC,findD into addressbook parser. Removed those unnecessary commands.\r\n\r\n* Updated UG guide link for help command\r\n\r\n* Fixed the window size to MAX. Disabled resize window button. Changed name of app to Deliveria.\r\n\r\n* Added List Command which reset the task,driver and customer list to its original predicate.\r\n\r\n* Removed unnecessary commands tests\r\n\r\n* Added Clear command and updated clear command test.\r\n\r\n* Updated clear command usage to indicate `CONFIRM` as case sensitive.\r\n",
+            "insertions": 155,
+            "deletions": 114
           }
         ]
       }
@@ -396,6 +403,20 @@
             "messageBody": "* added a skeleton of view DriverTasks command\r\n\r\n* extra spacing\r\n\r\n* fixed bugs\r\n\r\n* added TaskList onto the right of the Ui\r\n\r\n* Updated CustomerList and TaskList UI display\r\n\r\n* UI update for assigned and unassigned task\r\n\r\n* fix test driver and customer sample\r\n\r\n* Fix unassigned and assigned tasklist taking the same list ID\r\n\r\n* Rename taskList to AssignedTaskList\r\nAdded Headings for each list\r\nAdded description under each lists\r\n\r\n* fixed display layout example for assign\r\nUse driver Index instead of the deprecated Index class\r\n\r\n* deleted sample and reset back before merge\r\n\r\n* remove redundant set tasks\r\n\r\n* Added toString for TaskList.\r\n\r\n* Fixed tasks not showing in UI.\r\n\r\n* update checkstyle.\r\n\r\n* Added Send button under the commandbox\r\n",
             "insertions": 743,
             "deletions": 91
+          }
+        ]
+      },
+      {
+        "insertions": 250,
+        "deletions": 106,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "321c467c1e7be3f2983b4af57983ea06bcd73dd2",
+            "messageTitle": "Fix card and format list (#139)",
+            "messageBody": "* added a skeleton of view DriverTasks command\r\n\r\n* extra spacing\r\n\r\n* fixed bugs\r\n\r\n* added TaskList onto the right of the Ui\r\n\r\n* Updated CustomerList and TaskList UI display\r\n\r\n* UI update for assigned and unassigned task\r\n\r\n* fix test driver and customer sample\r\n\r\n* Fix unassigned and assigned tasklist taking the same list ID\r\n\r\n* Rename taskList to AssignedTaskList\r\nAdded Headings for each list\r\nAdded description under each lists\r\n\r\n* fixed display layout example for assign\r\nUse driver Index instead of the deprecated Index class\r\n\r\n* deleted sample and reset back before merge\r\n\r\n* remove redundant set tasks\r\n\r\n* Added toString for TaskList.\r\n\r\n* Fixed tasks not showing in UI.\r\n\r\n* update checkstyle.\r\n\r\n* Added Send button under the commandbox\r\n\r\n* Re-format Driver List, Unassigned and Assigned TaskLists and CustomerList\r\n\r\n* fix checkstyle issues\r\n\r\n* New layout and removed Assigned: for Incomplete Delivery task list\r\n\r\n* Remove person list and update check style\r\n",
+            "insertions": 250,
+            "deletions": 106
           }
         ]
       }
@@ -554,52 +575,66 @@
             "deletions": 15
           }
         ]
+      },
+      {
+        "insertions": 310,
+        "deletions": 61,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "d824ec0c389c1777980fea9c4e178ef1a3042e7e",
+            "messageTitle": "Fix #127: suggested time is no longer in the past (#141)",
+            "messageBody": "",
+            "insertions": 310,
+            "deletions": 61
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "SamYJ2606": 767,
-    "cheeyou": 961,
-    "junnbang": 3975,
-    "ArgVampir": 799,
-    "tysng": 1704
+    "SamYJ2606": 763,
+    "cheeyou": 944,
+    "junnbang": 4096,
+    "ArgVampir": 1012,
+    "tysng": 1987
   },
   "authorFileTypeContributionMap": {
     "SamYJ2606": {
       "docs": 88,
       "tests": 29,
-      "functional": 426,
+      "functional": 422,
       "other": 224
     },
     "cheeyou": {
       "docs": 8,
       "tests": 30,
-      "functional": 923
+      "functional": 906
     },
     "junnbang": {
       "docs": 585,
-      "tests": 429,
-      "functional": 2801,
+      "tests": 452,
+      "functional": 2899,
       "other": 160
     },
     "ArgVampir": {
       "docs": 16,
       "tests": 30,
-      "functional": 753
+      "functional": 966
     },
     "tysng": {
       "docs": 545,
-      "tests": 272,
-      "functional": 764,
+      "tests": 444,
+      "functional": 875,
       "other": 123
     }
   },
   "authorContributionVariance": {
-    "SamYJ2606": 15145.818,
-    "cheeyou": 17246.94,
-    "junnbang": 81004.555,
-    "ArgVampir": 12925.445,
-    "tysng": 22680.822
+    "SamYJ2606": 14883.595,
+    "cheeyou": 16946.744,
+    "junnbang": 83168.56,
+    "ArgVampir": 14676.5625,
+    "tysng": 24136.174
   },
   "authorDisplayNameMap": {
     "SamYJ2606": "CS2103T-F14-4 SAM Y ... G JEK",

@@ -161,6 +161,34 @@
             "deletions": 26
           }
         ]
+      },
+      {
+        "insertions": 16,
+        "deletions": 0,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "5380588692acc24d46a362067fcf7fe860327dfc",
+            "messageTitle": "Update class diagram (#160)",
+            "messageBody": "* DG update\r\n\r\n* Change class diagram\r\n",
+            "insertions": 16,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 7,
+        "deletions": 270,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "698a71171be58638ec8bbd1ac154506367f1bc9b",
+            "messageTitle": "Remove delete (#171)",
+            "messageBody": "* DG update\r\n\r\n* Remove command\r\n\r\n* Remove delete command\r\n\r\n* fix build\r\n\r\n* fix typo\r\n",
+            "insertions": 7,
+            "deletions": 270
+          }
+        ]
       }
     ],
     "C-likethis123": [
@@ -291,8 +319,8 @@
         ]
       },
       {
-        "insertions": 461,
-        "deletions": 422,
+        "insertions": 503,
+        "deletions": 427,
         "date": "2019-10-30",
         "commitResults": [
           {
@@ -315,6 +343,34 @@
             "messageBody": "* Add more messages detailing result of each match\r\n\r\nPreviously there were only messages detailing if\r\nthe command succeeded or failed.\r\n\r\nNow some new types of messages are added:\r\n- If the command matches a specific patient, the message\r\ndetails which patient was matched with all donors.\r\n- If no matches were found, the resulting message states that.\r\n- Messages to provide details on how many matches, and for which patient\r\n\r\n* Beautify UI of displayed matches\r\n\r\nThe following changes were made to the UI:\r\n* Success rate is to be displayed in 2 decimal places instead of one long string\r\n* Match results to be displayed in red\r\n* Nric of patient and donor to be prefixed with \"Nric: \" followed\r\nby the NRIC of the person.\r\n\r\n* Create new ModelStub for testing\r\n\r\nPreviously a private ModelStub class was created for both AddCommandTest\r\nand MatchCommandTest. This resulted in duplication of code whenever the\r\nModel implementation changed.\r\n\r\nThis ModelStub class will now be used by all classes, removing the duplication\r\nof code.\r\n\r\n* Edit messages according to PR review\r\n\r\n* Edit tests based on changed messages\r\n\r\n* Edit test cases based on changes\r\n\r\n* Change error thrown in getMatchList\r\n\r\n* Changed AssertionError to assert statements\r\n",
             "insertions": 221,
             "deletions": 297
+          },
+          {
+            "hash": "68d17a31dbdc175d83adc8ca18766ae0b6f9872b",
+            "messageTitle": "More edits to developer guide (#159)",
+            "messageBody": "* Edit diagrams given in existing AB3 Guide\r\n\r\n* Improve explanation of match feature\r\n\r\nChanges to the explanation are as follows:\r\n* Discuss different aspects in the Logic, UI and Model section.\r\n* Include code snippets for better understanding\r\n\r\nTo Do:\r\n* Add sequence diagrams\r\n* Add class diagrams\r\n* Expand on design considerations\r\n\r\n* Edit developer guide\r\n\r\n* Add on to developer guide\r\n\r\n* Make changes according to PR\r\n",
+            "insertions": 42,
+            "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 117,
+        "deletions": 39,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "4c0e99e8e5035d3eab750c819c00a928b2fa7b4d",
+            "messageTitle": "Remove mention of positive blood types (#168)",
+            "messageBody": "* Remove mention of positive blood types\r\n\r\n* Edit test cases to remove positive signs\r\n",
+            "insertions": 56,
+            "deletions": 22
+          },
+          {
+            "hash": "7e9a678d3044aed3a69f462e8d67963ca175a0a7",
+            "messageTitle": "Minor UI edits (#169)",
+            "messageBody": "* Increase size of Message Display Box\r\n\r\n* Modify ListCards\r\n\r\nChanges made:\r\n* NRIC is displayed as a normal attribute, not a tag\r\n* Status and Priority is displayed as a tag\r\n\r\n* Change colour according to value\r\n\r\nPriority colour scheme is as follows:\r\n* Red for High Priority\r\n* Orange for Medium Priority\r\n* Green for Low Priority\r\n\r\nStatus colour scheme is as follows:\r\n* Dark blue for not processing\r\n* Light blue for processing",
+            "insertions": 61,
+            "deletions": 17
           }
         ]
       }
@@ -387,6 +443,48 @@
             "messageBody": "* Change Typical Persons naming format to `PERSONTYPE_PERSONNAME`\r\n\r\n* Fix checkstyle issues\r\n\r\n* Fix missing whitespace in Doctor and Patient Test classes\r\n\r\n* Correctness fix for `PERSON_AMY` to `DOCTOR_AMY` and `PERSON_BOB` to `PATIENT_BOB`\r\n\r\n* Fix checkstyle\r\n",
             "insertions": 551,
             "deletions": 527
+          }
+        ]
+      },
+      {
+        "insertions": 405,
+        "deletions": 185,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "9d08fe1dc0b6790ebb8a4ad12c2876e0f191e652",
+            "messageTitle": "Implement basic find by prefix feature (#143)",
+            "messageBody": "* WIP: change findcommandparser\r\n\r\n* Implement find by prefix\r\n\r\n* Fix ModelManagerTest and fix error when user key in multi-word prefix inputs\r\n\r\n* Fix tests\r\n\r\n* Fix checkstyle\r\n\r\n* Refactor PersonContainsPrefixesPredicate#test by extract method\r\n\r\n* Fix displaying people who do not possess input attributes at all\r\n\r\n* Fix typo in PersonContainsPrefixesPredicate\r\n\r\n* Add guard clause to detect wrong find command preamble\r\n\r\n* Fix tests\r\n\r\n* Fix checkstyle\r\n\r\n* Change tissuetype finding to be irrespective of order\r\n\r\n* Add null check for FindCommand predicate and remove errant print statements\r\n\r\n* Fix empty tissue types being parsed into list containing empty string\r\n\r\n* Change string literal \"find\" to FindCommand.COMMAND_WORD\r\n",
+            "insertions": 333,
+            "deletions": 170
+          },
+          {
+            "hash": "ab387afb663e9ae84838796ac7be04cb894f44ff",
+            "messageTitle": "Update User Guide for Find by Prefix Feature (#158)",
+            "messageBody": "* Add screenshot to showcase find by prefix feature\r\n\r\n* Update find command section in User Guide\r\n\r\n* Update find command section in User Guide\r\n",
+            "insertions": 31,
+            "deletions": 15
+          },
+          {
+            "hash": "2a4e12b6f0e9b80e92ec4c37746f3bee841c25af",
+            "messageTitle": "Update developer guide with rough workflow of Find (#162)",
+            "messageBody": "* Update DG with rough workflow of Find\r\n\r\n* Update DG with rough workflow of Find\r\n",
+            "insertions": 41,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 118,
+        "deletions": 27,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "9707403685db8ad694d45602b892f3ddece18e5d",
+            "messageTitle": "Improve dummy data generation (#172)",
+            "messageBody": "* Add dummy data generation in SampleDataUtil\r\n\r\n* Fix checkstyle\r\n",
+            "insertions": 118,
+            "deletions": 27
           }
         ]
       }
@@ -494,6 +592,20 @@
             "messageBody": "* Add sort feature.\r\n\r\n* Add comparators.\r\n\r\n* Add sort command and parser.\r\n\r\n* Update sort list display on window.\r\n\r\n* Fix checkstyle.\r\n\r\n* Fix checkstyle.\r\n\r\n* Fix test checkstyle.\r\n\r\n* Fix checkstyle.\r\n",
             "insertions": 353,
             "deletions": 10
+          }
+        ]
+      },
+      {
+        "insertions": 83,
+        "deletions": 56,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "865eecc78a415e0bfe7f05a94d415c370234d5e5",
+            "messageTitle": "Update ugdg (#153)",
+            "messageBody": "* Update model class diagram image.\r\n\r\n* Remove API links in dg.\r\n\r\n* Update ug.\r\n\r\n* Update sort sequence diagram.\r\n\r\n* Fix checkstyle.\r\n\r\n* Amend english.\r\n\r\n* Change bullets.\r\n",
+            "insertions": 83,
+            "deletions": 56
           }
         ]
       }
@@ -610,52 +722,74 @@
             "deletions": 188
           }
         ]
+      },
+      {
+        "insertions": 896,
+        "deletions": 70,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "4cc245f08bea0b2766d9cb18172745c3007a6ebf",
+            "messageTitle": "Implement minimal version of Processing Command (#127)",
+            "messageBody": "* WIP: ProcessingCommand\r\n\r\n* Adding method to check if patient and donor exist\r\n\r\n* Able to process 2 ic/ and return the default list out\r\n\r\n* delete unused imports\r\n\r\n* fixed issues regarding processing and matching\r\n\r\n* null pointer errors arise\r\n\r\n* remove the using of storage for the tasklist\r\n\r\n* not able to update list\r\n\r\n* markAsDone is done\r\n\r\n* made setter method for processinglist\r\n\r\n* setter changes\r\n\r\n* processingmark command done\r\n\r\n* some test cases added\r\n\r\n* checkstyle\r\n\r\n* checkstyles\r\n\r\n* Model issues\r\n\r\n* Model issues\r\n\r\n* null pointer fixes\r\n\r\n* null pointer fixes\r\n\r\n* checkstyle\r\n\r\n* checkstyle\r\n\r\n* checkstyle\r\n\r\n* command completed. Test cases not yet\r\n\r\n* trying to revert the conflict removal\r\n\r\n* command completed. Test cases not yet\r\n\r\n* command completed. Test cases not yet\r\n\r\n* command completed. Test cases not yet\r\n",
+            "insertions": 701,
+            "deletions": 52
+          },
+          {
+            "hash": "55e527f06ff42e7d472f1350e736c21212016087",
+            "messageTitle": "Done-command (#155)",
+            "messageBody": "* test cases not ready\r\n\r\n* added parser\r\n\r\n* eof added\r\n\r\n* checkstyle issues half fixed\r\n\r\n* checkstyles\r\n\r\n* ammended from comments\r\n\r\n* eof added\r\n\r\n* trying to revert the conflict removal\r\n\r\n* trying to revert the conflict removal\r\n\r\n* trying to revert the conflict removal\r\n\r\n* trying to revert the conflict removal\r\n\r\n* trying to revert the conflict removal\r\n\r\n* command completed. Test cases not yet\r\n",
+            "insertions": 195,
+            "deletions": 18
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "WilliamRyank": 4590,
-    "C-likethis123": 3769,
-    "TheRealRavager": 1404,
-    "Yen-Peng": 859,
-    "SimNee": 933
+    "WilliamRyank": 4588,
+    "C-likethis123": 3824,
+    "TheRealRavager": 1870,
+    "Yen-Peng": 911,
+    "SimNee": 1770
   },
   "authorFileTypeContributionMap": {
     "WilliamRyank": {
-      "docs": 156,
-      "tests": 1490,
-      "functional": 2944
+      "docs": 159,
+      "tests": 1485,
+      "functional": 2927,
+      "other": 17
     },
     "C-likethis123": {
-      "docs": 565,
-      "tests": 1603,
-      "functional": 1504,
+      "docs": 551,
+      "tests": 1618,
+      "functional": 1558,
       "other": 97
     },
     "TheRealRavager": {
-      "docs": 15,
-      "tests": 879,
-      "functional": 509,
+      "docs": 83,
+      "tests": 1010,
+      "functional": 776,
       "other": 1
     },
     "Yen-Peng": {
-      "docs": 85,
+      "docs": 137,
       "tests": 175,
       "functional": 463,
       "other": 136
     },
     "SimNee": {
-      "docs": 78,
-      "tests": 454,
-      "functional": 401
+      "docs": 79,
+      "tests": 538,
+      "functional": 1153
     }
   },
   "authorContributionVariance": {
-    "WilliamRyank": 184741.3,
-    "C-likethis123": 109245.54,
-    "TheRealRavager": 184270.56,
-    "Yen-Peng": 4838.5674,
-    "SimNee": 8139.6255
+    "WilliamRyank": 181784.02,
+    "C-likethis123": 108721.984,
+    "TheRealRavager": 185949.9,
+    "Yen-Peng": 5006.402,
+    "SimNee": 23514.475
   },
   "authorDisplayNameMap": {
     "WilliamRyank": "CS2103T-T13-1 WILLI ... SNADI",

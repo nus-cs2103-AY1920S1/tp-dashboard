@@ -1688,9 +1688,9 @@
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "CowSaysBaa"
+          "gitId": "Kzrthikz"
         },
-        "content": "Responsibilities: Grade Manager"
+        "content": "Responsibilities: Deadline Manager"
       },
       {
         "lineNumber": 37,
@@ -1834,8 +1834,9 @@
       }
     ],
     "authorContributionMap": {
+      "Kzrthikz": 1,
       "-": 32,
-      "CowSaysBaa": 24
+      "CowSaysBaa": 23
     }
   },
   {
@@ -28997,171 +28998,178 @@
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return new CommandResult(generateSuccessMessage(moduleToAddDeadline));"
+        "content": "        return new CommandResult(generateSuccessMessage(moduleToAddDeadline),"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "                false, true, false);"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * Generates a command execution success message based on whether the deadline is added to or removed from"
+        "content": "    /**"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * {@code moduleToAddDeadline}."
+        "content": "     * Generates a command execution success message based on whether the deadline is added to or removed from"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     */"
+        "content": "     * {@code moduleToAddDeadline}."
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    private String generateSuccessMessage(TrackedModule moduleToAddDeadline) {"
+        "content": "     */"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        String message \u003d !deadline.getDescription().isEmpty() ? MESSAGE_ADD_DEADLINE_SUCCESS"
+        "content": "    private String generateSuccessMessage(TrackedModule moduleToAddDeadline) {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "                : MESSAGE_DELETE_DEADLINE_SUCCESS;"
+        "content": "        String message \u003d !deadline.getDescription().isEmpty() ? MESSAGE_ADD_DEADLINE_SUCCESS"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return String.format(message, moduleToAddDeadline);"
+        "content": "                : MESSAGE_DELETE_DEADLINE_SUCCESS;"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "        return String.format(message, moduleToAddDeadline);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "            return true;"
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        }"
+        "content": "            return true;"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        if (!(other instanceof AddDeadlineCommand)) {"
+        "content": "        }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "            return false;"
+        "content": "        if (!(other instanceof AddDeadlineCommand)) {"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        }"
+        "content": "            return false;"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        AddDeadlineCommand e \u003d (AddDeadlineCommand) other;"
+        "content": "        }"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return index.equals(e.deadline);"
+        "content": "        AddDeadlineCommand e \u003d (AddDeadlineCommand) other;"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "        return index.equals(e.deadline);"
       },
       {
         "lineNumber": 75,
+        "author": {
+          "gitId": "Kzrthikz"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
         "author": {
           "gitId": "Kzrthikz"
         },
@@ -29169,7 +29177,7 @@
       }
     ],
     "authorContributionMap": {
-      "Kzrthikz": 74,
+      "Kzrthikz": 75,
       "alexwxh": 1
     }
   },
@@ -29591,80 +29599,87 @@
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return new CommandResult(generateSuccessMessage(moduleToDeleteDeadline));"
+        "content": "        return new CommandResult(generateSuccessMessage(moduleToDeleteDeadline),"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "                false, true, false);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * Generates a command execution success message based on whether the deadline task is removed from"
+        "content": "    /**"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * {@code moduleToDeleteDeadline}."
+        "content": "     * Generates a command execution success message based on whether the deadline task is removed from"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     */"
+        "content": "     * {@code moduleToDeleteDeadline}."
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    private String generateSuccessMessage(TrackedModule moduleToDeleteDeadline) {"
+        "content": "     */"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        String message \u003d MESSAGE_DELETE_DEADLINE_SUCCESS;"
+        "content": "    private String generateSuccessMessage(TrackedModule moduleToDeleteDeadline) {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return String.format(message, moduleToDeleteDeadline);"
+        "content": "        String message \u003d MESSAGE_DELETE_DEADLINE_SUCCESS;"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "        return String.format(message, moduleToDeleteDeadline);"
       },
       {
         "lineNumber": 56,
+        "author": {
+          "gitId": "Kzrthikz"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
         "author": {
           "gitId": "Kzrthikz"
         },
@@ -29672,7 +29687,7 @@
       }
     ],
     "authorContributionMap": {
-      "Kzrthikz": 56
+      "Kzrthikz": 57
     }
   },
   {
@@ -29985,80 +30000,87 @@
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return new CommandResult(generateSuccessMessage(moduleToMarkDone));"
+        "content": "        return new CommandResult(generateSuccessMessage(moduleToMarkDone),"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "                false, true, false);"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * Generates a command execution success message based on whether the deadline task is marked as done from"
+        "content": "    /**"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * {@code moduleMarkDone}."
+        "content": "     * Generates a command execution success message based on whether the deadline task is marked as done from"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     */"
+        "content": "     * {@code moduleMarkDone}."
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    private String generateSuccessMessage(TrackedModule moduleToMarkDone) {"
+        "content": "     */"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        String message \u003d MESSAGE_DONE_DEADLINE_SUCCESS;"
+        "content": "    private String generateSuccessMessage(TrackedModule moduleToMarkDone) {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return String.format(message, moduleToMarkDone);"
+        "content": "        String message \u003d MESSAGE_DONE_DEADLINE_SUCCESS;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "        return String.format(message, moduleToMarkDone);"
       },
       {
         "lineNumber": 55,
+        "author": {
+          "gitId": "Kzrthikz"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
         "author": {
           "gitId": "Kzrthikz"
         },
@@ -30066,7 +30088,7 @@
       }
     ],
     "authorContributionMap": {
-      "Kzrthikz": 55
+      "Kzrthikz": 56
     }
   },
   {
@@ -30493,87 +30515,94 @@
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return new CommandResult(generateSuccessMessage(moduleToEditDescription));"
+        "content": "        return new CommandResult(generateSuccessMessage(moduleToEditDescription),"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "                false, true, false);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * Generates a command execution success message based on whether the description of deadline task is edited in"
+        "content": "    /**"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * {@code moduleToEditDescription}."
+        "content": "     * Generates a command execution success message based on whether the description of deadline task is edited in"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     */"
+        "content": "     * {@code moduleToEditDescription}."
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    private String generateSuccessMessage(TrackedModule moduleToEditDescription) {"
+        "content": "     */"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        String message \u003d !deadline.getDescription().isEmpty() ? MESSAGE_EDIT_DEADLINE_SUCCESS"
+        "content": "    private String generateSuccessMessage(TrackedModule moduleToEditDescription) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "                : MESSAGE_EDIT_DEADLINE_FAIL;"
+        "content": "        String message \u003d !deadline.getDescription().isEmpty() ? MESSAGE_EDIT_DEADLINE_SUCCESS"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return String.format(message, moduleToEditDescription);"
+        "content": "                : MESSAGE_EDIT_DEADLINE_FAIL;"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "        return String.format(message, moduleToEditDescription);"
       },
       {
         "lineNumber": 47,
+        "author": {
+          "gitId": "Kzrthikz"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
         "author": {
           "gitId": "Kzrthikz"
         },
@@ -30581,7 +30610,7 @@
       }
     ],
     "authorContributionMap": {
-      "Kzrthikz": 47
+      "Kzrthikz": 48
     }
   },
   {
@@ -30824,87 +30853,94 @@
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return new CommandResult(generateSuccessMessage(moduleToEditTime));"
+        "content": "        return new CommandResult(generateSuccessMessage(moduleToEditTime),"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "                false, true, false);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * Generates a command execution success message based on whether the time of deadline task is edited in"
+        "content": "    /**"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * {@code moduleToEditTime}."
+        "content": "     * Generates a command execution success message based on whether the time of deadline task is edited in"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     */"
+        "content": "     * {@code moduleToEditTime}."
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    private String generateSuccessMessage(TrackedModule moduleToEditTime) {"
+        "content": "     */"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        String message \u003d !deadline.getDescription().isEmpty() ? MESSAGE_EDIT_DEADLINE_SUCCESS"
+        "content": "    private String generateSuccessMessage(TrackedModule moduleToEditTime) {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "                : MESSAGE_EDIT_DEADLINE_FAIL;"
+        "content": "        String message \u003d !deadline.getDescription().isEmpty() ? MESSAGE_EDIT_DEADLINE_SUCCESS"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return String.format(message, moduleToEditTime);"
+        "content": "                : MESSAGE_EDIT_DEADLINE_FAIL;"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "        return String.format(message, moduleToEditTime);"
       },
       {
         "lineNumber": 46,
+        "author": {
+          "gitId": "Kzrthikz"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
         "author": {
           "gitId": "Kzrthikz"
         },
@@ -30912,7 +30948,7 @@
       }
     ],
     "authorContributionMap": {
-      "Kzrthikz": 46
+      "Kzrthikz": 47
     }
   },
   {
@@ -31239,80 +31275,87 @@
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return new CommandResult(generateSuccessMessage(moduleToMarkInProgress));"
+        "content": "        return new CommandResult(generateSuccessMessage(moduleToMarkInProgress),"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "                false, true, false);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * Generates a command execution success message based on whether the deadline task is marked as done from"
+        "content": "    /**"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     * {@code moduleToMarkInProgress}."
+        "content": "     * Generates a command execution success message based on whether the deadline task is marked as done from"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "     */"
+        "content": "     * {@code moduleToMarkInProgress}."
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    private String generateSuccessMessage(TrackedModule moduleToMarkInProgress) {"
+        "content": "     */"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        String message \u003d MESSAGE_IN_PROGRESS_DEADLINE_SUCCESS;"
+        "content": "    private String generateSuccessMessage(TrackedModule moduleToMarkInProgress) {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "        return String.format(message, moduleToMarkInProgress);"
+        "content": "        String message \u003d MESSAGE_IN_PROGRESS_DEADLINE_SUCCESS;"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "Kzrthikz"
         },
-        "content": "    }"
+        "content": "        return String.format(message, moduleToMarkInProgress);"
       },
       {
         "lineNumber": 57,
+        "author": {
+          "gitId": "Kzrthikz"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
         "author": {
           "gitId": "Kzrthikz"
         },
@@ -31320,7 +31363,7 @@
       }
     ],
     "authorContributionMap": {
-      "Kzrthikz": 57
+      "Kzrthikz": 58
     }
   },
   {
@@ -61239,98 +61282,98 @@
       {
         "lineNumber": 2,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": ""
       },
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "import javafx.fxml.FXML;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "import javafx.scene.control.Label;"
       },
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "-"
-        },
-        "content": "import javafx.scene.layout.FlowPane;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "import javafx.scene.layout.HBox;"
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 6,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "import javafx.scene.layout.Region;"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 7,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "import seedu.module.model.module.Module;"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 8,
         "author": {
-          "gitId": "Kzrthikz"
-        },
-        "content": "import seedu.module.model.module.Trackable;"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": ""
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 9,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "/**"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 10,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": " * An UI component that displays information of a {@code Module}."
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 11,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": " */"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 12,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "public class ModuleCard extends UiPart\u003cRegion\u003e {"
       },
       {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "CowSaysBaa"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "CowSaysBaa"
+        },
+        "content": "    private static final String FXML \u003d \"ModuleListCard.fxml\";"
+      },
+      {
         "lineNumber": 15,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": ""
       },
@@ -61339,68 +61382,68 @@
         "author": {
           "gitId": "CowSaysBaa"
         },
-        "content": "    private static final String FXML \u003d \"ModuleListCard.fxml\";"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "     * Note: Certain keywords such as \"location\" and \"resources\" are reserved keywords in JavaFX."
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 18,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "     * As a consequence, UI elements\u0027 variable names cannot be set to such keywords"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 19,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "     * or an exception will be thrown by JavaFX during runtime."
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 20,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 21,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "     * @see \u003ca href\u003d\"https://github.com/se-edu/addressbook-level4/issues/336\"\u003eThe issue on AddressBook level 4\u003c/a\u003e"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 22,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "     */"
       },
       {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "CowSaysBaa"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "CowSaysBaa"
+        },
+        "content": "    public final Module module;"
+      },
+      {
         "lineNumber": 25,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": ""
       },
@@ -61409,33 +61452,33 @@
         "author": {
           "gitId": "CowSaysBaa"
         },
-        "content": "    public final Module module;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
-        "content": ""
+        "content": "    private HBox cardPane;"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "    @FXML"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
-        "content": "    private HBox cardPane;"
+        "content": "    private Label moduleCode;"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "    @FXML"
       },
@@ -61444,12 +61487,12 @@
         "author": {
           "gitId": "CowSaysBaa"
         },
-        "content": "    private Label moduleCode;"
+        "content": "    private Label title;"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "    @FXML"
       },
@@ -61458,12 +61501,12 @@
         "author": {
           "gitId": "CowSaysBaa"
         },
-        "content": "    private Label title;"
+        "content": "    private Label description;"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "    @FXML"
       },
@@ -61472,272 +61515,207 @@
         "author": {
           "gitId": "CowSaysBaa"
         },
-        "content": "    private Label description;"
+        "content": "    private Label id;"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "CowSaysBaa"
         },
-        "content": "    private Label id;"
+        "content": "    public ModuleCard(Module module, int displayedIndex) {"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "-"
-        },
-        "content": "    @FXML"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "Kzrthikz"
-        },
-        "content": "    private Label deadline;"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    @FXML"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    private FlowPane tags;"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 43,
-        "author": {
           "gitId": "CowSaysBaa"
-        },
-        "content": "    public ModuleCard(Module module, int displayedIndex) {"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "-"
         },
         "content": "        super(FXML);"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 39,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "        this.module \u003d module;"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 40,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "        id.setText(displayedIndex + \". \");"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 41,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "        moduleCode.setText(module.getModuleCode());"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 42,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "        title.setText(module.getTitle());"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 43,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "        description.setText(module.getDescription());"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 44,
         "author": {
-          "gitId": "Kzrthikz"
-        },
-        "content": "        if (module instanceof Trackable) {"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "Kzrthikz"
-        },
-        "content": "            deadline.setText(((Trackable) module).getDeadline());"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "Kzrthikz"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 45,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": ""
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 46,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 47,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "    public boolean equals(Object other) {"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 48,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "        // short circuit if same object"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 49,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "        if (other \u003d\u003d this) {"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 50,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "            return true;"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 51,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 52,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": ""
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 53,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "        // instanceof handles nulls"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 54,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "        if (!(other instanceof ModuleCard)) {"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 55,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "            return false;"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 56,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 57,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": ""
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 58,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "        // state check"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 59,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "        ModuleCard card \u003d (ModuleCard) other;"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 60,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "        return id.getText().equals(card.id.getText())"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 61,
         "author": {
           "gitId": "CowSaysBaa"
         },
         "content": "                \u0026\u0026 module.equals(card.module);"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 62,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 63,
         "author": {
-          "gitId": "-"
+          "gitId": "CowSaysBaa"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "Kzrthikz": 5,
-      "-": 49,
-      "CowSaysBaa": 18
+      "CowSaysBaa": 63
     }
   },
   {
@@ -68929,26 +68907,19 @@
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "Kzrthikz"
+          "gitId": "CowSaysBaa"
         },
-        "content": "            \u003cLabel fx:id\u003d\"deadline\" styleClass\u003d\"cell_small_label\" text\u003d\"\\$deadline\"/\u003e"
+        "content": "        \u003c/VBox\u003e"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "CowSaysBaa"
         },
-        "content": "        \u003c/VBox\u003e"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "CowSaysBaa"
-        },
         "content": "    \u003c/GridPane\u003e"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 32,
         "author": {
           "gitId": "CowSaysBaa"
         },
@@ -68956,7 +68927,6 @@
       }
     ],
     "authorContributionMap": {
-      "Kzrthikz": 1,
       "CowSaysBaa": 32
     }
   },
@@ -69707,61 +69677,96 @@
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "alexwxh"
+          "gitId": "Kzrthikz"
         },
-        "content": "         \u003cHBox alignment\u003d\"BOTTOM_LEFT\"\u003e"
+        "content": "         \u003cHBox alignment\u003d\"CENTER_LEFT\" spacing\u003d\"5\" VBox.vgrow\u003d\"ALWAYS\"\u003e"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "alexwxh"
+          "gitId": "Kzrthikz"
         },
         "content": "            \u003cchildren\u003e"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "alexwxh"
+          "gitId": "Kzrthikz"
         },
-        "content": "               \u003cLabel styleClass\u003d\"label-bright\" text\u003d\"Links: \" /\u003e"
+        "content": "               \u003cLabel fx:id\u003d\"deadline\" styleClass\u003d\"label-bright\" text\u003d\"\\$deadline\" /\u003e"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "alexwxh"
+          "gitId": "Kzrthikz"
         },
-        "content": "               \u003cFlowPane fx:id\u003d\"links\" alignment\u003d\"BOTTOM_LEFT\" /\u003e"
+        "content": "            \u003c/children\u003e"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "alexwxh"
+          "gitId": "Kzrthikz"
         },
-        "content": "            \u003c/children\u003e"
+        "content": "         \u003c/HBox\u003e"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "         \u003c/HBox\u003e"
+        "content": "         \u003cHBox alignment\u003d\"BOTTOM_LEFT\"\u003e"
       },
       {
         "lineNumber": 50,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            \u003cchildren\u003e"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "               \u003cLabel styleClass\u003d\"label-bright\" text\u003d\"Links: \" /\u003e"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "               \u003cFlowPane fx:id\u003d\"links\" alignment\u003d\"BOTTOM_LEFT\" /\u003e"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            \u003c/children\u003e"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "         \u003c/HBox\u003e"
+      },
+      {
+        "lineNumber": 55,
         "author": {
           "gitId": "geshuming"
         },
         "content": "        \u003c/VBox\u003e"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 56,
         "author": {
           "gitId": "geshuming"
         },
         "content": "  \u003c/content\u003e"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 57,
         "author": {
           "gitId": "geshuming"
         },
@@ -69770,6 +69775,7 @@
     ],
     "authorContributionMap": {
       "geshuming": 45,
+      "Kzrthikz": 5,
       "alexwxh": 7
     }
   },

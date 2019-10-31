@@ -1484,25 +1484,130 @@
             "deletions": 62
           }
         ]
+      },
+      {
+        "insertions": 12,
+        "deletions": 11,
+        "date": "2019-10-26",
+        "commitResults": [
+          {
+            "hash": "a53b647387ecc0d5537f235cfec8ad43b206ea6f",
+            "messageTitle": "Several more small dev guide fixes Trim DiaryFillPageCallback sequence diagram",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 11
+          }
+        ]
+      },
+      {
+        "insertions": 1772,
+        "deletions": 375,
+        "date": "2019-10-27",
+        "commitResults": [
+          {
+            "hash": "cd65e17df547616f3e1659f697dd411dd8bb61aa",
+            "messageTitle": "Changes : - Small ui changes - Change AppendDiaryEntryCommand to not commit changes immediately if user is in edit mode as per other DiaryEntry editing commands - Add InsertDiaryEntryCommand / Parser - More javadocs - More general code cleanup (access modifiers, style, slap methods, reduce overt Law of Demeter violations) - Changed getReadOnlyDiaryEntries to getDiaryEntrySortedList as SortedList is already unmodifiable - Changed fillButtonBar to only run when a change is detected in the SortedList of DiaryEntry - Refactor commands and parsers pertaining to editing DiaryEntry\u0027s text to subpackage entry, and changed class names to be more semantic - Refactor ImageChooser to commons.util",
+            "messageBody": "",
+            "insertions": 677,
+            "deletions": 270
+          },
+          {
+            "hash": "71d6c922140998897b5c3dbb77a2042c6df5911b",
+            "messageTitle": "Changes : - add a few more javadocs - Standardised deleteParagraph in EditDiaryEntryDescriptor to use Index - Removed negative index checks in EditDiaryEntryDescriptor as it is impossible for Index to hold negative indexes on top of the relavant command parsers already checking for negative indexes - Fix EditDiaryEntryDescriptor toString not equals to DiaryEntry toString",
+            "messageBody": "Changes (Test) :\n- 100% coverage for all diary model classes\n",
+            "insertions": 1074,
+            "deletions": 82
+          },
+          {
+            "hash": "fa475457ed25aa265f6e911750d53d1e57449d46",
+            "messageTitle": "Fixes : - checkstyle compliance",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 22
+          },
+          {
+            "hash": "430e4cfd700c30e7fa8b72d50ede40fb636a1269",
+            "messageTitle": "Changes : - Slight tweak to diaryEditBox background color",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 395,
+        "deletions": 62,
+        "date": "2019-10-28",
+        "commitResults": [
+          {
+            "hash": "406bb24dcb691749d989a7879839fb2da3fc0fe5",
+            "messageTitle": "Fixes: - Wrong alignment for DiaryLine photoCardsDisplay when graphic is to be placed on the left - Refactored magic number for padding in DiaryLine to class level constant",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 2
+          },
+          {
+            "hash": "c95efe1c28be2e00032b9e6f8e65d961c090fc95",
+            "messageTitle": "Changes (diary UserGuide): - add complete introductory sections to diary section - add command sections (without intended images currently) to diary section",
+            "messageBody": "",
+            "insertions": 192,
+            "deletions": 32
+          },
+          {
+            "hash": "1f05326e91ee9e9633240adade20a4753403edd6",
+            "messageTitle": "Add images for many more diary user guide sections",
+            "messageBody": "",
+            "insertions": 193,
+            "deletions": 26
+          },
+          {
+            "hash": "725cc8cec41adbcf0f58e8f525f49637cb8841fd",
+            "messageTitle": "Add newline at userguide.adoc eof",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "a2df47becbbb9fd879a4c272491b7278bb79c76a",
+            "messageTitle": "Small fix for DiaryPage SwapRightToGallery not swapping the photoList when the page is flipped",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 97,
+        "deletions": 5,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "39ff1106fdb43050017124e26643bf39090a1428",
+            "messageTitle": "Changes (docs) - add tags to user and developer guide diary sections for display in project portfolio - add initial draft for project portfolio page - change link in AboutUs to link to project portfolio page",
+            "messageBody": "",
+            "insertions": 97,
+            "deletions": 5
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "teoha": 7014,
-    "eizon05": 726,
+    "teoha": 7006,
+    "eizon05": 725,
     "SakshiPradyumn": 0,
-    "arjunwangty": 4939,
-    "ang-zeyu": 9402
+    "arjunwangty": 4938,
+    "ang-zeyu": 11218
   },
   "authorFileTypeContributionMap": {
     "teoha": {
       "docs": 363,
       "tests": 1142,
-      "functional": 5308,
+      "functional": 5300,
       "other": 201
     },
     "eizon05": {
-      "docs": 99,
+      "docs": 98,
       "tests": 8,
       "functional": 619
     },
@@ -1512,15 +1617,15 @@
       "functional": 0
     },
     "arjunwangty": {
-      "docs": 13,
+      "docs": 12,
       "tests": 466,
       "functional": 4460
     },
     "ang-zeyu": {
-      "docs": 391,
-      "tests": 759,
-      "functional": 7825,
-      "other": 427
+      "docs": 789,
+      "tests": 1763,
+      "functional": 8240,
+      "other": 426
     }
   },
   "authorContributionVariance": {
@@ -1528,7 +1633,7 @@
     "eizon05": 7033.0933,
     "SakshiPradyumn": 0.0,
     "arjunwangty": 190785.58,
-    "ang-zeyu": 432677.88
+    "ang-zeyu": 485143.2
   },
   "authorDisplayNameMap": {
     "teoha": "CS2103T-T11-4 DERRI ...  YING",

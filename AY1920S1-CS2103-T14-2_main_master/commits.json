@@ -161,6 +161,34 @@
             "deletions": 40
           }
         ]
+      },
+      {
+        "insertions": 150,
+        "deletions": 90,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "ce61a96f218bc8ddf14536bcbbdc061479bdbfb3",
+            "messageTitle": "Minor edits (#110)",
+            "messageBody": "* Added ability to mark attendance\r\n\r\n* Added stub tests for MarkAttendanceCommand and MarkAttendanceCommandParser\r\n\r\n* Added ability to add multiple pending commands\r\n\r\n* Added ability to mark attendance of all students in a tutorial\r\n\r\n* Added ability for user to input multiple commands\r\n\r\n* Added ability to export attendance\r\n\r\n* Fixed bug where attendance marking is cancelled after no command is inputted\r\nThrows CommandException when invalid week is entered to mark attendance\r\n\r\n* Added index functionality for MarkAttendanceCommand, ExportAttendanceCommand\r\nAdded tests for MarkAttendanceCommand, MarkAttendanceCommandParser,\r\nExportAttendanceCommand, ExportAttendanceCommandParser\r\n\r\n* Added ability to remove Student from Attendance\r\n\r\n* Added Assignment, ability to add/delete Assignments\r\n\r\n* Fixed model.setStudent(), EditCommandTest\r\n\r\n* Added ability to add/delete/edit Events, hourly tracking\r\n\r\n* Added ability to add/delete/edit Events, hourly tracking\r\n\r\n* Add devdocs for Mark Attendance feature\r\n\r\n* Added stub tests for AssignmentCommands, Assignment\r\nAdded ability to set Assignment score\r\n\r\n* Added ability to import Tutorials via NUSMods url\r\nChanged multiple commands input delimiter from \u0027\u0026\u0027 to \u0027+\u0027\r\nFixed bug where updating of events is incorrect when semester start is set to a future date\r\nFixed bug where non index format for SetAssignmentCommand is not parsed correctly\r\n\r\n* Updated NUSMods data source to API v2, fixed JSON parsing errors\r\n\r\n* Minor edits\r\n\r\n* Update user guide\r\n",
+            "insertions": 49,
+            "deletions": 30
+          },
+          {
+            "hash": "47be7d9f0e8a9d913c4eeb38d7d38e96a0febbaa",
+            "messageTitle": "Last minute bug fixing (#113)",
+            "messageBody": "* Added ability to mark attendance\r\n\r\n* Added stub tests for MarkAttendanceCommand and MarkAttendanceCommandParser\r\n\r\n* Added ability to add multiple pending commands\r\n\r\n* Added ability to mark attendance of all students in a tutorial\r\n\r\n* Added ability for user to input multiple commands\r\n\r\n* Added ability to export attendance\r\n\r\n* Fixed bug where attendance marking is cancelled after no command is inputted\r\nThrows CommandException when invalid week is entered to mark attendance\r\n\r\n* Added index functionality for MarkAttendanceCommand, ExportAttendanceCommand\r\nAdded tests for MarkAttendanceCommand, MarkAttendanceCommandParser,\r\nExportAttendanceCommand, ExportAttendanceCommandParser\r\n\r\n* Added ability to remove Student from Attendance\r\n\r\n* Added Assignment, ability to add/delete Assignments\r\n\r\n* Fixed model.setStudent(), EditCommandTest\r\n\r\n* Added ability to add/delete/edit Events, hourly tracking\r\n\r\n* Added ability to add/delete/edit Events, hourly tracking\r\n\r\n* Add devdocs for Mark Attendance feature\r\n\r\n* Added stub tests for AssignmentCommands, Assignment\r\nAdded ability to set Assignment score\r\n\r\n* Added ability to import Tutorials via NUSMods url\r\nChanged multiple commands input delimiter from \u0027\u0026\u0027 to \u0027+\u0027\r\nFixed bug where updating of events is incorrect when semester start is set to a future date\r\nFixed bug where non index format for SetAssignmentCommand is not parsed correctly\r\n\r\n* Updated NUSMods data source to API v2, fixed JSON parsing errors\r\n\r\n* Minor edits\r\n\r\n* Update user guide\r\n\r\n* Improved importing of Tutorials\r\n",
+            "insertions": 62,
+            "deletions": 32
+          },
+          {
+            "hash": "2ef1cdb6f71764ef37c922d45534852df6253858",
+            "messageTitle": "Minor bug fixes",
+            "messageBody": "",
+            "insertions": 39,
+            "deletions": 28
+          }
+        ]
       }
     ],
     "Ellieyee": [
@@ -441,6 +469,20 @@
             "messageBody": "* Add assignment GUI\r\n\r\n* Add DisplayAssignmentCommand\r\n\r\n* Add DisplayAssignmentScoreParser\r\n\r\n* Update SetScoreCommand to display assignment graph\r\n",
             "insertions": 1043,
             "deletions": 7
+          }
+        ]
+      },
+      {
+        "insertions": 413,
+        "deletions": 173,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "477d2846ca6fa2027db4ef8de6fd0626e5001922",
+            "messageTitle": "Update histogram and userguide (#108)",
+            "messageBody": "* Update attendance tableview\r\n\r\n* Update histogram function\r\n\r\n* Update userguide\r\n\r\n* Update Userguide - deleteCommand\r\n\r\n* Fix userguide deletCommand and update UI.png\r\n",
+            "insertions": 413,
+            "deletions": 173
           }
         ]
       }
@@ -1084,46 +1126,67 @@
             "deletions": 47
           }
         ]
+      },
+      {
+        "insertions": 91,
+        "deletions": 40,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "549f0d43f9f5112c0bd7a808fedd6b71514a56ce",
+            "messageTitle": "Fix command text field bugs (#114)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n",
+            "insertions": 62,
+            "deletions": 34
+          },
+          {
+            "hash": "19be88a893d6cc1d5f0064f966e955f23a8cab9d",
+            "messageTitle": "Fix unclickable text input field (#115)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n\r\n* Fix unclickable \"smol white speck\" text input field\r\n\r\n* Improve focusing for input text box\r\n",
+            "insertions": 29,
+            "deletions": 6
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 7503,
-    "Ellieyee": 6377,
-    "AhmadHatziq": 3018,
-    "lumos309": 6386
+    "ZiHawkEye": 7604,
+    "Ellieyee": 6636,
+    "AhmadHatziq": 2978,
+    "lumos309": 6427
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
-      "docs": 28,
+      "docs": 34,
       "tests": 2554,
-      "functional": 4894,
+      "functional": 4989,
       "other": 27
     },
     "Ellieyee": {
-      "docs": 113,
+      "docs": 197,
       "tests": 2784,
-      "functional": 3475,
+      "functional": 3650,
       "other": 5
     },
     "AhmadHatziq": {
-      "docs": 418,
+      "docs": 397,
       "tests": 370,
-      "functional": 2223,
+      "functional": 2204,
       "other": 7
     },
     "lumos309": {
-      "docs": 111,
+      "docs": 114,
       "tests": 2822,
-      "functional": 3111,
+      "functional": 3149,
       "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 157573.1,
-    "Ellieyee": 224692.08,
-    "AhmadHatziq": 56904.824,
-    "lumos309": 62241.85
+    "ZiHawkEye": 154867.58,
+    "Ellieyee": 223209.28,
+    "AhmadHatziq": 55994.316,
+    "lumos309": 61134.02
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",
