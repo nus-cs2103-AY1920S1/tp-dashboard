@@ -1717,6 +1717,41 @@
             "deletions": 8
           }
         ]
+      },
+      {
+        "insertions": 105,
+        "deletions": 59,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "73dfb013944edf5310b388e15bc18f5a050d5986",
+            "messageTitle": "Removed images from loan slip for now",
+            "messageBody": "",
+            "insertions": 39,
+            "deletions": 27
+          },
+          {
+            "hash": "e1a4b4b1d33989b097211cb7a8dac3bfb6a62a05",
+            "messageTitle": "Changed constants",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "085c76c5379855857938734b374a61d6d1231e1b",
+            "messageTitle": "Full screen",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 3
+          },
+          {
+            "hash": "fbe4b34cf20bda449d1866ae0c875c0eb7cfb463",
+            "messageTitle": "Fix resource retrieval",
+            "messageBody": "",
+            "insertions": 39,
+            "deletions": 27
+          }
+        ]
       }
     ],
     "seeziyang": [
@@ -2855,6 +2890,223 @@
             "deletions": 6
           }
         ]
+      },
+      {
+        "insertions": 1647,
+        "deletions": 631,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "5dad07b3a0ba652b3d81db36a7f6f8175ed7852c",
+            "messageTitle": "implement ReversibleCommand interface",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 0
+          },
+          {
+            "hash": "6d8c30b056c2c38fbb0087e9d8ae046323e79741",
+            "messageTitle": "add AddCommand to implement ReversibleCommand",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 1
+          },
+          {
+            "hash": "066094b9d2cf972909e133b8a89e5c1bfd91b2e3",
+            "messageTitle": "add DeleteCommand to implement ReversibleCommand",
+            "messageBody": "",
+            "insertions": 31,
+            "deletions": 3
+          },
+          {
+            "hash": "9d0749116b532ba730ede1de2ad134f7c7a48f7e",
+            "messageTitle": "add DoneCommand to ReversibleCommand",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 2
+          },
+          {
+            "hash": "74881f1bf32313baa376707933026136499bd648",
+            "messageTitle": "update ReversibleCommand interface",
+            "messageBody": "-Added isUndoRedoCommand to check whether the command is an undo redo command\n",
+            "insertions": 7,
+            "deletions": 0
+          },
+          {
+            "hash": "8950aacc7f49a585621c304df25df68e13cd1f78",
+            "messageTitle": "update commands",
+            "messageBody": "-Updated Add, Delete and Done Command to fit new ReversibleCommand interface\n",
+            "insertions": 76,
+            "deletions": 7
+          },
+          {
+            "hash": "f3327e3994477d9fdc32c07c96170cd753cc834b",
+            "messageTitle": "add ServeCommand to ReversibleCommand",
+            "messageBody": "",
+            "insertions": 45,
+            "deletions": 4
+          },
+          {
+            "hash": "305287911de746b04a2f70b011f086586be34c23",
+            "messageTitle": "add SetCommand to ReversibleCommand",
+            "messageBody": "",
+            "insertions": 50,
+            "deletions": 2
+          },
+          {
+            "hash": "db4da393d6220363de70d0e42c67a2ea077f7d34",
+            "messageTitle": "add EditBorrowerCommand to ReversibleCommand",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 7
+          },
+          {
+            "hash": "658f0d9c8d24d7acef4eb77329c240686f8fd1fc",
+            "messageTitle": "add EditCommand to ReversibleCommand",
+            "messageBody": "",
+            "insertions": 216,
+            "deletions": 21
+          },
+          {
+            "hash": "4d1ecc330ad85067e83e1182b816aa503aec65ff",
+            "messageTitle": "add RegisterCommand to ReversibleCommand",
+            "messageBody": "",
+            "insertions": 39,
+            "deletions": 2
+          },
+          {
+            "hash": "85f4bbeff8d72d20df7caa57946c0087b0e64e09",
+            "messageTitle": "add UnregisterCommand to ReversibleCommand",
+            "messageBody": "",
+            "insertions": 41,
+            "deletions": 3
+          },
+          {
+            "hash": "86e888951bd5f1560ba5bf0c84feba53c6189d3c",
+            "messageTitle": "add LoanCommand to ReversibleCommand",
+            "messageBody": "-Added UnloanCommand to undo LoanCommand.\n",
+            "insertions": 163,
+            "deletions": 193
+          },
+          {
+            "hash": "f404a1e14b53092783c67b69f69fb179c8e0cf76",
+            "messageTitle": "add RenewCommand to ReversibleCommand",
+            "messageBody": "-Added UnrenewCommand to undo RenewCommand.\n",
+            "insertions": 149,
+            "deletions": 2
+          },
+          {
+            "hash": "b4ff2ecb2d423dcc352482119b1e29070032b329",
+            "messageTitle": "add ReturnCommand to ReversibleCommand",
+            "messageBody": "-Added UnreturnCommand to undo ReturnCommand.\n-Refactor RenewCommand, UnloanCommand and UnrenewCommand.\n",
+            "insertions": 179,
+            "deletions": 4
+          },
+          {
+            "hash": "996d33ee810edcc12b5b13dfd9c9198c5af6945b",
+            "messageTitle": "add CommandHistory class",
+            "messageBody": "",
+            "insertions": 114,
+            "deletions": 0
+          },
+          {
+            "hash": "a3311d1adb007108fc181786d9065af9ae075a94",
+            "messageTitle": "update Model and ModelManager",
+            "messageBody": "-Added CommandHistory to ModelManager.\n-Added commitCommand, undoCommand and redoCommand to Model and ModelManager.\n",
+            "insertions": 44,
+            "deletions": 4
+          },
+          {
+            "hash": "b0a0f099cf81d02e472115f9fdc1743cdbbb4520",
+            "messageTitle": "add UndoCommand",
+            "messageBody": "",
+            "insertions": 29,
+            "deletions": 0
+          },
+          {
+            "hash": "7a07a89a6192368e86ab0521240ba8106b70f7fc",
+            "messageTitle": "add RedoCommand",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 0
+          },
+          {
+            "hash": "d7c094c90ce1948da350ec8b548641362861d516",
+            "messageTitle": "fix regression test",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 0
+          },
+          {
+            "hash": "478603ea4d5c150c19499166602c5a5378d7fe05",
+            "messageTitle": "add UndoCommandParser",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 0
+          },
+          {
+            "hash": "90fb38d654936f5b472e079a669f21ed88b2386c",
+            "messageTitle": "add RedoCommandParser",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 0
+          },
+          {
+            "hash": "f4e62a59f5c6242456704f7664eb2a6d4b179d0e",
+            "messageTitle": "update CatalogParser",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 0
+          },
+          {
+            "hash": "1521941a495c98bed786250a686cf2ae1e9ed454",
+            "messageTitle": "update HelpWindow",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 9
+          },
+          {
+            "hash": "5c2b623c4b5b6537d736e7501f4af43d667523ec",
+            "messageTitle": "fix undo/redo feature",
+            "messageBody": "-Removed isUndoRedoCommand method from ReversibleCommand as it was not required.\n-Refactored UnloanCommand, UnrenewCommand and UnreturnCommand.\n-Added canUndoCommand and canRedoCommand checks to UndoCommand and RedoCommand respectively.\n",
+            "insertions": 109,
+            "deletions": 296
+          },
+          {
+            "hash": "7915b8e17a88be162fa42b6abdfdc39e18384a0c",
+            "messageTitle": "update dg",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 32
+          },
+          {
+            "hash": "0a38c5040aba0067304ce62d3a5f4ba54edb70ae",
+            "messageTitle": "fix dg diagrams",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 9
+          },
+          {
+            "hash": "fa6afe94c405c4bd38372bd13f462d9dd0238b3f",
+            "messageTitle": "fix checkstyle",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 2
+          },
+          {
+            "hash": "89aba46f388752fc5b72e38493eaf191d4396a55",
+            "messageTitle": "fix undo/redo bugs",
+            "messageBody": "-Fixed a bug with the redoing of loan command.\n",
+            "insertions": 32,
+            "deletions": 23
+          },
+          {
+            "hash": "8fb733a218abd4589b27992ec12d7c0a91586b08",
+            "messageTitle": "fix checkstyle",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 5
+          }
+        ]
       }
     ],
     "shiyao821": [
@@ -3274,50 +3526,50 @@
     ]
   },
   "authorFinalContributionMap": {
-    "linyutinglyt": 2086,
-    "hoholyin": 4757,
-    "seeziyang": 4936,
-    "Cronyxx": 1678,
-    "shiyao821": 2528
+    "linyutinglyt": 2080,
+    "hoholyin": 4796,
+    "seeziyang": 4933,
+    "Cronyxx": 2713,
+    "shiyao821": 2538
   },
   "authorFileTypeContributionMap": {
     "linyutinglyt": {
       "docs": 66,
-      "tests": 1023,
-      "functional": 931,
+      "tests": 1033,
+      "functional": 915,
       "other": 66
     },
     "hoholyin": {
-      "docs": 377,
+      "docs": 376,
       "tests": 2097,
-      "functional": 2047,
+      "functional": 2087,
       "other": 236
     },
     "seeziyang": {
       "docs": 618,
-      "tests": 2046,
-      "functional": 2083,
+      "tests": 2056,
+      "functional": 2070,
       "other": 189
     },
     "Cronyxx": {
-      "docs": 70,
-      "tests": 691,
-      "functional": 801,
+      "docs": 111,
+      "tests": 716,
+      "functional": 1770,
       "other": 116
     },
     "shiyao821": {
       "docs": 324,
       "tests": 634,
-      "functional": 1432,
+      "functional": 1442,
       "other": 138
     }
   },
   "authorContributionVariance": {
-    "linyutinglyt": 25405.13,
-    "hoholyin": 570207.94,
-    "seeziyang": 50831.246,
-    "Cronyxx": 22483.297,
-    "shiyao821": 101353.75
+    "linyutinglyt": 25030.621,
+    "hoholyin": 560346.1,
+    "seeziyang": 50237.844,
+    "Cronyxx": 107797.99,
+    "shiyao821": 99818.26
   },
   "authorDisplayNameMap": {
     "linyutinglyt": "CS2103T-F13-1 LIN Y ... UTING",

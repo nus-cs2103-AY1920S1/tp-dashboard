@@ -268,8 +268,8 @@
         ]
       },
       {
-        "insertions": 408,
-        "deletions": 186,
+        "insertions": 446,
+        "deletions": 194,
         "date": "2019-10-31",
         "commitResults": [
           {
@@ -313,6 +313,13 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          },
+          {
+            "hash": "581a9d82c996cf796df16a12f3ba41dab8b01a84",
+            "messageTitle": "feat(ui): enhance appointment panel on MainWindow",
+            "messageBody": "",
+            "insertions": 38,
+            "deletions": 8
           }
         ]
       }
@@ -569,6 +576,83 @@
             "deletions": 7
           }
         ]
+      },
+      {
+        "insertions": 1495,
+        "deletions": 280,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "87f4cd20fc4df9d10e7ac05b21aa4d0fb6d42584",
+            "messageTitle": "fix: appointment system parallel updates",
+            "messageBody": "",
+            "insertions": 330,
+            "deletions": 134
+          },
+          {
+            "hash": "a2e1b7a446cb6c795bb3482e9232a0d2967cba6a",
+            "messageTitle": "chore: major appointment system refactoring",
+            "messageBody": "",
+            "insertions": 113,
+            "deletions": 72
+          },
+          {
+            "hash": "2293e507acb9ec72772ddabf0f972898f96c7944",
+            "messageTitle": "chore: additional appointment system refactoring",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 8
+          },
+          {
+            "hash": "bf8b545783b0af7ee928eb517a3f0de843e9630b",
+            "messageTitle": "chore: appointments test v1",
+            "messageBody": "",
+            "insertions": 791,
+            "deletions": 0
+          },
+          {
+            "hash": "834d00ff3b5041b1781f77a15b5ea3a200f3124c",
+            "messageTitle": "docs: update UG for appointments",
+            "messageBody": "",
+            "insertions": 36,
+            "deletions": 12
+          },
+          {
+            "hash": "0c1aec5cdf55301c8858f9e109074d781ec04e42",
+            "messageTitle": "docs: update DG for appointments",
+            "messageBody": "",
+            "insertions": 147,
+            "deletions": 47
+          },
+          {
+            "hash": "a43326d595158590296b2f00f48248362541e25c",
+            "messageTitle": "fix: checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 3
+          },
+          {
+            "hash": "dd9a7326b8e86a603775be5a3da85cd62ffe279d",
+            "messageTitle": "fix: restrict invalid days for appointments (#118)",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 0
+          },
+          {
+            "hash": "ca18f1be6a3b4aca2daf14e0700684e5275334a5",
+            "messageTitle": "chore: detect collisions on AppointmentList for sync with AppointmentTable",
+            "messageBody": "",
+            "insertions": 53,
+            "deletions": 4
+          },
+          {
+            "hash": "58033544be90e80cb377a761a668f0d0e602d8af",
+            "messageTitle": "feat: sort appointments on app launch",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 0
+          }
+        ]
       }
     ],
     "Wingedevil": [
@@ -751,6 +835,27 @@
             "messageBody": "",
             "insertions": 66,
             "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 10,
+        "deletions": 10,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "11982f14a61e2604094c9bb251619d034668e90b",
+            "messageTitle": "docs: update activity diagram",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 9
+          },
+          {
+            "hash": "a2f8851d54435b8a4514a562ad9872bc2ccee539",
+            "messageTitle": "doc: add missing new line",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
           }
         ]
       }
@@ -1098,6 +1203,20 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 36,
+        "deletions": 15,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "72579763fef43b970638b3a9beb01a21991b15a3",
+            "messageTitle": "docs: Updated UG images",
+            "messageBody": "",
+            "insertions": 36,
+            "deletions": 15
+          }
+        ]
       }
     ],
     "gachia": [
@@ -1247,54 +1366,68 @@
             "deletions": 24
           }
         ]
+      },
+      {
+        "insertions": 208,
+        "deletions": 19,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "5630435d9dc004375108de386f910ea330257c68",
+            "messageTitle": "Fixed Reminders GUI not updating (#113)",
+            "messageBody": "* Fixed Reminders GUI not updating\r\n\r\nfix (dirty): Created a AppointmentList class to handle data for GUI usage, while Appointment Table still stores the data in jsonfile. Both run in parallel, which means data is added in both objects when using Reminder Command.\r\nfix: some renaming for better clarity and format\r\ntemp: disabled delete and sort reminder command as they are not ready for v1.3\r\n@ReignOfComputer will continue refactoring this.\r\n\r\n* Removed DeleteReminder command test\r\n\r\nbecause command is currently disabled\r\n",
+            "insertions": 208,
+            "deletions": 19
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "Q-gabe": 1345,
-    "ReignOfComputer": 1354,
-    "Wingedevil": 1230,
-    "SQwQ": 2546,
-    "gachia": 566
+    "Q-gabe": 1375,
+    "ReignOfComputer": 2694,
+    "Wingedevil": 1226,
+    "SQwQ": 2562,
+    "gachia": 653
   },
   "authorFileTypeContributionMap": {
     "Q-gabe": {
-      "docs": 394,
+      "docs": 386,
       "tests": 0,
-      "functional": 796,
+      "functional": 834,
       "other": 155
     },
     "ReignOfComputer": {
-      "docs": 262,
-      "tests": 56,
-      "functional": 972,
+      "docs": 413,
+      "tests": 846,
+      "functional": 1371,
       "other": 64
     },
     "Wingedevil": {
-      "docs": 56,
-      "tests": 431,
+      "docs": 54,
+      "tests": 429,
       "functional": 599,
       "other": 144
     },
     "SQwQ": {
-      "docs": 174,
+      "docs": 190,
       "tests": 636,
       "functional": 1565,
       "other": 171
     },
     "gachia": {
       "docs": 40,
-      "tests": 24,
-      "functional": 427,
+      "tests": 29,
+      "functional": 509,
       "other": 75
     }
   },
   "authorContributionVariance": {
-    "Q-gabe": 14745.882,
-    "ReignOfComputer": 17885.123,
-    "Wingedevil": 4676.2046,
-    "SQwQ": 76835.266,
-    "gachia": 2966.158
+    "Q-gabe": 15446.386,
+    "ReignOfComputer": 69559.45,
+    "Wingedevil": 4594.4834,
+    "SQwQ": 75503.03,
+    "gachia": 3664.4382
   },
   "authorDisplayNameMap": {
     "Q-gabe": "CS2103T-F12-2 GABRI ... N XIN",

@@ -765,8 +765,8 @@
         ]
       },
       {
-        "insertions": 3,
-        "deletions": 1,
+        "insertions": 558,
+        "deletions": 130,
         "date": "2019-10-31",
         "commitResults": [
           {
@@ -775,6 +775,160 @@
             "messageBody": "",
             "insertions": 3,
             "deletions": 1
+          },
+          {
+            "hash": "dc0a0da259c5db3407d68059a1facf0dac2278b8",
+            "messageTitle": "Add more command tips in help",
+            "messageBody": "",
+            "insertions": 56,
+            "deletions": 20
+          },
+          {
+            "hash": "9f038e9c9175ef162329879b87b7c26968542557",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 11
+          },
+          {
+            "hash": "ad52b59eadd4175109f41c9a8a0334840025ed2d",
+            "messageTitle": "Add view commands",
+            "messageBody": "",
+            "insertions": 319,
+            "deletions": 1
+          },
+          {
+            "hash": "d9d602c3be3ca10c5234d54d5f3960d79b44c582",
+            "messageTitle": "Change ACTIVITY_TO_PRIORITISE",
+            "messageBody": "To LOCATION_OF_ACTIVITIES\n",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "b4ff22c37e2ab3db84268537bfb7f3e598e102fc",
+            "messageTitle": "Rename message_usage",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 1
+          },
+          {
+            "hash": "91dc4348f844331fcf568e352340b95ad85a279c",
+            "messageTitle": "Morph List Command (#123)",
+            "messageBody": "* Implement list commands\r\n\r\n* Comment out ListContactCommandTest\r\n\r\nListCommand functionality has changed. A new test\r\nfor this will be created in a future pull request.\r\n\r\n* Add more commands to help\r\n",
+            "insertions": 162,
+            "deletions": 95
+          }
+        ]
+      },
+      {
+        "insertions": 270,
+        "deletions": 115,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "5a00fbf9ed5f3aab137c68c97d95e8cccf3d51b6",
+            "messageTitle": "Enhance GUI (#126)",
+            "messageBody": "* Implement list commands\r\n\r\n* Comment out ListContactCommandTest\r\n\r\nListCommand functionality has changed. A new test\r\nfor this will be created in a future pull request.\r\n\r\n* Add more commands to help\r\n\r\n* Add more fields to activity card\r\n\r\nAnd clean up unused fields in the gui\r\n",
+            "insertions": 100,
+            "deletions": 29
+          },
+          {
+            "hash": "707706ae84158e47e498b42bc918c0ecd9f86a6a",
+            "messageTitle": "Allow individual viewing of card (#128)",
+            "messageBody": "",
+            "insertions": 88,
+            "deletions": 27
+          },
+          {
+            "hash": "29eaa1cb2c21d010d326a18a3f5e8fed5a380ce5",
+            "messageTitle": "Enhance view command",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 4
+          },
+          {
+            "hash": "5e33385304d1cde14e80120a6d5a7ddb7f19bc65",
+            "messageTitle": "Allow command to change ui focus",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 2
+          },
+          {
+            "hash": "fff0c5f593611034e22bec6554c51921d36c221c",
+            "messageTitle": "Fix bug where ui does not update",
+            "messageBody": "Listener in agenda listens to the list of days. Since day is a list\nof activity, when the list of activity mutates, agenda fails to receive\nan update because it only checks on days mutation and not the\ninternal mutation of day.\n\nTemporarily fix the bug by forcing an update to\nItinerary when Ui focuses on itinerary\n",
+            "insertions": 8,
+            "deletions": 5
+          },
+          {
+            "hash": "5375eb19cde3550eb75df12b22fc2a38fea1d0b7",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "7705980a152a7c2ec26f866eeb6918969afb5964",
+            "messageTitle": "Change hasActivity in Day",
+            "messageBody": "From getActivity() \u003d\u003d activity to getActivity.equals(activity)\n",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "805935e5bfd02867b3005dab1e289667d52659b8",
+            "messageTitle": "Fix trying to compare activitywithtime with activity bug",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 4
+          },
+          {
+            "hash": "59f2ec1e3afea279c4ec6ac473bd6998cf6142c1",
+            "messageTitle": "Fix agenda not updating after edit activity bug",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 5
+          },
+          {
+            "hash": "f21781ce8907b560f18a98f1ddece8f15de4dd2c",
+            "messageTitle": "Fix add days skin bug",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
+          },
+          {
+            "hash": "d29309d84e9355e1270803ad73196e181124c58e",
+            "messageTitle": "Fix no update to ui bug",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 2
+          },
+          {
+            "hash": "1c961e201ca1f951c6b323c51d174493a19adcb2",
+            "messageTitle": "Update UG",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 32
+          },
+          {
+            "hash": "865c1e4af39f32a617c0258a08d43fcd9eeba14c",
+            "messageTitle": "Fix help command not clearing help tab",
+            "messageBody": "Before adding more cards\n",
+            "insertions": 1,
+            "deletions": 0
+          },
+          {
+            "hash": "03adba59792d1c60935e347ecac607e136c4c69d",
+            "messageTitle": "Temporarily force update of itinerary with clear",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "3196960b07ee14c96711e56de35b2c5eb5f15487",
+            "messageTitle": "Update CommandTestUtil",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 2
           }
         ]
       }
@@ -1064,6 +1218,195 @@
             "messageBody": "* Create Undoable Events for Add Commands\r\n\r\n* Create new Undoable Events for Delete Commands (WIP)\r\n\r\n* Add Undo, Redo and CommandHistory files\r\n\r\n* Add Undoable Events for Delete commands\r\n\r\n* Add Undo Events for Edit commands\r\n\r\n* Fix Checkstyle\r\n\r\n* Remove EditDayEvent.java file\r\n\r\n* Fix bugs in undoing a delete command\r\n\r\n* Fix tests\r\n",
             "insertions": 1335,
             "deletions": 34
+          }
+        ]
+      },
+      {
+        "insertions": 442,
+        "deletions": 101,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "3768e48bf7b03b59da6b548a10d7880b4fa2c13a",
+            "messageTitle": "Implement undo event for clear event",
+            "messageBody": "",
+            "insertions": 81,
+            "deletions": 25
+          },
+          {
+            "hash": "3cd8f736a6ffd6e8f9451c69ede7f55907dd6cd6",
+            "messageTitle": "Implement undo for AddDay command",
+            "messageBody": "",
+            "insertions": 74,
+            "deletions": 33
+          },
+          {
+            "hash": "a5ac45f1b9089999da0eb72969674604087f5e1e",
+            "messageTitle": "Implement undo redo for DeleteDay (WIP)",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 4
+          },
+          {
+            "hash": "0070cf095936ecd56d3c55b5007968ef0c7cc1db",
+            "messageTitle": "Implement undo redo for DeleteDay command",
+            "messageBody": "",
+            "insertions": 90,
+            "deletions": 23
+          },
+          {
+            "hash": "2caafda3f5522474de1fe050390bcaac40444cd6",
+            "messageTitle": "Implement undo redo for schedule/unschedule command",
+            "messageBody": "",
+            "insertions": 146,
+            "deletions": 2
+          },
+          {
+            "hash": "4c16f355ff70faea3fa1cd1b1370cf832e5ff27d",
+            "messageTitle": "fix checkstyle",
+            "messageBody": "",
+            "insertions": 48,
+            "deletions": 14
+          }
+        ]
+      },
+      {
+        "insertions": 2784,
+        "deletions": 2099,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "de42153865c527fc13fb22df381f3b6fac4e45d7",
+            "messageTitle": "Changed SampleDataUtil info",
+            "messageBody": "",
+            "insertions": 38,
+            "deletions": 29
+          },
+          {
+            "hash": "dcc18d3705cdf66e09ea2e778fcfe15fe35f95fe",
+            "messageTitle": "Fix SampleDataUtil bug",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "555a4c3e2747cf9979c48a17589a2866feb3c5e2",
+            "messageTitle": "Implement undo event for clear event",
+            "messageBody": "",
+            "insertions": 81,
+            "deletions": 25
+          },
+          {
+            "hash": "f3eb608d1591a8356e264deffbd3ea64d83cabc5",
+            "messageTitle": "Implement undo for AddDay command",
+            "messageBody": "",
+            "insertions": 74,
+            "deletions": 33
+          },
+          {
+            "hash": "360ef7c28d74dd75412f22cec638346330f61982",
+            "messageTitle": "Implement undo redo for DeleteDay (WIP)",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 4
+          },
+          {
+            "hash": "4a01a3e1855c26b1811530238dd5f5ba0f4902e8",
+            "messageTitle": "Implement undo redo for DeleteDay command",
+            "messageBody": "",
+            "insertions": 91,
+            "deletions": 23
+          },
+          {
+            "hash": "695e108bb55fbd9e5f5dcff6162a8cecfead756b",
+            "messageTitle": "Implement undo redo for schedule/unschedule command",
+            "messageBody": "",
+            "insertions": 146,
+            "deletions": 2
+          },
+          {
+            "hash": "030bcee7d4414c8bdcb31ca291e1cf7912f1eaaa",
+            "messageTitle": "fix checkstyle",
+            "messageBody": "",
+            "insertions": 48,
+            "deletions": 14
+          },
+          {
+            "hash": "5b7e5f5dcd1c7562a02c0452da82dc92af8782bc",
+            "messageTitle": "Changed SampleDataUtil info",
+            "messageBody": "",
+            "insertions": 38,
+            "deletions": 29
+          },
+          {
+            "hash": "8e060ff4caee9f5309c925d5eace81107f15954a",
+            "messageTitle": "Fix SampleDataUtil bug",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "618e7bbe71f379a11cc47ed56b079de7246fe48d",
+            "messageTitle": "Integrate with new schedule command format",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 32
+          },
+          {
+            "hash": "b6edf94485cb3ddc986c8b7dbee6437303143e17",
+            "messageTitle": "Remove unused import",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "0159dcaf95683399c95fafb130c1539caf9397e7",
+            "messageTitle": "Enhance undo redo for OptimizeBudget and AutoSchedule commands (#133)",
+            "messageBody": "* Implement undo redo for AutoSchedule command\r\n\r\n* Implement undo redo for optimize budget command\r\n",
+            "insertions": 168,
+            "deletions": 23
+          },
+          {
+            "hash": "0cbd13b62a1ee639414e9d78cc8f3c776a60c9a1",
+            "messageTitle": "Rename address package to planner",
+            "messageBody": "",
+            "insertions": 1793,
+            "deletions": 1793
+          },
+          {
+            "hash": "3e1d1de00ca0dbfe3ab7803ade75b58d8cb4bc36",
+            "messageTitle": "Update ug for undo redo. Update Ui.png",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 2
+          },
+          {
+            "hash": "2db682932586f26e8da0a5199384b49b3c2ab425",
+            "messageTitle": "Update UG for view command and autoschedule",
+            "messageBody": "",
+            "insertions": 131,
+            "deletions": 39
+          },
+          {
+            "hash": "c9182ce43d1acbe32f3b533f950a2a9f03d06354",
+            "messageTitle": "Edit UG",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "9098cd71e265fddd6687528f3344a8264aff408a",
+            "messageTitle": "Update UG (#146)",
+            "messageBody": "* Update ug for undo redo. Update Ui.png\r\n\r\n* Update UG for view command and autoschedule\r\n\r\n* Edit UG\r\n",
+            "insertions": 145,
+            "deletions": 42
+          },
+          {
+            "hash": "346e3a49ae197471ae210297c2f507c8c0800603",
+            "messageTitle": "Update UG",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
           }
         ]
       }
@@ -1648,10 +1991,17 @@
         ]
       },
       {
-        "insertions": 17,
-        "deletions": 12,
+        "insertions": 44,
+        "deletions": 35,
         "date": "2019-10-20",
         "commitResults": [
+          {
+            "hash": "58c6725f211874dbff0eb3ec2813b5e85f8a32ba",
+            "messageTitle": "Fix bug in DurationInHalfHour (#90)",
+            "messageBody": "* Fix bug in DurationInHour\r\n\r\nEdit isValidDuration method\r\n\r\n* Change Schedule Command parse format\r\n\r\n* Fix checkstyle\r\n",
+            "insertions": 27,
+            "deletions": 23
+          },
           {
             "hash": "2c94384d7a51dfb6e3467e3c097fff5ca138e0f7",
             "messageTitle": "Change Unschedule command format",
@@ -1660,53 +2010,166 @@
             "deletions": 12
           }
         ]
+      },
+      {
+        "insertions": 186,
+        "deletions": 4,
+        "date": "2019-10-24",
+        "commitResults": [
+          {
+            "hash": "0466dc8b03c8d49019209763a071c5e3df025074",
+            "messageTitle": "Update DG  (#102)",
+            "messageBody": "* Add ScheduleActivityCommandCreation uml\r\n\r\n* Add ScheduleActivityCommandExecution uml\r\n\r\n* Add ScheduleActivityCommandCreation.png\r\n\r\n* Add ScheduleActivityExecution.png\r\n\r\n* Add Schedule feature in DG\r\n\r\nImplementation of ScheduleActivityCommand\r\n\r\n* Add UiComponent.pptx\r\n\r\n* Add UiComponent.png\r\n\r\n* Update UI component in DG\r\n\r\nUpdate the repolink in DevOps\r\n\r\n* Update Design considerations of DG\r\n\r\n* Update repolink\r\n\r\n* Fix grammar error\r\n",
+            "insertions": 186,
+            "deletions": 4
+          }
+        ]
+      },
+      {
+        "insertions": 367,
+        "deletions": 2,
+        "date": "2019-10-26",
+        "commitResults": [
+          {
+            "hash": "5941c82b0dcddad693ada7a1a39d555a09038795",
+            "messageTitle": "Add activityBuilder and TypicalActivity class (#106)",
+            "messageBody": "* Add activityBuilder class\r\n\r\n* Add TypicalActivity\r\n\r\n* Add EditActivityDescriptorBuilder class\r\n\r\n* Add ActivityUtil class\r\n\r\n* Add activity package under testutil\r\n",
+            "insertions": 367,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 1011,
+        "deletions": 79,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "35df36668dc81e7992ad1715a01fbaf2adf72e11",
+            "messageTitle": "autoSchedule command (#110)",
+            "messageBody": "* Add AutoScheduleCommand\r\n\r\n* Add new fields to Activity\r\n\r\nDuration and priority fields\r\n\r\n* Change priority to Optional\r\n\r\n* Update AddCommandParser with new fields\r\n\r\n* Update AddActivityCommand with new fields\r\n\r\n* Update EditActivityDescriptor with new fields\r\n\r\n* Update EditCommandParser with new fields\r\n\r\n* Update EditActivityCommand with new fields\r\n\r\n* Add AutoScheduleCommandParser\r\n\r\n* Update Timetable creatEmptyActivity method\r\n\r\n* Update Activity class to implements Comparable\r\n\r\nChange String field priorityValue of Priority class to int\r\n\r\n* Implement execute method in AutoScheduleCommand\r\n\r\nAdd new NameWithTime and TagWithTime class in activity package\r\n\r\n* Update PlannerParser with new command word\r\n\r\n* Adds a new Duration class\r\n\r\nReplaces Java\u0027s Duration class\r\n\r\n* Fix checkStyle\r\n\r\nSampleDataUtil still has incorrect indentation error\r\n\r\n* Fix error in code\r\n\r\n* Fix checkStyle\r\n\r\n* Fix error when merging\r\n",
+            "insertions": 1011,
+            "deletions": 79
+          }
+        ]
+      },
+      {
+        "insertions": 88,
+        "deletions": 57,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "9920dedff06e017137e801f6213487b17635a571",
+            "messageTitle": "Update ug (#122)",
+            "messageBody": "* Add autoSchedule feature into UG\r\n\r\n* Add new Command Format\r\n\r\n* Update User guide\r\n\r\n* Change format example for autoschedule\r\n\r\n* Add RepoSense.jar\r\n\r\n* Add authorship\r\n\r\n* Update config json file\r\n",
+            "insertions": 88,
+            "deletions": 57
+          }
+        ]
+      },
+      {
+        "insertions": 118,
+        "deletions": 101,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "0d8ca8b83ef16827b14bf77ff40cac0125f1e550",
+            "messageTitle": "Add exceptions to AutoSchedule (#129)",
+            "messageBody": "* Change autoSchedule commandword to all lowercase\r\n\r\n* Update message usage\r\n\r\n* Change time to be stored as LocalTime\r\n\r\n* Change time stored in timeschedule to be LocalTime\r\n\r\n* Add checks for non matching tags or names\r\n\r\n* Remove endTime field in constructor\r\n\r\n* Update ScheduleCommandParser with updated fields\r\n\r\n* Change format of add day command\r\n\r\n* Change message usage of schedulecommand\r\n\r\n* Remove unused imports\r\n",
+            "insertions": 94,
+            "deletions": 86
+          },
+          {
+            "hash": "b23657de89e4e6225070459158e1a5daab73cb4e",
+            "messageTitle": "Fix bug in autoschedule",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 0
+          },
+          {
+            "hash": "dfd6c85f468990a62f03bcf5f82916112db67efe",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "e65dee1df8113f3d7235f748c3ff0cb8051ba94b",
+            "messageTitle": "Fix command usage",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "76a021baebf9841bdaaa6bf3d11e13d7bc80e17d",
+            "messageTitle": "Remove println",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 8
+          },
+          {
+            "hash": "8000a9affdd383561f9f856cc2603240bb7dd58b",
+            "messageTitle": " Fix autoschedule to consider end time",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 2
+          },
+          {
+            "hash": "1a26b63399ff6e0deb116aa17107594a6a5dadba",
+            "messageTitle": "Fix checkStyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "1nefootstep": 3144,
-    "OneArmyj": 6268,
-    "ernestyyh": 963,
-    "KxxMxxx": 3311,
-    "oscarsu97": 151
+    "1nefootstep": 3517,
+    "OneArmyj": 8073,
+    "ernestyyh": 907,
+    "KxxMxxx": 2738,
+    "oscarsu97": 1832
   },
   "authorFileTypeContributionMap": {
     "1nefootstep": {
-      "docs": 28,
-      "tests": 754,
-      "functional": 2190,
+      "docs": 45,
+      "tests": 709,
+      "functional": 2591,
       "other": 172
     },
     "OneArmyj": {
-      "docs": 552,
-      "tests": 1371,
-      "functional": 4275,
-      "other": 70
+      "docs": 644,
+      "tests": 1777,
+      "functional": 5580,
+      "other": 72
     },
     "ernestyyh": {
-      "docs": 167,
+      "docs": 135,
       "tests": 0,
-      "functional": 794,
+      "functional": 770,
       "other": 2
     },
     "KxxMxxx": {
       "docs": 94,
-      "tests": 389,
-      "functional": 2628,
-      "other": 200
+      "tests": 318,
+      "functional": 2128,
+      "other": 198
     },
     "oscarsu97": {
-      "docs": 18,
-      "tests": 4,
-      "functional": 129
+      "docs": 112,
+      "tests": 330,
+      "functional": 1257,
+      "other": 133
     }
   },
   "authorContributionVariance": {
-    "1nefootstep": 430730.94,
-    "OneArmyj": 679250.44,
-    "ernestyyh": 17515.871,
-    "KxxMxxx": 205863.92,
-    "oscarsu97": 4254.608
+    "1nefootstep": 428366.8,
+    "OneArmyj": 1036293.9,
+    "ernestyyh": 17223.412,
+    "KxxMxxx": 202508.16,
+    "oscarsu97": 27082.85
   },
   "authorDisplayNameMap": {
     "1nefootstep": "LEONG ... XIANG",

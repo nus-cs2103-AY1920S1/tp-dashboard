@@ -175,6 +175,41 @@
             "deletions": 11
           }
         ]
+      },
+      {
+        "insertions": 173,
+        "deletions": 116,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "a9ca2058b2a47d054d0c45f81830f0d932812a2c",
+            "messageTitle": "Update Expenses and Events sections of UG (#157)",
+            "messageBody": "* Update UG\r\n\r\n* Add more info about Events\r\n",
+            "insertions": 127,
+            "deletions": 89
+          },
+          {
+            "hash": "1abbecbb7a9e10642e1ba511e4d184bb8bd35a23",
+            "messageTitle": "Minor changes to Events and populate Sample MooLah with Events (#158)",
+            "messageBody": "* Minor changes to Events and populate Sample MooLah with Events\r\n\r\n* Fix checkstyle errors\r\n",
+            "insertions": 46,
+            "deletions": 27
+          }
+        ]
+      },
+      {
+        "insertions": 59,
+        "deletions": 84,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "4082384b85845f7a9ad13f2196d654d1c7d09a81",
+            "messageTitle": "Update UG (#167)",
+            "messageBody": "",
+            "insertions": 59,
+            "deletions": 84
+          }
+        ]
       }
     ],
     "briyanii": [
@@ -828,6 +863,83 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 549,
+        "deletions": 205,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "eee1303b9ea89f709ba7c431c26b10e6f532f871",
+            "messageTitle": "Move AliasMapping and Alias to model. And update UG.",
+            "messageBody": "",
+            "insertions": 81,
+            "deletions": 66
+          },
+          {
+            "hash": "0b546f38ef0f9e5ffe9f2a2cfcb2d089172d53c0",
+            "messageTitle": "Move AliasMapping and Alias to model. And update UG.",
+            "messageBody": "",
+            "insertions": 250,
+            "deletions": 82
+          },
+          {
+            "hash": "9ed6b2bab8dd4c293caddd793ca34728ac3a1d2c",
+            "messageTitle": "Update documentation for hassle-free features.",
+            "messageBody": "Update command format to be more consistent across the UG\n\nWIP portfolio\n",
+            "insertions": 117,
+            "deletions": 3
+          },
+          {
+            "hash": "bf3fd551a0f17967669935f9be7079ee7a9e00a4",
+            "messageTitle": "Revert making add and delete alias not extend undoable",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 6
+          },
+          {
+            "hash": "6aed31c4d8fa06420aaba0230b1ba2156740117e",
+            "messageTitle": "Fix checkstyle violations",
+            "messageBody": "",
+            "insertions": 30,
+            "deletions": 37
+          },
+          {
+            "hash": "04d4106e198f63e8f8908a94f504b6435bffaeb9",
+            "messageTitle": "Fix clear command being ignored due to new generic command",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 5
+          },
+          {
+            "hash": "a1588793b6eb1662baa1f72bafd0376ca8fc4aae",
+            "messageTitle": "Change default size",
+            "messageBody": "and change change preferred side for autofill to be bottom\n",
+            "insertions": 4,
+            "deletions": 3
+          },
+          {
+            "hash": "b6c0ec506ef2fdfe4d490a5a0f273beeb2b10928",
+            "messageTitle": "Change version to v1.3.2",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "8805a424857a9cf5ebbf4adc979b2b92a2a7c933",
+            "messageTitle": "Update version in UG, and add warning to make moolah non fullscreen for popup to not block command bar",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "cf293dee7bc3aced9fc0e6d91e7f12be50b0aff3",
+            "messageTitle": "Update UG to include view command",
+            "messageBody": "",
+            "insertions": 41,
+            "deletions": 1
+          }
+        ]
       }
     ],
     "qweiping31415": [
@@ -989,6 +1101,20 @@
             "messageBody": "* Integrate StatsCommand and StatsCompareCommand into the Statistics panel\r\n\r\n* Implement StatsTrend feature\r\n\r\n* Further time-related developments: Integrate Natty with MooLah and allow Date \u0026 Time inputs (#132)\r\n\r\n* Integrate Natty into Moolah\r\n\r\n* Implement constant updating of system time\r\n\r\n* Fix unit tests and checkstyle errors\r\n\r\n* Remove printlines\r\n\r\n* Allow Travis to print full error message for failed tests\r\n\r\n* Alter a test to suit alternative localised time formats\r\n\r\n* Fix checkstyle error\r\n\r\n* Fix error in test\r\n\r\n* [Budget feature] Major developments and bug fixes (#133)\r\n\r\n* Add unit tests for Budget class\r\n\r\n* Add unit tests for Percentage class\r\n\r\n* Add unit tests for Percentage class (supplement to previous commit)\r\n\r\n* Add unit tests for AddBudgetCommand\r\n\r\n* Add unit tests for AddBudgetCommandParser\r\n\r\n* Add unit tests for UniqueBudgetList\r\n\r\n* Add unit tests for JsonAdaptedBudget\r\n\r\n* Add unit tests for SwitchBudgetCommand\r\n\r\n* Add unit tests for SwitchBudgetCommandParser\r\n\r\n* Update UniqueBudgetList to automatically set newly added budget as primary\r\n\r\n* Add Budget field to Expense\r\n\r\n* Update AddExpense method in AddressBook to suit the new Expense with a Budget field\r\n\r\nSpecifically,\r\nstep 1: check primary budget - if null, add default and set primary, if yes - do nothing\r\nstep 2: check expense\u0027s budget - if null, add to primary budget, if yes - add to corresponding budget\r\nstep 3: add expense to expenses list\r\n\r\n* Cosmetic changes: Remove extra whitespace\r\n\r\n* Check null parameters in JsonAdaptedBudget constructor\r\n\r\n* Update EditCommand following the changes to Expense class (new budgetName field)\r\n\r\n* Add method to check which expenses are within current budget period\r\n\r\nOther changes:\r\n- add method to update the proportion used\r\n- check for duplicate expense before adding\r\n- change expired condition to include end date\r\n- increase default budget limit\r\n- cosmetic changes to make code more concise\r\n\r\n* Change Expense\u0027s budgetName field type from String to Description\r\n\r\n* Update tests following the addition of budgetName field to Expense class\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update Percentage class such that percentage larger than 1 will be treated as 1 instead of throwing an exception\r\n\r\n* Fix unit test failures due to addition of Category field to Expense\r\n\r\n* Fix checkstyle errors in Main and Test\r\n\r\n* Update DG: Budget feature (with class, sequence, activity diagrams)\r\n\r\n* Fix checkstyle errors\r\n\r\n* Cosmetic changes\r\n\r\n* Fix minor GUI bug\r\n\r\n* Update version number for release\r\n\r\n* Improve DG:Budget formatting\r\n\r\n* Update DG:Budget and UML diagrams\r\n\r\n* Refactor AddressBook to MooLah in UG, DG and source code\r\n\r\n* Update UG \u0026 DG: introduction, budget command syntax, formatting\r\n\r\n* Fully refactor AddressBook to MooLah\r\n\r\n* Rename AddressBook to Moolah in Javadoc comments\r\n* Rename AddressBook to Moolah in tests\r\n* Rename AddressBook to Moolah in parameter names\r\n* Change AddressBook logo image to MooLah logo\r\n* Arrange tests into packages corresponding to those in main\r\n\r\n* Update MooLah logo to a more HD one\r\n\r\n* Update GUI for Budget\r\n\r\n* Change budget period display format to dd/MM/yyyy\r\n* Add another progress bar status \"isNear\", color coded with yellow\r\n* Replace method to calculate expense sum with method from Budget class\r\n* Add proportion used (percentage) indicator in the progress bar\r\n\r\n* Cosmetic changes to Budget: \"Default Budget\" description to all lower case\r\n\r\n* Fix checkstyle errors\r\n\r\n* Add method to normalize budget period to the current period\r\n\r\n- Now budget has 4 kinds of periods: daily, weekly, monthly, yearly\r\n- Properly implement budget window to take account into different month lengths\r\n\r\n* Cosmetic changes\r\n\r\n* Properly implement \"current window\" of Budget\r\n\r\n- #getExpenseSum only takes into account expenses within the current period\r\n- replace #refresh and #expired with more accurate method #normalize\r\n\r\n* Implement EditBudgetCommand\r\n\r\n* Implement PastPeriodCommand which allows user to view past windows of the budget by specifying an anchor date\r\n\r\n* Improve GUI such that primary budget is highlighted with red border in Budget List panel\r\n\r\n* Add feature to show warning popup when budget limit is near or exceeded\r\n\r\n* Fix unit test failures\r\n\r\n* Add check for anchor date in #changePrimaryBudgetWindow method to ensure the period to be switched to is in the past, not current or future\r\n\r\n* Add Javadoc comments and fix checkstyle errors\r\n\r\n* Fix checkstyle error\r\n\r\n* Fix image not found error\r\n\r\n* Fix merge conflicts\r\n\r\n* Improve integration with Budget component\r\n\r\n* Fix merge conflict\r\n\r\n* Fix StatsTrend GUI bug\r\n",
             "insertions": 1262,
             "deletions": 445
+          }
+        ]
+      },
+      {
+        "insertions": 312,
+        "deletions": 27,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "31cc5832678145aa3c8681dc8d222e8b449a4c27",
+            "messageTitle": "Update UG for statistics component (#159)",
+            "messageBody": "* Update UG and PPP\r\n\r\n* Update UG\r\n",
+            "insertions": 312,
+            "deletions": 27
           }
         ]
       }
@@ -1723,8 +1849,8 @@
         ]
       },
       {
-        "insertions": 50,
-        "deletions": 7,
+        "insertions": 585,
+        "deletions": 247,
         "date": "2019-10-31",
         "commitResults": [
           {
@@ -1754,6 +1880,181 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          },
+          {
+            "hash": "11d533c0a47047cdca6b20e106a84d69990a6b50",
+            "messageTitle": "Remove GUI budget period and progress bar for Default Budget",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 13
+          },
+          {
+            "hash": "b0d2cb5178ae3a870a3477b443074d4e36d45eac",
+            "messageTitle": "Change #createDefaultBudget() method to a static DEFAULT_BUDGET object in Budget class",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 16
+          },
+          {
+            "hash": "d182ccbb325f37807feaa694bdfab85c4f97c871",
+            "messageTitle": "Fix primary budget panel showing all historical expenses instead of current period expenses",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "da5cdab626f1c92d34edcf2ffc38c0aad89e2752",
+            "messageTitle": "Add checker in Budget#normalize method to prevent Default Budget from normalizing",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "4dc90d5a86480ec075714264659db87c41670ef4",
+            "messageTitle": "Update earliest timestamp to 01-01-0001 and max budget period to 5000 years",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "b0d88878de87fa9d9ad9203bc4f2d9e09c0c2e15",
+            "messageTitle": "Rename ListBudgetCommand to ListBudgetsCommand",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "dc282101f7c1c9313a48f4451a43517a1a285b2c",
+            "messageTitle": "Rename PastPeriodCommand to SwitchBudgetWindowCommand and correcponding parser",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 19
+          },
+          {
+            "hash": "c8f8c76cb714f8290de05059745f69853a363260",
+            "messageTitle": "Populate SampleDataUtil with budgets and expenses",
+            "messageBody": "",
+            "insertions": 73,
+            "deletions": 16
+          },
+          {
+            "hash": "7ace7e97a88b398fe6113d5a30b010306ab8f4c8",
+            "messageTitle": "Make MooLah fullscreen upon launching",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 7
+          },
+          {
+            "hash": "7bcc6e2a0e50521c10e19d9aad38d91625709cfb",
+            "messageTitle": "Add ClearBudgetsCommand",
+            "messageBody": "",
+            "insertions": 116,
+            "deletions": 35
+          },
+          {
+            "hash": "dfabe5d1ba94376ad44d2c1e77b2fcff6a3a2be4",
+            "messageTitle": "Rename DeleteBudgetCommand to DeleteBudgetByIndexCommand",
+            "messageBody": "",
+            "insertions": 103,
+            "deletions": 0
+          },
+          {
+            "hash": "ccebf09917a8c403bc314669bc76300aeeedca0d",
+            "messageTitle": "Add DeleteBudgetByNameCommand",
+            "messageBody": "",
+            "insertions": 148,
+            "deletions": 115
+          },
+          {
+            "hash": "0171e13d140da68bf7d16020c094af49f60164f1",
+            "messageTitle": "Add command example in SwitchBudgetCommand",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 7
+          },
+          {
+            "hash": "c4cf54e1025e57aa596ce46c386d58429bf55f20",
+            "messageTitle": "Cosmetic changes",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 173,
+        "deletions": 82,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "19c5f5fc65dfa09a723878b842e19203680cd179",
+            "messageTitle": "Fix checkstyle errors",
+            "messageBody": "",
+            "insertions": 42,
+            "deletions": 5
+          },
+          {
+            "hash": "7f59d3f3ceb042f35d0b650c9f26fe6642d8c389",
+            "messageTitle": "Add another budget progress bar status - 50% of budget, color coded with yellow",
+            "messageBody": "",
+            "insertions": 33,
+            "deletions": 11
+          },
+          {
+            "hash": "774da7ba31c5a02c6ce6a3980333c3a24da832eb",
+            "messageTitle": "Update budgeting part of UG",
+            "messageBody": "",
+            "insertions": 48,
+            "deletions": 9
+          },
+          {
+            "hash": "f659066ca81ae5ffd36ef95ff5cb996d21bb8c70",
+            "messageTitle": "Remove unused DataInconsistencyException class",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 35
+          },
+          {
+            "hash": "40abce8dfe6812895b18d532f87f9aedbeb9b51a",
+            "messageTitle": "Change earliest timestamp to 2000-01-01 and max budget period to 100 years",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "e1c0dbdce603c6e825b6b9529d3ff08a7f4cb30c",
+            "messageTitle": "Increase delay of budget warning popup to 3 seconds",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "afe5ee0079a1ab0389d337eec475cb3aa2885f4c",
+            "messageTitle": "Tidy up logic surrounding Default Budget",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 13
+          },
+          {
+            "hash": "ecb8cf1ed28f7945bd4055a6f54ca9da2c2c4a87",
+            "messageTitle": "Fix concurrent modification error when editing budget description",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 4
+          },
+          {
+            "hash": "f5657902621f564622991c85e15231af6cc0c346",
+            "messageTitle": "Fix wrong panel shown after EditBudgetCommand (change from BudgetPanel to BudgetListPanel)",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "efcfadaf5ebe66a3bc9df60e1409373bb9f156fd",
+            "messageTitle": "Update UG: clarify that default budget cannot be modified or removed.",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 0
           }
         ]
       }
@@ -1884,54 +2185,75 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 112,
+        "deletions": 52,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "93e633f3848b0f1c06b16aa70aadd6bcc9ffc0e6",
+            "messageTitle": "Add portfolio and update UG on undo/redo (#160)",
+            "messageBody": "* Add portfolio and update UG on undo/redo\r\n\r\n* Add tag for referencing in portfolio\r\n\r\n* Update about us page to include my portfolio\r\n",
+            "insertions": 76,
+            "deletions": 11
+          },
+          {
+            "hash": "a35ffba3265a0abe0546dc3465572560f1a21468",
+            "messageTitle": "Add undoable commands info to UG (#169)",
+            "messageBody": "",
+            "insertions": 36,
+            "deletions": 41
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "czkay": 2253,
-    "briyanii": 6906,
-    "qweiping31415": 2896,
-    "anqichen9856": 5102,
-    "ryoarmanda": 1296
+    "czkay": 2351,
+    "briyanii": 7303,
+    "qweiping31415": 3133,
+    "anqichen9856": 5411,
+    "ryoarmanda": 1368
   },
   "authorFileTypeContributionMap": {
     "czkay": {
-      "docs": 160,
+      "docs": 255,
       "tests": 176,
-      "functional": 1805,
+      "functional": 1808,
       "other": 112
     },
     "briyanii": {
-      "docs": 255,
-      "tests": 1962,
-      "functional": 4649,
+      "docs": 612,
+      "tests": 1971,
+      "functional": 4680,
       "other": 40
     },
     "qweiping31415": {
-      "docs": 236,
-      "tests": 316,
-      "functional": 2109,
+      "docs": 489,
+      "tests": 312,
+      "functional": 2097,
       "other": 235
     },
     "anqichen9856": {
-      "docs": 583,
-      "tests": 1569,
-      "functional": 2769,
+      "docs": 500,
+      "tests": 1585,
+      "functional": 3145,
       "other": 181
     },
     "ryoarmanda": {
-      "docs": 32,
+      "docs": 131,
       "tests": 476,
-      "functional": 692,
+      "functional": 665,
       "other": 96
     }
   },
   "authorContributionVariance": {
-    "czkay": 53280.137,
-    "briyanii": 2396259.2,
-    "qweiping31415": 126264.85,
-    "anqichen9856": 461661.5,
-    "ryoarmanda": 15372.985
+    "czkay": 52969.22,
+    "briyanii": 2355500.2,
+    "qweiping31415": 124841.64,
+    "anqichen9856": 459062.78,
+    "ryoarmanda": 15377.541
   },
   "authorDisplayNameMap": {
     "czkay": "CS2103T-T11-1 CHONG ...  KANG",

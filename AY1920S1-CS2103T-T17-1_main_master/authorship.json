@@ -3427,35 +3427,35 @@
       {
         "lineNumber": 238,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "// tag::dataencryption[]"
+        "content": "\u003d\u003d\u003d Generate meeting timeslot"
       },
       {
         "lineNumber": 239,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d [Proposed] Data Encryption"
+        "content": "\u003d\u003d\u003d\u003d Description of Feature"
       },
       {
         "lineNumber": 240,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
         "content": ""
       },
       {
         "lineNumber": 241,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "_{Explain here how the data encryption feature will be implemented}_"
+        "content": "The timeslot generator is used to suggest meeting timings by making use of team members\u0027 timetable."
       },
       {
         "lineNumber": 242,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
         "content": ""
       },
@@ -3464,14 +3464,14 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d Generate meeting timeslot"
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d Description of Feature"
+        "content": "This feature makes heavy use of the class `TimeRange`, which represents a period of time in a week, e.g. Monday 1000 -- Monday 1200."
       },
       {
         "lineNumber": 245,
@@ -3485,7 +3485,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "The timeslot generator is used to generate meeting timings by making use of team members\u0027 timetable."
+        "content": "The main logic of this feature is contained within the `TimeSlotGenerator` class:"
       },
       {
         "lineNumber": 247,
@@ -3499,7 +3499,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "Timetable of members should be inputted beforehand, and stored as a characteristic of the member."
+        "content": "TimeSlotGenerator(members, desiredMeetingDuration, restrictedTimeRange)`"
       },
       {
         "lineNumber": 249,
@@ -3513,56 +3513,56 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* `TimeSlotGenerator#generate()` -- Generate timeslot where *_all_* members of the currently checked out project are available. Returns a list of `timeRange`, or an empty list of `timeRange` if no such timeslot is available."
+        "content": "* `members`: `List\u003cTimeTable\u003e` of members of the checked-out `Project`"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* `TimeSlotGenerator#generateWithMostMembers()` -- Generate timeslot where *_most_* members of the currently checked out project are available. Returns a list of `timeRange`."
+        "content": "* `desiredMeetingDuration`: How long the meeting would last in hour, expressed as a positive integer"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "* `restrictedTimeRange`: Sets the limit of generated `TimeRange`, e.g. restrict meeting to working hours, from MONDAY 0900 - MONDAY 1800"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d Details"
+        "content": ""
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "Only the two following methods are exposed:"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "This feature depends on the timetable stored internally as an attribute of each members:"
+        "content": ""
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "* `TimeSlotGenerator#generate()` -- Generate timeslot suitable for *_all_* `TimeTable` supplied. Returns a list of `TimeRange`, or an empty list of `TimeRange` if no such timeslot is available."
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "image::GenerateSlotClassDiagram.png[]"
+        "content": "* `TimeSlotGenerator#generateWithMostMembers()` -- Generate timeslot where *_most_* members of the currently checked out project are available. Returns a list of `TimeRange`."
       },
       {
         "lineNumber": 258,
@@ -3576,7 +3576,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "The `TimeSlotGenerator` is a stateless class, and most usage would be look like this:"
+        "content": "\u003d\u003d\u003d\u003d Details"
       },
       {
         "lineNumber": 260,
@@ -3590,7 +3590,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "`List\u003cTimeRange\u003e timeSlots \u003d new TimeSlotGenerator().generate(members, desiredMeetingDuration, timeRange)`"
+        "content": "This feature depends on the timetable stored internally as an attribute of each members:"
       },
       {
         "lineNumber": 262,
@@ -3604,21 +3604,21 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* `members`: List of `Person` who are members of the checked-out `Project`"
+        "content": "image::GenerateSlotClassDiagram.png[]"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* `desiredMeetingDuration`: How long the meeting would last in hour, expressed as a positive integer"
+        "content": ""
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* `timeRange`: Restrict the time range in which the timeslot is generated, e.g. working hours, from MONDAY 0900 - MONDAY 1800"
+        "content": "Typical usage of `TimeSlotGenerator` would be look like this:"
       },
       {
         "lineNumber": 266,
@@ -3632,7 +3632,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "The following sequence diagram shows the entire process of generating timeslot after the command `generate` is given:"
+        "content": "`List\u003cTimeRange\u003e availableTimeSlots \u003d new TimeSlotGenerator(members, desiredMeetingDuration, restrictedTimeRange).generate()`"
       },
       {
         "lineNumber": 268,
@@ -3646,7 +3646,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "image::GenerateSlotSequenceDiagram.png[]"
+        "content": "The following sequence diagram shows the entire process of generating timeslot after the command `generate d/2` is given:"
       },
       {
         "lineNumber": 270,
@@ -3660,70 +3660,70 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "[NOTE]"
+        "content": "image::GenerateSlotSequenceDiagram.png[]"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "If `generate(members, duration, timeRange)` returns an empty `List\u003cTimeRange\u003e`, the program would automatically call `generateWithMostMembers(members, duration, timeRange)` and return it as result, informing the user that there is no timeslot where all members are available."
+        "content": ""
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "As shown in the sequence diagram above, the command execution would go through the following stages:"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d Algorithm Used"
+        "content": ""
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": ". Fetch the data of members in the current project and pass them to the `TimeSlotGenerator`."
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "`TimeSlotGenerator#generate()` works by merging all the Timetables into a single TimeTable, and inverting the TimeTable to represent all the  time ranges where all members are free. The algorithm then iterates over all available timeslots, adding each timeslot to the list of timeslots. The algorithm terminates when all possible available TimeRange are exhausted, returning the list of TimeRange that are longer than `duration` supplied by user."
+        "content": ". `TimeSlotGenerator` will extract their timetable and generate all possible `TimeRange`."
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": ". Display result for the user to view all the possible timeslots that a meeting can be held."
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "`TimeSlotGenerator#generateWithMostMembers()` works by iterating over all possible combinations of members to attend the meeting, in descending order of number of members. For each possible combination, this function would call `TimeSlotGenerator#generate()`. If it returns an empty list, then the algorithm would move on to the next possible combination and try to generate a timeslot, looping until a non-empty list is returned. The algorithm would then terminate, returning the combination of members selected, and the list of `timeRange` of available timings."
+        "content": ""
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "The sequence of events for `TimeSlotGenerator#generateWithMostMembers()` is shown in the sequence diagram below:"
+        "content": "If `generate()` returns an empty `List\u003cTimeRange\u003e`, the program should automatically call `generateWithMostMembers()` and return it as result, informing the user that there is no timeslot where all members are available."
       },
       {
         "lineNumber": 281,
@@ -3737,7 +3737,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003cINSERT SEQUENCE DIAGRAM FOR ALGO, SHOWING THE LOOP\u003e"
+        "content": "The following activity diagram summarizes the general flow of the command `generate`:"
       },
       {
         "lineNumber": 283,
@@ -3751,112 +3751,112 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d Design Considerations"
+        "content": ".`Generate` command tries to provide best possible meeting timeslot"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "image::GenerateSlotActivityDiagram.png[]"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How to generate timeslot with most number of available members"
+        "content": ""
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Algorithm Used"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* **Alternative 1 (current choice):** Iterate over all possible combinations of members, sorted in descending order of number of members, and call `TimeSlotGenerator#generate()` on each of these combinations."
+        "content": ""
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "** Pros: Easy to implement."
+        "content": "\u003d\u003d\u003d\u003d\u003d `TimeSlotGenerator#generate()`"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "** Cons: May have performance issues in terms of speed. This implementation takes O(2^n^) time for _n_  members."
+        "content": ""
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* **Alternative 2:** Use a segment tree."
+        "content": "This algorithm goes through several stages:"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "** Pros: Will use much less time."
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "** Cons: Harder to implement, and more specialize towards only doing a single task."
+        "content": ". Combine all the given `TimeTable` into a single `List\u003cTimeRange\u003e combined`"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": ". `combined` is then processed further by merging overlapping `TimeRange` into a single `TimeRange`. E.g. `TimeRange(MONDAY, 1000, MONDAY, 1200)` and `TimeRange(MONDAY, 1200, MONDAY,1400)` are merged together to form a single `TimeRange(MONDAY, 1000, MONDAY, 1400)`. `List\u003cTimeRange\u003e merged` is then passed on to the next stage."
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "We went with options 1 as there is no real difference in speed if the number of members is restricted to below 15 members, which many projects do not normally exceed, and it is much easier to implement and maintain."
+        "content": ". `merged` is then inverted, and returns `List\u003cTimeRange\u003e inverted` containing all timeslots where all the members are free."
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": ". `inverted` is then processed to ensure that all `TimeRange` falls within `restrictedTimeRange` specified by the user, truncating all `TimeRange` that extends beyond the specified `restrictedTimeRange`, returning `List\u003cTimeRange\u003e truncated`."
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d Timetable input"
+        "content": ". The algorithm then filters `inverted` by rejecting all `TimeRange` that last shorter than `desiredMeetingDuration` specified by the user. This `List\u003cTimeRange\u003e accepted` is then passed back to the caller of this method, and the algorithm terminates."
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d Description of Feature"
+        "content": ""
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "There are two ways to input member\u0027s timetable"
+        "content": "\u003d\u003d\u003d\u003d\u003d `TimeSlotGenerator#generateWithMostMembers()`"
       },
       {
         "lineNumber": 300,
@@ -3870,28 +3870,28 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ". Member send a formatted text file to the team leader, which would then be parsed by the system"
+        "content": ". Iterates over all possible combinations of timetables in descending order of number of timetable."
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ". Member send their NUSMods timetable URL to the team leader, and the system would fetch their timetable data using NUSMods API"
+        "content": ". For each possible combination, call `TimeSlotGenerator#generate()`."
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": ". If `TimeSlotGenerator#generate()` returns an empty list, repeat step 2 again."
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "The main logic is implemented within the `AddTimetableCommand` class."
+        "content": ". Algorithm terminates, returning the combination of List\u003cTimeTable\u003e used and available timings `List\u003cTimeRange\u003e` wrapped in a class `TimeSlotWithMember`."
       },
       {
         "lineNumber": 305,
@@ -3905,7 +3905,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d Details"
+        "content": "\u003d\u003d\u003d\u003d Design Considerations"
       },
       {
         "lineNumber": 307,
@@ -3919,7 +3919,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "Important functions in the `AddTimetableCommand`:"
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How to generate timeslot with most number of available members"
       },
       {
         "lineNumber": 309,
@@ -3933,42 +3933,42 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* `AddTimetableCommand#getTimetableFromNUSMods(String url)` -- Fetch timetable data using NUSMods API"
+        "content": "* **Alternative 1 (current choice):** Iterate over all possible combinations of timetables, sorted in descending order of number of timetables, and call `TimeSlotGenerator#generate()` on each of these combinations."
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "* `AddTimetableCommand#getTimetableFromFile(String filepath)` -- Parse file to obtain timetable data"
+        "content": "** Pros: Easy to implement."
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "** Cons: May have performance issues in terms of speed. This implementation takes O(2^n^) time for _n_  members."
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "An overview of how the `AddTimetableCommand` class works, shown in figure below:"
+        "content": "* **Alternative 2:** Use a more sophisticated algorithm, like a segment tree."
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "** Pros: Will use much less time."
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003cINSERT CLASS DIAGRAM, SHOW DEPENDENCIES\u003e"
+        "content": "** Cons: Harder to implement, and more specialize towards only doing a single task."
       },
       {
         "lineNumber": 316,
@@ -3982,7 +3982,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "User command would be in the format: `addTimetable m/member [u/url] [f/filepath]`"
+        "content": "We went with options 1 as there is no real difference in speed if the number of members is restricted to below 15 members, which many projects do not normally exceed. It is much easier to understand and maintain by other developers as well."
       },
       {
         "lineNumber": 318,
@@ -3996,21 +3996,21 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "Below diagram shows the entire process of adding timetable from file:"
+        "content": "\u003d\u003d\u003d Timetable input"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Description of Feature"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003cINSERT SEQUENCE DIAGRAM FOR FILE INPUT\u003e"
+        "content": "There are two ways to input member\u0027s timetable"
       },
       {
         "lineNumber": 322,
@@ -4024,42 +4024,42 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "Alternatively, user can input using NUSMods shared timetable URL."
+        "content": ". Member send a formatted text file to the team leader, which would then be parsed by the system"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": ". Member send their NUSMods timetable URL to the team leader, and the system would fetch their timetable data using NUSMods API"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "Following sequence diagram would delve directly into the process of fetching timetable data using NUSMods API, as the earlier portion of command parsing is similar to the above figure."
+        "content": ""
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "The main logic is implemented within the `AddTimetableCommand` class."
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003cINSERT SEQUENCE DIAGRAM, starting directly from getTimetableFromNUSMods\u003e"
+        "content": ""
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Details"
       },
       {
         "lineNumber": 329,
@@ -4073,7 +4073,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d Design Considerations (DO I EVEN NEED THIS PORTION???)"
+        "content": "Important functions in the `AddTimetableCommand`:"
       },
       {
         "lineNumber": 331,
@@ -4087,28 +4087,28 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How to input timetable"
+        "content": "* `AddTimetableCommand#getTimetableFromNUSMods(String url)` -- Fetch timetable data using NUSMods API"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "* `AddTimetableCommand#getTimetableFromFile(String filepath)` -- Parse file to obtain timetable data"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "Alternatively, we can input timetable on the command line manually, but we realized that it is too troublesome and unrealistic for the user to type in so much timetable data of his many members."
+        "content": ""
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "An overview of how the `AddTimetableCommand` class works, shown in figure below:"
       },
       {
         "lineNumber": 336,
@@ -4120,149 +4120,149 @@
       {
         "lineNumber": 337,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "// end::dataencryption[]"
+        "content": "\u003cINSERT CLASS DIAGRAM, SHOW DEPENDENCIES\u003e"
       },
       {
         "lineNumber": 338,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
         "content": ""
       },
       {
         "lineNumber": 339,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d Logging"
+        "content": "User command would be in the format: `addTimetable m/member [u/url] [f/filepath]`"
       },
       {
         "lineNumber": 340,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
         "content": ""
       },
       {
         "lineNumber": 341,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations."
+        "content": "Below diagram shows the entire process of adding timetable from file:"
       },
       {
         "lineNumber": 342,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
         "content": ""
       },
       {
         "lineNumber": 343,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "* The logging level can be controlled using the `logLevel` setting in the configuration file (See \u003c\u003cImplementation-Configuration\u003e\u003e)"
+        "content": "\u003cINSERT SEQUENCE DIAGRAM FOR FILE INPUT\u003e"
       },
       {
         "lineNumber": 344,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level"
+        "content": ""
       },
       {
         "lineNumber": 345,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "* Currently log messages are output through: `Console` and to a `.log` file."
+        "content": "Alternatively, user can input using NUSMods shared timetable URL."
       },
       {
         "lineNumber": 346,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
         "content": ""
       },
       {
         "lineNumber": 347,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "*Logging Levels*"
+        "content": "Following sequence diagram would delve directly into the process of fetching timetable data using NUSMods API, as the earlier portion of command parsing is similar to the above figure."
       },
       {
         "lineNumber": 348,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
         "content": ""
       },
       {
         "lineNumber": 349,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "* `SEVERE` : Critical problem detected which may possibly cause the termination of the application"
+        "content": "\u003cINSERT SEQUENCE DIAGRAM, starting directly from getTimetableFromNUSMods\u003e"
       },
       {
         "lineNumber": 350,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "* `WARNING` : Can continue, but with caution"
+        "content": ""
       },
       {
         "lineNumber": 351,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "* `INFO` : Information showing the noteworthy actions by the App"
+        "content": ""
       },
       {
         "lineNumber": 352,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "* `FINE` : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size"
+        "content": "\u003d\u003d\u003d\u003d Design Considerations (DO I EVEN NEED THIS PORTION???)"
       },
       {
         "lineNumber": 353,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
         "content": ""
       },
       {
         "lineNumber": 354,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "[[Implementation-Configuration]]"
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How to input timetable"
       },
       {
         "lineNumber": 355,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": "\u003d\u003d\u003d Configuration"
+        "content": ""
       },
       {
         "lineNumber": 356,
         "author": {
-          "gitId": "-"
+          "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "Alternatively, we can input timetable on the command line manually, but we realized that it is too troublesome and unrealistic for the user to type in so much timetable data of his many members."
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`)."
+        "content": ""
       },
       {
         "lineNumber": 358,
@@ -4276,7 +4276,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Documentation"
+        "content": "// end::dataencryption[]"
       },
       {
         "lineNumber": 360,
@@ -4290,7 +4290,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
+        "content": "\u003d\u003d\u003d Logging"
       },
       {
         "lineNumber": 362,
@@ -4304,7 +4304,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Testing"
+        "content": "We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations."
       },
       {
         "lineNumber": 364,
@@ -4318,21 +4318,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
+        "content": "* The logging level can be controlled using the `logLevel` setting in the configuration file (See \u003c\u003cImplementation-Configuration\u003e\u003e)"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Dev Ops"
+        "content": "* Currently log messages are output through: `Console` and to a `.log` file."
       },
       {
         "lineNumber": 368,
@@ -4346,7 +4346,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
+        "content": "*Logging Levels*"
       },
       {
         "lineNumber": 370,
@@ -4360,28 +4360,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": "* `SEVERE` : Critical problem detected which may possibly cause the termination of the application"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Product Scope"
+        "content": "* `WARNING` : Can continue, but with caution"
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `INFO` : Information showing the noteworthy actions by the App"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": "*Target user profile*:"
+        "content": "* `FINE` : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size"
       },
       {
         "lineNumber": 375,
@@ -4395,70 +4395,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* has a need to manage a significant number of contacts"
+        "content": "[[Implementation-Configuration]]"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "* prefer desktop apps over other types"
+        "content": "\u003d\u003d\u003d Configuration"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "* can type fast"
+        "content": ""
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": "* prefers typing over mouse input"
+        "content": "Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`)."
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": "* is reasonably comfortable using CLI apps"
+        "content": ""
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Documentation"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": "*Value proposition*: manage contacts faster than a typical mouse/GUI driven app"
+        "content": ""
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d User Stories"
+        "content": "\u003d\u003d Testing"
       },
       {
         "lineNumber": 386,
@@ -4472,7 +4472,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
+        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
       },
       {
         "lineNumber": 388,
@@ -4486,42 +4486,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[width\u003d\"59%\",cols\u003d\"22%,\u003c23%,\u003c25%,\u003c30%\",options\u003d\"header\",]"
+        "content": "\u003d\u003d Dev Ops"
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": ""
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "|Priority |As a ... |I want to ... |So that I can..."
+        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
       },
       {
         "lineNumber": 392,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "|`* * *` |Team Manager |give my projects names |uniquely identify all my different projects"
-      },
-      {
-        "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 393,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
         "lineNumber": 394,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |store ongoing tasks for each project |conveniently delegate and manage the tasks that need to be done for each project"
+        "content": "\u003d\u003d Product Scope"
       },
       {
         "lineNumber": 395,
@@ -4533,9 +4533,9 @@
       {
         "lineNumber": 396,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |prioritise the tasks within a project |easily manage the progress of my project"
+        "content": "*Target user profile*:"
       },
       {
         "lineNumber": 397,
@@ -4547,121 +4547,121 @@
       {
         "lineNumber": 398,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |assign a status to a task |keep track of which tasks are done and which are still ongoing"
+        "content": "* has a need to manage a significant number of contacts"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* prefer desktop apps over other types"
       },
       {
         "lineNumber": 400,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |allocate tasks to my members and store this information |conveniently delegate tasks and ensure there are no overlaps"
+        "content": "* can type fast"
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* prefers typing over mouse input"
       },
       {
         "lineNumber": 402,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |easily get an overview of what my members are currently doing |so that I know which member is responsible for which tasks within the project"
+        "content": "* is reasonably comfortable using CLI apps"
       },
       {
         "lineNumber": 403,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 404,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |be able to remind my members of upcoming meetings |ensure smoother team meetings as they are updated on the time and location, and there would be no unnecessary delays"
+        "content": "*Value proposition*: manage contacts faster than a typical mouse/GUI driven app"
       },
       {
         "lineNumber": 405,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 406,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |backup my save file |"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d User Stories"
       },
       {
         "lineNumber": 408,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |which members must be at a particular meeting |schedule a meeting even if there are no dates where every member is available"
+        "content": ""
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
       },
       {
         "lineNumber": 410,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |get a list of possible dates with attendance of each members |choose the optimal date with more relevant members"
+        "content": ""
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[width\u003d\"59%\",cols\u003d\"22%,\u003c23%,\u003c25%,\u003c30%\",options\u003d\"header\",]"
       },
       {
         "lineNumber": 412,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
-        "content": "|`* * *` |Team Manager |set a range of timings where meetings can be set |schedule meetings at timings customised to my own requirements"
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "|Priority |As a ... |I want to ... |So that I can..."
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "fadisng"
         },
-        "content": "|`* * *` |Team Manager |track the project\u0027s expenditure |ensure that the budget for the project will not be exceeded"
+        "content": "|`* * *` |Team Manager |give my projects names |uniquely identify all my different projects"
       },
       {
         "lineNumber": 415,
@@ -4675,26 +4675,26 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`* * *` |Team Manager |sort tasks based on deadlines and show the list |know which are the tasks that are to be completed as soon as possible"
+        "content": "|`* * *` |Team Manager |store ongoing tasks for each project |conveniently delegate and manage the tasks that need to be done for each project"
       },
       {
         "lineNumber": 417,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 418,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "fadisng"
         },
-        "content": "|`* * *` |team manager |access the list of valid commands that I can use |"
+        "content": "|`* * *` |Team Manager |prioritise the tasks within a project |easily manage the progress of my project"
       },
       {
         "lineNumber": 419,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4703,12 +4703,12 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`* *` |Team Manager |find an optimal meeting location based on each team members\u0027 location |optimise the convenience of the team meeting locations for each team member"
+        "content": "|`* * *` |Team Manager |assign a status to a task |keep track of which tasks are done and which are still ongoing"
       },
       {
         "lineNumber": 421,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4717,12 +4717,12 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`* *` |Team Manager |remind members of their deadlines for their allocated tasks |make sure the tasks are completed promptly"
+        "content": "|`* * *` |Team Manager |allocate tasks to my members and store this information |conveniently delegate tasks and ensure there are no overlaps"
       },
       {
         "lineNumber": 423,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4731,12 +4731,12 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`* *` |Team Manager |find a date that everyone is free for team meetings |"
+        "content": "|`* * *` |Team Manager |easily get an overview of what my members are currently doing |so that I know which member is responsible for which tasks within the project"
       },
       {
         "lineNumber": 425,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4745,12 +4745,12 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`* *` |Team Manager |categorise the projects based on my preferences |better organise the projects"
+        "content": "|`* * *` |Team Manager |be able to remind my members of upcoming meetings |ensure smoother team meetings as they are updated on the time and location, and there would be no unnecessary delays"
       },
       {
         "lineNumber": 427,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -4759,7 +4759,7 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`*` |Team Manager |set an agenda for meetings |I can avoid meetings that are unproductive due to lack of things to do"
+        "content": "|`* * *` |Team Manager |backup my save file |"
       },
       {
         "lineNumber": 429,
@@ -4773,7 +4773,7 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`*` |Team Manager |send standardised emails to every team member containing the most updated project details |keep all my members up to date with the latest information when needed"
+        "content": "|`* * *` |Team Manager |which members must be at a particular meeting |schedule a meeting even if there are no dates where every member is available"
       },
       {
         "lineNumber": 431,
@@ -4785,9 +4785,9 @@
       {
         "lineNumber": 432,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "jerryk1997"
         },
-        "content": "|`*` |Team Manager |send the minutes from a meeting to each member |keep each member updated on what was discussed during the meeting"
+        "content": "|`* * *` |Team Manager |get a list of possible dates with attendance of each members |choose the optimal date with more relevant members"
       },
       {
         "lineNumber": 433,
@@ -4801,7 +4801,7 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`*` |Team Manager |change the theme of the application |make it look the way I want it to"
+        "content": "|`* * *` |Team Manager |set a range of timings where meetings can be set |schedule meetings at timings customised to my own requirements"
       },
       {
         "lineNumber": 435,
@@ -4813,9 +4813,9 @@
       {
         "lineNumber": 436,
         "author": {
-          "gitId": "jerryk1997"
+          "gitId": "fadisng"
         },
-        "content": "|`*` |Team Manager |be recommended locations which are conducive for the meetings |"
+        "content": "|`* * *` |Team Manager |track the project\u0027s expenditure |ensure that the budget for the project will not be exceeded"
       },
       {
         "lineNumber": 437,
@@ -4829,350 +4829,350 @@
         "author": {
           "gitId": "jerryk1997"
         },
-        "content": "|`*` |Team Manager |export a project as a word document |use it easily with other third party applications as needed"
+        "content": "|`* * *` |Team Manager |sort tasks based on deadlines and show the list |know which are the tasks that are to be completed as soon as possible"
       },
       {
         "lineNumber": 439,
         "author": {
-          "gitId": "-"
-        },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      },
-      {
-        "lineNumber": 440,
-        "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
         "content": ""
       },
       {
+        "lineNumber": 440,
+        "author": {
+          "gitId": "jerryk1997"
+        },
+        "content": "|`* * *` |team manager |access the list of valid commands that I can use |"
+      },
+      {
         "lineNumber": 441,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
         "content": ""
       },
       {
         "lineNumber": 442,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
-        "content": "[appendix]"
+        "content": "|`* *` |Team Manager |find an optimal meeting location based on each team members\u0027 location |optimise the convenience of the team meeting locations for each team member"
       },
       {
         "lineNumber": 443,
         "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d Use Cases"
-      },
-      {
-        "lineNumber": 444,
-        "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
         "content": ""
       },
       {
+        "lineNumber": 444,
+        "author": {
+          "gitId": "jerryk1997"
+        },
+        "content": "|`* *` |Team Manager |remind members of their deadlines for their allocated tasks |make sure the tasks are completed promptly"
+      },
+      {
         "lineNumber": 445,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 446,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "jerryk1997"
         },
-        "content": "\u003d\u003d\u003d Use case: UC01 - Add a project"
+        "content": "|`* *` |Team Manager |find a date that everyone is free for team meetings |"
       },
       {
         "lineNumber": 447,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
         "content": ""
       },
       {
         "lineNumber": 448,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
-        "content": "*MSS*"
+        "content": "|`* *` |Team Manager |categorise the projects based on my preferences |better organise the projects"
       },
       {
         "lineNumber": 449,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
         "content": ""
       },
       {
         "lineNumber": 450,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "jerryk1997"
         },
-        "content": "1. User requests to add a project."
+        "content": "|`*` |Team Manager |set an agenda for meetings |I can avoid meetings that are unproductive due to lack of things to do"
       },
       {
         "lineNumber": 451,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "jerryk1997"
         },
-        "content": "2. MyProject adds the project with respect to the arguments passed in by user."
+        "content": ""
       },
       {
         "lineNumber": 452,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
-        "content": "Use case ends."
+        "content": "|`*` |Team Manager |send standardised emails to every team member containing the most updated project details |keep all my members up to date with the latest information when needed"
       },
       {
         "lineNumber": 453,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
         "content": ""
       },
       {
         "lineNumber": 454,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": "*Extensions*"
+        "content": "|`*` |Team Manager |send the minutes from a meeting to each member |keep each member updated on what was discussed during the meeting"
       },
       {
         "lineNumber": 455,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
         "content": ""
       },
       {
         "lineNumber": 456,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
-        "content": "[none]"
+        "content": "|`*` |Team Manager |change the theme of the application |make it look the way I want it to"
       },
       {
         "lineNumber": 457,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "jerryk1997"
         },
-        "content": "* 2a. The arguments passed in are incomplete/wrong."
+        "content": ""
       },
       {
         "lineNumber": 458,
         "author": {
-          "gitId": "-"
+          "gitId": "jerryk1997"
         },
-        "content": "+"
+        "content": "|`*` |Team Manager |be recommended locations which are conducive for the meetings |"
       },
       {
         "lineNumber": 459,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "jerryk1997"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 460,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "jerryk1997"
         },
-        "content": "** 2a1. MyProject shows an error message."
+        "content": "|`*` |Team Manager |export a project as a word document |use it easily with other third party applications as needed"
       },
       {
         "lineNumber": 461,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
-        "content": "Use case resumes at step 1."
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 462,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 463,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 464,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
-        "content": "[discrete]"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 465,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Use case: UC02 - Checkout to a project to work on"
+        "content": "\u003d\u003d Use Cases"
       },
       {
         "lineNumber": 466,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 467,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
-        "content": "*MSS*"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 468,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Use case: UC01 - Add a project"
       },
       {
         "lineNumber": 469,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "-"
         },
-        "content": "1. User requests to list projects."
+        "content": ""
       },
       {
         "lineNumber": 470,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "-"
         },
-        "content": "2. MyProject shows a list of projects."
+        "content": "*MSS*"
       },
       {
         "lineNumber": 471,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "-"
         },
-        "content": "3. User requests to switch to a project in the list to work on."
+        "content": ""
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "fadisng"
         },
-        "content": "4. MyProject switches to the project for the user."
+        "content": "1. User requests to add a project."
       },
       {
         "lineNumber": 473,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "Use case ends."
+        "content": "2. MyProject adds the project with respect to the arguments passed in by user."
       },
       {
         "lineNumber": 474,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 475,
         "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "*Extensions*"
-      },
-      {
-        "lineNumber": 476,
-        "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 476,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "*Extensions*"
+      },
+      {
         "lineNumber": 477,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
-        "content": "* 2a. The list is empty."
+        "content": ""
       },
       {
         "lineNumber": 478,
         "author": {
           "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": "[none]"
       },
       {
         "lineNumber": 479,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "* 2a. The arguments passed in are incomplete/wrong."
       },
       {
         "lineNumber": 480,
         "author": {
           "gitId": "-"
         },
-        "content": "* 3a. The given index is invalid."
+        "content": "+"
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "** 3a1. MyProject shows an error message."
+        "content": "[none]"
       },
       {
         "lineNumber": 482,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": "Use case resumes at step 2."
+        "content": "** 2a1. MyProject shows an error message."
       },
       {
         "lineNumber": 483,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "Use case resumes at step 1."
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "[discrete]"
+        "content": "[none]"
       },
       {
         "lineNumber": 485,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "\u003d\u003d\u003d Use case: UC03 - Edit a project"
-      },
-      {
-        "lineNumber": 486,
         "author": {
           "gitId": "R-D-D-D"
         },
         "content": ""
       },
       {
-        "lineNumber": 487,
+        "lineNumber": 486,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "*MSS*"
+        "content": "[discrete]"
+      },
+      {
+        "lineNumber": 487,
+        "author": {
+          "gitId": "fadisng"
+        },
+        "content": "\u003d\u003d\u003d Use case: UC02 - Checkout to a project to work on"
       },
       {
         "lineNumber": 488,
@@ -5184,58 +5184,58 @@
       {
         "lineNumber": 489,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "1. User [.underline]#checkout to a project(UC02)#."
+        "content": "*MSS*"
       },
       {
         "lineNumber": 490,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "1. User requests to edit current project."
+        "content": ""
       },
       {
         "lineNumber": 491,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "2. MyProject requests for details of change."
+        "content": "1. User requests to list projects."
       },
       {
         "lineNumber": 492,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "3. User enters the requested details."
+        "content": "2. MyProject shows a list of projects."
       },
       {
         "lineNumber": 493,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "4. MyProject edits the details of the project and displays the information of the edited project."
+        "content": "3. User requests to switch to a project in the list to work on."
       },
       {
         "lineNumber": 494,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "Use case ends."
+        "content": "4. MyProject switches to the project for the user."
       },
       {
         "lineNumber": 495,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 496,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 497,
@@ -5256,224 +5256,224 @@
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "* 3a. The given details do not match the given format."
+        "content": "* 2a. The list is empty."
       },
       {
         "lineNumber": 500,
         "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "** 3a1. MyProject requests for the data and displays the format to be input."
-      },
-      {
-        "lineNumber": 501,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "** 3a2. User enters new data."
-      },
-      {
-        "lineNumber": 502,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "Steps 3a1-3a2 are repeated until the data entered are correct."
-      },
-      {
-        "lineNumber": 503,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "Use case resumes from step 4."
-      },
-      {
-        "lineNumber": 504,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 505,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "[discrete]"
-      },
-      {
-        "lineNumber": 506,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "\u003d\u003d\u003d Use case: UC04 - Edit a member"
-      },
-      {
-        "lineNumber": 507,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 508,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "*MSS*"
-      },
-      {
-        "lineNumber": 509,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 510,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "1. User [.underline]#checkout to a project(UC02)#."
-      },
-      {
-        "lineNumber": 511,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "2. User requests a list of members."
-      },
-      {
-        "lineNumber": 512,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "3. MyProject shows a list members in this project."
-      },
-      {
-        "lineNumber": 513,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "4. User chooses a member to edit based on the index and uses the corresponding prefix to change the desired attribute."
-      },
-      {
-        "lineNumber": 514,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "5. MyProject makes the changes and displays the member with the updated attributes."
-      },
-      {
-        "lineNumber": 515,
-        "author": {
-          "gitId": "fadisng"
+          "gitId": "-"
         },
         "content": "Use case ends."
       },
       {
-        "lineNumber": 516,
+        "lineNumber": 501,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 517,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "[none]"
-      },
-      {
-        "lineNumber": 518,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "*Extensions*"
-      },
-      {
-        "lineNumber": 519,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 520,
+        "lineNumber": 502,
         "author": {
           "gitId": "-"
         },
         "content": "* 3a. The given index is invalid."
       },
       {
-        "lineNumber": 521,
+        "lineNumber": 503,
         "author": {
           "gitId": "R-D-D-D"
         },
         "content": "** 3a1. MyProject shows an error message."
       },
       {
-        "lineNumber": 522,
+        "lineNumber": 504,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": "Use case resumes at step 2."
       },
       {
-        "lineNumber": 523,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 524,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "* 3b. The prefix used does not match any of the predefined prefixes."
-      },
-      {
-        "lineNumber": 525,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "** 3b1. MyProject shows an error message."
-      },
-      {
-        "lineNumber": 526,
-        "author": {
-          "gitId": "R-D-D-D"
-        },
-        "content": "Use case ends."
-      },
-      {
-        "lineNumber": 527,
+        "lineNumber": 505,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 528,
+        "lineNumber": 506,
         "author": {
           "gitId": "R-D-D-D"
         },
         "content": "[discrete]"
       },
       {
-        "lineNumber": 529,
+        "lineNumber": 507,
         "author": {
           "gitId": "fadisng"
         },
-        "content": "\u003d\u003d\u003d Use case: [.underline]#UC05# - Send reminder"
+        "content": "\u003d\u003d\u003d Use case: UC03 - Edit a project"
+      },
+      {
+        "lineNumber": 508,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 509,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "*MSS*"
+      },
+      {
+        "lineNumber": 510,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 511,
+        "author": {
+          "gitId": "fadisng"
+        },
+        "content": "1. User [.underline]#checkout to a project(UC02)#."
+      },
+      {
+        "lineNumber": 512,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "1. User requests to edit current project."
+      },
+      {
+        "lineNumber": 513,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "2. MyProject requests for details of change."
+      },
+      {
+        "lineNumber": 514,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "3. User enters the requested details."
+      },
+      {
+        "lineNumber": 515,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "4. MyProject edits the details of the project and displays the information of the edited project."
+      },
+      {
+        "lineNumber": 516,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "Use case ends."
+      },
+      {
+        "lineNumber": 517,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 518,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "[none]"
+      },
+      {
+        "lineNumber": 519,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "*Extensions*"
+      },
+      {
+        "lineNumber": 520,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 521,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "* 3a. The given details do not match the given format."
+      },
+      {
+        "lineNumber": 522,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "** 3a1. MyProject requests for the data and displays the format to be input."
+      },
+      {
+        "lineNumber": 523,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "** 3a2. User enters new data."
+      },
+      {
+        "lineNumber": 524,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "Steps 3a1-3a2 are repeated until the data entered are correct."
+      },
+      {
+        "lineNumber": 525,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "Use case resumes from step 4."
+      },
+      {
+        "lineNumber": 526,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 527,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": "[discrete]"
+      },
+      {
+        "lineNumber": 528,
+        "author": {
+          "gitId": "fadisng"
+        },
+        "content": "\u003d\u003d\u003d Use case: UC04 - Edit a member"
+      },
+      {
+        "lineNumber": 529,
+        "author": {
+          "gitId": "R-D-D-D"
+        },
+        "content": ""
       },
       {
         "lineNumber": 530,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "Preconditions: User has the e-mail addresses of all the team members, user has an email account and team members has the e-mail address of the user."
+        "content": "*MSS*"
       },
       {
         "lineNumber": 531,
@@ -5485,210 +5485,210 @@
       {
         "lineNumber": 532,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "*MSS*"
+        "content": "1. User [.underline]#checkout to a project(UC02)#."
       },
       {
         "lineNumber": 533,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": ""
+        "content": "2. User requests a list of members."
       },
       {
         "lineNumber": 534,
         "author": {
           "gitId": "fadisng"
         },
-        "content": "1. User [.underline]#checkout to a project(UC02)#."
+        "content": "3. MyProject shows a list members in this project."
       },
       {
         "lineNumber": 535,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "2. User selects the uncompleted tasks in the project."
+        "content": "4. User chooses a member to edit based on the index and uses the corresponding prefix to change the desired attribute."
       },
       {
         "lineNumber": 536,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "3. User sends reminder to the members in charge of the tasks to complete by the specified deadline."
+        "content": "5. MyProject makes the changes and displays the member with the updated attributes."
       },
       {
         "lineNumber": 537,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "4. Team members reply for acknowledgement."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 538,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "5. User receives acknowledgement."
+        "content": ""
       },
       {
         "lineNumber": 539,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "Use case ends."
+        "content": "[none]"
       },
       {
         "lineNumber": 540,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 541,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "*Extension*"
+        "content": ""
       },
       {
         "lineNumber": 542,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* 3a. The given index is invalid."
       },
       {
         "lineNumber": 543,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "* 3a. All the tasks in the project has been completed."
+        "content": "** 3a1. MyProject shows an error message."
       },
       {
         "lineNumber": 544,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "** 3a1.  User requests for for availability for the next meeting time."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 545,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 546,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "* 3b. The prefix used does not match any of the predefined prefixes."
       },
       {
         "lineNumber": 547,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "* 5a. Team members do not receive the reminder e-mail."
+        "content": "** 3b1. MyProject shows an error message."
       },
       {
         "lineNumber": 548,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "** 5a1. User does not receive acknowledgement reply."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 549,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "-"
         },
-        "content": "** 5a2. User resend the reminders to team members who do not reply."
+        "content": ""
       },
       {
         "lineNumber": 550,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "Use case resumes from step 6."
+        "content": "[discrete]"
       },
       {
         "lineNumber": 551,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Use case: [.underline]#UC05# - Send reminder"
       },
       {
         "lineNumber": 552,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "[discrete]"
+        "content": "Preconditions: User has the e-mail addresses of all the team members, user has an email account and team members has the e-mail address of the user."
       },
       {
         "lineNumber": 553,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "\u003d\u003d\u003d Use case: UC06 - Store team members’ availability"
+        "content": ""
       },
       {
         "lineNumber": 554,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "*MSS*"
       },
       {
         "lineNumber": 555,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "*MSS*"
+        "content": ""
       },
       {
         "lineNumber": 556,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": ""
+        "content": "1. User [.underline]#checkout to a project(UC02)#."
       },
       {
         "lineNumber": 557,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "1. Team members send user their respective timetable as a text file."
+        "content": "2. User selects the uncompleted tasks in the project."
       },
       {
         "lineNumber": 558,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "2. User [.underline]#checkout to a project(UC02)#."
+        "content": "3. User sends reminder to the members in charge of the tasks to complete by the specified deadline."
       },
       {
         "lineNumber": 559,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "3. Team leader stores timetable for the respective team member."
+        "content": "4. Team members reply for acknowledgement."
       },
       {
         "lineNumber": 560,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "Steps 1 - 2 are repeated for each team member, until all team members’ timetables are stored."
+        "content": "5. User receives acknowledgement."
       },
       {
         "lineNumber": 561,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
         "content": "Use case ends."
       },
@@ -5704,70 +5704,70 @@
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "[none]"
+        "content": "*Extension*"
       },
       {
         "lineNumber": 564,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "*Extensions*"
+        "content": ""
       },
       {
         "lineNumber": 565,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "* 3a. All the tasks in the project has been completed."
       },
       {
         "lineNumber": 566,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "* 2a. Text file invalid."
+        "content": "** 3a1.  User requests for for availability for the next meeting time."
       },
       {
         "lineNumber": 567,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "** 2a1. MyProject prompts team leader that given file is invalid."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 568,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "**\t2a2. Team leader requests for resubmission of timetable from team member."
-      },
-      {
-        "lineNumber": 569,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "Use case resumes from step 2."
-      },
-      {
-        "lineNumber": 570,
         "author": {
           "gitId": "R-D-D-D"
         },
         "content": ""
       },
       {
-        "lineNumber": 571,
+        "lineNumber": 569,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "[discrete]"
+        "content": "* 5a. Team members do not receive the reminder e-mail."
+      },
+      {
+        "lineNumber": 570,
+        "author": {
+          "gitId": "fadisng"
+        },
+        "content": "** 5a1. User does not receive acknowledgement reply."
+      },
+      {
+        "lineNumber": 571,
+        "author": {
+          "gitId": "fadisng"
+        },
+        "content": "** 5a2. User resend the reminders to team members who do not reply."
       },
       {
         "lineNumber": 572,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "\u003d\u003d\u003d Use case: UC07 - Generate time slot where all team members are available for meeting"
+        "content": "Use case resumes from step 6."
       },
       {
         "lineNumber": 573,
@@ -5781,252 +5781,252 @@
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "*MSS*"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 575,
+        "author": {
+          "gitId": "fadisng"
+        },
+        "content": "\u003d\u003d\u003d Use case: UC06 - Store team members’ availability"
+      },
+      {
+        "lineNumber": 576,
         "author": {
           "gitId": "R-D-D-D"
         },
         "content": ""
       },
       {
-        "lineNumber": 576,
-        "author": {
-          "gitId": "fadisng"
-        },
-        "content": "1. User [.underline]#stores all team members’ availability (UC06)#."
-      },
-      {
         "lineNumber": 577,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "2. Team leader request for a meeting within a specific range of time."
+        "content": "*MSS*"
       },
       {
         "lineNumber": 578,
         "author": {
-          "gitId": "fadisng"
+          "gitId": "R-D-D-D"
         },
-        "content": "3. MyProject displays a time frame where all team members are available."
+        "content": ""
       },
       {
         "lineNumber": 579,
         "author": {
           "gitId": "fadisng"
         },
-        "content": "Use case ends."
+        "content": "1. Team members send user their respective timetable as a text file."
       },
       {
         "lineNumber": 580,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": ""
+        "content": "2. User [.underline]#checkout to a project(UC02)#."
       },
       {
         "lineNumber": 581,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "*Extensions*"
+        "content": "3. Team leader stores timetable for the respective team member."
       },
       {
         "lineNumber": 582,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "Steps 1 - 2 are repeated for each team member, until all team members’ timetables are stored."
       },
       {
         "lineNumber": 583,
         "author": {
-          "gitId": "R-D-D-D"
+          "gitId": "fadisng"
         },
-        "content": "* 2a. No time slot exists such that all team members are available."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 584,
         "author": {
           "gitId": "R-D-D-D"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 585,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 586,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": "[appendix]"
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 587,
         "author": {
-          "gitId": "-"
-        },
-        "content": "\u003d\u003d Non Functional Requirements"
-      },
-      {
-        "lineNumber": 588,
-        "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
         "content": ""
       },
       {
+        "lineNumber": 588,
+        "author": {
+          "gitId": "fadisng"
+        },
+        "content": "* 2a. Text file invalid."
+      },
+      {
         "lineNumber": 589,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has Java `11` or above installed."
+        "content": "** 2a1. MyProject prompts team leader that given file is invalid."
       },
       {
         "lineNumber": 590,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": ".  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage."
+        "content": "**\t2a2. Team leader requests for resubmission of timetable from team member."
       },
       {
         "lineNumber": 591,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
+        "content": "Use case resumes from step 2."
       },
       {
         "lineNumber": 592,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
         "content": ""
       },
       {
         "lineNumber": 593,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": "_{More to be added}_"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 594,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Use case: UC07 - Generate time slot where all team members are available for meeting"
       },
       {
         "lineNumber": 595,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 596,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": "\u003d\u003d Glossary"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 597,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
         "content": ""
       },
       {
         "lineNumber": 598,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": "[[mainstream-os]] Mainstream OS::"
+        "content": "1. User [.underline]#stores all team members’ availability (UC06)#."
       },
       {
         "lineNumber": 599,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": "Windows, Linux, Unix, OS-X"
+        "content": "2. Team leader request for a meeting within a specific range of time."
       },
       {
         "lineNumber": 600,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": ""
+        "content": "3. MyProject displays a time frame where all team members are available."
       },
       {
         "lineNumber": 601,
         "author": {
-          "gitId": "-"
+          "gitId": "fadisng"
         },
-        "content": "[[private-contact-detail]] Private contact detail::"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 602,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": "A contact detail that is not meant to be shared with others"
+        "content": ""
       },
       {
         "lineNumber": 603,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 604,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 605,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": "\u003d\u003d Product Survey"
+        "content": "* 2a. No time slot exists such that all team members are available."
       },
       {
         "lineNumber": 606,
         "author": {
-          "gitId": "-"
+          "gitId": "R-D-D-D"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 607,
         "author": {
           "gitId": "-"
         },
-        "content": "*Product Name*"
+        "content": ""
       },
       {
         "lineNumber": 608,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[appendix]"
       },
       {
         "lineNumber": 609,
         "author": {
           "gitId": "-"
         },
-        "content": "Author: ..."
+        "content": "\u003d\u003d Non Functional Requirements"
       },
       {
         "lineNumber": 610,
@@ -6040,98 +6040,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Pros:"
+        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has Java `11` or above installed."
       },
       {
         "lineNumber": 612,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": ".  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage."
       },
       {
         "lineNumber": 613,
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
       },
       {
         "lineNumber": 614,
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": ""
       },
       {
         "lineNumber": 615,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "_{More to be added}_"
       },
       {
         "lineNumber": 616,
         "author": {
           "gitId": "-"
         },
-        "content": "Cons:"
+        "content": ""
       },
       {
         "lineNumber": 617,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[appendix]"
       },
       {
         "lineNumber": 618,
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": "\u003d\u003d Glossary"
       },
       {
         "lineNumber": 619,
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": ""
       },
       {
         "lineNumber": 620,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[[mainstream-os]] Mainstream OS::"
       },
       {
         "lineNumber": 621,
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": "Windows, Linux, Unix, OS-X"
       },
       {
         "lineNumber": 622,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Instructions for Manual Testing"
+        "content": ""
       },
       {
         "lineNumber": 623,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[[private-contact-detail]] Private contact detail::"
       },
       {
         "lineNumber": 624,
         "author": {
           "gitId": "-"
         },
-        "content": "Given below are instructions to test the app manually."
+        "content": "A contact detail that is not meant to be shared with others"
       },
       {
         "lineNumber": 625,
@@ -6145,14 +6145,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[NOTE]"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 627,
         "author": {
           "gitId": "-"
         },
-        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+        "content": "\u003d\u003d Product Survey"
       },
       {
         "lineNumber": 628,
@@ -6166,7 +6166,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Launch and Shutdown"
+        "content": "*Product Name*"
       },
       {
         "lineNumber": 630,
@@ -6180,7 +6180,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": ". Initial launch"
+        "content": "Author: ..."
       },
       {
         "lineNumber": 632,
@@ -6194,63 +6194,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": ".. Download the jar file and copy into an empty folder"
+        "content": "Pros:"
       },
       {
         "lineNumber": 634,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Double-click the jar file +"
+        "content": ""
       },
       {
         "lineNumber": 635,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+        "content": "* ..."
       },
       {
         "lineNumber": 636,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* ..."
       },
       {
         "lineNumber": 637,
         "author": {
           "gitId": "-"
         },
-        "content": ". Saving window preferences"
+        "content": ""
       },
       {
         "lineNumber": 638,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Cons:"
       },
       {
         "lineNumber": 639,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
+        "content": ""
       },
       {
         "lineNumber": 640,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Re-launch the app by double-clicking the jar file. +"
+        "content": "* ..."
       },
       {
         "lineNumber": 641,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: The most recent window size and location is retained."
+        "content": "* ..."
       },
       {
         "lineNumber": 642,
@@ -6264,105 +6264,105 @@
         "author": {
           "gitId": "-"
         },
-        "content": "_{ more test cases ... }_"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 644,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Instructions for Manual Testing"
       },
       {
         "lineNumber": 645,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Deleting a person"
+        "content": ""
       },
       {
         "lineNumber": 646,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Given below are instructions to test the app manually."
       },
       {
         "lineNumber": 647,
         "author": {
           "gitId": "-"
         },
-        "content": ". Deleting a person while all persons are listed"
+        "content": ""
       },
       {
         "lineNumber": 648,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 649,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
       },
       {
         "lineNumber": 650,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Test case: `delete 1` +"
+        "content": ""
       },
       {
         "lineNumber": 651,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+        "content": "\u003d\u003d\u003d Launch and Shutdown"
       },
       {
         "lineNumber": 652,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Test case: `delete 0` +"
+        "content": ""
       },
       {
         "lineNumber": 653,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+        "content": ". Initial launch"
       },
       {
         "lineNumber": 654,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +"
+        "content": ""
       },
       {
         "lineNumber": 655,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: Similar to previous."
+        "content": ".. Download the jar file and copy into an empty folder"
       },
       {
         "lineNumber": 656,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": ".. Double-click the jar file +"
       },
       {
         "lineNumber": 657,
         "author": {
           "gitId": "-"
         },
-        "content": "_{ more test cases ... }_"
+        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
       },
       {
         "lineNumber": 658,
@@ -6376,7 +6376,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Saving data"
+        "content": ". Saving window preferences"
       },
       {
         "lineNumber": 660,
@@ -6390,21 +6390,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": ". Dealing with missing/corrupted data files"
+        "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
       },
       {
         "lineNumber": 662,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": ".. Re-launch the app by double-clicking the jar file. +"
       },
       {
         "lineNumber": 663,
         "author": {
           "gitId": "-"
         },
-        "content": ".. _{explain how to simulate a missing/corrupted file and the expected behavior}_"
+        "content": "   Expected: The most recent window size and location is retained."
       },
       {
         "lineNumber": 664,
@@ -6419,14 +6419,168 @@
           "gitId": "-"
         },
         "content": "_{ more test cases ... }_"
+      },
+      {
+        "lineNumber": 666,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 667,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Deleting a person"
+      },
+      {
+        "lineNumber": 668,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 669,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Deleting a person while all persons are listed"
+      },
+      {
+        "lineNumber": 670,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 671,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+      },
+      {
+        "lineNumber": 672,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Test case: `delete 1` +"
+      },
+      {
+        "lineNumber": 673,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+      },
+      {
+        "lineNumber": 674,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Test case: `delete 0` +"
+      },
+      {
+        "lineNumber": 675,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+      },
+      {
+        "lineNumber": 676,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +"
+      },
+      {
+        "lineNumber": 677,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: Similar to previous."
+      },
+      {
+        "lineNumber": 678,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 679,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{ more test cases ... }_"
+      },
+      {
+        "lineNumber": 680,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 681,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Saving data"
+      },
+      {
+        "lineNumber": 682,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 683,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Dealing with missing/corrupted data files"
+      },
+      {
+        "lineNumber": 684,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 685,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. _{explain how to simulate a missing/corrupted file and the expected behavior}_"
+      },
+      {
+        "lineNumber": 686,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 687,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{ more test cases ... }_"
       }
     ],
     "authorContributionMap": {
       "R-D-D-D": 88,
-      "ccyccyccy": 94,
+      "ccyccyccy": 119,
       "fadisng": 39,
-      "jerryk1997": 33,
-      "-": 411
+      "jerryk1997": 36,
+      "-": 405
     }
   },
   {
@@ -9027,596 +9181,6 @@
     }
   },
   {
-    "path": "docs/diagrams/AddTimetableCommandSequenceDiagram.puml",
-    "fileType": "other",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "@startuml"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "!include style.puml"
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "box Logic LOGIC_COLOR_T1"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "participant \":LogicManager\" as LogicManager LOGIC_COLOR"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "participant \":AddressBookParser\" as AddressBookParser LOGIC_COLOR"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "participant \":GenerateSlotCommandParser\" as GenerateSlotCommandParser LOGIC_COLOR"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "participant \"g:GenerateSlotCommand\" as GenerateSlotCommand LOGIC_COLOR"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "participant \":CommandResult\" as CommandResult LOGIC_COLOR"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "participant \":SlotGenerator\" as SlotGenerator LOGIC_COLOR"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "end box"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "box Model MODEL_COLOR_T1"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "participant \":Model\" as Model MODEL_COLOR"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "end box"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "[-\u003e LogicManager : execute(\"addTimetable r/Alice\")"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate LogicManager"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "LogicManager -\u003e AddressBookParser : parseCommand(\"addTimetable r/Alice\")"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate AddressBookParser"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "create GenerateSlotCommandParser"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "AddressBookParser -\u003e GenerateSlotCommandParser"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate GenerateSlotCommandParser"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommandParser --\u003e AddressBookParser"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate GenerateSlotCommandParser"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "AddressBookParser -\u003e GenerateSlotCommandParser : parse()"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate GenerateSlotCommandParser"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "create GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommandParser -\u003e GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommand --\u003e GenerateSlotCommandParser : g"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommandParser --\u003e AddressBookParser : g"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate GenerateSlotCommandParser"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "\u0027Hidden arrow to position the destroy marker below the end of the activation bar."
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommandParser -[hidden]-\u003e AddressBookParser"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "destroy GenerateSlotCommandParser"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "AddressBookParser --\u003e LogicManager : g"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate AddressBookParser"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "LogicManager -\u003e GenerateSlotCommand : execute()"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommand -\u003e Model : getMembers()"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate Model"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "Model --\u003e GenerateSlotCommand : members"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate Model"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "create SlotGenerator"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommand -\u003e SlotGenerator"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate SlotGenerator"
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "SlotGenerator --\u003e GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate SlotGenerator"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommand -\u003e SlotGenerator : generate(members, duration, timeRange)"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate SlotGenerator"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "SlotGenerator --\u003e GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate SlotGenerator"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "create CommandResult"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommand -\u003e CommandResult"
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "activate CommandResult"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "CommandResult --\u003e GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate CommandResult"
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "GenerateSlotCommand --\u003e LogicManager : result"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate GenerateSlotCommand"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "[\u003c--LogicManager"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "deactivate LogicManager"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "ccyccyccy"
-        },
-        "content": "@enduml"
-      }
-    ],
-    "authorContributionMap": {
-      "ccyccyccy": 83
-    }
-  },
-  {
     "path": "docs/diagrams/DeleteSequenceDiagram.puml",
     "fileType": "other",
     "lines": [
@@ -10342,7 +9906,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "SlotGenerator .down.\u003e TimeTable"
+        "content": "TimeSlotGenerator -down-\u003e TimeTable"
       },
       {
         "lineNumber": 34,
@@ -10428,7 +9992,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "participant \":SlotGenerator\" as SlotGenerator LOGIC_COLOR"
+        "content": "participant \":TimeSlotGenerator\" as TimeSlotGenerator LOGIC_COLOR"
       },
       {
         "lineNumber": 11,
@@ -10477,7 +10041,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "[-\u003e LogicManager : execute(\"generate\")"
+        "content": "[-\u003e LogicManager : execute(\"generate d/2\")"
       },
       {
         "lineNumber": 18,
@@ -10498,7 +10062,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "LogicManager -\u003e AddressBookParser : parseCommand(\"generate\")"
+        "content": "LogicManager -\u003e AddressBookParser : parseCommand(\"generate d/2\")"
       },
       {
         "lineNumber": 21,
@@ -10568,7 +10132,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "AddressBookParser -\u003e GenerateSlotCommandParser : parse(\"\")"
+        "content": "AddressBookParser -\u003e GenerateSlotCommandParser : parse(d/2)"
       },
       {
         "lineNumber": 31,
@@ -10764,178 +10328,192 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "create SlotGenerator"
+        "content": "loop for each timetable combination \u0026\u0026 timeRanges.isEmpty()"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "GenerateSlotCommand -\u003e SlotGenerator"
+        "content": "    create TimeSlotGenerator"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "activate SlotGenerator"
+        "content": "    GenerateSlotCommand -\u003e TimeSlotGenerator"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "    activate TimeSlotGenerator"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "SlotGenerator --\u003e GenerateSlotCommand"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "deactivate SlotGenerator"
+        "content": "    TimeSlotGenerator --\u003e GenerateSlotCommand"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "    deactivate TimeSlotGenerator"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "GenerateSlotCommand -\u003e SlotGenerator : generate(members, duration, timeRange)"
+        "content": ""
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "activate SlotGenerator"
+        "content": "    GenerateSlotCommand -\u003e TimeSlotGenerator : generate()"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "    activate TimeSlotGenerator"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "SlotGenerator --\u003e GenerateSlotCommand"
+        "content": ""
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "deactivate SlotGenerator"
+        "content": "    TimeSlotGenerator --\u003e GenerateSlotCommand : List\u003cTimeRange\u003e timeRanges"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "    deactivate TimeSlotGenerator"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "create CommandResult"
+        "content": "end"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "GenerateSlotCommand -\u003e CommandResult"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "activate CommandResult"
+        "content": "create CommandResult"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "GenerateSlotCommand -\u003e CommandResult"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "CommandResult --\u003e GenerateSlotCommand"
+        "content": "activate CommandResult"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "deactivate CommandResult"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "CommandResult --\u003e GenerateSlotCommand : result"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "GenerateSlotCommand --\u003e LogicManager : result"
+        "content": "deactivate CommandResult"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "deactivate GenerateSlotCommand"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": ""
+        "content": "GenerateSlotCommand --\u003e LogicManager : result"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "[\u003c--LogicManager"
+        "content": "deactivate GenerateSlotCommand"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "deactivate LogicManager"
+        "content": ""
       },
       {
         "lineNumber": 83,
+        "author": {
+          "gitId": "ccyccyccy"
+        },
+        "content": "[\u003c--LogicManager"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "ccyccyccy"
+        },
+        "content": "deactivate LogicManager"
+      },
+      {
+        "lineNumber": 85,
         "author": {
           "gitId": "ccyccyccy"
         },
@@ -10943,7 +10521,7 @@
       }
     ],
     "authorContributionMap": {
-      "ccyccyccy": 83
+      "ccyccyccy": 85
     }
   },
   {
@@ -55588,14 +55166,14 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "        List\u003cTimeRange\u003e uniqueTimeRanges \u003d filterUniqueTimeRanges(timeTables);"
+        "content": "        List\u003cTimeRange\u003e combined \u003d combineTimetables(timeTables);"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "        List\u003cTimeRange\u003e merged \u003d mergeOverlappingTimeRanges(uniqueTimeRanges);"
+        "content": "        List\u003cTimeRange\u003e merged \u003d mergedOverlappingTimeRanges(combined);"
       },
       {
         "lineNumber": 34,
@@ -55609,21 +55187,21 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "        List\u003cTimeRange\u003e truncated \u003d truncateTimeRange(inverted, userSpecifiedTimeRange);"
+        "content": "        List\u003cTimeRange\u003e truncated \u003d truncateTimeRanges(inverted, userSpecifiedTimeRange);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "        List\u003cTimeRange\u003e suitable \u003d getSuitableTimeRanges(truncated, numberOfHours);"
+        "content": "        List\u003cTimeRange\u003e accepted \u003d filterSuitableTimeRanges(truncated, numberOfHours);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "        Collections.sort(suitable);"
+        "content": "        Collections.sort(accepted);"
       },
       {
         "lineNumber": 38,
@@ -55637,7 +55215,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "        return suitable;"
+        "content": "        return accepted;"
       },
       {
         "lineNumber": 40,
@@ -55756,7 +55334,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "    private static List\u003cTimeRange\u003e filterUniqueTimeRanges(Collection\u003cTimeTable\u003e timeTables) {"
+        "content": "    private static List\u003cTimeRange\u003e combineTimetables(Collection\u003cTimeTable\u003e timeTables) {"
       },
       {
         "lineNumber": 57,
@@ -55854,7 +55432,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "    private static List\u003cTimeRange\u003e mergeOverlappingTimeRanges(Collection\u003cTimeRange\u003e timeRanges) throws IllegalValueException {"
+        "content": "    private static List\u003cTimeRange\u003e mergedOverlappingTimeRanges(Collection\u003cTimeRange\u003e timeRanges) throws IllegalValueException {"
       },
       {
         "lineNumber": 71,
@@ -56176,7 +55754,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "    private static List\u003cTimeRange\u003e truncateTimeRange(List\u003cTimeRange\u003e timeRanges, TimeRange limit) throws IllegalValueException {"
+        "content": "    private static List\u003cTimeRange\u003e truncateTimeRanges(List\u003cTimeRange\u003e timeRanges, TimeRange limit) throws IllegalValueException {"
       },
       {
         "lineNumber": 117,
@@ -56267,7 +55845,7 @@
         "author": {
           "gitId": "ccyccyccy"
         },
-        "content": "    private static List\u003cTimeRange\u003e getSuitableTimeRanges(List\u003cTimeRange\u003e timeRanges, int numberOfHours) {"
+        "content": "    private static List\u003cTimeRange\u003e filterSuitableTimeRanges(List\u003cTimeRange\u003e timeRanges, int numberOfHours) {"
       },
       {
         "lineNumber": 130,

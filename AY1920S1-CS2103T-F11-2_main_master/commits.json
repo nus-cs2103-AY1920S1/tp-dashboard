@@ -387,8 +387,8 @@
         ]
       },
       {
-        "insertions": 47,
-        "deletions": 22,
+        "insertions": 284,
+        "deletions": 67,
         "date": "2019-10-25",
         "commitResults": [
           {
@@ -397,6 +397,111 @@
             "messageBody": "* Edit UndoSequenceDiagram\r\n\r\n* Edit DG\r\n\r\n* Safe delete unnecessary files\r\n\r\n* Shift fields of TypicalItems to another class\r\n\r\n* Rename items\r\n\r\n* Refactor tests\r\n\r\n* Remove unwanted line\r\n",
             "insertions": 47,
             "deletions": 22
+          },
+          {
+            "hash": "84a7df3487cc7531604b74f15ce48f40051d3d63",
+            "messageTitle": "Add base files for Undo Redo commands",
+            "messageBody": "",
+            "insertions": 134,
+            "deletions": 39
+          },
+          {
+            "hash": "c09eac8d897965d1a55abd14f2dfab43850e9ae9",
+            "messageTitle": "Add toString methods to all commands",
+            "messageBody": "",
+            "insertions": 89,
+            "deletions": 1
+          },
+          {
+            "hash": "dfa55c882e757b8a0f0ef905f89fa41eb625a597",
+            "messageTitle": "Fix test case",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 5
+          }
+        ]
+      },
+      {
+        "insertions": 308,
+        "deletions": 58,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "ab7b7b71e5547e12f5eb868d6d989dbaa8db5e2c",
+            "messageTitle": "Make Undo work for commands that modify items",
+            "messageBody": "",
+            "insertions": 248,
+            "deletions": 52
+          },
+          {
+            "hash": "3347095b0f136ee50c82a6158dc5374187cdd9fc",
+            "messageTitle": "Add clone methods for all FilteredLists",
+            "messageBody": "",
+            "insertions": 60,
+            "deletions": 6
+          }
+        ]
+      },
+      {
+        "insertions": 284,
+        "deletions": 133,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "8818453e94da8cdc140001e67fa746446c43cebc",
+            "messageTitle": "Fix issues with undo for non-predicate commands",
+            "messageBody": "",
+            "insertions": 48,
+            "deletions": 22
+          },
+          {
+            "hash": "c9404a11701a456cb3a2917537e8abd2bf938b2a",
+            "messageTitle": "Solve stackable command issues for Check and Search",
+            "messageBody": "",
+            "insertions": 84,
+            "deletions": 51
+          },
+          {
+            "hash": "128254092c601f99b3671f687fd07718be20e3f0",
+            "messageTitle": "Add Redo feature",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 1
+          },
+          {
+            "hash": "aecd5c2da7807fe32ca710c26ddc6e13d07c34b5",
+            "messageTitle": "Fix styling issues and disable Undo \u0026 Redo for Sort",
+            "messageBody": "",
+            "insertions": 64,
+            "deletions": 40
+          },
+          {
+            "hash": "8f76023c9393cd71717ab781798980e1548d435c",
+            "messageTitle": "Update UserGuide",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 2
+          },
+          {
+            "hash": "e4ebf647052ea5423f5fb9d3056a08563a2bde2d",
+            "messageTitle": "Update Tag Command",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 17
+          }
+        ]
+      },
+      {
+        "insertions": 1,
+        "deletions": 1,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "0d6a314148fc83ff1d6289e84f03c3475f77e566",
+            "messageTitle": "Update link",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
           }
         ]
       }
@@ -686,6 +791,90 @@
             "messageBody": "* Rename Item as XpireItem\r\n\r\n* Create new super class Item\r\n\r\n* Rename MethodOfSorting as XpireMethodOfSorting\r\n\r\n* Implement ReplenishMethodOfSorting\r\n\r\n* Add new storage class\r\n\r\n* Allow storage of both lists\r\n\r\n* Add ItemManager\r\n\r\n* Auto-tag items as expired\r\n\r\n* Allow viewing of replenish list\r\n\r\n* Limit commands for replenish list\r\n\r\n* Minify css for speedup\r\n\r\n* Allow tagging for items in replenish list\r\n\r\n* Rename XpireStorage and related classes as ListStorage\r\n\r\n* Clean up storage classes\r\n\r\n* Resolve checkStyleMain errors\r\n\r\n* Resolve checkStyleTest errors\r\n\r\n* Resolve failing tests\r\n\r\n* Rename parser in Logic Manager\r\n\r\n* Update ReplenishCommand\r\n\r\n* Fix bug\r\n\r\n* Fix checkstyle issues\r\n\r\n* Fix checkstyle issues\r\n\r\n* Add shift commands\r\n\r\n* Resolve issues from review and checkstyle\r\n\r\n* Edit stackable commands\r\n\r\n* Disable tagging for replenish list\r\n\r\n* Fix checkstyle\r\n\r\n* Edit shift to main format command message\r\n",
             "insertions": 3146,
             "deletions": 1351
+          }
+        ]
+      },
+      {
+        "insertions": 182,
+        "deletions": 108,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "3b216db85b7f80a167e95e9f9e451949ea3c3dd5",
+            "messageTitle": "Update message usages",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 15
+          },
+          {
+            "hash": "812a7f4dc83e7c369fb56e6d785339abc3fbf924",
+            "messageTitle": "Fix quantity message bug",
+            "messageBody": "",
+            "insertions": 42,
+            "deletions": 27
+          },
+          {
+            "hash": "84c619ed2285d3caf305c286b99a28f845260a47",
+            "messageTitle": "Update DG",
+            "messageBody": "",
+            "insertions": 31,
+            "deletions": 20
+          },
+          {
+            "hash": "b4b922befc51d36ae7675915bb065364f3874b5f",
+            "messageTitle": "Add diagrams to DG",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 18
+          },
+          {
+            "hash": "bc7cb0f5b2eb1cf75d4450d67788772654dc2584",
+            "messageTitle": "Update user guide for shift command",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 2
+          },
+          {
+            "hash": "7dc848ed773df68ec9e2da6f2002bff8bab08107",
+            "messageTitle": "Update user guide formatting",
+            "messageBody": "",
+            "insertions": 26,
+            "deletions": 5
+          },
+          {
+            "hash": "00728f6a4ad5e91c55ff1afb79a9f213cc6e091e",
+            "messageTitle": "Add images",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "a9267c4d3410d7d47d41556b57bbd305fc67cf1e",
+            "messageTitle": "Fix errors in DG",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 9
+          },
+          {
+            "hash": "e40a5cc0b71d3db809b75282983dea3772139445",
+            "messageTitle": "Resolve inconsistency in naming in UG",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "cc183197a64360006fb0b295855e4f43ff858e30",
+            "messageTitle": "Update summary in UG",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 6
+          },
+          {
+            "hash": "cbb020b8e4369f1fa1e1f037a1ff4a1467cd6b3c",
+            "messageTitle": "Update table summary",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
           }
         ]
       }
@@ -1164,6 +1353,27 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 56,
+        "deletions": 57,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "891183b7c8f98cd4d2703a147bff8bc3198ba912",
+            "messageTitle": "Add images to UG",
+            "messageBody": "",
+            "insertions": 43,
+            "deletions": 44
+          },
+          {
+            "hash": "9c3414f9aacaf3796164634057bad81d7110194d",
+            "messageTitle": "Change size of images",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 13
           }
         ]
       }
@@ -1653,8 +1863,8 @@
         ]
       },
       {
-        "insertions": 79,
-        "deletions": 6,
+        "insertions": 382,
+        "deletions": 51,
         "date": "2019-10-31",
         "commitResults": [
           {
@@ -1705,6 +1915,97 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          },
+          {
+            "hash": "33c84bbb42d20aba158a2dea480071a9877b1e08",
+            "messageTitle": "Add QR code generator function",
+            "messageBody": "",
+            "insertions": 31,
+            "deletions": 0
+          },
+          {
+            "hash": "5e6d20641d43558f82a94d6cb4bb3dcf2cdc85d1",
+            "messageTitle": "Implement export command class",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 0
+          },
+          {
+            "hash": "94f2c16be26d9b5ab376225348e76573285ff5f6",
+            "messageTitle": "Update command result class to handle showing of QR code",
+            "messageBody": "",
+            "insertions": 29,
+            "deletions": 4
+          },
+          {
+            "hash": "616b3a63610e7dd8362f16a3e269d8ebfa3c124f",
+            "messageTitle": "Add qrcode generator function",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 8
+          },
+          {
+            "hash": "cc0b058cb9d3595ba81b13852331aa3cbcc4bffc",
+            "messageTitle": "Update command to handle qr code data",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 8
+          },
+          {
+            "hash": "555b8464dfdc939032b616c6210adb7a0d971697",
+            "messageTitle": "Add export command to parsers",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 0
+          },
+          {
+            "hash": "6bf54e09d7395e1f2e56be7d7fe72cad66f90ef3",
+            "messageTitle": "Add popup window for qr code",
+            "messageBody": "",
+            "insertions": 99,
+            "deletions": 1
+          },
+          {
+            "hash": "072cd2654cab4b51c7af3f359de119ca37c09b97",
+            "messageTitle": "Fix integration errors",
+            "messageBody": "",
+            "insertions": 48,
+            "deletions": 12
+          },
+          {
+            "hash": "b1b5aff1bda8f4514411dcc425e24b171feae4f9",
+            "messageTitle": "Add pretty formatting to export data",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 5
+          },
+          {
+            "hash": "f617f2edb92786a90ba2fb40f701c520ee58cb3b",
+            "messageTitle": "Add export command to UG",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 0
+          },
+          {
+            "hash": "95ccdbafd7c8e6bb75a558afdc5f09a7a0c28342",
+            "messageTitle": "Fix javafx version",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "e103caab4eb7867b1d2ae451bb2f28ccdeed0f7f",
+            "messageTitle": "Update ug",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "b3653d4cde1c56ab8473a850949bd140b1751dcf",
+            "messageTitle": "Rename xpireitem",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
           }
         ]
       }
@@ -2054,8 +2355,8 @@
         ]
       },
       {
-        "insertions": 351,
-        "deletions": 121,
+        "insertions": 547,
+        "deletions": 177,
         "date": "2019-10-31",
         "commitResults": [
           {
@@ -2099,56 +2400,154 @@
             "messageBody": "",
             "insertions": 22,
             "deletions": 3
+          },
+          {
+            "hash": "bc9da19995f33d32688c07a9e656d89dd5a17b52",
+            "messageTitle": "Set upper bound for expiry date to 100 years",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 6
+          },
+          {
+            "hash": "5142f1fb61a5e6f47db7da10db90b13bea3804ff",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "0935fbe24458784b4bd7245b594b78189505097e",
+            "messageTitle": "Add GUI section in UG",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 1
+          },
+          {
+            "hash": "bc12c0e87616dbdfbdaa44363cd3dd01ecafa610",
+            "messageTitle": "Modify GUI section in UG",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 4
+          },
+          {
+            "hash": "8f598d47d5158101f4e3090663d9e3e37d5472fa",
+            "messageTitle": "Modify set reminder in UG",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 4
+          },
+          {
+            "hash": "b14d7d88420268e9350c19adbe2ba55b38a538f4",
+            "messageTitle": "Change limit message for check command",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 4
+          },
+          {
+            "hash": "579177d43797486490ad85558d52db8ed333743f",
+            "messageTitle": "Fix test",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "dc441cc377c82202575af282c4cf33fc1a60605a",
+            "messageTitle": "Update User Guide (#134)",
+            "messageBody": "* Add GUI section in UG\r\n\r\n* Modify GUI section in UG\r\n\r\n* Modify set reminder in UG\r\n\r\n* Change limit message for check command\r\n\r\n* Fix test\r\n",
+            "insertions": 54,
+            "deletions": 10
+          },
+          {
+            "hash": "2788b4079c7aed844f780a799557550151dafe51",
+            "messageTitle": "Update reminder in DG",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 23
+          },
+          {
+            "hash": "dcc7dc26f8166f64dce00ec620e4f9587293274b",
+            "messageTitle": "Edit DG",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "17ae549d6ee0e74e2182ea4596773e333b4bd135",
+            "messageTitle": "Fix adoc",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 52,
+        "deletions": 28,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "76703fba59ad73bb99bf8cfd7b7dec21e9930abd",
+            "messageTitle": "Add images to GUI in UG",
+            "messageBody": "",
+            "insertions": 48,
+            "deletions": 24
+          },
+          {
+            "hash": "04299700de6de899cab4559a49d9c8b418df7636",
+            "messageTitle": "Fix gramma",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
           }
         ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "Kalsyc": 1256,
-    "liawsy": 3176,
-    "febee99": 3325,
-    "JermyTan": 2239,
-    "xiaoyu-nus": 1650
+    "Kalsyc": 1862,
+    "liawsy": 3288,
+    "febee99": 3388,
+    "JermyTan": 2461,
+    "xiaoyu-nus": 1783
   },
   "authorFileTypeContributionMap": {
     "Kalsyc": {
-      "docs": 141,
-      "tests": 636,
-      "functional": 472,
-      "other": 7
+      "docs": 170,
+      "tests": 685,
+      "functional": 992,
+      "other": 15
     },
     "liawsy": {
-      "docs": 90,
-      "tests": 1085,
-      "functional": 1959,
+      "docs": 151,
+      "tests": 1059,
+      "functional": 2036,
       "other": 42
     },
     "febee99": {
-      "docs": 523,
-      "tests": 857,
-      "functional": 1378,
+      "docs": 527,
+      "tests": 856,
+      "functional": 1438,
       "other": 567
     },
     "JermyTan": {
-      "docs": 293,
-      "tests": 574,
-      "functional": 1366,
-      "other": 6
+      "docs": 310,
+      "tests": 572,
+      "functional": 1571,
+      "other": 8
     },
     "xiaoyu-nus": {
-      "docs": 64,
-      "tests": 431,
-      "functional": 1056,
+      "docs": 181,
+      "tests": 437,
+      "functional": 1066,
       "other": 99
     }
   },
   "authorContributionVariance": {
-    "Kalsyc": 42748.133,
-    "liawsy": 362036.28,
-    "febee99": 494930.56,
-    "JermyTan": 151386.12,
-    "xiaoyu-nus": 18402.332
+    "Kalsyc": 46364.207,
+    "liawsy": 356203.34,
+    "febee99": 486281.62,
+    "JermyTan": 150663.6,
+    "xiaoyu-nus": 22831.016
   },
   "authorDisplayNameMap": {
     "Kalsyc": "CS2103T-F11-2 SIM J ... ARREN",

@@ -422,7 +422,7 @@
         ]
       },
       {
-        "insertions": 237,
+        "insertions": 350,
         "deletions": 5,
         "date": "2019-10-24",
         "commitResults": [
@@ -446,6 +446,13 @@
             "messageBody": "",
             "insertions": 81,
             "deletions": 2
+          },
+          {
+            "hash": "d4c0074e9affbbda0c2de9bd242aea59c1ac2333",
+            "messageTitle": "Added sequence diagram for edit command in DG",
+            "messageBody": "",
+            "insertions": 113,
+            "deletions": 0
           }
         ]
       },
@@ -488,6 +495,41 @@
             "messageBody": "",
             "insertions": 20,
             "deletions": 10
+          }
+        ]
+      },
+      {
+        "insertions": 345,
+        "deletions": 244,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "78ea2d04dc99307cc64ddf12b20b624a8c28db17",
+            "messageTitle": "Changed: 1. Fixed bug where dates could be added outside containing occurrence 2. Fixed bug where start dates could be after end dates 3. Reverted sorting of internal list 4. Fixed ui bug in days page where the scrollbar would not render",
+            "messageBody": "",
+            "insertions": 278,
+            "deletions": 184
+          },
+          {
+            "hash": "f551eeec7d41857197a062e4ea2b1cbfdf3fefe7",
+            "messageTitle": "Fixed checkstyle errors",
+            "messageBody": "",
+            "insertions": 67,
+            "deletions": 60
+          }
+        ]
+      },
+      {
+        "insertions": 61,
+        "deletions": 20,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "601de9b8076ec2d0dd0ba6ca4b280ed9e54014ab",
+            "messageTitle": "UG",
+            "messageBody": "",
+            "insertions": 61,
+            "deletions": 20
           }
         ]
       }
@@ -892,6 +934,20 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 33,
+        "deletions": 22,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "bdb556f422b3c7786fe04974070021ad3fda9b42",
+            "messageTitle": "Update expense manager/ trip manager UG",
+            "messageBody": "",
+            "insertions": 33,
+            "deletions": 22
           }
         ]
       }
@@ -1589,25 +1645,81 @@
             "deletions": 5
           }
         ]
+      },
+      {
+        "insertions": 796,
+        "deletions": 111,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "03e926b32a2faef4001c60947604884212feb32c",
+            "messageTitle": "Fix MainApp.java version number",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "621b079a06ea93b01cb8071c92d927033ab5fe89",
+            "messageTitle": "Changes (User Guide): - finish adding step-by-step image instructions for diary sections - remove irrelavant / deprecated details in various user guide sections",
+            "messageBody": "",
+            "insertions": 191,
+            "deletions": 66
+          },
+          {
+            "hash": "8edd782e26641244eb938f870d5cb3b67abf0dda",
+            "messageTitle": "Fixes: - fix newline not being appended during setDiaryText call from gui due to ArgumentMultimap trimming newlines - incorrect error message thrown for CreateDiaryEntryParser - incorrect prefix used in preferences page for window x and y position when firing command from PreferencesPage - removed unnecessary fillPage call in PreferencesPage initFormWithModel()",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 9
+          },
+          {
+            "hash": "bdff12677679c1c78f5baf6bfd48ca86290e79ce",
+            "messageTitle": "Changes: - Improved diary error messages ( distinguish MESSAGE_MISSING_FIELDS and MESSAGE_INVALID_COMMAND_FORMAT )",
+            "messageBody": "Fixes:\n- fixed AppendDiaryEntryParser not stripping leading whitespace\n\nChanges (Test):\n- Add more tests (some test factories) for diary parsers (\u003e 90% coverage)\n- Fix DiaryTestUtil generateRandomText only generating numbers\n",
+            "insertions": 582,
+            "deletions": 35
+          }
+        ]
+      },
+      {
+        "insertions": 28,
+        "deletions": 8,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "d809a20b757ffa2a0099f83689e7e536afaeafc5",
+            "messageTitle": "Small individual project portfolio page update",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 7
+          },
+          {
+            "hash": "012dd1196c1e60f28f1d2181db4c25e2c02c4ae0",
+            "messageTitle": "Add icon attributions",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 1
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "teoha": 7006,
-    "eizon05": 725,
+    "teoha": 7331,
+    "eizon05": 655,
     "SakshiPradyumn": 0,
-    "arjunwangty": 4938,
-    "ang-zeyu": 11218
+    "arjunwangty": 4941,
+    "ang-zeyu": 11924
   },
   "authorFileTypeContributionMap": {
     "teoha": {
-      "docs": 363,
-      "tests": 1142,
-      "functional": 5300,
-      "other": 201
+      "docs": 425,
+      "tests": 1159,
+      "functional": 5437,
+      "other": 310
     },
     "eizon05": {
-      "docs": 98,
+      "docs": 28,
       "tests": 8,
       "functional": 619
     },
@@ -1617,23 +1729,23 @@
       "functional": 0
     },
     "arjunwangty": {
-      "docs": 12,
-      "tests": 466,
-      "functional": 4460
+      "docs": 38,
+      "tests": 463,
+      "functional": 4440
     },
     "ang-zeyu": {
-      "docs": 789,
-      "tests": 1763,
-      "functional": 8240,
+      "docs": 964,
+      "tests": 2310,
+      "functional": 8224,
       "other": 426
     }
   },
   "authorContributionVariance": {
-    "teoha": 181344.73,
-    "eizon05": 7033.0933,
+    "teoha": 175694.67,
+    "eizon05": 6678.3633,
     "SakshiPradyumn": 0.0,
-    "arjunwangty": 190785.58,
-    "ang-zeyu": 485143.2
+    "arjunwangty": 181599.39,
+    "ang-zeyu": 469157.38
   },
   "authorDisplayNameMap": {
     "teoha": "CS2103T-T11-4 DERRI ...  YING",
