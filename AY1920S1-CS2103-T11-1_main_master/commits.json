@@ -807,6 +807,41 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 115,
+        "deletions": 140,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "bfbb1a578bf7c970ebec12066fe631b59144d2e4",
+            "messageTitle": "Add vehicle number validation when adding vehicles",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 70
+          },
+          {
+            "hash": "319b3d92a4bdf99835e3e870188ed2b1b6de2040",
+            "messageTitle": "bug fix regarding duplicate vehicle numbers",
+            "messageBody": "",
+            "insertions": 31,
+            "deletions": 30
+          },
+          {
+            "hash": "e4c921da9fb0a858bc45b24a3bed59cc0657eb54",
+            "messageTitle": "change implementation for checking vehicle number duplication",
+            "messageBody": "",
+            "insertions": 43,
+            "deletions": 38
+          },
+          {
+            "hash": "7b8c420d540d7e5b674ee21d4a7193432b117bcf",
+            "messageTitle": "Incorrect error message for editing vehicles",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 2
+          }
+        ]
       }
     ],
     "madanalogy": [
@@ -1427,8 +1462,8 @@
         ]
       },
       {
-        "insertions": 29,
-        "deletions": 17,
+        "insertions": 94,
+        "deletions": 67,
         "date": "2019-11-01",
         "commitResults": [
           {
@@ -1444,6 +1479,48 @@
             "messageBody": "",
             "insertions": 20,
             "deletions": 8
+          },
+          {
+            "hash": "d5506b31e4dbc9ca82d03f903a8fd1cd1af2674f",
+            "messageTitle": "moved access control to parser",
+            "messageBody": "",
+            "insertions": 65,
+            "deletions": 50
+          }
+        ]
+      },
+      {
+        "insertions": 144,
+        "deletions": 60,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "785311f31eaa84e3bd3a3c7081fcfddd5f7b69d1",
+            "messageTitle": "added tests for access",
+            "messageBody": "",
+            "insertions": 104,
+            "deletions": 23
+          },
+          {
+            "hash": "456eb0bf89d85f34615b891f223b8f45c95af68f",
+            "messageTitle": "changed phone constraints",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 23
+          },
+          {
+            "hash": "a188177ec47b2279dd3bee458d77218a88006630",
+            "messageTitle": "added update parameters message",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 10
+          },
+          {
+            "hash": "e6c8a50ebd3a66f41f5b7327e25b9766438bd645",
+            "messageTitle": "Added Admin Credentials to UG",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 4
           }
         ]
       }
@@ -2472,53 +2549,130 @@
             "deletions": 16
           }
         ]
+      },
+      {
+        "insertions": 188,
+        "deletions": 46,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "8f9486929fb330e6675b76ba642bb29c4350eba3",
+            "messageTitle": "adding vnum validation, and made vtype, auto args case insensitive",
+            "messageBody": "",
+            "insertions": 45,
+            "deletions": 18
+          },
+          {
+            "hash": "ec34502562efa23cb5839002926ddcc120c158a1",
+            "messageTitle": "adding vnum validation, and modified predicate constructors to support substring search for vnum",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 13
+          },
+          {
+            "hash": "dc04db4a29a8f5dd7f73bfb0d704cb5c0c6d68d8",
+            "messageTitle": "added instructions on district number in ug",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 0
+          },
+          {
+            "hash": "3946036eb99dccde974e10367e3d61a4dd8bd556",
+            "messageTitle": "preparing for vnum duplicate checking",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 3
+          },
+          {
+            "hash": "146995cf1be3140eda6eb391fd3e616b0afb7392",
+            "messageTitle": "added more specific error msg for wrong auto input",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "b9af58ae0d84f717e5ab440b1b4eba1259f7d703",
+            "messageTitle": "changing prefix of district",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "e90aa33e5baefd80a1a8ae2a1c3e0d95eb88438b",
+            "messageTitle": "adding detection for irrelevant prefixes for parseAuto, parseDistrict, parseVType, parseVNum, parseDistricts",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 3
+          },
+          {
+            "hash": "94a2ab0db0787b982d4f7def164aaad1a684c5ea",
+            "messageTitle": "checktyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "739eafc8d5b17129ce6fd82e3e8f8ba91443011b",
+            "messageTitle": "adding tests for new command",
+            "messageBody": "",
+            "insertions": 75,
+            "deletions": 3
+          },
+          {
+            "hash": "7b655d168de2b23bf0532a86131627f112d57724",
+            "messageTitle": "removing nc5",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 3
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "atharvjoshi": 1788,
-    "hellopanda128": 1427,
-    "madanalogy": 3905,
-    "Yoshi275": 1508,
-    "tirameshu": 1797
+    "atharvjoshi": 1764,
+    "hellopanda128": 1416,
+    "madanalogy": 4005,
+    "Yoshi275": 1502,
+    "tirameshu": 1911
   },
   "authorFileTypeContributionMap": {
     "atharvjoshi": {
       "docs": 183,
-      "tests": 159,
-      "functional": 1263,
+      "tests": 151,
+      "functional": 1247,
       "other": 183
     },
     "hellopanda128": {
       "docs": 127,
-      "tests": 348,
-      "functional": 952
+      "tests": 341,
+      "functional": 948
     },
     "madanalogy": {
-      "docs": 462,
-      "tests": 1505,
-      "functional": 1773,
+      "docs": 466,
+      "tests": 1521,
+      "functional": 1853,
       "other": 165
     },
     "Yoshi275": {
       "docs": 194,
-      "tests": 166,
-      "functional": 1019,
+      "tests": 168,
+      "functional": 1011,
       "other": 129
     },
     "tirameshu": {
-      "docs": 162,
-      "tests": 207,
-      "functional": 1343,
+      "docs": 165,
+      "tests": 252,
+      "functional": 1409,
       "other": 85
     }
   },
   "authorContributionVariance": {
-    "atharvjoshi": 28721.27,
-    "hellopanda128": 17752.314,
-    "madanalogy": 78975.44,
-    "Yoshi275": 34258.504,
-    "tirameshu": 32360.451
+    "atharvjoshi": 28293.809,
+    "hellopanda128": 18191.854,
+    "madanalogy": 77677.17,
+    "Yoshi275": 33721.977,
+    "tirameshu": 32267.738
   },
   "authorDisplayNameMap": {
     "atharvjoshi": "CS2103-T11-1 JOSHI ... ABHAY",

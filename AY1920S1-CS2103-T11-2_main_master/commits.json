@@ -520,8 +520,8 @@
         ]
       },
       {
-        "insertions": 815,
-        "deletions": 239,
+        "insertions": 908,
+        "deletions": 264,
         "date": "2019-11-01",
         "commitResults": [
           {
@@ -579,6 +579,48 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          },
+          {
+            "hash": "deaeaf2cb74beb6c6fa2c1b40381193bc4b73a35",
+            "messageTitle": "changed student list card credits -\u003e allowed credits",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "0a29fbd5f749a7226f23df99d3b20bbd8dc412bf",
+            "messageTitle": "Fixed GUI issues when running on Windows platforms.",
+            "messageBody": "",
+            "insertions": 49,
+            "deletions": 12
+          },
+          {
+            "hash": "1e61f8bdd5abe7854d1bf82581a77206eaef9c39",
+            "messageTitle": "Added separating comma to Module#getTimeSlotAsString()",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 4
+          },
+          {
+            "hash": "71b3926371eeae1fbc5c8f386d15fb883ab434a4",
+            "messageTitle": "Added MCs Label to ModuleListCard and ExpandedModuleListCard",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 5
+          },
+          {
+            "hash": "2aa9053b4b123e4de6f32134eb6f7d688e194c23",
+            "messageTitle": "EOF",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "24d68c34f6672b74740c0a11e5a822f63173d3bb",
+            "messageTitle": "Added admin remarks field to ExpandedAppealCard",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 2
           }
         ]
       }
@@ -1260,6 +1302,104 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 44,
+        "deletions": 31,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "a8d2cf4482da9f31148af6366b27934f183f2b50",
+            "messageTitle": "ad",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 3
+          },
+          {
+            "hash": "91003b3373811ee38bbce8c9875f117bfbd5d4ea",
+            "messageTitle": "edit historyfxml",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "3215e6df26f2f524890b2bcc124ef76ac571b780",
+            "messageTitle": "bug fix for approve error when module or student is expanded",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 14
+          },
+          {
+            "hash": "e6c7365e68d9efb54331d3010f844db8b3863ebf",
+            "messageTitle": "bug fix full list",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "fce7e998d746b394ebc54f7cde9f1890f436951b",
+            "messageTitle": "allow user to enter appeal ID with lower case",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 7
+          },
+          {
+            "hash": "9ce6df0f4468911c4a581169de56c91697da9cbd",
+            "messageTitle": "Edit UserGuide and add more appeal cases",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 201,
+        "deletions": 39,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "7add134bb61de0ac4cbe93454bbb4c8da2b3bdab",
+            "messageTitle": "Add clash checking for approving add mod appeals",
+            "messageBody": "",
+            "insertions": 127,
+            "deletions": 10
+          },
+          {
+            "hash": "9aba042c545790ded495e4f48b502123a934c991",
+            "messageTitle": "More informative feedback",
+            "messageBody": "",
+            "insertions": 30,
+            "deletions": 18
+          },
+          {
+            "hash": "9c5575665c61673f3bd9fb1cefeced775cd0e276",
+            "messageTitle": "checkstyle",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 6
+          },
+          {
+            "hash": "95788251237341245acb7eab50842710c4ae75fe",
+            "messageTitle": "checkstyle",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 1
+          },
+          {
+            "hash": "78b38377b75b9d9605d7ed6cc1dc73572a4e8fcc",
+            "messageTitle": "checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
+          },
+          {
+            "hash": "20ed2872b9bcc5adbedb077bd12957cfa2693295",
+            "messageTitle": "checkstyle",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
           }
         ]
       }
@@ -1994,6 +2134,34 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 369,
+        "deletions": 214,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "7785990ac3dd9ac253406c44baacb6ef961ac3e2",
+            "messageTitle": "Change addmod/removemod prefix handling to follow clash/view style: i.e. addmod s/1 (or s/A0144049) m/1 (or m/CS1010). If matric id or module code is given, fullList is used instead of filteredList. addmodcommand Addmod now checks for quota limit before adding Addmod now checks for student workload before adding Addmod now checks if the student has already taken the module before adding Lowered overall quota limit for easier-to-reach test case of quota limit. e.g. m/5 and m/11. add more mods to students. Remove unused prefix i/ and old m/(matric id) SLAPed addmodcommand/removemodcommand abit",
+            "messageBody": "",
+            "insertions": 317,
+            "deletions": 202
+          },
+          {
+            "hash": "e97f75a4529c13587bcbf74552d114f31dbb25d6",
+            "messageTitle": "Fix some bugs",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 10
+          },
+          {
+            "hash": "554fc2075cfda5652479ec9b6f6d9d0ccae552d3",
+            "messageTitle": "checkstyle",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 2
+          }
+        ]
       }
     ],
     "MistyRainforest": [
@@ -2343,48 +2511,48 @@
     ]
   },
   "authorFinalContributionMap": {
-    "SendorasLeft": 7484,
-    "AaronLuk": 1925,
-    "chensu2436": 1256,
-    "cheongliyuan": 1641,
-    "MistyRainforest": 1246
+    "SendorasLeft": 7558,
+    "AaronLuk": 2106,
+    "chensu2436": 1253,
+    "cheongliyuan": 1820,
+    "MistyRainforest": 1241
   },
   "authorFileTypeContributionMap": {
     "SendorasLeft": {
       "docs": 667,
       "tests": 2482,
-      "functional": 4122,
+      "functional": 4196,
       "other": 213
     },
     "AaronLuk": {
-      "docs": 41,
+      "docs": 43,
       "tests": 269,
-      "functional": 1615
+      "functional": 1794
     },
     "chensu2436": {
       "docs": 270,
       "tests": 12,
-      "functional": 758,
+      "functional": 755,
       "other": 216
     },
     "cheongliyuan": {
-      "docs": 71,
+      "docs": 69,
       "tests": 259,
-      "functional": 1311
+      "functional": 1492
     },
     "MistyRainforest": {
       "docs": 73,
       "tests": 255,
-      "functional": 798,
+      "functional": 793,
       "other": 120
     }
   },
   "authorContributionVariance": {
-    "SendorasLeft": 513239.06,
-    "AaronLuk": 34341.95,
-    "chensu2436": 35729.49,
-    "cheongliyuan": 29987.834,
-    "MistyRainforest": 105471.555
+    "SendorasLeft": 509060.72,
+    "AaronLuk": 34035.516,
+    "chensu2436": 35199.29,
+    "cheongliyuan": 34053.11,
+    "MistyRainforest": 103752.77
   },
   "authorDisplayNameMap": {
     "SendorasLeft": "CS2103-T11-2 NG YO ...  KUAN",

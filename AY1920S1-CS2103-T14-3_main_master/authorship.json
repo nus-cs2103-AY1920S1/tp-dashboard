@@ -50,7 +50,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "image::docs/images/Ui_updated.png[width\u003d\"1000\"]"
+        "content": "image::docs/images/Ui.png[width\u003d\"1000\"]"
       },
       {
         "lineNumber": 8,
@@ -51632,264 +51632,278 @@
       {
         "lineNumber": 4,
         "author": {
+          "gitId": "Akimatsu98"
+        },
+        "content": "import static seedu.flashcard.model.Model.PREDICATE_SHOW_ALL_FLASHCARDS;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 5,
+        "lineNumber": 6,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "import seedu.flashcard.logic.CommandHistory;"
       },
       {
-        "lineNumber": 6,
+        "lineNumber": 7,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.flashcard.logic.commands.exceptions.CommandException;"
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 8,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.flashcard.model.Model;"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.flashcard.model.tag.Tag;"
       },
       {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 10,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "-"
         },
-        "content": " * Represent a command that removes a tag, but the cards under this tag will be kept."
+        "content": "/**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": " * Represent a command that removes a tag, but the cards under this tag will be kept."
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "-"
         },
-        "content": "public class DeleteTagCommand extends Command {"
+        "content": " */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "public class DeleteTagCommand extends Command {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"deletetag\";"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String COMMAND_WORD \u003d \"deletetag\";"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": "        + \": Deletes the tag identified by the index number used in the displayed flashcard list.\\n\""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "        + \"Parameters: TAG NAME (must exist in the flashcards)\\n\""
+        "content": "        + \": Deletes the tag identified by the index number used in the displayed flashcard list.\\n\""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": "        + \"Example: \" + COMMAND_WORD + \"t/software engineering\";"
+        "content": "        + \"Parameters: TAG NAME (must exist in the flashcards)\\n\""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_DELETE_TAG_SUCCESS \u003d \"This tag has been deleted, \""
+        "content": "        + \"Example: \" + COMMAND_WORD + \"t/software engineering\";"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
-        "content": "        + \"the cards under this tag are kept.\";"
+        "content": "    public static final String MESSAGE_DELETE_TAG_SUCCESS \u003d \"This tag has been deleted, \""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_TAG_DOES_NOT_EXIST \u003d \"This tag does not exist in the flashcards.\";"
+        "content": "        + \"the cards under this tag are kept.\";"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_TAG_DOES_NOT_EXIST \u003d \"This tag does not exist in the flashcards.\";"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "    private final Tag target;"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private final Tag target;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "    public DeleteTagCommand(Tag target) {"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.target \u003d target;"
+        "content": "    public DeleteTagCommand(Tag target) {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        this.target \u003d target;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 33,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "    public CommandResult execute(Model model, CommandHistory history) throws CommandException {"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
         "content": "        requireNonNull(model);"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
         "content": "        if (!model.systemHasTag(target)) {"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
         "content": "            throw new CommandException(MESSAGE_TAG_DOES_NOT_EXIST);"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
         "content": "        model.systemRemoveTag(target);"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 39,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "        model.commitFlashcardList();"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Akimatsu98"
+        },
+        "content": "        model.updateFilteredFlashcardList(PREDICATE_SHOW_ALL_FLASHCARDS);"
+      },
+      {
+        "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
         "content": "        return new CommandResult(MESSAGE_DELETE_TAG_SUCCESS);"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
@@ -51898,7 +51912,7 @@
     ],
     "authorContributionMap": {
       "-": 38,
-      "Akimatsu98": 3
+      "Akimatsu98": 5
     }
   },
   {
@@ -66107,303 +66121,303 @@
       {
         "lineNumber": 105,
         "author": {
-          "gitId": "-"
+          "gitId": "Akimatsu98"
         },
-        "content": "    }"
+        "content": "        indicateModified();"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 107,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "     * Notifies listeners that the flashcard list has been modified."
+        "content": "    /**"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "     */"
+        "content": "     * Notifies listeners that the flashcard list has been modified."
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    protected void indicateModified() {"
+        "content": "     */"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "        invalidationListenerManager.callListeners(this);"
+        "content": "    protected void indicateModified() {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    }"
+        "content": "        invalidationListenerManager.callListeners(this);"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    public void addListener(InvalidationListener listener) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "        invalidationListenerManager.addListener(listener);"
+        "content": "    public void addListener(InvalidationListener listener) {"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    }"
+        "content": "        invalidationListenerManager.addListener(listener);"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    public void removeListener(InvalidationListener listener) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "        invalidationListenerManager.removeListener(listener);"
+        "content": "    public void removeListener(InvalidationListener listener) {"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    }"
+        "content": "        invalidationListenerManager.removeListener(listener);"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "-"
+          "gitId": "Akimatsu98"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "    public ObservableList\u003cFlashcard\u003e getFlashcardList() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "        return flashcards.asUnimodifiableObservableList();"
+        "content": "    public ObservableList\u003cFlashcard\u003e getFlashcardList() {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        return flashcards.asUnimodifiableObservableList();"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "    public String toString() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "        return flashcards.asUnimodifiableObservableList().size() + \"flashcards\";"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "        // TODO: refine later"
+        "content": "        return flashcards.asUnimodifiableObservableList().size() + \"flashcards\";"
       },
       {
         "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // TODO: refine later"
+      },
+      {
+        "lineNumber": 134,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": ""
       },
       {
-        "lineNumber": 134,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "        return other \u003d\u003d this"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "                || (other instanceof FlashcardList"
+        "content": "        return other \u003d\u003d this"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 flashcards.equals(((FlashcardList) other).flashcards));"
+        "content": "                || (other instanceof FlashcardList"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                    \u0026\u0026 flashcards.equals(((FlashcardList) other).flashcards));"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "    public int hashCode() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "        return flashcards.hashCode();"
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 146,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "    }"
+        "content": "        return flashcards.hashCode();"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 148,
@@ -66417,6 +66431,13 @@
         "author": {
           "gitId": "lzw12345"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "lzw12345"
+        },
         "content": "}"
       }
     ],
@@ -66424,7 +66445,7 @@
       "Oscar-B-Liang": 3,
       "lzw12345": 8,
       "-": 112,
-      "Akimatsu98": 24,
+      "Akimatsu98": 25,
       "jolynnn8D": 2
     }
   },

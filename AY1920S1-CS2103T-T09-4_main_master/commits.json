@@ -1808,6 +1808,76 @@
             "deletions": 4
           }
         ]
+      },
+      {
+        "insertions": 19,
+        "deletions": 20,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "c44e671c922416d9f4e61bba2569e3afdee74084",
+            "messageTitle": "Make schedule commands undoable",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 20
+          }
+        ]
+      },
+      {
+        "insertions": 41,
+        "deletions": 36,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "3d461e17b74030c2d080546cdc48fbe0bc523139",
+            "messageTitle": "Fix bug issue 202, filter away same schedule in conflict list",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 7
+          },
+          {
+            "hash": "4b75fc6111104e21a339b645ff4064054e4c0bdc",
+            "messageTitle": "Fix UG, issue 219 regarding unclear description of add-s command",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 1
+          },
+          {
+            "hash": "bab443007016f6d9cfecc3e4b451790778a8f800",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "6c15bd97b7c8a60abd744e175d1046d162838aa1",
+            "messageTitle": "Fix issue 231, emphasize that only dates after 1970 are accepted for scheduling",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "0d9f9a6d19afed80972c08c3a022726f81c3065b",
+            "messageTitle": "Extra check to ensure calendar only shows valid schedules",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 7
+          },
+          {
+            "hash": "13e569a5c0381b6f0aa4ef61c4534ddb25c8e86a",
+            "messageTitle": "Fix schedule conflicts bug from previous commit",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 17
+          },
+          {
+            "hash": "87643a61bebbc479523e404ed8769f2bd56fa2ff",
+            "messageTitle": "Defensive filter to ensure only schedules (in orders) are used to check conflicts",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 0
+          }
+        ]
       }
     ],
     "zhixianggg": [
@@ -3247,8 +3317,8 @@
         ]
       },
       {
-        "insertions": 52,
-        "deletions": 30,
+        "insertions": 54,
+        "deletions": 32,
         "date": "2019-11-01",
         "commitResults": [
           {
@@ -3278,6 +3348,83 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 1
+          },
+          {
+            "hash": "7393b30f9346758162506f8152b7794eaec9574e",
+            "messageTitle": "Fix OrderBook cannot be read after saving bug",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 177,
+        "deletions": 38,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "4a5acaa89979b46145a95a0ea8069afc49c1cf68",
+            "messageTitle": "Fix invalid data in SampleDataUtil",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "baa8fe21bd0da20c445fb2bb8b9b55b22c0c3974",
+            "messageTitle": "Add check to add to archived order book",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "0f02f93ff5fe8d0cac597f22b54e443285a739fe",
+            "messageTitle": "Fix OrderBook and ArchivedOrderBook bugs",
+            "messageBody": "",
+            "insertions": 76,
+            "deletions": 2
+          },
+          {
+            "hash": "da130734776571ad48e88d5fad9f6102ee0fc49b",
+            "messageTitle": "fix checkstyle",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 4
+          },
+          {
+            "hash": "31ab6c3d476531c438a5db3718d8ba0c0f3d248a",
+            "messageTitle": "Apply \u0027Avoid Complicated Expressions\u0027 Code Quality standard",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 11
+          },
+          {
+            "hash": "dc7757c1d45f689240950c3973d607b698d9062b",
+            "messageTitle": "cancel order if there are duplicated completed orders",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 5
+          },
+          {
+            "hash": "6cf389b5a0a03af09264efd493073a0d3426c3b7",
+            "messageTitle": "fix checkstyle and test cases",
+            "messageBody": "",
+            "insertions": 46,
+            "deletions": 8
+          },
+          {
+            "hash": "2c5836a2a09560ab55a8a1db632bd87e01ad594a",
+            "messageTitle": "change Phone isSameAs method",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "3c8d474a49861aef9f801ef76120c05f32d0b048",
+            "messageTitle": "prevent unscheduled orders from being completed",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 2
           }
         ]
       }
@@ -5200,6 +5347,20 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 55,
+        "deletions": 59,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "12d8d3bfe6afd373190ddcc30b5b5a9894e38924",
+            "messageTitle": "Revert \"Fix bugs + make schedule commands undoable\"",
+            "messageBody": "",
+            "insertions": 55,
+            "deletions": 59
+          }
+        ]
       }
     ],
     "yeodonghan": [
@@ -5507,35 +5668,35 @@
     ]
   },
   "authorFinalContributionMap": {
-    "uberSaiyan": 3330,
-    "qiujiaaa": 4767,
-    "zhixianggg": 12101,
-    "EugeneTeu": 6944,
+    "uberSaiyan": 3325,
+    "qiujiaaa": 4729,
+    "zhixianggg": 12236,
+    "EugeneTeu": 6991,
     "yeodonghan": 1923
   },
   "authorFileTypeContributionMap": {
     "uberSaiyan": {
       "docs": 75,
-      "tests": 869,
-      "functional": 2296,
+      "tests": 866,
+      "functional": 2294,
       "other": 90
     },
     "qiujiaaa": {
-      "docs": 265,
-      "tests": 2857,
-      "functional": 1534,
+      "docs": 260,
+      "tests": 2843,
+      "functional": 1515,
       "other": 111
     },
     "zhixianggg": {
-      "docs": 662,
+      "docs": 661,
       "tests": 6427,
-      "functional": 4760,
+      "functional": 4896,
       "other": 252
     },
     "EugeneTeu": {
-      "docs": 266,
-      "tests": 3322,
-      "functional": 3089,
+      "docs": 272,
+      "tests": 3342,
+      "functional": 3110,
       "other": 267
     },
     "yeodonghan": {
@@ -5546,11 +5707,11 @@
     }
   },
   "authorContributionVariance": {
-    "uberSaiyan": 129795.266,
-    "qiujiaaa": 69482.586,
-    "zhixianggg": 425416.06,
-    "EugeneTeu": 123732.26,
-    "yeodonghan": 15928.052
+    "uberSaiyan": 128110.44,
+    "qiujiaaa": 68199.29,
+    "zhixianggg": 418304.03,
+    "EugeneTeu": 121953.27,
+    "yeodonghan": 15693.791
   },
   "authorDisplayNameMap": {
     "uberSaiyan": "YAN W ... LIANG",

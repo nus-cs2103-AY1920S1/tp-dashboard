@@ -17567,16 +17567,16 @@
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "    public static final String MESSAGE_INVALID_MEAL_DISPLAYED_INDEX \u003d \"The dish index provided is invalid\";"
+        "content": "    public static final String MESSAGE_INVALID_MEAL_DISPLAYED_INDEX \u003d \"The meal index provided is invalid\";"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "    public static final String MESSAGE_DISHES_LISTED_OVERVIEW \u003d \"%1$d dishes listed!\";"
+        "content": "    public static final String MESSAGE_DISHES_LISTED_OVERVIEW \u003d \"%1$d meals listed!\";"
       },
       {
         "lineNumber": 12,
@@ -17594,7 +17594,8 @@
       }
     ],
     "authorContributionMap": {
-      "iltep64": 3,
+      "iltep64": 1,
+      "fangpinsern": 2,
       "-": 10
     }
   },
@@ -27996,889 +27997,889 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "import calofit.logic.commands.exceptions.CommandException;"
+        "content": "import calofit.commons.core.Messages;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "iltep64"
         },
-        "content": "import calofit.model.Model;"
+        "content": "import calofit.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 14,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "import calofit.model.Model;"
+      },
+      {
+        "lineNumber": 15,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "import calofit.model.dish.Calorie;"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 16,
         "author": {
           "gitId": "iltep64"
         },
         "content": "import calofit.model.dish.Dish;"
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 17,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "import calofit.model.dish.exceptions.DuplicateDishException;"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 18,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "import calofit.model.meal.Meal;"
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 19,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "import calofit.model.meal.MealLog;"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 20,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "import calofit.model.tag.Tag;"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 21,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "import calofit.model.util.Timestamp;"
       },
       {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 22,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
         "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
+          "gitId": "iltep64"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
           "gitId": "-"
         },
         "content": "/**"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 25,
         "author": {
           "gitId": "iltep64"
         },
         "content": " * Adds a dish to the dish database."
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
         "content": " */"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
         "content": "public class AddCommand extends Command {"
       },
       {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
       },
       {
         "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
         "author": {
           "gitId": "iltep64"
         },
         "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds a dish to the dish database. \""
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
         "content": "            + \"Parameters: \""
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
         "content": "            + PREFIX_NAME + \"NAME \""
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
         "content": "            + \"[\" + PREFIX_TAG + \"TAG]...\\n\""
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
         "content": "            + \"Example: \" + COMMAND_WORD + \" \""
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 36,
         "author": {
           "gitId": "FelixNWJ"
         },
         "content": "            + PREFIX_NAME + \"Carbonara \""
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 37,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "            + PREFIX_CALORIES + \"low calorie \""
+        "content": "            + PREFIX_CALORIES + \"300 \""
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 38,
         "author": {
           "gitId": "FelixNWJ"
         },
         "content": "            + PREFIX_TAG + \"salty\";"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 40,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "    public static final String MESSAGE_SUCCESS \u003d \"New meal added to meal log: %1$s\";"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 41,
         "author": {
           "gitId": "iltep64"
         },
         "content": "    public static final String MESSAGE_DUPLICATE_MEAL \u003d \"This dish already exists in the dish database\";"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 42,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "    public static final String MESSAGE_MEAL_NOT_IN_DATABASE \u003d \"This dish is not in our database. \""
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 43,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "            + \"Please update the calories using the c/ \""
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 44,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "            + \"calories set to 700 by default\";"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "    public static final int DEFAULT_MEAL_CALORIE \u003d 700;"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "    public static final int DEFAULT_MEAL_CALORIE \u003d 700;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    private Dish toAdd;"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    private int dishNumber;"
+        "content": "    private Dish toAdd;"
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "    private int dishNumber;"
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "    /**"
+        "content": "    private boolean isNumber \u003d false;"
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "-"
         },
-        "content": "     * Creates an AddCommand to add the specified {@code Dish}"
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "iltep64"
         },
-        "content": "    public AddCommand(Dish dish) {"
+        "content": "     * Creates an AddCommand to add the specified {@code Dish}"
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "-"
         },
-        "content": "        requireNonNull(dish);"
+        "content": "     */"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "iltep64"
         },
-        "content": "        toAdd \u003d dish;"
+        "content": "    public AddCommand(Dish dish) {"
       },
       {
         "lineNumber": 56,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "        requireNonNull(dish);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "        toAdd \u003d dish;"
+      },
+      {
+        "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "    public AddCommand(int dishNumber) {"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "        requireNonNull(dishNumber);"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        this.dishNumber \u003d dishNumber;"
+        "content": "    public AddCommand(int dishNumber) {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "        requireNonNull(dishNumber);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "        this.dishNumber \u003d dishNumber;"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "    @Override"
+        "content": "        this.isNumber \u003d true;"
       },
       {
         "lineNumber": 64,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        requireNonNull(model);"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "        MealLog mealLog \u003d model.getMealLog();"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "        if (dishNumber !\u003d 0) {"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            Dish wantToAdd \u003d model.getFilteredDishList().get(dishNumber - 1);"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            Meal toAddMeal \u003d new Meal(wantToAdd, new Timestamp(LocalDateTime.now()));"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            mealLog.addMeal(toAddMeal);"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            return new CommandResult(String.format(MESSAGE_SUCCESS, wantToAdd));"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            Dish wantToAdd \u003d toAdd;"
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            if (model.hasDish(wantToAdd)) {"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                wantToAdd \u003d model.getDishByName(toAdd.getName());"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                Meal toAddMeal \u003d new Meal(wantToAdd, new Timestamp(LocalDateTime.now()));"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                mealLog.addMeal(toAddMeal);"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                return new CommandResult(String.format(MESSAGE_SUCCESS, wantToAdd));"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                //throw new CommandException(MESSAGE_DUPLICATE_MEAL);"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                if (model.hasDishName(wantToAdd.getName())"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                        \u0026\u0026 !wantToAdd.getCalories().equals(Calorie.UNKNOWN_CALORIE)) {"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    //case where the dishname is in the dishDB and the calorie tag is used"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    model.addDish(wantToAdd);"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    Meal toAddMeal \u003d new Meal(wantToAdd, new Timestamp(LocalDateTime.now()));"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    mealLog.addMeal(toAddMeal);"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                } else if (model.hasDishName(wantToAdd.getName())"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                        \u0026\u0026 wantToAdd.getCalories().equals(Calorie.UNKNOWN_CALORIE)) {"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    // Case where the dish name is in the dishDB and the calorie tag is not used"
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    Set\u003cTag\u003e newTag \u003d wantToAdd.getTags();"
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    wantToAdd \u003d model.getDishByName(toAdd.getName());"
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    try {"
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                        model.addDish(wantToAdd);"
-      },
-      {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    } catch (DuplicateDishException e) {"
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                        System.out.println(\"There is another Dish with the same name\");"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    }"
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    Set\u003cTag\u003e combineNewAndOldTags \u003d new HashSet\u003cTag\u003e();"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    combineNewAndOldTags.addAll(wantToAdd.getTags());"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    combineNewAndOldTags.addAll(newTag);"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    Dish newDish \u003d new Dish(wantToAdd.getName(), wantToAdd.getCalories(), combineNewAndOldTags);"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    wantToAdd \u003d newDish;"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    Meal toAddMeal \u003d new Meal(newDish, new Timestamp(LocalDateTime.now()));"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    mealLog.addMeal(toAddMeal);"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                } else if (!model.hasDishName(wantToAdd.getName())"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                        \u0026\u0026 wantToAdd.getCalories().equals(Calorie.UNKNOWN_CALORIE)) {"
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    // If the meal is not in the dishDB and does not have a calorie tag,"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    // the dish will be added to the dishDB with a default calorie of 700"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    // and added to the meal log with a default value of 700 as well"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    Dish mealNonNegativeCal \u003d new Dish(wantToAdd.getName(), new Calorie(DEFAULT_MEAL_CALORIE),"
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                            wantToAdd.getTags());"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    wantToAdd \u003d mealNonNegativeCal;"
-      },
-      {
-        "lineNumber": 118,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    model.addDish(mealNonNegativeCal);"
-      },
-      {
-        "lineNumber": 119,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    Meal toAddMeal \u003d new Meal(mealNonNegativeCal, new Timestamp(LocalDateTime.now()));"
-      },
-      {
-        "lineNumber": 120,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    mealLog.addMeal(toAddMeal);"
-      },
-      {
-        "lineNumber": 121,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                } else {"
-      },
-      {
-        "lineNumber": 122,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    model.addDish(wantToAdd);"
-      },
-      {
-        "lineNumber": 123,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    Meal toAddMeal \u003d new Meal(wantToAdd, new Timestamp(LocalDateTime.now()));"
-      },
-      {
-        "lineNumber": 124,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                    mealLog.addMeal(toAddMeal);"
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            //model.addDish(toAdd);"
-      },
-      {
-        "lineNumber": 129,
-        "author": {
-          "gitId": "fangpinsern"
-        },
-        "content": "            return new CommandResult(String.format(MESSAGE_SUCCESS, wantToAdd));"
-      },
-      {
-        "lineNumber": 130,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 131,
         "author": {
           "gitId": "fangpinsern"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 65,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
         "content": ""
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
         "content": "    @Override"
       },
       {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        requireNonNull(model);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "        MealLog mealLog \u003d model.getMealLog();"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "        if (isNumber) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            if (dishNumber \u003c\u003d 0 || dishNumber \u003e model.getFilteredDishList().size()) {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                throw new CommandException(Messages.MESSAGE_INVALID_MEAL_DISPLAYED_INDEX);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                Dish wantToAdd \u003d model.getFilteredDishList().get(dishNumber - 1);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                Meal toAddMeal \u003d new Meal(wantToAdd, new Timestamp(LocalDateTime.now()));"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                mealLog.addMeal(toAddMeal);"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                return new CommandResult(String.format(MESSAGE_SUCCESS, wantToAdd));"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            Dish wantToAdd \u003d toAdd;"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            if (model.hasDish(wantToAdd)) {"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                wantToAdd \u003d model.getDishByName(toAdd.getName());"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                Meal toAddMeal \u003d new Meal(wantToAdd, new Timestamp(LocalDateTime.now()));"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                mealLog.addMeal(toAddMeal);"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                return new CommandResult(String.format(MESSAGE_SUCCESS, wantToAdd));"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                //throw new CommandException(MESSAGE_DUPLICATE_MEAL);"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                if (model.hasDishName(wantToAdd.getName())"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                        \u0026\u0026 !wantToAdd.getCalories().equals(Calorie.UNKNOWN_CALORIE)) {"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    //case where the dishname is in the dishDB and the calorie tag is used"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    model.addDish(wantToAdd);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    Meal toAddMeal \u003d new Meal(wantToAdd, new Timestamp(LocalDateTime.now()));"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    mealLog.addMeal(toAddMeal);"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                } else if (model.hasDishName(wantToAdd.getName())"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                        \u0026\u0026 wantToAdd.getCalories().equals(Calorie.UNKNOWN_CALORIE)) {"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    // Case where the dish name is in the dishDB and the calorie tag is not used"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    Set\u003cTag\u003e newTag \u003d wantToAdd.getTags();"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    wantToAdd \u003d model.getDishByName(toAdd.getName());"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    try {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                        model.addDish(wantToAdd);"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    } catch (DuplicateDishException e) {"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                        System.out.println(\"There is another Dish with the same name\");"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    Set\u003cTag\u003e combineNewAndOldTags \u003d new HashSet\u003cTag\u003e();"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    combineNewAndOldTags.addAll(wantToAdd.getTags());"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    combineNewAndOldTags.addAll(newTag);"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    Dish newDish \u003d new Dish(wantToAdd.getName(), wantToAdd.getCalories(), combineNewAndOldTags);"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    wantToAdd \u003d newDish;"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    Meal toAddMeal \u003d new Meal(newDish, new Timestamp(LocalDateTime.now()));"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    mealLog.addMeal(toAddMeal);"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                } else if (!model.hasDishName(wantToAdd.getName())"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                        \u0026\u0026 wantToAdd.getCalories().equals(Calorie.UNKNOWN_CALORIE)) {"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    // If the meal is not in the dishDB and does not have a calorie tag,"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    // the dish will be added to the dishDB with a default calorie of 700"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    // and added to the meal log with a default value of 700 as well"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    Dish mealNonNegativeCal \u003d new Dish(wantToAdd.getName(), new Calorie(DEFAULT_MEAL_CALORIE),"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                            wantToAdd.getTags());"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    wantToAdd \u003d mealNonNegativeCal;"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    model.addDish(mealNonNegativeCal);"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    Meal toAddMeal \u003d new Meal(mealNonNegativeCal, new Timestamp(LocalDateTime.now()));"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    mealLog.addMeal(toAddMeal);"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                } else {"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    model.addDish(wantToAdd);"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    Meal toAddMeal \u003d new Meal(wantToAdd, new Timestamp(LocalDateTime.now()));"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                    mealLog.addMeal(toAddMeal);"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "            //model.addDish(toAdd);"
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "                || (other instanceof AddCommand // instanceof handles nulls"
+        "content": "            return new CommandResult(String.format(MESSAGE_SUCCESS, wantToAdd));"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 toAdd.equals(((AddCommand) other).toAdd));"
+        "content": "        }"
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
         "content": "    }"
       },
@@ -28887,14 +28888,63 @@
         "author": {
           "gitId": "-"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                || (other instanceof AddCommand // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                \u0026\u0026 toAdd.equals(((AddCommand) other).toAdd));"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
       "iltep64": 16,
-      "fangpinsern": 86,
+      "fangpinsern": 94,
       "-": 33,
-      "FelixNWJ": 4
+      "FelixNWJ": 3
     }
   },
   {
@@ -67287,9 +67337,9 @@
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "    private static final String ICON_APPLICATION \u003d \"/images/address_book_32.png\";"
+        "content": "    private static final String ICON_APPLICATION \u003d \"/images/calofit_logo.png\";"
       },
       {
         "lineNumber": 25,
@@ -67735,7 +67785,8 @@
     ],
     "authorContributionMap": {
       "iltep64": 5,
-      "-": 82
+      "fangpinsern": 1,
+      "-": 81
     }
   },
   {
@@ -72324,9 +72375,9 @@
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "    \u003cImage url\u003d\"@/images/address_book_32.png\" /\u003e"
+        "content": "    \u003cImage url\u003d\"@/images/calofit_logo.png\" /\u003e"
       },
       {
         "lineNumber": 19,
@@ -72702,7 +72753,8 @@
     ],
     "authorContributionMap": {
       "iltep64": 13,
-      "-": 49,
+      "fangpinsern": 1,
+      "-": 48,
       "FelixNWJ": 9
     }
   },
@@ -75736,9 +75788,9 @@
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "        assertNotNull(AppUtil.getImage(\"/images/address_book_32.png\"));"
+        "content": "        assertNotNull(AppUtil.getImage(\"/images/calofit_logo.png\"));"
       },
       {
         "lineNumber": 14,
@@ -75918,7 +75970,8 @@
     ],
     "authorContributionMap": {
       "iltep64": 7,
-      "-": 31
+      "fangpinsern": 1,
+      "-": 30
     }
   },
   {
