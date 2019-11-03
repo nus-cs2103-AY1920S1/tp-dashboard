@@ -43006,9 +43006,9 @@
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "Format: `quiz t/TAG...`"
+        "content": "Format: `quiztag t/TAG...`"
       },
       {
         "lineNumber": 161,
@@ -43069,9 +43069,9 @@
       {
         "lineNumber": 169,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "* `quiz t/mathematics t/geography` : start a quiz on all the flashcards with tag `mathematics` and `geography`."
+        "content": "* `quiztag t/mathematics t/geography` : start a quiz on all the flashcards with tag `mathematics` and `geography`."
       },
       {
         "lineNumber": 170,
@@ -43477,7 +43477,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* Deletes the person with the specified `INDEX`."
+        "content": "* Deletes the flashcard with the specified `INDEX`."
       },
       {
         "lineNumber": 228,
@@ -43679,8 +43679,8 @@
     "authorContributionMap": {
       "Oscar-B-Liang": 30,
       "lzw12345": 6,
-      "-": 168,
-      "jolynnn8D": 48,
+      "-": 170,
+      "jolynnn8D": 46,
       "Akimatsu98": 3
     }
   },
@@ -49685,247 +49685,247 @@
       {
         "lineNumber": 4,
         "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.flashcard.logic.parser.CliSyntax.PREFIX_ANSWER;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
           "gitId": "lzw12345"
         },
         "content": "import static seedu.flashcard.logic.parser.CliSyntax.PREFIX_CHOICE;"
       },
       {
-        "lineNumber": 5,
+        "lineNumber": 6,
         "author": {
           "gitId": "-"
         },
         "content": "import static seedu.flashcard.logic.parser.CliSyntax.PREFIX_DEFINITION;"
       },
       {
-        "lineNumber": 6,
+        "lineNumber": 7,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "import static seedu.flashcard.logic.parser.CliSyntax.PREFIX_QUESTION;"
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 8,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "import static seedu.flashcard.logic.parser.CliSyntax.PREFIX_TAG;"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "Akimatsu98"
-        },
-        "content": "import seedu.flashcard.logic.CommandHistory;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "import seedu.flashcard.logic.commands.exceptions.CommandException;"
+        "content": "import seedu.flashcard.logic.CommandHistory;"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "-"
+          "gitId": "Akimatsu98"
         },
-        "content": "import seedu.flashcard.model.Model;"
+        "content": "import seedu.flashcard.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
-        "content": "import seedu.flashcard.model.flashcard.Flashcard;"
+        "content": "import seedu.flashcard.model.Model;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "import seedu.flashcard.model.flashcard.Flashcard;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "-"
         },
-        "content": " * Command to add a new model."
+        "content": "/**"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": " * Command to add a new model."
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "public class AddCommand extends Command {"
+        "content": " */"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "public class AddCommand extends Command {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds a flashcard to a flashcard list. \""
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "            + \"Parameters: \""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds a flashcard to a flashcard list. \""
       },
       {
         "lineNumber": 23,
+        "author": {
+          "gitId": "Akimatsu98"
+        },
+        "content": "            + \"Parameters: \""
+      },
+      {
+        "lineNumber": 24,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "            + \"[\" + PREFIX_QUESTION + \"QUESTION]\""
       },
       {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "lzw12345"
-        },
-        "content": "            + \"[\" + PREFIX_CHOICE + \"CHOICE]\""
-      },
-      {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "            + \"[\" + PREFIX_DEFINITION + \"DEFINITION]\""
+        "content": "            + \"[\" + PREFIX_CHOICE + \"CHOICE]...\""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "            + \"[\" + PREFIX_TAG + \"TAG]...\\n\""
+        "content": "            + \"[\" + PREFIX_DEFINITION + \"DEFINITION]\""
       },
       {
         "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            + \"[\" + PREFIX_TAG + \"TAG]...\""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            + \"[\" + PREFIX_ANSWER + \"ANSWER]\\n\""
+      },
+      {
+        "lineNumber": 29,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "            + \"Example: \" + COMMAND_WORD + \" \""
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 30,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "            + PREFIX_QUESTION + \"Refactor \""
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 31,
         "author": {
           "gitId": "lzw12345"
         },
         "content": "            + PREFIX_CHOICE + \"Make the codes be in a neater style without changing its functions. \""
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 32,
         "author": {
           "gitId": "lzw12345"
         },
         "content": "            + PREFIX_CHOICE + \"Test for for bugs in the system \""
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 33,
         "author": {
           "gitId": "lzw12345"
         },
         "content": "            + PREFIX_CHOICE + \"Change a mathematical formula \""
       },
       {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "lzw12345"
-        },
-        "content": "            + PREFIX_DEFINITION + \"a \""
-      },
-      {
-        "lineNumber": 33,
+        "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "            + PREFIX_TAG + \"Software Engineering \";"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "Akimatsu98"
-        },
-        "content": ""
+        "content": "            + PREFIX_ANSWER + \"Make the codes be in a neater style without changing its functions. \""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"New flashcard added.\";"
+        "content": "            + PREFIX_TAG + \"Software Engineering \";"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "    public static final String MESSAGE_DUPLICATE_FLASHCARD \u003d \"This flashcard already exists in the flashcard list!\";"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"New flashcard added.\";"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "-"
+          "gitId": "Akimatsu98"
         },
-        "content": "    private final Flashcard toAdd;"
+        "content": "    public static final String MESSAGE_DUPLICATE_FLASHCARD \u003d \"This flashcard already exists in the flashcard list!\";"
       },
       {
         "lineNumber": 39,
@@ -49937,194 +49937,208 @@
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "    /**"
+        "content": "    private final Flashcard toAdd;"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "     * Construct a new add flashcard command."
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "     * @param flashcard the flashcard to be added"
+        "content": "    /**"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "     */"
+        "content": "     * Construct a new add flashcard command."
       },
       {
         "lineNumber": 44,
+        "author": {
+          "gitId": "Akimatsu98"
+        },
+        "content": "     * @param flashcard the flashcard to be added"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Akimatsu98"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
         "content": "    public AddCommand (Flashcard flashcard) {"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
         "content": "        requireNonNull(flashcard);"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 48,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "        this.toAdd \u003d flashcard;"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 51,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 52,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "     * Return the result from executing the add command."
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
         "content": "     * @param model list of flashcards"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 54,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "     * @return the execution result"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 55,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "     * @throws CommandException error encountered during execution of command"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 56,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 58,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "    public CommandResult execute(Model model, CommandHistory history) throws CommandException {"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
         "content": "        requireNonNull(model);"
       },
       {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "Akimatsu98"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        if (model.hasFlashcard(toAdd)) {"
-      },
-      {
         "lineNumber": 60,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "            throw new CommandException(MESSAGE_DUPLICATE_FLASHCARD);"
+        "content": ""
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (model.hasFlashcard(toAdd)) {"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "-"
+          "gitId": "Akimatsu98"
         },
-        "content": ""
+        "content": "            throw new CommandException(MESSAGE_DUPLICATE_FLASHCARD);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "        model.addFlashcard(toAdd);"
+        "content": "        }"
       },
       {
         "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        model.addFlashcard(toAdd);"
+      },
+      {
+        "lineNumber": 66,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "        model.commitFlashcardList();"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 67,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "        return new CommandResult(MESSAGE_SUCCESS, false, false);"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
@@ -50132,8 +50146,8 @@
       }
     ],
     "authorContributionMap": {
-      "lzw12345": 6,
-      "-": 35,
+      "lzw12345": 4,
+      "-": 39,
       "jolynnn8D": 4,
       "Akimatsu98": 22
     }
@@ -74522,404 +74536,411 @@
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "            \"Questions should only contain alphanumeric characters and spaces, and it should not be blank\";"
+        "content": "            \"Questions should only contain alphanumeric characters, \""
       },
       {
         "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"normal symbols like question marks and commas and spaces, and it should not be blank\";"
+      },
+      {
+        "lineNumber": 15,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "    public static final String VALIDATION_REGEX \u003d \"\\\\S.*\";"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 17,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "    public final String question;"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "jolynnn8D"
-        },
-        "content": "    public Question(String question) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "jolynnn8D"
         },
-        "content": "        requireNonNull(question);"
+        "content": "    public Question(String question) {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "jolynnn8D"
         },
-        "content": "        checkArgument(isValidQuestion(question), MESSAGE_CONSTRAINTS);"
+        "content": "        requireNonNull(question);"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "jolynnn8D"
         },
-        "content": "        this.question \u003d question;"
+        "content": "        checkArgument(isValidQuestion(question), MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "    }"
+        "content": "        this.question \u003d question;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Returns true if a giving string is a valid word."
+        "content": "    /**"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "     * Returns true if a giving string is a valid word."
       },
       {
         "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 28,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "    public static boolean isValidQuestion(String test) {"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
         "content": "        return test.matches(VALIDATION_REGEX);"
       },
       {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Transform this question to become a label for the statistics bar graph."
+        "content": "    /**"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Only takes the first five words of the question."
+        "content": "     * Transform this question to become a label for the statistics bar graph."
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "     * Only takes the first five words of the question."
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "    public String shortenForLabel() {"
+        "content": "     */"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "        String[] splitQuestion \u003d question.split(\"\\\\s+\");"
+        "content": "    public String shortenForLabel() {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "        String label \u003d \"\";"
+        "content": "        String[] splitQuestion \u003d question.split(\"\\\\s+\");"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "        int labelLength \u003d 4;"
+        "content": "        String label \u003d \"\";"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "        for (int i \u003d 0; i \u003c labelLength; i++) {"
+        "content": "        int labelLength \u003d 4;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (i \u003d\u003d splitQuestion.length) {"
+        "content": "        for (int i \u003d 0; i \u003c labelLength; i++) {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "                break;"
+        "content": "            if (i \u003d\u003d splitQuestion.length) {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                break;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "            label \u003d label + splitQuestion[i] + \" \";"
+        "content": "            }"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (i \u003d\u003d labelLength - 1) {"
+        "content": "            label \u003d label + splitQuestion[i] + \" \";"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "                label \u003d label + \"...\";"
+        "content": "            if (i \u003d\u003d labelLength - 1) {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                label \u003d label + \"...\";"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (splitQuestion.length \u003e labelLength) {"
+        "content": "        }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "            label \u003d label + \" \" + splitQuestion[splitQuestion.length - 1];"
+        "content": "        if (splitQuestion.length \u003e labelLength) {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            label \u003d label + \" \" + splitQuestion[splitQuestion.length - 1];"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "        return label;"
+        "content": "        }"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        return label;"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "    public String toString() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 57,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "        return question;"
       },
       {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "        return other \u003d\u003d this"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "                || (other instanceof Question)"
+        "content": "        return other \u003d\u003d this"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "jolynnn8D"
         },
-        "content": "                \u0026\u0026 question.equals(((Question) other).question);"
+        "content": "                || (other instanceof Question)"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 question.equals(((Question) other).question);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "    public int hashCode() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public int hashCode() {"
+      },
+      {
+        "lineNumber": 69,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "        return question.hashCode();"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
@@ -74927,8 +74948,8 @@
       }
     ],
     "authorContributionMap": {
-      "-": 57,
-      "jolynnn8D": 13
+      "-": 59,
+      "jolynnn8D": 12
     }
   },
   {
@@ -84455,16 +84476,16 @@
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "    xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+        "content": "    xmlns:fx\u003d\"http://javafx.com/fxml/1\" prefWidth\u003d\"300\" maxWidth\u003d\"Infinity\" maxHeight\u003d\"Infinity\"\u003e"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "  \u003cTextArea fx:id\u003d\"flashcardDisplay\" editable\u003d\"false\" styleClass\u003d\"flashcard-display\" wrapText\u003d\"true\"/\u003e"
+        "content": "  \u003cTextArea fx:id\u003d\"flashcardDisplay\" editable\u003d\"false\" styleClass\u003d\"flashcard-display\" wrapText\u003d\"true\" prefWidth\u003d\"300\" maxWidth\u003d\"Infinity\" maxHeight\u003d\"Infinity\"/\u003e"
       },
       {
         "lineNumber": 9,
@@ -84475,7 +84496,8 @@
       }
     ],
     "authorContributionMap": {
-      "jolynnn8D": 9
+      "jolynnn8D": 7,
+      "-": 2
     }
   },
   {
@@ -84585,7 +84607,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cfx:root maxHeight\u003d\"1000.0\" maxWidth\u003d\"1500.0\" minHeight\u003d\"800.0\" minWidth\u003d\"1500.0\" title\u003d\"FlashMind\" type\u003d\"Stage\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+        "content": "\u003cfx:root maxHeight\u003d\"Infinity\" maxWidth\u003d\"Infinity\" minHeight\u003d\"800.0\" minWidth\u003d\"200\" title\u003d\"FlashMind\" type\u003d\"Stage\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
       },
       {
         "lineNumber": 16,
@@ -84613,7 +84635,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "         \u003cHBox maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"700.0\" minHeight\u003d\"420.0\" minWidth\u003d\"950.0\" prefHeight\u003d\"683.0\" prefWidth\u003d\"900.0\"\u003e"
+        "content": "         \u003cHBox maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"Infinity\" minHeight\u003d\"420.0\" minWidth\u003d\"300.0\" prefHeight\u003d\"683.0\" prefWidth\u003d\"900.0\"\u003e"
       },
       {
         "lineNumber": 20,
@@ -84737,23 +84759,23 @@
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "                     \u003cStackPane fx:id\u003d\"commandBoxPlaceholder\" styleClass\u003d\"pane-with-border\" /\u003e"
+        "content": "                     \u003cStackPane fx:id\u003d\"commandBoxPlaceholder\" styleClass\u003d\"pane-with-border\" maxHeight\u003d\"Infinity\" minWidth\u003d\"300.0\" maxWidth\u003d\"Infinity\"/\u003e"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u003cStackPane fx:id\u003d\"resultDisplayPlaceholder\" maxHeight\u003d\"400\" minHeight\u003d\"250.0\" maxWidth\u003d\"Infinity\" minWidth\u003d\"950.0\" styleClass\u003d\"pane-with-border\" /\u003e"
+        "content": "                     \u003cStackPane fx:id\u003d\"resultDisplayPlaceholder\" maxHeight\u003d\"Infinity\" minHeight\u003d\"250.0\" maxWidth\u003d\"Infinity\" minWidth\u003d\"300.0\" styleClass\u003d\"pane-with-border\" /\u003e"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u003cStackPane fx:id\u003d\"statisticsDisplayPlaceholder\" maxHeight\u003d\"1.7976931348623157E308\" minHeight\u003d\"443.0\" maxWidth\u003d\"Infinity\" minWidth\u003d\"950.0\" styleClass\u003d\"pane-with-border\" /\u003e"
+        "content": "                     \u003cStackPane fx:id\u003d\"statisticsDisplayPlaceholder\" maxHeight\u003d\"1.7976931348623157E308\" minHeight\u003d\"443.0\" maxWidth\u003d\"Infinity\" minWidth\u003d\"300.0\" styleClass\u003d\"pane-with-border\" /\u003e"
       },
       {
         "lineNumber": 40,
@@ -84774,7 +84796,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "               \u003cVBox maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"1000.0\" minWidth\u003d\"550.0\" styleClass\u003d\"pane-with-border-2\"\u003e"
+        "content": "               \u003cVBox maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"1000.0\" prefWidth\u003d\"500.0\" minWidth\u003d\"300\" styleClass\u003d\"pane-with-border-2\"\u003e"
       },
       {
         "lineNumber": 43,
@@ -84788,7 +84810,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u003cScrollPane fx:id\u003d\"flashcardListPanelPlaceholder\" maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1000\" minHeight\u003d\"1000.0\" minWidth\u003d\"550.0\" prefHeight\u003d\"503.0\" styleClass\u003d\"pane-with-border-2\" /\u003e"
+        "content": "                     \u003cScrollPane fx:id\u003d\"flashcardListPanelPlaceholder\" maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"1000.0\" prefWidth\u003d\"500.0\" minWidth\u003d\"300\" styleClass\u003d\"pane-with-border-2\" /\u003e"
       },
       {
         "lineNumber": 45,
@@ -84869,8 +84891,8 @@
       }
     ],
     "authorContributionMap": {
-      "-": 31,
-      "Akimatsu98": 24
+      "-": 32,
+      "Akimatsu98": 23
     }
   },
   {

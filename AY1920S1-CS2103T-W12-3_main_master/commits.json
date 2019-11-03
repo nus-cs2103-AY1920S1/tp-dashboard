@@ -471,10 +471,17 @@
         ]
       },
       {
-        "insertions": 41,
-        "deletions": 45,
+        "insertions": 42,
+        "deletions": 46,
         "date": "2019-10-29",
         "commitResults": [
+          {
+            "hash": "c1c7933d6f3f2af74b1d374839725565f7ddd5cc",
+            "messageTitle": "Update Budget Card",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
           {
             "hash": "83fa4b708ea22077bc91cd4ce9aa28f5988d6c40",
             "messageTitle": "Fix merge conflict in Developerguide",
@@ -499,10 +506,17 @@
         ]
       },
       {
-        "insertions": 14,
+        "insertions": 37,
         "deletions": 7,
         "date": "2019-10-31",
         "commitResults": [
+          {
+            "hash": "eb9c6a12bf7acc1433ee63d8fc0f7127ebdbb9f5",
+            "messageTitle": "Add number of days remainign into BudgetCard for display",
+            "messageBody": "",
+            "insertions": 23,
+            "deletions": 0
+          },
           {
             "hash": "b4aca194dbb0221c44ef166bd3f70bf4f1f5818f",
             "messageTitle": "Update SetCommand section",
@@ -544,6 +558,62 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 47,
+        "deletions": 21,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "3c5cbb86132868840fe2c5c3f21308e06e0b61c9",
+            "messageTitle": "Update BudgetCard to show the remaining number of days",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "10db3548bdc6fd25e5cbcb2f0819bf13e49ee56f",
+            "messageTitle": "Fix the calculation of number of days in between to shwo the correct number of days",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "b56d2f8a1d7fdc6a5d73979943330f3f5c19d059",
+            "messageTitle": "Fix bug to allow two budgets with all the same details except the categories to be created without throwing duplicate budget error",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "2d7949310e0c14a64f97e69ad0ef9bea66169b54",
+            "messageTitle": "Update error message to reflect Budget not Transaction",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 4
+          },
+          {
+            "hash": "fde23c4b32ed9ecfea775d2f7076da2fe452b2e8",
+            "messageTitle": "Update SetCommand to take in only days from today or in the future. Users cannot set a budget for the past.",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 8
+          },
+          {
+            "hash": "e26d3e5d4bfe2d30feab5ec43d1174a408ce066a",
+            "messageTitle": "Fix bug that cuases Budget Amount to increase when Out Transactions are made",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "13614b5f6d4c551a220a8964b8b488d9247f7d3c",
+            "messageTitle": "Update BankAccount such that budgets will be affected only if they have the same category as OutTransaction",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 5
           }
         ]
       }
@@ -1439,10 +1509,87 @@
         ]
       },
       {
-        "insertions": 69,
-        "deletions": 38,
+        "insertions": 142,
+        "deletions": 41,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "ca2685bc19792f4fc15d1f72a797c52740459047",
+            "messageTitle": "Fix not displaying of name",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 1
+          },
+          {
+            "hash": "e2c77aa72c1c9455709404107ae3436a9e69a06d",
+            "messageTitle": "Add test cases for SortCommand",
+            "messageBody": "",
+            "insertions": 83,
+            "deletions": 6
+          },
+          {
+            "hash": "396d4f7fc8538f7e8f0919d538754fefe954fa51",
+            "messageTitle": "Update UserGuide",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 15
+          },
+          {
+            "hash": "df87b8f0082f07db5def1d76ec1a972cab2b322b",
+            "messageTitle": "Update UG",
+            "messageBody": "",
+            "insertions": 26,
+            "deletions": 19
+          },
+          {
+            "hash": "f444e964abf3ac876989b31ae325dc0e2c85c92b",
+            "messageTitle": "Add ViewActivityDiagram into DG",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 472,
+        "deletions": 85,
         "date": "2019-10-31",
         "commitResults": [
+          {
+            "hash": "a716ee5c460c7607c2058447359b094855012204",
+            "messageTitle": "Update ViewActivityDiagram",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "dc544eff9e844eb24326b6e66ba5e6e8bbddf9d6",
+            "messageTitle": "Update View",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 5
+          },
+          {
+            "hash": "92c91cefd391635cd11c2f7f2cdc2f220d2b3e21",
+            "messageTitle": "Minor changes",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "75cdc9a74beb90b744ae55fdf6f136f1da1ae748",
+            "messageTitle": "Implement UserStateStorage and related files",
+            "messageBody": "",
+            "insertions": 309,
+            "deletions": 14
+          },
+          {
+            "hash": "66271166cd41a692bb2562f8f4c8d500c1ce7f08",
+            "messageTitle": "Resolve some bugs. Compilable. But still very buggy",
+            "messageBody": "",
+            "insertions": 75,
+            "deletions": 25
+          },
           {
             "hash": "b4ae64a7e9cf2fa69d79e3a09cfa461979b295c9",
             "messageTitle": "Merge UG/DG updates",
@@ -1456,6 +1603,286 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 486,
+        "deletions": 487,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "21e34b7c65ae703d5ce04fd7151ad172fb40d27d",
+            "messageTitle": "Fix some bugs only",
+            "messageBody": "",
+            "insertions": 89,
+            "deletions": 79
+          },
+          {
+            "hash": "a60086c6ae41524df9faea676caee72fe2a6af3d",
+            "messageTitle": "Fix more bugs",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 35
+          },
+          {
+            "hash": "d5a70d35ee8929cb4583ead222cb31a44b974e57",
+            "messageTitle": "Still trying to fix bugs",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 2
+          },
+          {
+            "hash": "e60fdd39a2700222516e0fec688a702453879d04",
+            "messageTitle": "Fix not displaying issue",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 4
+          },
+          {
+            "hash": "4d053d55f35a9f9c0daf8b464a772e7475e0ebe6",
+            "messageTitle": "Remove SOPL",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 4
+          },
+          {
+            "hash": "068da5b154eb9fd983deaa2c0c917f4b5787b465",
+            "messageTitle": "Change the name from Undo/RedoBankAccount to Undo/RedoUserState",
+            "messageBody": "",
+            "insertions": 92,
+            "deletions": 94
+          },
+          {
+            "hash": "12e2008686e5c4c9b03637545a3737b76e511dc0",
+            "messageTitle": "Minor changes",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 10
+          },
+          {
+            "hash": "3378df4b887e67a7aa38eae8418a71b281de85e3",
+            "messageTitle": "Minor bug fixes",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 2
+          },
+          {
+            "hash": "275b8dd1406155431a59d41630fcd48df439f7a1",
+            "messageTitle": "Trying to fix test cases",
+            "messageBody": "",
+            "insertions": 122,
+            "deletions": 122
+          },
+          {
+            "hash": "af1f4fbde7780a5d9227449b10355a58bb4db6a8",
+            "messageTitle": "Testing",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "77be2d15c97e9de8c5a6805ffa63421099aff9ff",
+            "messageTitle": "Fix redo/undo bug",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 4
+          },
+          {
+            "hash": "3f2c379d9d8799e42cfeab46a1585ab938a5f0f5",
+            "messageTitle": "Fix all checkstyleMain errors",
+            "messageBody": "",
+            "insertions": 134,
+            "deletions": 130
+          }
+        ]
+      },
+      {
+        "insertions": 286,
+        "deletions": 207,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "714e4e738694ddc152290a68ef5ba10e28ad1330",
+            "messageTitle": "Validate date",
+            "messageBody": "",
+            "insertions": 39,
+            "deletions": 5
+          },
+          {
+            "hash": "05d0479bdbdf1c98568df108e218d70a1cbcc9a9",
+            "messageTitle": "Fix checkstyleMain errors",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 2
+          },
+          {
+            "hash": "ebe1b54a8af9ce21bea749042dad84906f6c9067",
+            "messageTitle": "Fix invalid amounts",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 20
+          },
+          {
+            "hash": "03a0ba429f3ef88b62f631ea1ab5dbf0534dc501",
+            "messageTitle": "Fix some amount bugs",
+            "messageBody": "",
+            "insertions": 23,
+            "deletions": 20
+          },
+          {
+            "hash": "1dd810c7d627db0934afb86a79c87334851b8b65",
+            "messageTitle": "Fix Update",
+            "messageBody": "",
+            "insertions": 40,
+            "deletions": 26
+          },
+          {
+            "hash": "bfb24ad973192c65d7ad6da89060b9161900a81a",
+            "messageTitle": "Resolves #177",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "601c887f14b70d3bb5df0221dd5190c94544f98b",
+            "messageTitle": "Resolves #156",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 6
+          },
+          {
+            "hash": "dc01b05cf3b640dfc6f06ea7b338fccc7a2cc3de",
+            "messageTitle": "Update UG",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "6083e7136d7d591fc967bdec2491fbdac78b67cd",
+            "messageTitle": "Fix #193",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
+          },
+          {
+            "hash": "59c520a8c7a4d34fc56d610436900d5bd5de9389",
+            "messageTitle": "ViewCommand works with upper and lower cases",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "2b866c4bb372c714e9ed9d7dc735693f701c53ff",
+            "messageTitle": "Fix checkstyleMain errors",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 17
+          },
+          {
+            "hash": "7f6354740d154c342da00f6c070b57ca943ab9c5",
+            "messageTitle": "Remove some SOPL",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 3
+          },
+          {
+            "hash": "3df2daf0a0b37debae25609026eb12cb2d0522c0",
+            "messageTitle": "Fix some checkstyle errors",
+            "messageBody": "",
+            "insertions": 60,
+            "deletions": 42
+          },
+          {
+            "hash": "719ab8c1cdd3de41a212eb2e709a6b999c06de19",
+            "messageTitle": "Fix JsonSerializable... test cases",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 2
+          },
+          {
+            "hash": "6fa16ed9a9dc53c7737e6c30f28378df08ea0d32",
+            "messageTitle": "Fix bugs",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 28
+          },
+          {
+            "hash": "b5f16283384f5320938331c8ff9994cc82af278b",
+            "messageTitle": "Fix all test and checkstyle errors",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 27
+          },
+          {
+            "hash": "3fc1e01358dd7dc0f961038b691adabec347d79d",
+            "messageTitle": "Fix EOF errors",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "00dc44b7c214258284a4879e544cfb4306404c75",
+            "messageTitle": "Fix FilterCommand test",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 231,
+        "deletions": 28,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "710988741706af54a8eaf1c3a3d0b43157f4304e",
+            "messageTitle": "Update UG",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 6
+          },
+          {
+            "hash": "74a5279fcc3d60971fc35ea0774623ac918e2a25",
+            "messageTitle": "Remove SOPL",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 4
+          },
+          {
+            "hash": "dcd9803fd39ccb5ccb8ded5d85c2b782463f89e9",
+            "messageTitle": "Add some test cases",
+            "messageBody": "",
+            "insertions": 88,
+            "deletions": 10
+          },
+          {
+            "hash": "aee65511a5f81e3a6047f294cc8b9346c7c42512",
+            "messageTitle": "Add ViewCommandParser test cases",
+            "messageBody": "",
+            "insertions": 77,
+            "deletions": 6
+          },
+          {
+            "hash": "9858e12bb3a99f55769ddee60da171faa114f11f",
+            "messageTitle": "Fix checkstyleTest errors",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 1
+          },
+          {
+            "hash": "003d70bc9947512a343cdb734038d7c8393789d9",
+            "messageTitle": "Add ViewCommandTest cases",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 1
+          },
+          {
+            "hash": "d565f2bca78ff36eca6fb4ad3fd6ce07b03b6213",
+            "messageTitle": "Add ViewCommandParserTest cases",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 0
           }
         ]
       }
@@ -1714,6 +2141,62 @@
         ]
       },
       {
+        "insertions": 259,
+        "deletions": 13,
+        "date": "2019-10-30",
+        "commitResults": [
+          {
+            "hash": "40e809b9ebc1200dd41c55abf8e3fedbd175029c",
+            "messageTitle": "Add defense to Split constructor",
+            "messageBody": "",
+            "insertions": 52,
+            "deletions": 0
+          },
+          {
+            "hash": "6d858dcf6435aa56fb6e56e1ffaaf2412dc30501",
+            "messageTitle": "Redefine behaviour of Split",
+            "messageBody": "",
+            "insertions": 31,
+            "deletions": 10
+          },
+          {
+            "hash": "319acb7a057ded0ab6c3d2c0c51ee751eb297a1b",
+            "messageTitle": "Add skeleton for Ledger view",
+            "messageBody": "",
+            "insertions": 176,
+            "deletions": 3
+          }
+        ]
+      },
+      {
+        "insertions": 470,
+        "deletions": 144,
+        "date": "2019-10-31",
+        "commitResults": [
+          {
+            "hash": "56a19aaa4259fb29e25598c5f543a252277676e7",
+            "messageTitle": "Add new checks for Amount limit. Resolves #132",
+            "messageBody": "",
+            "insertions": 40,
+            "deletions": 26
+          },
+          {
+            "hash": "1679e7d9e95e065b5f087dacbde10cdd662369d3",
+            "messageTitle": "Implement UserState and VersionedUserState in Model. Require fixes to Storage.",
+            "messageBody": "",
+            "insertions": 334,
+            "deletions": 50
+          },
+          {
+            "hash": "c96fe1fea1041da86e0282c373281fa0dc5d26c9",
+            "messageTitle": "Change Storage classes. Still broken, don\u0027t know why.",
+            "messageBody": "",
+            "insertions": 96,
+            "deletions": 68
+          }
+        ]
+      },
+      {
         "insertions": 1,
         "deletions": 1,
         "date": "2019-11-01",
@@ -1724,6 +2207,76 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 483,
+        "deletions": 398,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "d7e4b5aeeb0684755fb68a12aa553feab6287e5c",
+            "messageTitle": "Fixes #154",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 13
+          },
+          {
+            "hash": "d27a553a3d7e6dc174bc1241d386b6e021746443",
+            "messageTitle": "Fix #168",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
+          },
+          {
+            "hash": "5254e739f58caf41df5cb326b6ee5cc56b57ecf5",
+            "messageTitle": "Implement display of LedgerListCard",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "a22f8e8f5d481640b83d0ffcbd47ce8e16b970b1",
+            "messageTitle": "Fix #181 and some tests in LogicManagerTest",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 23
+          },
+          {
+            "hash": "3b05aa7462a5eb50f3cc3b3942d88e5ad12e7882",
+            "messageTitle": "Fix compile errors and include new tests",
+            "messageBody": "",
+            "insertions": 222,
+            "deletions": 197
+          },
+          {
+            "hash": "99fcec500a4180ce71e766ae1767f4c8c9a9e3c1",
+            "messageTitle": "Pass some failing tests",
+            "messageBody": "",
+            "insertions": 161,
+            "deletions": 102
+          },
+          {
+            "hash": "b2fd5761f3228163330ed19569b4ee8dd0e8ff42",
+            "messageTitle": "Fix some failing tests",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 42
+          },
+          {
+            "hash": "844c160bb30f6132dc4f9867a23e7eb0ceecfa91",
+            "messageTitle": "Change some code",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 1
+          },
+          {
+            "hash": "74a1a4e63eeaaa86e3b5fe8e8506bd87367fb51f",
+            "messageTitle": "Change some file name",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 15
           }
         ]
       }
@@ -1978,6 +2531,118 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 193,
+        "deletions": 32,
+        "date": "2019-10-29",
+        "commitResults": [
+          {
+            "hash": "c48ebf8cfec905cfd5719ce1852ce3ef08befe66",
+            "messageTitle": "Added Date validation",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 1
+          },
+          {
+            "hash": "5ba328ffa6c045bf7d6a7cb426e170c46df28a59",
+            "messageTitle": "Add warning varargs to CommandResult + small sample size warning to ProjectCommand",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 5
+          },
+          {
+            "hash": "81227eaa421558fafddf7541ce5ada4a6c04edfe",
+            "messageTitle": "Refactor Projection to use bivariate Gradient Descent (not working optimally as of yet)",
+            "messageBody": "",
+            "insertions": 111,
+            "deletions": 11
+          },
+          {
+            "hash": "01bba37bdaf0285f9d31fa1555649ca8c5c230d8",
+            "messageTitle": "fix checkstyle errors",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 14
+          },
+          {
+            "hash": "b27117b354e482db4509298216643844fe2dba9a",
+            "messageTitle": "modify user guide",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 33,
+        "deletions": 26,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "06f7a091c2c6f0d8dedd7c1f9c4cec40686021cb",
+            "messageTitle": "Add GradientDescent class",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "441ed8695e67cda25594326bed4c02d0e147d479",
+            "messageTitle": "rework GradientDescent class (major refactor + fix divergence)",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 25
+          }
+        ]
+      },
+      {
+        "insertions": 156,
+        "deletions": 50,
+        "date": "2019-11-02",
+        "commitResults": [
+          {
+            "hash": "f8e3ada2dff2cdb7552f1f728cc8a6326993c0f0",
+            "messageTitle": "Fix and optimised GradientDescent for Projection, add feature normalisation",
+            "messageBody": "",
+            "insertions": 156,
+            "deletions": 50
+          }
+        ]
+      },
+      {
+        "insertions": 242,
+        "deletions": 147,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "717979efa0ff121de808a56bfb7da4180a1aa23f",
+            "messageTitle": "Enabled graph rendering for balance projection",
+            "messageBody": "",
+            "insertions": 212,
+            "deletions": 79
+          },
+          {
+            "hash": "15609e4a339ccba01daf5a6367152c18f3452b84",
+            "messageTitle": "Fix checkstyle errors",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 65
+          },
+          {
+            "hash": "cd83e9ddcf8189297ee14a6f6c0fb0c854abe790",
+            "messageTitle": "Add newline to Chart.css to pass Travis CI test",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "cf685fdcc468730aa1c6d4bcee0131ed1c02c6cc",
+            "messageTitle": "Fix checkstyle errors",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
           }
         ]
       }
@@ -2420,49 +3085,49 @@
     ]
   },
   "authorFinalContributionMap": {
-    "yewon0303": 1785,
-    "joloong": 3986,
-    "dingyuchen": 1562,
-    "wallacelim97": 513,
-    "Berttwm": 1343
+    "yewon0303": 1782,
+    "joloong": 4728,
+    "dingyuchen": 2383,
+    "wallacelim97": 866,
+    "Berttwm": 1256
   },
   "authorFileTypeContributionMap": {
     "yewon0303": {
-      "docs": 265,
-      "tests": 422,
-      "functional": 938,
+      "docs": 257,
+      "tests": 392,
+      "functional": 973,
       "other": 160
     },
     "joloong": {
-      "docs": 309,
-      "tests": 1915,
-      "functional": 1636,
+      "docs": 316,
+      "tests": 2080,
+      "functional": 2206,
       "other": 126
     },
     "dingyuchen": {
-      "docs": 37,
-      "tests": 367,
-      "functional": 1098,
+      "docs": 43,
+      "tests": 657,
+      "functional": 1623,
       "other": 60
     },
     "wallacelim97": {
-      "docs": 54,
+      "docs": 58,
       "tests": 2,
-      "functional": 364,
-      "other": 93
+      "functional": 709,
+      "other": 97
     },
     "Berttwm": {
-      "docs": 68,
-      "tests": 583,
-      "functional": 692
+      "docs": 64,
+      "tests": 543,
+      "functional": 649
     }
   },
   "authorContributionVariance": {
-    "yewon0303": 18695.424,
-    "joloong": 170816.11,
-    "dingyuchen": 29971.93,
-    "wallacelim97": 5997.8354,
-    "Berttwm": 23183.041
+    "yewon0303": 18098.58,
+    "joloong": 178623.81,
+    "dingyuchen": 45758.133,
+    "wallacelim97": 9236.09,
+    "Berttwm": 22456.99
   },
   "authorDisplayNameMap": {
     "yewon0303": "PARK... E WON",

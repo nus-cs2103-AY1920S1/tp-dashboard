@@ -9995,7 +9995,7 @@
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "Format: `account add [n/\u003cname\u003e] [d/\u003cdescription\u003e]`"
+        "content": "Format: `account add n/\u003cname\u003e [d/\u003cdescription\u003e]`"
       },
       {
         "lineNumber": 134,
@@ -33950,19 +33950,110 @@
       {
         "lineNumber": 6,
         "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
           "gitId": "tcgj"
         },
         "content": "public enum CommandCategory {"
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 8,
         "author": {
           "gitId": "kenneth-fung"
         },
-        "content": "    RULE, ACCOUNT, TRANSACTION, LOAN, LOAN_SPLIT, SCRIPT;"
+        "content": "    RULE, ACCOUNT, TRANSACTION, LOAN, SCRIPT,"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    LOAN_SPLIT;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    public boolean isSecondaryCategory() {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        return this \u003d\u003d LOAN_SPLIT;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    public CommandCategory getPrimaryCategory(CommandCategory secondary) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        if (secondary \u003d\u003d LOAN_SPLIT) {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "            return LOAN;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        return this;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
         "author": {
           "gitId": "tcgj"
         },
@@ -33971,7 +34062,7 @@
     ],
     "authorContributionMap": {
       "tcgj": 7,
-      "kenneth-fung": 1
+      "kenneth-fung": 14
     }
   },
   {
@@ -35933,413 +36024,413 @@
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "import budgetbuddy.model.attributes.Description;"
+        "content": "import budgetbuddy.model.account.exceptions.DuplicateAccountException;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "import budgetbuddy.model.attributes.Name;"
+        "content": "import budgetbuddy.model.attributes.Description;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "import budgetbuddy.model.attributes.Name;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": " * Edits an account"
+        "content": "/**"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": " */"
+        "content": " * Edits an account"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "public class AccountEditCommand extends Command {"
+        "content": " */"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "public class AccountEditCommand extends Command {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"account edit\";"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "    public static final String COMMAND_WORD \u003d \"account edit\";"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Edits an account.\\n\""
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            + \"Parameters: \""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Edits an account.\\n\""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            + \"\u003caccount number\u003e \""
+        "content": "            + \"Parameters: \""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            + String.format(\"[%sNAME]\", PREFIX_NAME) + \" \""
+        "content": "            + \"\u003caccount number\u003e \""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            + String.format(\"[%sDESCRIPTION]\", PREFIX_DESCRIPTION) + \" \""
+        "content": "            + String.format(\"[%sNAME]\", PREFIX_NAME) + \" \""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            + \"Example: \" + COMMAND_WORD + \" \""
+        "content": "            + String.format(\"[%sDESCRIPTION]\", PREFIX_DESCRIPTION) + \" \""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            + \"1 \""
+        "content": "            + \"Example: \" + COMMAND_WORD + \" \""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            + PREFIX_NAME + \"food\";"
+        "content": "            + \"1 \""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "            + PREFIX_NAME + \"food\";"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Account edited: %1$s\";"
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public static final String MESSAGE_UNEDITED \u003d \"At least one field must be provided for editing.\";"
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Account edited: %1$s\";"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public static final String MESSAGE_FAILURE \u003d \"The account targeted for editing could not be found.\";"
+        "content": "    public static final String MESSAGE_UNEDITED \u003d \"At least one field must be provided for editing.\";"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_FAILURE \u003d \"The account targeted for editing could not be found.\";"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    private final Index targetAccountIndex;"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    private final AccountEditDescriptor accountEditDescriptor;"
+        "content": "    private final Index targetAccountIndex;"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "    private final AccountEditDescriptor accountEditDescriptor;"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public AccountEditCommand(Index targetAccountIndex, AccountEditDescriptor accountEditDescriptor) {"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        requireAllNonNull(targetAccountIndex, accountEditDescriptor);"
+        "content": "    public AccountEditCommand(Index targetAccountIndex, AccountEditDescriptor accountEditDescriptor) {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        this.targetAccountIndex \u003d targetAccountIndex;"
+        "content": "        requireAllNonNull(targetAccountIndex, accountEditDescriptor);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        this.accountEditDescriptor \u003d new AccountEditDescriptor(accountEditDescriptor);"
+        "content": "        this.targetAccountIndex \u003d targetAccountIndex;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    }"
+        "content": "        this.accountEditDescriptor \u003d new AccountEditDescriptor(accountEditDescriptor);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        requireAllNonNull(model, model.getAccountsManager());"
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        requireAllNonNull(model, model.getAccountsManager());"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        AccountsManager accountsManager \u003d model.getAccountsManager();"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        accountsManager.resetFilteredAccountList();"
+        "content": "        AccountsManager accountsManager \u003d model.getAccountsManager();"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        accountsManager.resetFilteredAccountList();"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        Account editedAccount;"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        try {"
+        "content": "        Account editedAccount;"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            Account targetAccount \u003d accountsManager.getAccount(targetAccountIndex);"
+        "content": "        try {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            editedAccount \u003d createEditedAccount(targetAccount, accountEditDescriptor);"
+        "content": "            Account targetAccount \u003d accountsManager.getAccount(targetAccountIndex);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            accountsManager.editAccount(targetAccountIndex, editedAccount);"
+        "content": "            editedAccount \u003d createEditedAccount(targetAccount, accountEditDescriptor);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        } catch (AccountNotFoundException e) {"
+        "content": "            accountsManager.editAccount(targetAccountIndex, editedAccount);"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            throw new CommandException(MESSAGE_FAILURE);"
+        "content": "        } catch (AccountNotFoundException e) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": "            throw new CommandException(MESSAGE_FAILURE);"
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "thwnus"
+          "gitId": "ChenJiehan318"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_SUCCESS, editedAccount), CommandCategory.ACCOUNT);"
+        "content": "        } catch (DuplicateAccountException e) {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    }"
+        "content": "            throw new CommandException(e.getMessage());"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "ChenJiehan318"
+          "gitId": "thwnus"
         },
-        "content": "    /**"
+        "content": "        return new CommandResult(String.format(MESSAGE_SUCCESS, editedAccount), CommandCategory.ACCOUNT);"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "     * Creates and returns a {@code Account} with the details of {@code accountToEdit},"
+        "content": "    }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "     * edited with {@code accountEditDescriptor}."
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    private static Account createEditedAccount(Account accountToEdit, AccountEditDescriptor accountEditDescriptor) {"
+        "content": "     * Creates and returns a {@code Account} with the details of {@code accountToEdit},"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        assert accountToEdit !\u003d null;"
+        "content": "     * edited with {@code accountEditDescriptor}."
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        Name updatedName \u003d accountEditDescriptor.getName().orElse(accountToEdit.getName());"
+        "content": "    private static Account createEditedAccount(Account accountToEdit, AccountEditDescriptor accountEditDescriptor) {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        Description updatedDescription \u003d accountEditDescriptor.getDescription().orElse(accountToEdit.getDescription());"
+        "content": "        assert accountToEdit !\u003d null;"
       },
       {
         "lineNumber": 78,
@@ -36351,16 +36442,16 @@
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "thwnus"
+          "gitId": "ChenJiehan318"
         },
-        "content": "        return new Account(updatedName, updatedDescription, accountToEdit.getTransactionList());"
+        "content": "        Name updatedName \u003d accountEditDescriptor.getName().orElse(accountToEdit.getName());"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    }"
+        "content": "        Description updatedDescription \u003d accountEditDescriptor.getDescription().orElse(accountToEdit.getDescription());"
       },
       {
         "lineNumber": 81,
@@ -36372,488 +36463,509 @@
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "ChenJiehan318"
+          "gitId": "thwnus"
         },
-        "content": "    @Override"
+        "content": "        return new Account(updatedName, updatedDescription, accountToEdit.getTransactionList());"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    }"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            return true;"
+        "content": "    @Override"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        if (!(other instanceof AccountEditCommand)) {"
+        "content": "            return true;"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            return false;"
+        "content": "        }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        if (!(other instanceof AccountEditCommand)) {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        AccountEditCommand otherCommand \u003d (AccountEditCommand) other;"
+        "content": "            return false;"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        return targetAccountIndex.equals(otherCommand.targetAccountIndex)"
+        "content": "        }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "                \u0026\u0026 accountEditDescriptor.equals(otherCommand.accountEditDescriptor);"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    }"
+        "content": "        AccountEditCommand otherCommand \u003d (AccountEditCommand) other;"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        return targetAccountIndex.equals(otherCommand.targetAccountIndex)"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    /**"
+        "content": "                \u0026\u0026 accountEditDescriptor.equals(otherCommand.accountEditDescriptor);"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "     * Stores the details to edit the loan with. Each non-empty field value will replace the"
+        "content": "    }"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "     * corresponding field value of the person."
+        "content": ""
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public static class AccountEditDescriptor {"
+        "content": "     * Stores the details to edit the loan with. Each non-empty field value will replace the"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        private Name name;"
+        "content": "     * corresponding field value of the person."
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        private Description description;"
+        "content": "     */"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "    public static class AccountEditDescriptor {"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        public AccountEditDescriptor() {}"
+        "content": "        private Name name;"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        private Description description;"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        public AccountEditDescriptor(AccountEditDescriptor toCopy) {"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            setName(toCopy.name);"
+        "content": "        public AccountEditDescriptor() {}"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            setDescription(toCopy.description);"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": "        public AccountEditDescriptor(AccountEditDescriptor toCopy) {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "            setName(toCopy.name);"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        /**"
+        "content": "            setDescription(toCopy.description);"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "         * Returns true if any field is edited."
+        "content": "        }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "         */"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        public boolean isAnyFieldEdited() {"
+        "content": "        /**"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            return CollectionUtil.isAnyNonNull(name, description);"
+        "content": "         * Returns true if any field is edited."
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": "         */"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        public boolean isAnyFieldEdited() {"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        public void setName(Name name) {"
+        "content": "            return CollectionUtil.isAnyNonNull(name, description);"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            this.name \u003d name;"
+        "content": "        }"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        public void setName(Name name) {"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        public Optional\u003cName\u003e getName() {"
+        "content": "            this.name \u003d name;"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            return Optional.ofNullable(name);"
+        "content": "        }"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        public Optional\u003cName\u003e getName() {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        public void setDescription(Description description) {"
+        "content": "            return Optional.ofNullable(name);"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            this.description \u003d description;"
+        "content": "        }"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        public void setDescription(Description description) {"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        public Optional\u003cDescription\u003e getDescription() {"
+        "content": "            this.description \u003d description;"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            return Optional.ofNullable(description);"
+        "content": "        }"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        public Optional\u003cDescription\u003e getDescription() {"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        @Override"
+        "content": "            return Optional.ofNullable(description);"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        public boolean equals(Object other) {"
+        "content": "        }"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            if (other \u003d\u003d this) {"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "                return true;"
+        "content": "        @Override"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            }"
+        "content": "        public boolean equals(Object other) {"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "            if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            if (!(other instanceof AccountEditDescriptor)) {"
+        "content": "                return true;"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "                return false;"
+        "content": "            }"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "            if (!(other instanceof AccountEditDescriptor)) {"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            AccountEditDescriptor e \u003d (AccountEditDescriptor) other;"
+        "content": "                return false;"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            return getName().equals(e.getName())"
+        "content": "            }"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "                    \u0026\u0026 getDescription().equals(e.getDescription());"
+        "content": ""
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": "            AccountEditDescriptor e \u003d (AccountEditDescriptor) other;"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    }"
+        "content": "            return getName().equals(e.getName())"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "}"
+        "content": "                    \u0026\u0026 getDescription().equals(e.getDescription());"
       },
       {
         "lineNumber": 151,
+        "author": {
+          "gitId": "ChenJiehan318"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "ChenJiehan318"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "ChenJiehan318"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 154,
         "author": {
           "gitId": "ChenJiehan318"
         },
@@ -36861,7 +36973,7 @@
       }
     ],
     "authorContributionMap": {
-      "ChenJiehan318": 147,
+      "ChenJiehan318": 150,
       "cambrian-dk": 1,
       "thwnus": 3
     }
@@ -115446,42 +115558,42 @@
         "author": {
           "gitId": "tcgj"
         },
-        "content": "import budgetbuddy.ui.tab.LoanSplitTab;"
+        "content": "import budgetbuddy.ui.tab.LoanTab;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "import budgetbuddy.ui.tab.LoanTab;"
+        "content": "import budgetbuddy.ui.tab.PanelTab;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "import budgetbuddy.ui.tab.PanelTab;"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "tcgj"
-        },
         "content": "import budgetbuddy.ui.tab.RuleTab;"
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 17,
         "author": {
           "gitId": "thwnus"
         },
         "content": "import budgetbuddy.ui.tab.ScriptTab;"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 18,
         "author": {
           "gitId": "cambrian-dk"
         },
         "content": "import budgetbuddy.ui.tab.TransactionTab;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": ""
       },
       {
         "lineNumber": 20,
@@ -116291,9 +116403,9 @@
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "        LoanTab loanTab \u003d new LoanTab(logic.getFilteredLoanList());"
+        "content": "        LoanTab loanTab \u003d new LoanTab(logic.getFilteredLoanList(), logic.getSortedDebtorList());"
       },
       {
         "lineNumber": 136,
@@ -116312,133 +116424,133 @@
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "tcgj"
-        },
-        "content": "        LoanSplitTab loanSplitTab \u003d new LoanSplitTab(logic.getSortedDebtorList());"
-      },
-      {
-        "lineNumber": 139,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "        tabMap.put(CommandCategory.LOAN_SPLIT, loanSplitTab);"
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 141,
-        "author": {
           "gitId": "thwnus"
         },
         "content": "        ScriptTab scriptTab \u003d new ScriptTab(logic.getScriptList());"
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 139,
         "author": {
           "gitId": "thwnus"
         },
         "content": "        tabMap.put(CommandCategory.SCRIPT, scriptTab);"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 140,
         "author": {
           "gitId": "thwnus"
         },
         "content": ""
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 141,
         "author": {
-          "gitId": "cambrian-dk"
+          "gitId": "kenneth-fung"
         },
-        "content": "        OutputDisplay outputDisplay \u003d new OutputDisplay(accountTab, transactionTab, ruleTab,"
+        "content": "        OutputDisplay outputDisplay \u003d new OutputDisplay(accountTab, transactionTab, ruleTab, loanTab, scriptTab);"
       },
       {
-        "lineNumber": 145,
-        "author": {
-          "gitId": "cambrian-dk"
-        },
-        "content": "                loanTab, loanSplitTab, scriptTab);"
-      },
-      {
-        "lineNumber": 146,
+        "lineNumber": 142,
         "author": {
           "gitId": "tcgj"
         },
         "content": "        outputDisplayPlaceholder.getChildren().add(outputDisplay.getRoot());"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
         "content": "        resultDisplay \u003d new ResultDisplay();"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
         "content": "        resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());"
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 147,
         "author": {
           "gitId": "thwnus"
         },
         "content": "        StatusBarFooter statusBarFooter \u003d new StatusBarFooter();"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
         "content": "        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
         "content": "        CommandBox commandBox \u003d new CommandBox(this::executeCommand);"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
         "content": "        commandBoxPlaceholder.getChildren().add(commandBox.getRoot());"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 152,
         "author": {
           "gitId": "tcgj"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "        // activate initial tab"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "        // updateView(INITIAL_TAB_HERE);"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
         },
         "content": ""
       },
@@ -116447,280 +116559,280 @@
         "author": {
           "gitId": "tcgj"
         },
-        "content": "        // activate initial tab"
+        "content": "    /**"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "        // updateView(INITIAL_TAB_HERE);"
-      },
-      {
-        "lineNumber": 159,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 160,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 161,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 162,
-        "author": {
-          "gitId": "tcgj"
-        },
         "content": "     * Updates the current tab on display"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 159,
         "author": {
           "gitId": "tcgj"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 160,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "    private void updateView(PanelTab tabToView) {"
+        "content": "    private void updateView(PanelTab tabToView, CommandCategory category) {"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 161,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "        if (tabToView !\u003d null) {"
+        "content": "        if (tabToView \u003d\u003d null) {"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 162,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "            TabPane pane \u003d (TabPane) outputDisplayPlaceholder.getChildren().get(0);"
+        "content": "            return;"
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 163,
         "author": {
-          "gitId": "tcgj"
-        },
-        "content": "            pane.getSelectionModel().select(tabToView);"
-      },
-      {
-        "lineNumber": 168,
-        "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
         "content": "        }"
       },
       {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        if (category.isSecondaryCategory()) {"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "            tabToView.setSecondaryPanel();"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "            tabToView.setPrimaryPanel();"
+      },
+      {
         "lineNumber": 169,
         "author": {
-          "gitId": "-"
+          "gitId": "kenneth-fung"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 170,
         "author": {
-          "gitId": "-"
+          "gitId": "kenneth-fung"
         },
         "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
-          "gitId": "-"
+          "gitId": "tcgj"
         },
-        "content": "    /**"
+        "content": "        TabPane pane \u003d (TabPane) outputDisplayPlaceholder.getChildren().get(0);"
       },
       {
         "lineNumber": 172,
         "author": {
-          "gitId": "-"
+          "gitId": "tcgj"
         },
-        "content": "     * Sets the default size based on {@code guiSettings}."
+        "content": "        pane.getSelectionModel().select(tabToView);"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void setWindowDefaultSize(GuiSettings guiSettings) {"
+        "content": ""
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.setHeight(guiSettings.getWindowHeight());"
+        "content": "    /**"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.setWidth(guiSettings.getWindowWidth());"
+        "content": "     * Sets the default size based on {@code guiSettings}."
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (guiSettings.getWindowCoordinates() !\u003d null) {"
+        "content": "     */"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "            primaryStage.setX(guiSettings.getWindowCoordinates().getX());"
+        "content": "    private void setWindowDefaultSize(GuiSettings guiSettings) {"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "            primaryStage.setY(guiSettings.getWindowCoordinates().getY());"
+        "content": "        primaryStage.setHeight(guiSettings.getWindowHeight());"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        primaryStage.setWidth(guiSettings.getWindowWidth());"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        if (guiSettings.getWindowCoordinates() !\u003d null) {"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            primaryStage.setX(guiSettings.getWindowCoordinates().getX());"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "            primaryStage.setY(guiSettings.getWindowCoordinates().getY());"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Opens the help window or focuses on it if it\u0027s already opened."
+        "content": "        }"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void handleHelp() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!helpWindow.isShowing()) {"
+        "content": "     * Opens the help window or focuses on it if it\u0027s already opened."
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "            helpWindow.show();"
+        "content": "     */"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "            helpWindow.focus();"
+        "content": "    public void handleHelp() {"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (!helpWindow.isShowing()) {"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            helpWindow.show();"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        } else {"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "    void show() {"
+        "content": "            helpWindow.focus();"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.show();"
+        "content": "        }"
       },
       {
         "lineNumber": 197,
@@ -116741,290 +116853,339 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "    void show() {"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Closes the application."
+        "content": "        primaryStage.show();"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void handleExit() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "        GuiSettings guiSettings \u003d new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),"
+        "content": "     * Closes the application."
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "                (int) primaryStage.getX(), (int) primaryStage.getY());"
+        "content": "     */"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "        logic.setGuiSettings(guiSettings);"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "        helpWindow.hide();"
+        "content": "    private void handleExit() {"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.hide();"
+        "content": "        GuiSettings guiSettings \u003d new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                (int) primaryStage.getX(), (int) primaryStage.getY());"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        logic.setGuiSettings(guiSettings);"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        helpWindow.hide();"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Executes the command and returns the result."
+        "content": "        primaryStage.hide();"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "-"
         },
-        "content": "     * @see Logic#execute(String)"
+        "content": ""
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "    private CommandResult executeCommand(String commandText) throws CommandException, ParseException {"
+        "content": "     * Executes the command and returns the result."
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "        try {"
+        "content": "     *"
       },
       {
         "lineNumber": 218,
         "author": {
-          "gitId": "-"
+          "gitId": "tcgj"
         },
-        "content": "            CommandResult commandResult \u003d logic.execute(commandText);"
+        "content": "     * @see Logic#execute(String)"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "            logger.info(\"Result: \" + commandResult.getFeedbackToUser());"
+        "content": "     */"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": "            resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
+        "content": "    private CommandResult executeCommand(String commandText) throws CommandException, ParseException {"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 222,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "-"
         },
-        "content": "            CommandCategory category \u003d commandResult.getCommandCategory();"
+        "content": "            CommandResult commandResult \u003d logic.execute(commandText);"
       },
       {
         "lineNumber": 223,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "-"
         },
-        "content": "            updateView(tabMap.get(category));"
+        "content": "            logger.info(\"Result: \" + commandResult.getFeedbackToUser());"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (commandResult.isShowHelp()) {"
+        "content": ""
       },
       {
         "lineNumber": 226,
         "author": {
-          "gitId": "-"
+          "gitId": "tcgj"
         },
-        "content": "                handleHelp();"
+        "content": "            CommandCategory category \u003d commandResult.getCommandCategory();"
       },
       {
         "lineNumber": 227,
         "author": {
-          "gitId": "-"
+          "gitId": "kenneth-fung"
         },
-        "content": "            }"
+        "content": "            PanelTab tabToView \u003d category.isSecondaryCategory()"
       },
       {
         "lineNumber": 228,
         "author": {
-          "gitId": "-"
+          "gitId": "kenneth-fung"
         },
-        "content": ""
+        "content": "                    ? tabMap.get(category.getPrimaryCategory(category))"
       },
       {
         "lineNumber": 229,
         "author": {
-          "gitId": "-"
+          "gitId": "kenneth-fung"
         },
-        "content": "            if (commandResult.isExit()) {"
+        "content": "                    : tabMap.get(category);"
       },
       {
         "lineNumber": 230,
         "author": {
-          "gitId": "-"
+          "gitId": "kenneth-fung"
         },
-        "content": "                handleExit();"
+        "content": "            updateView(tabToView, category);"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if (commandResult.isShowHelp()) {"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "            return commandResult;"
+        "content": "                handleHelp();"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "        } catch (CommandException | ParseException e) {"
+        "content": "            }"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "            logger.info(\"Invalid command: \" + commandText);"
+        "content": ""
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "            resultDisplay.setFeedbackToUser(e.getMessage());"
+        "content": "            if (commandResult.isExit()) {"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "            throw e;"
+        "content": "                handleExit();"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return commandResult;"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } catch (CommandException | ParseException e) {"
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            logger.info(\"Invalid command: \" + commandText);"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            resultDisplay.setFeedbackToUser(e.getMessage());"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            throw e;"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
@@ -117032,11 +117193,11 @@
       }
     ],
     "authorContributionMap": {
-      "tcgj": 44,
+      "tcgj": 35,
       "ChenJiehan318": 4,
-      "cambrian-dk": 6,
+      "cambrian-dk": 4,
       "thwnus": 5,
-      "kenneth-fung": 1,
+      "kenneth-fung": 19,
       "-": 180
     }
   },
@@ -119145,159 +119306,166 @@
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "cambrian-dk"
+          "gitId": "ChenJiehan318"
         },
-        "content": "        name.setText(account.getName().toString());"
+        "content": "        id.setMinWidth(30);"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "ChenJiehan318"
+          "gitId": "cambrian-dk"
         },
-        "content": "        description.setText(account.getDescription().toString());"
+        "content": "        name.setText(account.getName().toString());"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    }"
+        "content": "        description.setText(account.getDescription().toString());"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        // short circuit if same object"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "        // short circuit if same object"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            return true;"
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        }"
+        "content": "            return true;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 45,
+        "author": {
+          "gitId": "ChenJiehan318"
+        },
+        "content": "        // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 46,
         "author": {
           "gitId": "thwnus"
         },
         "content": "        if (!(other instanceof AccountCard)) {"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 47,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": "            return false;"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 48,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 49,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": ""
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 50,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": "        // state check"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 51,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": "        AccountCard card \u003d (AccountCard) other;"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 52,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": "        return id.getText().equals(card.id.getText())"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 53,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": "                \u0026\u0026 account.equals(card.account);"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 54,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 55,
         "author": {
           "gitId": "ChenJiehan318"
         },
         "content": "}"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 56,
         "author": {
           "gitId": "ChenJiehan318"
         },
@@ -119306,7 +119474,7 @@
     ],
     "authorContributionMap": {
       "tcgj": 1,
-      "ChenJiehan318": 51,
+      "ChenJiehan318": 52,
       "cambrian-dk": 1,
       "kenneth-fung": 1,
       "thwnus": 1
@@ -124081,120 +124249,6 @@
     }
   },
   {
-    "path": "src/main/java/budgetbuddy/ui/tab/LoanSplitTab.java",
-    "fileType": "functional",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "package budgetbuddy.ui.tab;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "import budgetbuddy.model.loan.Debtor;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "import budgetbuddy.ui.panel.LoanSplitPanel;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "import javafx.collections.transformation.SortedList;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": " * Represents a tab component that displays the loan split panel when selected."
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "public class LoanSplitTab extends PanelTab {"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "    public LoanSplitTab(SortedList\u003cDebtor\u003e loanSplitList) {"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "        super(new LoanSplitPanel(loanSplitList), \"/images/loanSplitTab.png\");"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "tcgj": 15
-    }
-  },
-  {
     "path": "src/main/java/budgetbuddy/ui/tab/LoanTab.java",
     "fileType": "functional",
     "lines": [
@@ -124215,89 +124269,117 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "import budgetbuddy.model.loan.Loan;"
+        "content": "import budgetbuddy.model.loan.Debtor;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "import budgetbuddy.ui.panel.LoanPanel;"
+        "content": "import budgetbuddy.model.loan.Loan;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "import javafx.collections.ObservableList;"
+        "content": "import budgetbuddy.ui.panel.LoanPanel;"
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": ""
+        "content": "import budgetbuddy.ui.panel.LoanSplitPanel;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "tcgj"
         },
-        "content": " * Represents a tab component that displays the loan panel when selected."
+        "content": "import javafx.collections.ObservableList;"
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": " */"
+        "content": "import javafx.collections.transformation.SortedList;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "public class LoanTab extends PanelTab {"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "tcgj"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "    public LoanTab(ObservableList\u003cLoan\u003e loanList) {"
+        "content": " * Represents a tab component that displays the loan panel when selected."
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "        super(new LoanPanel(loanList), \"/images/loanTab.png\");"
+        "content": " */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "    }"
+        "content": "public class LoanTab extends PanelTab {"
       },
       {
         "lineNumber": 15,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    public LoanTab(ObservableList\u003cLoan\u003e loanList, SortedList\u003cDebtor\u003e debtors) {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        super(new LoanPanel(loanList), new LoanSplitPanel(debtors), \"/images/loanTab.png\");"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
         "author": {
           "gitId": "tcgj"
         },
@@ -124305,7 +124387,8 @@
       }
     ],
     "authorContributionMap": {
-      "tcgj": 15
+      "tcgj": 13,
+      "kenneth-fung": 6
     }
   },
   {
@@ -124329,107 +124412,107 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "import budgetbuddy.commons.util.AppUtil;"
+        "content": "import static java.util.Objects.requireNonNull;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "import budgetbuddy.ui.panel.DisplayPanel;"
+        "content": ""
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "import javafx.scene.control.Tab;"
+        "content": "import budgetbuddy.commons.util.AppUtil;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "import javafx.scene.effect.ColorAdjust;"
+        "content": "import budgetbuddy.ui.panel.DisplayPanel;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "import javafx.scene.image.ImageView;"
+        "content": "import javafx.scene.control.Tab;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "tcgj"
         },
-        "content": ""
+        "content": "import javafx.scene.effect.ColorAdjust;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "/**"
+        "content": "import javafx.scene.image.ImageView;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "tcgj"
         },
-        "content": " * Represents an abstract tab component that displays its corresponding panel when selected."
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "tcgj"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "public abstract class PanelTab extends Tab {"
+        "content": " * Represents an abstract tab component that displays its corresponding panel when selected."
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "tcgj"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "tcgj"
         },
-        "content": ""
+        "content": "public abstract class PanelTab extends Tab {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "    public PanelTab(DisplayPanel panel, String imageFileName) {"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "        setClosable(false);"
+        "content": "    private DisplayPanel primaryPanel;"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "        setContent(panel.getRoot());"
+        "content": "    private DisplayPanel secondaryPanel;"
       },
       {
         "lineNumber": 18,
@@ -124443,123 +124526,264 @@
         "author": {
           "gitId": "tcgj"
         },
-        "content": "        // Create image"
+        "content": "    public PanelTab(DisplayPanel panel, String imageFileName) {"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "        ImageView currImage \u003d new ImageView(AppUtil.getImage(imageFileName));"
+        "content": "        this(panel, null, imageFileName);"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "        ColorAdjust desaturateEffect \u003d new ColorAdjust(0, -1, 0, 0);"
+        "content": "    }"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "tcgj"
-        },
-        "content": "        ColorAdjust saturateEffect \u003d new ColorAdjust(0, 0, 0, 0);"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "        currImage.setEffect(desaturateEffect);"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "tcgj"
-        },
-        "content": "        setGraphic(currImage);"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
         "content": ""
       },
       {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    public PanelTab(DisplayPanel primaryPanel, DisplayPanel secondaryPanel, String imageFileName) {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        this.primaryPanel \u003d primaryPanel;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        this.secondaryPanel \u003d secondaryPanel;"
+      },
+      {
         "lineNumber": 26,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "        // Change effect depending on state"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "        setOnSelectionChanged(event -\u003e {"
+        "content": "        setClosable(false);"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "tcgj"
+          "gitId": "kenneth-fung"
         },
-        "content": "            if (isSelected()) {"
+        "content": "        setContent(primaryPanel.getRoot());"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "                currImage.setEffect(saturateEffect);"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "            } else {"
+        "content": "        // Create image"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "                currImage.setEffect(desaturateEffect);"
+        "content": "        ImageView currImage \u003d new ImageView(AppUtil.getImage(imageFileName));"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "            }"
+        "content": "        ColorAdjust desaturateEffect \u003d new ColorAdjust(0, -1, 0, 0);"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "        });"
+        "content": "        ColorAdjust saturateEffect \u003d new ColorAdjust(0, 0, 0, 0);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "tcgj"
         },
-        "content": "    }"
+        "content": "        currImage.setEffect(desaturateEffect);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "tcgj"
         },
+        "content": "        setGraphic(currImage);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "        // Change effect depending on state"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "        setOnSelectionChanged(event -\u003e {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "            if (isSelected()) {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "                currImage.setEffect(saturateEffect);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "                currImage.setEffect(desaturateEffect);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "tcgj"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    public void setPrimaryPanel() {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        setContent(primaryPanel.getRoot());"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    public void setSecondaryPanel() {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        requireNonNull(secondaryPanel);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "        setContent(secondaryPanel.getRoot());"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "kenneth-fung"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "tcgj": 35
+      "tcgj": 33,
+      "kenneth-fung": 22
     }
   },
   {
@@ -125074,7 +125298,7 @@
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "            \u003cLabel fx:id\u003d\"id\" styleClass\u003d\"cell_big_label\"/\u003e"
+        "content": "            \u003cLabel fx:id\u003d\"id\" styleClass\u003d\"cell_big_label\" /\u003e"
       },
       {
         "lineNumber": 25,
@@ -125137,52 +125361,10 @@
         "author": {
           "gitId": "ChenJiehan318"
         },
-        "content": "        \u003cVBox alignment\u003d\"CENTER\" minHeight\u003d\"105\" GridPane.columnIndex\u003d\"2\"\u003e"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "ChenJiehan318"
-        },
-        "content": "            \u003cpadding\u003e"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "ChenJiehan318"
-        },
-        "content": "                \u003cInsets top\u003d\"5\" right\u003d\"5\" bottom\u003d\"5\" left\u003d\"15\" /\u003e"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "ChenJiehan318"
-        },
-        "content": "            \u003c/padding\u003e"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "ChenJiehan318"
-        },
-        "content": "            \u003cLabel fx:id\u003d\"status\" styleClass\u003d\"cell_big_label\"/\u003e"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "ChenJiehan318"
-        },
-        "content": "        \u003c/VBox\u003e"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "ChenJiehan318"
-        },
         "content": "    \u003c/GridPane\u003e"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 34,
         "author": {
           "gitId": "ChenJiehan318"
         },
@@ -125190,7 +125372,7 @@
       }
     ],
     "authorContributionMap": {
-      "ChenJiehan318": 40
+      "ChenJiehan318": 34
     }
   },
   {

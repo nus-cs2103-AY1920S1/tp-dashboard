@@ -7638,7 +7638,7 @@
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "There are 2 formats that can be used +"
+        "content": "There are 2 formats that can be used: +"
       },
       {
         "lineNumber": 43,
@@ -7944,9 +7944,9 @@
       {
         "lineNumber": 86,
         "author": {
-          "gitId": "MauriceTXS"
+          "gitId": "fangpinsern"
         },
-        "content": "Format: `sugggest`"
+        "content": "Format: `suggest`"
       },
       {
         "lineNumber": 87,
@@ -8245,23 +8245,51 @@
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "* *Report* : `report`"
+        "content": "* *Suggest* : `suggest` +"
       },
       {
         "lineNumber": 130,
         "author": {
-          "gitId": "-"
+          "gitId": "fangpinsern"
         },
-        "content": "* *Help* : `help`"
+        "content": "e.g. `suggest`"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "* *Report* : `report` +"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "e.g. `report`"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "* *Help* : `help` +"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "e.g. `help`"
       }
     ],
     "authorContributionMap": {
-      "fangpinsern": 22,
-      "MauriceTXS": 3,
-      "FelixNWJ": 41,
-      "-": 64
+      "fangpinsern": 29,
+      "MauriceTXS": 2,
+      "FelixNWJ": 40,
+      "-": 63
     }
   },
   {
@@ -43209,289 +43237,289 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "import calofit.commons.util.AppUtil;"
+        "content": "import static java.util.Objects.requireNonNull;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "iltep64"
-        },
-        "content": "import calofit.commons.util.StringUtil;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
         "content": ""
       },
       {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "fangpinsern"
+        },
+        "content": "import calofit.commons.util.AppUtil;"
+      },
+      {
         "lineNumber": 6,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "/**"
+        "content": "//import calofit.commons.util.StringUtil;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": " * Represents a Dish\u0027s calorie value in the dish database."
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "public class Calorie {"
+        "content": " * Represents a Dish\u0027s calorie value in the dish database."
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d"
+        "content": "public class Calorie {"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "            \"Calories should only be positive values that are not 0\";"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "fangpinsern"
+          "gitId": "FelixNWJ"
         },
-        "content": "    public static final Calorie UNKNOWN_CALORIE \u003d new Calorie(-1, true);"
+        "content": "            \"Calories should only be positive values that are not 0\";"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "fangpinsern"
+          "gitId": "FelixNWJ"
         },
         "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "    public final int calories;"
+        "content": "    public static final Calorie UNKNOWN_CALORIE \u003d new Calorie(-1, true);"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
         "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "iltep64"
         },
-        "content": "    /**"
+        "content": "    public final int calories;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "     * Constructs a {@code Calorie}"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "     * @param calorieValue a valid calorie value."
+        "content": "    /**"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "     */"
+        "content": "     * Constructs a {@code Calorie}"
       },
       {
         "lineNumber": 22,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "     * @param calorieValue a valid calorie value."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 24,
         "author": {
           "gitId": "iltep64"
         },
         "content": "    public Calorie(int calorieValue) {"
       },
       {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "iltep64"
-        },
-        "content": "        AppUtil.checkArgument(calorieValue \u003e 0, MESSAGE_CONSTRAINTS);"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "FelixNWJ"
-        },
-        "content": "        calories \u003d calorieValue;"
-      },
-      {
         "lineNumber": 25,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "        AppUtil.checkArgument(calorieValue \u003e\u003d 0, MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": ""
+        "content": "        calories \u003d calorieValue;"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "fangpinsern"
+          "gitId": "FelixNWJ"
         },
-        "content": "    /*"
+        "content": "    }"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "fangpinsern"
+          "gitId": "FelixNWJ"
         },
-        "content": "     * Private unsafe constructor that does not validate."
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "     * Used to construct \"fake\" calorie values."
+        "content": "    /*"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "     */"
+        "content": "     * Private unsafe constructor that does not validate."
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    private Calorie(int calorieValue, boolean secret) {"
+        "content": "     * Used to construct \"fake\" calorie values."
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        calories \u003d calorieValue;"
+        "content": "     */"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "    private Calorie(int calorieValue, boolean secret) {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "        calories \u003d calorieValue;"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "     * Returns true if a given string is a valid name."
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "     * @param test a string"
+        "content": "    /**"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "     * @return true if calorie value is valid"
+        "content": "     * Returns true if a given string is a valid name."
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "     */"
+        "content": "     * @param test a string"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    public static boolean isValidCalorie(String test) {"
+        "content": "     * @return true if calorie value is valid"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "        return StringUtil.isNonZeroUnsignedInteger(test);"
+        "content": "     */"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "        //return test.matches(VALIDATION_REGEX);"
+        "content": "    public static boolean isValidCalorie(String test) {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "        requireNonNull(test);"
       },
       {
         "lineNumber": 44,
@@ -43503,145 +43531,215 @@
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "    @Override"
+        "content": "        try {"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "    public String toString() {"
+        "content": "            int value \u003d Integer.parseInt(test);"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "        return Integer.toString(calories);"
+        "content": "            return value \u003e\u003d 0 \u0026\u0026 !test.startsWith(\"+\"); // \"+1\" is successfully parsed by Integer#parseInt(String)"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "    }"
+        "content": "        } catch (NumberFormatException nfe) {"
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": ""
+        "content": "            return false;"
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "    @Override"
+        "content": "        }"
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        //return StringUtil.isNonZeroUnsignedInteger(test);"
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "        //return test.matches(VALIDATION_REGEX);"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "fangpinsern"
         },
-        "content": "                || (other instanceof Calorie // instanceof handles nulls"
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "fangpinsern"
         },
-        "content": "                \u0026\u0026 calories \u003d\u003d ((Calorie) other).calories); // state check"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": ""
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "FelixNWJ"
+          "gitId": "iltep64"
         },
-        "content": "    @Override"
+        "content": "        return Integer.toString(calories);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "FelixNWJ"
         },
-        "content": "    public int hashCode() {"
+        "content": "    }"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "iltep64"
-        },
-        "content": "        return Integer.hashCode(calories);"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "iltep64"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "iltep64"
+          "gitId": "FelixNWJ"
         },
         "content": ""
       },
       {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
         "lineNumber": 62,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "FelixNWJ"
         },
-        "content": "    public int getValue() {"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "iltep64"
+          "gitId": "FelixNWJ"
         },
-        "content": "        return this.calories;"
+        "content": "                || (other instanceof Calorie // instanceof handles nulls"
       },
       {
         "lineNumber": 64,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "                \u0026\u0026 calories \u003d\u003d ((Calorie) other).calories); // state check"
+      },
+      {
+        "lineNumber": 65,
         "author": {
           "gitId": "FelixNWJ"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 66,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "    public int hashCode() {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "        return Integer.hashCode(calories);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "    public int getValue() {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "iltep64"
+        },
+        "content": "        return this.calories;"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "FelixNWJ"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
         "author": {
           "gitId": "FelixNWJ"
         },
@@ -43649,9 +43747,9 @@
       }
     ],
     "authorContributionMap": {
-      "iltep64": 12,
-      "fangpinsern": 19,
-      "FelixNWJ": 34
+      "fangpinsern": 34,
+      "iltep64": 9,
+      "FelixNWJ": 32
     }
   },
   {

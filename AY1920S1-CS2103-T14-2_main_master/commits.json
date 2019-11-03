@@ -217,6 +217,20 @@
             "deletions": 16
           }
         ]
+      },
+      {
+        "insertions": 490,
+        "deletions": 220,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "ee0d12ca8f28de78db7bb4ae31bff5a2ce64df0a",
+            "messageTitle": "setStudent() v5.0, fixed bugs, standardised message usage format (#166)",
+            "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n",
+            "insertions": 490,
+            "deletions": 220
+          }
+        ]
       }
     ],
     "Ellieyee": [
@@ -525,6 +539,20 @@
             "messageBody": "",
             "insertions": 89,
             "deletions": 63
+          }
+        ]
+      },
+      {
+        "insertions": 332,
+        "deletions": 58,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "3b67b7a85bbfe728d0540d1e3f2c4f01cfa6b7a7",
+            "messageTitle": "Update userguide (#173)",
+            "messageBody": "* Update find command userguide\r\n\r\n* Update userguide\r\n\r\n* Update userguide\r\n\r\n* Update userguide format\r\n\r\n* Fix checkstyle\r\n\r\n* Fix checkstyle error\r\n",
+            "insertions": 332,
+            "deletions": 58
           }
         ]
       }
@@ -1214,42 +1242,42 @@
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 7712,
-    "Ellieyee": 6658,
-    "AhmadHatziq": 2970,
-    "lumos309": 6427
+    "ZiHawkEye": 8043,
+    "Ellieyee": 6941,
+    "AhmadHatziq": 2949,
+    "lumos309": 6397
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
-      "docs": 140,
-      "tests": 2559,
-      "functional": 4986,
+      "docs": 111,
+      "tests": 2574,
+      "functional": 5331,
       "other": 27
     },
     "Ellieyee": {
-      "docs": 197,
-      "tests": 2781,
-      "functional": 3675,
+      "docs": 516,
+      "tests": 2778,
+      "functional": 3642,
       "other": 5
     },
     "AhmadHatziq": {
-      "docs": 389,
+      "docs": 383,
       "tests": 370,
-      "functional": 2204,
+      "functional": 2189,
       "other": 7
     },
     "lumos309": {
-      "docs": 114,
+      "docs": 107,
       "tests": 2822,
-      "functional": 3149,
+      "functional": 3126,
       "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 152212.6,
-    "Ellieyee": 219357.44,
-    "AhmadHatziq": 55112.145,
-    "lumos309": 60394.926
+    "ZiHawkEye": 152535.05,
+    "Ellieyee": 213219.89,
+    "AhmadHatziq": 53427.637,
+    "lumos309": 59014.05
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",

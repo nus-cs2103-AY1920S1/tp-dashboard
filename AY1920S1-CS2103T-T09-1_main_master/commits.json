@@ -952,6 +952,27 @@
             "deletions": 19
           }
         ]
+      },
+      {
+        "insertions": 234,
+        "deletions": 138,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "8e2c16f880ca689f34d0ebdea5a19e6e161ea382",
+            "messageTitle": "Remove endtime from activitywithtime (#206)",
+            "messageBody": "* Remove endtime from activitywithtime\r\n\r\n* Fix checkstyle\r\n",
+            "insertions": 34,
+            "deletions": 63
+          },
+          {
+            "hash": "af37d42d2b410d70ee5531c2a95210521a09c074",
+            "messageTitle": "Allow overflow in agenda (#207)",
+            "messageBody": "* Remove endtime from activitywithtime\r\n\r\n* Fix checkstyle\r\n\r\n* Allow overflow in agenda\r\n\r\n* Ensure that appointments shift when start date changes\r\n\r\n* Prevent scheduling beyond last day of itinerary\r\n\r\n* Fix checkstyle\r\n\r\n* Abstract calculating lastDateTime\r\n\r\n* Fix checkstyle\r\n",
+            "insertions": 200,
+            "deletions": 75
+          }
+        ]
       }
     ],
     "OneArmyj": [
@@ -1898,8 +1919,8 @@
         ]
       },
       {
-        "insertions": 222,
-        "deletions": 89,
+        "insertions": 242,
+        "deletions": 90,
         "date": "2019-11-02",
         "commitResults": [
           {
@@ -1935,6 +1956,13 @@
             "messageTitle": "update to cover change in duration of activity",
             "messageBody": "",
             "insertions": 21,
+            "deletions": 1
+          },
+          {
+            "hash": "3250fae5a9fdb73a27723fdbb4faa3cd5c45f4b2",
+            "messageTitle": "Fix edit activity bug (#205)",
+            "messageBody": "",
+            "insertions": 20,
             "deletions": 1
           }
         ]
@@ -2227,31 +2255,45 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 361,
+        "deletions": 426,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "9de82318807724adf8facdee2f562d1de2650adc",
+            "messageTitle": "Fix autoschedule bugs (#193)",
+            "messageBody": "* Use Localtime to compare between time\r\n\r\n* Add new constraint to duration\r\n\r\nCannot exceed 24hour\r\n\r\n* Update isValidDuration in Duration class\r\n\r\n* Fix checkStyle\r\n\r\n* Fix typo in user guide\r\n\r\n* Add a constant to store value 1440min\r\n\r\n* Fix bug in parseTagWithTime and parseNameWithTime\r\n\r\nEnsure that tag or name given is a tag, not a time.\r\nEg. a tag \u00272103\u0027 could have been wrongly intepreted as a time\r\n\r\n* Add check to see if there is day(s) to schedule\r\n\r\n* Add check to see if specified day is present\r\n\r\n* Shift messages to Message folder\r\n\r\n* Add NameAndTagWithTime class\r\n\r\nReplace NameWithTime and TagWithTime\r\n\r\n* Update UG\r\n\r\n* Fix checkstyle\r\n\r\n* Refactor NameAndTagWithTime to NameOrTagWithTime\r\n\r\n* Change address to Optional type\r\n\r\n* Shift activitywithcount to activity package\r\n\r\n* Align code\r\n\r\n* SLAP AutoSchedulecommand\r\n\r\n* Refactor parseNameAndTagWithTime to parseNameOrTagWithTime\r\n\r\n* Fix checkstyle\r\n\r\n* Fix bugs\r\n",
+            "insertions": 361,
+            "deletions": 426
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "1nefootstep": 3555,
-    "OneArmyj": 8085,
-    "ernestyyh": 907,
-    "KxxMxxx": 2877,
-    "oscarsu97": 1825
+    "1nefootstep": 3703,
+    "OneArmyj": 8016,
+    "ernestyyh": 910,
+    "KxxMxxx": 2889,
+    "oscarsu97": 1781
   },
   "authorFileTypeContributionMap": {
     "1nefootstep": {
-      "docs": 45,
-      "tests": 713,
-      "functional": 2625,
+      "docs": 44,
+      "tests": 764,
+      "functional": 2723,
       "other": 172
     },
     "OneArmyj": {
-      "docs": 644,
-      "tests": 1777,
-      "functional": 5592,
+      "docs": 640,
+      "tests": 1729,
+      "functional": 5575,
       "other": 72
     },
     "ernestyyh": {
-      "docs": 135,
+      "docs": 138,
       "tests": 0,
       "functional": 770,
       "other": 2
@@ -2259,22 +2301,22 @@
     "KxxMxxx": {
       "docs": 94,
       "tests": 318,
-      "functional": 2267,
+      "functional": 2279,
       "other": 198
     },
     "oscarsu97": {
-      "docs": 112,
+      "docs": 134,
       "tests": 329,
-      "functional": 1251,
+      "functional": 1185,
       "other": 133
     }
   },
   "authorContributionVariance": {
-    "1nefootstep": 421127.6,
-    "OneArmyj": 1019640.06,
-    "ernestyyh": 16940.527,
-    "KxxMxxx": 200106.3,
-    "oscarsu97": 26657.373
+    "1nefootstep": 414660.47,
+    "OneArmyj": 1004227.7,
+    "ernestyyh": 16666.78,
+    "KxxMxxx": 197111.78,
+    "oscarsu97": 35289.676
   },
   "authorDisplayNameMap": {
     "1nefootstep": "LEONG ... XIANG",

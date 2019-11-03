@@ -280,6 +280,27 @@
             "deletions": 10
           }
         ]
+      },
+      {
+        "insertions": 387,
+        "deletions": 899,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "c848ad54d7395490b389fb7e29b5ca7a0218c6b9",
+            "messageTitle": "Implement Multiple Undo/Redo Feature (#240)",
+            "messageBody": "* Simple fix for command navigation feature\r\n\r\n* Update Commands with TrackableState marker interface and model.updateHistory() and model.recordCommandExecution() in their respective execute() methods\r\n\r\n* Implement multiple undo-redo feature. Create tests. Display command input string in History section of UI\r\n\r\n* Change panel colours for delimiters in History section\r\n",
+            "insertions": 335,
+            "deletions": 104
+          },
+          {
+            "hash": "6ff93118a1ae8ed463c541a7ccd351d8d396fa6a",
+            "messageTitle": "Deprecate ab3 storage (#279)",
+            "messageBody": "* Deprecate AB3 storage code. Update HistoryCommand with parser to prevent abuse. Ensure that undo/redo saves to Storage\r\n\r\n* Delete LoadException.java\r\n\r\n* Deprecate all remaining storage classes\r\n",
+            "insertions": 52,
+            "deletions": 795
+          }
+        ]
       }
     ],
     "Abhiman2211": [
@@ -483,6 +504,20 @@
             "messageBody": "",
             "insertions": 536,
             "deletions": 34
+          }
+        ]
+      },
+      {
+        "insertions": 186,
+        "deletions": 102,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "0788d8b53b2f761d4fc2cd2c81ea7a8ff82126e5",
+            "messageTitle": "Pe fixes (#275)",
+            "messageBody": "",
+            "insertions": 186,
+            "deletions": 102
           }
         ]
       }
@@ -1244,49 +1279,49 @@
     ]
   },
   "authorFinalContributionMap": {
-    "brianyenna": 3885,
-    "Abhiman2211": 4123,
-    "hcwong": 3911,
-    "john0227": 7781,
-    "Joanna-YJA": 2840
+    "brianyenna": 4167,
+    "Abhiman2211": 4193,
+    "hcwong": 3910,
+    "john0227": 7780,
+    "Joanna-YJA": 2818
   },
   "authorFileTypeContributionMap": {
     "brianyenna": {
       "docs": 355,
-      "tests": 1084,
-      "functional": 2389,
+      "tests": 1200,
+      "functional": 2555,
       "other": 57
     },
     "Abhiman2211": {
       "docs": 143,
-      "tests": 1504,
-      "functional": 2406,
+      "tests": 1502,
+      "functional": 2478,
       "other": 70
     },
     "hcwong": {
       "docs": 87,
       "tests": 895,
-      "functional": 2852,
+      "functional": 2851,
       "other": 77
     },
     "john0227": {
       "docs": 289,
       "tests": 4567,
-      "functional": 2925
+      "functional": 2924
     },
     "Joanna-YJA": {
       "docs": 259,
       "tests": 10,
-      "functional": 2551,
+      "functional": 2529,
       "other": 20
     }
   },
   "authorContributionVariance": {
-    "brianyenna": 246727.0,
-    "Abhiman2211": 105201.9,
-    "hcwong": 304933.78,
-    "john0227": 429900.0,
-    "Joanna-YJA": 163814.36
+    "brianyenna": 264511.9,
+    "Abhiman2211": 103866.09,
+    "hcwong": 300152.47,
+    "john0227": 423389.56,
+    "Joanna-YJA": 161241.61
   },
   "authorDisplayNameMap": {
     "brianyenna": "CS2103T-F11-1 YEN R ... BRIAN",
