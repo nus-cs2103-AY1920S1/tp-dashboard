@@ -555,6 +555,20 @@
             "deletions": 58
           }
         ]
+      },
+      {
+        "insertions": 527,
+        "deletions": 44,
+        "date": "2019-11-04",
+        "commitResults": [
+          {
+            "hash": "2e54b6ac9dc7a51f803a859478a897c385e78279",
+            "messageTitle": "Add Assignment display GUI and command (#175)",
+            "messageBody": "",
+            "insertions": 527,
+            "deletions": 44
+          }
+        ]
       }
     ],
     "AhmadHatziq": [
@@ -835,6 +849,20 @@
             "messageBody": "",
             "insertions": 839,
             "deletions": 63
+          }
+        ]
+      },
+      {
+        "insertions": 409,
+        "deletions": 36,
+        "date": "2019-11-04",
+        "commitResults": [
+          {
+            "hash": "c716306efc2c1a3ed485532ca85ee1578221f314",
+            "messageTitle": "Add storage for Assignments (#174)",
+            "messageBody": "* Update UserGuide.adoc\r\n\r\n* Update UserGuide.adoc\r\n\r\n* Update DG and UG\r\n\r\n* Update DG\r\n\r\n* Update DG\r\n\r\n* Update Developer Guide\r\n\r\n* Update  (#6)\r\n\r\n* Include index shortcut for AddStudentCommand (#49)\r\n\r\n* Added Attendance, missing tests for Tutorial and associated subclasses.\r\n\r\n* Allow multiple input formats for addTutorial weeks (#52)\r\n\r\n* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Update list command (#53)\r\n\r\n* Update TutorialCard to display Module code\r\n\r\n* Update List command to display in UI\r\n\r\n* Fuck you sourcetree\r\n\r\n* Implemented saving of Modules\r\n\r\n* Can read module json from file\r\n\r\n* Save progress, before starting on trying to store as an easier to interpret json string array of array of array\r\n\r\n* Add function to save modules model to file. Haven\u0027t add function to read from said saved data.\r\n\r\n* Changed from hashMap to LinkedHashMap to preserve relative ordering\r\n\r\n* Refactor code that deals with saving to Json\r\n\r\n* Add function to read module data from saved Json file\r\n\r\n* Refactor code block on studentStringToStudent\r\n\r\n* Refactor code segment on Student object creation\r\n\r\n* Add checkers for invalid tutorial and student strings \u0026 general refactoring\r\n\r\n* Corrected ckeckStyle and tests\r\n\r\n* Fix checkStyle violations\r\n\r\n* Added intial round of tests\r\n\r\n* Fix test for invalid dateTime or Duration\r\n\r\n* Update fork\r\n\r\n* Add support for saving (but not reading) of attendance list\r\n\r\n* Add test json files\r\n\r\n* Extract out weekly attendance string except final week\r\n\r\n* Fix issue with saving an attendance list with 0 students\r\n\r\n* Add ability to construct attendance object from json string\r\n\r\n* Fix failing test cases due to change in tutorialString structure (addition of tutorialAttendance field)\r\n\r\n* Fix checkstyle violations\r\n\r\n* Added EOF to json test files\r\n\r\n* Revert to 63465c7f\r\n\r\n* Code cleaning\r\n\r\n* Fix check style violations\r\n\r\n* Refactor parsing methods in JsonAdaptedModule.java to JsonUtil.java\r\n\r\n* Refactor JsonAdaptedModuleTest \u0026 JsonUtilTest\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update developer guide\r\n\r\n* Update tutorial class\r\n\r\n* Remove JsonAdaptedPerson from Storage-related files\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Checkpoint before converting tutorial structure from a String to a Map\r\n\r\n* Ported storage to nested map of strings\r\n\r\n* Remove all instances from previous storage method\r\n\r\n* Added saving of initial model state\r\n\r\n* Add ability to save each state for every state-changing command\r\n\r\n* Add a skeleton Undo Command (input/output)\r\n\r\n* Add ability to check for invalid arguments for \"u/integer\"\r\n\r\n* Add if-branch for an undo command\r\n\r\n* Checkpoint before implementing overloaded Command.execute(model, storage) abstract method\r\n\r\n* Add overloaded abstract method to accomodate commands that need both Model \u0026 Storage objects (ie UndoCommand) to operate\r\n\r\n* Added undo ability\r\n\r\n* Fix bug where new state is saved after Undo Command\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing test cases\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Update build.gradle\r\n\r\n* Update build.gradle\r\n\r\n* Bug fixes\r\n\r\n* Update user guide\r\n\r\n* Before attempting to change json storage directory to (Paths.get)\r\n\r\n* Fix state storage file directory for Mac users\r\n\r\n* Update checkStyle\r\n\r\n* Add parsing of Assignment from json\r\n\r\n* Add storage for assignments\r\n\r\n* Add method isDuplicateAssignment\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n",
+            "insertions": 409,
+            "deletions": 36
           }
         ]
       }
@@ -1242,42 +1270,42 @@
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 8043,
-    "Ellieyee": 6941,
-    "AhmadHatziq": 2949,
-    "lumos309": 6397
+    "ZiHawkEye": 8038,
+    "Ellieyee": 7426,
+    "AhmadHatziq": 3324,
+    "lumos309": 6396
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
       "docs": 111,
       "tests": 2574,
-      "functional": 5331,
+      "functional": 5326,
       "other": 27
     },
     "Ellieyee": {
-      "docs": 516,
-      "tests": 2778,
-      "functional": 3642,
+      "docs": 515,
+      "tests": 2899,
+      "functional": 4007,
       "other": 5
     },
     "AhmadHatziq": {
-      "docs": 383,
-      "tests": 370,
-      "functional": 2189,
-      "other": 7
+      "docs": 399,
+      "tests": 374,
+      "functional": 2541,
+      "other": 10
     },
     "lumos309": {
-      "docs": 107,
+      "docs": 106,
       "tests": 2822,
       "functional": 3126,
       "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 152535.05,
-    "Ellieyee": 213219.89,
-    "AhmadHatziq": 53427.637,
-    "lumos309": 59014.05
+    "ZiHawkEye": 150462.47,
+    "Ellieyee": 211786.11,
+    "AhmadHatziq": 54813.0,
+    "lumos309": 58341.75
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",

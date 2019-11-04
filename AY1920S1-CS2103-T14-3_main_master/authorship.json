@@ -78614,387 +78614,387 @@
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "import seedu.flashcard.commons.core.GuiSettings;"
+        "content": "import seedu.address.ui.StatusBarFooter;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": "import seedu.flashcard.commons.core.LogsCenter;"
+        "content": "import seedu.flashcard.commons.core.GuiSettings;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "import seedu.flashcard.logic.Logic;"
+        "content": "import seedu.flashcard.commons.core.LogsCenter;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": "import seedu.flashcard.logic.commands.CommandResult;"
+        "content": "import seedu.flashcard.logic.Logic;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "import seedu.flashcard.logic.commands.exceptions.CommandException;"
+        "content": "import seedu.flashcard.logic.commands.CommandResult;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": "import seedu.flashcard.logic.parser.exceptions.ParseException;"
+        "content": "import seedu.flashcard.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "import seedu.flashcard.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": " * Represent the whole window of the user interface, it should contain all units in the user interface."
+        "content": "/**"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": " * Represent the whole window of the user interface, it should contain all units in the user interface."
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "public class MainWindow extends UiPart\u003cStage\u003e {"
+        "content": " */"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "public class MainWindow extends UiPart\u003cStage\u003e {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static final String FXML \u003d \"MainWindow.fxml\";"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private static final String FXML \u003d \"MainWindow.fxml\";"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "    private final Logger logger \u003d LogsCenter.getLogger(getClass());"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private final Logger logger \u003d LogsCenter.getLogger(getClass());"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "    private Stage primaryStage;"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "    private Logic logic;"
+        "content": "    private Stage primaryStage;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private Logic logic;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Independent Ui parts residing in this Ui container"
+        "content": ""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "    private FlashcardListPanel flashcardListPanel;"
+        "content": "    // Independent Ui parts residing in this Ui container"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "    private ResultDisplay resultDisplay;"
+        "content": "    private FlashcardListPanel flashcardListPanel;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "    private HelpWindow helpWindow;"
+        "content": "    private ResultDisplay resultDisplay;"
       },
       {
         "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private HelpWindow helpWindow;"
+      },
+      {
+        "lineNumber": 39,
         "author": {
           "gitId": "lzw12345"
         },
         "content": "    private StatsDisplay statsDisplay;"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 40,
         "author": {
           "gitId": "jolynnn8D"
         },
         "content": "    private FlashcardDisplay flashcardDisplay;"
       },
       {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "    private StackPane commandBoxPlaceholder;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private StackPane commandBoxPlaceholder;"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "    private MenuItem helpMenuItem;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private MenuItem helpMenuItem;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "    private ScrollPane flashcardListPanelPlaceholder;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private ScrollPane flashcardListPanelPlaceholder;"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "    private StackPane resultDisplayPlaceholder;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private StackPane resultDisplayPlaceholder;"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "    private StackPane viewFlashcardListPanelPlaceholder;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private StackPane viewFlashcardListPanelPlaceholder;"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @FXML"
+      },
+      {
+        "lineNumber": 58,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "    private StackPane statisticsDisplayPlaceholder;"
       },
       {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "    public MainWindow(Stage primaryStage, Logic logic) {"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "        super(FXML, primaryStage);"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    private StackPane statusbarPlaceholder;"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "        // Set dependencies"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "        this.primaryStage \u003d primaryStage;"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.logic \u003d logic;"
+        "content": "    public MainWindow(Stage primaryStage, Logic logic) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        super(FXML, primaryStage);"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Configure the UI"
+        "content": ""
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "        setWindowDefaultSize(logic.getGuiSettings());"
+        "content": "        // Set dependencies"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        this.primaryStage \u003d primaryStage;"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "        setAccelerators();"
+        "content": "        this.logic \u003d logic;"
       },
       {
         "lineNumber": 70,
@@ -79008,26 +79008,26 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        helpWindow \u003d new HelpWindow();"
+        "content": "        // Configure the UI"
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "        statsDisplay \u003d new StatsDisplay(logic.getStatistics());"
+        "content": "        setWindowDefaultSize(logic.getGuiSettings());"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
         "content": ""
       },
@@ -79036,917 +79036,917 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    public Stage getPrimaryStage() {"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "        return primaryStage;"
+        "content": "        helpWindow \u003d new HelpWindow();"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": "        statsDisplay \u003d new StatsDisplay(logic.getStatistics());"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void setAccelerators() {"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "        setAccelerator(helpMenuItem, KeyCombination.valueOf(\"F1\"));"
+        "content": "    public Stage getPrimaryStage() {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        return primaryStage;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Sets the accelerator of a MenuItem."
+        "content": "    private void setAccelerators() {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param keyCombination the KeyCombination value of the accelerator"
+        "content": "        setAccelerator(helpMenuItem, KeyCombination.valueOf(\"F1\"));"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void setAccelerator(MenuItem menuItem, KeyCombination keyCombination) {"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "        menuItem.setAccelerator(keyCombination);"
+        "content": "    /**"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Sets the accelerator of a MenuItem."
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "        /*"
+        "content": "     * @param keyCombination the KeyCombination value of the accelerator"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "         * TODO: the code below can be removed once the bug reported here"
+        "content": "     */"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "         * https://bugs.openjdk.java.net/browse/JDK-8131666"
+        "content": "    private void setAccelerator(MenuItem menuItem, KeyCombination keyCombination) {"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "         * is fixed in later version of SDK."
+        "content": "        menuItem.setAccelerator(keyCombination);"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "         *"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "         * According to the bug report, TextInputControl (TextField, TextArea) will"
+        "content": "        /*"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "         * consume function-key events. Because CommandBox contains a TextField, and"
+        "content": "         * TODO: the code below can be removed once the bug reported here"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "         * ResultDisplay contains a TextArea, thus some accelerators (e.g F1) will"
+        "content": "         * https://bugs.openjdk.java.net/browse/JDK-8131666"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "         * not work when the focus is in them because the key event is consumed by"
+        "content": "         * is fixed in later version of SDK."
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "         * the TextInputControl(s)."
+        "content": "         *"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "         *"
+        "content": "         * According to the bug report, TextInputControl (TextField, TextArea) will"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "         * For now, we add following event filter to capture such key events and open"
+        "content": "         * consume function-key events. Because CommandBox contains a TextField, and"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "         * help window purposely so to support accelerators even when focus is"
+        "content": "         * ResultDisplay contains a TextArea, thus some accelerators (e.g F1) will"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "         * in CommandBox or ResultDisplay."
+        "content": "         * not work when the focus is in them because the key event is consumed by"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "         * the TextInputControl(s)."
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "        getRoot().addEventFilter(KeyEvent.KEY_PRESSED, event -\u003e {"
+        "content": "         *"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (event.getTarget() instanceof TextInputControl \u0026\u0026 keyCombination.match(event)) {"
+        "content": "         * For now, we add following event filter to capture such key events and open"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "                menuItem.getOnAction().handle(new ActionEvent());"
+        "content": "         * help window purposely so to support accelerators even when focus is"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "                event.consume();"
+        "content": "         * in CommandBox or ResultDisplay."
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "         */"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "        getRoot().addEventFilter(KeyEvent.KEY_PRESSED, event -\u003e {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            if (event.getTarget() instanceof TextInputControl \u0026\u0026 keyCombination.match(event)) {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                menuItem.getOnAction().handle(new ActionEvent());"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "                event.consume();"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Fills up all the placeholders of this window."
+        "content": "            }"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        });"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "    void fillInnerParts() {"
+        "content": "    }"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "        flashcardListPanel \u003d new FlashcardListPanel(logic.getFilteredFlashcardList());"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "        flashcardListPanelPlaceholder.setContent(flashcardListPanel.getRoot());"
+        "content": "    /**"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Fills up all the placeholders of this window."
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "        resultDisplay \u003d new ResultDisplay();"
+        "content": "     */"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "        resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());"
+        "content": "    void fillInnerParts() {"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        flashcardListPanel \u003d new FlashcardListPanel(logic.getFilteredFlashcardList());"
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "        flashcardDisplay \u003d new FlashcardDisplay();"
+        "content": "        flashcardListPanelPlaceholder.setContent(flashcardListPanel.getRoot());"
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "        statisticsDisplayPlaceholder.getChildren().add(flashcardDisplay.getRoot());"
+        "content": ""
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "        resultDisplay \u003d new ResultDisplay();"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "        CommandBox commandBox \u003d new CommandBox(this::executeCommand);"
+        "content": "        resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "        commandBoxPlaceholder.getChildren().add(commandBox.getRoot());"
+        "content": ""
       },
       {
         "lineNumber": 128,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "    }"
+        "content": "        flashcardDisplay \u003d new FlashcardDisplay();"
       },
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": ""
+        "content": "        statisticsDisplayPlaceholder.getChildren().add(flashcardDisplay.getRoot());"
       },
       {
         "lineNumber": 130,
         "author": {
-          "gitId": "-"
+          "gitId": "jolynnn8D"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Sets the default size based on {@code guiSettings}."
+        "content": "        CommandBox commandBox \u003d new CommandBox(this::executeCommand);"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        commandBoxPlaceholder.getChildren().add(commandBox.getRoot());"
       },
       {
         "lineNumber": 133,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    private void setWindowDefaultSize(GuiSettings guiSettings) {"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "        primaryStage.setHeight(guiSettings.getWindowHeight());"
+        "content": "        seedu.address.ui.StatusBarFooter statusBarFooter \u003d new StatusBarFooter(logic.getFlashcardListFilePath());"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "        primaryStage.setWidth(guiSettings.getWindowWidth());"
+        "content": "        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (guiSettings.getWindowCoordinates() !\u003d null) {"
+        "content": "    }"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "            primaryStage.setX(guiSettings.getWindowCoordinates().getX());"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "            primaryStage.setY(guiSettings.getWindowCoordinates().getY());"
+        "content": "    /**"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "     * Sets the default size based on {@code guiSettings}."
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private void setWindowDefaultSize(GuiSettings guiSettings) {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        primaryStage.setHeight(guiSettings.getWindowHeight());"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Opens the help window or focuses on it if it\u0027s already opened."
+        "content": "        primaryStage.setWidth(guiSettings.getWindowWidth());"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        if (guiSettings.getWindowCoordinates() !\u003d null) {"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": "            primaryStage.setX(guiSettings.getWindowCoordinates().getX());"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void handleHelp() {"
+        "content": "            primaryStage.setY(guiSettings.getWindowCoordinates().getY());"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!helpWindow.isShowing()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "            helpWindow.show();"
+        "content": "    }"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "            helpWindow.focus();"
+        "content": "    /**"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "     * Opens the help window or focuses on it if it\u0027s already opened."
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    @FXML"
       },
       {
         "lineNumber": 154,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "    /**"
+        "content": "    public void handleHelp() {"
       },
       {
         "lineNumber": 155,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "     * Opens the stats display or focuses on it if it\u0027s already opened."
+        "content": "        if (!helpWindow.isShowing()) {"
       },
       {
         "lineNumber": 156,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "     */"
+        "content": "            helpWindow.show();"
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": "        } else {"
       },
       {
         "lineNumber": 158,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "    public void handlestats() {"
+        "content": "            helpWindow.focus();"
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "        statsDisplay.updateStats();"
+        "content": "        }"
       },
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "        if (!statsDisplay.isShowing()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "            statsDisplay.show();"
+        "content": ""
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        } else {"
+        "content": "    /**"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "            statsDisplay.focus();"
+        "content": "     * Opens the stats display or focuses on it if it\u0027s already opened."
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        }"
+        "content": "     */"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    public void handlestats() {"
       },
       {
         "lineNumber": 167,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    void show() {"
+        "content": "        statsDisplay.updateStats();"
       },
       {
         "lineNumber": 168,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "        primaryStage.show();"
+        "content": "        if (!statsDisplay.isShowing()) {"
       },
       {
         "lineNumber": 169,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": "            statsDisplay.show();"
       },
       {
         "lineNumber": 170,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "        } else {"
       },
       {
         "lineNumber": 171,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    /**"
+        "content": "            statsDisplay.focus();"
       },
       {
         "lineNumber": 172,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "     * Closes the application."
+        "content": "        }"
       },
       {
         "lineNumber": 173,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 174,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void handleExit() {"
+        "content": "    void show() {"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "        GuiSettings guiSettings \u003d new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),"
+        "content": "        primaryStage.show();"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "                (int) primaryStage.getX(), (int) primaryStage.getY());"
+        "content": "    }"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "        logic.setGuiSettings(guiSettings);"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "        helpWindow.hide();"
+        "content": "    /**"
       },
       {
         "lineNumber": 180,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "        statsDisplay.hide();"
+        "content": "     * Closes the application."
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.hide();"
+        "content": "     */"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private void handleExit() {"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "    public FlashcardListPanel getPersonListPanel() {"
+        "content": "        GuiSettings guiSettings \u003d new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "        return flashcardListPanel;"
+        "content": "                (int) primaryStage.getX(), (int) primaryStage.getY());"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        logic.setGuiSettings(guiSettings);"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        helpWindow.hide();"
       },
       {
         "lineNumber": 188,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    /**"
+        "content": "        statsDisplay.hide();"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Executes the command and returns the result."
+        "content": "        primaryStage.hide();"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @see seedu.address.logic.Logic#execute(String)"
+        "content": ""
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    public FlashcardListPanel getPersonListPanel() {"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "    private CommandResult executeCommand(String commandText) throws CommandException, ParseException {"
+        "content": "        return flashcardListPanel;"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "        try {"
+        "content": "    }"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "            CommandResult commandResult \u003d logic.execute(commandText);"
+        "content": ""
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "            logger.info(\"Result: \" + commandResult.getFeedbackToUser());"
+        "content": "    /**"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "            resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
+        "content": "     * Executes the command and returns the result."
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     *"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (commandResult.isShowHelp()) {"
+        "content": "     * @see seedu.address.logic.Logic#execute(String)"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "                handleHelp();"
+        "content": "     */"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "    private CommandResult executeCommand(String commandText) throws CommandException, ParseException {"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (commandResult.isExit()) {"
+        "content": "            CommandResult commandResult \u003d logic.execute(commandText);"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "                handleExit();"
+        "content": "            logger.info(\"Result: \" + commandResult.getFeedbackToUser());"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
       },
       {
         "lineNumber": 206,
@@ -79958,110 +79958,166 @@
       {
         "lineNumber": 207,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "            if (commandResult.isShowStats()) {"
+        "content": "            if (commandResult.isShowHelp()) {"
       },
       {
         "lineNumber": 208,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
-        "content": "                handlestats();"
+        "content": "                handleHelp();"
       },
       {
         "lineNumber": 209,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
         "content": "            }"
       },
       {
         "lineNumber": 210,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "            if (commandResult.isFlip()) {"
+        "content": "            if (commandResult.isExit()) {"
       },
       {
         "lineNumber": 212,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
-        "content": "                flashcardDisplay.setFeedbackToUser(commandResult.getFlashcardToDisplay());"
+        "content": "                handleExit();"
       },
       {
         "lineNumber": 213,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
         "content": "            }"
       },
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 215,
         "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "            if (commandResult.isShowStats()) {"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                handlestats();"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "jolynnn8D"
+        },
+        "content": "            if (commandResult.isFlip()) {"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "jolynnn8D"
+        },
+        "content": "                flashcardDisplay.setFeedbackToUser(commandResult.getFlashcardToDisplay());"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "jolynnn8D"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "jolynnn8D"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 223,
+        "author": {
           "gitId": "-"
         },
         "content": "            return commandResult;"
       },
       {
-        "lineNumber": 216,
+        "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
         "content": "        } catch (CommandException | ParseException e) {"
       },
       {
-        "lineNumber": 217,
+        "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
         "content": "            logger.info(\"Invalid command: \" + commandText);"
       },
       {
-        "lineNumber": 218,
+        "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
         "content": "            resultDisplay.setFeedbackToUser(e.getMessage());"
       },
       {
-        "lineNumber": 219,
+        "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
         "content": "            throw e;"
       },
       {
-        "lineNumber": 220,
+        "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 221,
+        "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 222,
+        "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
@@ -80069,8 +80125,8 @@
       }
     ],
     "authorContributionMap": {
-      "lzw12345": 20,
-      "-": 193,
+      "lzw12345": 29,
+      "-": 192,
       "jolynnn8D": 8,
       "Akimatsu98": 1
     }
@@ -80168,182 +80224,182 @@
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "import javafx.scene.layout.HBox;"
+        "content": "import javafx.scene.control.ScrollPane;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "import javafx.scene.layout.VBox;"
+        "content": "import javafx.stage.Stage;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "import javafx.stage.Stage;"
+        "content": "import seedu.flashcard.commons.core.LogsCenter;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "import seedu.flashcard.commons.core.LogsCenter;"
+        "content": "import seedu.flashcard.model.Statistics;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "import seedu.flashcard.model.Statistics;"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "/**"
+        "content": " * Creates a scrollabe display for a graphical summary of the stats"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": " * Creates a scrollabe display for a graphical summary of the stats"
+        "content": " */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": " */"
+        "content": "public class StatsDisplay extends UiPart\u003cStage\u003e {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "public class StatsDisplay extends UiPart\u003cStage\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    private static final String FXML \u003d \"StatsDisplay.fxml\";"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private static final String FXML \u003d \"StatsDisplay.fxml\";"
+        "content": "    private final Logger logger \u003d LogsCenter.getLogger(StatsDisplay.class);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private final Logger logger \u003d LogsCenter.getLogger(StatsDisplay.class);"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    private Statistics statistics;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private Statistics statistics;"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    @FXML"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    @FXML"
+        "content": "    private PieChart accuracy;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private PieChart accuracy;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    @FXML"
+        "content": "    private PieChart completion;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private PieChart completion;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    @FXML"
+        "content": "    private ScrollPane scrollPane;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private HBox pieCharts;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    @FXML"
+        "content": "    private CategoryAxis xAxis;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private VBox statsBox;"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    @FXML"
+        "content": "    private NumberAxis yAxis;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private CategoryAxis xAxis;"
+        "content": ""
       },
       {
         "lineNumber": 39,
@@ -80357,7 +80413,7 @@
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private NumberAxis yAxis;"
+        "content": "    private StackedBarChart\u003cString, Number\u003e individualCards;"
       },
       {
         "lineNumber": 41,
@@ -80371,612 +80427,605 @@
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    private StackedBarChart\u003cString, Number\u003e individualCards;"
+        "content": "    public StatsDisplay (Statistics statistics, Stage root) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "        super(FXML, root);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "        this.statistics \u003d statistics;"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    public StatsDisplay (Statistics statistics, Stage root) {"
+        "content": "        updateStats();"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        super(FXML, root);"
+        "content": "    }"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        this.statistics \u003d statistics;"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        updateStats();"
+        "content": "    /**"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": "     * Creates a new Stats Window."
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    /**"
+        "content": "    public StatsDisplay(Statistics statistics) {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * Creates a new Stats Window."
+        "content": "        this(statistics, new Stage());"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    public StatsDisplay(Statistics statistics) {"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        this(statistics, new Stage());"
+        "content": "    /**"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": "     * repopulates the graphs with updated stats"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    /**"
+        "content": "    public void updateStats() {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * repopulates the graphs with updated stats"
+        "content": "        ObservableList\u003cPieChart.Data\u003e accuracyPieChartData \u003d FXCollections.observableArrayList("
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     */"
+        "content": "                new PieChart.Data(\"Total Correct\", statistics.getTotalCorrect()),"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    public void updateStats() {"
+        "content": "                new PieChart.Data(\"Total Wrong\", statistics.getTotalWrong()));"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        ObservableList\u003cPieChart.Data\u003e accuracyPieChartData \u003d FXCollections.observableArrayList("
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                new PieChart.Data(\"Total Correct\", statistics.getTotalCorrect()),"
+        "content": "        accuracy.getData().clear();"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                new PieChart.Data(\"Total Wrong\", statistics.getTotalWrong()));"
+        "content": "        accuracy.getData().addAll(accuracyPieChartData);"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "        accuracy.setTitle(\"Overall Accuracy\");"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        accuracy.getData().clear();"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        accuracy.getData().addAll(accuracyPieChartData);"
+        "content": "        ObservableList\u003cPieChart.Data\u003e completionPieChartData \u003d FXCollections.observableArrayList("
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        accuracy.setTitle(\"Overall Accuracy\");"
+        "content": "                new PieChart.Data(\"Total Attempted\", statistics.getTotalAttempted()),"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "                new PieChart.Data(\"Total Unattempted\", statistics.getTotalUnattempted()));"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        ObservableList\u003cPieChart.Data\u003e completionPieChartData \u003d FXCollections.observableArrayList("
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                new PieChart.Data(\"Total Attempted\", statistics.getTotalAttempted()),"
+        "content": "        completion.getData().clear();"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                new PieChart.Data(\"Total Unattempted\", statistics.getTotalUnattempted()));"
+        "content": "        completion.getData().addAll(completionPieChartData);"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "        completion.setTitle(\"Overall Completion\");"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        completion.getData().clear();"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        completion.getData().addAll(completionPieChartData);"
+        "content": "        individualCards.getData().clear();"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        completion.setTitle(\"Overall Completion\");"
+        "content": "        individualCards.getData().addAll(statistics.getCorrectSeries(), statistics.getWrongSeries());"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "        individualCards.setTitle(\"Statistics by card\");"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        individualCards.getData().clear();"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        individualCards.getData().addAll(statistics.getCorrectSeries(), statistics.getWrongSeries());"
+        "content": "        scrollPane.setFitToHeight(true);"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        individualCards.setTitle(\"Statistics by card\");"
+        "content": ""
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    /**"
+        "content": "     * Shows the Stats window."
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * Shows the Stats window."
+        "content": "     * @throws IllegalStateException"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * @throws IllegalStateException"
+        "content": "     * \u003cul\u003e"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * \u003cul\u003e"
+        "content": "     *     \u003cli\u003e"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *     \u003cli\u003e"
+        "content": "     *         if this method is called on a thread other than the JavaFX Application Thread."
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *         if this method is called on a thread other than the JavaFX Application Thread."
+        "content": "     *     \u003c/li\u003e"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *     \u003c/li\u003e"
+        "content": "     *     \u003cli\u003e"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *     \u003cli\u003e"
+        "content": "     *         if this method is called during animation or layout processing."
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *         if this method is called during animation or layout processing."
+        "content": "     *     \u003c/li\u003e"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *     \u003c/li\u003e"
+        "content": "     *     \u003cli\u003e"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *     \u003cli\u003e"
+        "content": "     *         if this method is called on the primary stage."
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *         if this method is called on the primary stage."
+        "content": "     *     \u003c/li\u003e"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *     \u003c/li\u003e"
+        "content": "     *     \u003cli\u003e"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *     \u003cli\u003e"
+        "content": "     *         if {@code dialogStage} is already showing."
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *         if {@code dialogStage} is already showing."
+        "content": "     *     \u003c/li\u003e"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     *     \u003c/li\u003e"
+        "content": "     * \u003c/ul\u003e"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * \u003c/ul\u003e"
+        "content": "     */"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     */"
+        "content": "    public void show() {"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    public void show() {"
+        "content": "        logger.fine(\"Showing stats about the tasks.\");"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        logger.fine(\"Showing stats about the tasks.\");"
+        "content": "        getRoot().show();"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        getRoot().show();"
+        "content": "        getRoot().centerOnScreen();"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        getRoot().centerOnScreen();"
+        "content": "    }"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    /**"
+        "content": "     * Returns true if the stats window is currently being shown."
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * Returns true if the stats window is currently being shown."
+        "content": "     */"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     */"
+        "content": "    public boolean isShowing() {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    public boolean isShowing() {"
+        "content": "        return getRoot().isShowing();"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        return getRoot().isShowing();"
+        "content": "    }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    /**"
+        "content": "     * Hides the stats window."
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * Hides the stats window."
+        "content": "     */"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     */"
+        "content": "    public void hide() {"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    public void hide() {"
+        "content": "        getRoot().hide();"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        getRoot().hide();"
+        "content": "    }"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    /**"
+        "content": "     * Focuses on the stats window."
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     * Focuses on the stats window."
+        "content": "     */"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "     */"
+        "content": "    public void focus() {"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    public void focus() {"
+        "content": "        getRoot().requestFocus();"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        getRoot().requestFocus();"
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "lzw12345"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 128,
         "author": {
           "gitId": "lzw12345"
         },
@@ -80984,7 +81033,7 @@
       }
     ],
     "authorContributionMap": {
-      "lzw12345": 129
+      "lzw12345": 128
     }
   },
   {
@@ -81583,6 +81632,72 @@
     "authorContributionMap": {
       "-": 83,
       "Akimatsu98": 1
+    }
+  },
+  {
+    "path": "src/main/resources/view/CommandBox.fxml",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\"?\u003e"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c?import javafx.scene.control.TextField?\u003e"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c?import javafx.scene.layout.StackPane?\u003e"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003cStackPane styleClass\u003d\"stack-pane\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "  \u003cTextField fx:id\u003d\"commandTextField\" maxHeight\u003d\"Infinity\" maxWidth\u003d\"Infinity\" onAction\u003d\"#handleCommandEntered\" promptText\u003d\"Enter command here...\" /\u003e"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c/StackPane\u003e"
+      }
+    ],
+    "authorContributionMap": {
+      "lzw12345": 2,
+      "-": 6
     }
   },
   {
@@ -84469,26 +84584,19 @@
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "lzw12345"
         },
-        "content": "\u003cStackPane fx:id\u003d\"placeHolder\" styleClass\u003d\"pane-with-border\" xmlns\u003d\"http://javafx.com/javafx/8\""
+        "content": "\u003cStackPane fx:id\u003d\"placeHolder\" maxHeight\u003d\"Infinity\" maxWidth\u003d\"Infinity\" prefWidth\u003d\"300\" styleClass\u003d\"pane-with-border\" stylesheets\u003d\"@DarkTheme.css\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    xmlns:fx\u003d\"http://javafx.com/fxml/1\" prefWidth\u003d\"300\" maxWidth\u003d\"Infinity\" maxHeight\u003d\"Infinity\"\u003e"
+        "content": "  \u003cTextArea fx:id\u003d\"flashcardDisplay\" editable\u003d\"false\" maxHeight\u003d\"Infinity\" maxWidth\u003d\"Infinity\" prefWidth\u003d\"300\" styleClass\u003d\"flashcard-display\" stylesheets\u003d\"@DarkTheme.css\" wrapText\u003d\"true\" /\u003e"
       },
       {
         "lineNumber": 8,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  \u003cTextArea fx:id\u003d\"flashcardDisplay\" editable\u003d\"false\" styleClass\u003d\"flashcard-display\" wrapText\u003d\"true\" prefWidth\u003d\"300\" maxWidth\u003d\"Infinity\" maxHeight\u003d\"Infinity\"/\u003e"
-      },
-      {
-        "lineNumber": 9,
         "author": {
           "gitId": "jolynnn8D"
         },
@@ -84496,8 +84604,8 @@
       }
     ],
     "authorContributionMap": {
-      "jolynnn8D": 7,
-      "-": 2
+      "lzw12345": 2,
+      "jolynnn8D": 6
     }
   },
   {
@@ -84556,37 +84664,37 @@
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "lzw12345"
         },
-        "content": "\u003c?import javafx.scene.layout.HBox?\u003e"
+        "content": "\u003c?import javafx.scene.control.ScrollPane?\u003e"
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "\u003c?import javafx.scene.layout.StackPane?\u003e"
+        "content": "\u003c?import javafx.scene.layout.BorderPane?\u003e"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c?import javafx.scene.layout.VBox?\u003e"
+        "content": "\u003c?import javafx.scene.layout.StackPane?\u003e"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "\u003c?import javafx.stage.Stage?\u003e"
+        "content": "\u003c?import javafx.scene.layout.VBox?\u003e"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "-"
+          "gitId": "Akimatsu98"
         },
-        "content": ""
+        "content": "\u003c?import javafx.stage.Stage?\u003e"
       },
       {
         "lineNumber": 13,
@@ -84598,247 +84706,247 @@
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "\u003c?import javafx.scene.control.ScrollPane?\u003e"
+        "content": "\u003cfx:root onCloseRequest\u003d\"#handleExit\" title\u003d\"Flashmind\" type\u003d\"Stage\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cfx:root maxHeight\u003d\"Infinity\" maxWidth\u003d\"Infinity\" minHeight\u003d\"800.0\" minWidth\u003d\"200\" title\u003d\"FlashMind\" type\u003d\"Stage\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+        "content": "    \u003cscene\u003e"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        \u003cScene\u003e"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "    \u003cscene\u003e"
+        "content": "            \u003cBorderPane prefHeight\u003d\"304.0\" prefWidth\u003d\"493.0\" styleClass\u003d\"background\"\u003e"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "        \u003cScene\u003e"
+        "content": "            \u003ctop\u003e"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "         \u003cHBox maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"Infinity\" minHeight\u003d\"420.0\" minWidth\u003d\"300.0\" prefHeight\u003d\"683.0\" prefWidth\u003d\"900.0\"\u003e"
+        "content": "               \u003cMenuBar fx:id\u003d\"MenuBar\" BorderPane.alignment\u003d\"CENTER\"\u003e"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "            \u003cchildren\u003e"
+        "content": "                 \u003cmenus\u003e"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "-"
+          "gitId": "Akimatsu98"
         },
-        "content": "               \u003cVBox\u003e"
+        "content": "                   \u003cMenu mnemonicParsing\u003d\"false\" text\u003d\"Action\"\u003e"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "                  \u003cchildren\u003e"
+        "content": "                     \u003citems\u003e"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "                     \u003cMenuBar fx:id\u003d\"MenuBar\"\u003e"
+        "content": "                       \u003cMenuItem mnemonicParsing\u003d\"false\" onAction\u003d\"#handleExit\" text\u003d\"Close\" /\u003e"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "                       \u003cmenus\u003e"
+        "content": "                     \u003c/items\u003e"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "                         \u003cMenu mnemonicParsing\u003d\"false\" text\u003d\"Action\"\u003e"
+        "content": "                   \u003c/Menu\u003e"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "                           \u003citems\u003e"
+        "content": "                   \u003cMenu mnemonicParsing\u003d\"false\" text\u003d\"Help\"\u003e"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "                             \u003cMenuItem mnemonicParsing\u003d\"false\" onAction\u003d\"#handleExit\" text\u003d\"Close\" /\u003e"
+        "content": "                     \u003citems\u003e"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "                           \u003c/items\u003e"
+        "content": "                       \u003cMenuItem fx:id\u003d\"helpMenuItem\" mnemonicParsing\u003d\"false\" onAction\u003d\"#handleHelp\" text\u003d\"Show Help\" /\u003e"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "-"
+          "gitId": "Akimatsu98"
         },
-        "content": "                         \u003c/Menu\u003e"
+        "content": "                     \u003c/items\u003e"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "                         \u003cMenu mnemonicParsing\u003d\"false\" text\u003d\"Help\"\u003e"
+        "content": "                   \u003c/Menu\u003e"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "Akimatsu98"
         },
-        "content": "                           \u003citems\u003e"
+        "content": "                 \u003c/menus\u003e"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "-"
         },
-        "content": "                             \u003cMenuItem fx:id\u003d\"helpMenuItem\" mnemonicParsing\u003d\"false\" onAction\u003d\"#handleHelp\" text\u003d\"Show Help\" /\u003e"
+        "content": "               \u003c/MenuBar\u003e"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "lzw12345"
         },
-        "content": "                           \u003c/items\u003e"
+        "content": "            \u003c/top\u003e"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "                         \u003c/Menu\u003e"
+        "content": "            \u003cbottom\u003e"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "lzw12345"
         },
-        "content": "                       \u003c/menus\u003e"
+        "content": "               \u003cStackPane fx:id\u003d\"statusbarPlaceholder\" maxHeight\u003d\"-Infinity\" maxWidth\u003d\"-Infinity\" minHeight\u003d\"-Infinity\" minWidth\u003d\"-Infinity\" prefHeight\u003d\"20.0\" BorderPane.alignment\u003d\"CENTER\" /\u003e"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "                     \u003c/MenuBar\u003e"
+        "content": "            \u003c/bottom\u003e"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "                     \u003cStackPane fx:id\u003d\"commandBoxPlaceholder\" styleClass\u003d\"pane-with-border\" maxHeight\u003d\"Infinity\" minWidth\u003d\"300.0\" maxWidth\u003d\"Infinity\"/\u003e"
+        "content": "            \u003cright\u003e"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "                     \u003cStackPane fx:id\u003d\"resultDisplayPlaceholder\" maxHeight\u003d\"Infinity\" minHeight\u003d\"250.0\" maxWidth\u003d\"Infinity\" minWidth\u003d\"300.0\" styleClass\u003d\"pane-with-border\" /\u003e"
+        "content": "               \u003cScrollPane fx:id\u003d\"flashcardListPanelPlaceholder\" fitToHeight\u003d\"true\" fitToWidth\u003d\"true\" pannable\u003d\"true\" prefHeight\u003d\"259.0\" BorderPane.alignment\u003d\"CENTER\" /\u003e"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "                     \u003cStackPane fx:id\u003d\"statisticsDisplayPlaceholder\" maxHeight\u003d\"1.7976931348623157E308\" minHeight\u003d\"443.0\" maxWidth\u003d\"Infinity\" minWidth\u003d\"300.0\" styleClass\u003d\"pane-with-border\" /\u003e"
+        "content": "            \u003c/right\u003e"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "lzw12345"
         },
-        "content": "                  \u003c/children\u003e"
+        "content": "            \u003ccenter\u003e"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "               \u003c/VBox\u003e"
+        "content": "               \u003cVBox fx:id\u003d\"test\" alignment\u003d\"CENTER\" BorderPane.alignment\u003d\"CENTER\"\u003e"
       },
       {
         "lineNumber": 42,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "               \u003cVBox maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"1000.0\" prefWidth\u003d\"500.0\" minWidth\u003d\"300\" styleClass\u003d\"pane-with-border-2\"\u003e"
-      },
-      {
-        "lineNumber": 43,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "                  \u003cchildren\u003e"
       },
       {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                     \u003cStackPane fx:id\u003d\"commandBoxPlaceholder\" styleClass\u003d\"pane-with-border\" /\u003e"
+      },
+      {
         "lineNumber": 44,
         "author": {
-          "gitId": "-"
+          "gitId": "lzw12345"
         },
-        "content": "                     \u003cScrollPane fx:id\u003d\"flashcardListPanelPlaceholder\" maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"1000.0\" prefWidth\u003d\"500.0\" minWidth\u003d\"300\" styleClass\u003d\"pane-with-border-2\" /\u003e"
+        "content": "                     \u003cStackPane fx:id\u003d\"resultDisplayPlaceholder\" styleClass\u003d\"pane-with-border\" VBox.vgrow\u003d\"ALWAYS\" /\u003e"
       },
       {
         "lineNumber": 45,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                     \u003cStackPane fx:id\u003d\"statisticsDisplayPlaceholder\" styleClass\u003d\"pane-with-border\" VBox.vgrow\u003d\"ALWAYS\" /\u003e"
+      },
+      {
+        "lineNumber": 46,
         "author": {
           "gitId": "Akimatsu98"
         },
         "content": "                  \u003c/children\u003e"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
         "content": "               \u003c/VBox\u003e"
       },
       {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "Akimatsu98"
-        },
-        "content": "            \u003c/children\u003e"
-      },
-      {
         "lineNumber": 48,
         "author": {
-          "gitId": "Akimatsu98"
+          "gitId": "lzw12345"
         },
-        "content": "         \u003c/HBox\u003e"
+        "content": "            \u003c/center\u003e\u003c/BorderPane\u003e"
       },
       {
         "lineNumber": 49,
@@ -84891,8 +84999,403 @@
       }
     ],
     "authorContributionMap": {
-      "-": 32,
-      "Akimatsu98": 23
+      "lzw12345": 19,
+      "-": 20,
+      "Akimatsu98": 16
+    }
+  },
+  {
+    "path": "src/main/resources/view/MainWindow2.fxml",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\"?\u003e"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import java.net.URL?\u003e"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.scene.Scene?\u003e"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.scene.control.Menu?\u003e"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.scene.control.MenuBar?\u003e"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.scene.control.MenuItem?\u003e"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.scene.layout.HBox?\u003e"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.scene.layout.StackPane?\u003e"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.scene.layout.VBox?\u003e"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.stage.Stage?\u003e"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c?import javafx.scene.control.ScrollPane?\u003e"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003cfx:root maxHeight\u003d\"Infinity\" maxWidth\u003d\"Infinity\" minHeight\u003d\"800.0\" minWidth\u003d\"200\" title\u003d\"FlashMind\" type\u003d\"Stage\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "    \u003cscene\u003e"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "        \u003cScene\u003e"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "         \u003cHBox maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"Infinity\" minHeight\u003d\"420.0\" minWidth\u003d\"300.0\" prefHeight\u003d\"683.0\" prefWidth\u003d\"900.0\"\u003e"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "            \u003cchildren\u003e"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "               \u003cVBox\u003e"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                  \u003cchildren\u003e"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                     \u003cMenuBar fx:id\u003d\"MenuBar\"\u003e"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                       \u003cmenus\u003e"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                         \u003cMenu mnemonicParsing\u003d\"false\" text\u003d\"Action\"\u003e"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                           \u003citems\u003e"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                             \u003cMenuItem mnemonicParsing\u003d\"false\" onAction\u003d\"#handleExit\" text\u003d\"Close\" /\u003e"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                           \u003c/items\u003e"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                         \u003c/Menu\u003e"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                         \u003cMenu mnemonicParsing\u003d\"false\" text\u003d\"Help\"\u003e"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                           \u003citems\u003e"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                             \u003cMenuItem fx:id\u003d\"helpMenuItem\" mnemonicParsing\u003d\"false\" onAction\u003d\"#handleHelp\" text\u003d\"Show Help\" /\u003e"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                           \u003c/items\u003e"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                         \u003c/Menu\u003e"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                       \u003c/menus\u003e"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                     \u003c/MenuBar\u003e"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                     \u003cStackPane fx:id\u003d\"commandBoxPlaceholder\" styleClass\u003d\"pane-with-border\" maxHeight\u003d\"Infinity\" minWidth\u003d\"300.0\" maxWidth\u003d\"Infinity\"/\u003e"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                     \u003cStackPane fx:id\u003d\"resultDisplayPlaceholder\" maxHeight\u003d\"Infinity\" minHeight\u003d\"250.0\" maxWidth\u003d\"Infinity\" minWidth\u003d\"300.0\" styleClass\u003d\"pane-with-border\" /\u003e"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                     \u003cStackPane fx:id\u003d\"statisticsDisplayPlaceholder\" maxHeight\u003d\"1.7976931348623157E308\" minHeight\u003d\"443.0\" maxWidth\u003d\"Infinity\" minWidth\u003d\"300.0\" styleClass\u003d\"pane-with-border\" /\u003e"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                  \u003c/children\u003e"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "               \u003c/VBox\u003e"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "               \u003cVBox maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"1000.0\" prefWidth\u003d\"500.0\" minWidth\u003d\"300\" styleClass\u003d\"pane-with-border-2\"\u003e"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                  \u003cchildren\u003e"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                     \u003cScrollPane fx:id\u003d\"flashcardListPanelPlaceholder\" maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" minHeight\u003d\"1000.0\" prefWidth\u003d\"500.0\" minWidth\u003d\"300\" styleClass\u003d\"pane-with-border-2\" /\u003e"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "                  \u003c/children\u003e"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "               \u003c/VBox\u003e"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "            \u003c/children\u003e"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "         \u003c/HBox\u003e"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "         \u003cstylesheets\u003e"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "            \u003cURL value\u003d\"@DarkTheme.css\" /\u003e"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "            \u003cURL value\u003d\"@Extensions.css\" /\u003e"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "         \u003c/stylesheets\u003e"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "        \u003c/Scene\u003e"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "    \u003c/scene\u003e"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "lzw12345"
+        },
+        "content": "\u003c/fx:root\u003e"
+      }
+    ],
+    "authorContributionMap": {
+      "lzw12345": 55
     }
   },
   {
@@ -84960,248 +85463,227 @@
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "\u003c?import javafx.scene.layout.HBox?\u003e"
+        "content": "\u003c?import javafx.scene.layout.BorderPane?\u003e"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "\u003c?import javafx.scene.layout.Pane?\u003e"
+        "content": "\u003c?import javafx.scene.layout.HBox?\u003e"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "\u003c?import javafx.scene.layout.VBox?\u003e"
+        "content": "\u003c?import javafx.stage.Stage?\u003e"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "\u003c?import javafx.stage.Stage?\u003e"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": ""
+        "content": "\u003cfx:root type\u003d\"Stage\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "\u003cfx:root type\u003d\"Stage\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+        "content": "    \u003cscene\u003e"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "    \u003cscene\u003e"
+        "content": "        \u003cScene\u003e"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        \u003cScene\u003e"
+        "content": "            \u003cBorderPane prefHeight\u003d\"400.0\" prefWidth\u003d\"400.0\"\u003e"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "            \u003cVBox fx:id\u003d\"statsBox\"\u003e"
+        "content": "            \u003ctop\u003e"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "            \u003cchildren\u003e"
+        "content": "               \u003cHBox prefHeight\u003d\"200.0\" prefWidth\u003d\"400.0\" BorderPane.alignment\u003d\"CENTER\"\u003e"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "               \u003cHBox fx:id\u003d\"pieCharts\" VBox.vgrow\u003d\"ALWAYS\"\u003e"
+        "content": "                  \u003cchildren\u003e"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                  \u003cchildren\u003e"
+        "content": "                     \u003cPieChart fx:id\u003d\"accuracy\" animated\u003d\"false\" /\u003e"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                     \u003cPieChart fx:id\u003d\"completion\" animated\u003d\"false\" HBox.hgrow\u003d\"ALWAYS\" /\u003e"
+        "content": "                     \u003cPieChart fx:id\u003d\"completion\" animated\u003d\"false\" /\u003e"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                     \u003cPieChart fx:id\u003d\"accuracy\" animated\u003d\"false\" HBox.hgrow\u003d\"ALWAYS\" /\u003e"
+        "content": "                  \u003c/children\u003e"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                  \u003c/children\u003e"
+        "content": "               \u003c/HBox\u003e"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "               \u003c/HBox\u003e"
+        "content": "            \u003c/top\u003e"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "               \u003cScrollPane VBox.vgrow\u003d\"ALWAYS\"\u003e"
+        "content": "            \u003ccenter\u003e"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                  \u003ccontent\u003e"
+        "content": "               \u003cScrollPane fx:id\u003d\"scrollPane\" pannable\u003d\"true\" prefHeight\u003d\"200.0\" prefWidth\u003d\"400.0\" BorderPane.alignment\u003d\"CENTER\"\u003e"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                     \u003cPane\u003e"
+        "content": "                  \u003ccontent\u003e"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                        \u003cchildren\u003e"
+        "content": "                     \u003cStackedBarChart fx:id\u003d\"individualCards\" animated\u003d\"false\" legendSide\u003d\"LEFT\" minWidth\u003d\"1000.0\" prefHeight\u003d\"200.0\"\u003e"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                           \u003cStackedBarChart fx:id\u003d\"individualCards\" alternativeRowFillVisible\u003d\"false\" animated\u003d\"false\" legendSide\u003d\"TOP\" minHeight\u003d\"600.0\" minWidth\u003d\"1000.0\"\u003e"
+        "content": "                       \u003cxAxis\u003e"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                             \u003cxAxis\u003e"
+        "content": "                         \u003cCategoryAxis animated\u003d\"false\" side\u003d\"BOTTOM\" fx:id\u003d\"xAxis\" /\u003e"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                               \u003cCategoryAxis animated\u003d\"false\" label\u003d\"Name\" side\u003d\"BOTTOM\" fx:id\u003d\"xAxis\" /\u003e"
+        "content": "                       \u003c/xAxis\u003e"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                             \u003c/xAxis\u003e"
+        "content": "                       \u003cyAxis\u003e"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                             \u003cyAxis\u003e"
+        "content": "                         \u003cNumberAxis fx:id\u003d\"yAxis\" side\u003d\"LEFT\" /\u003e"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                               \u003cNumberAxis fx:id\u003d\"yAxis\" animated\u003d\"false\" label\u003d\"Number of attempts\" minorTickCount\u003d\"0\" minorTickLength\u003d\"0.0\" minorTickVisible\u003d\"false\" side\u003d\"LEFT\" tickUnit\u003d\"0.0\" upperBound\u003d\"0.0\" /\u003e"
+        "content": "                       \u003c/yAxis\u003e"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                             \u003c/yAxis\u003e"
+        "content": "                     \u003c/StackedBarChart\u003e"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                           \u003c/StackedBarChart\u003e"
+        "content": "                  \u003c/content\u003e"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                        \u003c/children\u003e"
+        "content": "               \u003c/ScrollPane\u003e"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                     \u003c/Pane\u003e"
+        "content": "            \u003c/center\u003e\u003c/BorderPane\u003e"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "                  \u003c/content\u003e"
+        "content": "        \u003c/Scene\u003e"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "               \u003c/ScrollPane\u003e"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "lzw12345"
-        },
-        "content": "            \u003c/children\u003e\u003c/VBox\u003e"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "lzw12345"
-        },
-        "content": "        \u003c/Scene\u003e"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "lzw12345"
-        },
         "content": "    \u003c/scene\u003e"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 41,
         "author": {
           "gitId": "lzw12345"
         },
@@ -85209,7 +85691,7 @@
       }
     ],
     "authorContributionMap": {
-      "lzw12345": 44
+      "lzw12345": 41
     }
   },
   {

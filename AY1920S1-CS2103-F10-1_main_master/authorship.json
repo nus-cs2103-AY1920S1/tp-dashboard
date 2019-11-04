@@ -10036,7 +10036,7 @@
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "data-modifying commands that can be reverted by `undo`."
+        "content": "data-modifying commands that can be reverted by `app-undo`."
       },
       {
         "lineNumber": 6,
@@ -10050,14 +10050,14 @@
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "in the `history`, or the previous data-modifying command if no argument is specified."
+        "content": "in the history, or the previous data-modifying command if no argument is specified."
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "3. `app-redo` - Command that Reverts the previous command if and only if it was an `undo`."
+        "content": "3. `app-redo` - Command that reverts the previous command if and only if it was an `app-undo`."
       },
       {
         "lineNumber": 9,
@@ -10099,214 +10099,1012 @@
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* A way to mark which `Command` s are data-modifying commands."
+        "content": "* A way to mark which `Command` s are data-modifying commands so that"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* A mechanism to clearly demarcate the model state before and after the execution"
+        "content": "non-data-modifying commands can be ignored."
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "of each data-modifying command."
+        "content": "* A mechanism to clearly demarcate the model state before and after the execution"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* A way to record the state of the model before (or after) each command, together"
+        "content": "of each data-modifying command."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "with the `Command` object responsible."
+        "content": "* A way to record the state of the model before (or after) each command, together"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* Methods to switch the state of the model back and forth from the states stored"
+        "content": "with the `Command` object responsible."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "in the history."
+        "content": "* Methods to switch the state of the model back and forth from the states stored"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": ""
+        "content": "in the history."
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "To achieve this, the following classes are introduced:"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": ""
+        "content": "To achieve this, the following classes are introduced:"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* `MutatorCommand` - An empty subclass of `Command` to indicate that a `Command` is a"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "data-modifying command and should be considered for undo/redo/history."
+        "content": "* `MutatorCommand` - An empty subclass of `Command` to indicate that a `Command` is a"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* `HistoryRecord` - Record of the command and data of one atomic commit in the command history. It consists of the"
+        "content": "data-modifying command and should be considered for undo/redo/history."
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "`MutatorCommand` responsible for the commit and the state of the model before (or after) the commit. All recorded"
+        "content": "* `HistoryRecord` - Record of the command and data of one atomic commit in the command history. It consists of the"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "states are deep copies decoupled from their original references."
+        "content": "`MutatorCommand` responsible for the commit and the state of the model either before or after the commit. All recorded"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* `HistoryManager` - Represents the history of the application. Maintains data structures containing `HistoryRecord` s"
+        "content": "states are deep copies decoupled from their original references."
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "of each data state change."
+        "content": "* `HistoryManager` - Represents the history of the application. Maintains data structures containing `HistoryRecord` s"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": ""
+        "content": "of each data state change."
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "Additionally, `LogicManager` and `Model` are modified to accommodate this functionality."
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": ""
+        "content": "Additionally, `LogicManager` and `Model` are modified to accommodate this functionality."
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "\u003d\u003d\u003d\u003d Model"
+        "content": ""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": ""
+        "content": ".Shallow Copy vs Deep copy"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "The following methods are added to the `Model` interface:"
+        "content": "****"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": ""
+        "content": "* Performing a __shallow copy__ of an object simply copies the values of the"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* `Model#commit(MutatorCommand)` - Commits the changes made to the address book since the last call to this method,"
+        "content": "references of each object the original object is pointing to. This results in the"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "making them permanent and updating the UI data. The committing `MutatorCommand` is stored for history record purposes."
+        "content": "copied object pointing to the same objects as the original. In the figure below,"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* `Model#getHistory()` - Returns an unmodifiable view of the history."
+        "content": "`patientBook` and `copiedPatientBook` are separate `PatientBook` objects but actually"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "* `Model#undoTo(HistoryRecord)` - Reverts current model state to the that contained in the specified `HistoryRecord`"
+        "content": "share the same `patient` object. Changes to `patient` through `PatientBook` would thus"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "gabrielchao"
         },
-        "content": "(i.e. the state before the command was executed)."
+        "content": "affect `copiedPatientBook` as well."
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "gabrielchao"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ".Shallow copy"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "image::shallow_copy.png[]"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* Performing a __deep copy__ creates duplicates of each object referenced by the original,"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "the objects referenced by those duplicates, and so on. These duplicates are completely"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "decoupled from their originals. In the figure below, `patient` is a different"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "object from `copiedPatient`, thus changes to `patient` would not affect `copiedPatient`."
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ".Deep copy"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "image::deep_copy.png[]"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "****"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "\u003d\u003d\u003d\u003d Model"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "The following methods are added to the `Model` interface:"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* `Model#commit(MutatorCommand)` - Commits the changes made to the address book since the last call to this method,"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "making them permanent and updating the UI data. The committing `MutatorCommand` is stored for history record purposes."
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* `Model#getHistory()` - Returns an unmodifiable view of the history."
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* `Model#undoTo(HistoryRecord)` - Reverts current model state to the that contained in the specified `HistoryRecord`"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "(i.e. the state before the command was executed)."
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "gabrielchao"
+        },
         "content": "* `Model#redo()` - Redoes the previous `MutatorCommand` if it was an undo."
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "\u003d\u003d\u003d\u003d Model Design Considerations"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How to record the PatientBook and AppointmentBook states in the history"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* Alternative 1: Simply store references to `PatientBook` and `AppointmentBook`."
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Pros:"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Easier to implement."
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Cons:"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Relies on the assumption that the objects in `PatientBook` and `AddressBook`"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "are immutable; if they are not truly immutable, changes to the current model\u0027s"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "`PatientBook` and `AddressBook` state may leak and affect the states stored in"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "the history."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* **Alternative 2 (current choice):** Defensively store deep copies of the `PatientBook` and `AppointmentBook`."
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Pros:"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Prevents improperly coded `Patient` or `Appointment` (or their"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "associated classes) from breaking undo/redo/history functionality."
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Can reuse JSON serialization code for persistent storage of `PatientBook` and `AppointmentBook`"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "to create deep copies by serializing then immediately deserializing them."
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Cons:"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Consumes more memory and CPU time."
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** More difficult to implement - MVC pattern between UI view and models is broken in"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "two. This is because each time the current state is swapped with a state in the"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "history by `ModelManager`, the `ObservableList` viewed by the UI must also be"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "updated by the `ModelManager` instead of the `PatientBook` as the current"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "`PatientBook` is completely decoupled and placed into the history."
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Which class to place the HistoryManager in"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* **Alternative 1 (current choice):** Make `HistoryManager` a field of `ModelManager`."
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Pros:"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Ensures atomicity of the records in the history as pushing a transaction"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "to the `HistoryManager` can only be (and is always) done by `Model#commit()`"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "itself - records in the history are guaranteed to be products of complete command"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "execution rather than intermediate states."
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Cons:"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** More difficult to test `ModelManager` as two `ModelManager` objects may have"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "the same current state but differing `HistoryManager` objects."
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** May violate Single Responsibility Principle as `ModelManager` now has to manage"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "both its current state and its previous states."
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* Alternative 2: Make `HistoryManager` a field of `LogicManager`."
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Pros:"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Higher cohesion as `ModelManager` only represents the model\u0027s current state."
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Easier to test `ModelManager` as only its current state matters."
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Cons:"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** It is possible for intermediate model states to be pushed to the `HistoryManager` -"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "trusts `LogicManager` to push the transaction to history after (and only"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "after) calling `Model#commit()`."
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Requires `Command#execute()` to accept `HistoryManager` as a parameter just so"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "`UndoCommand` and `RedoCommand` can work even though the vast majority of commands do not require it."
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "\u003d\u003d\u003d\u003d Logic"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "\u003d\u003d\u003d\u003d UI"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "The command history is constantly displayed in a panel on the right side of"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "the app. This `HistoryPanel` uses `HistoryRecordCard` s to display the"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "user-input text that invoked each command. It is a view of the `ObservableList\u003cHistoryRecord\u003e`"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "returned by `HistoryManager#asUnmodifiableObservableList()`."
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "\u003d\u003d\u003d\u003d UI Design Considerations"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Where to display the history"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* **Alternative 1 (current choice):** Permanently display it in a dedicated panel."
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Pros:"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** User does not have to execute a \u0027history\u0027 command to view the history,"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "making it much easier to use the multiple undo function."
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Cons:"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Takes up more space in the UI."
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "* Alternative 2: Display it as a tab in the `TabPane`."
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Pros:"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Saves space in the UI."
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "** Cons:"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** User has to switch to the history tab to view it."
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "*** Less intuitive UX as the other tabs in the `TabPane` all display actual data"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "gabrielchao"
+        },
+        "content": "such as `Patient`, `Visit`, and `Appointment` info, whereas history is app metadata."
       }
     ],
     "authorContributionMap": {
-      "gabrielchao": 43
+      "gabrielchao": 157
     }
   },
   {
@@ -20333,14 +21131,14 @@
         "author": {
           "gitId": "francislow"
         },
-        "content": "- If no words appear in the autocomplete panel, this can only mean 2 thing. +"
+        "content": " - If no words appear in the autocomplete panel, this can only mean 2 things: +"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "francislow"
         },
-        "content": "1) Your input is finished, there is no more words to be suggested +"
+        "content": "1) Your full command is finished, there are no more words to be suggested. +"
       },
       {
         "lineNumber": 25,
@@ -20368,14 +21166,14 @@
         "author": {
           "gitId": "francislow"
         },
-        "content": "*UP*, *DOWN* key +"
+        "content": "`*UP*`, `*DOWN*` key +"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "francislow"
         },
-        "content": "You can use the up and down key in your keyboard to move from one selected word to another."
+        "content": "You can use the `*UP*` and `*DOWN*` keys in your keyboard to move from one selected word to another. Descriptions of the suggested words will be shown as you select them to guide you in choosing."
       },
       {
         "lineNumber": 30,
@@ -20389,14 +21187,14 @@
         "author": {
           "gitId": "francislow"
         },
-        "content": "*RIGHT* key +"
+        "content": "`*RIGHT*` key +"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "francislow"
         },
-        "content": "Confirm your selection by pressing the right key in your keyboard. This will auto-fill the selected word to your current words in the command box text field. Doing this will also perform a auto correction of your input in order to fit the correct sequence of commands. +"
+        "content": "Confirm your selection by pressing the `*RIGHT*` key in your keyboard. This will auto-fill the selected word to your current words in the command box text field. Doing this will also perform an auto correction of your input in order to fit the correct sequence of commands. +"
       },
       {
         "lineNumber": 33,
@@ -20418,11 +21216,32 @@
           "gitId": "francislow"
         },
         "content": "Selecting the \"now-update\" in the autocomplete panel will concatenate with \"now-update\" with \"visit-\", the current text in your command box."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": "*Note:* +"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": "When pressing `*UP*`, `*DOWN*`, or `*RIGHT*` keys, make sure that the command box is selected."
       }
     ],
     "authorContributionMap": {
       "crazoter": 6,
-      "francislow": 29
+      "francislow": 32
     }
   },
   {
@@ -21191,20 +22010,21 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "You can exit the program using `exit`. +"
+        "content": "You can exit the program using `app-exit`. +"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "Format: `exit`"
+        "content": "Format: `app-exit`"
       }
     ],
     "authorContributionMap": {
-      "crazoter": 4
+      "crazoter": 2,
+      "francislow": 2
     }
   },
   {
@@ -24072,9 +24892,9 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "\u003d\u003d\u003d Viewing help : `help`"
+        "content": "\u003d\u003d\u003d Viewing help : `app-help`"
       },
       {
         "lineNumber": 4,
@@ -24100,13 +24920,14 @@
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "Format: `help`"
+        "content": "Format: `app-help`"
       }
     ],
     "authorContributionMap": {
-      "crazoter": 7
+      "crazoter": 5,
+      "francislow": 2
     }
   },
   {
@@ -24804,9 +25625,9 @@
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "\u003d\u003d\u003d Finding patients by name: `find`"
+        "content": "\u003d\u003d\u003d Finding patients by name: `pat-find`"
       },
       {
         "lineNumber": 17,
@@ -24818,9 +25639,9 @@
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "You can find patients whose names contain any keyword of your choice using `find`."
+        "content": "You can find patients whose names contain any keyword of your choice using `pat-find`."
       },
       {
         "lineNumber": 19,
@@ -24832,9 +25653,9 @@
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "Format: `find KEYWORD [MORE_KEYWORDS]`"
+        "content": "Format: `pat-find KEYWORD [MORE_KEYWORDS]`"
       },
       {
         "lineNumber": 21,
@@ -24916,9 +25737,9 @@
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "* `find John` +"
+        "content": "* `pat-find John` +"
       },
       {
         "lineNumber": 33,
@@ -24930,9 +25751,9 @@
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "crazoter"
+          "gitId": "francislow"
         },
-        "content": "* `find Betsy Tim John` +"
+        "content": "* `pat-find Betsy Tim John` +"
       },
       {
         "lineNumber": 35,
@@ -25500,10 +26321,53 @@
           "gitId": "crazoter"
         },
         "content": "// end::patient[]"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": "\u003d\u003d\u003d Clear all Patient data: `pat-clear`"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": "You can clear all Patient data in the app using `pat-clear`."
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "francislow"
+        },
+        "content": "Format: `pat-clear`"
       }
     ],
     "authorContributionMap": {
-      "crazoter": 115
+      "crazoter": 110,
+      "francislow": 11
     }
   },
   {

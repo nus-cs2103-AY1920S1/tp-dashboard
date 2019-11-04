@@ -240,8 +240,8 @@
         ]
       },
       {
-        "insertions": 372,
-        "deletions": 2,
+        "insertions": 500,
+        "deletions": 71,
         "date": "2019-11-03",
         "commitResults": [
           {
@@ -250,6 +250,41 @@
             "messageBody": "* Squash all changes to travis.yml and build.gradle for testfx\r\n\r\n* Add empty gui test\r\n\r\n* Fix checkstyle\r\n\r\n* Port AB4 base tests for GUI and add CommandBoxTest\r\n\r\n* Update CSS files for test\r\n",
             "insertions": 372,
             "deletions": 2
+          },
+          {
+            "hash": "f9970dfb6b215bd8ea51d48d7fda60190e7e6e9e",
+            "messageTitle": "Fix bug ped (#189)",
+            "messageBody": "* Update summary section of UG\r\n\r\n* Update edit command for UG\r\n\r\n* Change resolve command to take conflicting or scheduled\r\n\r\n* Update window to have min width so center panel does not collapse\r\n\r\n* Resolve checkstyle issues\r\n\r\nCloses #178 \r\nCloses #179\r\nCloses #164 \r\nCloses #156\r\nCloses #152 \r\nCloses #149 ",
+            "insertions": 128,
+            "deletions": 69
+          }
+        ]
+      },
+      {
+        "insertions": 614,
+        "deletions": 325,
+        "date": "2019-11-04",
+        "commitResults": [
+          {
+            "hash": "4eb2c46166f1dae85c5effb525dc89d537456f06",
+            "messageTitle": "Add rationale section to resolve DG (#195)",
+            "messageBody": "* Add rationale section to resolve DG\r\n\r\n* Update link and tag in DG\r\n\r\n* Change link name\r\n",
+            "insertions": 5,
+            "deletions": 2
+          },
+          {
+            "hash": "66e70410ad9903f067d026d378fc5dfef4fa8ced",
+            "messageTitle": "Attempt to fix sorted list bug but it is now no longer a catastrophe because it is fixed (#193)",
+            "messageBody": "* Attempt to fix sorted list bug but catastrophe\r\n\r\n* Fix undo redo status bug\r\n\r\n* Rename methods in logic manager\r\n\r\n* Add documentation ListChangeListener.Change\r\n",
+            "insertions": 608,
+            "deletions": 322
+          },
+          {
+            "hash": "97da87b13f8ab23926fd8f118513a7a8515115ca",
+            "messageTitle": "Fix gradle files (#199)",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
           }
         ]
       }
@@ -804,6 +839,20 @@
             "deletions": 230
           }
         ]
+      },
+      {
+        "insertions": 1583,
+        "deletions": 1037,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "01cea67fc818e98858148cdb90886bc9d2261245",
+            "messageTitle": "Custom Property feature updates and tests (#194)",
+            "messageBody": "* Make updates to CustomPropertyTest\r\n\r\n* Update CustomPropertyTests\r\n\r\n* Update PropertyBookTest\r\n\r\n* Add more PropertyBookTest\r\n\r\n* Add new tests and update PropertyBook\r\n\r\n* Add newline at EOF\r\n\r\n* Add newline at EOF\r\n\r\n* Make further changes to PropertyBook\r\n\r\n1. Users are now unable to remove the names of default properties.\r\n\r\n* Add tests for CustomRemoveCommand\r\n\r\n* Make minor updates to Javadocs\r\n\r\n* Add removal of custom property of single exercise\r\n\r\n* Add removal of custom property of single exercise\r\n\r\n* Make changes to PropertyBook design\r\n\r\n1. Converted PropertyBook to a singleton class as the data\r\ninside PropertyBook can be seen as a global variable that\r\nshould be maintained by a single entity.\r\n\r\n2. Introduced a function to help remove all invalid custom\r\nproperties. Invalid custom properties are those that the user\r\nadds in directly into the json file but fail to declare them in\r\nthe custom property json file.\r\n\r\n3. Introduced a function to check if the user has defined\r\ncustom properties with clashing names/prefixes in the json file.\r\n\r\n* Add in more tests\r\n\r\n* Add logger to CustomCommand and PropertyBook\r\n\r\n* Add viewcustom command for users\r\n\r\n* Make minor updates to UI\r\n\r\n* Make updates to DG\r\n\r\n* Make changes to UG and DG\r\n\r\n1. Some pictures are included for UG. Will include more in\r\nthe future once the issue with the list has been solved.\r\n\r\n* Make changes based on comments\r\n\r\n* Add some tests for PropertyBook\r\n\r\nCloses #166\r\nCloses #183",
+            "insertions": 1583,
+            "deletions": 1037
+          }
+        ]
       }
     ],
     "kwekke": [
@@ -960,54 +1009,68 @@
             "deletions": 47
           }
         ]
+      },
+      {
+        "insertions": 137,
+        "deletions": 54,
+        "date": "2019-11-04",
+        "commitResults": [
+          {
+            "hash": "a5d7517ab43b0bec65f1f4d230f8d5c10c0f0f93",
+            "messageTitle": "Add PPP (#196)",
+            "messageBody": "",
+            "insertions": 137,
+            "deletions": 54
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "t-cheepeng": 5493,
-    "garylyp": 3751,
-    "jietung": 4006,
-    "weihaw08": 6175,
-    "kwekke": 3119
+    "t-cheepeng": 6009,
+    "garylyp": 3708,
+    "jietung": 3946,
+    "weihaw08": 6836,
+    "kwekke": 3126
   },
   "authorFileTypeContributionMap": {
     "t-cheepeng": {
-      "docs": 319,
-      "tests": 2887,
-      "functional": 2100,
-      "other": 187
+      "docs": 315,
+      "tests": 3164,
+      "functional": 2342,
+      "other": 188
     },
     "garylyp": {
-      "docs": 407,
-      "tests": 1357,
-      "functional": 1777,
+      "docs": 397,
+      "tests": 1353,
+      "functional": 1748,
       "other": 210
     },
     "jietung": {
-      "docs": 88,
-      "tests": 1390,
-      "functional": 2379,
+      "docs": 91,
+      "tests": 1356,
+      "functional": 2350,
       "other": 149
     },
     "weihaw08": {
-      "docs": 152,
-      "tests": 2015,
-      "functional": 3867,
-      "other": 141
+      "docs": 287,
+      "tests": 2196,
+      "functional": 4092,
+      "other": 261
     },
     "kwekke": {
-      "docs": 133,
-      "tests": 1248,
-      "functional": 1499,
-      "other": 239
+      "docs": 187,
+      "tests": 1167,
+      "functional": 1475,
+      "other": 297
     }
   },
   "authorContributionVariance": {
-    "t-cheepeng": 183457.11,
-    "garylyp": 68969.36,
-    "jietung": 154754.56,
-    "weihaw08": 1065541.9,
-    "kwekke": 62664.184
+    "t-cheepeng": 192941.81,
+    "garylyp": 67941.76,
+    "jietung": 152423.11,
+    "weihaw08": 1137415.9,
+    "kwekke": 61827.91
   },
   "authorDisplayNameMap": {
     "t-cheepeng": "CS2103T-T09-2 TAN C ...  PENG",

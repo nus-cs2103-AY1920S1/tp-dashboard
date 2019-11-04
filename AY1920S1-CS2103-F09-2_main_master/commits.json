@@ -1735,6 +1735,90 @@
             "deletions": 9
           }
         ]
+      },
+      {
+        "insertions": 483,
+        "deletions": 108,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "3522e7c333d990403952fae1beda127d850bde05",
+            "messageTitle": "Added a timedTestDisplay that launches an alert at the end of the time. Upon closing that alert, it goes back to deckdisplay screen",
+            "messageBody": "",
+            "insertions": 286,
+            "deletions": 7
+          },
+          {
+            "hash": "96063340d71195c7387f997b06b66d9e4959c09b",
+            "messageTitle": "Creates a timer that counts down on the screen",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 4
+          },
+          {
+            "hash": "89c708e157e8426d7175992474d98033cff06476",
+            "messageTitle": "Updated EndSession button to also terminate exam",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 4
+          },
+          {
+            "hash": "16301cdd620ab8ac0cdc2d57a9d0a4565bdc86d7",
+            "messageTitle": "Fixed EndSession for UntimedTest",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 5
+          },
+          {
+            "hash": "033d16f7e9291c657b66c682419708d4695a7597",
+            "messageTitle": "Added \"I got it wrong\" button for FrontBackCard",
+            "messageBody": "",
+            "insertions": 23,
+            "deletions": 12
+          },
+          {
+            "hash": "c4573e123a7a4e480b3553ccea6b2079622a4c93",
+            "messageTitle": "Added examOngoing boolean into ExamRunner to check if an exam is running/ also changed popup window such that it doesn\u0027t bring you back to deck display screen. Users will only be brought back to deck display screen on clicking \"end-session\"",
+            "messageBody": "",
+            "insertions": 20,
+            "deletions": 22
+          },
+          {
+            "hash": "a1e5c10f26ed1b25f41215c3e79169959c2e7e20",
+            "messageTitle": "Fixed bugs on NullPointerException when user finishes faster than timer and when user tries to next after exam terminates",
+            "messageBody": "",
+            "insertions": 60,
+            "deletions": 17
+          },
+          {
+            "hash": "846140abdb63b322519d7c6e73d0cd0c702047c8",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 9
+          },
+          {
+            "hash": "3fa03458c035b8ca7494fbfda970fdc8c964be1a",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "07f9b0319a039aba5f7a26555224c338d8ff337a",
+            "messageTitle": "Fixed Exam Logic on New ConsumerSchema",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 24
+          },
+          {
+            "hash": "f21539dc3971944f209526cfb33edb122b8505ff",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 3
+          }
+        ]
       }
     ],
     "timothyleong97": [
@@ -2446,8 +2530,8 @@
         ]
       },
       {
-        "insertions": 936,
-        "deletions": 506,
+        "insertions": 1073,
+        "deletions": 648,
         "date": "2019-11-03",
         "commitResults": [
           {
@@ -2484,6 +2568,48 @@
             "messageBody": "",
             "insertions": 125,
             "deletions": 122
+          },
+          {
+            "hash": "60a2ad6965484eb6b128faa429c52e42b0fc672b",
+            "messageTitle": "Added persistent user attempt storage to java card",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 24
+          },
+          {
+            "hash": "99c1b8299d33edc3aab40bbf03f888db3a3982ca",
+            "messageTitle": "Edit state",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 18
+          },
+          {
+            "hash": "4df987d280a5b70aa272da0bdfab5cce7775e936",
+            "messageTitle": "edit state",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 2
+          },
+          {
+            "hash": "3dac13058e6d54dd1380c6e03edb7f0ae8be6732",
+            "messageTitle": "Merge conflicts",
+            "messageBody": "",
+            "insertions": 105,
+            "deletions": 98
+          }
+        ]
+      },
+      {
+        "insertions": 368,
+        "deletions": 556,
+        "date": "2019-11-04",
+        "commitResults": [
+          {
+            "hash": "5a293d23063bc892f8d21afde657838df6aa350c",
+            "messageTitle": "create deck responses active",
+            "messageBody": "",
+            "insertions": 368,
+            "deletions": 556
           }
         ]
       }
@@ -3862,8 +3988,8 @@
         ]
       },
       {
-        "insertions": 325,
-        "deletions": 216,
+        "insertions": 411,
+        "deletions": 417,
         "date": "2019-11-03",
         "commitResults": [
           {
@@ -4047,60 +4173,130 @@
             "messageBody": "",
             "insertions": 20,
             "deletions": 56
+          },
+          {
+            "hash": "9e0befa34d7735aff9d8c01c951e82e8d2210abf",
+            "messageTitle": "Revert \"Merge pull request #264 from AY1920S1-CS2103-F09-2/revert-263-master\"",
+            "messageBody": "This reverts commit 9f652bf3e167b1bf6b13d4d7645bfb8cdda6b326, reversing\nchanges made to bcfa3d1ef4c6af5092084c107ceaaba9f1c25042.\n",
+            "insertions": 56,
+            "deletions": 20
+          },
+          {
+            "hash": "1381a5817b2d484d7f0c1a000fb96429fe078265",
+            "messageTitle": "Revert \"Revert \"Merge pull request #264 from AY1920S1-CS2103-F09-2/revert-263-master\"\"",
+            "messageBody": "This reverts commit 9e0befa34d7735aff9d8c01c951e82e8d2210abf.\n",
+            "insertions": 20,
+            "deletions": 56
+          },
+          {
+            "hash": "45fc61aa9b69dbd69e0e6feff81993fea36cb987",
+            "messageTitle": "Revert \"Merge branch \u0027newMaster\u0027 into master\"",
+            "messageBody": "This reverts commit 3a0f7e460ab60beb4c9081582295f0fac6098cdc, reversing\nchanges made to 6256c65bfcfa7026c3ab1dac21b9d8fee7b95aa9.\n",
+            "insertions": 10,
+            "deletions": 125
+          }
+        ]
+      },
+      {
+        "insertions": 208,
+        "deletions": 66,
+        "date": "2019-11-04",
+        "commitResults": [
+          {
+            "hash": "6033eee983abb00bcad44852388775e75aa82f1c",
+            "messageTitle": "Updates to PPP",
+            "messageBody": "",
+            "insertions": 85,
+            "deletions": 28
+          },
+          {
+            "hash": "a6a453f61b1e542cf85a88a06b32f9f1e6a121cc",
+            "messageTitle": "Updates to PPP",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "d590bc581b3187f54a6bae8ca325e5797d2d36de",
+            "messageTitle": "Tests for MCQ",
+            "messageBody": "",
+            "insertions": 68,
+            "deletions": 7
+          },
+          {
+            "hash": "9d244e042dca21ef266dbeb6c3747a9a9369b9bd",
+            "messageTitle": "Fix checkstyle and logging",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 2
+          },
+          {
+            "hash": "d632199d24704a105df3af26cbbd81e12168e9b3",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 19
+          },
+          {
+            "hash": "bce52a45e7c59ebccae342ce06e264a92daf57af",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 8
           }
         ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "nattanyz": 1083,
-    "AHaliq": 2862,
-    "PhireHandy": 505,
-    "shawnpunchew11": 473,
-    "timothyleong97": 4175,
-    "huiminlim": 1700
+    "nattanyz": 1005,
+    "AHaliq": 2837,
+    "PhireHandy": 92,
+    "shawnpunchew11": 854,
+    "timothyleong97": 4336,
+    "huiminlim": 1854
   },
   "authorFileTypeContributionMap": {
     "nattanyz": {
-      "docs": 81,
+      "docs": 10,
       "tests": 99,
-      "functional": 903
+      "functional": 896
     },
     "AHaliq": {
       "docs": 33,
       "tests": 273,
-      "functional": 2555,
+      "functional": 2530,
       "other": 1
     },
     "PhireHandy": {
-      "docs": 1,
+      "docs": 3,
       "tests": 0,
-      "functional": 504
+      "functional": 89
     },
     "shawnpunchew11": {
-      "docs": 39,
+      "docs": 38,
       "tests": 123,
-      "functional": 311
+      "functional": 693
     },
     "timothyleong97": {
       "docs": 133,
       "tests": 103,
-      "functional": 3897,
+      "functional": 4058,
       "other": 42
     },
     "huiminlim": {
-      "docs": 541,
-      "tests": 126,
-      "functional": 1033
+      "docs": 618,
+      "tests": 186,
+      "functional": 1050
     }
   },
   "authorContributionVariance": {
-    "nattanyz": 105138.29,
-    "AHaliq": 97855.5,
-    "PhireHandy": 16235.997,
-    "shawnpunchew11": 31886.969,
-    "timothyleong97": 1749181.5,
-    "huiminlim": 54039.453
+    "nattanyz": 103556.234,
+    "AHaliq": 96330.09,
+    "PhireHandy": 15983.65,
+    "shawnpunchew11": 36397.543,
+    "timothyleong97": 1736052.5,
+    "huiminlim": 58896.145
   },
   "authorDisplayNameMap": {
     "nattanyz": "CS2103-F09-2 TAN Y ... TALIE",
