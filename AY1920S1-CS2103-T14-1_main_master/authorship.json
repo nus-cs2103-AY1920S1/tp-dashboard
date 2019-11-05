@@ -27416,6 +27416,372 @@
     }
   },
   {
+    "path": "src/main/java/seedu/address/logic/commands/CommandMasterList.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "package seedu.address.logic.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import java.util.HashSet;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * helper class"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * aggregates all command words"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * and example usages of commands"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " *"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * TO ANYONE MAKING NEW COMMANDS/UPDATING CURRENT ONES"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * PLEASE UPDATE THIS AS WELL"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "public class CommandMasterList {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    private static HashSet\u003cString\u003e commandHashSet \u003d new HashSet\u003c\u003e();"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * contains all usages of commands"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * @return HashSet"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    public static HashSet getCommandWords() {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(SetClassroomCommand.COMMAND_WORD + \" c/CLASSROOM_NAME\");"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(AddClassroomCommand.COMMAND_WORD + \"cn/CLASS\");"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(UpdateGradesCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(EditAssignmentCommand.COMMAND_WORD + \" ASSIGNMENT_INDEX [as/ASSIGNMENT_NAME] [d/DEADLINE]\");"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(AddStudentCommand.COMMAND_WORD"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                + \" n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS \""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                + \"pp/PARENT_PHONE_NUMBER [m/MEDICAL_CONDITIONS] [t/TAG]\");"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(EditStudentCommand.COMMAND_WORD + \"STUDENT_INDEX [n/NAME] [p/PHONE] \""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                + \"[e/EMAIL] [a/ADDRESS] [m/MEDICAL_CONDITIONS] [t/TAG]\");"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(DeleteStudentCommand.COMMAND_WORD + \" STUDENT_INDEX\");"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(DeleteAssignmentCommand.COMMAND_WORD + \" ASSIGNMENT_INDEX\");"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(FindStudentCommand.COMMAND_WORD + \" STUDENT_NAME\");"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(AddAssignmentCommand.COMMAND_WORD + \" as/ASSIGNMENT d/DEADLINE:dd/MM/yy\");"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(AddLessonCommand.COMMAND_WORD + \"l/LESSON st/START_TIME et/ET_TIME:dd/MM/yy\");"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(DeleteLessonCommand.COMMAND_WORD + \" LESSON_INDEX\");"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(EditLessonCommand.COMMAND_WORD + \"LESSON_INDEX day/DAY_INDEX [l/LESSON_NAME] \""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                + \"[st/START_TIME] [et/END_TIME]\");"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(GetStudentGradesCommand.COMMAND_WORD + \" s/STUDENT_INDEX\");"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(UploadPictureCommand.COMMAND_WORD + \" STUDENT_INDEX\");"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(ListAssignmentCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(ListStudentCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(ListLessonCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(ClearCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(HelpCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(UndoCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(RedoCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        commandHashSet.add(ExitCommand.COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        return commandHashSet;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "SebastianLie": 51
+    }
+  },
+  {
     "path": "src/main/java/seedu/address/logic/commands/DeleteAssignmentCommand.java",
     "fileType": "functional",
     "lines": [
@@ -39926,621 +40292,635 @@
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "     * @param userInput full user input string"
+        "content": "     * Please add any new command to the command masterlist as well."
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "     * @return the command based on the user input"
+        "content": "     *"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     * @param userInput full user input string"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "     * @return the command based on the user input"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "    public Command parseCommand(String userInput) throws ParseException {"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(userInput.trim());"
+        "content": "     */"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!matcher.matches()) {"
+        "content": "    public Command parseCommand(String userInput) throws ParseException {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
+        "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(userInput.trim());"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (!matcher.matches()) {"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String commandWord \u003d matcher.group(\"commandWord\");"
+        "content": "        }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String arguments \u003d matcher.group(\"arguments\");"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "        switch (commandWord) {"
+        "content": "        final String commandWord \u003d matcher.group(\"commandWord\");"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        final String arguments \u003d matcher.group(\"arguments\");"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "Xelyion"
+          "gitId": "-"
         },
-        "content": "        case SetClassroomCommand.COMMAND_WORD:"
+        "content": "        switch (commandWord) {"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "Xelyion"
+          "gitId": "-"
         },
-        "content": "            return new SetClassroomCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": ""
+        "content": "        case SetClassroomCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": "        case AddClassroomCommand.COMMAND_WORD:"
+        "content": "            return new SetClassroomCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": "            return new AddClassroomCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": ""
+        "content": "        case AddClassroomCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": "        case ListAssignmentCommand.COMMAND_WORD:"
+        "content": "            return new AddClassroomCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": "            return new ListAssignmentCommand();"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": ""
+        "content": "        case ListAssignmentCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": "        case UpdateGradesCommand.COMMAND_WORD:"
+        "content": "            return new ListAssignmentCommand();"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": "            return new UpdateGradesCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": ""
+        "content": "        case UpdateGradesCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": "        case AddAssignmentCommand.COMMAND_WORD:"
+        "content": "            return new UpdateGradesCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": "            return new AddAssignmentCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": ""
+        "content": "        case AddAssignmentCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "weikiat97"
+          "gitId": "Xelyion"
         },
-        "content": "        case EditAssignmentCommand.COMMAND_WORD:"
+        "content": "            return new AddAssignmentCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "weikiat97"
+          "gitId": "Xelyion"
         },
-        "content": "            return new EditAssignmentCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": ""
+        "content": "        case EditAssignmentCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": "        case AddStudentCommand.COMMAND_WORD:"
+        "content": "            return new EditAssignmentCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": "            return new AddStudentCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "-"
+          "gitId": "weikiat97"
         },
-        "content": ""
+        "content": "        case AddStudentCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": "        case EditStudentCommand.COMMAND_WORD:"
+        "content": "            return new AddStudentCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "weikiat97"
+          "gitId": "-"
         },
-        "content": "            return new EditStudentCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "-"
+          "gitId": "weikiat97"
         },
-        "content": ""
+        "content": "        case EditStudentCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": "        case DeleteStudentCommand.COMMAND_WORD:"
+        "content": "            return new EditStudentCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "weikiat97"
+        },
+        "content": "        case DeleteStudentCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 89,
         "author": {
           "gitId": "weikiat97"
         },
         "content": "            return new DeleteStudentCommandParser().parse(arguments);"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "Xelyion"
-        },
-        "content": "        case DeleteAssignmentCommand.COMMAND_WORD:"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "Xelyion"
-        },
-        "content": "            return new DeleteAssignmentCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "Xelyion"
         },
-        "content": ""
+        "content": "        case DeleteAssignmentCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "-"
+          "gitId": "Xelyion"
         },
-        "content": "        case ClearCommand.COMMAND_WORD:"
+        "content": "            return new DeleteAssignmentCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "-"
+          "gitId": "Xelyion"
         },
-        "content": "            return new ClearCommand();"
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        case ClearCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return new ClearCommand();"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 97,
         "author": {
           "gitId": "weikiat97"
         },
         "content": "        case FindStudentCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 96,
+        "lineNumber": 98,
         "author": {
           "gitId": "weikiat97"
         },
         "content": "            return new FindStudentCommandParser().parse(arguments);"
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 100,
         "author": {
           "gitId": "weikiat97"
         },
         "content": "        case ListStudentCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 101,
         "author": {
           "gitId": "weikiat97"
         },
         "content": "            return new ListStudentCommand();"
       },
       {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        case ExitCommand.COMMAND_WORD:"
-      },
-      {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "            return new ExitCommand();"
+        "content": ""
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        case ExitCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "        case HelpCommand.COMMAND_WORD:"
+        "content": "            return new ExitCommand();"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "            return new HelpCommand();"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        case HelpCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 107,
         "author": {
-          "gitId": "sheryltay28"
+          "gitId": "-"
         },
-        "content": "        case AddLessonCommand.COMMAND_WORD:"
+        "content": "            return new HelpCommand();"
       },
       {
         "lineNumber": 108,
         "author": {
-          "gitId": "sheryltay28"
+          "gitId": "-"
         },
-        "content": "            return new AddLessonCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": ""
+        "content": "        case AddLessonCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": "        case DeleteLessonCommand.COMMAND_WORD:"
+        "content": "            return new AddLessonCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": "            return new DeleteLessonCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": ""
+        "content": "        case DeleteLessonCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": "        case EditLessonCommand.COMMAND_WORD:"
+        "content": "            return new DeleteLessonCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": "            return new EditLessonCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": ""
+        "content": "        case EditLessonCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": "        case ListLessonCommand.COMMAND_WORD:"
+        "content": "            return new EditLessonCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": "            return new ListLessonCommand();"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "sheryltay28"
         },
-        "content": ""
+        "content": "        case ListLessonCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 119,
         "author": {
-          "gitId": "weikiat97"
+          "gitId": "sheryltay28"
         },
-        "content": "        case UndoCommand.COMMAND_WORD:"
+        "content": "            return new ListLessonCommand();"
       },
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "weikiat97"
+          "gitId": "sheryltay28"
         },
-        "content": "            return new UndoCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": ""
+        "content": "        case UndoCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": "        case RedoCommand.COMMAND_WORD:"
+        "content": "            return new UndoCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": "            return new RedoCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": ""
+        "content": "        case RedoCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": "        case GetStudentGradesCommand.COMMAND_WORD:"
+        "content": "            return new RedoCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": "            return new GetStudentGradesCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "weikiat97"
         },
-        "content": ""
+        "content": "        case GetStudentGradesCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 128,
         "author": {
-          "gitId": "SebastianLie"
+          "gitId": "weikiat97"
         },
-        "content": "        case UploadPictureCommand.COMMAND_WORD:"
+        "content": "            return new GetStudentGradesCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "SebastianLie"
+          "gitId": "weikiat97"
         },
-        "content": "            return new UploadPictureCommandParser().parse(arguments);"
+        "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": ""
+        "content": "        case UploadPictureCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 131,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "        default:"
+        "content": "            return new UploadPictureCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "            throw new ParseException(MESSAGE_UNKNOWN_COMMAND);"
+        "content": ""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        default:"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            throw new ParseException(MESSAGE_UNKNOWN_COMMAND);"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
@@ -40548,7 +40928,7 @@
       }
     ],
     "authorContributionMap": {
-      "SebastianLie": 4,
+      "SebastianLie": 6,
       "Xelyion": 29,
       "sheryltay28": 16,
       "weikiat97": 31,
@@ -79954,6 +80334,750 @@
     }
   },
   {
+    "path": "src/main/java/seedu/address/ui/AutoCompleteTextField.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "package seedu.address.ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import java.util.LinkedList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import java.util.SortedSet;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import java.util.TreeSet;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import java.util.stream.Collectors;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.geometry.Side;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.control.ContextMenu;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.control.CustomMenuItem;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.control.Label;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.control.TextField;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import seedu.address.logic.commands.CommandMasterList;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "//@@author SebastianLie"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * AutoComplete added to textfield."
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * listens to user input and populates"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * drop down menu with existing commands"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * solution adopted from https://stackoverflow.com/questions/36861056/javafx-textfield-auto-suggestions"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "public class AutoCompleteTextField extends TextField {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    private final SortedSet\u003cString\u003e entries;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    private ContextMenu entriesPopup;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * initialises all commands and their usages,"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * popup-menu as well as listener"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    public AutoCompleteTextField() {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        super();"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        this.entries \u003d new TreeSet\u003c\u003e();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        this.entriesPopup \u003d new ContextMenu();"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        entries.addAll(CommandMasterList.getCommandWords());"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        setListener();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * \"Suggestion\" specific listener"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    private void setListener() {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        textProperty().addListener((observable, oldValue, newValue) -\u003e {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            String enteredText \u003d getText();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            if (enteredText \u003d\u003d null || enteredText.isEmpty()) {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                entriesPopup.hide();"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                //filter all possible suggestions depends on \"Text\", case insensitive"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                List\u003cString\u003e filteredEntries \u003d entries.stream()"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                        .filter(e -\u003e e.toLowerCase().contains(enteredText.toLowerCase()))"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                        .collect(Collectors.toList());"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                //some suggestions are found"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                if (!filteredEntries.isEmpty()) {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                    //build popup - list of \"CustomMenuItem\""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                    populatePopup(filteredEntries, enteredText);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                    if (!entriesPopup.isShowing()) { //optional"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                        entriesPopup.show(AutoCompleteTextField.this, Side.BOTTOM, 0, 0); //position of popup"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                } else {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                    entriesPopup.hide();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        focusedProperty().addListener((observableValue, oldValue, newValue) -\u003e {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            entriesPopup.hide();"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * populates contextmenu with suggestions"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * of command to be entered"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * if any suggestion is selected,"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * set the textfield to suggestion"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * @param searchResult"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * @param searchRequest"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    private void populatePopup(List\u003cString\u003e searchResult, String searchRequest) {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        List\u003cCustomMenuItem\u003e menuItems \u003d new LinkedList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        int maxEntries \u003d 10;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        int count \u003d Math.min(searchResult.size(), maxEntries);"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        for (int i \u003d 0; i \u003c count; i++) {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            final String result \u003d searchResult.get(i);"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            Label entryLabel \u003d new Label();"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            entryLabel.setGraphic(Styles.buildTextFlow(result, searchRequest));"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            entryLabel.setPrefHeight(10);"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            CustomMenuItem item \u003d new CustomMenuItem(entryLabel, true);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            menuItems.add(item);"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            item.setOnAction(actionEvent -\u003e {"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                setText(result);"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                positionCaret(result.length());"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "                entriesPopup.hide();"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            });"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        entriesPopup.getItems().clear();"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        entriesPopup.getItems().addAll(menuItems);"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    public void addEntry(String toAdd) {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        entries.add(toAdd);"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "SebastianLie": 105
+    }
+  },
+  {
     "path": "src/main/java/seedu/address/ui/ClassroomCard.java",
     "fileType": "functional",
     "lines": [
@@ -80806,93 +81930,93 @@
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "import javafx.scene.control.TextField;"
+        "content": "import javafx.scene.input.KeyCode;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "import javafx.scene.input.KeyCode;"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "SebastianLie"
-        },
         "content": "import javafx.scene.input.KeyEvent;"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 10,
         "author": {
           "gitId": "-"
         },
         "content": "import javafx.scene.layout.Region;"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 11,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.address.logic.commands.CommandResult;"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.address.logic.commands.exceptions.CommandException;"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 13,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.address.logic.parser.exceptions.ParseException;"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 14,
         "author": {
           "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "SebastianLie"
         },
         "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "SebastianLie"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * The UI component that is responsible for receiving user command inputs."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": " * The UI component that is responsible for receiving user command inputs."
+        "content": " */"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": " */"
+        "content": "public class CommandBox extends UiPart\u003cRegion\u003e implements EventHandler\u003cKeyEvent\u003e {"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "SebastianLie"
+          "gitId": "-"
         },
-        "content": "public class CommandBox extends UiPart\u003cRegion\u003e implements EventHandler\u003cKeyEvent\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 21,
@@ -80906,63 +82030,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public static final String ERROR_STYLE_CLASS \u003d \"error\";"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String ERROR_STYLE_CLASS \u003d \"error\";"
+        "content": "    private static final String FXML \u003d \"CommandBox.fxml\";"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static final String FXML \u003d \"CommandBox.fxml\";"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "-"
-        },
         "content": "    private final CommandExecutor commandExecutor;"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 26,
         "author": {
           "gitId": "SebastianLie"
         },
         "content": "    private History history \u003d new History();"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
         "content": "    @FXML"
       },
       {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    private AutoCompleteTextField commandTextField;"
+      },
+      {
         "lineNumber": 30,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "    private TextField commandTextField;"
+        "content": ""
       },
       {
         "lineNumber": 31,
@@ -81193,475 +82317,482 @@
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "    /**"
+        "content": "    //@@author SebastianLie"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "     * sets textfield according to key press"
+        "content": "    /**"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "     * for up and down arrow, handles previous and next commands"
+        "content": "     * sets textfield according to key press"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "     * with 2 stacks, enabling user to scroll through past commands"
+        "content": "     * for up and down arrow, handles previous and next commands"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "     * if no more past or future commands, the textfield will be blank"
+        "content": "     * with 2 stacks, enabling user to scroll through past commands"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "     *"
+        "content": "     * if no more past or future commands, the textfield will be blank"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "     * @param keyCode"
+        "content": "     *"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "     */"
+        "content": "     * @param keyCode"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "    private void keyPressed(KeyCode keyCode) {"
+        "content": "     */"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": ""
+        "content": "    private void keyPressed(KeyCode keyCode) {"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "        if (keyCode \u003d\u003d KeyCode.UP) {"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "            try {"
+        "content": "        if (keyCode \u003d\u003d KeyCode.UP) {"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "                String previousCommand \u003d history.getPastCommand();"
+        "content": "            try {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "                commandTextField.setText((previousCommand));"
+        "content": "                String previousCommand \u003d history.getPastCommand();"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "            } catch (NoSuchElementException ex) {"
+        "content": "                commandTextField.setText((previousCommand));"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "                commandTextField.setText((\"\"));"
+        "content": "            } catch (NoSuchElementException ex) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "            }"
+        "content": "                commandTextField.setText((\"\"));"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "        if (keyCode \u003d\u003d KeyCode.DOWN) {"
+        "content": "        }"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "            try {"
+        "content": "        if (keyCode \u003d\u003d KeyCode.DOWN) {"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "                String nextCommand \u003d history.getNextCommand();"
+        "content": "            try {"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "                commandTextField.setText((nextCommand));"
+        "content": "                String nextCommand \u003d history.getNextCommand();"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "            } catch (NoSuchElementException ex) {"
+        "content": "                commandTextField.setText((nextCommand));"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "                commandTextField.setText((\"\"));"
+        "content": "            } catch (NoSuchElementException ex) {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "            }"
+        "content": "                commandTextField.setText((\"\"));"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "-"
-        },
-        "content": "     * Sets the command box style to use the default style."
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    private void setStyleToDefault() {"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        commandTextField.getStyleClass().remove(ERROR_STYLE_CLASS);"
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 93,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "     * Sets the command box style to indicate a failed command."
+        "content": "     * Sets the command box style to use the default style."
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 94,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 95,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "    private void setStyleToIndicateCommandFailure() {"
+        "content": "    private void setStyleToDefault() {"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 96,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "        ObservableList\u003cString\u003e styleClass \u003d commandTextField.getStyleClass();"
+        "content": "        commandTextField.getStyleClass().remove(ERROR_STYLE_CLASS);"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 97,
         "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        if (styleClass.contains(ERROR_STYLE_CLASS)) {"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            return;"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        styleClass.add(ERROR_STYLE_CLASS);"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 98,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
         "content": ""
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * Sets the command box style to indicate a failed command."
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    private void setStyleToIndicateCommandFailure() {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        ObservableList\u003cString\u003e styleClass \u003d commandTextField.getStyleClass();"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        if (styleClass.contains(ERROR_STYLE_CLASS)) {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "            return;"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        styleClass.add(ERROR_STYLE_CLASS);"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    }"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "    public void handle(KeyEvent event) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "        commandTextField.setText(\"hi\");"
+        "content": "    public void handle(KeyEvent event) {"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "    }"
+        "content": "        commandTextField.setText(\"hi\");"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 116,
         "author": {
-          "gitId": "-"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     * Represents a function that can execute commands."
-      },
-      {
-        "lineNumber": 118,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 119,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    @FunctionalInterface"
-      },
-      {
-        "lineNumber": 120,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    public interface CommandExecutor {"
-      },
-      {
-        "lineNumber": 121,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        /**"
-      },
-      {
-        "lineNumber": 122,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "         * Executes the command and returns the result."
-      },
-      {
-        "lineNumber": 123,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "         *"
-      },
-      {
-        "lineNumber": 124,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "         * @see seedu.address.logic.Logic#execute(String)"
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "         */"
-      },
-      {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        CommandResult execute(String commandText) throws CommandException, ParseException;"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
         "content": ""
       },
       {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * Represents a function that can execute commands."
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    @FunctionalInterface"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    public interface CommandExecutor {"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "         * Executes the command and returns the result."
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "         *"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "         * @see seedu.address.logic.Logic#execute(String)"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        CommandResult execute(String commandText) throws CommandException, ParseException;"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    }"
+      },
+      {
         "lineNumber": 129,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "SebastianLie"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "SebastianLie": 50,
+      "SebastianLie": 88,
       "weikiat97": 2,
-      "-": 77
+      "-": 40
     }
   },
   {
@@ -87808,6 +88939,225 @@
     }
   },
   {
+    "path": "src/main/java/seedu/address/ui/Styles.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "package seedu.address.ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.paint.Color;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.text.Font;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.text.FontWeight;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.text.Text;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "import javafx.scene.text.TextFlow;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " * helper class for autocomplete textfield"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "public class Styles {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * Build TextFlow with selected text. Return \"case\" dependent."
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * @param text - string with text"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * @param filter - string to select in text"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     * @return - TextFlow"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    public static TextFlow buildTextFlow(String text, String filter) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        int filterIndex \u003d text.toLowerCase().indexOf(filter.toLowerCase());"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        Text textBefore \u003d new Text(text.substring(0, filterIndex));"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        Text textAfter \u003d new Text(text.substring(filterIndex + filter.length()));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        Text textFilter \u003d new Text(text.substring(filterIndex, filterIndex + filter.length()));"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        textFilter.setFill(Color.ORANGE);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        textFilter.setFont(Font.font(\"Helvetica\", FontWeight.BOLD, 12));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "        return new TextFlow(textBefore, textFilter, textAfter);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "SebastianLie"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "SebastianLie": 30
+    }
+  },
+  {
     "path": "src/main/java/seedu/address/ui/UiManager.java",
     "fileType": "functional",
     "lines": [
@@ -89252,14 +90602,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c?import javafx.scene.control.TextField?\u003e"
+        "content": "\u003c?import javafx.scene.layout.StackPane?\u003e"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "-"
+          "gitId": "SebastianLie"
         },
-        "content": "\u003c?import javafx.scene.layout.StackPane?\u003e"
+        "content": "\u003c?import seedu.address.ui.AutoCompleteTextField?\u003e"
       },
       {
         "lineNumber": 5,
@@ -89280,7 +90630,7 @@
         "author": {
           "gitId": "SebastianLie"
         },
-        "content": "  \u003cTextField fx:id\u003d\"commandTextField\" onAction\u003d\"#handleCommandEntered\" onKeyPressed\u003d\"#handleKeyPress\" promptText\u003d\"Enter command here...\"/\u003e"
+        "content": "  \u003cAutoCompleteTextField fx:id\u003d\"commandTextField\" onAction\u003d\"#handleCommandEntered\" onKeyPressed\u003d\"#handleKeyPress\" promptText\u003d\"Enter command here...\"/\u003e"
       },
       {
         "lineNumber": 8,
@@ -89298,8 +90648,8 @@
       }
     ],
     "authorContributionMap": {
-      "SebastianLie": 1,
-      "-": 8
+      "SebastianLie": 2,
+      "-": 7
     }
   },
   {

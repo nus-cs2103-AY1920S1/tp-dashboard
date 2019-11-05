@@ -23190,131 +23190,145 @@
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "-"
+          "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "import seedu.address.model.Performance;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "-"
         },
-        "content": " * Clears the address book."
+        "content": "/**"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": " * Clears the address book."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "-"
         },
-        "content": "public class ClearCommand extends Command {"
+        "content": " */"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "public class ClearCommand extends Command {"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"clear\";"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Address book has been cleared!\";"
+        "content": "    public static final String COMMAND_WORD \u003d \"clear\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"Address book has been cleared!\";"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": "    public CommandResult execute(Model model) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    public CommandResult execute(Model model) {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": "        model.setAddressBook(new AddressBook());"
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "        return new CommandResult(MESSAGE_SUCCESS);"
+        "content": "        model.setAddressBook(new AddressBook());"
       },
       {
         "lineNumber": 20,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        model.setPerformance(new Performance());"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        return new CommandResult(MESSAGE_SUCCESS, false, false, true, model);"
+      },
+      {
+        "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 23,
         "author": {
           "gitId": "junhuplim"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 24,
         "author": {
           "gitId": "junhuplim"
         },
         "content": "    public boolean isUndoable() {"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 25,
         "author": {
           "gitId": "junhuplim"
         },
         "content": "        return true;"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 26,
         "author": {
-          "gitId": "junhuplim"
+          "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
@@ -23322,7 +23336,9 @@
       }
     ],
     "authorContributionMap": {
-      "junhuplim": 4,
+      "shawnlsj97": 1,
+      "hellodommy": 2,
+      "junhuplim": 3,
       "-": 21
     }
   },
@@ -23707,205 +23723,205 @@
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "    /**"
+        "content": "    /** All data in application should be cleared and calendar should refresh. */"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "     * Constructs a {@code CommandResult} with the specified fields."
+        "content": "    private final boolean clear;"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "    public CommandResult(String feedbackToUser, boolean showHelp, boolean exit) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.feedbackToUser \u003d requireNonNull(feedbackToUser);"
+        "content": "     * Constructs a {@code CommandResult} with the specified fields."
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.showHelp \u003d showHelp;"
+        "content": "     */"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        this.exit \u003d exit;"
+        "content": "    public CommandResult(String feedbackToUser, boolean showHelp, boolean exit, boolean clear) {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        this.feedbackToUser \u003d requireNonNull(feedbackToUser);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        this.showHelp \u003d showHelp;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        this.exit \u003d exit;"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser},"
+        "content": "        this.clear \u003d clear;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "     * and other fields set to their default value."
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "    public CommandResult(String feedbackToUser) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "        this(feedbackToUser, false, false);"
+        "content": "     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser},"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "     * and other fields set to their default value."
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "shawnlsj97"
+          "gitId": "-"
         },
-        "content": "    /**"
+        "content": "    public CommandResult(String feedbackToUser) {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser} and {@code"
+        "content": "        this(feedbackToUser, false, false, false);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     * featureToDisplay}, and other fields set to their default value."
+        "content": "    }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    public CommandResult(String feedbackToUser, Feature featureToDisplay) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this(feedbackToUser, false, false);"
+        "content": "     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser}, {@code"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this.feature \u003d featureToDisplay;"
+        "content": "     * showHelp}, {@code exit}, {@code clear} and {@code model}."
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": "     * @param feedbackToUser String to display to user"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "     * @param showHelp Boolean indicating if command is a help command"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    /**"
+        "content": "     * @param exit Boolean indicating if command is an exit command"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser}, {@code"
+        "content": "     * @param clear Boolean indicating if command is a clear command"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     * featureToDisplay} and {@code model}, and other fields set to their default value."
+        "content": "     * @param model Model representing state of Athletick"
       },
       {
         "lineNumber": 58,
@@ -23919,21 +23935,21 @@
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    public CommandResult(String feedbackToUser, Feature featureToDisplay, Model model) {"
+        "content": "    public CommandResult(String feedbackToUser, boolean showHelp, boolean exit, boolean clear,"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this(feedbackToUser, false, false);"
+        "content": "                         Model model) {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this.feature \u003d featureToDisplay;"
+        "content": "        this(feedbackToUser, showHelp, exit, clear);"
       },
       {
         "lineNumber": 62,
@@ -23945,14 +23961,14 @@
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "shawnlsj97"
+          "gitId": "-"
         },
         "content": "    }"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "shawnlsj97"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -23989,21 +24005,21 @@
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    public CommandResult(String feedbackToUser, Person selectedPerson) {"
+        "content": "    public CommandResult(String feedbackToUser, Feature featureToDisplay) {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this(feedbackToUser, false, false);"
+        "content": "        this(feedbackToUser, false, false, false);"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this.person \u003d selectedPerson;"
+        "content": "        this.feature \u003d featureToDisplay;"
       },
       {
         "lineNumber": 72,
@@ -24024,56 +24040,56 @@
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    public CommandResult(String feedbackToUser, AthletickDate date, Model model) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this(feedbackToUser, false, false);"
+        "content": "     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser}, {@code"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this.date \u003d date;"
+        "content": "     * featureToDisplay} and {@code model}, and other fields set to their default value."
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        this.model \u003d model;"
+        "content": "     */"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": "    public CommandResult(String feedbackToUser, Feature featureToDisplay, Model model) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "        this(feedbackToUser, false, false, false);"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    public Feature getFeature() {"
+        "content": "        this.feature \u003d featureToDisplay;"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        return feature;"
+        "content": "        this.model \u003d model;"
       },
       {
         "lineNumber": 82,
@@ -24094,175 +24110,175 @@
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    public Person getPerson() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        return person;"
+        "content": "     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser} and {@code"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": "     * selectedPerson}, and other fields set to their default value."
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    public AthletickDate getDate() {"
+        "content": "    public CommandResult(String feedbackToUser, Person selectedPerson) {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        return date;"
+        "content": "        this(feedbackToUser, false, false, false);"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": "        this.person \u003d selectedPerson;"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    public Model getModel() {"
+        "content": ""
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        return model;"
+        "content": "    /**"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": "     * Constructs a {@code CommandResult} with the specified {@code feedbackToUser}, {@code date}"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "     * and {@code model}, and other fields set to their default value."
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "    public String getFeedbackToUser() {"
+        "content": "     * @param feedbackToUser String to display to user"
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        return feedbackToUser;"
+        "content": "     * @param date Date"
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": "     * @param model Model representing state of Athletick"
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "    public boolean isShowHelp() {"
+        "content": "    public CommandResult(String feedbackToUser, AthletickDate date, Model model) {"
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        return showHelp;"
+        "content": "        this(feedbackToUser, false, false, false);"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": "        this.date \u003d date;"
       },
       {
         "lineNumber": 103,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "        this.model \u003d model;"
       },
       {
         "lineNumber": 104,
         "author": {
-          "gitId": "-"
-        },
-        "content": "    public boolean isExit() {"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        return exit;"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 105,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
         "content": ""
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    public Feature getFeature() {"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        return feature;"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 109,
@@ -24274,159 +24290,362 @@
       {
         "lineNumber": 110,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "    @Override"
+        "content": "    public Person getPerson() {"
       },
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        return person;"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "    }"
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "-"
-        },
-        "content": "            return true;"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
         "content": ""
       },
       {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    public AthletickDate getDate() {"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        return date;"
+      },
+      {
         "lineNumber": 116,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        // instanceof handles nulls"
+        "content": "    }"
       },
       {
         "lineNumber": 117,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        if (!(other instanceof CommandResult)) {"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "            return false;"
+        "content": "    public Model getModel() {"
       },
       {
         "lineNumber": 119,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        }"
+        "content": "        return model;"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "        CommandResult otherCommandResult \u003d (CommandResult) other;"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "        return feedbackToUser.equals(otherCommandResult.feedbackToUser)"
+        "content": "    public String getFeedbackToUser() {"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 showHelp \u003d\u003d otherCommandResult.showHelp"
+        "content": "        return feedbackToUser;"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 exit \u003d\u003d otherCommandResult.exit;"
+        "content": "    }"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public boolean isShowHelp() {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": "        return showHelp;"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "    public int hashCode() {"
+        "content": "    }"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "        return Objects.hash(feedbackToUser, showHelp, exit);"
+        "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    public boolean isExit() {"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return exit;"
       },
       {
         "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    public boolean isClear() {"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        return clear;"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (other \u003d\u003d this) {"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (!(other instanceof CommandResult)) {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        CommandResult otherCommandResult \u003d (CommandResult) other;"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return feedbackToUser.equals(otherCommandResult.feedbackToUser)"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                \u0026\u0026 showHelp \u003d\u003d otherCommandResult.showHelp"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                \u0026\u0026 exit \u003d\u003d otherCommandResult.exit"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                \u0026\u0026 clear \u003d\u003d otherCommandResult.clear;"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public int hashCode() {"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        return Objects.hash(feedbackToUser, showHelp, exit, clear);"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
@@ -24434,8 +24653,8 @@
       }
     ],
     "authorContributionMap": {
-      "shawnlsj97": 61,
-      "-": 71
+      "shawnlsj97": 92,
+      "-": 69
     }
   },
   {
@@ -27342,9 +27561,9 @@
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        return new CommandResult(MESSAGE_EXIT_ACKNOWLEDGEMENT, false, true);"
+        "content": "        return new CommandResult(MESSAGE_EXIT_ACKNOWLEDGEMENT, false, true, false);"
       },
       {
         "lineNumber": 17,
@@ -27377,7 +27596,7 @@
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "junhuplim"
+          "gitId": "-"
         },
         "content": "    }"
       },
@@ -27390,7 +27609,8 @@
       }
     ],
     "authorContributionMap": {
-      "junhuplim": 4,
+      "shawnlsj97": 1,
+      "junhuplim": 3,
       "-": 18
     }
   },
@@ -28324,9 +28544,9 @@
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        return new CommandResult(SHOWING_HELP_MESSAGE, true, false);"
+        "content": "        return new CommandResult(SHOWING_HELP_MESSAGE, true, false, false);"
       },
       {
         "lineNumber": 20,
@@ -28359,7 +28579,7 @@
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "junhuplim"
+          "gitId": "-"
         },
         "content": "    }"
       },
@@ -28372,7 +28592,8 @@
       }
     ],
     "authorContributionMap": {
-      "junhuplim": 4,
+      "shawnlsj97": 1,
+      "junhuplim": 3,
       "-": 21
     }
   },
@@ -42518,87 +42739,122 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    void addEvent(Event event);"
+        "content": "    /**"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "     * Replaces performance data with the data in {@code performance}."
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    boolean hasEvent(Event event);"
+        "content": "     */"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "    void setPerformance(ReadOnlyPerformance performance);"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    ReadOnlyPerformance getPerformance();"
+        "content": ""
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "    void addEvent(Event event);"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    void addRecord(String eventName, Person person, Record record);"
+        "content": ""
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "    boolean hasEvent(Event event);"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    HashMap\u003cEvent, List\u003cCalendarCompatibleRecord\u003e\u003e getCalendarCompatiblePerformance(AthletickDate date);"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "    ReadOnlyPerformance getPerformance();"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    boolean hasPerformanceOn(AthletickDate date);"
+        "content": ""
       },
       {
         "lineNumber": 129,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    void addRecord(String eventName, Person person, Record record);"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    HashMap\u003cEvent, List\u003cCalendarCompatibleRecord\u003e\u003e getCalendarCompatiblePerformance(AthletickDate date);"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    boolean hasPerformanceOn(AthletickDate date);"
+      },
+      {
+        "lineNumber": 134,
         "author": {
           "gitId": "jeunhoe"
         },
         "content": ""
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
@@ -42608,7 +42864,7 @@
     "authorContributionMap": {
       "shawnlsj97": 5,
       "ChangUo79": 4,
-      "hellodommy": 17,
+      "hellodommy": 22,
       "jeunhoe": 14,
       "junhuplim": 3,
       "-": 87
@@ -44380,14 +44636,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void addEvent(Event event) {"
+        "content": "    public void setPerformance(ReadOnlyPerformance performance) {"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        performance.addEvent(event);"
+        "content": "        this.performance.resetData(performance);"
       },
       {
         "lineNumber": 254,
@@ -44415,14 +44671,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public boolean hasEvent(Event event) {"
+        "content": "    public void addEvent(Event event) {"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        return performance.hasEvent(event);"
+        "content": "        performance.addEvent(event);"
       },
       {
         "lineNumber": 259,
@@ -44450,14 +44706,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public ReadOnlyPerformance getPerformance() {"
+        "content": "    public boolean hasEvent(Event event) {"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        return performance;"
+        "content": "        return performance.hasEvent(event);"
       },
       {
         "lineNumber": 264,
@@ -44485,14 +44741,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public void addRecord(String eventName, Person person, Record record) {"
+        "content": "    public ReadOnlyPerformance getPerformance() {"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        performance.addRecord(eventName, person, record);"
+        "content": "        return performance;"
       },
       {
         "lineNumber": 269,
@@ -44520,14 +44776,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public HashMap\u003cEvent, List\u003cCalendarCompatibleRecord\u003e\u003e getCalendarCompatiblePerformance(AthletickDate date) {"
+        "content": "    public void addRecord(String eventName, Person person, Record record) {"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        return performance.getCalendarCompatiblePerformance(date);"
+        "content": "        performance.addRecord(eventName, person, record);"
       },
       {
         "lineNumber": 274,
@@ -44555,14 +44811,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    public boolean hasPerformanceOn(AthletickDate date) {"
+        "content": "    public HashMap\u003cEvent, List\u003cCalendarCompatibleRecord\u003e\u003e getCalendarCompatiblePerformance(AthletickDate date) {"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        return performance.hasPerformanceOn(date);"
+        "content": "        return performance.getCalendarCompatiblePerformance(date);"
       },
       {
         "lineNumber": 279,
@@ -44574,6 +44830,41 @@
       {
         "lineNumber": 280,
         "author": {
+          "gitId": "hellodommy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    public boolean hasPerformanceOn(AthletickDate date) {"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        return performance.hasPerformanceOn(date);"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
           "gitId": "-"
         },
         "content": "}"
@@ -44582,7 +44873,7 @@
     "authorContributionMap": {
       "shawnlsj97": 8,
       "ChangUo79": 7,
-      "hellodommy": 43,
+      "hellodommy": 48,
       "jeunhoe": 31,
       "junhuplim": 42,
       "-": 149
@@ -69775,423 +70066,535 @@
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    CalendarPanel calendarPanel \u003d new CalendarPanel(commandResult.getModel());"
+        "content": "                    showCalendar(commandResult.getModel());"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    featureBoxPlaceholder.getChildren().clear();"
+        "content": "                    break;"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    featureBoxPlaceholder.getChildren().add(calendarPanel.getRoot());"
+        "content": "                case \"attendance\":"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    break;"
+        "content": "                    showAttendancePanel();"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                case \"attendance\":"
+        "content": "                    break;"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    AttendancePanel attendance \u003d new AttendancePanel();"
+        "content": "                case \"performance\":"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    featureBoxPlaceholder.getChildren().clear();"
+        "content": "                    showPerformancePanel(commandResult.getModel());"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    featureBoxPlaceholder.getChildren().add(attendance.getRoot());"
+        "content": "                    break;"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    break;"
+        "content": "                default:"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                case \"performance\":"
+        "content": "                    break;"
       },
       {
         "lineNumber": 198,
         "author": {
-          "gitId": "hellodommy"
+          "gitId": "shawnlsj97"
         },
-        "content": "                    PerformancePanel performance \u003d new PerformancePanel(commandResult.getModel());"
+        "content": "                }"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    featureBoxPlaceholder.getChildren().clear();"
+        "content": "            }"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    featureBoxPlaceholder.getChildren().add(performance.getRoot());"
+        "content": ""
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    break;"
-      },
-      {
-        "lineNumber": 202,
-        "author": {
-          "gitId": "shawnlsj97"
-        },
-        "content": "                default:"
-      },
-      {
-        "lineNumber": 203,
-        "author": {
-          "gitId": "shawnlsj97"
-        },
-        "content": "                    break;"
-      },
-      {
-        "lineNumber": 204,
-        "author": {
-          "gitId": "shawnlsj97"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 205,
-        "author": {
-          "gitId": "shawnlsj97"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 206,
-        "author": {
-          "gitId": "shawnlsj97"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 207,
-        "author": {
-          "gitId": "shawnlsj97"
-        },
         "content": "            if (!(commandResult.getPerson() \u003d\u003d null)) {"
       },
       {
-        "lineNumber": 208,
+        "lineNumber": 202,
         "author": {
           "gitId": "ChangUo79"
         },
         "content": "                InformationDisplay informationDisplay \u003d new InformationDisplay(logic.getPerson(),"
       },
       {
-        "lineNumber": 209,
+        "lineNumber": 203,
         "author": {
           "gitId": "ChangUo79"
         },
         "content": "                                                                               logic.getPersonAttendance());"
       },
       {
-        "lineNumber": 210,
+        "lineNumber": 204,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                featureBoxPlaceholder.getChildren().clear();"
       },
       {
-        "lineNumber": 211,
+        "lineNumber": 205,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                featureBoxPlaceholder.getChildren().add(informationDisplay.getRoot());"
       },
       {
-        "lineNumber": 212,
+        "lineNumber": 206,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 213,
+        "lineNumber": 207,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": ""
       },
       {
-        "lineNumber": 214,
+        "lineNumber": 208,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "            if (!(commandResult.getDate() \u003d\u003d null)) {"
       },
       {
-        "lineNumber": 215,
+        "lineNumber": 209,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                Model model \u003d commandResult.getModel();"
       },
       {
-        "lineNumber": 216,
+        "lineNumber": 210,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                switch (commandResult.getDate().getType()) {"
       },
       {
-        "lineNumber": 217,
+        "lineNumber": 211,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                case 1:"
       },
       {
-        "lineNumber": 218,
+        "lineNumber": 212,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    CalendarDetailPanel calendarDetailPanel \u003d"
       },
       {
-        "lineNumber": 219,
+        "lineNumber": 213,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                            new CalendarDetailPanel(commandResult.getDate(), model);"
       },
       {
-        "lineNumber": 220,
+        "lineNumber": 214,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    featureBoxPlaceholder.getChildren().clear();"
       },
       {
-        "lineNumber": 221,
+        "lineNumber": 215,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    featureBoxPlaceholder.getChildren().add(calendarDetailPanel.getRoot());"
       },
       {
-        "lineNumber": 222,
+        "lineNumber": 216,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    break;"
       },
       {
-        "lineNumber": 223,
+        "lineNumber": 217,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                case 2:"
       },
       {
-        "lineNumber": 224,
+        "lineNumber": 218,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    CalendarPanel calendarPanel \u003d new CalendarPanel(commandResult.getDate(), model);"
       },
       {
-        "lineNumber": 225,
+        "lineNumber": 219,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    featureBoxPlaceholder.getChildren().clear();"
       },
       {
-        "lineNumber": 226,
+        "lineNumber": 220,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    featureBoxPlaceholder.getChildren().add(calendarPanel.getRoot());"
       },
       {
-        "lineNumber": 227,
+        "lineNumber": 221,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    break;"
       },
       {
-        "lineNumber": 228,
+        "lineNumber": 222,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                default:"
       },
       {
-        "lineNumber": 229,
+        "lineNumber": 223,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                    break;"
       },
       {
-        "lineNumber": 230,
+        "lineNumber": 224,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 231,
+        "lineNumber": 225,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 232,
+        "lineNumber": 226,
         "author": {
           "gitId": "shawnlsj97"
         },
         "content": ""
       },
       {
-        "lineNumber": 233,
+        "lineNumber": 227,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "            if (commandResult.isClear()) {"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                showCalendar(commandResult.getModel());"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
         "content": "            if (commandResult.isShowHelp()) {"
       },
       {
-        "lineNumber": 234,
+        "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
         "content": "                handleHelp();"
       },
       {
-        "lineNumber": 235,
+        "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 236,
+        "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 237,
+        "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
         "content": "            if (commandResult.isExit()) {"
       },
       {
-        "lineNumber": 238,
+        "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
         "content": "                handleExit();"
       },
       {
-        "lineNumber": 239,
+        "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 240,
+        "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 241,
+        "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
         "content": "            return commandResult;"
       },
       {
-        "lineNumber": 242,
+        "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
         "content": "        } catch (CommandException | ParseException e) {"
       },
       {
-        "lineNumber": 243,
+        "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
         "content": "            logger.info(\"Invalid command: \" + commandText);"
       },
       {
-        "lineNumber": 244,
+        "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
         "content": "            resultDisplay.setFeedbackToUser(e.getMessage());"
       },
       {
-        "lineNumber": 245,
+        "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
         "content": "            throw e;"
       },
       {
-        "lineNumber": 246,
+        "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 247,
+        "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    private void showCalendar(Model model) {"
+      },
+      {
         "lineNumber": 248,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        CalendarPanel calendarPanel \u003d new CalendarPanel(model);"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        featureBoxPlaceholder.getChildren().clear();"
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        featureBoxPlaceholder.getChildren().add(calendarPanel.getRoot());"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    private void showAttendancePanel() {"
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        AttendancePanel attendance \u003d new AttendancePanel();"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        featureBoxPlaceholder.getChildren().clear();"
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        featureBoxPlaceholder.getChildren().add(attendance.getRoot());"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    private void showPerformancePanel(Model model) {"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        PerformancePanel performance \u003d new PerformancePanel(model);"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        featureBoxPlaceholder.getChildren().clear();"
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        featureBoxPlaceholder.getChildren().add(performance.getRoot());"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
@@ -70199,9 +70602,8 @@
       }
     ],
     "authorContributionMap": {
-      "shawnlsj97": 50,
+      "shawnlsj97": 67,
       "ChangUo79": 5,
-      "hellodommy": 1,
       "-": 192
     }
   },
@@ -77360,38 +77762,31 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "\u003cLabel fx:id\u003d\"eventName\" maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" text\u003d\"Label\" wrapText\u003d\"true\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "\u003cLabel fx:id\u003d\"eventName\" maxHeight\u003d\"1.7976931348623157E308\" maxWidth\u003d\"1.7976931348623157E308\" text\u003d\"Label\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+        "content": "   \u003cpadding\u003e"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "   \u003cpadding\u003e"
+        "content": "      \u003cInsets bottom\u003d\"16.0\" left\u003d\"32.0\" right\u003d\"16.0\" top\u003d\"16.0\" /\u003e"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "      \u003cInsets bottom\u003d\"16.0\" left\u003d\"32.0\" right\u003d\"16.0\" top\u003d\"16.0\" /\u003e"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "hellodommy"
-        },
         "content": "   \u003c/padding\u003e"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 10,
         "author": {
           "gitId": "hellodommy"
         },
@@ -77399,7 +77794,7 @@
       }
     ],
     "authorContributionMap": {
-      "hellodommy": 11
+      "hellodommy": 10
     }
   },
   {
@@ -85911,49 +86306,49 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public void addEvent(Event event) {"
+        "content": "        @Override"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        public void setPerformance(ReadOnlyPerformance performance) {"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        }"
+        "content": "            throw new AssertionError(\"This method should not be called.\");"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        @Override"
+        "content": ""
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public boolean hasEvent(Event event) {"
+        "content": "        public void addEvent(Event event) {"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            return false;"
+        "content": ""
       },
       {
         "lineNumber": 219,
@@ -85981,14 +86376,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public ReadOnlyPerformance getPerformance() {"
+        "content": "        public boolean hasEvent(Event event) {"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            return null;"
+        "content": "            return false;"
       },
       {
         "lineNumber": 224,
@@ -86016,14 +86411,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public void addRecord(String eventName, Person person, Record record) {"
+        "content": "        public ReadOnlyPerformance getPerformance() {"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "            return null;"
       },
       {
         "lineNumber": 229,
@@ -86051,14 +86446,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public HashMap\u003cEvent, List\u003cCalendarCompatibleRecord\u003e\u003e getCalendarCompatiblePerformance(AthletickDate date) {"
+        "content": "        public void addRecord(String eventName, Person person, Record record) {"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            return null;"
+        "content": ""
       },
       {
         "lineNumber": 234,
@@ -86086,14 +86481,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public boolean hasPerformanceOn(AthletickDate date) {"
+        "content": "        public HashMap\u003cEvent, List\u003cCalendarCompatibleRecord\u003e\u003e getCalendarCompatiblePerformance(AthletickDate date) {"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            return false;"
+        "content": "            return null;"
       },
       {
         "lineNumber": 239,
@@ -86105,86 +86500,86 @@
       {
         "lineNumber": 240,
         "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 241,
-        "author": {
-          "gitId": "-"
+          "gitId": "hellodommy"
         },
         "content": ""
       },
       {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        @Override"
+      },
+      {
         "lineNumber": 242,
         "author": {
-          "gitId": "-"
+          "gitId": "hellodommy"
         },
-        "content": "    /**"
+        "content": "        public boolean hasPerformanceOn(AthletickDate date) {"
       },
       {
         "lineNumber": 243,
         "author": {
-          "gitId": "-"
+          "gitId": "hellodommy"
         },
-        "content": "     * A Model stub that contains a single person."
+        "content": "            return false;"
       },
       {
         "lineNumber": 244,
         "author": {
-          "gitId": "-"
+          "gitId": "hellodommy"
         },
-        "content": "     */"
+        "content": "        }"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "    private class ModelStubWithPerson extends ModelStub {"
+        "content": "    }"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "        private final Person person;"
+        "content": ""
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "        ModelStubWithPerson(Person person) {"
+        "content": "     * A Model stub that contains a single person."
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "            requireNonNull(person);"
+        "content": "     */"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.person \u003d person;"
+        "content": "    private class ModelStubWithPerson extends ModelStub {"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        private final Person person;"
       },
       {
         "lineNumber": 252,
@@ -86198,196 +86593,196 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        @Override"
+        "content": "        ModelStubWithPerson(Person person) {"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "        public boolean hasPerson(Person person) {"
+        "content": "            requireNonNull(person);"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "            requireNonNull(person);"
+        "content": "            this.person \u003d person;"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "            return this.person.isSamePerson(person);"
+        "content": "        }"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        @Override"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        public boolean hasPerson(Person person) {"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "            requireNonNull(person);"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "     * A Model stub that always accept the person being added."
+        "content": "            return this.person.isSamePerson(person);"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        }"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "    private class ModelStubAcceptingPersonAdded extends ModelStub {"
+        "content": "    }"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "        final ArrayList\u003cPerson\u003e personsAdded \u003d new ArrayList\u003c\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "        @Override"
+        "content": "     * A Model stub that always accept the person being added."
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "        public boolean hasPerson(Person person) {"
+        "content": "     */"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "            requireNonNull(person);"
+        "content": "    private class ModelStubAcceptingPersonAdded extends ModelStub {"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": "            return personsAdded.stream().anyMatch(person::isSamePerson);"
+        "content": "        final ArrayList\u003cPerson\u003e personsAdded \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        @Override"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "        @Override"
+        "content": "        public boolean hasPerson(Person person) {"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "        public void addPerson(Person person) {"
+        "content": "            requireNonNull(person);"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "            requireNonNull(person);"
+        "content": "            return personsAdded.stream().anyMatch(person::isSamePerson);"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "            personsAdded.add(person);"
+        "content": "        }"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        @Override"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "        @Override"
+        "content": "        public void addPerson(Person person) {"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "        public ReadOnlyAddressBook getAddressBook() {"
+        "content": "            requireNonNull(person);"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "            return new AddressBook();"
+        "content": "            personsAdded.add(person);"
       },
       {
         "lineNumber": 281,
@@ -86401,17 +86796,52 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        @Override"
       },
       {
         "lineNumber": 284,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public ReadOnlyAddressBook getAddressBook() {"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return new AddressBook();"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
@@ -86420,7 +86850,7 @@
     ],
     "authorContributionMap": {
       "shawnlsj97": 15,
-      "hellodommy": 34,
+      "hellodommy": 39,
       "jeunhoe": 29,
       "junhuplim": 12,
       "-": 194
@@ -87101,65 +87531,65 @@
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "        CommandResult expectedCommandResult \u003d new CommandResult(ClearCommand.MESSAGE_SUCCESS, false, false,"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": "        assertCommandSuccess(new ClearCommand(), model, ClearCommand.MESSAGE_SUCCESS, expectedModel);"
+        "content": "                true);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "-"
+          "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "        assertCommandSuccess(new ClearCommand(), model, expectedCommandResult, expectedModel);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void execute_nonEmptyAddressBook_success() {"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "hellodommy"
+          "gitId": "-"
         },
-        "content": "        Model model \u003d new ModelManager(getTypicalAddressBook(), getTypicalPerformance(), new Attendance(),"
+        "content": "    @Test"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "hellodommy"
+          "gitId": "-"
         },
-        "content": "                new UserPrefs());"
+        "content": "    public void execute_nonEmptyAddressBook_success() {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        Model expectedModel \u003d new ModelManager(getTypicalAddressBook(), getTypicalPerformance(), new Attendance(),"
+        "content": "        Model model \u003d new ModelManager(getTypicalAddressBook(), getTypicalPerformance(), new Attendance(),"
       },
       {
         "lineNumber": 30,
@@ -87173,14 +87603,320 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        Model expectedModel \u003d new ModelManager(getTypicalAddressBook(), getTypicalPerformance(), new Attendance(),"
       },
       {
         "lineNumber": 32,
         "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "                new UserPrefs());"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
           "gitId": "-"
         },
         "content": "        expectedModel.setAddressBook(new AddressBook());"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        CommandResult expectedCommandResult \u003d new CommandResult(ClearCommand.MESSAGE_SUCCESS,"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                false, false, true);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        assertCommandSuccess(new ClearCommand(), model, expectedCommandResult, expectedModel);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shawnlsj97": 7,
+      "hellodommy": 6,
+      "jeunhoe": 1,
+      "-": 28
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/logic/commands/CommandResultTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.address.logic.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertNotEquals;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class CommandResultTest {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        CommandResult commandResult \u003d new CommandResult(\"feedback\");"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // same values -\u003e returns true"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(commandResult.equals(new CommandResult(\"feedback\")));"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        assertTrue(commandResult.equals(new CommandResult(\"feedback\", false, false, false)));"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // same object -\u003e returns true"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(commandResult.equals(commandResult));"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // null -\u003e returns false"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(commandResult.equals(null));"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // different types -\u003e returns false"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(commandResult.equals(0.5f));"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // different feedbackToUser value -\u003e returns false"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(commandResult.equals(new CommandResult(\"different\")));"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // different showHelp value -\u003e returns false"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        assertFalse(commandResult.equals(new CommandResult(\"feedback\", true, false, false)));"
       },
       {
         "lineNumber": 33,
@@ -87194,24 +87930,206 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        assertCommandSuccess(new ClearCommand(), model, ClearCommand.MESSAGE_SUCCESS, expectedModel);"
+        "content": "        // different exit value -\u003e returns false"
       },
       {
         "lineNumber": 35,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        assertFalse(commandResult.equals(new CommandResult(\"feedback\", false, true, false)));"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        // different clear value -\u003e returns false"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        assertFalse(commandResult.equals(new CommandResult(\"feedback\", false, false, true)));"
+      },
+      {
+        "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void hashcode() {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        CommandResult commandResult \u003d new CommandResult(\"feedback\");"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // same values -\u003e returns same hashcode"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(commandResult.hashCode(), new CommandResult(\"feedback\").hashCode());"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // different feedbackToUser value -\u003e returns different hashcode"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertNotEquals(commandResult.hashCode(), new CommandResult(\"different\").hashCode());"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // different showHelp value -\u003e returns different hashcode"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        assertNotEquals(commandResult.hashCode(),"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                new CommandResult(\"feedback\", true, false, false).hashCode());"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // different exit value -\u003e returns different hashcode"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        assertNotEquals(commandResult.hashCode(),"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                new CommandResult(\"feedback\", false, true, false).hashCode());"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        // different clear value -\u003e returns different hashcode"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        assertNotEquals(commandResult.hashCode(),"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                new CommandResult(\"feedback\", false, false, true).hashCode());"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
@@ -87219,9 +88137,8 @@
       }
     ],
     "authorContributionMap": {
-      "hellodommy": 6,
-      "jeunhoe": 1,
-      "-": 30
+      "shawnlsj97": 14,
+      "-": 49
     }
   },
   {
@@ -92216,7 +93133,7 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public void addEvent(Event event) {"
+        "content": "        public void setPerformance(ReadOnlyPerformance performance) {"
       },
       {
         "lineNumber": 256,
@@ -92251,14 +93168,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public boolean hasEvent(Event event) {"
+        "content": "        public void addEvent(Event event) {"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            return false;"
+        "content": "            throw new AssertionError(\"This method should not be called.\");"
       },
       {
         "lineNumber": 262,
@@ -92286,14 +93203,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public ReadOnlyPerformance getPerformance() {"
+        "content": "        public boolean hasEvent(Event event) {"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            return null;"
+        "content": "            return false;"
       },
       {
         "lineNumber": 267,
@@ -92321,42 +93238,42 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public void addRecord(String eventName, Person person, Record record) {"
+        "content": "        public ReadOnlyPerformance getPerformance() {"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        }"
+        "content": "            return null;"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        @Override"
+        "content": ""
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public HashMap\u003cEvent, List\u003cCalendarCompatibleRecord\u003e\u003e getCalendarCompatiblePerformance(AthletickDate date) {"
+        "content": "        @Override"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            return null;"
+        "content": "        public void addRecord(String eventName, Person person, Record record) {"
       },
       {
         "lineNumber": 276,
@@ -92384,14 +93301,14 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "        public boolean hasPerformanceOn(AthletickDate date) {"
+        "content": "        public HashMap\u003cEvent, List\u003cCalendarCompatibleRecord\u003e\u003e getCalendarCompatiblePerformance(AthletickDate date) {"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "            return false;"
+        "content": "            return null;"
       },
       {
         "lineNumber": 281,
@@ -92405,10 +93322,45 @@
         "author": {
           "gitId": "hellodommy"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 283,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        @Override"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        public boolean hasPerformanceOn(AthletickDate date) {"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "hellodommy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 288,
         "author": {
           "gitId": "hellodommy"
         },
@@ -92416,8 +93368,165 @@
       }
     ],
     "authorContributionMap": {
-      "hellodommy": 268,
+      "hellodommy": 273,
       "jeunhoe": 15
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/logic/commands/ExitCommandTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.address.logic.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.address.logic.commands.ExitCommand.MESSAGE_EXIT_ACKNOWLEDGEMENT;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.address.model.Model;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.address.model.ModelManager;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class ExitCommandTest {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private Model model \u003d new ModelManager();"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private Model expectedModel \u003d new ModelManager();"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void execute_exit_success() {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        CommandResult expectedCommandResult \u003d new CommandResult(MESSAGE_EXIT_ACKNOWLEDGEMENT,"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                false, true, false);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertCommandSuccess(new ExitCommand(), model, expectedCommandResult, expectedModel);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shawnlsj97": 2,
+      "-": 19
     }
   },
   {
@@ -93671,6 +94780,163 @@
       "hellodommy": 6,
       "jeunhoe": 1,
       "-": 81
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/logic/commands/HelpCommandTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.address.logic.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.address.logic.commands.HelpCommand.SHOWING_HELP_MESSAGE;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.address.model.Model;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.address.model.ModelManager;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class HelpCommandTest {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private Model model \u003d new ModelManager();"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private Model expectedModel \u003d new ModelManager();"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void execute_help_success() {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "        CommandResult expectedCommandResult \u003d new CommandResult(SHOWING_HELP_MESSAGE, true, false,"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "shawnlsj97"
+        },
+        "content": "                 false);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertCommandSuccess(new HelpCommand(), model, expectedCommandResult, expectedModel);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "shawnlsj97": 2,
+      "-": 19
     }
   },
   {
