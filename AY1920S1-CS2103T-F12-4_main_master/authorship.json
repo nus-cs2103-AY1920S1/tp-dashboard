@@ -38559,413 +38559,413 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import static seedu.billboard.model.Model.PREDICATE_SHOW_ALL_EXPENSES;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "import java.util.Collections;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import java.util.Collections;"
+        "content": "import java.util.HashSet;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import java.util.HashSet;"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import java.util.List;"
+        "content": "import java.util.Set;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import java.util.Set;"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "import seedu.billboard.commons.core.Messages;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.commons.core.Messages;"
+        "content": "import seedu.billboard.commons.core.index.Index;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.commons.core.index.Index;"
+        "content": "import seedu.billboard.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.logic.commands.exceptions.CommandException;"
+        "content": "import seedu.billboard.model.Model;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.model.Model;"
+        "content": "import seedu.billboard.model.expense.Expense;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.model.expense.Expense;"
+        "content": "import seedu.billboard.model.tag.Tag;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.model.tag.Tag;"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "/**"
+        "content": " * Adds tag(s) to an existing expense."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": " * Adds tag(s) to an existing expense."
+        "content": " */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": " */"
+        "content": "public class AddTagCommand extends TagCommand {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "public class AddTagCommand extends TagCommand {"
+        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_USAGE \u003d TagCommand.COMMAND_WORD + \" \" + COMMAND_WORD"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d TagCommand.COMMAND_WORD + \" \" + COMMAND_WORD"
+        "content": "            + \": Adds tag(s) to the expense identified \""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \": Adds tag(s) to the expense identified \""
+        "content": "            + \"by the index number used in the last expense listing. \\n\""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \"by the index number used in the last expense listing. \\n\""
+        "content": "            + \"Parameters: INDEX (must be a positive integer) \""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \"Parameters: INDEX (must be a positive integer) \""
+        "content": "            + PREFIX_TAG + \"[TAG] (1 or more)\\n\""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + PREFIX_TAG + \"[TAG]\\n\""
+        "content": "            + \"Example: \" + TagCommand.COMMAND_WORD + \" \" + COMMAND_WORD + \" 1 \""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \"Example: \" + TagCommand.COMMAND_WORD + \" \" + COMMAND_WORD + \" 1 \""
+        "content": "            + PREFIX_TAG + \"SCHOOL\";"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + PREFIX_TAG + \"SCHOOL\";"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_ADD_TAG_SUCCESS \u003d \"Added tag(s) to Expense: \\n%1$s\";"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public static final String MESSAGE_ADD_TAG_SUCCESS \u003d \"Added tag(s) to Expense: \\n%1$s\";"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_ADD_TAG_FAILURE \u003d \"No tag(s) to be added\";"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private final Index index;"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private List\u003cString\u003e tagNames;"
+        "content": "    private final Index index;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    private List\u003cString\u003e tagNames;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Creates an AddTagCommand to add tags to the specified {@code Expense}"
+        "content": "    /**"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param index                 of the expense in the filtered expense list to edit"
+        "content": "     * Creates an AddTagCommand to add tags to the specified {@code Expense}"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param tagNames              of tags to be added to expense."
+        "content": "     * @param index                 of the expense in the filtered expense list to edit"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     */"
+        "content": "     * @param tagNames              of tags to be added to expense."
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public AddTagCommand(Index index, List\u003cString\u003e tagNames) {"
+        "content": "     */"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        requireAllNonNull(index, tagNames);"
+        "content": "    public AddTagCommand(Index index, List\u003cString\u003e tagNames) {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        this.index \u003d index;"
+        "content": "        requireAllNonNull(index, tagNames);"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        this.tagNames \u003d tagNames;"
+        "content": "        this.index \u003d index;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "        this.tagNames \u003d tagNames;"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        List\u003cExpense\u003e lastShownList \u003d model.getFilteredExpenses();"
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        List\u003cExpense\u003e lastShownList \u003d model.getFilteredExpenses();"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        if (index.getZeroBased() \u003e\u003d lastShownList.size()) {"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_EXPENSE_DISPLAYED_INDEX);"
+        "content": "        if (index.getZeroBased() \u003e\u003d lastShownList.size()) {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        }"
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_EXPENSE_DISPLAYED_INDEX);"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Expense expenseToEdit \u003d lastShownList.get(index.getZeroBased());"
+        "content": ""
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        Expense expenseToEdit \u003d lastShownList.get(index.getZeroBased());"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e existingTags \u003d expenseToEdit.getTags();"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e inputTags \u003d model.retrieveTags(tagNames);"
+        "content": "        Set\u003cTag\u003e existingTags \u003d expenseToEdit.getTags();"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        Set\u003cTag\u003e inputTags \u003d model.retrieveTags(tagNames);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e tagsToIncrementCount \u003d getTagsToIncrement(existingTags, inputTags);"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e editedTags \u003d getEditedTags(existingTags, tagsToIncrementCount);"
+        "content": "        Set\u003cTag\u003e tagsToIncrementCount \u003d getTagsToIncrement(existingTags, inputTags);"
       },
       {
         "lineNumber": 64,
@@ -38979,49 +38979,49 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        model.incrementCount(tagsToIncrementCount);"
+        "content": "        if (tagsToIncrementCount.isEmpty()) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "            return new CommandResult(MESSAGE_ADD_TAG_FAILURE);"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Expense editedExpense \u003d new Expense(expenseToEdit.getName(), expenseToEdit.getDescription(),"
+        "content": "        }"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                expenseToEdit.getAmount(), expenseToEdit.getCreated(), editedTags);"
+        "content": ""
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        Set\u003cTag\u003e editedTags \u003d getEditedTags(existingTags, tagsToIncrementCount);"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        model.setExpense(expenseToEdit, editedExpense);"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        model.updateFilteredExpenses(PREDICATE_SHOW_ALL_EXPENSES);"
+        "content": "        model.incrementCount(tagsToIncrementCount);"
       },
       {
         "lineNumber": 72,
@@ -39035,14 +39035,14 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_ADD_TAG_SUCCESS, editedExpense));"
+        "content": "        Expense editedExpense \u003d new Expense(expenseToEdit.getName(), expenseToEdit.getDescription(),"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "                expenseToEdit.getAmount(), expenseToEdit.getCreated(), editedTags);"
       },
       {
         "lineNumber": 75,
@@ -39056,276 +39056,311 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    /**"
+        "content": "        model.setExpense(expenseToEdit, editedExpense);"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Returns a set of tags whose count needs to be incremented in the TagCountManager by 1."
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * This set contains tags that are input by the user, and do not exist in the existing tag set."
+        "content": "        return new CommandResult(String.format(MESSAGE_ADD_TAG_SUCCESS, editedExpense));"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param existingTags      in the expense."
+        "content": "    }"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param inputTags         by the user."
+        "content": ""
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @return Set of tags whose count are to be incremented in the TagCountManager by 1."
+        "content": "    /**"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     */"
+        "content": "     * Returns a set of tags whose count needs to be incremented in the TagCountManager by 1."
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private Set\u003cTag\u003e getTagsToIncrement(Set\u003cTag\u003e existingTags, Set\u003cTag\u003e inputTags) {"
+        "content": "     * This set contains tags that are input by the user, and do not exist in the existing tag set."
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        requireAllNonNull(existingTags, inputTags);"
+        "content": "     * @param existingTags      in the expense."
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e existingTagsCopy \u003d new HashSet\u003c\u003e(existingTags);"
+        "content": "     * @param inputTags         by the user."
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e toIncrement \u003d new HashSet\u003c\u003e(inputTags);"
+        "content": "     * @return Set of tags whose count are to be incremented in the TagCountManager by 1."
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        existingTagsCopy.retainAll(toIncrement);"
+        "content": "     */"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        toIncrement.removeAll(existingTagsCopy);"
+        "content": "    private Set\u003cTag\u003e getTagsToIncrement(Set\u003cTag\u003e existingTags, Set\u003cTag\u003e inputTags) {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        return Collections.unmodifiableSet(toIncrement);"
+        "content": "        requireAllNonNull(existingTags, inputTags);"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "        Set\u003cTag\u003e existingTagsCopy \u003d new HashSet\u003c\u003e(existingTags);"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        Set\u003cTag\u003e toIncrement \u003d new HashSet\u003c\u003e(inputTags);"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    /**"
+        "content": "        existingTagsCopy.retainAll(toIncrement);"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Returns set of tags for edited expense by merging existing tag set and set of tags"
+        "content": "        toIncrement.removeAll(existingTagsCopy);"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * whose count are to be incremented."
+        "content": "        return Collections.unmodifiableSet(toIncrement);"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Tags to be added must not contain any tag from the existing tags set."
+        "content": "    }"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param existingTags      in the expense."
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param toIncrement       tags whose count are to be incremented."
+        "content": "    /**"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @return unmodifiable edited tag set with unique elements."
+        "content": "     * Returns set of tags for edited expense by merging existing tag set and set of tags"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     */"
+        "content": "     * whose count are to be incremented."
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private Set\u003cTag\u003e getEditedTags(Set\u003cTag\u003e existingTags, Set\u003cTag\u003e toIncrement) {"
+        "content": "     * Tags to be added must not contain any tag from the existing tags set."
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        requireAllNonNull(existingTags, toIncrement);"
+        "content": "     * @param existingTags      in the expense."
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e editedTags \u003d new HashSet\u003c\u003e(existingTags);"
+        "content": "     * @param toIncrement       tags whose count are to be incremented."
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        editedTags.addAll(toIncrement);"
+        "content": "     * @return unmodifiable edited tag set with unique elements."
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        return Collections.unmodifiableSet(editedTags);"
+        "content": "     */"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "    private Set\u003cTag\u003e getEditedTags(Set\u003cTag\u003e existingTags, Set\u003cTag\u003e toIncrement) {"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        requireAllNonNull(existingTags, toIncrement);"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    @Override"
+        "content": "        Set\u003cTag\u003e editedTags \u003d new HashSet\u003c\u003e(existingTags);"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        editedTags.addAll(toIncrement);"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "        return Collections.unmodifiableSet(editedTags);"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                || (other instanceof AddTagCommand // instanceof handles nulls"
+        "content": "    }"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                \u0026\u0026 tagNames.equals(((AddTagCommand) other).tagNames))"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                \u0026\u0026 index.equals(((AddTagCommand) other).index);"
+        "content": "    @Override"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 115,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "                || (other instanceof AddTagCommand // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "                \u0026\u0026 tagNames.equals(((AddTagCommand) other).tagNames))"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "                \u0026\u0026 index.equals(((AddTagCommand) other).index);"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 120,
         "author": {
           "gitId": "waifonglee"
         },
@@ -39333,7 +39368,7 @@
       }
     ],
     "authorContributionMap": {
-      "waifonglee": 115
+      "waifonglee": 120
     }
   },
   {
@@ -43820,7 +43855,7 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \"Parameters: \" + PREFIX_TAG + \"[TAG]\\n\""
+        "content": "            + \"Parameters: \" + PREFIX_TAG + \"[TAG] (1 or more)\\n\""
       },
       {
         "lineNumber": 19,
@@ -46204,427 +46239,427 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import static seedu.billboard.model.Model.PREDICATE_SHOW_ALL_EXPENSES;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "import java.util.Collections;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import java.util.Collections;"
+        "content": "import java.util.HashSet;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import java.util.HashSet;"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import java.util.List;"
+        "content": "import java.util.Set;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import java.util.Set;"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "import seedu.billboard.commons.core.Messages;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.commons.core.Messages;"
+        "content": "import seedu.billboard.commons.core.index.Index;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.commons.core.index.Index;"
+        "content": "import seedu.billboard.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.logic.commands.exceptions.CommandException;"
+        "content": "import seedu.billboard.model.Model;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.model.Model;"
+        "content": "import seedu.billboard.model.expense.Expense;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.model.expense.Expense;"
+        "content": "import seedu.billboard.model.tag.Tag;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "import seedu.billboard.model.tag.Tag;"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "/**"
+        "content": " * Removes tag(s) from existing expense."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": " * Removes tag(s) from existing expense."
+        "content": " */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": " */"
+        "content": "public class RemoveTagCommand extends TagCommand {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "public class RemoveTagCommand extends TagCommand {"
+        "content": "    public static final String COMMAND_WORD \u003d \"rm\";"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"rm\";"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_USAGE \u003d TagCommand.COMMAND_WORD + \" \" + COMMAND_WORD"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d TagCommand.COMMAND_WORD + \" \" + COMMAND_WORD"
+        "content": "            + \": Removes tag(s) from the expense identified \""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \": Removes tag(s) from the expense identified \""
+        "content": "            + \"by the index number used in the last expense listing. \\n\""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \"by the index number used in the last expense listing. \\n\""
+        "content": "            + \"Parameters: INDEX (must be a positive integer) \""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \"Parameters: INDEX (must be a positive integer) \""
+        "content": "            + PREFIX_TAG + \"[TAG] (1 or more)\\n\""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + PREFIX_TAG + \"[TAG]\\n\""
+        "content": "            + \"Example: \" + TagCommand.COMMAND_WORD + \" \" + COMMAND_WORD + \" 1 \""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \"Example: \" + TagCommand.COMMAND_WORD + \" \" + COMMAND_WORD + \" 1 \""
+        "content": "            + PREFIX_TAG + \"SCHOOL\";"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + PREFIX_TAG + \"SCHOOL\";"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_RM_TAG_SUCCESS \u003d \"Removed tag(s) from Expense: %1$s\";"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public static final String MESSAGE_RM_TAG_SUCCESS \u003d \"Removed tag(s) from Expense: %1$s\";"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_RM_TAG_FAILURE \u003d \"No tag(s) to be removed\";"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private final Index index;"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private List\u003cString\u003e tagNames;"
+        "content": "    private final Index index;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    private List\u003cString\u003e tagNames;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Creates a RemoveTagCommand to remove tags from the specified {@code Expense}"
+        "content": "    /**"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param index             of the expense in the filtered expense list to edit"
+        "content": "     * Creates a RemoveTagCommand to remove tags from the specified {@code Expense}"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param tagNames          tags to be removed from expense."
+        "content": "     * @param index             of the expense in the filtered expense list to edit"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     */"
+        "content": "     * @param tagNames          tags to be removed from expense."
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public RemoveTagCommand(Index index, List\u003cString\u003e tagNames) {"
+        "content": "     */"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        requireAllNonNull(index, tagNames);"
+        "content": "    public RemoveTagCommand(Index index, List\u003cString\u003e tagNames) {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        this.index \u003d index;"
+        "content": "        requireAllNonNull(index, tagNames);"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        this.tagNames \u003d tagNames;"
+        "content": "        this.index \u003d index;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "        this.tagNames \u003d tagNames;"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        List\u003cExpense\u003e lastShownList \u003d model.getFilteredExpenses();"
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        List\u003cExpense\u003e lastShownList \u003d model.getFilteredExpenses();"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        if (index.getZeroBased() \u003e\u003d lastShownList.size()) {"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_EXPENSE_DISPLAYED_INDEX);"
+        "content": "        if (index.getZeroBased() \u003e\u003d lastShownList.size()) {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        }"
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_EXPENSE_DISPLAYED_INDEX);"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Expense expenseToEdit \u003d lastShownList.get(index.getZeroBased());"
+        "content": ""
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        Expense expenseToEdit \u003d lastShownList.get(index.getZeroBased());"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e currentTags \u003d expenseToEdit.getTags();"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e tagsToRemove \u003d removeNotInExpense(currentTags, tagNames);"
+        "content": "        Set\u003cTag\u003e currentTags \u003d expenseToEdit.getTags();"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e editedTags \u003d getEditedTags(currentTags, tagsToRemove);"
+        "content": "        Set\u003cTag\u003e tagsToRemove \u003d getExisting(currentTags, tagNames);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        model.decreaseCount(tagsToRemove);"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        if (tagsToRemove.isEmpty()) {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Expense editedExpense \u003d new Expense(expenseToEdit.getName(), expenseToEdit.getDescription(),"
+        "content": "            return new CommandResult(MESSAGE_RM_TAG_FAILURE);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                expenseToEdit.getAmount(), expenseToEdit.getCreated(), editedTags);"
+        "content": "        }"
       },
       {
         "lineNumber": 66,
@@ -46638,14 +46673,14 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        model.setExpense(expenseToEdit, editedExpense);"
+        "content": "        Set\u003cTag\u003e editedTags \u003d getEditedTags(currentTags, tagsToRemove);"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        model.updateFilteredExpenses(PREDICATE_SHOW_ALL_EXPENSES);"
+        "content": "        model.decreaseCount(tagsToRemove);"
       },
       {
         "lineNumber": 69,
@@ -46659,14 +46694,14 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_RM_TAG_SUCCESS, editedExpense));"
+        "content": "        Expense editedExpense \u003d new Expense(expenseToEdit.getName(), expenseToEdit.getDescription(),"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "                expenseToEdit.getAmount(), expenseToEdit.getCreated(), editedTags);"
       },
       {
         "lineNumber": 72,
@@ -46680,269 +46715,304 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    /**"
+        "content": "        model.setExpense(expenseToEdit, editedExpense);"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Checks and returns a set consisting of tags whose names exist in the existing tags set."
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param existingTags  in the expense"
+        "content": "        return new CommandResult(String.format(MESSAGE_RM_TAG_SUCCESS, editedExpense));"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param inputNames    of tags input by user."
+        "content": "    }"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @return unmodifiable set consisting of tags whose names exist in existing set of tags."
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private Set\u003cTag\u003e removeNotInExpense(Set\u003cTag\u003e existingTags, List\u003cString\u003e inputNames) {"
+        "content": "     * Checks and returns a set consisting of tags whose names exist in the existing tags set."
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        requireAllNonNull(existingTags, inputNames);"
+        "content": "     * @param existingTags  in the expense"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e toReturn \u003d new HashSet\u003c\u003e();"
+        "content": "     * @param inputNames    of tags input by user."
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        for (Tag tag : existingTags) {"
+        "content": "     * @return unmodifiable set consisting of tags whose names exist in existing set of tags."
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            if (inputNames.contains(tag.tagName)) {"
+        "content": "     */"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                toReturn.add(tag);"
+        "content": "    private Set\u003cTag\u003e getExisting(Set\u003cTag\u003e existingTags, List\u003cString\u003e inputNames) {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            }"
+        "content": "        requireAllNonNull(existingTags, inputNames);"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        }"
+        "content": "        Set\u003cTag\u003e toReturn \u003d new HashSet\u003c\u003e();"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        return Collections.unmodifiableSet(toReturn);"
+        "content": "        for (Tag tag : existingTags) {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "            if (inputNames.contains(tag.tagName)) {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "                toReturn.add(tag);"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    /**"
+        "content": "            }"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Removes tags from existing set of tags in expense."
+        "content": "        }"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Tags in set to be removed must exist in existing tags set."
+        "content": "        return Collections.unmodifiableSet(toReturn);"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param existingTags      in expense."
+        "content": "    }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param toRemove          tag set to be removed."
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @return unmodifiable set consisting of remaining elements."
+        "content": "    /**"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     */"
+        "content": "     * Removes tags from existing set of tags in expense."
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private Set\u003cTag\u003e getEditedTags(Set\u003cTag\u003e existingTags, Set\u003cTag\u003e toRemove) {"
+        "content": "     * Tags in set to be removed must exist in existing tags set."
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        requireAllNonNull(existingTags, toRemove);"
+        "content": "     * @param existingTags      in expense."
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        Set\u003cTag\u003e toReturn \u003d new HashSet\u003c\u003e(existingTags);"
+        "content": "     * @param toRemove          tag set to be removed."
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        toReturn.removeAll(toRemove);"
+        "content": "     * @return unmodifiable set consisting of remaining elements."
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        return Collections.unmodifiableSet(toReturn);"
+        "content": "     */"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "    private Set\u003cTag\u003e getEditedTags(Set\u003cTag\u003e existingTags, Set\u003cTag\u003e toRemove) {"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        requireAllNonNull(existingTags, toRemove);"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    @Override"
+        "content": "        Set\u003cTag\u003e toReturn \u003d new HashSet\u003c\u003e(existingTags);"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        toReturn.removeAll(toRemove);"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "        return Collections.unmodifiableSet(toReturn);"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                || (other instanceof RemoveTagCommand // instanceof handles nulls"
+        "content": "    }"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                \u0026\u0026 tagNames.equals(((RemoveTagCommand) other).tagNames))"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "                \u0026\u0026 index.equals(((RemoveTagCommand) other).index);"
+        "content": "    @Override"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 111,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "                || (other instanceof RemoveTagCommand // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "                \u0026\u0026 tagNames.equals(((RemoveTagCommand) other).tagNames))"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "                \u0026\u0026 index.equals(((RemoveTagCommand) other).index);"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 116,
         "author": {
           "gitId": "waifonglee"
         },
@@ -46950,7 +47020,7 @@
       }
     ],
     "authorContributionMap": {
-      "waifonglee": 111
+      "waifonglee": 116
     }
   },
   {
@@ -56720,255 +56790,262 @@
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public static final String MESSAGE_TAG_COMMANDS \u003d \"Invalid command format! \\nSupported commands:\\n\""
+        "content": "    public static final String MESSAGE_TAG_COMMANDS \u003d \"Invalid command format! \\n\""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            + \"add \\nrm \\nlist \\nfilter\\nFor more information:\\n\" + HelpCommand.MESSAGE_USAGE;"
+        "content": "            + \"Command format: tag (tag command) (parameters)\" + \"\\nSupported tag commands:\\n\""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "            + \"add \\nrm \\nlist \\nfilter\\nFor more information:\\n\" + HelpCommand.MESSAGE_USAGE;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Used for initial separation of command word and args."
+        "content": "    /**"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     */"
+        "content": "     * Used for initial separation of command word and args."
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    private static final Pattern BASIC_COMMAND_FORMAT \u003d Pattern.compile(\"(?\u003ccommandWord\u003e\\\\S+)(?\u003carguments\u003e.*)\");"
+        "content": "     */"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    /**"
+        "content": "    private static final Pattern BASIC_COMMAND_FORMAT \u003d Pattern.compile(\"(?\u003ccommandWord\u003e\\\\S+)(?\u003carguments\u003e.*)\");"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * Parses user input into command for execution."
+        "content": "    /**"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     *"
+        "content": "     * Parses user input into command for execution."
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @param userInput full user input string"
+        "content": "     *"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @return the command based on the user input"
+        "content": "     * @param userInput full user input string"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     * @return the command based on the user input"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    public TagCommand parse(String userInput) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(userInput.trim());"
+        "content": "    public TagCommand parse(String userInput) throws ParseException {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        if (!matcher.matches()) {"
+        "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(userInput.trim());"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            throw new ParseException(MESSAGE_TAG_COMMANDS);"
+        "content": "        if (!matcher.matches()) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(MESSAGE_TAG_COMMANDS);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        final String commandWord \u003d matcher.group(\"commandWord\");"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        final String arguments \u003d matcher.group(\"arguments\");"
+        "content": "        final String commandWord \u003d matcher.group(\"commandWord\");"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        switch (commandWord) {"
+        "content": "        final String arguments \u003d matcher.group(\"arguments\");"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        case AddTagCommand.COMMAND_WORD:"
+        "content": "        switch (commandWord) {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            return new AddTagCommandParser().parse(arguments);"
+        "content": "        case AddTagCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        case FilterTagCommand.COMMAND_WORD:"
+        "content": "            return new AddTagCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            return new FilterTagCommandParser().parse(arguments);"
+        "content": "        case FilterTagCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        case RemoveTagCommand.COMMAND_WORD:"
+        "content": "            return new FilterTagCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            return new RemoveTagCommandParser().parse(arguments);"
+        "content": "        case RemoveTagCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        case ListTagCommand.COMMAND_WORD:"
+        "content": "            return new RemoveTagCommandParser().parse(arguments);"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            return new ListTagCommand();"
+        "content": "        case ListTagCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        default:"
+        "content": "            return new ListTagCommand();"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "            throw new ParseException(MESSAGE_TAG_COMMANDS);"
+        "content": "        default:"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(MESSAGE_TAG_COMMANDS);"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 55,
+        "author": {
+          "gitId": "waifonglee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
         "author": {
           "gitId": "waifonglee"
         },
@@ -56976,7 +57053,7 @@
       }
     ],
     "authorContributionMap": {
-      "waifonglee": 55
+      "waifonglee": 56
     }
   },
   {
@@ -79682,355 +79759,383 @@
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "-"
+          "gitId": "waifonglee"
         },
-        "content": "import java.util.Set;"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "-"
         },
-        "content": "import java.util.stream.Collectors;"
+        "content": "import java.util.Set;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "import java.util.stream.Collectors;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "waynefong0401"
+          "gitId": "-"
         },
-        "content": "import seedu.billboard.model.Billboard;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "waynefong0401"
         },
-        "content": "import seedu.billboard.model.ReadOnlyBillboard;"
+        "content": "import seedu.billboard.model.Billboard;"
       },
       {
         "lineNumber": 9,
+        "author": {
+          "gitId": "waynefong0401"
+        },
+        "content": "import seedu.billboard.model.ReadOnlyBillboard;"
+      },
+      {
+        "lineNumber": 10,
         "author": {
           "gitId": "waifonglee"
         },
         "content": "import seedu.billboard.model.expense.Amount;"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 11,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "import seedu.billboard.model.expense.CreatedDateTime;"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 12,
         "author": {
           "gitId": "waifonglee"
         },
         "content": "import seedu.billboard.model.expense.Description;"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 13,
         "author": {
           "gitId": "waynefong0401"
         },
         "content": "import seedu.billboard.model.expense.Expense;"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 14,
         "author": {
           "gitId": "waifonglee"
         },
         "content": "import seedu.billboard.model.expense.Name;"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 15,
         "author": {
           "gitId": "waynefong0401"
         },
         "content": "import seedu.billboard.model.tag.Tag;"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
         "content": "/**"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 18,
         "author": {
           "gitId": "waynefong0401"
         },
         "content": " * Contains utility methods for populating {@code Billboard} with sample data."
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
         "content": " */"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
         "content": "public class SampleDataUtil {"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 21,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "    public static Expense[] getSampleExpenses() {"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 22,
         "author": {
           "gitId": "waynefong0401"
         },
         "content": "        return new Expense[] {"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 23,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "            new Expense(new Name(\"buy tea\"), new Description(\"tea from foodclique\"),"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 24,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "                    new Amount(\"1.23\"), new CreatedDateTime(\"12/12/2018\"), getTagSet(\"com1\")),"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 25,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "            new Expense(new Name(\"buy kopiO\"), new Description(\"\"),"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 26,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "                    new Amount(\"1.50\"), new CreatedDateTime(\"13/04/2019 2359\"), getTagSet(\"com2\")),"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 27,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "            new Expense(new Name(\"buy lunch\"), new Description(\"chicken rice from deck\"),"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 28,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "                    new Amount(\"3.70\"), new CreatedDateTime(\"1/1/2018\"), getTagSet(\"thedeck\")),"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 29,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "            new Expense(new Name(\"buy book\"), new Description(\"so expensive wtf\"),"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 30,
         "author": {
           "gitId": "weiijiie"
         },
         "content": "                    new Amount(\"77.3\"), new CreatedDateTime(\"3/05/2019\"), getTagSet(\"coop\")),"
       },
       {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "weiijiie"
-        },
-        "content": "            new Expense(new Name(\"bride prof\"), new Description(\"\"),"
-      },
-      {
         "lineNumber": 31,
         "author": {
-          "gitId": "weiijiie"
+          "gitId": "waifonglee"
         },
-        "content": "                    new Amount(\"500.00\"), new CreatedDateTime(\"31/12/2018 1200\"), getTagSet(\"LT13\")),"
+        "content": "            new Expense(new Name(\"bribe prof\"), new Description(\"\"),"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "weiijiie"
         },
-        "content": "            new Expense(new Name(\"buy weed\"), new Description(\"jk haha\"),"
+        "content": "                    new Amount(\"500.00\"), new CreatedDateTime(\"31/12/2018 1200\"), getTagSet(\"LT13\")),"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "weiijiie"
         },
-        "content": "                    new Amount(\"150.00\"), new CreatedDateTime(\"10/10/2019\"), getTagSet(\"PGP\"))"
+        "content": "            new Expense(new Name(\"buy weed\"), new Description(\"jk haha\"),"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "-"
+          "gitId": "weiijiie"
         },
-        "content": "        };"
+        "content": "                    new Amount(\"150.00\"), new CreatedDateTime(\"10/10/2019\"), getTagSet(\"PGP\"))"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        };"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "weiijiie"
+          "gitId": "-"
         },
-        "content": "    public static ReadOnlyBillboard getSampleBillboard() {"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "weiijiie"
         },
-        "content": "        Billboard sampleBb \u003d new Billboard();"
+        "content": "    public static ReadOnlyBillboard getSampleBillboard() {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "weiijiie"
         },
-        "content": "        for (Expense sampleExpense : getSampleExpenses()) {"
+        "content": "        Billboard sampleBb \u003d new Billboard();"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "weiijiie"
         },
-        "content": "            sampleBb.addExpense(sampleExpense);"
+        "content": "        for (Expense sampleExpense : getSampleExpenses()) {"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "-"
+          "gitId": "weiijiie"
         },
-        "content": "        }"
+        "content": "            sampleBb.addExpense(sampleExpense);"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "weiijiie"
+          "gitId": "waifonglee"
         },
-        "content": "        return sampleBb;"
+        "content": "            List\u003cString\u003e tagNames \u003d sampleExpense.getTags().stream().map(x -\u003e x.tagName).collect(Collectors.toList());"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "-"
+          "gitId": "waifonglee"
         },
-        "content": "    }"
+        "content": "            Set\u003cTag\u003e tags \u003d sampleBb.retrieveTags(tagNames);"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "-"
+          "gitId": "waifonglee"
         },
-        "content": ""
+        "content": "            sampleBb.incrementCount(tags);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "-"
+          "gitId": "weiijiie"
         },
-        "content": "     * Returns a tag set containing the list of strings given."
+        "content": "        return sampleBb;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static Set\u003cTag\u003e getTagSet(String... strings) {"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "        return Arrays.stream(strings)"
+        "content": "    /**"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "                .map(Tag::new)"
+        "content": "     * Returns a tag set containing the list of strings given."
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "                .collect(Collectors.toSet());"
+        "content": "     */"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    public static Set\u003cTag\u003e getTagSet(String... strings) {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return Arrays.stream(strings)"
       },
       {
         "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                .map(Tag::new)"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                .collect(Collectors.toSet());"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
@@ -80038,10 +80143,10 @@
       }
     ],
     "authorContributionMap": {
-      "waifonglee": 3,
+      "waifonglee": 8,
       "waynefong0401": 7,
       "-": 25,
-      "weiijiie": 19
+      "weiijiie": 18
     }
   },
   {

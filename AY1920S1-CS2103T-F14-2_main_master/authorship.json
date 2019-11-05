@@ -43488,7 +43488,7 @@
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "public class FindNotesCommandParser implements Parser\u003cFindNotesCommand\u003e {"
+        "content": "public class FindNotesCommandParser {"
       },
       {
         "lineNumber": 15,
@@ -65530,7 +65530,7 @@
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "    public static final String VALIDATION_REGEX \u003d \"[\\\\p{Alnum}][\\\\p{Alnum} ]*\";"
+        "content": "    public static final String VALIDATION_REGEX \u003d \"[^\\\\s].*\";"
       },
       {
         "lineNumber": 14,
@@ -66873,66 +66873,73 @@
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                .anyMatch(keyword -\u003e StringUtil.containsWordIgnoreCase(note.getCode().moduleCode, keyword));"
+        "content": "                .anyMatch(keyword -\u003e StringUtil.containsWordIgnoreCase(note.getCode().moduleCode + \" \""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "    }"
+        "content": "                        + note.getContent().content, keyword));"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                || (other instanceof NotesContainsKeywordsPredicate // instanceof handles nulls"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                \u0026\u0026 keywords.equals(((NotesContainsKeywordsPredicate) other).keywords)); // state check"
+        "content": "                || (other instanceof NotesContainsKeywordsPredicate // instanceof handles nulls"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 keywords.equals(((NotesContainsKeywordsPredicate) other).keywords)); // state check"
       },
       {
         "lineNumber": 30,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
         "author": {
           "gitId": "TeoShyanJie"
         },
@@ -66940,7 +66947,7 @@
       }
     ],
     "authorContributionMap": {
-      "TeoShyanJie": 30
+      "TeoShyanJie": 31
     }
   },
   {
@@ -95128,7 +95135,7 @@
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "     * Custom {@code ListCell} that displays the graphics of a {@code Earnings} using a {@code EarningsCard}."
+        "content": "     * Custom {@code ListCell} that displays the graphics of a {@code Notes} using a {@code NotesCard}."
       },
       {
         "lineNumber": 31,
@@ -105045,199 +105052,297 @@
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "\u003c?import javafx.scene.control.Label?\u003e"
+        "content": "\u003c?import javafx.scene.control.Button?\u003e"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "\u003c?import javafx.scene.layout.ColumnConstraints?\u003e"
+        "content": "\u003c?import javafx.scene.control.Label?\u003e"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "\u003c?import javafx.scene.layout.GridPane?\u003e"
+        "content": "\u003c?import javafx.scene.layout.ColumnConstraints?\u003e"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "\u003c?import javafx.scene.layout.HBox?\u003e"
+        "content": "\u003c?import javafx.scene.layout.GridPane?\u003e"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "\u003c?import javafx.scene.layout.Region?\u003e"
+        "content": "\u003c?import javafx.scene.layout.HBox?\u003e"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "\u003c?import javafx.scene.layout.VBox?\u003e"
+        "content": "\u003c?import javafx.scene.layout.Region?\u003e"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": ""
+        "content": "\u003c?import javafx.scene.layout.RowConstraints?\u003e"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "\u003cHBox id\u003d\"cardPane\" fx:id\u003d\"cardPane\" xmlns\u003d\"http://javafx.com/javafx/8\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+        "content": "\u003c?import javafx.scene.layout.VBox?\u003e"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "    \u003cGridPane HBox.hgrow\u003d\"ALWAYS\"\u003e"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "        \u003ccolumnConstraints\u003e"
+        "content": "\u003cHBox id\u003d\"cardPane\" fx:id\u003d\"cardPane\" xmlns\u003d\"http://javafx.com/javafx/11.0.1\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "            \u003cColumnConstraints hgrow\u003d\"SOMETIMES\" minWidth\u003d\"10\" prefWidth\u003d\"150\" /\u003e"
+        "content": "    \u003cGridPane HBox.hgrow\u003d\"ALWAYS\"\u003e"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "        \u003c/columnConstraints\u003e"
+        "content": "        \u003ccolumnConstraints\u003e"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "        \u003cVBox alignment\u003d\"CENTER_LEFT\" minHeight\u003d\"105\" GridPane.columnIndex\u003d\"0\"\u003e"
+        "content": "            \u003cColumnConstraints hgrow\u003d\"SOMETIMES\" minWidth\u003d\"10\" prefWidth\u003d\"150\" /\u003e"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "            \u003cpadding\u003e"
+        "content": "        \u003c/columnConstraints\u003e"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                \u003cInsets top\u003d\"5\" right\u003d\"5\" bottom\u003d\"5\" left\u003d\"15\" /\u003e"
+        "content": "      \u003cHBox prefHeight\u003d\"100.0\" prefWidth\u003d\"200.0\"\u003e"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "            \u003c/padding\u003e"
+        "content": "         \u003cchildren\u003e"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "            \u003cHBox spacing\u003d\"5\" alignment\u003d\"CENTER_LEFT\"\u003e"
+        "content": "              \u003cVBox alignment\u003d\"CENTER_LEFT\" minHeight\u003d\"105\" prefWidth\u003d\"248.0\"\u003e"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                \u003cLabel fx:id\u003d\"id\" styleClass\u003d\"cell_big_label\"\u003e"
+        "content": "                  \u003cpadding\u003e"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                    \u003cminWidth\u003e"
+        "content": "                      \u003cInsets bottom\u003d\"5\" left\u003d\"15\" right\u003d\"5\" top\u003d\"5\" /\u003e"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                        \u003c!-- Ensures that the label text is never truncated --\u003e"
+        "content": "                  \u003c/padding\u003e"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                        \u003cRegion fx:constant\u003d\"USE_PREF_SIZE\" /\u003e"
+        "content": "                  \u003cHBox alignment\u003d\"CENTER_LEFT\" spacing\u003d\"5\"\u003e"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                    \u003c/minWidth\u003e"
+        "content": "                      \u003cLabel fx:id\u003d\"id\" styleClass\u003d\"cell_big_label\"\u003e"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                \u003c/Label\u003e"
+        "content": "                          \u003cminWidth\u003e"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "                \u003cLabel fx:id\u003d\"classId\" text\u003d\"\\$classId\" styleClass\u003d\"cell_big_label\" /\u003e"
+        "content": "                              \u003c!-- Ensures that the label text is never truncated --\u003e"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "            \u003c/HBox\u003e"
+        "content": "                              \u003cRegion fx:constant\u003d\"USE_PREF_SIZE\" /\u003e"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "            \u003cLabel fx:id\u003d\"content\" styleClass\u003d\"cell_small_label\" text\u003d\"\\$content\" /\u003e"
+        "content": "                          \u003c/minWidth\u003e"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "        \u003c/VBox\u003e"
+        "content": "                      \u003c/Label\u003e"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "    \u003c/GridPane\u003e"
+        "content": "                      \u003cLabel fx:id\u003d\"classId\" styleClass\u003d\"cell_big_label\" text\u003d\"\\$classId\" /\u003e"
       },
       {
         "lineNumber": 32,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "                  \u003c/HBox\u003e"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "                  \u003cLabel fx:id\u003d\"content\" styleClass\u003d\"cell_small_label\" text\u003d\"\\$content\" /\u003e"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "              \u003c/VBox\u003e"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "         \u003c/children\u003e"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "      \u003c/HBox\u003e"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "      \u003crowConstraints\u003e"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "         \u003cRowConstraints /\u003e"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "      \u003c/rowConstraints\u003e"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "    \u003c/GridPane\u003e"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "   \u003cHBox alignment\u003d\"CENTER_RIGHT\" prefHeight\u003d\"100.0\" prefWidth\u003d\"200.0\"\u003e"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "      \u003cchildren\u003e"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "         \u003cButton mnemonicParsing\u003d\"false\" text\u003d\"x\" textAlignment\u003d\"RIGHT\" textFill\u003d\"#979797\" /\u003e"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "      \u003c/children\u003e"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "   \u003c/HBox\u003e"
+      },
+      {
+        "lineNumber": 46,
         "author": {
           "gitId": "TeoShyanJie"
         },
@@ -105245,7 +105350,7 @@
       }
     ],
     "authorContributionMap": {
-      "TeoShyanJie": 32
+      "TeoShyanJie": 46
     }
   },
   {
@@ -105292,17 +105397,24 @@
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "\u003cVBox xmlns\u003d\"http://javafx.com/javafx/8\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
+        "content": "\u003c?import javafx.scene.control.Button?\u003e"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "TeoShyanJie"
         },
-        "content": "    \u003cListView fx:id\u003d\"notesListView\" VBox.vgrow\u003d\"ALWAYS\" /\u003e"
+        "content": "\u003cVBox xmlns\u003d\"http://javafx.com/javafx/8\" xmlns:fx\u003d\"http://javafx.com/fxml/1\"\u003e"
       },
       {
         "lineNumber": 8,
+        "author": {
+          "gitId": "TeoShyanJie"
+        },
+        "content": "    \u003cListView fx:id\u003d\"notesListView\" VBox.vgrow\u003d\"ALWAYS\" /\u003e"
+      },
+      {
+        "lineNumber": 9,
         "author": {
           "gitId": "TeoShyanJie"
         },
@@ -105310,7 +105422,7 @@
       }
     ],
     "authorContributionMap": {
-      "TeoShyanJie": 8
+      "TeoShyanJie": 9
     }
   },
   {

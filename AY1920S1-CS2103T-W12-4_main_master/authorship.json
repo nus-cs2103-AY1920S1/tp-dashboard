@@ -25258,26 +25258,33 @@
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "nexolute"
+          "gitId": "LeeYiyuan"
         },
-        "content": "    public static final String MESSAGE_BUDGETS_LISTED_OVERVIEW \u003d \"%1$d budgets listed!\";"
+        "content": "    public static final String MESSAGE_INVALID_REPEATER_MONTH_OFFSETS \u003d \"The repeater month offsets are invalid\";"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "nexolute"
         },
-        "content": "    public static final String MESSAGE_INVALID_BUDGET_DISPLAYED_INDEX \u003d \"The budget index provided is invalid\";"
+        "content": "    public static final String MESSAGE_BUDGETS_LISTED_OVERVIEW \u003d \"%1$d budgets listed!\";"
       },
       {
         "lineNumber": 20,
+        "author": {
+          "gitId": "nexolute"
+        },
+        "content": "    public static final String MESSAGE_INVALID_BUDGET_DISPLAYED_INDEX \u003d \"The budget index provided is invalid\";"
+      },
+      {
+        "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
@@ -25285,7 +25292,7 @@
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 2,
+      "LeeYiyuan": 3,
       "nexolute": 3,
       "weiyang13": 5,
       "-": 11
@@ -41782,28 +41789,28 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_CATEGORY + \"CATEGORY \""
+        "content": "            + \"[\" + PREFIX_CATEGORY + \"CATEGORY] \""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_TRANSACTION_TYPE + \"TRANSACTION_TYPE \""
+        "content": "            + \"[\" + PREFIX_TRANSACTION_TYPE + \"TRANSACTION_TYPE] \""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_MONTH_START_OFFSET + \"MONTH_START_OFFSET \""
+        "content": "            + \"[\" + PREFIX_MONTH_START_OFFSET + \"MONTH_START_OFFSET] \""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_MONTH_END_OFFSET + \"MONTH_END_OFFSET \""
+        "content": "            + \"[\" + PREFIX_MONTH_END_OFFSET + \"MONTH_END_OFFSET] \""
       },
       {
         "lineNumber": 39,
@@ -41838,112 +41845,112 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + \"\\nConstraints: Repeater end must not occur before repeater start. Repeater start and end can span at \""
+        "content": "            + \"\\nConstraints:\\n\""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + \"most 60 months (5 years).\\n\""
+        "content": "            + \"- Repeater end must not occur before repeater start.\\n\""
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + \"Example: \""
+        "content": "            + \"- Repeater start and end can span at most 60 months (5 years).\\n\""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + COMMAND_WORD + \" \""
+        "content": "            + \"- At least one of month start offset or month end offset must not be ignored.\\n\""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_DESCRIPTION + \"Phone bills \""
+        "content": "            + \"Example: \""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_AMOUNT + \"42.15 \""
+        "content": "            + COMMAND_WORD + \" \""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_CATEGORY + \"Utilities \""
+        "content": "            + PREFIX_DESCRIPTION + \"Phone bills \""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_TRANSACTION_TYPE + \"exp \""
+        "content": "            + PREFIX_AMOUNT + \"42.15 \""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_MONTH_START_OFFSET + \"3 \""
+        "content": "            + PREFIX_CATEGORY + \"Utilities \""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_MONTH_END_OFFSET + \"2 \""
+        "content": "            + PREFIX_TRANSACTION_TYPE + \"exp \""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_START_MONTH + \"1 \""
+        "content": "            + PREFIX_MONTH_START_OFFSET + \"3 \""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_START_YEAR + \"2019 \""
+        "content": "            + PREFIX_MONTH_END_OFFSET + \"2 \""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_END_MONTH + \"12 \""
+        "content": "            + PREFIX_START_MONTH + \"1 \""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            + PREFIX_END_YEAR + \"2020\";"
+        "content": "            + PREFIX_START_YEAR + \"2019 \""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            + PREFIX_END_MONTH + \"12 \""
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public static final String MESSAGE_ADD_REPEATER_SUCCESS \u003d \"New repeater added: %1$s\";"
+        "content": "            + PREFIX_END_YEAR + \"2020\";"
       },
       {
         "lineNumber": 59,
@@ -41957,7 +41964,7 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    private final Repeater toAdd;"
+        "content": "    public static final String MESSAGE_ADD_REPEATER_SUCCESS \u003d \"New repeater added: %1$s\";"
       },
       {
         "lineNumber": 61,
@@ -41971,203 +41978,203 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    /**"
+        "content": "    private final Repeater toAdd;"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * Creates an AddCommand to add the specified {@code Repeater}"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public AddRepeaterCommand(Repeater repeater) {"
+        "content": "     * Creates an AddCommand to add the specified {@code Repeater}"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        requireNonNull(repeater);"
+        "content": "     */"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        toAdd \u003d repeater;"
+        "content": "    public AddRepeaterCommand(Repeater repeater) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "        requireNonNull(repeater);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        toAdd \u003d repeater;"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    @Override"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // Check repeater span."
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (toAdd.getEndDate().compareTo(toAdd.getStartDate()) \u003e 0) {"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_REPEATER_SPAN);"
+        "content": "        // Check repeater span."
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "        if (toAdd.getEndDate().compareTo(toAdd.getStartDate()) \u003e 0) {"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (countMonths(toAdd.getStartDate(), toAdd.getEndDate()) \u003e 60) {"
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_REPEATER_SPAN);"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_REPEATER_SPAN);"
+        "content": "        }"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "        if (countMonths(toAdd.getStartDate(), toAdd.getEndDate()) \u003e 60) {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_REPEATER_SPAN);"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // Get current repeater unique id."
+        "content": "        }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        RepeaterUniqueId repeaterUniqueId \u003d model.getCurrentRepeaterUniqueId();"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        // Check offsets."
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // Create new repeater."
+        "content": "        if (toAdd.getMonthStartOffset().isIgnored() \u0026\u0026 toAdd.getMonthEndOffset().isIgnored()) {"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Repeater newRepeater \u003d new Repeater("
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_REPEATER_MONTH_OFFSETS);"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                    repeaterUniqueId,"
+        "content": "        }"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                    toAdd.getDescription(), toAdd.getAmount(), toAdd.getCategory(),"
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                    toAdd.getTransactionType(), toAdd.getMonthStartOffset(), toAdd.getMonthEndOffset(),"
+        "content": "        // Get current repeater unique id."
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                    toAdd.getStartDate(), toAdd.getEndDate());"
+        "content": "        RepeaterUniqueId repeaterUniqueId \u003d model.getCurrentRepeaterUniqueId();"
       },
       {
         "lineNumber": 91,
@@ -42181,42 +42188,42 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // Update current repeater unique id."
+        "content": "        // Create new repeater."
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        model.setCurrentRepeaterUniqueId(new RepeaterUniqueId(String.valueOf("
+        "content": "        Repeater newRepeater \u003d new Repeater("
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                    repeaterUniqueId.id + 1)));"
+        "content": "                    repeaterUniqueId,"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "                    toAdd.getDescription(), toAdd.getAmount(), toAdd.getCategory(),"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // Add repeater."
+        "content": "                    toAdd.getTransactionType(), toAdd.getMonthStartOffset(), toAdd.getMonthEndOffset(),"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        model.addRepeater(newRepeater);"
+        "content": "                    toAdd.getStartDate(), toAdd.getEndDate());"
       },
       {
         "lineNumber": 98,
@@ -42230,168 +42237,168 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // Create repeater transactions."
+        "content": "        // Update current repeater unique id."
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        model.createRepeaterTransactions(newRepeater);"
+        "content": "        model.setCurrentRepeaterUniqueId(new RepeaterUniqueId(String.valueOf("
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "                    repeaterUniqueId.id + 1)));"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_ADD_REPEATER_SUCCESS, toAdd));"
+        "content": ""
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "        // Add repeater."
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        model.addRepeater(newRepeater);"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * Counts the number of months spanned by two dates."
+        "content": "        // Create repeater transactions."
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     */"
+        "content": "        model.createRepeaterTransactions(newRepeater);"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    private static int countMonths(Date startDate, Date endDate) {"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (endDate.compareTo(startDate) \u003e 0) {"
+        "content": "        return new CommandResult(String.format(MESSAGE_ADD_REPEATER_SUCCESS, toAdd));"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return 0;"
+        "content": "    }"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (endDate.compareTo(startDate) \u003d\u003d 0) {"
+        "content": "     * Counts the number of months spanned by two dates."
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return 1;"
+        "content": "     */"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "    private static int countMonths(Date startDate, Date endDate) {"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        if (endDate.compareTo(startDate) \u003e 0) {"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int startMonth \u003d startDate.getMonth().monthNumber;"
+        "content": "            return 0;"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int startYear \u003d startDate.getYear().yearNumber;"
+        "content": "        }"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int currentMonth \u003d startDate.getMonth().monthNumber;"
+        "content": ""
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int currentYear \u003d startDate.getYear().yearNumber;"
+        "content": "        if (endDate.compareTo(startDate) \u003d\u003d 0) {"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int endMonth \u003d endDate.getMonth().monthNumber;"
+        "content": "            return 1;"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int endYear \u003d endDate.getYear().yearNumber;"
+        "content": "        }"
       },
       {
         "lineNumber": 123,
@@ -42405,126 +42412,126 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int months \u003d 0;"
+        "content": "        int startMonth \u003d startDate.getMonth().monthNumber;"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        while ((currentYear \u003c endYear) || (currentYear \u003d\u003d endYear \u0026\u0026 currentMonth \u003c\u003d endMonth)) {"
+        "content": "        int startYear \u003d startDate.getYear().yearNumber;"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            months++;"
+        "content": "        int currentMonth \u003d startDate.getMonth().monthNumber;"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            currentMonth++;"
+        "content": "        int currentYear \u003d startDate.getYear().yearNumber;"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            if (currentMonth \u003d\u003d 13) {"
+        "content": "        int endMonth \u003d endDate.getMonth().monthNumber;"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                currentMonth \u003d 1;"
+        "content": "        int endYear \u003d endDate.getYear().yearNumber;"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                currentYear++;"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            }"
+        "content": "        int months \u003d 0;"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "        while ((currentYear \u003c endYear) || (currentYear \u003d\u003d endYear \u0026\u0026 currentMonth \u003c\u003d endMonth)) {"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            months++;"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return months;"
+        "content": "            currentMonth++;"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "            if (currentMonth \u003d\u003d 13) {"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "                currentMonth \u003d 1;"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    @Override"
+        "content": "                currentYear++;"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "            }"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "        }"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                || (other instanceof AddRepeaterCommand // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 toAdd.equals(((AddRepeaterCommand) other).toAdd));"
+        "content": "        return months;"
       },
       {
         "lineNumber": 142,
@@ -42538,11 +42545,60 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                || (other instanceof AddRepeaterCommand // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                \u0026\u0026 toAdd.equals(((AddRepeaterCommand) other).toAdd));"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 142,
+      "LeeYiyuan": 149,
       "weiyang13": 1
     }
   },
@@ -42686,9 +42742,9 @@
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "weiyang13"
+          "gitId": "LeeYiyuan"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"del\";"
+        "content": "    public static final String COMMAND_WORD \u003d \"delete\";"
       },
       {
         "lineNumber": 21,
@@ -42944,8 +43000,7 @@
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 55,
-      "weiyang13": 1
+      "LeeYiyuan": 56
     }
   },
   {
@@ -43804,28 +43859,28 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        // Check offsets."
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Repeater editedRepeater \u003d new Repeater(updatedUniqueId, updatedDescription, updatedAmount,"
+        "content": "        if (updatedMonthStartOffset.isIgnored() \u0026\u0026 updatedMonthEndOffset.isIgnored()) {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                updatedCategory, updatedTransactionType,"
+        "content": "            throw new CommandException(Messages.MESSAGE_INVALID_REPEATER_MONTH_OFFSETS);"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                updatedMonthStartOffset, updatedMonthEndOffset, updatedStartDate, updatedEndDate);"
+        "content": "        }"
       },
       {
         "lineNumber": 126,
@@ -43839,133 +43894,133 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        model.setRepeater(repeaterToEdit, editedRepeater);"
+        "content": "        Repeater editedRepeater \u003d new Repeater(updatedUniqueId, updatedDescription, updatedAmount,"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        model.updateFilteredRepeaterList(PREDICATE_SHOW_ALL_REPEATERS);"
+        "content": "                updatedCategory, updatedTransactionType,"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "                updatedMonthStartOffset, updatedMonthEndOffset, updatedStartDate, updatedEndDate);"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        model.deleteRepeaterTransactions(editedRepeater.getUniqueId());"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        model.createRepeaterTransactions(editedRepeater);"
+        "content": "        model.setRepeater(repeaterToEdit, editedRepeater);"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        model.updateFilteredRepeaterList(PREDICATE_SHOW_ALL_REPEATERS);"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_REPEATER_SUCCESS, editedRepeater));"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "        model.deleteRepeaterTransactions(editedRepeater.getUniqueId());"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        model.createRepeaterTransactions(editedRepeater);"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * Counts the number of months spanned by two dates."
+        "content": "        return new CommandResult(String.format(MESSAGE_EDIT_REPEATER_SUCCESS, editedRepeater));"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    private static int countMonths(Date startDate, Date endDate) {"
+        "content": ""
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (endDate.compareTo(startDate) \u003e 0) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return 0;"
+        "content": "     * Counts the number of months spanned by two dates."
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "     */"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "    private static int countMonths(Date startDate, Date endDate) {"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (endDate.compareTo(startDate) \u003d\u003d 0) {"
+        "content": "        if (endDate.compareTo(startDate) \u003e 0) {"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return 1;"
+        "content": "            return 0;"
       },
       {
         "lineNumber": 146,
@@ -43986,469 +44041,469 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int startMonth \u003d startDate.getMonth().monthNumber;"
+        "content": "        if (endDate.compareTo(startDate) \u003d\u003d 0) {"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int startYear \u003d startDate.getYear().yearNumber;"
+        "content": "            return 1;"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int currentMonth \u003d startDate.getMonth().monthNumber;"
+        "content": "        }"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int currentYear \u003d startDate.getYear().yearNumber;"
+        "content": ""
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int endMonth \u003d endDate.getMonth().monthNumber;"
+        "content": "        int startMonth \u003d startDate.getMonth().monthNumber;"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int endYear \u003d endDate.getYear().yearNumber;"
+        "content": "        int startYear \u003d startDate.getYear().yearNumber;"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        int currentMonth \u003d startDate.getMonth().monthNumber;"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        int months \u003d 0;"
+        "content": "        int currentYear \u003d startDate.getYear().yearNumber;"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        while ((currentYear \u003c endYear) || (currentYear \u003d\u003d endYear \u0026\u0026 currentMonth \u003c\u003d endMonth)) {"
+        "content": "        int endMonth \u003d endDate.getMonth().monthNumber;"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            months++;"
+        "content": "        int endYear \u003d endDate.getYear().yearNumber;"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            currentMonth++;"
+        "content": ""
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            if (currentMonth \u003d\u003d 13) {"
+        "content": "        int months \u003d 0;"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                currentMonth \u003d 1;"
+        "content": "        while ((currentYear \u003c endYear) || (currentYear \u003d\u003d endYear \u0026\u0026 currentMonth \u003c\u003d endMonth)) {"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                currentYear++;"
+        "content": "            months++;"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            }"
+        "content": "            currentMonth++;"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "            if (currentMonth \u003d\u003d 13) {"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "                currentMonth \u003d 1;"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return months;"
+        "content": "                currentYear++;"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "        return months;"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    }"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                || (other instanceof EditRepeaterCommand // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 editRepeaterDescriptor.equals(((EditRepeaterCommand) other).editRepeaterDescriptor));"
+        "content": "    @Override"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    /**"
+        "content": "                || (other instanceof EditRepeaterCommand // instanceof handles nulls"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * Stores the details to edit the repeater with. Each non-empty field value will replace the"
+        "content": "                \u0026\u0026 editRepeaterDescriptor.equals(((EditRepeaterCommand) other).editRepeaterDescriptor));"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * corresponding field value of the repeater."
+        "content": "    }"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public static class EditRepeaterDescriptor {"
+        "content": "    /**"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        private Description description;"
+        "content": "     * Stores the details to edit the repeater with. Each non-empty field value will replace the"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        private Amount amount;"
+        "content": "     * corresponding field value of the repeater."
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        private Category category;"
+        "content": "     */"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        private TransactionType transactionType;"
+        "content": "    public static class EditRepeaterDescriptor {"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        private MonthOffset monthStartOffset;"
+        "content": "        private Description description;"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        private MonthOffset monthEndOffset;"
+        "content": "        private Amount amount;"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        private Date startDate;"
+        "content": "        private Category category;"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        private Date endDate;"
+        "content": "        private TransactionType transactionType;"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        private MonthOffset monthStartOffset;"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public EditRepeaterDescriptor() {}"
+        "content": "        private MonthOffset monthEndOffset;"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        private Date startDate;"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        /**"
+        "content": "        private Date endDate;"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "         * Copy constructor."
+        "content": ""
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "         */"
+        "content": "        public EditRepeaterDescriptor() {}"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public EditRepeaterDescriptor(EditRepeaterDescriptor toCopy) {"
+        "content": ""
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            setDescription(toCopy.description);"
+        "content": "        /**"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            setAmount(toCopy.amount);"
+        "content": "         * Copy constructor."
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            setCategory(toCopy.category);"
+        "content": "         */"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            setTransactionType(toCopy.transactionType);"
+        "content": "        public EditRepeaterDescriptor(EditRepeaterDescriptor toCopy) {"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            setMonthStartOffset(toCopy.monthStartOffset);"
+        "content": "            setDescription(toCopy.description);"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            setMonthEndOffset(toCopy.monthEndOffset);"
+        "content": "            setAmount(toCopy.amount);"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            setStartDate(toCopy.startDate);"
+        "content": "            setCategory(toCopy.category);"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            setEndDate(toCopy.endDate);"
+        "content": "            setTransactionType(toCopy.transactionType);"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "            setMonthStartOffset(toCopy.monthStartOffset);"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            setMonthEndOffset(toCopy.monthEndOffset);"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        /**"
+        "content": "            setStartDate(toCopy.startDate);"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "         * Returns true if at least one field is edited."
+        "content": "            setEndDate(toCopy.endDate);"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "         */"
+        "content": "        }"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public boolean isAnyFieldEdited() {"
+        "content": ""
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return isAnyNonNull(description, amount, category, transactionType,"
+        "content": "        /**"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                    monthStartOffset, monthEndOffset, startDate, endDate);"
+        "content": "         * Returns true if at least one field is edited."
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "         */"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        public boolean isAnyFieldEdited() {"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public void setDescription(Description description) {"
+        "content": "            return isAnyNonNull(description, amount, category, transactionType,"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.description \u003d description;"
+        "content": "                    monthStartOffset, monthEndOffset, startDate, endDate);"
       },
       {
         "lineNumber": 215,
@@ -44469,14 +44524,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public Optional\u003cDescription\u003e getDescription() {"
+        "content": "        public void setDescription(Description description) {"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return Optional.ofNullable(description);"
+        "content": "            this.description \u003d description;"
       },
       {
         "lineNumber": 219,
@@ -44497,14 +44552,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public void setAmount(Amount amount) {"
+        "content": "        public Optional\u003cDescription\u003e getDescription() {"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.amount \u003d amount;"
+        "content": "            return Optional.ofNullable(description);"
       },
       {
         "lineNumber": 223,
@@ -44525,14 +44580,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public Optional\u003cAmount\u003e getAmount() {"
+        "content": "        public void setAmount(Amount amount) {"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return Optional.ofNullable(amount);"
+        "content": "            this.amount \u003d amount;"
       },
       {
         "lineNumber": 227,
@@ -44553,14 +44608,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public void setCategory(Category category) {"
+        "content": "        public Optional\u003cAmount\u003e getAmount() {"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.category \u003d category;"
+        "content": "            return Optional.ofNullable(amount);"
       },
       {
         "lineNumber": 231,
@@ -44581,14 +44636,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public Optional\u003cCategory\u003e getCategory() {"
+        "content": "        public void setCategory(Category category) {"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return Optional.ofNullable(category);"
+        "content": "            this.category \u003d category;"
       },
       {
         "lineNumber": 235,
@@ -44609,14 +44664,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public void setTransactionType(TransactionType transactionType) {"
+        "content": "        public Optional\u003cCategory\u003e getCategory() {"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.transactionType \u003d transactionType;"
+        "content": "            return Optional.ofNullable(category);"
       },
       {
         "lineNumber": 239,
@@ -44637,14 +44692,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public Optional\u003cTransactionType\u003e getTransactionType() {"
+        "content": "        public void setTransactionType(TransactionType transactionType) {"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return Optional.ofNullable(transactionType);"
+        "content": "            this.transactionType \u003d transactionType;"
       },
       {
         "lineNumber": 243,
@@ -44665,14 +44720,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public void setMonthStartOffset(MonthOffset monthStartOffset) {"
+        "content": "        public Optional\u003cTransactionType\u003e getTransactionType() {"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.monthStartOffset \u003d monthStartOffset;"
+        "content": "            return Optional.ofNullable(transactionType);"
       },
       {
         "lineNumber": 247,
@@ -44693,14 +44748,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public Optional\u003cMonthOffset\u003e getMonthStartOffset() {"
+        "content": "        public void setMonthStartOffset(MonthOffset monthStartOffset) {"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return Optional.ofNullable(monthStartOffset);"
+        "content": "            this.monthStartOffset \u003d monthStartOffset;"
       },
       {
         "lineNumber": 251,
@@ -44721,14 +44776,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public void setMonthEndOffset(MonthOffset monthEndOffset) {"
+        "content": "        public Optional\u003cMonthOffset\u003e getMonthStartOffset() {"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.monthEndOffset \u003d monthEndOffset;"
+        "content": "            return Optional.ofNullable(monthStartOffset);"
       },
       {
         "lineNumber": 255,
@@ -44749,14 +44804,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public Optional\u003cMonthOffset\u003e getMonthEndOffset() {"
+        "content": "        public void setMonthEndOffset(MonthOffset monthEndOffset) {"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return Optional.ofNullable(monthEndOffset);"
+        "content": "            this.monthEndOffset \u003d monthEndOffset;"
       },
       {
         "lineNumber": 259,
@@ -44777,14 +44832,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public void setStartDate(Date startDate) {"
+        "content": "        public Optional\u003cMonthOffset\u003e getMonthEndOffset() {"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.startDate \u003d startDate;"
+        "content": "            return Optional.ofNullable(monthEndOffset);"
       },
       {
         "lineNumber": 263,
@@ -44805,14 +44860,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public Optional\u003cDate\u003e getStartDate() {"
+        "content": "        public void setStartDate(Date startDate) {"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return Optional.ofNullable(startDate);"
+        "content": "            this.startDate \u003d startDate;"
       },
       {
         "lineNumber": 267,
@@ -44833,14 +44888,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public void setEndDate(Date endDate) {"
+        "content": "        public Optional\u003cDate\u003e getStartDate() {"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.endDate \u003d endDate;"
+        "content": "            return Optional.ofNullable(startDate);"
       },
       {
         "lineNumber": 271,
@@ -44861,14 +44916,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public Optional\u003cDate\u003e getEndDate() {"
+        "content": "        public void setEndDate(Date endDate) {"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return Optional.ofNullable(endDate);"
+        "content": "            this.endDate \u003d endDate;"
       },
       {
         "lineNumber": 275,
@@ -44889,178 +44944,206 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        @Override"
+        "content": "        public Optional\u003cDate\u003e getEndDate() {"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        public boolean equals(Object other) {"
+        "content": "            return Optional.ofNullable(endDate);"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            // short circuit if same object"
+        "content": "        }"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            if (other \u003d\u003d this) {"
+        "content": ""
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                return true;"
+        "content": "        @Override"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            }"
+        "content": "        public boolean equals(Object other) {"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            // short circuit if same object"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            // instanceof handles nulls"
+        "content": "            if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            if (!(other instanceof EditRepeaterDescriptor)) {"
+        "content": "                return true;"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                return false;"
+        "content": "            }"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            // instanceof handles nulls"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            // state check"
+        "content": "            if (!(other instanceof EditRepeaterDescriptor)) {"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            EditRepeaterDescriptor e \u003d (EditRepeaterDescriptor) other;"
+        "content": "                return false;"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return getDescription().equals(e.getDescription())"
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 getAmount().equals(e.getAmount())"
+        "content": "            // state check"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 getCategory().equals(e.getCategory())"
+        "content": "            EditRepeaterDescriptor e \u003d (EditRepeaterDescriptor) other;"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 getTransactionType().equals(e.getTransactionType())"
+        "content": ""
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 getMonthStartOffset().equals(e.getMonthStartOffset())"
+        "content": "            return getDescription().equals(e.getDescription())"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 getMonthEndOffset().equals(e.getMonthEndOffset())"
+        "content": "                \u0026\u0026 getAmount().equals(e.getAmount())"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 getStartDate().equals(e.getStartDate())"
+        "content": "                \u0026\u0026 getCategory().equals(e.getCategory())"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 getEndDate().equals(e.getEndDate());"
+        "content": "                \u0026\u0026 getTransactionType().equals(e.getTransactionType())"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "                \u0026\u0026 getMonthStartOffset().equals(e.getMonthStartOffset())"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 getMonthEndOffset().equals(e.getMonthEndOffset())"
       },
       {
         "lineNumber": 302,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                \u0026\u0026 getStartDate().equals(e.getStartDate())"
+      },
+      {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                \u0026\u0026 getEndDate().equals(e.getEndDate());"
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 306,
         "author": {
           "gitId": "LeeYiyuan"
         },
@@ -45068,7 +45151,7 @@
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 301,
+      "LeeYiyuan": 305,
       "weiyang13": 1
     }
   },
@@ -60787,231 +60870,231 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+        "content": "import static java.util.Objects.requireNonNull;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_AMOUNT;"
+        "content": "import static seedu.ichifund.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_CATEGORY;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_AMOUNT;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_DESCRIPTION;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_CATEGORY;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_END_MONTH;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_DESCRIPTION;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_END_YEAR;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_END_MONTH;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_MONTH_END_OFFSET;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_END_YEAR;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_MONTH_START_OFFSET;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_MONTH_END_OFFSET;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_START_MONTH;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_MONTH_START_OFFSET;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_START_YEAR;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_START_MONTH;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_TRANSACTION_TYPE;"
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_START_YEAR;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "import static seedu.ichifund.logic.parser.CliSyntax.PREFIX_TRANSACTION_TYPE;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import java.util.stream.Stream;"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "import java.util.stream.Stream;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.logic.commands.repeater.AddRepeaterCommand;"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.logic.parser.ArgumentMultimap;"
+        "content": "import seedu.ichifund.logic.commands.repeater.AddRepeaterCommand;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.logic.parser.ArgumentTokenizer;"
+        "content": "import seedu.ichifund.logic.parser.ArgumentMultimap;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.logic.parser.Parser;"
+        "content": "import seedu.ichifund.logic.parser.ArgumentTokenizer;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.logic.parser.ParserUtil;"
+        "content": "import seedu.ichifund.logic.parser.Parser;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.logic.parser.Prefix;"
+        "content": "import seedu.ichifund.logic.parser.ParserUtil;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.logic.parser.exceptions.ParseException;"
+        "content": "import seedu.ichifund.logic.parser.Prefix;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.Description;"
+        "content": "import seedu.ichifund.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.amount.Amount;"
+        "content": "import seedu.ichifund.model.Description;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.date.Date;"
+        "content": "import seedu.ichifund.model.amount.Amount;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.date.Day;"
+        "content": "import seedu.ichifund.model.date.Date;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.date.Month;"
+        "content": "import seedu.ichifund.model.date.Day;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.date.Year;"
+        "content": "import seedu.ichifund.model.date.Month;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.repeater.MonthOffset;"
+        "content": "import seedu.ichifund.model.date.Year;"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.repeater.Repeater;"
+        "content": "import seedu.ichifund.model.repeater.MonthOffset;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.repeater.RepeaterUniqueId;"
+        "content": "import seedu.ichifund.model.repeater.Repeater;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.transaction.Category;"
+        "content": "import seedu.ichifund.model.repeater.RepeaterUniqueId;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "import seedu.ichifund.model.transaction.TransactionType;"
+        "content": "import seedu.ichifund.model.transaction.Category;"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "import seedu.ichifund.model.transaction.TransactionType;"
       },
       {
         "lineNumber": 36,
@@ -61025,469 +61108,469 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": " * Parses input arguments and creates a new AddRepeaterCommand object."
+        "content": "/**"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": " */"
+        "content": " * Parses input arguments and creates a new AddRepeaterCommand object."
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "public class AddRepeaterCommandParser implements Parser\u003cAddRepeaterCommand\u003e {"
+        "content": " */"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "public class AddRepeaterCommandParser implements Parser\u003cAddRepeaterCommand\u003e {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * Parses the given {@code String} of arguments in the context of the AddCommand"
+        "content": "    /**"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * and returns an AddRepeaterCommand object for execution."
+        "content": "     * Parses the given {@code String} of arguments in the context of the AddCommand"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     * and returns an AddRepeaterCommand object for execution."
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public AddRepeaterCommand parse(String args) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        ArgumentMultimap argMultimap \u003d"
+        "content": "    public AddRepeaterCommand parse(String args) throws ParseException {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                ArgumentTokenizer.tokenize(args, PREFIX_DESCRIPTION, PREFIX_AMOUNT, PREFIX_CATEGORY,"
+        "content": "        requireNonNull(args);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                        PREFIX_TRANSACTION_TYPE, PREFIX_MONTH_START_OFFSET, PREFIX_MONTH_END_OFFSET,"
+        "content": "        ArgumentMultimap argMultimap \u003d"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                        PREFIX_START_MONTH, PREFIX_START_YEAR,"
+        "content": "                ArgumentTokenizer.tokenize(args, PREFIX_DESCRIPTION, PREFIX_AMOUNT, PREFIX_CATEGORY,"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                        PREFIX_END_MONTH, PREFIX_END_YEAR);"
+        "content": "                        PREFIX_TRANSACTION_TYPE, PREFIX_MONTH_START_OFFSET, PREFIX_MONTH_END_OFFSET,"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "                        PREFIX_START_MONTH, PREFIX_START_YEAR,"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (!arePrefixesPresent(argMultimap, PREFIX_DESCRIPTION, PREFIX_AMOUNT, PREFIX_CATEGORY,"
+        "content": "                        PREFIX_END_MONTH, PREFIX_END_YEAR);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                        PREFIX_TRANSACTION_TYPE, PREFIX_MONTH_START_OFFSET, PREFIX_MONTH_END_OFFSET,"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                        PREFIX_START_MONTH, PREFIX_START_YEAR,"
+        "content": "        if (!arePrefixesPresent(argMultimap, PREFIX_DESCRIPTION, PREFIX_AMOUNT,"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                        PREFIX_END_MONTH, PREFIX_END_YEAR)"
+        "content": "                        PREFIX_START_MONTH, PREFIX_START_YEAR,"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                || !argMultimap.getPreamble().isEmpty()) {"
+        "content": "                        PREFIX_END_MONTH, PREFIX_END_YEAR)"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
+        "content": "                || !argMultimap.getPreamble().isEmpty()) {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                    AddRepeaterCommand.MESSAGE_USAGE));"
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "                    AddRepeaterCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        RepeaterUniqueId uniqueId \u003d new RepeaterUniqueId(\"\"); // Delegate assignment to command execution."
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Description description \u003d ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());"
+        "content": "        RepeaterUniqueId uniqueId \u003d new RepeaterUniqueId(\"\"); // Delegate assignment to command execution."
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Amount amount \u003d ParserUtil.parsePositiveAmount(argMultimap.getValue(PREFIX_AMOUNT).get());"
+        "content": "        Description description \u003d ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Category category \u003d ParserUtil.parseCategory(argMultimap.getValue(PREFIX_CATEGORY).get());"
+        "content": "        Amount amount \u003d ParserUtil.parsePositiveAmount(argMultimap.getValue(PREFIX_AMOUNT).get());"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        TransactionType transactionType \u003d ParserUtil.parseTransactionType(argMultimap"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                .getValue(PREFIX_TRANSACTION_TYPE).get());"
+        "content": ""
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        MonthOffset monthStartOffset \u003d ParserUtil.parseMonthOffset(argMultimap"
+        "content": "        Category category;"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                .getValue(PREFIX_MONTH_START_OFFSET).get());"
+        "content": "        if (argMultimap.getValue(PREFIX_CATEGORY).isPresent()) {"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        MonthOffset monthEndOffset \u003d ParserUtil.parseMonthOffset(argMultimap"
+        "content": "            category \u003d ParserUtil.parseCategory(argMultimap.getValue(PREFIX_CATEGORY).get());"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                .getValue(PREFIX_MONTH_END_OFFSET).get());"
+        "content": "        } else {"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            category \u003d Category.CATEGORY_DEFAULT;"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Month startMonth \u003d ParserUtil.parseMonth(argMultimap.getValue(PREFIX_START_MONTH).get());"
+        "content": "        }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Year startYear \u003d ParserUtil.parseYear(argMultimap.getValue(PREFIX_START_YEAR).get());"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Date startDate \u003d constructDate(new Day(\"1\"), startMonth, startYear);"
+        "content": "        TransactionType transactionType;"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        if (argMultimap.getValue(PREFIX_TRANSACTION_TYPE).isPresent()) {"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Month endMonth \u003d ParserUtil.parseMonth(argMultimap.getValue(PREFIX_END_MONTH).get());"
+        "content": "            transactionType \u003d ParserUtil.parseTransactionType(argMultimap.getValue(PREFIX_TRANSACTION_TYPE).get());"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Year endYear \u003d ParserUtil.parseYear(argMultimap.getValue(PREFIX_END_YEAR).get());"
+        "content": "        } else {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Date endDate \u003d constructDate(new Day(\"1\"), endMonth, endYear);"
+        "content": "            transactionType \u003d TransactionType.TRANSACTION_TYPE_DEFAULT;"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        Repeater repeater \u003d new Repeater(uniqueId, description, amount, category, transactionType,"
+        "content": ""
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                monthStartOffset, monthEndOffset, startDate, endDate);"
+        "content": "        MonthOffset monthStartOffset;"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        if (argMultimap.getValue(PREFIX_MONTH_START_OFFSET).isPresent()) {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return new AddRepeaterCommand(repeater);"
+        "content": "            monthStartOffset \u003d ParserUtil.parseMonthOffset(argMultimap.getValue(PREFIX_MONTH_START_OFFSET).get());"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            monthStartOffset \u003d MonthOffset.MONTH_OFFSET_DEFAULT;"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * Returns a {@code Date} object from the {@code day}, {@code month} and {@code year}."
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     *"
+        "content": "        MonthOffset monthEndOffset;"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * @param day The {@code Day} of the year to be returned."
+        "content": "        if (argMultimap.getValue(PREFIX_MONTH_END_OFFSET).isPresent()) {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * @param month The {@code Month} of the year to be returned."
+        "content": "            monthEndOffset \u003d ParserUtil.parseMonthOffset(argMultimap.getValue(PREFIX_MONTH_END_OFFSET).get());"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * @param year The {@code Year} of the year to be returned."
+        "content": "        } else {"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * @return A {@code Date} object composed of {@code day}, {@code month} and {@code year}"
+        "content": "            monthEndOffset \u003d MonthOffset.MONTH_OFFSET_DEFAULT;"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * @throws ParseException If day does not match month and year."
+        "content": "        }"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    private static Date constructDate(Day day, Month month, Year year) throws ParseException {"
+        "content": "        Month startMonth \u003d ParserUtil.parseMonth(argMultimap.getValue(PREFIX_START_MONTH).get());"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (Date.isValidDate(day, month, year)) {"
+        "content": "        Year startYear \u003d ParserUtil.parseYear(argMultimap.getValue(PREFIX_START_YEAR).get());"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return new Date(day, month, year);"
+        "content": "        Date startDate \u003d constructDate(new Day(\"1\"), startMonth, startYear);"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        } else {"
+        "content": ""
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            throw new ParseException(Date.MESSAGE_CONSTRAINTS);"
+        "content": "        Month endMonth \u003d ParserUtil.parseMonth(argMultimap.getValue(PREFIX_END_MONTH).get());"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "        Year endYear \u003d ParserUtil.parseYear(argMultimap.getValue(PREFIX_END_YEAR).get());"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "        Date endDate \u003d constructDate(new Day(\"1\"), endMonth, endYear);"
       },
       {
         "lineNumber": 104,
@@ -61501,59 +61584,220 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    /**"
+        "content": "        Repeater repeater \u003d new Repeater(uniqueId, description, amount, category, transactionType,"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * Returns true if none of the prefixes contains empty {@code Optional} values in the given"
+        "content": "                monthStartOffset, monthEndOffset, startDate, endDate);"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * {@code ArgumentMultimap}."
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     */"
+        "content": "        return new AddRepeaterCommand(repeater);"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {"
+        "content": "    }"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return Stream.of(prefixes).allMatch(prefix -\u003e argumentMultimap.getValue(prefix).isPresent());"
+        "content": ""
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "     * Returns a {@code Date} object from the {@code day}, {@code month} and {@code year}."
       },
       {
         "lineNumber": 113,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     * @param day The {@code Day} of the year to be returned."
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     * @param month The {@code Month} of the year to be returned."
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     * @param year The {@code Year} of the year to be returned."
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     * @return A {@code Date} object composed of {@code day}, {@code month} and {@code year}"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     * @throws ParseException If day does not match month and year."
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    private static Date constructDate(Day day, Month month, Year year) throws ParseException {"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        if (Date.isValidDate(day, month, year)) {"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "            return new Date(day, month, year);"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "            throw new ParseException(Date.MESSAGE_CONSTRAINTS);"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     * Returns true if none of the prefixes contains empty {@code Optional} values in the given"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     * {@code ArgumentMultimap}."
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        return Stream.of(prefixes).allMatch(prefix -\u003e argumentMultimap.getValue(prefix).isPresent());"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
         "author": {
           "gitId": "LeeYiyuan"
         },
@@ -61561,7 +61805,7 @@
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 113
+      "LeeYiyuan": 136
     }
   },
   {
@@ -92011,14 +92255,14 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "    public static final MonthOffset MONTH_OFFSET_IGNORED \u003d new MonthOffset(\"-1\");"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public final Integer value;"
+        "content": "    public static final MonthOffset MONTH_OFFSET_DEFAULT \u003d new MonthOffset(\"-1\");"
       },
       {
         "lineNumber": 18,
@@ -92032,297 +92276,311 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public MonthOffset(String offset) {"
+        "content": "    public final Integer value;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        requireNonNull(offset);"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        checkArgument(isValidMonthOffset(offset), MESSAGE_CONSTRAINTS);"
+        "content": "    public MonthOffset(String offset) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (offset.equals(\"\")) {"
+        "content": "        requireNonNull(offset);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.value \u003d null;"
+        "content": "        checkArgument(isValidMonthOffset(offset), MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        } else {"
+        "content": "        if (offset.equals(\"\")) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            this.value \u003d Integer.parseInt(offset);"
+        "content": "            this.value \u003d null;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "            this.value \u003d Integer.parseInt(offset);"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     * Returns true if a given string is a valid offset."
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public static boolean isValidMonthOffset(String test) {"
+        "content": "     * Returns true if a given string is a valid offset."
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return test.matches(VALIDATION_REGEX);"
+        "content": "     */"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "    public static boolean isValidMonthOffset(String test) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        return test.matches(VALIDATION_REGEX);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public boolean isIgnored() {"
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return value \u003d\u003d -1;"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "    public boolean isIgnored() {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        return value \u003d\u003d -1;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    @Override"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                || (other instanceof MonthOffset // instanceof handles nulls"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 value.equals(((MonthOffset) other).value)); // state check"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "                || (other instanceof MonthOffset // instanceof handles nulls"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "                \u0026\u0026 value.equals(((MonthOffset) other).value)); // state check"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public int hashCode() {"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return value.hashCode();"
+        "content": "    @Override"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        return value.hashCode();"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public String toString() {"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (this.value \u003d\u003d null) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return \"\";"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        } else {"
+        "content": "        if (this.value \u003d\u003d null) {"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return this.value.toString();"
+        "content": "            return \"\";"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "            return this.value.toString();"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 61,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
         "author": {
           "gitId": "LeeYiyuan"
         },
@@ -92330,7 +92588,7 @@
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 61
+      "LeeYiyuan": 63
     }
   },
   {
@@ -93301,11 +93559,158 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        final StringBuilder builder \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        builder.append(getDescription())"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(\" Amount: \")"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(getAmount())"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(\" Category: \")"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(getCategory())"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(\" Transaction Type: \")"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(getTransactionType())"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(\" Month Start Offset: \")"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(getMonthStartOffset())"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(\" Month End Offset: \")"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(getMonthEndOffset())"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(\" Start Date: \")"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(getStartDate())"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(\" End Date: \")"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                .append(getEndDate());"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        return builder.toString();"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 136,
+      "LeeYiyuan": 157,
       "weiyang13": 2
     }
   },
@@ -96825,150 +97230,108 @@
         "author": {
           "gitId": "weiyang13"
         },
-        "content": ""
+        "content": "        return builder.toString();"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "weiyang13"
         },
-        "content": "        if (this.isFromRepeater()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "weiyang13"
         },
-        "content": "            builder.append(\" Repeater Unique Id: \")"
+        "content": ""
       },
       {
         "lineNumber": 137,
-        "author": {
-          "gitId": "LeeYiyuan"
-        },
-        "content": "                    .append(getRepeaterUniqueId());"
-      },
-      {
-        "lineNumber": 138,
-        "author": {
-          "gitId": "weiyang13"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 139,
-        "author": {
-          "gitId": "weiyang13"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "weiyang13"
-        },
-        "content": "        return builder.toString();"
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "weiyang13"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 142,
-        "author": {
-          "gitId": "weiyang13"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 143,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 138,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "    public int compareTo(Transaction other) {"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 139,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "        int dateComparison \u003d getDate().compareTo(other.getDate());"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 140,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "        int categoryComparison \u003d getCategory().compareTo(other.getCategory());"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 141,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "        if (dateComparison !\u003d 0) {"
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 142,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "            return dateComparison;"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 143,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "        } else if (categoryComparison !\u003d 0) {"
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 144,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "            return categoryComparison;"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 145,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 146,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "            return getDescription().compareTo(other.getDescription());"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 147,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 148,
         "author": {
           "gitId": "weiyang13"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 149,
         "author": {
           "gitId": "weiyang13"
         },
@@ -96976,9 +97339,9 @@
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 16,
+      "LeeYiyuan": 15,
       "nexolute": 1,
-      "weiyang13": 138
+      "weiyang13": 133
     }
   },
   {
@@ -114018,234 +114381,395 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "    @FXML"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "    private Label span;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public RepeaterCard(Repeater repeater, int displayedIndex) {"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        super(FXML);"
+        "content": "    private Label offsets;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        this.repeater \u003d repeater;"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        id.setText(displayedIndex + \". \");"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        description.setText(repeater.getDescription().toString());"
+        "content": "    public RepeaterCard(Repeater repeater, int displayedIndex) {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        amount.setText(\"$\" + repeater.getAmount().toString());"
+        "content": "        super(FXML);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        category.setText(repeater.getCategory().toString().toUpperCase());"
+        "content": "        this.repeater \u003d repeater;"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (repeater.isExpenditure()) {"
+        "content": "        id.setText(displayedIndex + \". \");"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            amount.setTextFill(Paint.valueOf(\"#ef5350\"));"
+        "content": "        description.setText(repeater.getDescription().toString());"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        } else {"
+        "content": "        amount.setText(\"$\" + repeater.getAmount().toString());"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            amount.setTextFill(Paint.valueOf(\"#4caf50\"));"
+        "content": "        category.setText(repeater.getCategory().toString().toUpperCase());"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "        if (repeater.isExpenditure()) {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "            amount.setTextFill(Paint.valueOf(\"#ef5350\"));"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    @Override"
+        "content": "        } else {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "            amount.setTextFill(Paint.valueOf(\"#4caf50\"));"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // short circuit if same object"
+        "content": "        }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return true;"
+        "content": "        span.setText(String.format(\"%s %s - %s %s\","
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "                    repeater.getStartDate().getMonth().wordString(),"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "                    repeater.getStartDate().getYear().toString(),"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // instanceof handles nulls"
+        "content": "                    repeater.getEndDate().getMonth().wordString(),"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        if (!(other instanceof RepeaterCard)) {"
+        "content": "                    repeater.getEndDate().getYear().toString()));"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            return false;"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        }"
+        "content": "        String offsetsString \u003d \"\";"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": ""
+        "content": "        if (!repeater.getMonthStartOffset().isIgnored()) {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        // state check"
+        "content": "            offsetsString +\u003d \"Month start offset: \" + repeater.getMonthStartOffset().toString();"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        RepeaterCard card \u003d (RepeaterCard) other;"
+        "content": "        }"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        return id.getText().equals(card.id.getText())"
+        "content": "        if (!repeater.getMonthEndOffset().isIgnored()) {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u0026\u0026 repeater.equals(card.repeater);"
+        "content": "            if (offsetsString.equals(\"\")) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    }"
+        "content": "                offsetsString +\u003d \",\";"
       },
       {
         "lineNumber": 69,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "            offsetsString +\u003d \", Month end offset: \" + repeater.getMonthEndOffset().toString();"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        offsets.setText(offsetsString);"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        // short circuit if same object"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        if (other \u003d\u003d this) {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        if (!(other instanceof RepeaterCard)) {"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        // state check"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        RepeaterCard card \u003d (RepeaterCard) other;"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        return id.getText().equals(card.id.getText())"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "                \u0026\u0026 repeater.equals(card.repeater);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 92,
         "author": {
           "gitId": "LeeYiyuan"
         },
@@ -114253,7 +114777,7 @@
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 69
+      "LeeYiyuan": 92
     }
   },
   {
@@ -121019,45 +121543,66 @@
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u003cLabel fx:id\u003d\"date\" styleClass\u003d\"cell_small_label\" /\u003e"
+        "content": "                \u003cLabel fx:id\u003d\"span\" styleClass\u003d\"cell_small_label\" /\u003e"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u003cRegion HBox.hgrow\u003d\"ALWAYS\" /\u003e"
+        "content": "                \u003cLabel text\u003d\"|\"/\u003e"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "                \u003cLabel fx:id\u003d\"category\" text\u003d\"\\$category\" styleClass\u003d\"cell_small_label\" /\u003e"
+        "content": "                \u003cLabel fx:id\u003d\"offsets\" styleClass\u003d\"cell_small_label\" /\u003e"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "            \u003c/HBox\u003e"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "        \u003c/VBox\u003e"
+        "content": "                \u003cRegion HBox.hgrow\u003d\"ALWAYS\" /\u003e"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "LeeYiyuan"
         },
-        "content": "    \u003c/GridPane\u003e"
+        "content": "                \u003cLabel fx:id\u003d\"category\" text\u003d\"\\$category\" styleClass\u003d\"cell_small_label\" /\u003e"
       },
       {
         "lineNumber": 40,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "            \u003c/HBox\u003e"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "        \u003c/VBox\u003e"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "LeeYiyuan"
+        },
+        "content": "    \u003c/GridPane\u003e"
+      },
+      {
+        "lineNumber": 43,
         "author": {
           "gitId": "LeeYiyuan"
         },
@@ -121065,7 +121610,7 @@
       }
     ],
     "authorContributionMap": {
-      "LeeYiyuan": 40
+      "LeeYiyuan": 43
     }
   },
   {

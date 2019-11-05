@@ -31832,6 +31832,456 @@
     }
   },
   {
+    "path": "src/main/java/seedu/module/logic/commands/linkcommands/EditLinkCommand.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "package seedu.module.logic.commands.linkcommands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import static java.util.Objects.requireNonNull;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import java.util.Optional;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.logic.commands.CommandResult;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.logic.commands.exceptions.CommandException;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.model.Model;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.model.module.Link;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.model.module.TrackedModule;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": " * Edits a Link with matching title from TrackedModule."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "public class EditLinkCommand extends LinkCommand {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    private final String linkTitle;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    private final Optional\u003cString\u003e newTitle;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    private final Optional\u003cString\u003e newLink;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    public EditLinkCommand(String linkTitle, Optional\u003cString\u003e newTitle, Optional\u003cString\u003e newLink) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        this.linkTitle \u003d linkTitle;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        this.newTitle \u003d newTitle;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        this.newLink \u003d newLink;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * Returns index of Link object with matching title from the TrackedModule"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * @param targetModule"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * @param linkTitle"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * @return"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * @throws CommandException"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    private int findIndex(TrackedModule targetModule, String linkTitle) throws CommandException {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        int limit \u003d targetModule.getLink().size();"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        for (int i \u003d 0; i \u003c limit; i++) {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            if (targetModule.getLink().get(i).name.equals(linkTitle)) {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "                return i;"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        throw new CommandException(\"Link with matching title not found\");"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        requireNonNull(model);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        TrackedModule moduleToAccess \u003d this.currentDisplayed(model);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        if (!this.newLink.isPresent() \u0026\u0026 !this.newTitle.isPresent()) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            throw new CommandException(\"No edit information given.\");"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        int editIndex \u003d this.findIndex(moduleToAccess, this.linkTitle);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        String title \u003d this.newTitle.isPresent() ? this.newTitle.get() : moduleToAccess.getLink().get(editIndex).name;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        String link \u003d this.newLink.isPresent() ? this.newLink.get() : moduleToAccess.getLink().get(editIndex).url;"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        Link editedLink \u003d new Link(title, link);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        if (this.newTitle.isPresent() \u0026\u0026 moduleToAccess.hasLinkTitle(editedLink)) {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            throw new CommandException(MESSAGE_DUPLICATE_TITLE);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        moduleToAccess.getLink().set(editIndex, editedLink);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        return new CommandResult((MESSAGE_EDIT_SUCCESS), false, true, false);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "alexwxh": 63
+    }
+  },
+  {
     "path": "src/main/java/seedu/module/logic/commands/linkcommands/LaunchLinkCommand.java",
     "fileType": "functional",
     "lines": [
@@ -32353,108 +32803,115 @@
         "author": {
           "gitId": "alexwxh"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_EDIT_SUCCESS \u003d \"Link edited successfully.\";"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * Returns the current TrackedModule that is being viewed, if any."
+        "content": "    /**"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * @param model"
+        "content": "     * Returns the current TrackedModule that is being viewed, if any."
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * @return"
+        "content": "     * @param model"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * @throws CommandException"
+        "content": "     * @return"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     */"
+        "content": "     * @throws CommandException"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    public TrackedModule currentDisplayed(Model model) throws CommandException {"
+        "content": "     */"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        if (!model.getDisplayedModule().isPresent()) {"
+        "content": "    public TrackedModule currentDisplayed(Model model) throws CommandException {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            throw new CommandException(MESSAGE_NO_DISPLAYED_MODULE_ERROR);"
+        "content": "        if (!model.getDisplayedModule().isPresent()) {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        }"
+        "content": "            throw new CommandException(MESSAGE_NO_DISPLAYED_MODULE_ERROR);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        return (TrackedModule) model.getDisplayedModule()"
+        "content": "        }"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                .filter(m -\u003e m instanceof TrackedModule)"
+        "content": "        return (TrackedModule) model.getDisplayedModule()"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                .orElseThrow(() -\u003e new CommandException(MESSAGE_MODULE_NOT_TRACKED));"
+        "content": "                .filter(m -\u003e m instanceof TrackedModule)"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    }"
+        "content": "                .orElseThrow(() -\u003e new CommandException(MESSAGE_MODULE_NOT_TRACKED));"
       },
       {
         "lineNumber": 43,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
         "author": {
           "gitId": "alexwxh"
         },
@@ -32462,7 +32919,7 @@
       }
     ],
     "authorContributionMap": {
-      "alexwxh": 43
+      "alexwxh": 44
     }
   },
   {
@@ -34258,19 +34715,33 @@
       {
         "lineNumber": 14,
         "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    public static final Prefix PREFIX_NEW_NAME \u003d new Prefix(\"nn/\");"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    public static final Prefix PREFIX_NEW_LINK \u003d new Prefix(\"nl/\");"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
           "gitId": "Kzrthikz"
         },
         "content": "    public static final Prefix PREFIX_TASK_LIST_NUMBER \u003d new Prefix(\"task/\");"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 17,
         "author": {
           "gitId": "Kzrthikz"
         },
         "content": "    public static final Prefix PREFIX_TAG \u003d new Prefix(\"p/\");"
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 18,
         "author": {
           "gitId": "Kzrthikz"
         },
@@ -34279,7 +34750,7 @@
     ],
     "authorContributionMap": {
       "Kzrthikz": 14,
-      "alexwxh": 2
+      "alexwxh": 4
     }
   },
   {
@@ -35634,283 +36105,325 @@
         "author": {
           "gitId": "alexwxh"
         },
-        "content": ""
+        "content": "import static seedu.module.logic.parser.CliSyntax.PREFIX_NEW_LINK;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "import seedu.module.logic.commands.linkcommands.LinkCommand;"
+        "content": "import static seedu.module.logic.parser.CliSyntax.PREFIX_NEW_NAME;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "import seedu.module.logic.parser.exceptions.ParseException;"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "import seedu.module.logic.parser.linkcommandparsers.AddLinkCommandParser;"
+        "content": "import seedu.module.logic.commands.linkcommands.LinkCommand;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "import seedu.module.logic.parser.linkcommandparsers.DeleteLinkCommandParser;"
+        "content": "import seedu.module.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "import seedu.module.logic.parser.linkcommandparsers.LaunchLinkCommandParser;"
+        "content": "import seedu.module.logic.parser.linkcommandparsers.AddLinkCommandParser;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": ""
+        "content": "import seedu.module.logic.parser.linkcommandparsers.DeleteLinkCommandParser;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "/**"
+        "content": "import seedu.module.logic.parser.linkcommandparsers.EditLinkCommandParser;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": " * Parses input arguments and creates a new LinkCommand object"
+        "content": "import seedu.module.logic.parser.linkcommandparsers.LaunchLinkCommandParser;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "public class LinkCommandParser implements Parser\u003cLinkCommand\u003e {"
+        "content": "/**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": ""
+        "content": " * Parses input arguments and creates a new LinkCommand object"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    /**"
+        "content": " */"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * Parses the given {@code String} of arguments in the context of the LinkCommand"
+        "content": "public class LinkCommandParser implements Parser\u003cLinkCommand\u003e {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * and returns a LinkCommand object for execution."
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "    /**"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     */"
+        "content": "     * Parses the given {@code String} of arguments in the context of the LinkCommand"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    public LinkCommand parse(String args) throws ParseException {"
+        "content": "     * and returns a LinkCommand object for execution."
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        String trimmedArgs \u003d args.trim();"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        if (trimmedArgs.isEmpty()) {"
+        "content": "     */"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            throw new ParseException("
+        "content": "    public LinkCommand parse(String args) throws ParseException {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, LinkCommand.MESSAGE_USAGE));"
+        "content": "        String trimmedArgs \u003d args.trim();"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        }"
+        "content": "        if (trimmedArgs.isEmpty()) {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        ArgumentMultimap argMultimap \u003d ArgumentTokenizer.tokenize(args, PREFIX_LINK, PREFIX_NAME);"
+        "content": "            throw new ParseException("
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        try {"
+        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, LinkCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            String action \u003d argMultimap.getPreamble().trim();"
+        "content": "        }"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            if (action.equals(\"add\")) {"
+        "content": "        ArgumentMultimap argMultimap \u003d ArgumentTokenizer.tokenize(args, PREFIX_LINK, PREFIX_NAME, PREFIX_NEW_LINK,"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                return new AddLinkCommandParser().parse(argMultimap);"
+        "content": "                PREFIX_NEW_NAME);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            } else if (action.equals(\"go\")) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                return new LaunchLinkCommandParser().parse(argMultimap);"
+        "content": "            String action \u003d argMultimap.getPreamble().trim();"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            } else if (action.equals(\"delete\")) {"
+        "content": "            if (action.equals(\"add\")) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                return new DeleteLinkCommandParser().parse(argMultimap);"
+        "content": "                return new AddLinkCommandParser().parse(argMultimap);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            } else {"
+        "content": "            } else if (action.equals(\"go\")) {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                throw new ParseException(\"Command not recognized\");"
+        "content": "                return new LaunchLinkCommandParser().parse(argMultimap);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            }"
+        "content": "            } else if (action.equals(\"delete\")) {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        } catch (ParseException e) {"
+        "content": "                return new DeleteLinkCommandParser().parse(argMultimap);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, LinkCommand.MESSAGE_USAGE), e);"
+        "content": "            } else if (action.equals(\"edit\")) {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        }"
+        "content": "                return new EditLinkCommandParser().parse(argMultimap);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    }"
+        "content": "            } else {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": ""
+        "content": "                throw new ParseException(\"Command not recognized\");"
       },
       {
         "lineNumber": 46,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        } catch (ParseException e) {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, LinkCommand.MESSAGE_USAGE), e);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
         "author": {
           "gitId": "alexwxh"
         },
@@ -35918,7 +36431,7 @@
       }
     ],
     "authorContributionMap": {
-      "alexwxh": 46
+      "alexwxh": 52
     }
   },
   {
@@ -39854,6 +40367,260 @@
     ],
     "authorContributionMap": {
       "alexwxh": 29
+    }
+  },
+  {
+    "path": "src/main/java/seedu/module/logic/parser/linkcommandparsers/EditLinkCommandParser.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "package seedu.module.logic.parser.linkcommandparsers;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import static seedu.module.logic.parser.CliSyntax.PREFIX_NAME;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import static seedu.module.logic.parser.CliSyntax.PREFIX_NEW_LINK;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import static seedu.module.logic.parser.CliSyntax.PREFIX_NEW_NAME;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import java.util.Optional;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.logic.commands.linkcommands.EditLinkCommand;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.logic.parser.ArgumentMultimap;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.logic.parser.exceptions.ParseException;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "import seedu.module.model.module.Link;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": " * Parser specific to EditLinkCommand"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "public class EditLinkCommandParser {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * Parses arguments in the given ArgumentMultimap and returns a EditLinkCommand"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * @param argMultimap"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * @return"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     * @throws ParseException if the user input does not conform to the expected format"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    public EditLinkCommand parse(ArgumentMultimap argMultimap) throws ParseException {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        if (argMultimap.getValue(PREFIX_NAME).isPresent()) {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            String title \u003d argMultimap.getValue(PREFIX_NAME).get();"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            Optional\u003cString\u003e newTitle \u003d argMultimap.getValue(PREFIX_NEW_NAME);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            Optional\u003cString\u003e newLink \u003d argMultimap.getValue(PREFIX_NEW_LINK);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            return new EditLinkCommand(title, newTitle, newLink);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            throw new ParseException(Link.MESSAGE_CONSTRAINTS);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "alexwxh": 35
     }
   },
   {
@@ -47676,161 +48443,161 @@
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        requireNonNull(url);"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        if (!isValidUrl(url)) {"
+        "content": "        requireNonNull(url);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            throw new IllegalArgumentException(MESSAGE_CONSTRAINTS);"
+        "content": "        String properLink \u003d url;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        }"
+        "content": "        if (!url.toLowerCase().startsWith(\"http://\") \u0026\u0026 !url.toLowerCase().startsWith(\"https://\")) {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        this.name \u003d name;"
+        "content": "            properLink \u003d \"http://\" + url;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        this.url \u003d url;"
+        "content": "        }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    }"
+        "content": "        if (!isValidUrl(properLink)) {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": ""
+        "content": "            throw new IllegalArgumentException(MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * Returns True if the string given is a valid URL"
+        "content": "        this.name \u003d name;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * @param url"
+        "content": "        this.url \u003d properLink;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * @return"
+        "content": "    }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    public static boolean isValidUrl(String url) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        UrlValidator urlValidator \u003d new UrlValidator();"
+        "content": "     * Returns True if the string given is a valid URL"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        return urlValidator.isValid(url);"
+        "content": "     * @param url"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    }"
+        "content": "     * @return"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    /**"
+        "content": "    public static boolean isValidUrl(String url) {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     * Launches the url in this Link in the user\u0027s default browser"
+        "content": "        String[] scheme \u003d {\"http\", \"https\"};"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "     */"
+        "content": "        UrlValidator urlValidator \u003d new UrlValidator(scheme);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    public void launch() {"
+        "content": "        return urlValidator.isValid(url);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        String runningSystem \u003d System.getProperty(\"os.name\").toLowerCase();"
+        "content": "    }"
       },
       {
         "lineNumber": 46,
@@ -47844,164 +48611,206 @@
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        try {"
+        "content": "    /**"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            if (Desktop.isDesktopSupported()) { // Probably Windows"
+        "content": "     * Launches the url in this Link in the user\u0027s default browser"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                Desktop desktop \u003d Desktop.getDesktop();"
+        "content": "     */"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                desktop.browse(URI.create(url));"
+        "content": "    public void launch() {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            } else { // Definitely Non-windows"
+        "content": "        String runningSystem \u003d System.getProperty(\"os.name\").toLowerCase();"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                Runtime runtime \u003d Runtime.getRuntime();"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                if (runningSystem.contains(\"mac\")) { // Apples"
+        "content": "        try {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                    runtime.exec(\"open \" + url);"
+        "content": "            if (Desktop.isDesktopSupported()) { // Probably Windows"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                } else if (runningSystem.contains(\"nix\") || runningSystem.contains(\"nux\")) { // Linux flavours"
+        "content": "                Desktop desktop \u003d Desktop.getDesktop();"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                    runtime.exec(\"xdg-open \" + url);"
+        "content": "                desktop.browse(URI.create(url));"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                } else {"
+        "content": "            } else { // Definitely Non-windows"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                    throw new LinkAccessException(\"Unable/unwilling to launch a browser in your OS.\");"
+        "content": "                Runtime runtime \u003d Runtime.getRuntime();"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "                }"
+        "content": "                if (runningSystem.contains(\"mac\")) { // Apples"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            }"
+        "content": "                    runtime.exec(\"open \" + url);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        } catch (IOException e) {"
+        "content": "                } else if (runningSystem.contains(\"nix\") || runningSystem.contains(\"nux\")) { // Linux flavours"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "            throw new LinkAccessException(\"Couldn\u0027t open system browser: \" + e.getMessage());"
+        "content": "                    runtime.exec(\"xdg-open \" + url);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        }"
+        "content": "                } else {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    }"
+        "content": "                    throw new LinkAccessException(\"Unable/unwilling to launch a browser in your OS.\");"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    @Override"
+        "content": "            }"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    public String toString() {"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        return this.name;"
+        "content": "            throw new LinkAccessException(\"Couldn\u0027t open system browser: \" + e.getMessage());"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 70,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        return this.name;"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
         "author": {
           "gitId": "alexwxh"
         },
@@ -48009,7 +48818,7 @@
       }
     ],
     "authorContributionMap": {
-      "alexwxh": 70
+      "alexwxh": 76
     }
   },
   {
@@ -60095,17 +60904,31 @@
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "        this.setOnAction(event -\u003e this.link.launch());"
+        "content": "        this.setPrefHeight(25);"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "alexwxh"
         },
-        "content": "    }"
+        "content": "        this.setPrefWidth(160);"
       },
       {
         "lineNumber": 17,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "        this.setOnAction(event -\u003e this.link.launch());"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
         "author": {
           "gitId": "alexwxh"
         },
@@ -60113,7 +60936,7 @@
       }
     ],
     "authorContributionMap": {
-      "alexwxh": 17
+      "alexwxh": 19
     }
   },
   {
@@ -63776,77 +64599,77 @@
         "author": {
           "gitId": "geshuming"
         },
-        "content": ""
+        "content": "        // Expands the accordion if the module is not yet tracked"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "geshuming"
         },
-        "content": "        // Expands the accordion if the module is not yet tracked"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "geshuming"
-        },
         "content": "        moduleDetails.setExpandedPane(moduleDetailsPane);"
       },
       {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "geshuming"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 62,
+        "lineNumber": 60,
         "author": {
           "gitId": "alexwxh"
         },
         "content": "        if (module instanceof Trackable) {"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 61,
         "author": {
           "gitId": "geshuming"
         },
         "content": "            moduleDetails.setExpandedPane(null);"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 62,
         "author": {
           "gitId": "alexwxh"
         },
         "content": "            Trackable trackedModule \u003d ((Trackable) module);"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 63,
         "author": {
           "gitId": "Kzrthikz"
         },
         "content": "            deadline.setText(trackedModule.getDeadline());"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 64,
         "author": {
           "gitId": "alexwxh"
         },
         "content": "            trackedModule.getLink().stream().map(link -\u003e new LinkButton(link))"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 65,
         "author": {
           "gitId": "alexwxh"
         },
         "content": "                    .forEach(button -\u003e links.getChildren().add(button));"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 66,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            links.setPrefWrapLength(500);"
+      },
+      {
+        "lineNumber": 67,
         "author": {
           "gitId": "alexwxh"
         },
         "content": "            links.setHgap(10);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "alexwxh"
+        },
+        "content": "            links.setVgap(5);"
       },
       {
         "lineNumber": 69,
@@ -63990,9 +64813,9 @@
       }
     ],
     "authorContributionMap": {
-      "geshuming": 75,
+      "geshuming": 73,
       "Kzrthikz": 3,
-      "alexwxh": 10
+      "alexwxh": 12
     }
   },
   {
@@ -67664,9 +68487,9 @@
       {
         "lineNumber": 269,
         "author": {
-          "gitId": "-"
+          "gitId": "alexwxh"
         },
-        "content": "    -fx-padding: 5 22 5 22;"
+        "content": "    -fx-padding: 5 7 5 7;"
       },
       {
         "lineNumber": 270,
@@ -68721,7 +69544,8 @@
     ],
     "authorContributionMap": {
       "geshuming": 69,
-      "-": 350
+      "alexwxh": 1,
+      "-": 349
     }
   },
   {
