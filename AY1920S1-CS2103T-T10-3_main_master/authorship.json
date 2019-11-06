@@ -18242,479 +18242,465 @@
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                .append(getStartDateTime().format(DateTimeFormatter.ofPattern(\"dd/MM/uuuu HH:mm\")))"
+        "content": "                .append(getStartDateTime().format(DateTimeFormatter.ofPattern(\"dd/MM/uuuu HH:mm\")));"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                .append(\"\\nEnd DateTime: \")"
+        "content": "        //Removed duration \u0026 endDateTime portion of string as requested in team meeting."
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                .append(getEndDateTime().format(DateTimeFormatter.ofPattern(\"dd/MM/uuuu HH:mm\")));"
+        "content": ""
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        //Removed duration portion of string as requested in team meeting."
+        "content": "        return builder.toString();"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "blimyj"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        return builder.toString();"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "blimyj"
         },
-        "content": ""
+        "content": "     * Creates a string for UI display."
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "    /**"
+        "content": "     * @return A string containing only the start DateTime of the Event."
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "     * Creates a string for UI display."
+        "content": "     */"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "     * @return A string containing only the start DateTime of the Event."
+        "content": "    public String toDisplay() {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "     */"
+        "content": "        final StringBuilder builder \u003d new StringBuilder();"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "    public String toDisplay() {"
+        "content": "        builder.append(\"\\nDateTime: \")"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        final StringBuilder builder \u003d new StringBuilder();"
+        "content": "                .append(getStartDateTime().format(DateTimeFormatter.ofPattern(\"dd/MM/uuuu HH:mm\")));"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        builder.append(\"\\nDateTime: \")"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                .append(getStartDateTime().format(DateTimeFormatter.ofPattern(\"dd/MM/uuuu HH:mm\")));"
+        "content": "        return builder.toString();"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "blimyj"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        return builder.toString();"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "blimyj"
         },
-        "content": ""
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "    @Override"
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "            return true;"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "        }"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "            return true;"
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "blimyj"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "blimyj"
-        },
         "content": ""
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 140,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "        if (!(other instanceof Event)) {"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 141,
         "author": {
           "gitId": "blimyj"
         },
         "content": "            return false;"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 142,
         "author": {
           "gitId": "blimyj"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 143,
         "author": {
           "gitId": "blimyj"
         },
         "content": ""
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 144,
         "author": {
           "gitId": "blimyj"
         },
         "content": "        Event otherEvent \u003d (Event) other;"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 145,
         "author": {
           "gitId": "blimyj"
         },
         "content": "        return otherEvent.getStartDateTime().equals(getStartDateTime())"
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 146,
         "author": {
           "gitId": "blimyj"
         },
         "content": "                \u0026\u0026 otherEvent.getEndDateTime().equals(getEndDateTime())"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 147,
         "author": {
           "gitId": "blimyj"
         },
         "content": "                \u0026\u0026 otherEvent.getDuration().equals(getDuration());"
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 148,
         "author": {
           "gitId": "blimyj"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 149,
         "author": {
           "gitId": "blimyj"
         },
         "content": ""
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 150,
         "author": {
           "gitId": "blimyj"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 151,
         "author": {
           "gitId": "blimyj"
         },
         "content": "    public int hashCode() {"
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 152,
         "author": {
           "gitId": "blimyj"
         },
         "content": "        return Objects.hash(startDateTime, endDateTime, duration);"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 153,
         "author": {
           "gitId": "blimyj"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 154,
         "author": {
           "gitId": "blimyj"
         },
         "content": ""
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 155,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 156,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "     * Creates an event object from a JSON string."
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 157,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "     * @param jsonString the JSON string that represents the event"
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 158,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "     * @return the event object that is created"
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 159,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "     * @throws IOException when the jsonString is not in JSON format"
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 160,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "     * @throws IllegalValueException when the JSON string contains incorrect value"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 161,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 162,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "    public static Event fromJson(String jsonString) throws IOException {"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 163,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "        JsonNode node \u003d JsonUtil.getObjectMapper().readTree(jsonString);"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 164,
         "author": {
           "gitId": "sianghwee"
         },
         "content": ""
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 165,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "        String startDateTimeString \u003d node.get(\"startDateTime\").asText();"
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 166,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "        LocalDateTime startDateTime \u003d LocalDateTime.parse(startDateTimeString);"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 167,
         "author": {
           "gitId": "sianghwee"
         },
         "content": ""
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 168,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "        String durationString \u003d node.get(\"duration\").asText();"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 169,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "        Duration duration \u003d Duration.parse(durationString);"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 170,
         "author": {
           "gitId": "sianghwee"
         },
         "content": ""
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 171,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        String periodString \u003d node.get(\"period\").toString(); // in the format of {\"period\": 60000}"
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 172,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        if (!periodString.isEmpty() \u0026\u0026 !periodString.equals(\"null\")) {"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 173,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            periodString \u003d node.get(\"period\").get(\"period\").asText(); // get the long value"
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 174,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            Long periodMillis \u003d Long.valueOf(periodString);"
       },
       {
-        "lineNumber": 177,
+        "lineNumber": 175,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            AutoReschedulePeriod period \u003d new AutoReschedulePeriod(periodMillis);"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 176,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            return new Event(startDateTime, duration, true, period);"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 177,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 178,
         "author": {
           "gitId": "mannggoo"
         },
         "content": ""
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 179,
         "author": {
           "gitId": "blimyj"
         },
         "content": "        return new Event(startDateTime, duration);"
       },
       {
-        "lineNumber": 182,
+        "lineNumber": 180,
         "author": {
           "gitId": "sianghwee"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 183,
+        "lineNumber": 181,
         "author": {
           "gitId": "sianghwee"
         },
         "content": ""
       },
       {
-        "lineNumber": 184,
+        "lineNumber": 182,
         "author": {
           "gitId": "blimyj"
         },
@@ -18722,7 +18708,7 @@
       }
     ],
     "authorContributionMap": {
-      "blimyj": 102,
+      "blimyj": 100,
       "lrchema": 4,
       "sianghwee": 24,
       "mannggoo": 54
@@ -76605,84 +76591,84 @@
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                for (Item newItem : c.getAddedSubList()) {"
+        "content": "                if (c.getAddedSize() \u003e 0) {"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                    Platform.runLater(() -\u003e {"
+        "content": "                    //Plays sound"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                        //Populate resultDisplay with reminder textbox"
+        "content": "                    reminderAlarm.play(30);"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                        resultDisplay.setFeedbackToUser(newItem.getReminderMessage());"
+        "content": "                    for (Item newItem : c.getAddedSubList()) {"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                    });"
+        "content": "                        Platform.runLater(() -\u003e {"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "                }"
+        "content": "                            //Populate resultDisplay with reminder textbox"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "            }"
+        "content": "                            resultDisplay.setReminderToUser(newItem.getReminderMessage());"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        };"
+        "content": "                        });"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "blimyj"
         },
-        "content": ""
+        "content": "                    }"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "blimyj"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        //Binds a ListChangeListener to activeRemindersList"
+        "content": "            }"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "blimyj"
         },
-        "content": "        logic.getActiveRemindersListProperty().addListener(activeRemindersListener);"
+        "content": "        };"
       },
       {
         "lineNumber": 232,
@@ -76694,135 +76680,135 @@
       {
         "lineNumber": 233,
         "author": {
-          "gitId": "-"
-        },
-        "content": "        CommandBox commandBox \u003d new CommandBox(this::executeCommand);"
-      },
-      {
-        "lineNumber": 234,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        commandBoxPlaceholder.getChildren().add(commandBox.getRoot());"
-      },
-      {
-        "lineNumber": 235,
-        "author": {
-          "gitId": "mannggoo"
+          "gitId": "blimyj"
         },
         "content": ""
       },
       {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "blimyj"
+        },
+        "content": "        //Binds a ListChangeListener to activeRemindersList"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "blimyj"
+        },
+        "content": "        logic.getActiveRemindersListProperty().addListener(activeRemindersListener);"
+      },
+      {
         "lineNumber": 236,
         "author": {
-          "gitId": "-"
+          "gitId": "blimyj"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        CommandBox commandBox \u003d new CommandBox(this::executeCommand);"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        commandBoxPlaceholder.getChildren().add(commandBox.getRoot());"
       },
       {
         "lineNumber": 239,
         "author": {
-          "gitId": "-"
+          "gitId": "mannggoo"
         },
-        "content": "     * Sets the default size based on {@code guiSettings}."
+        "content": ""
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void setWindowDefaultSize(GuiSettings guiSettings) {"
+        "content": ""
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.setHeight(guiSettings.getWindowHeight());"
+        "content": "    /**"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.setWidth(guiSettings.getWindowWidth());"
+        "content": "     * Sets the default size based on {@code guiSettings}."
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (guiSettings.getWindowCoordinates() !\u003d null) {"
+        "content": "     */"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "            primaryStage.setX(guiSettings.getWindowCoordinates().getX());"
+        "content": "    private void setWindowDefaultSize(GuiSettings guiSettings) {"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "            primaryStage.setY(guiSettings.getWindowCoordinates().getY());"
+        "content": "        primaryStage.setHeight(guiSettings.getWindowHeight());"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        primaryStage.setWidth(guiSettings.getWindowWidth());"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        if (guiSettings.getWindowCoordinates() !\u003d null) {"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            primaryStage.setX(guiSettings.getWindowCoordinates().getX());"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "    void show() {"
+        "content": "            primaryStage.setY(guiSettings.getWindowCoordinates().getY());"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.show();"
+        "content": "        }"
       },
       {
         "lineNumber": 252,
@@ -76843,560 +76829,560 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "    void show() {"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Closes the application."
+        "content": "        primaryStage.show();"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": ""
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void handleExit() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "        GuiSettings guiSettings \u003d new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),"
+        "content": "     * Closes the application."
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "                (int) primaryStage.getX(), (int) primaryStage.getY());"
+        "content": "     */"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "        logic.setGuiSettings(guiSettings);"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "        primaryStage.hide();"
+        "content": "    private void handleExit() {"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        GuiSettings guiSettings \u003d new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                (int) primaryStage.getX(), (int) primaryStage.getY());"
       },
       {
         "lineNumber": 265,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        logic.setGuiSettings(guiSettings);"
       },
       {
         "lineNumber": 266,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "     * Switches the view."
+        "content": "        primaryStage.hide();"
       },
       {
         "lineNumber": 267,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 268,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "     * @param list"
+        "content": ""
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    private void handleSwitchView(VisualizeList list) {"
+        "content": "     * Switches the view."
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        if (list instanceof TaskList) {"
+        "content": "     *"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            viewsPlaceholder.getSelectionModel().select(0);"
+        "content": "     * @param list"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        } else if (list instanceof EventList) {"
+        "content": "     */"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            viewsPlaceholder.getSelectionModel().select(1);"
+        "content": "    private void handleSwitchView(VisualizeList list) {"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        } else if (list instanceof ReminderList) {"
+        "content": "        if (list instanceof TaskList) {"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            viewsPlaceholder.getSelectionModel().select(2);"
+        "content": "            viewsPlaceholder.getSelectionModel().select(0);"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        } else if (list instanceof CalendarList) {"
+        "content": "        } else if (list instanceof EventList) {"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            viewsPlaceholder.getSelectionModel().select(3);"
+        "content": "            viewsPlaceholder.getSelectionModel().select(1);"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        }"
+        "content": "        } else if (list instanceof ReminderList) {"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    }"
+        "content": "            viewsPlaceholder.getSelectionModel().select(2);"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "        } else if (list instanceof CalendarList) {"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    /**"
+        "content": "            viewsPlaceholder.getSelectionModel().select(3);"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     * Scrolls the target pane up"
+        "content": "        }"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     * @param pane"
+        "content": ""
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    private void scrollUp(String pane) {"
+        "content": "     * Scrolls the target pane up"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        switch(pane) {"
+        "content": "     *"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        case \"resultDisplay\":"
+        "content": "     * @param pane"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            resultDisplay.scrollUp();"
+        "content": "     */"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            break;"
+        "content": "    private void scrollUp(String pane) {"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        case \"tabPane\":"
+        "content": "        switch(pane) {"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            eventListPanel.scrollUp();"
+        "content": "        case \"resultDisplay\":"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            taskListPanel.scrollUp();"
+        "content": "            resultDisplay.scrollUp();"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            reminderListPanel.scrollUp();"
+        "content": "            break;"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            break;"
+        "content": "        case \"tabPane\":"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        default:"
+        "content": "            eventListPanel.scrollUp();"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        }"
+        "content": "            taskListPanel.scrollUp();"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    }"
+        "content": "            reminderListPanel.scrollUp();"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "            break;"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    /**"
+        "content": "        default:"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     * Scrolls the target pane down"
+        "content": "        }"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     * @param pane"
+        "content": ""
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    private void scrollDown(String pane) {"
+        "content": "     * Scrolls the target pane down"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        switch(pane) {"
+        "content": "     *"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        case \"resultDisplay\":"
+        "content": "     * @param pane"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            resultDisplay.scrollDown();"
+        "content": "     */"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            break;"
+        "content": "    private void scrollDown(String pane) {"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        case \"tabPane\":"
+        "content": "        switch(pane) {"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            eventListPanel.scrollDown();"
+        "content": "        case \"resultDisplay\":"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            taskListPanel.scrollDown();"
+        "content": "            resultDisplay.scrollDown();"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            reminderListPanel.scrollDown();"
+        "content": "            break;"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            break;"
+        "content": "        case \"tabPane\":"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        default:"
+        "content": "            eventListPanel.scrollDown();"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        }"
+        "content": "            taskListPanel.scrollDown();"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    }"
+        "content": "            reminderListPanel.scrollDown();"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "            break;"
       },
       {
         "lineNumber": 320,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "Icesiolz"
         },
-        "content": "    /**"
+        "content": "        default:"
       },
       {
         "lineNumber": 321,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "Icesiolz"
         },
-        "content": "     * Generates an appropriate popup with the given item, formatted accordingly"
+        "content": "        }"
       },
       {
         "lineNumber": 322,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "Icesiolz"
         },
-        "content": "     * @param item details to fill in the popup with"
+        "content": "    }"
       },
       {
         "lineNumber": 323,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "Icesiolz"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    private void openUp(Item item) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        Popup popup \u003d new Popup();"
+        "content": "     * Generates an appropriate popup with the given item, formatted accordingly"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        popup.getContent().add(new OpenItem(item).getRoot());"
+        "content": "     * @param item details to fill in the popup with"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        popup.setHeight(1000);"
+        "content": "     */"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        popup.setWidth(500);"
+        "content": "    private void openUp(Item item) {"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        popup.setHideOnEscape(false);"
+        "content": "        Popup popup \u003d new Popup();"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        popup.getContent().add(new OpenItem(item).getRoot());"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        this.popup \u003d popup;"
+        "content": "        popup.setHeight(1000);"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        popup.show(primaryStage);"
+        "content": "        popup.setWidth(500);"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    }"
+        "content": "        popup.setHideOnEscape(false);"
       },
       {
         "lineNumber": 334,
@@ -77410,439 +77396,439 @@
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    /**"
+        "content": "        this.popup \u003d popup;"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * Carries out the operations to generate a popup which expands the view of the given item"
+        "content": "        popup.show(primaryStage);"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @param cr containing the item to open"
+        "content": "    }"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @return the result of executing this command"
+        "content": ""
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    private CommandResult executeOpen(CommandResult cr) {"
+        "content": "     * Carries out the operations to generate a popup which expands the view of the given item"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        CommandResult commandResult \u003d cr;"
+        "content": "     * @param cr containing the item to open"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        if (popup !\u003d null) {"
+        "content": "     * @return the result of executing this command"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            // Previous popup still exists"
+        "content": "     */"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            commandResult \u003d new CommandResult(\"Hey, close the previous one first!\");"
+        "content": "    private CommandResult executeOpen(CommandResult cr) {"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        } else {"
+        "content": "        CommandResult commandResult \u003d cr;"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            // Open new popup to show the item"
+        "content": "        if (popup !\u003d null) {"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            OpenCommandResult result \u003d (OpenCommandResult) commandResult;"
+        "content": "            // Previous popup still exists"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            openUp(result.getItem());"
+        "content": "            commandResult \u003d new CommandResult(\"Hey, close the previous one first!\");"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            viewsPlaceholder.setEffect(new GaussianBlur());"
+        "content": "        } else {"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "            // Open new popup to show the item"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        return commandResult;"
+        "content": "            OpenCommandResult result \u003d (OpenCommandResult) commandResult;"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    }"
+        "content": "            openUp(result.getItem());"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "            viewsPlaceholder.setEffect(new GaussianBlur());"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * Carries out operations to close the current popup"
+        "content": "        return commandResult;"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @param cr to carry out"
+        "content": "    }"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     * @return result of executing this command"
+        "content": ""
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    private CommandResult executeClose(CommandResult cr) {"
+        "content": "     * Carries out operations to close the current popup"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        CommandResult commandResult \u003d cr;"
+        "content": "     * @param cr to carry out"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        if (popup \u003d\u003d null) {"
+        "content": "     * @return result of executing this command"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            // Nothing to close"
+        "content": "     */"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            commandResult \u003d new CloseCommandResult(CloseCommand.MESSAGE_FAILURE);"
+        "content": "    private CommandResult executeClose(CommandResult cr) {"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        } else {"
+        "content": "        CommandResult commandResult \u003d cr;"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            popup.hide();"
+        "content": "        if (popup \u003d\u003d null) {"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            this.popup \u003d null;"
+        "content": "            // Nothing to close"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            viewsPlaceholder.setEffect(null);"
+        "content": "            commandResult \u003d new CloseCommandResult(CloseCommand.MESSAGE_FAILURE);"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "        return commandResult;"
+        "content": "            popup.hide();"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "    }"
+        "content": "            this.popup \u003d null;"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "            viewsPlaceholder.setEffect(null);"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 373,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "mannggoo"
         },
-        "content": "    /**"
+        "content": "        return commandResult;"
       },
       {
         "lineNumber": 374,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "mannggoo"
         },
-        "content": "     * Updates the panels to display the correct list of item."
+        "content": "    }"
       },
       {
         "lineNumber": 375,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "mannggoo"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 376,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "mannggoo"
         },
-        "content": "    public void updatePanels() {"
+        "content": ""
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        taskListPanel \u003d new TaskListPanel(logic.getVisualList());"
+        "content": "    /**"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        taskListPanelPlaceholder.getChildren().add(taskListPanel.getRoot());"
+        "content": "     * Updates the panels to display the correct list of item."
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        eventListPanel \u003d new EventListPanel(logic.getVisualList());"
+        "content": "    public void updatePanels() {"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        eventListPanelPlaceholder.getChildren().add(eventListPanel.getRoot());"
+        "content": "        taskListPanel \u003d new TaskListPanel(logic.getVisualList());"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "        taskListPanelPlaceholder.getChildren().add(taskListPanel.getRoot());"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        reminderListPanel \u003d new ReminderListPanel(logic.getVisualList());"
+        "content": ""
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        reminderListPanelPlaceholder.getChildren().add(reminderListPanel.getRoot());"
+        "content": "        eventListPanel \u003d new EventListPanel(logic.getVisualList());"
       },
       {
         "lineNumber": 385,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "        eventListPanelPlaceholder.getChildren().add(eventListPanel.getRoot());"
       },
       {
         "lineNumber": 386,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "Icesiolz"
         },
-        "content": "        calendarPanel \u003d new CalendarPanel(logic.getVisualList());"
+        "content": ""
       },
       {
         "lineNumber": 387,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "Icesiolz"
         },
-        "content": "        calendarPanelPlaceholder.getChildren().add(calendarPanel.getRoot());"
+        "content": "        reminderListPanel \u003d new ReminderListPanel(logic.getVisualList());"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    }"
+        "content": "        reminderListPanelPlaceholder.getChildren().add(reminderListPanel.getRoot());"
       },
       {
         "lineNumber": 389,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "sianghwee"
         },
         "content": ""
       },
       {
         "lineNumber": 390,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "sianghwee"
         },
-        "content": "    public TaskListPanel getTaskListPanel() {"
+        "content": "        calendarPanel \u003d new CalendarPanel(logic.getVisualList());"
       },
       {
         "lineNumber": 391,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "sianghwee"
         },
-        "content": "        return taskListPanel;"
+        "content": "        calendarPanelPlaceholder.getChildren().add(calendarPanel.getRoot());"
       },
       {
         "lineNumber": 392,
         "author": {
-          "gitId": "-"
+          "gitId": "Icesiolz"
         },
         "content": "    }"
       },
       {
         "lineNumber": 393,
         "author": {
-          "gitId": "-"
+          "gitId": "Icesiolz"
         },
         "content": ""
       },
       {
         "lineNumber": 394,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "Icesiolz"
         },
-        "content": "    public EventListPanel getEventListPanel() {"
+        "content": "    public TaskListPanel getTaskListPanel() {"
       },
       {
         "lineNumber": 395,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "Icesiolz"
         },
-        "content": "        return eventListPanel;"
+        "content": "        return taskListPanel;"
       },
       {
         "lineNumber": 396,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "-"
         },
         "content": "    }"
       },
       {
         "lineNumber": 397,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -77851,14 +77837,14 @@
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "    public ReminderListPanel getReminderListPanel() {"
+        "content": "    public EventListPanel getEventListPanel() {"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "        return reminderListPanel;"
+        "content": "        return eventListPanel;"
       },
       {
         "lineNumber": 400,
@@ -77877,121 +77863,121 @@
       {
         "lineNumber": 402,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "sianghwee"
         },
-        "content": "    /**"
+        "content": "    public ReminderListPanel getReminderListPanel() {"
       },
       {
         "lineNumber": 403,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "sianghwee"
         },
-        "content": "     * Changes the theme"
+        "content": "        return reminderListPanel;"
       },
       {
         "lineNumber": 404,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "sianghwee"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     * @param theme"
+        "content": ""
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    private void changeTheme(String theme) {"
+        "content": "     * Changes the theme"
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        System.out.print(theme);"
+        "content": "     *"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        System.out.print(scene.getStylesheets());"
+        "content": "     * @param theme"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        scene.getStylesheets().remove(0);"
+        "content": "     */"
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        scene.getStylesheets().remove(0);"
+        "content": "    private void changeTheme(String theme) {"
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        switch(theme.trim()) {"
+        "content": "        System.out.print(theme);"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        case \"white\":"
+        "content": "        System.out.print(scene.getStylesheets());"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            scene.getStylesheets().add(\"view/WhiteTheme.css\");"
+        "content": "        scene.getStylesheets().remove(0);"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            scene.getStylesheets().add(\"view/Extensions.css\");"
+        "content": "        scene.getStylesheets().remove(0);"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            break;"
+        "content": "        switch(theme.trim()) {"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        case \"black\":"
+        "content": "        case \"white\":"
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            scene.getStylesheets().add(\"view/DarkTheme.css\");"
+        "content": "            scene.getStylesheets().add(\"view/WhiteTheme.css\");"
       },
       {
         "lineNumber": 419,
@@ -78012,173 +77998,173 @@
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        default:"
+        "content": "        case \"black\":"
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "        }"
+        "content": "            scene.getStylesheets().add(\"view/DarkTheme.css\");"
       },
       {
         "lineNumber": 423,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "    }"
+        "content": "            scene.getStylesheets().add(\"view/Extensions.css\");"
       },
       {
         "lineNumber": 424,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "            break;"
       },
       {
         "lineNumber": 425,
         "author": {
-          "gitId": "-"
+          "gitId": "Icesiolz"
         },
-        "content": "    /**"
+        "content": "        default:"
       },
       {
         "lineNumber": 426,
         "author": {
-          "gitId": "-"
+          "gitId": "Icesiolz"
         },
-        "content": "     * Executes the command and returns the result."
+        "content": "        }"
       },
       {
         "lineNumber": 427,
         "author": {
-          "gitId": "-"
+          "gitId": "Icesiolz"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 428,
         "author": {
-          "gitId": "lrchema"
+          "gitId": "Icesiolz"
         },
-        "content": "     * @see seedu.elisa.logic.Logic#execute(String)"
+        "content": ""
       },
       {
         "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 430,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "    @FXML"
+        "content": "     * Executes the command and returns the result."
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
-        "content": "    private CommandResult executeCommand(String commandText) throws CommandException, ParseException {"
+        "content": "     *"
       },
       {
         "lineNumber": 432,
         "author": {
-          "gitId": "-"
+          "gitId": "lrchema"
         },
-        "content": "        try {"
+        "content": "     * @see seedu.elisa.logic.Logic#execute(String)"
       },
       {
         "lineNumber": 433,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "            resultDisplay.setMessageFromUser(commandText);"
+        "content": "     */"
       },
       {
         "lineNumber": 434,
         "author": {
-          "gitId": "-"
+          "gitId": "Icesiolz"
         },
-        "content": "            CommandResult commandResult \u003d logic.execute(commandText);"
+        "content": "    @FXML"
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
-        "content": "            logger.info(\"Result: \" + commandResult.getFeedbackToUser());"
+        "content": "    private CommandResult executeCommand(String commandText) throws CommandException, ParseException {"
       },
       {
         "lineNumber": 436,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 437,
+        "author": {
+          "gitId": "Icesiolz"
+        },
+        "content": "            resultDisplay.setMessageFromUser(commandText);"
+      },
+      {
+        "lineNumber": 438,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            CommandResult commandResult \u003d logic.execute(commandText);"
+      },
+      {
+        "lineNumber": 439,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            logger.info(\"Result: \" + commandResult.getFeedbackToUser());"
+      },
+      {
+        "lineNumber": 440,
         "author": {
           "gitId": "mannggoo"
         },
         "content": ""
       },
       {
-        "lineNumber": 437,
+        "lineNumber": 441,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "            if (!(commandResult instanceof UpCommandResult) \u0026\u0026 !(commandResult instanceof DownCommandResult)"
       },
       {
-        "lineNumber": 438,
+        "lineNumber": 442,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "                    \u0026\u0026 !(commandResult instanceof OpenCommandResult)"
       },
       {
-        "lineNumber": 439,
+        "lineNumber": 443,
         "author": {
           "gitId": "mannggoo"
         },
         "content": "                    \u0026\u0026 !(commandResult instanceof CloseCommandResult)) {"
       },
       {
-        "lineNumber": 440,
+        "lineNumber": 444,
         "author": {
           "gitId": "-"
         },
         "content": "                resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
       },
       {
-        "lineNumber": 441,
-        "author": {
-          "gitId": "Icesiolz"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 442,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 443,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            if (commandResult.isExit()) {"
-      },
-      {
-        "lineNumber": 444,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                handleExit();"
-      },
-      {
         "lineNumber": 445,
         "author": {
-          "gitId": "-"
+          "gitId": "Icesiolz"
         },
         "content": "            }"
       },
@@ -78192,205 +78178,205 @@
       {
         "lineNumber": 447,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "            handleSwitchView(logic.getVisualList());"
+        "content": "            if (commandResult.isExit()) {"
       },
       {
         "lineNumber": 448,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "                handleExit();"
       },
       {
         "lineNumber": 449,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "            if (commandResult instanceof UpCommandResult) {"
+        "content": "            }"
       },
       {
         "lineNumber": 450,
         "author": {
-          "gitId": "Icesiolz"
+          "gitId": "-"
         },
-        "content": "                scrollUp(commandResult.getPane());"
+        "content": ""
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "                return commandResult;"
+        "content": "            handleSwitchView(logic.getVisualList());"
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "            if (commandResult instanceof UpCommandResult) {"
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            if (commandResult instanceof DownCommandResult) {"
+        "content": "                scrollUp(commandResult.getPane());"
       },
       {
         "lineNumber": 455,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "                scrollDown(commandResult.getPane());"
+        "content": "                return commandResult;"
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "                return commandResult;"
+        "content": "            }"
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "            if (commandResult instanceof DownCommandResult) {"
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            if (commandResult instanceof ThemeCommandResult) {"
+        "content": "                scrollDown(commandResult.getPane());"
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "                changeTheme(commandResult.getTheme());"
+        "content": "                return commandResult;"
       },
       {
         "lineNumber": 461,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "                return commandResult;"
+        "content": "            }"
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "Icesiolz"
         },
-        "content": ""
+        "content": "            if (commandResult instanceof ThemeCommandResult) {"
       },
       {
         "lineNumber": 464,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "Icesiolz"
         },
-        "content": "            if (commandResult instanceof OpenCommandResult) {"
+        "content": "                changeTheme(commandResult.getTheme());"
       },
       {
         "lineNumber": 465,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "Icesiolz"
         },
-        "content": "                commandResult \u003d executeOpen(commandResult);"
+        "content": "                return commandResult;"
       },
       {
         "lineNumber": 466,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "Icesiolz"
         },
-        "content": "                resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
+        "content": "            }"
       },
       {
         "lineNumber": 467,
         "author": {
-          "gitId": "mannggoo"
+          "gitId": "Icesiolz"
         },
-        "content": "                return commandResult;"
+        "content": ""
       },
       {
         "lineNumber": 468,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            }"
+        "content": "            if (commandResult instanceof OpenCommandResult) {"
       },
       {
         "lineNumber": 469,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "                commandResult \u003d executeOpen(commandResult);"
       },
       {
         "lineNumber": 470,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            if (commandResult instanceof CloseCommandResult) {"
+        "content": "                resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
       },
       {
         "lineNumber": 471,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                commandResult \u003d executeClose(commandResult);"
+        "content": "                return commandResult;"
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 473,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
+        "content": ""
       },
       {
         "lineNumber": 474,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "                return commandResult;"
+        "content": "            if (commandResult instanceof CloseCommandResult) {"
       },
       {
         "lineNumber": 475,
         "author": {
           "gitId": "mannggoo"
         },
-        "content": "            }"
+        "content": "                commandResult \u003d executeClose(commandResult);"
       },
       {
         "lineNumber": 476,
@@ -78402,61 +78388,89 @@
       {
         "lineNumber": 477,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "mannggoo"
         },
-        "content": "            updatePanels();"
+        "content": "                resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());"
       },
       {
         "lineNumber": 478,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "mannggoo"
         },
-        "content": "            return commandResult;"
+        "content": "                return commandResult;"
       },
       {
         "lineNumber": 479,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "mannggoo"
         },
-        "content": "        } catch (CommandException | ParseException e) {"
+        "content": "            }"
       },
       {
         "lineNumber": 480,
         "author": {
-          "gitId": "sianghwee"
+          "gitId": "mannggoo"
         },
-        "content": "            logger.info(\"Invalid command: \" + commandText);"
+        "content": ""
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "            resultDisplay.setFeedbackToUser(e.getMessage());"
+        "content": "            updatePanels();"
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "            throw e;"
+        "content": "            return commandResult;"
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "        }"
+        "content": "        } catch (CommandException | ParseException e) {"
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "sianghwee"
         },
-        "content": "    }"
+        "content": "            logger.info(\"Invalid command: \" + commandText);"
       },
       {
         "lineNumber": 485,
+        "author": {
+          "gitId": "sianghwee"
+        },
+        "content": "            resultDisplay.setFeedbackToUser(e.getMessage());"
+      },
+      {
+        "lineNumber": 486,
+        "author": {
+          "gitId": "sianghwee"
+        },
+        "content": "            throw e;"
+      },
+      {
+        "lineNumber": 487,
+        "author": {
+          "gitId": "sianghwee"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 488,
+        "author": {
+          "gitId": "sianghwee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 489,
         "author": {
           "gitId": "-"
         },
@@ -78464,7 +78478,7 @@
       }
     ],
     "authorContributionMap": {
-      "blimyj": 28,
+      "blimyj": 32,
       "lrchema": 24,
       "mannggoo": 80,
       "sianghwee": 95,
