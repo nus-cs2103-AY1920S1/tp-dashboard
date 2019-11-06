@@ -146,9 +146,9 @@
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "image::images/Ui.png[width\u003d\"600\"]"
+        "content": "image::docs/images/Ui.png[width\u003d\"600\"]"
       },
       {
         "lineNumber": 22,
@@ -406,8 +406,8 @@
     "authorContributionMap": {
       "podocarp": 4,
       "JohnNzj": 1,
-      "Aulud": 5,
-      "-": 47
+      "Aulud": 6,
+      "-": 46
     }
   },
   {
@@ -21961,194 +21961,236 @@
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_PERSON_INVOLVED_ACTIVITY \u003d \"%s is still involved in an activity!\";"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "    private final Index targetIndex;"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private final Index targetIndex;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "    public DeleteCommand(Index targetIndex) {"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.targetIndex \u003d targetIndex;"
+        "content": "    public DeleteCommand(Index targetIndex) {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        this.targetIndex \u003d targetIndex;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "        List\u003cPerson\u003e lastShownList \u003d model.getFilteredPersonList();"
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        List\u003cPerson\u003e lastShownList \u003d model.getFilteredPersonList();"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (targetIndex.getZeroBased() \u003e\u003d lastShownList.size()) {"
+        "content": ""
       },
       {
         "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (targetIndex.getZeroBased() \u003e\u003d lastShownList.size()) {"
+      },
+      {
+        "lineNumber": 40,
         "author": {
           "gitId": "Aulud"
         },
         "content": "            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAY_INDEX);"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "        Person personToDelete \u003d lastShownList.get(targetIndex.getZeroBased());"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "        model.deletePerson(personToDelete);"
+        "content": "        Person personToDelete \u003d lastShownList.get(targetIndex.getZeroBased());"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, personToDelete));"
+        "content": "        if (model.getActivityBook().hasPerson(personToDelete.getPrimaryKey())) {"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "    }"
+        "content": "            throw new CommandException(String.format(MESSAGE_PERSON_INVOLVED_ACTIVITY,"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "                            personToDelete.getName()));"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "    @Override"
+        "content": "        }"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "        model.deletePerson(personToDelete);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "                || (other instanceof DeleteCommand // instanceof handles nulls"
+        "content": "        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, personToDelete));"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 targetIndex.equals(((DeleteCommand) other).targetIndex)); // state check"
+        "content": "    }"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                || (other instanceof DeleteCommand // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                \u0026\u0026 targetIndex.equals(((DeleteCommand) other).targetIndex)); // state check"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
@@ -22156,6 +22198,7 @@
       }
     ],
     "authorContributionMap": {
+      "podocarp": 6,
       "Aulud": 2,
       "-": 51
     }
@@ -36288,7 +36331,7 @@
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "liakify"
         },
         "content": "        activityList.addAll(previousActivityBook.getActivityList());"
       },
@@ -36939,40 +36982,138 @@
       {
         "lineNumber": 121,
         "author": {
+          "gitId": "podocarp"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "     * Checks whether the person with ID is present in any activity."
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "     * @param personId Id of the person to check."
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "     * @return True if person exists, false otherwise."
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "    public boolean hasPerson(Integer personId) {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        for (Activity activity : activityList) {"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "            if (activity.hasPerson(personId)) {"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "                return true;"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 135,
+        "author": {
           "gitId": "daekoon"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 136,
         "author": {
           "gitId": "daekoon"
         },
         "content": "    public int hashCode() {"
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 137,
         "author": {
           "gitId": "daekoon"
         },
         "content": "        return activityList.hashCode();"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 138,
         "author": {
           "gitId": "daekoon"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 139,
         "author": {
           "gitId": "daekoon"
         },
         "content": ""
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 140,
         "author": {
           "gitId": "daekoon"
         },
@@ -36980,8 +37121,9 @@
       }
     ],
     "authorContributionMap": {
-      "podocarp": 12,
-      "Aulud": 30,
+      "podocarp": 26,
+      "liakify": 1,
+      "Aulud": 29,
       "daekoon": 84
     }
   },
@@ -60181,7 +60323,7 @@
         "author": {
           "gitId": "Aulud"
         },
-        "content": "        paidBy.setText(String.format(\"Paid: %s\", expenseOwner.getName().toString()));"
+        "content": "        paidBy.setText(String.format(\"Paid by: %s\", expenseOwner.getName().toString()));"
       },
       {
         "lineNumber": 62,
@@ -65715,7 +65857,7 @@
         "author": {
           "gitId": "Aulud"
         },
-        "content": "  \u003cGridPane styleClass\u003d\"activity-history-card\" maxWidth\u003d\"450\" hgap\u003d\"8\"\u003e"
+        "content": "  \u003cGridPane styleClass\u003d\"activity-history-card\" maxWidth\u003d\"450\"\u003e"
       },
       {
         "lineNumber": 14,
@@ -67353,7 +67495,7 @@
         "author": {
           "gitId": "Aulud"
         },
-        "content": "  \u003cGridPane styleClass\u003d\"expense-card\" maxWidth\u003d\"450\" hgap\u003d\"8\"\u003e"
+        "content": "  \u003cGridPane styleClass\u003d\"expense-card\" maxWidth\u003d\"450\"\u003e"
       },
       {
         "lineNumber": 16,
@@ -67367,7 +67509,7 @@
         "author": {
           "gitId": "Aulud"
         },
-        "content": "      \u003cColumnConstraints hgrow\u003d\"NEVER\" minWidth\u003d\"150\" maxWidth\u003d\"150\" /\u003e"
+        "content": "      \u003cColumnConstraints hgrow\u003d\"NEVER\" minWidth\u003d\"160\" maxWidth\u003d\"160\" /\u003e"
       },
       {
         "lineNumber": 18,
@@ -78085,37 +78227,37 @@
       {
         "lineNumber": 8,
         "author": {
+          "gitId": "podocarp"
+        },
+        "content": "import static seedu.address.testutil.TypicalActivities.getTypicalActivityBook;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "import static seedu.address.testutil.TypicalIndexes.INDEX_FIFTH;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
           "gitId": "Aulud"
         },
         "content": "import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 11,
         "author": {
           "gitId": "Aulud"
         },
         "content": "import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND;"
       },
       {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": "import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;"
       },
       {
         "lineNumber": 13,
@@ -78129,91 +78271,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "import seedu.address.commons.core.Messages;"
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "-"
         },
-        "content": "import seedu.address.commons.core.index.Index;"
+        "content": ""
       },
       {
         "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.address.commons.core.Messages;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import seedu.address.commons.core.index.Index;"
+      },
+      {
+        "lineNumber": 18,
         "author": {
           "gitId": "daekoon"
         },
         "content": "import seedu.address.model.ActivityBook;"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 19,
         "author": {
           "gitId": "podocarp"
         },
         "content": "import seedu.address.model.InternalState;"
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.address.model.Model;"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.address.model.ModelManager;"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
         "content": "import seedu.address.model.UserPrefs;"
       },
       {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "import seedu.address.model.person.Person;"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 23,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "/**"
+        "content": "import seedu.address.model.activity.Activity;"
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "liakify"
         },
-        "content": " * Contains integration tests (interaction with the Model) and unit tests for {@code DeleteCommand}."
+        "content": "import seedu.address.model.activity.Title;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "import seedu.address.model.person.Person;"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "public class DeleteCommandTest {"
+        "content": "import seedu.address.testutil.ActivityBookBuilder;"
       },
       {
         "lineNumber": 27,
@@ -78225,65 +78367,65 @@
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "daekoon"
+          "gitId": "-"
         },
-        "content": "    private Model model \u003d new ModelManager("
+        "content": "/**"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "daekoon"
+          "gitId": "Aulud"
         },
-        "content": "            getTypicalAddressBook(), new UserPrefs(), new InternalState(), new ActivityBook());"
+        "content": " * Contains integration tests (interaction with the Model) and unit tests for {@code DeleteCommand}."
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "public class DeleteCommandTest {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void execute_validIndexUnfilteredList_success() {"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "daekoon"
         },
-        "content": "        Person personToDelete \u003d model.getFilteredPersonList().get(INDEX_FIRST.getZeroBased());"
+        "content": "    private Model model \u003d new ModelManager("
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "daekoon"
         },
-        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(INDEX_FIRST);"
+        "content": "            getTypicalAddressBook(), new UserPrefs(), new InternalState(), new ActivityBook());"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": ""
+        "content": "    private Model model2 \u003d new ModelManager("
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "        String expectedMessage \u003d String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS, personToDelete);"
+        "content": "            getTypicalAddressBook(), new UserPrefs(), new InternalState(), new ActivityBook(getTypicalActivityBook()));"
       },
       {
         "lineNumber": 37,
@@ -78295,30 +78437,30 @@
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "daekoon"
+          "gitId": "-"
         },
-        "content": "        ModelManager expectedModel \u003d new ModelManager("
+        "content": "    @Test"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "daekoon"
+          "gitId": "-"
         },
-        "content": "                model.getAddressBook(), new UserPrefs(), new InternalState(), new ActivityBook());"
+        "content": "    public void execute_validIndexUnfilteredList_success() {"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "daekoon"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "        Person personToDelete \u003d model.getFilteredPersonList().get(INDEX_FIRST.getZeroBased());"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "        expectedModel.deletePerson(personToDelete);"
+        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(INDEX_FIRST);"
       },
       {
         "lineNumber": 42,
@@ -78332,98 +78474,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);"
+        "content": "        String expectedMessage \u003d String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS, personToDelete);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "-"
+          "gitId": "daekoon"
         },
-        "content": ""
+        "content": "        ModelManager expectedModel \u003d new ModelManager("
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "-"
+          "gitId": "daekoon"
         },
-        "content": "    @Test"
+        "content": "                model.getAddressBook(), new UserPrefs(), new InternalState(), new ActivityBook());"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "-"
+          "gitId": "daekoon"
         },
-        "content": "    public void execute_invalidIndexUnfilteredList_throwsCommandException() {"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "        Index outOfBoundIndex \u003d Index.fromOneBased(model.getFilteredPersonList().size() + 1);"
+        "content": "        expectedModel.deletePerson(personToDelete);"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(outOfBoundIndex);"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);"
       },
       {
         "lineNumber": 51,
-        "author": {
-          "gitId": "Aulud"
-        },
-        "content": "        assertCommandFailure(deleteCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAY_INDEX);"
-      },
-      {
-        "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
         "content": "    @Test"
       },
       {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void execute_invalidIndexUnfilteredList_throwsCommandException() {"
+      },
+      {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void execute_validIndexFilteredList_success() {"
+        "content": "        Index outOfBoundIndex \u003d Index.fromOneBased(model.getFilteredPersonList().size() + 1);"
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "        showPersonAtIndex(model, INDEX_FIRST);"
+        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(outOfBoundIndex);"
       },
       {
         "lineNumber": 57,
@@ -78437,14 +78579,14 @@
         "author": {
           "gitId": "Aulud"
         },
-        "content": "        Person personToDelete \u003d model.getFilteredPersonList().get(INDEX_FIRST.getZeroBased());"
+        "content": "        assertCommandFailure(deleteCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAY_INDEX);"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(INDEX_FIRST);"
+        "content": "    }"
       },
       {
         "lineNumber": 60,
@@ -78458,98 +78600,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        String expectedMessage \u003d String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS, personToDelete);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void execute_validIndexFilteredList_success() {"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "daekoon"
+          "gitId": "Aulud"
         },
-        "content": "        Model expectedModel \u003d new ModelManager("
+        "content": "        showPersonAtIndex(model, INDEX_FIRST);"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "daekoon"
-        },
-        "content": "                model.getAddressBook(), new UserPrefs(), new InternalState(), new ActivityBook());"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "daekoon"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "        Person personToDelete \u003d model.getFilteredPersonList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
         "lineNumber": 66,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "        expectedModel.deletePerson(personToDelete);"
+        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(INDEX_FIRST);"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "        showNoPerson(expectedModel);"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        String expectedMessage \u003d String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS, personToDelete);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "-"
+          "gitId": "daekoon"
         },
-        "content": "    }"
+        "content": "        Model expectedModel \u003d new ModelManager("
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "-"
+          "gitId": "daekoon"
         },
-        "content": ""
+        "content": "                model.getAddressBook(), new UserPrefs(), new InternalState(), new ActivityBook());"
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "-"
+          "gitId": "daekoon"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void execute_invalidIndexFilteredList_throwsCommandException() {"
+        "content": "        expectedModel.deletePerson(personToDelete);"
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "        showPersonAtIndex(model, INDEX_FIRST);"
+        "content": "        showNoPerson(expectedModel);"
       },
       {
         "lineNumber": 75,
@@ -78561,278 +78703,663 @@
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "        Index outOfBoundIndex \u003d INDEX_SECOND;"
+        "content": "        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "        // ensures that outOfBoundIndex is still in bounds of address book list"
+        "content": "    }"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(outOfBoundIndex.getZeroBased() \u003c model.getAddressBook().getPersonList().size());"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(outOfBoundIndex);"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "Aulud"
-        },
-        "content": "        assertCommandFailure(deleteCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAY_INDEX);"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
         "content": "    @Test"
       },
       {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    public void execute_deletePersonOutsideActivity_success() {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        showPersonAtIndex(model2, INDEX_FIFTH);"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(INDEX_FIRST);"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        Person personToDelete \u003d model2.getFilteredPersonList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        String expectedMessage \u003d String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS, personToDelete);"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
         "lineNumber": 86,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "    public void equals() {"
+        "content": "        Model expectedModel \u003d new ModelManager("
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "liakify"
         },
-        "content": "        DeleteCommand deleteFirstCommand \u003d new DeleteCommand(INDEX_FIRST);"
+        "content": "                getTypicalAddressBook(), new UserPrefs(), new InternalState(), getTypicalActivityBook());"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "liakify"
         },
-        "content": "        DeleteCommand deleteSecondCommand \u003d new DeleteCommand(INDEX_SECOND);"
+        "content": "        expectedModel.deletePerson(personToDelete);"
       },
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": ""
+        "content": "        expectedModel.updateFilteredPersonList(x -\u003e false);"
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "        // same object -\u003e returns true"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "        assertTrue(deleteFirstCommand.equals(deleteFirstCommand));"
+        "content": "        assertCommandSuccess(deleteCommand, model2, expectedMessage, expectedModel);"
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        // same values -\u003e returns true"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "Aulud"
-        },
-        "content": "        DeleteCommand deleteFirstCommandCopy \u003d new DeleteCommand(INDEX_FIRST);"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        assertTrue(deleteFirstCommand.equals(deleteFirstCommandCopy));"
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        // different types -\u003e returns false"
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        assertFalse(deleteFirstCommand.equals(1));"
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        // null -\u003e returns false"
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        assertFalse(deleteFirstCommand.equals(null));"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        // different person -\u003e returns false"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        assertFalse(deleteFirstCommand.equals(deleteSecondCommand));"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 93,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
         "content": ""
       },
       {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    public void execute_deletePersonPreviouslyInActivity_success() {"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        showPersonAtIndex(model, INDEX_FIRST);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(INDEX_FIRST);"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        Person personToDelete \u003d model.getFilteredPersonList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        Activity a \u003d new Activity(new Title(\"asdf\"), personToDelete.getPrimaryKey());"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        model.addActivity(a);"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        ActivityBook ab \u003d new ActivityBookBuilder().withActivity(a).build();"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        String expectedMessage \u003d String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS, personToDelete);"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        Model expectedModel \u003d new ModelManager(getTypicalAddressBook(),"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "                new UserPrefs(), new InternalState(), ab);"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        expectedModel.getActivityBook().getActivityList().get(0).disinvite(personToDelete);"
+      },
+      {
         "lineNumber": 107,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "    /**"
+        "content": "        expectedModel.deletePerson(personToDelete);"
       },
       {
         "lineNumber": 108,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "     * Updates {@code model}\u0027s filtered list to show no one."
+        "content": "        expectedModel.updateFilteredPersonList(x -\u003e false);"
       },
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "    private void showNoPerson(Model model) {"
+        "content": "        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);"
       },
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
-        "content": "        model.updateFilteredPersonList(p -\u003e false);"
+        "content": "    }"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "-"
+          "gitId": "liakify"
         },
         "content": ""
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "        assertTrue(model.getFilteredPersonList().isEmpty());"
+        "content": "    @Test"
       },
       {
         "lineNumber": 114,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "    public void execute_deletePersonInActivity_throwsCommandException() {"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        showPersonAtIndex(model, INDEX_FIRST);"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(INDEX_FIRST);"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        Person personToDelete \u003d model.getFilteredPersonList().get(INDEX_FIRST.getZeroBased());"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        String errmsg \u003d String.format(DeleteCommand.MESSAGE_PERSON_INVOLVED_ACTIVITY,"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "                personToDelete.getName());"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        Model tempmodel \u003d new ModelManager("
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "                getTypicalAddressBook(), new UserPrefs(), new InternalState(), getTypicalActivityBook());"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "        assertCommandFailure(deleteCommand, tempmodel, errmsg);"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void execute_invalidIndexFilteredList_throwsCommandException() {"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "        showPersonAtIndex(model, INDEX_FIRST);"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "        Index outOfBoundIndex \u003d INDEX_SECOND;"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // ensures that outOfBoundIndex is still in bounds of address book list"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(outOfBoundIndex.getZeroBased() \u003c model.getAddressBook().getPersonList().size());"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        DeleteCommand deleteCommand \u003d new DeleteCommand(outOfBoundIndex);"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "        assertCommandFailure(deleteCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAY_INDEX);"
+      },
+      {
+        "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 115,
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void equals() {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "        DeleteCommand deleteFirstCommand \u003d new DeleteCommand(INDEX_FIRST);"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "        DeleteCommand deleteSecondCommand \u003d new DeleteCommand(INDEX_SECOND);"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // same object -\u003e returns true"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(deleteFirstCommand.equals(deleteFirstCommand));"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // same values -\u003e returns true"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "        DeleteCommand deleteFirstCommandCopy \u003d new DeleteCommand(INDEX_FIRST);"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(deleteFirstCommand.equals(deleteFirstCommandCopy));"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // different types -\u003e returns false"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(deleteFirstCommand.equals(1));"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // null -\u003e returns false"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(deleteFirstCommand.equals(null));"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // different person -\u003e returns false"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(deleteFirstCommand.equals(deleteSecondCommand));"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Updates {@code model}\u0027s filtered list to show no one."
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private void showNoPerson(Model model) {"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        model.updateFilteredPersonList(p -\u003e false);"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(model.getFilteredPersonList().isEmpty());"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
@@ -78840,7 +79367,8 @@
       }
     ],
     "authorContributionMap": {
-      "podocarp": 1,
+      "podocarp": 15,
+      "liakify": 41,
       "Aulud": 15,
       "-": 90,
       "daekoon": 9

@@ -658,6 +658,202 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 99,
+        "deletions": 40,
+        "date": "2019-11-01",
+        "commitResults": [
+          {
+            "hash": "21ea288b0dcf38440b5d3d23aaa0b7f179950fea",
+            "messageTitle": "Reinstate missing changes to Stats, StatisticsWindow, SessionList, DateTimeUtilTest etc.",
+            "messageBody": "",
+            "insertions": 99,
+            "deletions": 40
+          }
+        ]
+      },
+      {
+        "insertions": 573,
+        "deletions": 553,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "7634cc40a53d955c74c01c900fa98bb17d6cbc12",
+            "messageTitle": "Create Stats abstract class. Rename original Stats to UserStats. Have UserStats and DeckStats extend Stats. Move displaySessionsTableView() functionality to Stats",
+            "messageBody": "",
+            "insertions": 164,
+            "deletions": 148
+          },
+          {
+            "hash": "4f3db140e2e9872fd1d1fd33654521169b884879",
+            "messageTitle": "Commit stats.txt to pull from master",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 0
+          },
+          {
+            "hash": "c376671fec2d42fbd59aecfb8035298f82bdd95f",
+            "messageTitle": "Add DeckStats to Deck. Refactor: rename getName() in Deck to getDeckName().",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 76
+          },
+          {
+            "hash": "a220e65bbfadd082804952e038064d5fb8b4c0d4",
+            "messageTitle": "Create DeckStatisticsWindow. Move getSessionsTableView and getDeckStatsTableView to StatsDisplayUtil. Add DeckStats to Deck.",
+            "messageBody": "",
+            "insertions": 270,
+            "deletions": 66
+          },
+          {
+            "hash": "26cd605b92b247d6335e28e150330fdb6efbadb7",
+            "messageTitle": "Refactor: rename deckStatsTableView to deckTableView. Add getters to Deck for statistics pertaining to deck.",
+            "messageBody": "",
+            "insertions": 52,
+            "deletions": 47
+          },
+          {
+            "hash": "69fd89e3770cd6b9547a3a7174228f3d035f3d64",
+            "messageTitle": "Update StatisticsWindow to use ScrollPane",
+            "messageBody": "",
+            "insertions": 33,
+            "deletions": 39
+          },
+          {
+            "hash": "32922f53c6fb4931f8834c01dd0b0a56efb9c0e1",
+            "messageTitle": "Update DeckStatisticsWindow to use ScrollPane",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 23
+          },
+          {
+            "hash": "89ce011d4618ba9f3129457a66d400ead46775b1",
+            "messageTitle": "Fix checkstyle. Remove StatsStorageManager.java",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 154
+          }
+        ]
+      },
+      {
+        "insertions": 472,
+        "deletions": 345,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "6e06fac75b67e2e3ace741253b14a4052c3cbee3",
+            "messageTitle": "Changes to State, StorageManager, StatsDisplayUtil",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 6
+          },
+          {
+            "hash": "82783776d5c4ba74f3d909943f1170d4a0f08002",
+            "messageTitle": "Create UserStatsHolder class. Refactor linkages between MainApp, State and UserStats.",
+            "messageBody": "",
+            "insertions": 35,
+            "deletions": 20
+          },
+          {
+            "hash": "5103cb050259ddcde2413f12bde3761114230dfd",
+            "messageTitle": "Refactor StatisticsWindow to use UserStatsHolder",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 9
+          },
+          {
+            "hash": "1d728f64b4d2c2c017a66bb7f60b08ed2febf263",
+            "messageTitle": "Try to add openWindow to Consumers",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 4
+          },
+          {
+            "hash": "62fc6c57fa63de3e0742147b2178d51a58a7750f",
+            "messageTitle": "Refactor: rename MenuItems in MainWindow. Hide unused separators in MainWindow\u0027s menu.",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 20
+          },
+          {
+            "hash": "96840e046d27b17ae2a3b0f2c27e3bc3dab5e935",
+            "messageTitle": "!!!!!! there is now a StackOverflowError ????????",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 8
+          },
+          {
+            "hash": "035182f6fb5e466fe455f71c016386c6aab23aab",
+            "messageTitle": "Write tests to find source of StackOverFlow: in userStats.setSessionList(sessionList), but not sure why yet.",
+            "messageBody": "",
+            "insertions": 66,
+            "deletions": 0
+          },
+          {
+            "hash": "ec1536b5930f132bf887cb61fc77432f0b368dc5",
+            "messageTitle": "Resolve StackOverflowError. Source: calling StorageManager.loadUserStats() in constructor of UserStats. Move methods from Stats to UserStats and (temporarily) remove dependency of UserStats on Stats.",
+            "messageBody": "",
+            "insertions": 89,
+            "deletions": 91
+          },
+          {
+            "hash": "b32d9e97c5bb6c314fbafae80e3691fe93b1cb9f",
+            "messageTitle": "Reinstate dependency between UserStats and Stats. Remove references to UserStats in State (causing duplicate calls to UserStats\u0027s constructor).",
+            "messageBody": "",
+            "insertions": 67,
+            "deletions": 86
+          },
+          {
+            "hash": "53d47c143d724cf878336246fa8fbb4002dd64c2",
+            "messageTitle": "Verify that loadUserStats() works as expected. displaySummaryStats() in StatisticsWindow works as expected. Still trying to debug sessionsTableView :(",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 7
+          },
+          {
+            "hash": "13171e124312bb7e67e3ea351471f670a79d8836",
+            "messageTitle": "Resolve sessions not showing issue... but why?",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 18
+          },
+          {
+            "hash": "5f62d6963b21fe949c9592534a2f4fca08c3ceeb",
+            "messageTitle": "Add and test getAverageDuration(SessionList) in DateTimeUtil",
+            "messageBody": "",
+            "insertions": 69,
+            "deletions": 10
+          },
+          {
+            "hash": "b40ff3e836712ffa418fcd69817b5dbcedf01a5b",
+            "messageTitle": "Display average duration per login in StatisticsWindow",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 3
+          },
+          {
+            "hash": "7dcc8b93912ebff1111c3e22cc047c92b38e64a8",
+            "messageTitle": "Add TableView back to StatisticsWindow.fxml",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 9
+          },
+          {
+            "hash": "d3544271c74d0e6257a3f5ab013b9fc504396bf8",
+            "messageTitle": "Refactor: remove methods related to SessionList from Stats. Update references in StatisticsWindow. Increase default height of StatisticsWindow.",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 42
+          },
+          {
+            "hash": "7637c71b5ca41b8b3aaacac523d7446d64d9933c",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 12
+          }
+        ]
       }
     ],
     "AHaliq": [
@@ -1246,6 +1442,27 @@
             "messageBody": "",
             "insertions": 64,
             "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 11,
+        "deletions": 9,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "79815a6712f12566ceb4c4c789d17f31046902c3",
+            "messageTitle": "fixed stats json misc errors",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 8
+          },
+          {
+            "hash": "04eb8e6eb9e377b033a6d986508daed3466c171e",
+            "messageTitle": "fixed checkstyle error",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
           }
         ]
       }
@@ -4364,59 +4581,73 @@
             "deletions": 2
           }
         ]
+      },
+      {
+        "insertions": 10,
+        "deletions": 2,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "3f131d3a75598d4090d6047477b4c500e5130dc9",
+            "messageTitle": "Modify help command regex",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 2
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "nattanyz": 1005,
-    "AHaliq": 3309,
-    "PhireHandy": 618,
-    "shawnpunchew11": 854,
-    "timothyleong97": 4334,
-    "huiminlim": 2006
+    "nattanyz": 1319,
+    "AHaliq": 3254,
+    "PhireHandy": 531,
+    "shawnpunchew11": 853,
+    "timothyleong97": 4376,
+    "huiminlim": 2022
   },
   "authorFileTypeContributionMap": {
     "nattanyz": {
       "docs": 10,
-      "tests": 99,
-      "functional": 896
+      "tests": 261,
+      "functional": 1048
     },
     "AHaliq": {
       "docs": 33,
-      "tests": 273,
-      "functional": 3002,
+      "tests": 271,
+      "functional": 2949,
       "other": 1
     },
     "PhireHandy": {
       "docs": 3,
       "tests": 0,
-      "functional": 615
+      "functional": 528
     },
     "shawnpunchew11": {
       "docs": 38,
-      "tests": 123,
+      "tests": 122,
       "functional": 693
     },
     "timothyleong97": {
       "docs": 133,
       "tests": 103,
-      "functional": 4056,
+      "functional": 4098,
       "other": 42
     },
     "huiminlim": {
       "docs": 649,
       "tests": 186,
-      "functional": 1050,
+      "functional": 1066,
       "other": 121
     }
   },
   "authorContributionVariance": {
-    "nattanyz": 102020.555,
-    "AHaliq": 97242.64,
-    "PhireHandy": 26727.305,
-    "shawnpunchew11": 35834.363,
-    "timothyleong97": 1710044.4,
-    "huiminlim": 58046.355
+    "nattanyz": 124415.21,
+    "AHaliq": 95741.94,
+    "PhireHandy": 26334.223,
+    "shawnpunchew11": 35288.293,
+    "timothyleong97": 1684794.5,
+    "huiminlim": 57322.44
   },
   "authorDisplayNameMap": {
     "nattanyz": "CS2103-F09-2 TAN Y ... TALIE",

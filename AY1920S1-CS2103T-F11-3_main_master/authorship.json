@@ -38825,7 +38825,7 @@
         "author": {
           "gitId": "yhtingg"
         },
-        "content": "            + PREFIX_TAG + \"use for groceries\";"
+        "content": "            + PREFIX_TAG + \"groceries\";"
       },
       {
         "lineNumber": 33,
@@ -40189,346 +40189,360 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PASSWORDS;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.logic.commands.exceptions.CommandException;"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.Model;"
+        "content": "import seedu.address.logic.commands.exceptions.CommandException;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.password.Password;"
+        "content": "import seedu.address.model.Model;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import seedu.address.model.password.Password;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " * Adds a password to the password book."
+        "content": "/**"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " */"
+        "content": " * Adds a password to the password book."
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "public class AddPasswordCommand extends Command {"
+        "content": " */"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
+        "content": "public class AddPasswordCommand extends Command {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds a password to the password book. \""
+        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"\\nParameters: \""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds a password to the password book. \""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + PREFIX_DESCRIPTION + \"DESCRIPTION \""
+        "content": "            + \"\\nParameters: \""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + PREFIX_USERNAME + \"USERNAME \""
+        "content": "            + PREFIX_DESCRIPTION + \"DESCRIPTION \""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + PREFIX_PASSWORDVALUE + \"PASSWORD \""
+        "content": "            + PREFIX_USERNAME + \"USERNAME \""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"[\" + PREFIX_WEBSITE + \"WEBSITE] \""
+        "content": "            + PREFIX_PASSWORDVALUE + \"PASSWORD \""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"[\" + PREFIX_TAG + \"TAG]\";"
+        "content": "            + \"[\" + PREFIX_WEBSITE + \"WEBSITE] \""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            + \"[\" + PREFIX_TAG + \"TAG]\";"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static final String MESSAGE_SUCCESS \u003d \"New password added: %1$s\";"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static final String MESSAGE_DUPLICATE_PASSWORD \u003d \"This password already exists in the password book.\\n\""
+        "content": "    public static final String MESSAGE_SUCCESS \u003d \"New password added: %1$s\";"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"Please ensure that your password adhere to the following constraints:\\n\""
+        "content": "    public static final String MESSAGE_DUPLICATE_PASSWORD \u003d \"This password already exists in the password book.\\n\""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"1) Should not have the same description and username as those already existing in the password book\\n\""
+        "content": "            + \"Please ensure that your password adhere to the following constraints:\\n\""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"2) Description and username are case-insensitive.\";"
+        "content": "            + \"1) Should not have the same description and username as those already existing in the password book\\n\""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            + \"2) Description and username are case-insensitive.\";"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    private final Password toAddPassword;"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    private final Password toAddPassword;"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public AddPasswordCommand(Password password) {"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(password);"
+        "content": "    public AddPasswordCommand(Password password) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        toAddPassword \u003d password;"
+        "content": "        requireNonNull(password);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        toAddPassword \u003d password;"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public CommandResult execute(Model model) throws CommandException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    public CommandResult execute(Model model) throws CommandException {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (model.hasPassword(toAddPassword)) {"
+        "content": ""
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            throw new CommandException(MESSAGE_DUPLICATE_PASSWORD);"
+        "content": "        if (model.hasPassword(toAddPassword)) {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            throw new CommandException(MESSAGE_DUPLICATE_PASSWORD);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        model.addPassword(toAddPassword);"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_SUCCESS, toAddPassword));"
+        "content": "        model.addPassword(toAddPassword);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        model.updateFilteredPasswordList(PREDICATE_SHOW_ALL_PASSWORDS);"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        return new CommandResult(String.format(MESSAGE_SUCCESS, toAddPassword));"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    @Override"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                || (other instanceof AddPasswordCommand // instanceof handles nulls"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                \u0026\u0026 toAddPassword.equals(((AddPasswordCommand) other).toAddPassword));"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "                || (other instanceof AddPasswordCommand // instanceof handles nulls"
       },
       {
         "lineNumber": 58,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "                \u0026\u0026 toAddPassword.equals(((AddPasswordCommand) other).toAddPassword));"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
         "author": {
           "gitId": "hooncp"
         },
@@ -40536,7 +40550,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 58
+      "hooncp": 60
     }
   },
   {
@@ -48030,14 +48044,14 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @param index of the person in the filtered person list to edit"
+        "content": "     * @param index of the password in the filtered password list to edit"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @param editPasswordDescriptor details to edit the person with"
+        "content": "     * @param editPasswordDescriptor details to edit the password with"
       },
       {
         "lineNumber": 57,
@@ -48429,871 +48443,878 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new Password(updatedPasswordDescription, updatedUsername, updatedPasswordValue,"
+        "content": ""
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                updatedPasswordModifiedAt, updatedWebsite, updatedTags);"
+        "content": "        return new Password(updatedPasswordDescription, updatedUsername, updatedPasswordValue,"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "                updatedPasswordModifiedAt, updatedWebsite, updatedTags);"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        // short circuit if same object"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "        // short circuit if same object"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return true;"
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            return true;"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (!(other instanceof EditPasswordCommand)) {"
+        "content": "        // instanceof handles nulls"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return false;"
+        "content": "        if (!(other instanceof EditPasswordCommand)) {"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            return false;"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        // state check"
+        "content": ""
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        EditPasswordCommand e \u003d (EditPasswordCommand) other;"
+        "content": "        // state check"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return index.equals(e.index)"
+        "content": "        EditPasswordCommand e \u003d (EditPasswordCommand) other;"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                \u0026\u0026 editPasswordDescriptor.equals(e.editPasswordDescriptor);"
+        "content": "        return index.equals(e.index)"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 editPasswordDescriptor.equals(e.editPasswordDescriptor);"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Stores the details to edit the person with. Each non-empty field value will replace the"
+        "content": "    /**"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * corresponding field value of the person."
+        "content": "     * Stores the details to edit the person with. Each non-empty field value will replace the"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     * corresponding field value of the person."
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static class EditPasswordDescriptor {"
+        "content": "     */"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        private PasswordDescription passwordDescription;"
+        "content": "    public static class EditPasswordDescriptor {"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        private Username username;"
+        "content": "        private PasswordDescription passwordDescription;"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        private PasswordValue passwordValue;"
+        "content": "        private Username username;"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        private Website website;"
+        "content": "        private PasswordValue passwordValue;"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        private Set\u003cTag\u003e tags;"
+        "content": "        private Website website;"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        private Set\u003cTag\u003e tags;"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public EditPasswordDescriptor() {}"
+        "content": ""
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        public EditPasswordDescriptor() {}"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         * Copy constructor."
+        "content": "        /**"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": "         * Copy constructor."
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         */"
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public EditPasswordDescriptor(EditPasswordDescriptor toCopy) {"
+        "content": "         */"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            setPasswordDescription(toCopy.passwordDescription);"
+        "content": "        public EditPasswordDescriptor(EditPasswordDescriptor toCopy) {"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            setUsername(toCopy.username);"
+        "content": "            setPasswordDescription(toCopy.passwordDescription);"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            setPasswordValue(toCopy.passwordValue);"
+        "content": "            setUsername(toCopy.username);"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            setWebsite(toCopy.website);"
+        "content": "            setPasswordValue(toCopy.passwordValue);"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            setTags(toCopy.tags);"
+        "content": "            setWebsite(toCopy.website);"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            setTags(toCopy.tags);"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         * Returns true if at least one field is edited."
+        "content": "        /**"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         */"
+        "content": "         * Returns true if at least one field is edited."
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public boolean isAnyFieldEdited() {"
+        "content": "         */"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return CollectionUtil.isAnyNonNull(passwordDescription, username, passwordValue, website, tags);"
+        "content": "        public boolean isAnyFieldEdited() {"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            return CollectionUtil.isAnyNonNull(passwordDescription, username, passwordValue, website, tags);"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public void setPasswordDescription(PasswordDescription passwordDescription) {"
+        "content": ""
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            this.passwordDescription \u003d passwordDescription;"
+        "content": "        public void setPasswordDescription(PasswordDescription passwordDescription) {"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            this.passwordDescription \u003d passwordDescription;"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public Optional\u003cPasswordDescription\u003e getPasswordDescription() {"
+        "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return Optional.ofNullable(passwordDescription);"
+        "content": "        public Optional\u003cPasswordDescription\u003e getPasswordDescription() {"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(passwordDescription);"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public void setUsername(Username username) {"
+        "content": ""
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            this.username \u003d username;"
+        "content": "        public void setUsername(Username username) {"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            this.username \u003d username;"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public Optional\u003cUsername\u003e getUsername() {"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return Optional.ofNullable(username);"
+        "content": "        public Optional\u003cUsername\u003e getUsername() {"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(username);"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public void setPasswordValue(PasswordValue passwordValue) {"
+        "content": ""
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            this.passwordValue \u003d passwordValue;"
+        "content": "        public void setPasswordValue(PasswordValue passwordValue) {"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            this.passwordValue \u003d passwordValue;"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public Optional\u003cPasswordValue\u003e getPasswordValue() {"
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return Optional.ofNullable(passwordValue);"
+        "content": "        public Optional\u003cPasswordValue\u003e getPasswordValue() {"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(passwordValue);"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public void setWebsite(Website website) {"
+        "content": ""
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            this.website \u003d website;"
+        "content": "        public void setWebsite(Website website) {"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            this.website \u003d website;"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public Optional\u003cWebsite\u003e getWebsite() {"
+        "content": ""
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return Optional.ofNullable(website);"
+        "content": "        public Optional\u003cWebsite\u003e getWebsite() {"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            return Optional.ofNullable(website);"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
+        "content": "        /**"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         * A defensive copy of {@code tags} is used internally."
+        "content": "         * Sets {@code tags} to this object\u0027s {@code tags}."
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         */"
+        "content": "         * A defensive copy of {@code tags} is used internally."
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
+        "content": "         */"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
+        "content": "        public void setTags(Set\u003cTag\u003e tags) {"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            this.tags \u003d (tags !\u003d null) ? new HashSet\u003c\u003e(tags) : null;"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
+        "content": "        /**"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         * if modification is attempted."
+        "content": "         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
+        "content": "         * if modification is attempted."
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "         */"
+        "content": "         * Returns {@code Optional#empty()} if {@code tags} is null."
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
+        "content": "         */"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
+        "content": "        public Optional\u003cSet\u003cTag\u003e\u003e getTags() {"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            return (tags !\u003d null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        @Override"
+        "content": ""
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        public boolean equals(Object other) {"
+        "content": "        @Override"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            // short circuit if same object"
+        "content": "        public boolean equals(Object other) {"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            if (other \u003d\u003d this) {"
+        "content": "            // short circuit if same object"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                return true;"
+        "content": "            if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            }"
+        "content": "                return true;"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            if (!(other instanceof EditPasswordDescriptor)) {"
+        "content": "            // instanceof handles nulls"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                return false;"
+        "content": "            if (!(other instanceof EditPasswordDescriptor)) {"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            }"
+        "content": "                return false;"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            // state check"
+        "content": ""
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            EditPasswordDescriptor e \u003d (EditPasswordDescriptor) other;"
+        "content": "            // state check"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            EditPasswordDescriptor e \u003d (EditPasswordDescriptor) other;"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return getPasswordDescription().equals(e.getPasswordDescription())"
+        "content": ""
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    \u0026\u0026 getUsername().equals(e.getUsername())"
+        "content": "            return getPasswordDescription().equals(e.getPasswordDescription())"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    \u0026\u0026 getPasswordValue().equals(e.getPasswordValue())"
+        "content": "                    \u0026\u0026 getUsername().equals(e.getUsername())"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    \u0026\u0026 getTags().equals(e.getTags());"
+        "content": "                    \u0026\u0026 getPasswordValue().equals(e.getPasswordValue())"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "                    \u0026\u0026 getTags().equals(e.getTags());"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 236,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 237,
         "author": {
           "gitId": "hooncp"
         },
@@ -49301,7 +49322,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 236
+      "hooncp": 237
     }
   },
   {
@@ -51089,234 +51110,241 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import seedu.address.model.password.PasswordDescription;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " * Finds and lists all password in password book whose description contains any of the argument keywords."
+        "content": "/**"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " * Keyword matching is case insensitive."
+        "content": " * Finds and lists all password in password book whose description contains any of the argument keywords."
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " */"
+        "content": " * Keyword matching is case insensitive."
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "public class FindPasswordCommand extends Command {"
+        "content": " */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "public class FindPasswordCommand extends Command {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"find\";"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    public static final String COMMAND_WORD \u003d \"find\";"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Finds all passwords whose description contain any of \""
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"the specified keywords (case-insensitive) and displays them as a list with index numbers.\\n\""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Finds all passwords whose description contain any of \""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"Parameters: KEYWORD \\n\""
+        "content": "            + \"the specified keywords (case-insensitive) and displays them as a list with index numbers.\\n\""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"Example: \" + COMMAND_WORD + \" Gmail\";"
+        "content": "            + \"Parameters: DESCRIPTION \\n\""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    private final DescriptionContainsKeywordsPredicate predicate;"
+        "content": "            + PasswordDescription.MESSAGE_CONSTRAINTS;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    private final DescriptionContainsKeywordsPredicate predicate;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public FindPasswordCommand(DescriptionContainsKeywordsPredicate predicate) {"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        this.predicate \u003d predicate;"
+        "content": "    public FindPasswordCommand(DescriptionContainsKeywordsPredicate predicate) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        this.predicate \u003d predicate;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public CommandResult execute(Model model) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    public CommandResult execute(Model model) {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        model.updateFilteredPasswordList(predicate);"
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new CommandResult("
+        "content": "        model.updateFilteredPasswordList(predicate);"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                String.format(Messages.MESSAGE_PASSWORD_LISTED_OVERVIEW, model.getFilteredPasswordList().size()));"
+        "content": "        return new CommandResult("
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "                String.format(Messages.MESSAGE_PASSWORD_LISTED_OVERVIEW, model.getFilteredPasswordList().size()));"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                || (other instanceof FindPasswordCommand // instanceof handles nulls"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                \u0026\u0026 predicate.equals(((FindPasswordCommand) other).predicate)); // state check"
+        "content": "                || (other instanceof FindPasswordCommand // instanceof handles nulls"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "                \u0026\u0026 predicate.equals(((FindPasswordCommand) other).predicate)); // state check"
       },
       {
         "lineNumber": 41,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
         "author": {
           "gitId": "hooncp"
         },
@@ -51324,7 +51352,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 41
+      "hooncp": 42
     }
   },
   {
@@ -52225,56 +52253,56 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "niqiukun"
+          "gitId": "hooncp"
         },
-        "content": "import seedu.address.commons.core.Mode;"
+        "content": "import static seedu.address.model.Model.PREDICATE_SHOW_ALL_FILES;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "niqiukun"
+          "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.Model;"
+        "content": "import static seedu.address.model.Model.PREDICATE_SHOW_ALL_NOTES;"
       },
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "niqiukun"
+          "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PASSWORDS;"
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "niqiukun"
+          "gitId": "hooncp"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": " * Terminates the program."
+        "content": "import seedu.address.commons.core.Mode;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": " */"
+        "content": "import seedu.address.model.Model;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "public class GoToCommand extends Command {"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "niqiukun"
+          "gitId": "hooncp"
         },
         "content": ""
       },
@@ -52283,28 +52311,28 @@
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"goto\";"
+        "content": "/**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": ""
+        "content": " * Terminates the program."
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Switches to a specific mode. Parameters: MODE\\n\""
+        "content": " */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "            + \"SecureIT currently supports four modes: password, file, note, and card.\";"
+        "content": "public class GoToCommand extends Command {"
       },
       {
         "lineNumber": 15,
@@ -52318,7 +52346,7 @@
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "    public static final String MESSAGE_GOTO_ACKNOWLEDGEMENT \u003d \"Switched to %s mode.\";"
+        "content": "    public static final String COMMAND_WORD \u003d \"goto\";"
       },
       {
         "lineNumber": 17,
@@ -52332,101 +52360,157 @@
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "    private final Mode mode;"
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Switches to a specific mode. Parameters: MODE\\n\""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": ""
+        "content": "            + \"SecureIT currently supports four modes: password, file, note, and card.\";"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "    public GoToCommand(Mode mode) {"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "        this.mode \u003d mode;"
+        "content": "    public static final String MESSAGE_GOTO_ACKNOWLEDGEMENT \u003d \"Switched to %s mode.\";"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": ""
+        "content": "    private final Mode mode;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "niqiukun"
         },
-        "content": "    public CommandResult execute(Model model) {"
+        "content": "    public GoToCommand(Mode mode) {"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "yhtingg"
+          "gitId": "niqiukun"
         },
-        "content": "        return CommandResult.builder(String.format(MESSAGE_GOTO_ACKNOWLEDGEMENT, mode))"
+        "content": "        this.mode \u003d mode;"
       },
       {
         "lineNumber": 27,
-        "author": {
-          "gitId": "yhtingg"
-        },
-        "content": "                .isGoTo()"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "yhtingg"
-        },
-        "content": "                .setMode(mode)"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "yhtingg"
-        },
-        "content": "                .build();"
-      },
-      {
-        "lineNumber": 30,
         "author": {
           "gitId": "niqiukun"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 28,
         "author": {
           "gitId": "niqiukun"
         },
         "content": ""
       },
       {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "niqiukun"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "niqiukun"
+        },
+        "content": "    public CommandResult execute(Model model) {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        model.updateFilteredPasswordList(PREDICATE_SHOW_ALL_PASSWORDS);"
+      },
+      {
         "lineNumber": 32,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        model.updateFilteredNoteList(PREDICATE_SHOW_ALL_NOTES);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        model.updateFilteredFileList(PREDICATE_SHOW_ALL_FILES);"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "yhtingg"
+        },
+        "content": "        return CommandResult.builder(String.format(MESSAGE_GOTO_ACKNOWLEDGEMENT, mode))"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "yhtingg"
+        },
+        "content": "                .isGoTo()"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "yhtingg"
+        },
+        "content": "                .setMode(mode)"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "yhtingg"
+        },
+        "content": "                .build();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "niqiukun"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "niqiukun"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
         "author": {
           "gitId": "niqiukun"
         },
@@ -52435,7 +52519,8 @@
     ],
     "authorContributionMap": {
       "niqiukun": 28,
-      "yhtingg": 4
+      "yhtingg": 4,
+      "hooncp": 8
     }
   },
   {
@@ -62932,140 +63017,140 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
+        "content": "import static seedu.address.commons.core.Messages.MESSAGE_DUPLICATE_FIELDS;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;"
+        "content": "import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_PASSWORDVALUE;"
+        "content": "import static seedu.address.commons.core.Messages.MESSAGE_TOO_MANY_TAG_FIELDS;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;"
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_USERNAME;"
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_PASSWORDVALUE;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_WEBSITE;"
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_USERNAME;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import java.util.Collection;"
+        "content": "import static seedu.address.logic.parser.CliSyntax.PREFIX_WEBSITE;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import java.util.Collections;"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import java.util.Optional;"
+        "content": "import java.util.Collection;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import java.util.Set;"
+        "content": "import java.util.Collections;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import java.util.Optional;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.commons.core.index.Index;"
+        "content": "import java.util.Set;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.logic.commands.EditPasswordCommand;"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.logic.commands.EditPasswordCommand.EditPasswordDescriptor;"
+        "content": "import seedu.address.commons.core.index.Index;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
+        "content": "import seedu.address.logic.commands.AddPasswordCommand;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.tag.Tag;"
+        "content": "import seedu.address.logic.commands.EditPasswordCommand;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import seedu.address.logic.commands.EditPasswordCommand.EditPasswordDescriptor;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import seedu.address.model.tag.Tag;"
       },
       {
         "lineNumber": 25,
@@ -63086,231 +63171,231 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " * Parses input arguments and creates a new EditPasswordCommand object"
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "public class EditPasswordCommandParser implements Parser\u003cEditPasswordCommand\u003e {"
+        "content": "/**"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": " * Parses input arguments and creates a new EditPasswordCommand object"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": " */"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Parses the given {@code String} of arguments in the context of the EditPasswordCommand"
+        "content": "public class EditPasswordCommandParser implements Parser\u003cEditPasswordCommand\u003e {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * and returns an EditPasswordCommand object for execution."
+        "content": ""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "    /**"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     * Parses the given {@code String} of arguments in the context of the EditPasswordCommand"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public EditPasswordCommand parse(String userInput) throws ParseException {"
+        "content": "     * and returns an EditPasswordCommand object for execution."
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(userInput);"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        ArgumentMultimap argMultimap \u003d"
+        "content": "     */"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                ArgumentTokenizer.tokenize(userInput, PREFIX_DESCRIPTION, PREFIX_USERNAME, PREFIX_WEBSITE,"
+        "content": "    public EditPasswordCommand parse(String userInput) throws ParseException {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        PREFIX_PASSWORDVALUE, PREFIX_TAG);"
+        "content": "        requireNonNull(userInput);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        ArgumentMultimap argMultimap \u003d"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        Index index;"
+        "content": "                ArgumentTokenizer.tokenize(userInput, PREFIX_DESCRIPTION, PREFIX_USERNAME, PREFIX_WEBSITE,"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "                        PREFIX_PASSWORDVALUE, PREFIX_TAG);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        try {"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            index \u003d ParserUtil.parseIndex(argMultimap.getPreamble());"
+        "content": "        Index index;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        } catch (ParseException pe) {"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
+        "content": "        try {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    EditPasswordCommand.MESSAGE_USAGE), pe);"
+        "content": "            index \u003d ParserUtil.parseIndex(argMultimap.getPreamble());"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "        } catch (ParseException pe) {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        EditPasswordDescriptor editPasswordDescriptor \u003d new EditPasswordDescriptor();"
+        "content": "                    EditPasswordCommand.MESSAGE_USAGE), pe);"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (argMultimap.getValue(PREFIX_DESCRIPTION).isPresent()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            editPasswordDescriptor.setPasswordDescription("
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    ParserUtil.parsePasswordDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get()));"
+        "content": "        if (argMultimap.getAllValues(PREFIX_DESCRIPTION).size() \u003e 1"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "                || argMultimap.getAllValues(PREFIX_USERNAME).size() \u003e 1"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (argMultimap.getValue(PREFIX_USERNAME).isPresent()) {"
+        "content": "                || argMultimap.getAllValues(PREFIX_PASSWORDVALUE).size() \u003e 1"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            editPasswordDescriptor.setUsername("
+        "content": "                || argMultimap.getAllValues(PREFIX_WEBSITE).size() \u003e 1) {"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    ParserUtil.parseUsername(argMultimap.getValue(PREFIX_USERNAME).get()));"
+        "content": "            throw new ParseException(String.format(MESSAGE_DUPLICATE_FIELDS, AddPasswordCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 60,
@@ -63324,21 +63409,21 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (argMultimap.getValue(PREFIX_PASSWORDVALUE).isPresent()) {"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            editPasswordDescriptor.setPasswordValue("
+        "content": "        if (argMultimap.getAllValues(PREFIX_TAG).size() \u003e 5) {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    ParserUtil.parsePasswordValue(argMultimap.getValue(PREFIX_PASSWORDVALUE).get()));"
+        "content": "            throw new ParseException(String.format(MESSAGE_TOO_MANY_TAG_FIELDS, EditPasswordCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 64,
@@ -63359,91 +63444,91 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (argMultimap.getValue(PREFIX_WEBSITE).isPresent()) {"
+        "content": "        EditPasswordDescriptor editPasswordDescriptor \u003d new EditPasswordDescriptor();"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            editPasswordDescriptor.setWebsite("
+        "content": "        if (argMultimap.getValue(PREFIX_DESCRIPTION).isPresent()) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    ParserUtil.parseWebsite(argMultimap.getValue(PREFIX_WEBSITE).get()));"
+        "content": "            editPasswordDescriptor.setPasswordDescription("
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "                    ParserUtil.parsePasswordDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get()));"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        parseTagsForEdit(argMultimap.getAllValues(PREFIX_TAG)).ifPresent(editPasswordDescriptor::setTags);"
+        "content": "        if (argMultimap.getValue(PREFIX_USERNAME).isPresent()) {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            editPasswordDescriptor.setUsername("
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (!editPasswordDescriptor.isAnyFieldEdited()) {"
+        "content": "                    ParserUtil.parseUsername(argMultimap.getValue(PREFIX_USERNAME).get()));"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            throw new ParseException(EditPasswordCommand.MESSAGE_NOT_EDITED);"
+        "content": "        }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "        if (argMultimap.getValue(PREFIX_PASSWORDVALUE).isPresent()) {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            editPasswordDescriptor.setPasswordValue("
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new EditPasswordCommand(index, editPasswordDescriptor);"
+        "content": "                    ParserUtil.parsePasswordValue(argMultimap.getValue(PREFIX_PASSWORDVALUE).get()));"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 79,
@@ -63457,101 +63542,199 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": "        if (argMultimap.getValue(PREFIX_WEBSITE).isPresent()) {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Parses {@code Collection\u003cString\u003e tags} into a {@code Set\u003cTag\u003e} if {@code tags} is non-empty."
+        "content": "            editPasswordDescriptor.setWebsite("
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * If {@code tags} contain only one element which is an empty string, it will be parsed into a"
+        "content": "                    ParserUtil.parseWebsite(argMultimap.getValue(PREFIX_WEBSITE).get()));"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * {@code Set\u003cTag\u003e} containing zero tags."
+        "content": "        }"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    private Optional\u003cSet\u003cTag\u003e\u003e parseTagsForEdit(Collection\u003cString\u003e tags) throws ParseException {"
+        "content": "        parseTagsForEdit(argMultimap.getAllValues(PREFIX_TAG)).ifPresent(editPasswordDescriptor::setTags);"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        assert tags !\u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        if (!editPasswordDescriptor.isAnyFieldEdited()) {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (tags.isEmpty()) {"
+        "content": "            throw new ParseException(EditPasswordCommand.MESSAGE_NOT_EDITED);"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            return Optional.empty();"
+        "content": "        }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        Collection\u003cString\u003e tagSet \u003d tags.size() \u003d\u003d 1 \u0026\u0026 tags.contains(\"\") ? Collections.emptySet() : tags;"
+        "content": "        return new EditPasswordCommand(index, editPasswordDescriptor);"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return Optional.of(ParserUtil.parseTags(tagSet));"
+        "content": "    }"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 94,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "     * Parses {@code Collection\u003cString\u003e tags} into a {@code Set\u003cTag\u003e} if {@code tags} is non-empty."
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "     * If {@code tags} contain only one element which is an empty string, it will be parsed into a"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "     * {@code Set\u003cTag\u003e} containing zero tags."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    private Optional\u003cSet\u003cTag\u003e\u003e parseTagsForEdit(Collection\u003cString\u003e tags) throws ParseException {"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        assert tags !\u003d null;"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        if (tags.isEmpty()) {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "            return Optional.empty();"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        Collection\u003cString\u003e tagSet \u003d tags.size() \u003d\u003d 1 \u0026\u0026 tags.contains(\"\") ? Collections.emptySet() : tags;"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        return Optional.of(ParserUtil.parseTags(tagSet));"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 108,
         "author": {
           "gitId": "hooncp"
         },
@@ -63559,7 +63742,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 94
+      "hooncp": 108
     }
   },
   {
@@ -65219,49 +65402,49 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import static seedu.address.model.password.PasswordDescription.isValidDescription;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import java.util.Arrays;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import java.util.Arrays;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.logic.commands.FindPasswordCommand;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
+        "content": "import seedu.address.logic.commands.FindPasswordCommand;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.password.DescriptionContainsKeywordsPredicate;"
+        "content": "import seedu.address.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import seedu.address.model.password.DescriptionContainsKeywordsPredicate;"
       },
       {
         "lineNumber": 11,
@@ -65275,143 +65458,178 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " * Parses input arguments and creates a new FindPasswordCommand object"
+        "content": "/**"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " */"
+        "content": " * Parses input arguments and creates a new FindPasswordCommand object"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "public class FindPasswordCommandParser implements Parser\u003cFindPasswordCommand\u003e {"
+        "content": " */"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": "public class FindPasswordCommandParser implements Parser\u003cFindPasswordCommand\u003e {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Parses the given {@code String} of arguments in the context of the FindCommand"
+        "content": "    /**"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * and returns a FindCommand object for execution."
+        "content": "     * Parses the given {@code String} of arguments in the context of the FindCommand"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     * and returns a FindCommand object for execution."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public FindPasswordCommand parse(String args) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        String trimmedArgs \u003d args.trim();"
+        "content": "    public FindPasswordCommand parse(String args) throws ParseException {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (trimmedArgs.isEmpty()) {"
+        "content": "        String trimmedArgs \u003d args.trim();"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            throw new ParseException("
+        "content": "        if (trimmedArgs.isEmpty()) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindPasswordCommand.MESSAGE_USAGE));"
+        "content": "            throw new ParseException("
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindPasswordCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        String[] nameKeywords \u003d trimmedArgs.split(\"\\\\s+\");"
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        if (!isValidDescription(trimmedArgs)) {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new FindPasswordCommand(new DescriptionContainsKeywordsPredicate(Arrays.asList(nameKeywords)));"
+        "content": "            throw new ParseException(FindPasswordCommand.MESSAGE_USAGE);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 32,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        String[] nameKeywords \u003d trimmedArgs.split(\"\\\\s+\");"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        return new FindPasswordCommand(new DescriptionContainsKeywordsPredicate(Arrays.asList(nameKeywords)));"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
@@ -65419,7 +65637,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 32
+      "hooncp": 37
     }
   },
   {
@@ -69226,563 +69444,570 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            throw new ParseException(PasswordDescription.MESSAGE_CONSTRAINTS);"
+        "content": "            throw new ParseException("
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            PasswordDescription.MESSAGE_CONSTRAINTS + PasswordDescription.ADDITIONAL_INFORMATION);"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new PasswordDescription(trimmedDescription);"
+        "content": "        }"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        return new PasswordDescription(trimmedDescription);"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Parses a {@code String username} into a {@code Username}."
+        "content": "    /**"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Leading and trailing whitespaces will be trimmed."
+        "content": "     * Parses a {@code String username} into a {@code Username}."
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     *"
+        "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @throws ParseException if the given {@code Username} is invalid."
+        "content": "     *"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the given {@code Username} is invalid."
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static Username parseUsername(String username) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(username);"
+        "content": "    public static Username parseUsername(String username) throws ParseException {"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        String trimmedUsername \u003d username.trim();"
+        "content": "        requireNonNull(username);"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (!Username.isValidUsername(trimmedUsername)) {"
+        "content": "        String trimmedUsername \u003d username.trim();"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            throw new ParseException(Username.MESSAGE_CONSTRAINTS);"
+        "content": "        if (!Username.isValidUsername(trimmedUsername)) {"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(Username.MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new Username(trimmedUsername);"
+        "content": "        }"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        return new Username(trimmedUsername);"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Parses a {@code String passwordValue} into a {@code PasswordValue}."
+        "content": "    /**"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Leading and trailing whitespaces will be trimmed."
+        "content": "     * Parses a {@code String passwordValue} into a {@code PasswordValue}."
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     *"
+        "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @throws ParseException if the given {@code PasswordValue} is invalid."
+        "content": "     *"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the given {@code PasswordValue} is invalid."
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static PasswordValue parsePasswordValue(String passwordValue) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(passwordValue);"
+        "content": "    public static PasswordValue parsePasswordValue(String passwordValue) throws ParseException {"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        String trimmedPasswordValue \u003d passwordValue.trim();"
+        "content": "        requireNonNull(passwordValue);"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (!PasswordValue.isValidPasswordValue(trimmedPasswordValue)) {"
+        "content": "        String trimmedPasswordValue \u003d passwordValue.trim();"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            throw new ParseException(PasswordValue.MESSAGE_CONSTRAINTS);"
+        "content": "        if (!PasswordValue.isValidPasswordValue(trimmedPasswordValue)) {"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(PasswordValue.MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new PasswordValue(trimmedPasswordValue);"
+        "content": "        }"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        return new PasswordValue(trimmedPasswordValue);"
       },
       {
         "lineNumber": 335,
         "author": {
-          "gitId": "eejian97"
+          "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 336,
         "author": {
-          "gitId": "hooncp"
+          "gitId": "eejian97"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Parses a {@code String website} into a {@code Website}."
+        "content": "    /**"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Leading and trailing whitespaces will be trimmed."
+        "content": "     * Parses a {@code String website} into a {@code Website}."
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     *"
+        "content": "     * Leading and trailing whitespaces will be trimmed."
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @throws ParseException if the given {@code Website} is invalid."
+        "content": "     *"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the given {@code Website} is invalid."
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static Website parseWebsite(String website) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(website);"
+        "content": "    public static Website parseWebsite(String website) throws ParseException {"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        String trimmedWebsite \u003d website.trim();"
+        "content": "        requireNonNull(website);"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        if (!Website.isValidWebsite(trimmedWebsite)) {"
+        "content": "        String trimmedWebsite \u003d website.trim();"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            throw new ParseException(Website.MESSAGE_CONSTRAINTS);"
+        "content": "        if (!Website.isValidWebsite(trimmedWebsite)) {"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(Website.MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new Website(trimmedWebsite);"
+        "content": "        }"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        return new Website(trimmedWebsite);"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 351,
         "author": {
-          "gitId": "eejian97"
+          "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     * Parses a string length into an integer length."
+        "content": "    /**"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     * Checks that length requirements are met."
+        "content": "     * Parses a string length into an integer length."
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     *"
+        "content": "     * Checks that length requirements are met."
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     * @throws ParseException if the given length is invalid."
+        "content": "     *"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the given length is invalid."
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "    public static int parseLength(String length) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "        try {"
+        "content": "    public static int parseLength(String length) throws ParseException {"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "            int lengthNum \u003d Integer.parseInt(length);"
+        "content": "        try {"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "            if (lengthNum \u003c\u003d 3) {"
+        "content": "            int lengthNum \u003d Integer.parseInt(length);"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "                throw new ParseException(GeneratorUtil.MESSAGE_CONSTRAINTS_LENGTH);"
+        "content": "            if (lengthNum \u003c\u003d 3) {"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "            }"
+        "content": "                throw new ParseException(GeneratorUtil.MESSAGE_CONSTRAINTS_LENGTH);"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "            return lengthNum;"
+        "content": "            }"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "        } catch (NumberFormatException e) {"
+        "content": "            return lengthNum;"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "            throw new ParseException(GeneratorUtil.MESSAGE_CONSTRAINTS_LENGTH);"
+        "content": "        } catch (NumberFormatException e) {"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(GeneratorUtil.MESSAGE_CONSTRAINTS_LENGTH);"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "eejian97"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     * Parses a string bool into an Boolean value."
+        "content": "    /**"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     * Checks that string bool is valid argument."
+        "content": "     * Parses a string bool into an Boolean value."
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     *"
+        "content": "     * Checks that string bool is valid argument."
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     * @throws ParseException if the given length is invalid."
+        "content": "     *"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the given length is invalid."
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "    public static boolean parseBool(String bool) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "        if (!(bool.equals(\"true\") || bool.equals(\"false\"))) {"
+        "content": "    public static boolean parseBool(String bool) throws ParseException {"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "            throw new ParseException(GeneratorUtil.MESSAGE_CONSTRAINTS_BOOLEAN);"
+        "content": "        if (!(bool.equals(\"true\") || bool.equals(\"false\"))) {"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(GeneratorUtil.MESSAGE_CONSTRAINTS_BOOLEAN);"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "        return Boolean.valueOf(bool);"
+        "content": "        }"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "eejian97"
         },
-        "content": "    }"
+        "content": "        return Boolean.valueOf(bool);"
       },
       {
         "lineNumber": 381,
+        "author": {
+          "gitId": "eejian97"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
@@ -69794,7 +70019,7 @@
       "yhtingg": 63,
       "jityong": 64,
       "eejian97": 32,
-      "hooncp": 67,
+      "hooncp": 68,
       "-": 124
     }
   },
@@ -100179,276 +100404,290 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"1) Be between 2 characters to 30 characters long\\n\""
+        "content": "            + \"1) Be between 2 characters to 25 characters long\\n\";"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"Description will automatically be changed to UPPER-CASE\";"
+        "content": "    public static final String ADDITIONAL_INFORMATION \u003d \"Description will automatically be changed to UPPER-CASE\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * The first character of the description must not be a whitespace,"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * otherwise \" \" (a blank string) becomes a valid input."
+        "content": "     * The first character of the description must not be a whitespace,"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     * otherwise \" \" (a blank string) becomes a valid input."
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    private static final String VALIDATION_REGEX \u003d \"^([a-zA-Z0-9 ]){2,25}$\";"
+        "content": "     */"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    private static final String VALIDATION_REGEX \u003d \"^(?![ ])(?!.*[ ]{2})(([a-zA-Z0-9 ]){2,25})(?\u003c![ ])$\";"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public final String value;"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    public final String value;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public PasswordDescription(String description) {"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(description);"
+        "content": "    public PasswordDescription(String description) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        checkArgument(isValidDescription(description), MESSAGE_CONSTRAINTS);"
+        "content": "        requireNonNull(description);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        value \u003d description.toUpperCase();"
+        "content": "        checkArgument(isValidDescription(description), ("
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "                MESSAGE_CONSTRAINTS + ADDITIONAL_INFORMATION));"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        value \u003d description.toUpperCase();"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Returns true if a given string is a valid name."
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static boolean isValidDescription(String test) {"
+        "content": "     * Returns true if a given string is a valid name."
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return test.matches(VALIDATION_REGEX);"
+        "content": "     */"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public static boolean isValidDescription(String test) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        return test.matches(VALIDATION_REGEX);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public String toString() {"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return value;"
+        "content": "    @Override"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        return value;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    @Override"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                || (other instanceof PasswordDescription // instanceof handles nulls"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                \u0026\u0026 value.toUpperCase().equals(((PasswordDescription) other).value.toUpperCase())); // state check"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "                || (other instanceof PasswordDescription // instanceof handles nulls"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "                \u0026\u0026 value.toUpperCase().equals(((PasswordDescription) other).value.toUpperCase())); // state check"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public int hashCode() {"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return value.hashCode();"
+        "content": "    @Override"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 52,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        return value.hashCode();"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
         "author": {
           "gitId": "hooncp"
         },
@@ -100456,7 +100695,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 52
+      "hooncp": 54
     }
   },
   {
@@ -100482,7 +100721,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import java.util.Date;"
+        "content": "import static java.util.Objects.requireNonNull;"
       },
       {
         "lineNumber": 4,
@@ -100496,7 +100735,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.util.DateUtil;"
+        "content": "import java.util.Date;"
       },
       {
         "lineNumber": 6,
@@ -100510,7 +100749,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import seedu.address.model.util.DateUtil;"
       },
       {
         "lineNumber": 8,
@@ -100524,248 +100763,269 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " * Represents a Password\u0027s expiry date and time in SecureIT."
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "public class PasswordExpireAt {"
+        "content": " * Represents a Password\u0027s expiry date and time in SecureIT."
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public final Date value;"
+        "content": " */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": "public class PasswordExpireAt {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Constructs an {@code PasswordExpireAt} field."
+        "content": "    public final Date value;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @param expireAt the date and time the password will expire at."
+        "content": "     * Constructs an {@code PasswordExpireAt} field."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public PasswordExpireAt(Date expireAt) {"
+        "content": "     * @param expireAt the date and time the password will expire at."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        value \u003d expireAt;"
+        "content": "     */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public PasswordExpireAt(Date expireAt) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        requireNonNull(expireAt);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "        value \u003d expireAt;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public String toString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return DateUtil.formatDateForDisplay(value);"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public long getDays() {"
+        "content": "        return DateUtil.formatDateForDisplay(value);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        Date d1 \u003d new Date();"
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return DateUtil.findDaysPasswordExpireAt(d1, value);"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public long getDays() {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        Date d1 \u003d new Date();"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "        return DateUtil.findDaysPasswordExpireAt(d1, value);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                || (other instanceof PasswordExpireAt // instanceof handles nulls"
+        "content": "    @Override"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                \u0026\u0026 value.equals(((PasswordExpireAt) other).value)); // state check"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "                || (other instanceof PasswordExpireAt // instanceof handles nulls"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "                \u0026\u0026 value.equals(((PasswordExpireAt) other).value)); // state check"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public int hashCode() {"
+        "content": "    }"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return value.hashCode();"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 44,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    public int hashCode() {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        return value.hashCode();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
         "author": {
           "gitId": "hooncp"
         },
@@ -100773,7 +101033,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 44
+      "hooncp": 47
     }
   },
   {
@@ -100799,7 +101059,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import java.util.Date;"
+        "content": "import static java.util.Objects.requireNonNull;"
       },
       {
         "lineNumber": 4,
@@ -100813,7 +101073,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.util.DateUtil;"
+        "content": "import java.util.Date;"
       },
       {
         "lineNumber": 6,
@@ -100827,234 +101087,255 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "/**"
+        "content": "import seedu.address.model.util.DateUtil;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " * Represents a Password\u0027s password value last modified date and time in SecureIT."
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "public class PasswordModifiedAt {"
+        "content": " * Represents a Password\u0027s password value last modified date and time in SecureIT."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d \"LastModified at should be in the format of dd/MM/yyyy HHmm\";"
+        "content": " */"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public final Date value;"
+        "content": "public class PasswordModifiedAt {"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d \"LastModified at should be in the format of dd/MM/yyyy HHmm\";"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": "    public final Date value;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Constructs an {@code PasswordModifiedAt} field."
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * @param modifiedAt the date and time the password was modified at."
+        "content": "     * Constructs an {@code PasswordModifiedAt} field."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public PasswordModifiedAt(Date modifiedAt) {"
+        "content": "     * @param modifiedAt the date and time the password was modified at."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        value \u003d modifiedAt;"
+        "content": "     */"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public PasswordModifiedAt(Date modifiedAt) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        requireNonNull(modifiedAt);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "        value \u003d modifiedAt;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public String toString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return DateUtil.formatDateForDisplay(value);"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "        return DateUtil.formatDateForDisplay(value);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                || (other instanceof PasswordModifiedAt // instanceof handles nulls"
+        "content": "    @Override"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                \u0026\u0026 value.equals(((PasswordModifiedAt) other).value)); // state check"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "                || (other instanceof PasswordModifiedAt // instanceof handles nulls"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "                \u0026\u0026 value.equals(((PasswordModifiedAt) other).value)); // state check"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public int hashCode() {"
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return value.hashCode();"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 40,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        return value.hashCode();"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
         "author": {
           "gitId": "hooncp"
         },
@@ -101062,7 +101343,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 40
+      "hooncp": 43
     }
   },
   {
@@ -101165,7 +101446,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            \"Password can contain any strings and \""
+        "content": "            \"Password can contain alphabets, numbers and special characters and \""
       },
       {
         "lineNumber": 15,
@@ -101179,7 +101460,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"1) Should not have spaces at the start or end\\n\""
+        "content": "            + \"1) Should not have spaces. Any leading or trailing spaces will be ignored\\n\""
       },
       {
         "lineNumber": 17,
@@ -101193,35 +101474,35 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"Password is case-sensitive\";"
+        "content": "            + \"3) Special characters are listed as ~`!@#$%^\u0026*()-_+\u003d[{]}|\\\\\\\u0027\\\";:?/.\u003e\u003c,\""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "            + \"Password is case-sensitive\";"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    private static final String VALIDATION_REGEX \u003d \"^(?![ ])([^\\\\s].{1,24})(?\u003c![ ])$\";"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "    private static final String VALIDATION_REGEX \u003d"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public final String value;"
+        "content": "            \"^(?![ ])([A-Za-z0-9~`!@#$%^\u0026*()-_+\u003d\\\\[{\\\\]}|\\\\\\\\\u0027\\\";:?\\\\/.\u003e\u003c,]{2,25})(?\u003c![ ])$\";"
       },
       {
         "lineNumber": 23,
@@ -101235,262 +101516,276 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public PasswordValue(String passwordValue) {"
+        "content": "    public final String value;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        requireNonNull(passwordValue);"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        checkArgument(isValidPasswordValue(passwordValue), MESSAGE_CONSTRAINTS);"
+        "content": "    public PasswordValue(String passwordValue) {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        value \u003d passwordValue;"
+        "content": "        requireNonNull(passwordValue);"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        checkArgument(isValidPasswordValue(passwordValue), MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        value \u003d passwordValue;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     * Returns true if a given string is a valid username."
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static boolean isValidPasswordValue(String test) {"
+        "content": "     * Returns true if a given string is a valid username."
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return test.matches(VALIDATION_REGEX);"
+        "content": "     */"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public static boolean isValidPasswordValue(String test) {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        return test.matches(VALIDATION_REGEX);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public String getEncryptedPasswordValue() {"
+        "content": "    }"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "yhtingg"
+          "gitId": "hooncp"
         },
-        "content": "        return StringUtil.passwordToAsterix(value);"
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public String getEncryptedPasswordValue() {"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "hooncp"
+          "gitId": "yhtingg"
         },
-        "content": ""
+        "content": "        return StringUtil.passwordToAsterix(value);"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public String getNonEncryptedPasswordValue() {"
+        "content": "    }"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return value;"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public String getNonEncryptedPasswordValue() {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        return value;"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public String toString() {"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return getEncryptedPasswordValue();"
+        "content": "    @Override"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "        return getEncryptedPasswordValue();"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    @Override"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                || (other instanceof PasswordValue // instanceof handles nulls"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                \u0026\u0026 value.equals(((PasswordValue) other).value)); // state check"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "                || (other instanceof PasswordValue // instanceof handles nulls"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "                \u0026\u0026 value.equals(((PasswordValue) other).value)); // state check"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public int hashCode() {"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return value.hashCode();"
+        "content": "    @Override"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 61,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        return value.hashCode();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
         "author": {
           "gitId": "hooncp"
         },
@@ -101499,7 +101794,7 @@
     ],
     "authorContributionMap": {
       "yhtingg": 1,
-      "hooncp": 60
+      "hooncp": 62
     }
   },
   {
@@ -102542,7 +102837,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            + \"1) Should not have two underscores, two hypens, two spaces or two address signs in a row\\n\""
+        "content": "            + \"1) Should not have two underscores/hypens/spaces/address signs in a row\\n\""
       },
       {
         "lineNumber": 14,
@@ -102570,7 +102865,7 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    private static final String VALIDATION_REGEX \u003d \"^(?![@_ .])(?!.*[ @_.]{2})([a-zA-Z0-9. _@]{2,30})(?\u003c![_@ .])$\";"
+        "content": "    private static final String VALIDATION_REGEX \u003d \"^(?![@_ .-])(?!.*[ @_.-]{2})([a-zA-Z0-9. _@-]{2,25})(?\u003c![_@ .-])$\";"
       },
       {
         "lineNumber": 18,
@@ -114007,297 +114302,388 @@
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import java.util.Date;"
+        "content": "import java.util.Arrays;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import java.util.Date;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.PasswordBook;"
+        "content": "import java.util.Set;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.ReadOnlyPasswordBook;"
+        "content": "import java.util.stream.Collectors;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.password.Password;"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.password.PasswordDescription;"
+        "content": "import seedu.address.model.PasswordBook;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.password.PasswordModifiedAt;"
+        "content": "import seedu.address.model.ReadOnlyPasswordBook;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.password.PasswordValue;"
+        "content": "import seedu.address.model.password.Password;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.password.Username;"
+        "content": "import seedu.address.model.password.PasswordDescription;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "import seedu.address.model.password.Website;"
+        "content": "import seedu.address.model.password.PasswordModifiedAt;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "import seedu.address.model.password.PasswordValue;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "/**"
+        "content": "import seedu.address.model.password.Username;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " * Contains utility methods for populating {@code PasswordBook} with sample data."
+        "content": "import seedu.address.model.password.Website;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "hooncp"
         },
-        "content": " */"
+        "content": "import seedu.address.model.tag.Tag;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "public class SampleDataPasswordUtil {"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static Password[] getSamplePasswords() {"
+        "content": "/**"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return new Password[] {"
+        "content": " * Contains utility methods for populating {@code PasswordBook} with sample data."
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            new Password(new PasswordDescription(\"Gmail\"), new Username(\"Randomguy\"),"
+        "content": " */"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new PasswordValue(\"password\"), new PasswordModifiedAt(new Date()),"
+        "content": "public class SampleDataPasswordUtil {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"SocialMedia\")),"
+        "content": "    public static Password[] getSamplePasswords() {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            new Password(new PasswordDescription(\"gmail\"), new Username(\"Randomguy1\"),"
+        "content": "        return new Password[] {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new PasswordValue(\"password1\"), new PasswordModifiedAt(new Date()),"
+        "content": "            new Password(new PasswordDescription(\"Gmail\"), new Username(\"Randomguy\"),"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"Work\")),"
+        "content": "                        new PasswordValue(\"password\"), new PasswordModifiedAt(new Date()),"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            new Password(new PasswordDescription(\"Gmail\"), new Username(\"Randomguy2\"),"
+        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"SocialMedia\")),"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new PasswordValue(\"password2\"), new PasswordModifiedAt(new Date()),"
+        "content": "            new Password(new PasswordDescription(\"gmail\"), new Username(\"Randomguy1\"),"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"SocialMedia\")),"
+        "content": "                        new PasswordValue(\"password1\"), new PasswordModifiedAt(new Date()),"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            new Password(new PasswordDescription(\"Gmail\"), new Username(\"Randomguy3\"),"
+        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"Work\")),"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new PasswordValue(\"password3\"), new PasswordModifiedAt(new Date()),"
+        "content": "            new Password(new PasswordDescription(\"Gmail\"), new Username(\"Randomguy2\"),"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"Game\")),"
+        "content": "                        new PasswordValue(\"password2\"), new PasswordModifiedAt(new Date()),"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            new Password(new PasswordDescription(\"Gmail\"), new Username(\"Randomguy4\"),"
+        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"SocialMedia\")),"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new PasswordValue(\"password4\"), new PasswordModifiedAt(new Date()),"
+        "content": "            new Password(new PasswordDescription(\"Gmail\"), new Username(\"Randomguy3\"),"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"Help\")),"
+        "content": "                        new PasswordValue(\"password3\"), new PasswordModifiedAt(new Date()),"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        };"
+        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"Game\")),"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "            new Password(new PasswordDescription(\"Gmail\"), new Username(\"Randomguy4\"),"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "hooncp"
         },
-        "content": ""
+        "content": "                        new PasswordValue(\"password4\"), new PasswordModifiedAt(new Date()),"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    public static ReadOnlyPasswordBook getSamplePasswordBook() {"
+        "content": "                        new Website(\"www.gmail.com\"), getTagSet(\"Help\")),"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        PasswordBook samplePb \u003d new PasswordBook();"
+        "content": "        };"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        for (Password samplePassword : getSamplePasswords()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "            samplePb.addPassword(samplePassword);"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        }"
+        "content": "    public static ReadOnlyPasswordBook getSamplePasswordBook() {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "        return samplePb;"
+        "content": "        PasswordBook samplePb \u003d new PasswordBook();"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "hooncp"
         },
-        "content": "    }"
+        "content": "        for (Password samplePassword : getSamplePasswords()) {"
       },
       {
         "lineNumber": 47,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "            samplePb.addPassword(samplePassword);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        return samplePb;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "     * Returns a tag set containing the list of strings given."
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    public static Set\u003cTag\u003e getTagSet(String... strings) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        return Arrays.stream(strings)"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "                .map(Tag::new)"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "                .collect(Collectors.toSet());"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
         "author": {
           "gitId": "hooncp"
         },
@@ -114305,7 +114691,7 @@
       }
     ],
     "authorContributionMap": {
-      "hooncp": 47
+      "hooncp": 60
     }
   },
   {
@@ -149856,6 +150242,1066 @@
     }
   },
   {
+    "path": "src/test/java/seedu/address/commons/util/StringUtilTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.address.commons.util;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static seedu.address.testutil.Assert.assertThrows;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.io.FileNotFoundException;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class StringUtilTest {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //---------------- Tests for isNonZeroUnsignedInteger --------------------------------------"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void isNonZeroUnsignedInteger() {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // EP: empty strings"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"\")); // Boundary value"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"  \"));"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // EP: not a number"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"a\"));"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"aaa\"));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // EP: zero"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"0\"));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // EP: zero as prefix"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.isNonZeroUnsignedInteger(\"01\"));"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // EP: signed numbers"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"-1\"));"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"+1\"));"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // EP: numbers with white space"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\" 10 \")); // Leading/trailing spaces"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"1 0\")); // Spaces in the middle"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // EP: number larger than Integer.MAX_VALUE"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(Long.toString(Integer.MAX_VALUE + 1)));"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // EP: valid numbers, should return true"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.isNonZeroUnsignedInteger(\"1\")); // Boundary value"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.isNonZeroUnsignedInteger(\"10\"));"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //---------------- Tests for containsWordIgnoreCase --------------------------------------"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /*"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Invalid equivalence partitions for word: null, empty, multiple words"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Invalid equivalence partitions for sentence: null"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * The four test cases below test one invalid input at a time."
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void containsWordIgnoreCase_nullWord_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e StringUtil.containsWordIgnoreCase(\"typical sentence\", null));"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void containsWordIgnoreCase_emptyWord_throwsIllegalArgumentException() {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertThrows(IllegalArgumentException.class, \"Word parameter cannot be empty\", ()"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            -\u003e StringUtil.containsWordIgnoreCase(\"typical sentence\", \"  \"));"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void containsWordIgnoreCase_multipleWords_throwsIllegalArgumentException() {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertThrows(IllegalArgumentException.class, \"Word parameter should be a single word\", ()"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            -\u003e StringUtil.containsWordIgnoreCase(\"typical sentence\", \"aaa BBB\"));"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void containsWordIgnoreCase_nullSentence_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e StringUtil.containsWordIgnoreCase(null, \"abc\"));"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /*"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Valid equivalence partitions for word:"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - any word"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - word containing symbols/numbers"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - word with leading/trailing spaces"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Valid equivalence partitions for sentence:"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - empty string"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - one word"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - multiple words"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - sentence with extra spaces"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Possible scenarios returning true:"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - matches first word in sentence"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - last word in sentence"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - middle word in sentence"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - matches multiple words"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Possible scenarios returning false:"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - query word matches part of a sentence word"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *   - sentence word matches part of the query word"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * The test method below tries to verify all above with a reasonably low number of test cases."
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void containsWordIgnoreCase_validInputs_correctResult() {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // Empty sentence"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"\", \"abc\")); // Boundary case"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"    \", \"123\"));"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // Matches a partial word only"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"bb\")); // Sentence word bigger than query word"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"bbbb\")); // Query word bigger than sentence word"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // Matches word in the sentence, different upper/lower case letters"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bBb ccc\", \"Bbb\")); // First word (boundary case)"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bBb ccc@1\", \"CCc@1\")); // Last word (boundary case)"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"  AAA   bBb   ccc  \", \"aaa\")); // Sentence has extra spaces"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"Aaa\", \"aaa\")); // Only one word in sentence (boundary case)"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"  ccc  \")); // Leading/trailing spaces"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // Matches multiple words in sentence"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"AAA bBb ccc  bbb\", \"bbB\"));"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //---------------- Tests for getDetails --------------------------------------"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /*"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Equivalence Partitions: null, valid throwable object"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void getDetails_exceptionGiven() {"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(StringUtil.getDetails(new FileNotFoundException(\"file not found\"))"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            .contains(\"java.io.FileNotFoundException: file not found\"));"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void getDetails_nullGiven_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e StringUtil.getDetails(null));"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    // Tests for changing String to asterisks"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    public void passwordToAsterix_validInputs_correctResult() {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        assertTrue(StringUtil.passwordToAsterix(\"password12345\").equals(new String(\"*************\")));"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        assertFalse(StringUtil.passwordToAsterix(\"password12345\").equals(new String(\"************\")));"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "hooncp": 7,
+      "-": 143
+    }
+  },
+  {
     "path": "src/test/java/seedu/address/logic/LogicManagerTest.java",
     "fileType": "tests",
     "lines": [
@@ -164886,6 +166332,197 @@
     "authorContributionMap": {
       "jityong": 1,
       "-": 39
+    }
+  },
+  {
+    "path": "src/test/java/seedu/address/model/util/DateUtilTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "package seedu.address.model.util;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "import static seedu.address.model.util.DateUtil.findDaysPasswordExpireAt;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "import static seedu.address.model.util.DateUtil.findPasswordExpireAt;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "import java.util.Date;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "public class DateUtilTest {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    public void findDaysPasswordExpireAt_correctResult() {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        assertTrue(findDaysPasswordExpireAt(new Date(), new Date()) \u003d\u003d 0);"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        assertFalse(findDaysPasswordExpireAt(new Date(), new Date()) \u003d\u003d 1);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    public void findPasswordExpireAt_correctResult() {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        assertFalse(findPasswordExpireAt(new Date()).equals(0));"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "        assertFalse(findPasswordExpireAt(new Date()).equals(new Date()));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "hooncp"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "hooncp": 26
     }
   },
   {

@@ -231,6 +231,27 @@
             "deletions": 220
           }
         ]
+      },
+      {
+        "insertions": 36,
+        "deletions": 21,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "192463675d805ecbb451a66953ab721c072e2af4",
+            "messageTitle": "Minor changes (#179)",
+            "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n",
+            "insertions": 6,
+            "deletions": 4
+          },
+          {
+            "hash": "0722c0c87e0eea0f5de97b0d29304abbf697712f",
+            "messageTitle": "Fixed listEvents bug, etc. (#182)",
+            "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n\r\n* Fixed listEvents bug\r\nchanged: displayassignmentscommand message usage - please update user guide\r\nchanged: studentnotfoundexception message in setassignmentscorecommand\r\nfixed: did not throw error when setscore command is called for a student not in the tutorial\r\n",
+            "insertions": 30,
+            "deletions": 17
+          }
+        ]
       }
     ],
     "Ellieyee": [
@@ -569,6 +590,20 @@
             "deletions": 44
           }
         ]
+      },
+      {
+        "insertions": 103,
+        "deletions": 4,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "89714cac4bc6339f6eeed17ccf538bdbd31cb601",
+            "messageTitle": "Project Portfolio Page update (#177)",
+            "messageBody": "* Add Project Portfolio Page\r\n\r\n* Update project portfolio\r\n\r\n* Fix checkstyle bug\r\n",
+            "insertions": 103,
+            "deletions": 4
+          }
+        ]
       }
     ],
     "AhmadHatziq": [
@@ -863,6 +898,20 @@
             "messageBody": "* Update UserGuide.adoc\r\n\r\n* Update UserGuide.adoc\r\n\r\n* Update DG and UG\r\n\r\n* Update DG\r\n\r\n* Update DG\r\n\r\n* Update Developer Guide\r\n\r\n* Update  (#6)\r\n\r\n* Include index shortcut for AddStudentCommand (#49)\r\n\r\n* Added Attendance, missing tests for Tutorial and associated subclasses.\r\n\r\n* Allow multiple input formats for addTutorial weeks (#52)\r\n\r\n* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Update list command (#53)\r\n\r\n* Update TutorialCard to display Module code\r\n\r\n* Update List command to display in UI\r\n\r\n* Fuck you sourcetree\r\n\r\n* Implemented saving of Modules\r\n\r\n* Can read module json from file\r\n\r\n* Save progress, before starting on trying to store as an easier to interpret json string array of array of array\r\n\r\n* Add function to save modules model to file. Haven\u0027t add function to read from said saved data.\r\n\r\n* Changed from hashMap to LinkedHashMap to preserve relative ordering\r\n\r\n* Refactor code that deals with saving to Json\r\n\r\n* Add function to read module data from saved Json file\r\n\r\n* Refactor code block on studentStringToStudent\r\n\r\n* Refactor code segment on Student object creation\r\n\r\n* Add checkers for invalid tutorial and student strings \u0026 general refactoring\r\n\r\n* Corrected ckeckStyle and tests\r\n\r\n* Fix checkStyle violations\r\n\r\n* Added intial round of tests\r\n\r\n* Fix test for invalid dateTime or Duration\r\n\r\n* Update fork\r\n\r\n* Add support for saving (but not reading) of attendance list\r\n\r\n* Add test json files\r\n\r\n* Extract out weekly attendance string except final week\r\n\r\n* Fix issue with saving an attendance list with 0 students\r\n\r\n* Add ability to construct attendance object from json string\r\n\r\n* Fix failing test cases due to change in tutorialString structure (addition of tutorialAttendance field)\r\n\r\n* Fix checkstyle violations\r\n\r\n* Added EOF to json test files\r\n\r\n* Revert to 63465c7f\r\n\r\n* Code cleaning\r\n\r\n* Fix check style violations\r\n\r\n* Refactor parsing methods in JsonAdaptedModule.java to JsonUtil.java\r\n\r\n* Refactor JsonAdaptedModuleTest \u0026 JsonUtilTest\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update developer guide\r\n\r\n* Update tutorial class\r\n\r\n* Remove JsonAdaptedPerson from Storage-related files\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Checkpoint before converting tutorial structure from a String to a Map\r\n\r\n* Ported storage to nested map of strings\r\n\r\n* Remove all instances from previous storage method\r\n\r\n* Added saving of initial model state\r\n\r\n* Add ability to save each state for every state-changing command\r\n\r\n* Add a skeleton Undo Command (input/output)\r\n\r\n* Add ability to check for invalid arguments for \"u/integer\"\r\n\r\n* Add if-branch for an undo command\r\n\r\n* Checkpoint before implementing overloaded Command.execute(model, storage) abstract method\r\n\r\n* Add overloaded abstract method to accomodate commands that need both Model \u0026 Storage objects (ie UndoCommand) to operate\r\n\r\n* Added undo ability\r\n\r\n* Fix bug where new state is saved after Undo Command\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing test cases\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Update build.gradle\r\n\r\n* Update build.gradle\r\n\r\n* Bug fixes\r\n\r\n* Update user guide\r\n\r\n* Before attempting to change json storage directory to (Paths.get)\r\n\r\n* Fix state storage file directory for Mac users\r\n\r\n* Update checkStyle\r\n\r\n* Add parsing of Assignment from json\r\n\r\n* Add storage for assignments\r\n\r\n* Add method isDuplicateAssignment\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n",
             "insertions": 409,
             "deletions": 36
+          }
+        ]
+      },
+      {
+        "insertions": 103,
+        "deletions": 4,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "a95501f66f8dfd94afb70105261741965d493300",
+            "messageTitle": "Fix issue #154 and Storage bug #178 (#180)",
+            "messageBody": "* Update UserGuide.adoc\r\n\r\n* Update UserGuide.adoc\r\n\r\n* Update DG and UG\r\n\r\n* Update DG\r\n\r\n* Update DG\r\n\r\n* Update Developer Guide\r\n\r\n* Update  (#6)\r\n\r\n* Include index shortcut for AddStudentCommand (#49)\r\n\r\n* Added Attendance, missing tests for Tutorial and associated subclasses.\r\n\r\n* Allow multiple input formats for addTutorial weeks (#52)\r\n\r\n* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Update list command (#53)\r\n\r\n* Update TutorialCard to display Module code\r\n\r\n* Update List command to display in UI\r\n\r\n* Fuck you sourcetree\r\n\r\n* Implemented saving of Modules\r\n\r\n* Can read module json from file\r\n\r\n* Save progress, before starting on trying to store as an easier to interpret json string array of array of array\r\n\r\n* Add function to save modules model to file. Haven\u0027t add function to read from said saved data.\r\n\r\n* Changed from hashMap to LinkedHashMap to preserve relative ordering\r\n\r\n* Refactor code that deals with saving to Json\r\n\r\n* Add function to read module data from saved Json file\r\n\r\n* Refactor code block on studentStringToStudent\r\n\r\n* Refactor code segment on Student object creation\r\n\r\n* Add checkers for invalid tutorial and student strings \u0026 general refactoring\r\n\r\n* Corrected ckeckStyle and tests\r\n\r\n* Fix checkStyle violations\r\n\r\n* Added intial round of tests\r\n\r\n* Fix test for invalid dateTime or Duration\r\n\r\n* Update fork\r\n\r\n* Add support for saving (but not reading) of attendance list\r\n\r\n* Add test json files\r\n\r\n* Extract out weekly attendance string except final week\r\n\r\n* Fix issue with saving an attendance list with 0 students\r\n\r\n* Add ability to construct attendance object from json string\r\n\r\n* Fix failing test cases due to change in tutorialString structure (addition of tutorialAttendance field)\r\n\r\n* Fix checkstyle violations\r\n\r\n* Added EOF to json test files\r\n\r\n* Revert to 63465c7f\r\n\r\n* Code cleaning\r\n\r\n* Fix check style violations\r\n\r\n* Refactor parsing methods in JsonAdaptedModule.java to JsonUtil.java\r\n\r\n* Refactor JsonAdaptedModuleTest \u0026 JsonUtilTest\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update developer guide\r\n\r\n* Update tutorial class\r\n\r\n* Remove JsonAdaptedPerson from Storage-related files\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Checkpoint before converting tutorial structure from a String to a Map\r\n\r\n* Ported storage to nested map of strings\r\n\r\n* Remove all instances from previous storage method\r\n\r\n* Added saving of initial model state\r\n\r\n* Add ability to save each state for every state-changing command\r\n\r\n* Add a skeleton Undo Command (input/output)\r\n\r\n* Add ability to check for invalid arguments for \"u/integer\"\r\n\r\n* Add if-branch for an undo command\r\n\r\n* Checkpoint before implementing overloaded Command.execute(model, storage) abstract method\r\n\r\n* Add overloaded abstract method to accomodate commands that need both Model \u0026 Storage objects (ie UndoCommand) to operate\r\n\r\n* Added undo ability\r\n\r\n* Fix bug where new state is saved after Undo Command\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing test cases\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Update build.gradle\r\n\r\n* Update build.gradle\r\n\r\n* Bug fixes\r\n\r\n* Update user guide\r\n\r\n* Before attempting to change json storage directory to (Paths.get)\r\n\r\n* Fix state storage file directory for Mac users\r\n\r\n* Update checkStyle\r\n\r\n* Add parsing of Assignment from json\r\n\r\n* Add storage for assignments\r\n\r\n* Add method isDuplicateAssignment\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Add string checking for all student fields. To remove any leftover square brackets ie \"[\" or \"]\".\r\n\r\n* Added Hatziq\u0027s PPP\r\n\r\n* Fix issue #154\r\n\r\n* Maybe fix the assignment storage?\r\n",
+            "insertions": 103,
+            "deletions": 4
           }
         ]
       }
@@ -1266,46 +1315,67 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 163,
+        "deletions": 40,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "43729979c6d131e9e176b12adc8d55a7e9100f79",
+            "messageTitle": "Fix #144, #148, #170 (#176)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n\r\n* Fix unclickable \"smol white speck\" text input field\r\n\r\n* Improve focusing for input text box\r\n\r\n* Fix bugs\r\n\r\n* Fix test\r\n\r\n* Fix test\r\n",
+            "insertions": 86,
+            "deletions": 11
+          },
+          {
+            "hash": "ab2c56706e3aae5d70cc5e45c3dc55f80d5d2c5c",
+            "messageTitle": "Partial fix for text input field jumping around (#181)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n\r\n* Fix unclickable \"smol white speck\" text input field\r\n\r\n* Improve focusing for input text box\r\n\r\n* Fix bugs\r\n\r\n* Fix test\r\n\r\n* Fix test\r\n\r\n* Partial fix for text input field alignment\r\n\r\n* Fix bugs\r\n",
+            "insertions": 77,
+            "deletions": 29
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 8038,
-    "Ellieyee": 7426,
-    "AhmadHatziq": 3324,
-    "lumos309": 6396
+    "ZiHawkEye": 8046,
+    "Ellieyee": 7522,
+    "AhmadHatziq": 3410,
+    "lumos309": 6540
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
-      "docs": 111,
+      "docs": 108,
       "tests": 2574,
-      "functional": 5326,
+      "functional": 5337,
       "other": 27
     },
     "Ellieyee": {
-      "docs": 515,
-      "tests": 2899,
-      "functional": 4007,
+      "docs": 617,
+      "tests": 2897,
+      "functional": 4003,
       "other": 5
     },
     "AhmadHatziq": {
-      "docs": 399,
-      "tests": 374,
-      "functional": 2541,
+      "docs": 478,
+      "tests": 366,
+      "functional": 2556,
       "other": 10
     },
     "lumos309": {
-      "docs": 106,
-      "tests": 2822,
-      "functional": 3126,
+      "docs": 112,
+      "tests": 2837,
+      "functional": 3249,
       "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 150462.47,
-    "Ellieyee": 211786.11,
-    "AhmadHatziq": 54813.0,
-    "lumos309": 58341.75
+    "ZiHawkEye": 146229.27,
+    "Ellieyee": 205884.67,
+    "AhmadHatziq": 53156.77,
+    "lumos309": 56828.215
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",

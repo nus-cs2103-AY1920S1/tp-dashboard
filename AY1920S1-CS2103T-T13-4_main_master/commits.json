@@ -1211,6 +1211,55 @@
             "deletions": 75
           }
         ]
+      },
+      {
+        "insertions": 72,
+        "deletions": 18,
+        "date": "2019-11-05",
+        "commitResults": [
+          {
+            "hash": "d74248e4c989b882a49027f466f6c06b63ae197e",
+            "messageTitle": "Fix: Check for file extension in export/import",
+            "messageBody": "Show error message if `.json` is provided in FILENAME. Fixes #187.\n",
+            "insertions": 22,
+            "deletions": 0
+          },
+          {
+            "hash": "5bdd4780da3ef2883150033a2b70f4d1b76777cc",
+            "messageTitle": "Fix: Validate filenames for import/export",
+            "messageBody": "White-list alphanumeric characters, hyphens, and underscores in export/\nimport filenames. Prevents potential directory traversal (?).\nFixes #198 and #199.\n",
+            "insertions": 48,
+            "deletions": 16
+          },
+          {
+            "hash": "1ea7f89cad9cfb1a4af3dfea6c3497879e64e688",
+            "messageTitle": "Fix: Add command example in UG",
+            "messageBody": "Fixes #185.\n",
+            "insertions": 2,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 174,
+        "deletions": 18,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "7cff07ccf58cee10130d2b54eade63a86ab79c71",
+            "messageTitle": "Update: SampleDataUtil (basic, autotag, reminder)",
+            "messageBody": "Updated bookmarks, folders, autotags, reminders.\nTo Do: Update sample cache data.\n",
+            "insertions": 165,
+            "deletions": 18
+          },
+          {
+            "hash": "4432b39f7f1e8b0fe64932baac9b5b68a40f55a8",
+            "messageTitle": "Add: SampleDataUtil#getTagger() test",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 0
+          }
+        ]
       }
     ],
     "openorclose": [
@@ -1915,10 +1964,17 @@
         ]
       },
       {
-        "insertions": 56,
-        "deletions": 5,
+        "insertions": 86,
+        "deletions": 12,
         "date": "2019-11-02",
         "commitResults": [
+          {
+            "hash": "3e714145ff2741b1c8b3993f4b642a6b168dda93",
+            "messageTitle": "Fix folders",
+            "messageBody": "",
+            "insertions": 30,
+            "deletions": 7
+          },
           {
             "hash": "c774597647dc43756341386b29ace39aa68d0509",
             "messageTitle": "Fix noargument commands",
@@ -2830,6 +2886,41 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 34,
+        "deletions": 17,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "99ee70ae62b4302d2aa6f80878f622632ad70f47",
+            "messageTitle": "fix dry test bugs",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 11
+          },
+          {
+            "hash": "17bf82223d05c97fdfd8e23aa77d2eeffe4eb9e6",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: Open O. Close \u003c3646725+openorclose@users.noreply.github.com\u003e",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "53418ba9d0b84b3d03413b4015afb74e3a0b4e95",
+            "messageTitle": "change exception",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "ec3cf6fd704c3a3a85631ddb194e1365523739d4",
+            "messageTitle": "fix UG description",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
           }
         ]
       }
@@ -4492,50 +4583,50 @@
     ]
   },
   "authorFinalContributionMap": {
-    "dorcastan": 6383,
-    "openorclose": 2982,
-    "TSAI-HSIAO-HAN": 2528,
-    "Na-Nazhou": 3696,
-    "kxyoke": 4737
+    "dorcastan": 6613,
+    "openorclose": 3003,
+    "TSAI-HSIAO-HAN": 2547,
+    "Na-Nazhou": 3681,
+    "kxyoke": 4736
   },
   "authorFileTypeContributionMap": {
     "dorcastan": {
-      "docs": 446,
-      "tests": 2983,
-      "functional": 2615,
+      "docs": 450,
+      "tests": 3020,
+      "functional": 2804,
       "other": 339
     },
     "openorclose": {
-      "docs": 348,
-      "tests": 941,
-      "functional": 1544,
+      "docs": 349,
+      "tests": 951,
+      "functional": 1554,
       "other": 149
     },
     "TSAI-HSIAO-HAN": {
       "docs": 185,
-      "tests": 919,
-      "functional": 1388,
+      "tests": 921,
+      "functional": 1405,
       "other": 36
     },
     "Na-Nazhou": {
-      "docs": 340,
+      "docs": 339,
       "tests": 1872,
-      "functional": 1397,
+      "functional": 1383,
       "other": 87
     },
     "kxyoke": {
-      "docs": 366,
+      "docs": 365,
       "tests": 1044,
       "functional": 3106,
       "other": 221
     }
   },
   "authorContributionVariance": {
-    "dorcastan": 690345.25,
-    "openorclose": 58831.594,
-    "TSAI-HSIAO-HAN": 22369.996,
-    "Na-Nazhou": 48394.785,
-    "kxyoke": 69480.64
+    "dorcastan": 659007.2,
+    "openorclose": 56392.28,
+    "TSAI-HSIAO-HAN": 21426.41,
+    "Na-Nazhou": 46543.21,
+    "kxyoke": 67182.53
   },
   "authorDisplayNameMap": {
     "dorcastan": "CS2103T-T13-4 DORCA ... A TAN",

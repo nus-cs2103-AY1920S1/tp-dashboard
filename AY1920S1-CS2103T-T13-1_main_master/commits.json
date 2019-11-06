@@ -196,6 +196,20 @@
             "deletions": 31
           }
         ]
+      },
+      {
+        "insertions": 4,
+        "deletions": 1,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "0324a3f03cd119a729a3729529f89003d182af5b",
+            "messageTitle": "Fix form bug (#185)",
+            "messageBody": "* DG update\r\n\r\n* Fix bug\r\n",
+            "insertions": 4,
+            "deletions": 1
+          }
+        ]
       }
     ],
     "C-likethis123": [
@@ -392,6 +406,41 @@
             "messageBody": "* Fix typo in user guide\r\n\r\n* Edit Introduction and Features Sections\r\n\r\n* Change tone of user guide, include labelled diagrams\r\n\r\n* Make changes according to reviews\r\n\r\n* Make typo changes\r\n\r\n* Change exit program section\r\n",
             "insertions": 26,
             "deletions": 30
+          }
+        ]
+      },
+      {
+        "insertions": 253,
+        "deletions": 107,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "ac333df9feeb63f2c9dca8d49d7a760988e351aa",
+            "messageTitle": "Fix typo error in \u0027Priority\u0027 error message (#234)",
+            "messageBody": "Added a space. This commit fixes #220.",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "1ce44894dc157958bf347aaf596baf1940d86e92",
+            "messageTitle": "Change range of valid ages (#233)",
+            "messageBody": "* New range of valid ages is: 0 (inclusive) to 150 (inclusive)\r\n\r\n* Message Usage elaborates on valid age inputs\r\n",
+            "insertions": 4,
+            "deletions": 8
+          },
+          {
+            "hash": "706c8961f04d480ed119312243973b102ac39415",
+            "messageTitle": "Add signed bloodtypes (#231)",
+            "messageBody": "* Add support for signed bloodtypes (eg A+, B-).\r\n\r\n* Fix test cases for tests involving bloodtype values\r\n\r\nThe change is needed because of change in blood types. Now blood\r\ntypes are accompanied with the signs \u0027+\u0027 or \u0027-\u0027.\r\n\r\n* Rename #isBloodTypeMatch to #isCompatibleBloodType\r\n",
+            "insertions": 224,
+            "deletions": 86
+          },
+          {
+            "hash": "08f1a15aae04979be3224110aebe4e7d3680f5d8",
+            "messageTitle": "Fix matching related bug (#232)",
+            "messageBody": "* Add validation to user input on matches\r\n\r\nPreviously, when more than one value has the same prefix,\r\nthe app takes in the last value only. This is a feature flaw\r\nwhich is fixed in this commit.\r\n\r\nThis commit rejects user inputs if there is more than one value\r\nwith the \u0027ic/\u0027 prefix.\r\n\r\n* Add test cases that rejects multiple inputs of same prefixes\r\n\r\n* Add more explanation on MatchCommand\u0027s message usage\r\n",
+            "insertions": 24,
+            "deletions": 12
           }
         ]
       }
@@ -678,6 +727,20 @@
             "deletions": 37
           }
         ]
+      },
+      {
+        "insertions": 45,
+        "deletions": 29,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "3585466f11b2f258cdce068ae8e935502471d620",
+            "messageTitle": "Fix list issue #187 (#236)",
+            "messageBody": "* Fix list issue #187.\r\n\r\n* Fix checkstyle.\r\n\r\n* Fix checkstyle.\r\n\r\n* Update test cases.\r\n\r\n* Fix checkstyle.\r\n\r\n* Fix list test cases.\r\n\r\n* Amend list command class.\r\n\r\n* Amend list command class.\r\n\r\n* Fix checkstyle.\r\n",
+            "insertions": 45,
+            "deletions": 29
+          }
+        ]
       }
     ],
     "SimNee": [
@@ -813,53 +876,67 @@
             "deletions": 18
           }
         ]
+      },
+      {
+        "insertions": 142,
+        "deletions": 52,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "2d3daee342d0132d22341af8210490ac24746735",
+            "messageTitle": "Processing command (#176)",
+            "messageBody": "* WIP: ProcessingCommand\r\n\r\n* Adding method to check if patient and donor exist\r\n\r\n* Able to process 2 ic/ and return the default list out\r\n\r\n* delete unused imports\r\n\r\n* fixed issues regarding processing and matching\r\n\r\n* null pointer errors arise\r\n\r\n* remove the using of storage for the tasklist\r\n\r\n* not able to update list\r\n\r\n* markAsDone is done\r\n\r\n* made setter method for processinglist\r\n\r\n* setter changes\r\n\r\n* processingmark command done\r\n\r\n* some test cases added\r\n\r\n* checkstyle\r\n\r\n* checkstyles\r\n\r\n* Model issues\r\n\r\n* Model issues\r\n\r\n* null pointer fixes\r\n\r\n* null pointer fixes\r\n\r\n* checkstyle\r\n\r\n* checkstyle\r\n\r\n* checkstyle\r\n\r\n* command completed. Test cases not yet\r\n\r\n* trying to revert the conflict removal\r\n\r\n* command completed. Test cases not yet\r\n\r\n* command completed. Test cases not yet\r\n\r\n* command completed. Test cases not yet\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* fix issue #106 regarding addCommand tissuetyping\r\n\r\n* fix issue #106 regarding addCommand tissuetyping\r\n\r\n* fix issue #206 regarding addCommand tissuetyping\r\n\r\n* added more exception handlings\r\n\r\n* merge conflict\r\n\r\n* merge conflict\r\n\r\n* added more exceptions handling and fixed #207\r\n\r\n* added more exceptions handling and fixed #207\r\n\r\n* more exception handlings\r\n\r\n* more exception handlings\r\n\r\n* more exception handlings\r\n",
+            "insertions": 142,
+            "deletions": 52
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "WilliamRyank": 4604,
-    "C-likethis123": 3739,
-    "TheRealRavager": 1968,
-    "Yen-Peng": 1052,
-    "SimNee": 1774
+    "WilliamRyank": 4598,
+    "C-likethis123": 3895,
+    "TheRealRavager": 1969,
+    "Yen-Peng": 1070,
+    "SimNee": 1863
   },
   "authorFileTypeContributionMap": {
     "WilliamRyank": {
       "docs": 158,
-      "tests": 1485,
-      "functional": 2944,
+      "tests": 1476,
+      "functional": 2947,
       "other": 17
     },
     "C-likethis123": {
       "docs": 553,
-      "tests": 1586,
-      "functional": 1503,
+      "tests": 1712,
+      "functional": 1533,
       "other": 97
     },
     "TheRealRavager": {
       "docs": 83,
-      "tests": 1062,
+      "tests": 1063,
       "functional": 822,
       "other": 1
     },
     "Yen-Peng": {
       "docs": 262,
-      "tests": 175,
-      "functional": 479,
+      "tests": 182,
+      "functional": 490,
       "other": 136
     },
     "SimNee": {
       "docs": 83,
-      "tests": 538,
-      "functional": 1153
+      "tests": 571,
+      "functional": 1209
     }
   },
   "authorContributionVariance": {
-    "WilliamRyank": 179451.58,
-    "C-likethis123": 106842.586,
-    "TheRealRavager": 183634.52,
-    "Yen-Peng": 5832.3403,
-    "SimNee": 23132.47
+    "WilliamRyank": 166146.64,
+    "C-likethis123": 99939.84,
+    "TheRealRavager": 169239.3,
+    "Yen-Peng": 5440.048,
+    "SimNee": 21753.057
   },
   "authorDisplayNameMap": {
     "WilliamRyank": "CS2103T-T13-1 WILLI ... SNADI",
