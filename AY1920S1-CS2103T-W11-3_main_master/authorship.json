@@ -57471,33 +57471,61 @@
       {
         "lineNumber": 42,
         "author": {
+          "gitId": "dvrylc"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "                if (!eatery.getIsOpen()) {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "                    setStyle(\"-fx-background-color: rgba(218, 88, 65, 0.25);\");"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
           "gitId": "jakq"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 47,
         "author": {
           "gitId": "jakq"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 48,
         "author": {
           "gitId": "jakq"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 49,
         "author": {
           "gitId": "jakq"
         },
         "content": ""
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 50,
         "author": {
           "gitId": "jakq"
         },
@@ -57505,6 +57533,7 @@
       }
     ],
     "authorContributionMap": {
+      "dvrylc": 4,
       "jakq": 46
     }
   },
@@ -61085,7 +61114,7 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    private static final String WEBVIEW_WRAPPER \u003d \"\u003chtml style\u003d\\\"background: #212121;\\\"\u003e%s\u003c/html\u003e\";"
+        "content": "    private static final String WEBVIEW_WRAPPER \u003d \"\u003chtml style\u003d\\\"background: #424242;\\\"\u003e%s\u003c/html\u003e\";"
       },
       {
         "lineNumber": 29,
@@ -61237,7 +61266,7 @@
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "-"
+          "gitId": "dvrylc"
         },
         "content": "    @FXML"
       },
@@ -61379,290 +61408,318 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            eateryName.setText(eateryToShow.getName().fullName);"
+        "content": "            eateryName.setText(eateryToShow.getIsOpen()"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            eateryCategory.setText(eateryToShow.getCategory().getName());"
+        "content": "                    ? eateryToShow.getName().fullName : String.format(\"%s [closed]\", eateryToShow.getName().fullName));"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            eateryAddress.setText(eateryToShow.getAddress().value);"
+        "content": "            eateryCategory.setText(eateryToShow.getCategory().getName());"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "            eateryAddress.setText(eateryToShow.getAddress().value);"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            // Tags"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            eateryToShow.getTags().stream()"
+        "content": "            // Tags"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "                    .sorted(Comparator.comparing(Tag::getName))"
+        "content": "            eateryToShow.getTags().stream()"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "                    .forEach(tag -\u003e eateryTags.getChildren().add(new Label(String.format(\"#%s\", tag.getName()))));"
+        "content": "                    .sorted(Comparator.comparing(Tag::getName))"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "                    .forEach(tag -\u003e eateryTags.getChildren().add(new Label(String.format(\"#%s\", tag.getName()))));"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            // Map"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            String doc \u003d String.format(MAPS_WRAPPER,"
+        "content": "            // Map"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "                    URLEncoder.encode(eateryToShow.getAddress().value, StandardCharsets.UTF_8),"
+        "content": "            String doc \u003d String.format(MAPS_WRAPPER,"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "                    new String(Base64.getDecoder().decode(K)));"
+        "content": "                    URLEncoder.encode(eateryToShow.getAddress().value, StandardCharsets.UTF_8),"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            eateryMap.getEngine().loadContent(String.format(WEBVIEW_WRAPPER, doc));"
+        "content": "                    new String(Base64.getDecoder().decode(K)));"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "            eateryMap.getEngine().loadContent(String.format(WEBVIEW_WRAPPER, doc));"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            // Reviews"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            reviewHeader.setText(\"Reviews\");"
+        "content": "            // Reviews"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "            reviewListPanelPlaceholder.getChildren().add(reviewListPanel.getRoot());"
+        "content": "            reviewHeader.setText(\"Reviews\");"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        }"
+        "content": "            reviewListPanelPlaceholder.getChildren().add(reviewListPanel.getRoot());"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    public void setFeedbackToUser(Exception e) {"
+        "content": ""
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        requireNonNull(e);"
+        "content": "    public void setFeedbackToUser(Exception e) {"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        reset();"
+        "content": "        requireNonNull(e);"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        commandFeedback.setText(e.getMessage());"
+        "content": "        reset();"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    }"
+        "content": "        commandFeedback.setText(e.getMessage());"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "     * Resets the UI to its initial empty state."
+        "content": "    /**"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "     */"
+        "content": "     * Resets the UI to its initial empty state."
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    private void reset() {"
+        "content": "     */"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        commandFeedback.setText(\"\");"
+        "content": "    private void reset() {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        eateryName.setText(\"\");"
+        "content": "        commandFeedback.setText(\"\");"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        eateryCategory.setText(\"\");"
+        "content": ""
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        eateryAddress.setText(\"\");"
+        "content": "        eateryName.setText(\"\");"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        eateryTags.getChildren().clear();"
+        "content": "        eateryCategory.setText(\"\");"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        eateryMap.getEngine().loadContent(String.format(WEBVIEW_WRAPPER, \"\"));"
+        "content": "        eateryAddress.setText(\"\");"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        reviewHeader.setText(\"\");"
+        "content": "        eateryTags.getChildren().clear();"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "        reviewListPanelPlaceholder.getChildren().clear();"
+        "content": ""
       },
       {
         "lineNumber": 109,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "        eateryMap.getEngine().loadContent(String.format(WEBVIEW_WRAPPER, \"\"));"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "        reviewHeader.setText(\"\");"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "        reviewListPanelPlaceholder.getChildren().clear();"
+      },
+      {
+        "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 111,
+        "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
@@ -61670,8 +61727,8 @@
       }
     ],
     "authorContributionMap": {
-      "dvrylc": 87,
-      "-": 24
+      "dvrylc": 92,
+      "-": 23
     }
   },
   {
@@ -65067,7 +65124,7 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-background-color: #212121;"
+        "content": "    -fx-background-color: #424242;"
       },
       {
         "lineNumber": 4,
@@ -65095,7 +65152,7 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-background-color: #484848;"
+        "content": "    -fx-background-color: derive(#424242, 20%);"
       },
       {
         "lineNumber": 8,
@@ -65123,238 +65180,238 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-background-color: orange;"
+        "content": "    -fx-background-color: #ffca28;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-background-radius: 10;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "// \u003d\u003d\u003d Type \u003d\u003d\u003d"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "Label, TextField {"
+        "content": "// \u003d\u003d\u003d Type \u003d\u003d\u003d"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-text-fill: #f5f5f5;"
+        "content": "Label, TextField {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-font: normal 13 sans-serif;"
+        "content": "    -fx-text-fill: #fafafa;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-font: normal 13 sans-serif;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".h1 {"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-font: bold 17 sans-serif;"
+        "content": ".h1 {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-font: bold 19 sans-serif;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".h2 {"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-font: bold 15 sans-serif;"
+        "content": ".h2 {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-font: bold 16 sans-serif;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".hyperlink {"
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-text-fill: #ffca28;"
+        "content": ".hyperlink {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-font: normal 13 sans-serif;"
+        "content": "    -fx-text-fill: #ffca28;"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-font: normal 13 sans-serif;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".hyperlink:hover,"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".hyperlink:visited {"
+        "content": ".hyperlink:hover,"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-underline: false;"
+        "content": ".hyperlink:visited {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-underline: false;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".rating-active {"
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-text-fill: orange;"
+        "content": "FlowPane \u003e Label {"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-text-fill: #424242;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "// \u003d\u003d\u003d Borders \u003d\u003d\u003d"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "VBox {"
+        "content": ".rating-active {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-border-width: 0;"
+        "content": "    -fx-text-fill: #ffca28;"
       },
       {
         "lineNumber": 45,
@@ -65375,217 +65432,217 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "VBox, .text-field, .list-view, .list-item {"
+        "content": "// \u003d\u003d\u003d Borders \u003d\u003d\u003d"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-border-color: #484848;"
+        "content": "VBox {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-border-width: 0;"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".left {"
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-border-width: 0 1 0 0;"
+        "content": "VBox, .text-field, .list-view, .list-item {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-border-color: derive(#424242, 20%);"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".right {"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-border-width: 0 0 0 1;"
+        "content": ".left {"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-border-width: 0 1 0 0;"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".bottom {"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-border-width: 1 0 0 0;"
+        "content": ".right {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-border-width: 0 0 0 1;"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".list-view {"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-border-width: 1;"
+        "content": ".bottom {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-border-width: 1 0 0 0;"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".list-item {"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-border-width: 0 0 1 0;"
+        "content": ".list-view {"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-border-width: 1;"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".command-feedback {"
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-border-width: 0 0 1 0;"
+        "content": ".list-item {"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-border-width: 0 0 1 0;"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "// \u003d\u003d\u003d Padding \u003d\u003d\u003d"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".container {"
+        "content": ".command-feedback {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-padding: 10;"
+        "content": "    -fx-border-width: 0 0 1 0;"
       },
       {
         "lineNumber": 78,
@@ -65606,49 +65663,49 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "Label {"
+        "content": "// \u003d\u003d\u003d Padding \u003d\u003d\u003d"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-padding: 1 0 1 0;"
+        "content": ".container {"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": "    -fx-padding: 10;"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".list-view,"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".hyperlink {"
+        "content": "Label {"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-padding: 0;"
+        "content": "    -fx-padding: 1 0 1 0;"
       },
       {
         "lineNumber": 87,
@@ -65669,21 +65726,21 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".list-item,"
+        "content": ".list-view,"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".command-feedback {"
+        "content": ".hyperlink {"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-padding: 0 0 10 0;"
+        "content": "    -fx-padding: 0;"
       },
       {
         "lineNumber": 92,
@@ -65704,101 +65761,136 @@
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".eatery-info,"
+        "content": ".list-item,"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".eatery-map,"
+        "content": ".command-feedback {"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ".eatery-reviews {"
+        "content": "    -fx-padding: 0 0 10 0;"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-padding: 10 0 0 0;"
+        "content": "}"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": ".eatery-info,"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "FlowPane {"
+        "content": ".eatery-map,"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-padding: 5 0 0 0;"
+        "content": ".eatery-reviews {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-hgap: 5;"
+        "content": "    -fx-padding: 10 0 0 0;"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-vgap: 5;"
+        "content": "}"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": ""
+        "content": "FlowPane {"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "FlowPane \u003e Label {"
+        "content": "    -fx-padding: 5 0 0 0;"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "dvrylc"
         },
-        "content": "    -fx-padding: 5;"
+        "content": "    -fx-hgap: 5;"
       },
       {
         "lineNumber": 108,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "    -fx-vgap: 5;"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "FlowPane \u003e Label {"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "dvrylc"
+        },
+        "content": "    -fx-padding: 5;"
+      },
+      {
+        "lineNumber": 113,
         "author": {
           "gitId": "dvrylc"
         },
@@ -65806,7 +65898,7 @@
       }
     ],
     "authorContributionMap": {
-      "dvrylc": 108
+      "dvrylc": 113
     }
   },
   {

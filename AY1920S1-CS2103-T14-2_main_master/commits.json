@@ -233,8 +233,8 @@
         ]
       },
       {
-        "insertions": 36,
-        "deletions": 21,
+        "insertions": 128,
+        "deletions": 28,
         "date": "2019-11-06",
         "commitResults": [
           {
@@ -250,6 +250,13 @@
             "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n\r\n* Fixed listEvents bug\r\nchanged: displayassignmentscommand message usage - please update user guide\r\nchanged: studentnotfoundexception message in setassignmentscorecommand\r\nfixed: did not throw error when setscore command is called for a student not in the tutorial\r\n",
             "insertions": 30,
             "deletions": 17
+          },
+          {
+            "hash": "6e7664ab83390a576f1788c5697095bd77de6e54",
+            "messageTitle": "Updated PPP (#184)",
+            "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n\r\n* Fixed listEvents bug\r\nchanged: displayassignmentscommand message usage - please update user guide\r\nchanged: studentnotfoundexception message in setassignmentscorecommand\r\nfixed: did not throw error when setscore command is called for a student not in the tutorial\r\n\r\n* Updated docs\r\n",
+            "insertions": 92,
+            "deletions": 7
           }
         ]
       }
@@ -914,6 +921,20 @@
             "deletions": 4
           }
         ]
+      },
+      {
+        "insertions": 136,
+        "deletions": 28,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "1c291d1849569dfecc0b64611abe0dc8e835f0bc",
+            "messageTitle": "Update docs \u0026 checking of same date for setSemStart command (#188)",
+            "messageBody": "",
+            "insertions": 136,
+            "deletions": 28
+          }
+        ]
       }
     ],
     "lumos309": [
@@ -1317,7 +1338,7 @@
         ]
       },
       {
-        "insertions": 163,
+        "insertions": 219,
         "deletions": 40,
         "date": "2019-11-06",
         "commitResults": [
@@ -1334,48 +1355,69 @@
             "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n\r\n* Fix unclickable \"smol white speck\" text input field\r\n\r\n* Improve focusing for input text box\r\n\r\n* Fix bugs\r\n\r\n* Fix test\r\n\r\n* Fix test\r\n\r\n* Partial fix for text input field alignment\r\n\r\n* Fix bugs\r\n",
             "insertions": 77,
             "deletions": 29
+          },
+          {
+            "hash": "6afd72e354db631e2370107a672983bc107cc51a",
+            "messageTitle": "Add PPP (#185)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n\r\n* Fix unclickable \"smol white speck\" text input field\r\n\r\n* Improve focusing for input text box\r\n\r\n* Fix bugs\r\n\r\n* Fix test\r\n\r\n* Fix test\r\n\r\n* Partial fix for text input field alignment\r\n\r\n* Fix bugs\r\n\r\n* Add PPP\r\n",
+            "insertions": 56,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 102,
+        "deletions": 27,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "038a1e70a8a5a6b502f97d8c22260a762b247cc3",
+            "messageTitle": "Allow scrolling of list panel via PageUp/Down (#187)",
+            "messageBody": "* Allow scrolling via key presses\r\n\r\n* Rename CommandExecutor to InputExecutor\r\n\r\n* Refine Student equality test\r\n",
+            "insertions": 102,
+            "deletions": 27
           }
         ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 8046,
-    "Ellieyee": 7522,
-    "AhmadHatziq": 3410,
-    "lumos309": 6540
+    "ZiHawkEye": 8121,
+    "Ellieyee": 7504,
+    "AhmadHatziq": 3538,
+    "lumos309": 6682
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
-      "docs": 108,
+      "docs": 197,
       "tests": 2574,
-      "functional": 5337,
+      "functional": 5323,
       "other": 27
     },
     "Ellieyee": {
-      "docs": 617,
+      "docs": 611,
       "tests": 2897,
-      "functional": 4003,
+      "functional": 3991,
       "other": 5
     },
     "AhmadHatziq": {
-      "docs": 478,
+      "docs": 510,
       "tests": 366,
-      "functional": 2556,
+      "functional": 2652,
       "other": 10
     },
     "lumos309": {
-      "docs": 112,
+      "docs": 168,
       "tests": 2837,
-      "functional": 3249,
+      "functional": 3335,
       "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 146229.27,
-    "Ellieyee": 205884.67,
-    "AhmadHatziq": 53156.77,
-    "lumos309": 56828.215
+    "ZiHawkEye": 144149.34,
+    "Ellieyee": 203319.19,
+    "AhmadHatziq": 52429.19,
+    "lumos309": 56097.68
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",

@@ -1241,8 +1241,8 @@
         ]
       },
       {
-        "insertions": 174,
-        "deletions": 18,
+        "insertions": 696,
+        "deletions": 135,
         "date": "2019-11-06",
         "commitResults": [
           {
@@ -1253,10 +1253,157 @@
             "deletions": 18
           },
           {
+            "hash": "1aa862b0302363b9f95b2c035139adde50aaa77f",
+            "messageTitle": "Add: Project Portfolio Page",
+            "messageBody": "And trivial content updates.\n",
+            "insertions": 78,
+            "deletions": 3
+          },
+          {
+            "hash": "45dc38cb5b48dc5d47c16ea1cdaae0c19d424eb6",
+            "messageTitle": "Add: JsonAdaptedBookmarkPredicate tests (basic)",
+            "messageBody": "And improve BookmarkPredicateTest to check behaviour as well as state.\n",
+            "insertions": 105,
+            "deletions": 5
+          },
+          {
+            "hash": "8f7dcd5a6dcf384c33afd0dbdea272dc00d2da64",
+            "messageTitle": "Fix: Autotag import bug",
+            "messageBody": "JsonAdaptedBookmarkPredicate#toModelType() was creating a predicate with\nempty keyword lists, which always returned false.\n",
+            "insertions": 17,
+            "deletions": 2
+          },
+          {
+            "hash": "0cce66804c115f6975beeba0bb3e92ed5e4e3480",
+            "messageTitle": "Add: Autotag table panel to Dashboard",
+            "messageBody": "Display autotag names and conditions on the Dashboard.\nTo Do: Make conditions easier to see and read. And enable scrolling.\n",
+            "insertions": 120,
+            "deletions": 33
+          },
+          {
+            "hash": "a39271736d1c4a44905ca5f6795aa6eab5d31431",
+            "messageTitle": "Fix: BookmarkPredicate toString() and equals",
+            "messageBody": "Only show keywords that are actually present, so that the autotag\nConditions column is more readable.\nAlso update equals() method to include folder conditions.\n",
+            "insertions": 30,
+            "deletions": 4
+          },
+          {
+            "hash": "27127a58f83122a793bdbe024bd1c14585501d33",
+            "messageTitle": "Fix: Json storage for autotag folder conditions",
+            "messageBody": "Also add a custom empty-autotag-table message\n",
+            "insertions": 34,
+            "deletions": 8
+          },
+          {
+            "hash": "cff2550f1f05fb564b3e22fc7a241a56b10b4d82",
+            "messageTitle": "Fix: Broken Json predicate test",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 6
+          },
+          {
+            "hash": "02c9375dcb2d6af495952121f3f699032b057f19",
+            "messageTitle": "Fix: Update dashboard table when autotags change",
+            "messageBody": "Use the actual ObservableList of autotags instead of a copy and make\nautotag table listen for changes to the list.\n",
+            "insertions": 13,
+            "deletions": 3
+          },
+          {
             "hash": "4432b39f7f1e8b0fe64932baac9b5b68a40f55a8",
             "messageTitle": "Add: SampleDataUtil#getTagger() test",
             "messageBody": "",
             "insertions": 9,
+            "deletions": 0
+          },
+          {
+            "hash": "cb6169e869b054c1620139b73021d4c0ab625e1f",
+            "messageTitle": "Fix: No newline at EOF error",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "fba3450ed6354f3bf679089da5c7413d55eb25ed",
+            "messageTitle": "Update src/test/java/seedu/mark/model/predicates/BookmarkPredicateTest.java",
+            "messageBody": "Co-Authored-By: TSAI, HSIAO-HAN \u003c46244796+TSAI-HSIAO-HAN@users.noreply.github.com\u003e",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "5a58e3ef5a78beb79d4ac3626c4bfefec68f7b63",
+            "messageTitle": "Add: Description of main contributions",
+            "messageBody": "Sufficient information for initial submission. Exact PR details and\nother contributions are hidden as comments for now.\n",
+            "insertions": 96,
+            "deletions": 35
+          },
+          {
+            "hash": "d511395d0ef7c0cd66c8d80c561f1a99e393646d",
+            "messageTitle": "Update: Modify layout of Dashboard panel",
+            "messageBody": "New layout: Reminders    Favorites\n            Folders      Autotags\n",
+            "insertions": 13,
+            "deletions": 14
+          },
+          {
+            "hash": "1f42a9ed003d7f46415da5ac9ec61d3579cf2d75",
+            "messageTitle": "Fix: No newline at EOF error",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "86e3a3ff4793429c38367d2a9b35a3937e5a513b",
+            "messageTitle": "Fix: Add explicit scoping in test code",
+            "messageBody": "To pass Codacy check.\n",
+            "insertions": 1,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 143,
+        "deletions": 89,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "85a02ba12c1cab3b1ac918ebda296117af95aa1f",
+            "messageTitle": "Update: UI styling",
+            "messageBody": "Add purple and cyan highlights, do some resizing.\n",
+            "insertions": 77,
+            "deletions": 24
+          },
+          {
+            "hash": "fcc2fdc5e86905bdae65a72f2590ee3beed4bf61",
+            "messageTitle": "Fix: No scrollbar in command result box",
+            "messageBody": "textBkgrd.css was preventing scroll pane in commandResultDisplay from\nbeing seen. Fixes #188.\n",
+            "insertions": 0,
+            "deletions": 20
+          },
+          {
+            "hash": "66d792c0ac0969affc3459443dcf419ff7be85f8",
+            "messageTitle": "Fix: Don\u0027t change tab when selection changes",
+            "messageBody": "Only go to URLs when bookmark list/folder tree view is double-clicked\nor ENTER is pressed.\n",
+            "insertions": 42,
+            "deletions": 42
+          },
+          {
+            "hash": "74479a1be283e9caf85ea13de878089900dd7e9d",
+            "messageTitle": "Make OfflineCommand undoable and make cache delete refresh offline when needed",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 2
+          },
+          {
+            "hash": "6ae62f76eed625c2900c85bb05f97132eb0b2239",
+            "messageTitle": "Fix: Make command word case insensitive",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "a2dfb63f4154c5a082db3aefead89c87b71e3349",
+            "messageTitle": "Fix: Broken tests and checkstyle errors",
+            "messageBody": "",
+            "insertions": 13,
             "deletions": 0
           }
         ]
@@ -2008,6 +2155,20 @@
             "messageTitle": "Change to assert",
             "messageBody": "",
             "insertions": 3,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 73,
+        "deletions": 1,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "5f8f03e6bc52202f285f2fe63cd4eb18a776d0ae",
+            "messageTitle": "change name",
+            "messageBody": "",
+            "insertions": 73,
             "deletions": 1
           }
         ]
@@ -2890,8 +3051,22 @@
         ]
       },
       {
-        "insertions": 34,
-        "deletions": 17,
+        "insertions": 92,
+        "deletions": 1,
+        "date": "2019-11-05",
+        "commitResults": [
+          {
+            "hash": "3cb09668d9a9199e11ff9583a20f3170a20a1457",
+            "messageTitle": "hsiaohan ppp",
+            "messageBody": "",
+            "insertions": 92,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 35,
+        "deletions": 18,
         "date": "2019-11-06",
         "commitResults": [
           {
@@ -2921,6 +3096,13 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 2
+          },
+          {
+            "hash": "bd58684cac3e8ef7bc87ac88c5e375d601ef5ead",
+            "messageTitle": "change contact us",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
           }
         ]
       }
@@ -3623,6 +3805,48 @@
             "messageBody": "",
             "insertions": 23,
             "deletions": 19
+          }
+        ]
+      },
+      {
+        "insertions": 314,
+        "deletions": 115,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "e6ea2bb609ec995a5b4d25dc7e895783b82abfb7",
+            "messageTitle": "Add favorite bookmarks to dash board",
+            "messageBody": "",
+            "insertions": 99,
+            "deletions": 15
+          },
+          {
+            "hash": "c20a1ee900e94469e9fe1255971735b2c9374d09",
+            "messageTitle": "Improve favorites UI",
+            "messageBody": "",
+            "insertions": 79,
+            "deletions": 36
+          },
+          {
+            "hash": "07c0c6c7fc28b3ad157b65e8e0b7867e073b0b26",
+            "messageTitle": "Add favorites event listener",
+            "messageBody": "",
+            "insertions": 50,
+            "deletions": 34
+          },
+          {
+            "hash": "e4782d058f0ff26abb1d8262fa7fdf36e0a2048e",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 27
+          },
+          {
+            "hash": "f1ae7b7793227edc2355b2890ec145df7be23400",
+            "messageTitle": "Add project portfolio page",
+            "messageBody": "",
+            "insertions": 77,
+            "deletions": 3
           }
         ]
       }
@@ -4567,8 +4791,8 @@
         ]
       },
       {
-        "insertions": 13,
-        "deletions": 13,
+        "insertions": 153,
+        "deletions": 110,
         "date": "2019-11-01",
         "commitResults": [
           {
@@ -4577,56 +4801,231 @@
             "messageBody": "",
             "insertions": 13,
             "deletions": 13
+          },
+          {
+            "hash": "ef9eeba6b0fc499fb6af2a7e6fb4e7f5cc9a2731",
+            "messageTitle": "Refactor annotate edit command",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 19
+          },
+          {
+            "hash": "bfc43e7623e53fab6601f573dc3b01233122c795",
+            "messageTitle": "Refactor annotation to extend feature",
+            "messageBody": "",
+            "insertions": 112,
+            "deletions": 78
+          }
+        ]
+      },
+      {
+        "insertions": 137,
+        "deletions": 33,
+        "date": "2019-11-03",
+        "commitResults": [
+          {
+            "hash": "8f5af9d6132c0f5171f65b28f0e210746a70d660",
+            "messageTitle": "Add currently showing label on offline tab and fix #193.",
+            "messageBody": "",
+            "insertions": 136,
+            "deletions": 32
+          },
+          {
+            "hash": "510958372e7560279d0bfe07ae09b7f0c41b23bb",
+            "messageTitle": "Update UG annotate-delete example",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 622,
+        "deletions": 74,
+        "date": "2019-11-04",
+        "commitResults": [
+          {
+            "hash": "ae8cda40e7972e655ff0b932c4d7471090dac1c5",
+            "messageTitle": "Make offline panel more appealing. Horizontal scroll is still needed to view entire note content.",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 10
+          },
+          {
+            "hash": "6c8b4fa3985fed2b19446176f57d26f79f105f24",
+            "messageTitle": "Refactor annotation commands.",
+            "messageBody": "",
+            "insertions": 57,
+            "deletions": 58
+          },
+          {
+            "hash": "4d3e6ab03d9a21a45d9f89823b4b74706c6d8d08",
+            "messageTitle": "Add test for delete annotation commands",
+            "messageBody": "",
+            "insertions": 554,
+            "deletions": 6
+          }
+        ]
+      },
+      {
+        "insertions": 1023,
+        "deletions": 48,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "bb6f241c6f9dfbaf637684460df194611b0cbe04",
+            "messageTitle": "Add test to delete annotation command",
+            "messageBody": "",
+            "insertions": 104,
+            "deletions": 3
+          },
+          {
+            "hash": "2193e43a085cd9c6004fbc58799798918c0b6678",
+            "messageTitle": "Conform to cheeckstyle main",
+            "messageBody": "",
+            "insertions": 37,
+            "deletions": 2
+          },
+          {
+            "hash": "ee556d55b48d242d05f0a7dda880d16ba8d8748f",
+            "messageTitle": "Conform to checkstyle test",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 16
+          },
+          {
+            "hash": "4b0a1e02d2d2a620c11eb96f3d97d75c85c99734",
+            "messageTitle": "Correct test",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 4
+          },
+          {
+            "hash": "04b99db37aa3e4688bd84fece2b99570ef9de40e",
+            "messageTitle": "Add test for annotation edit command.",
+            "messageBody": "",
+            "insertions": 418,
+            "deletions": 1
+          },
+          {
+            "hash": "0b629882b3adb829d36ae79f06317a7d6ea566d1",
+            "messageTitle": "Add test for add annotation parser",
+            "messageBody": "",
+            "insertions": 162,
+            "deletions": 3
+          },
+          {
+            "hash": "03d4dabf40af72d0456c4db3d2a3a5be70137666",
+            "messageTitle": "Add test for delete annotation command parser",
+            "messageBody": "",
+            "insertions": 107,
+            "deletions": 5
+          },
+          {
+            "hash": "532509dd9a986de326cea97ddf86944335423039",
+            "messageTitle": "Create skeleton for test",
+            "messageBody": "",
+            "insertions": 31,
+            "deletions": 0
+          },
+          {
+            "hash": "b9abaaf3af36a911671df7b46c5815534a57cdee",
+            "messageTitle": "Complete test for annotation parsers",
+            "messageBody": "",
+            "insertions": 64,
+            "deletions": 9
+          },
+          {
+            "hash": "d9860be0221aba0a0cc4b8ad98fa0296f339729b",
+            "messageTitle": "Conform to checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 2
+          },
+          {
+            "hash": "414533927db676ea332056fd841de54cbe8b46aa",
+            "messageTitle": "Create ppp file",
+            "messageBody": "",
+            "insertions": 72,
+            "deletions": 0
+          },
+          {
+            "hash": "fb50de84d25eb5fd9fe9f3aca57fdff7603f9667",
+            "messageTitle": "Edit typo",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "10d824cf049a732d207a28a1b080e8082160f1f0",
+            "messageTitle": "Change edit annotation message",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 1,
+        "deletions": 1,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "5512d11cbc161bbc946a2633e61d7daf5c2426b0",
+            "messageTitle": "Update src/main/java/seedu/mark/logic/commands/AnnotationCommand.java",
+            "messageBody": "Co-Authored-By: dorcastan \u003c46101221+dorcastan@users.noreply.github.com\u003e",
+            "insertions": 1,
+            "deletions": 1
           }
         ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "dorcastan": 6613,
-    "openorclose": 3003,
-    "TSAI-HSIAO-HAN": 2547,
-    "Na-Nazhou": 3681,
-    "kxyoke": 4736
+    "dorcastan": 7172,
+    "openorclose": 3068,
+    "TSAI-HSIAO-HAN": 2630,
+    "Na-Nazhou": 3828,
+    "kxyoke": 6378
   },
   "authorFileTypeContributionMap": {
     "dorcastan": {
-      "docs": 450,
-      "tests": 3020,
-      "functional": 2804,
+      "docs": 586,
+      "tests": 3151,
+      "functional": 3096,
       "other": 339
     },
     "openorclose": {
-      "docs": 349,
+      "docs": 420,
       "tests": 951,
-      "functional": 1554,
+      "functional": 1548,
       "other": 149
     },
     "TSAI-HSIAO-HAN": {
-      "docs": 185,
+      "docs": 276,
       "tests": 921,
-      "functional": 1405,
+      "functional": 1397,
       "other": 36
     },
     "Na-Nazhou": {
-      "docs": 339,
-      "tests": 1872,
-      "functional": 1383,
+      "docs": 411,
+      "tests": 1877,
+      "functional": 1453,
       "other": 87
     },
     "kxyoke": {
-      "docs": 365,
-      "tests": 1044,
-      "functional": 3106,
-      "other": 221
+      "docs": 447,
+      "tests": 2437,
+      "functional": 3269,
+      "other": 225
     }
   },
   "authorContributionVariance": {
-    "dorcastan": 659007.2,
-    "openorclose": 56392.28,
-    "TSAI-HSIAO-HAN": 21426.41,
-    "Na-Nazhou": 46543.21,
-    "kxyoke": 67182.53
+    "dorcastan": 653182.4,
+    "openorclose": 55502.023,
+    "TSAI-HSIAO-HAN": 21098.95,
+    "Na-Nazhou": 47514.055,
+    "kxyoke": 82858.695
   },
   "authorDisplayNameMap": {
     "dorcastan": "CS2103T-T13-4 DORCA ... A TAN",

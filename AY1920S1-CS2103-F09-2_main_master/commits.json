@@ -737,8 +737,8 @@
         ]
       },
       {
-        "insertions": 472,
-        "deletions": 345,
+        "insertions": 883,
+        "deletions": 514,
         "date": "2019-11-06",
         "commitResults": [
           {
@@ -852,6 +852,104 @@
             "messageBody": "",
             "insertions": 12,
             "deletions": 12
+          },
+          {
+            "hash": "5d0896e06dd91683f1a2ac7de8db4d3afd228448",
+            "messageTitle": "Refactor: create stats package in util. Modify DeckSession class to store result as a String. Add getLastWeekCutoffDate method in DateTimeUtil and its tests.",
+            "messageBody": "",
+            "insertions": 62,
+            "deletions": 12
+          },
+          {
+            "hash": "bfdc6e9cb9e5bf0284a5c631a611282c9a6de372",
+            "messageTitle": "Write getSublistAfterCutoff test in SessionListUtilTest",
+            "messageBody": "",
+            "insertions": 91,
+            "deletions": 3
+          },
+          {
+            "hash": "01a455b81a00f5af7eca8244f7072b5315ab2b29",
+            "messageTitle": "Remove DeckStats.java. Add deckSessionList to Deck. Implement storing of deckSessionList in toJson(), and retrieval in StorageManager. Show number of sessions this week in StatisticsWindow.",
+            "messageBody": "",
+            "insertions": 61,
+            "deletions": 61
+          },
+          {
+            "hash": "946813fdc27a67470c3ec921623ad12e78b9a5eb",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 5
+          },
+          {
+            "hash": "2fa1223a7961c0205eb1dcabf188ac8cd542328d",
+            "messageTitle": "Display deck statistics in StatisticsWindow. Verify that deck statistics update when a new deck is created during this session. Add getNumberOfSessions() to Deck. Refactor getSessionsTableView() in StatsDisplayUtil.",
+            "messageBody": "",
+            "insertions": 26,
+            "deletions": 19
+          },
+          {
+            "hash": "679e25f1b8288a95da9de31c091ae553fa50ca96",
+            "messageTitle": "Replace openStatistics() in MainWindow with StatsDisplayUtil.openStatisticsWindow().",
+            "messageBody": "",
+            "insertions": 34,
+            "deletions": 18
+          },
+          {
+            "hash": "54040519a23c340cbe5adf6181b6f11da40206cb",
+            "messageTitle": "Verify that double-clicking on a row in the deckTableView opens the corresponding DeckStatisticsWindow. Other minor fixes.",
+            "messageBody": "",
+            "insertions": 55,
+            "deletions": 31
+          },
+          {
+            "hash": "5131581800ebac89ba2cf5bf22756ddcf6b44247",
+            "messageTitle": "Add attribution for StackOverflow snippet",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 1
+          },
+          {
+            "hash": "8f86106fc7c684debae89bbd2790dd1451983bab",
+            "messageTitle": "Add openStatisticsWindow to Responses. Cannot call openDeckStatisticsWindow(Deck) yet. Remove OPEN_WINDOW from Responses and Consumers (initially registered in MainWindow).",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 19
+          },
+          {
+            "hash": "6c2f45ee02e1b75bf20c9ee1180388b5a2ecc7d1",
+            "messageTitle": "Implement and test getScoreAsPercentage in SessionListUtil",
+            "messageBody": "",
+            "insertions": 64,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 77,
+        "deletions": 57,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "58b28c36191ca2adaccb359bf4eb945db3b0d599",
+            "messageTitle": "Refactor: rename DeckSession to TestSession",
+            "messageBody": "",
+            "insertions": 56,
+            "deletions": 47
+          },
+          {
+            "hash": "0f16e4be31fe856ec01fbeeaac72ea636f013a0e",
+            "messageTitle": "Add 3-argument constructor for TestSession. Identify todos involving StorageManager.",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 6
+          },
+          {
+            "hash": "f787fb56b6698cc46001da01e6f93aba4b272844",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 4
           }
         ]
       }
@@ -1684,6 +1782,34 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 3517,
+        "deletions": 3510,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "5ec6848dde6a1cd0ad918752e39866761083c012",
+            "messageTitle": "Revert \"Merge pull request #289 from AY1920S1-CS2103-F09-2/master\"",
+            "messageBody": "This reverts commit 17ea4da05dbe32ac5a7ff9f3650aee2f42f58ea6, reversing\nchanges made to 8f62d1ac11723b4be8029d108ae6ac64ef507495.\n",
+            "insertions": 1082,
+            "deletions": 2416
+          },
+          {
+            "hash": "abc078caab76b9078e7976a0aed565108561e7be",
+            "messageTitle": "Revert \"Revert \"Merge pull request #289 from AY1920S1-CS2103-F09-2/master\"\"",
+            "messageBody": "This reverts commit 5ec6848dde6a1cd0ad918752e39866761083c012.\n",
+            "insertions": 2416,
+            "deletions": 1082
+          },
+          {
+            "hash": "4642c6014db148b5b6ef1099d8ed4f7f2da12b65",
+            "messageTitle": "Fixed Priority related issues for CreateCommand",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 12
+          }
+        ]
       }
     ],
     "shawnpunchew11": [
@@ -2097,6 +2223,62 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 3
+          }
+        ]
+      },
+      {
+        "insertions": 541,
+        "deletions": 383,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "895b406daec27caaa5f640d1bd8acf5e174a4f74",
+            "messageTitle": "Updated Responses for General Test Commands and FBCards",
+            "messageBody": "",
+            "insertions": 345,
+            "deletions": 165
+          },
+          {
+            "hash": "7a5ef979418e7dc1d45266c95b8686fcf1efb0b3",
+            "messageTitle": "Implemented remainder of Responses for ExamLogic",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 6
+          },
+          {
+            "hash": "3bc29669e6e698a35b573fb4e8c339428898ecf1",
+            "messageTitle": "Fixed GUI bugs",
+            "messageBody": "",
+            "insertions": 130,
+            "deletions": 141
+          },
+          {
+            "hash": "ce509330cc897777151b5d758f404137d09d864b",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 26,
+            "deletions": 35
+          },
+          {
+            "hash": "8585470cd7aedbde372224b44ebb235bb790d0b3",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "3db6733ef2e65d328afb6491ded6efbe2e2edf2d",
+            "messageTitle": "Fixed asciidoc errors",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 24
+          },
+          {
+            "hash": "d090e95b2ac2418efc938736834c913236e4763f",
+            "messageTitle": "Fixed asciidoc",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 11
           }
         ]
       }
@@ -4583,8 +4765,8 @@
         ]
       },
       {
-        "insertions": 14,
-        "deletions": 2,
+        "insertions": 659,
+        "deletions": 613,
         "date": "2019-11-06",
         "commitResults": [
           {
@@ -4600,61 +4782,222 @@
             "messageBody": "",
             "insertions": 4,
             "deletions": 0
+          },
+          {
+            "hash": "e417289cfe7193e288e97dea0b66736af7ce9d80",
+            "messageTitle": "Rectify invoke exception and regex",
+            "messageBody": "",
+            "insertions": 37,
+            "deletions": 23
+          },
+          {
+            "hash": "28dd1cf245dc0ea4383a687e185c48f6c530cd50",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 2
+          },
+          {
+            "hash": "f347e710e455ac9773b30b7f8c7dee3bb2b476c3",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 29,
+            "deletions": 29
+          },
+          {
+            "hash": "a2b2e638c73cf2b45fb84e0d57ce860cd09c20e3",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 6
+          },
+          {
+            "hash": "2f121ee7f85607a251b80b848f8fca58aa9d2329",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "000c5e0a712c9303696eca6d86bff72951a8ba12",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 275,
+            "deletions": 272
+          },
+          {
+            "hash": "a66b7617c9e4d7d43a0ce538d059c1d782c2c8f0",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 14
+          },
+          {
+            "hash": "423d84be20d5359fec7e50e8c032746d6a087043",
+            "messageTitle": "Added logging",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 1
+          },
+          {
+            "hash": "828b46e571ae57767500f7d2f7b86f3fe1527af3",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 170,
+            "deletions": 170
+          },
+          {
+            "hash": "06589ccd7a3b7753c8b08f8a500ad5eae2e54eb3",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 58
+          },
+          {
+            "hash": "3dd443489a83465cec3c88c0ed1789df3135b660",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 27
+          },
+          {
+            "hash": "3085866267614b3eb96c72c806350f9785f7185c",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 5
+          },
+          {
+            "hash": "0ea9dcdf75886f250c119f762301ac153207ce5b",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "35e3b6a9301b358f609dde35f5ea8c1259c73937",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 1
+          },
+          {
+            "hash": "ba09e6f94b9ac87ad99bc4b05d728d192a3cc05b",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 165,
+        "deletions": 25,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "e004e91c6c45889d3e8f8d9121984adbdd62c1a3",
+            "messageTitle": "Edit card cli",
+            "messageBody": "",
+            "insertions": 93,
+            "deletions": 12
+          },
+          {
+            "hash": "bfe75bc214478ebe1a709d7928c3adfe73a5397b",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 6
+          },
+          {
+            "hash": "10115b301c63deb75a58810f31d30dfc002b5f5d",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "57657713e98eee40809e74e77d8a945474c18b0c",
+            "messageTitle": "Debug create deck",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 2
+          },
+          {
+            "hash": "6e7cb5a0ff1e933d4f0538b02b18c4ae5c7a7c2a",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "6b7c380bd0402826f4de759ee6fc9f1a439f8350",
+            "messageTitle": "Added cli delete cards",
+            "messageBody": "",
+            "insertions": 44,
+            "deletions": 3
+          },
+          {
+            "hash": "fd84f84c29fc4a9ee897da341aa5ce9bbb4c9897",
+            "messageTitle": "Fix build",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 0
           }
         ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "nattanyz": 1323,
-    "AHaliq": 3254,
-    "PhireHandy": 531,
-    "shawnpunchew11": 853,
-    "timothyleong97": 4376,
-    "huiminlim": 2022
+    "nattanyz": 1656,
+    "AHaliq": 3179,
+    "PhireHandy": 232,
+    "shawnpunchew11": 1027,
+    "timothyleong97": 4149,
+    "huiminlim": 2742
   },
   "authorFileTypeContributionMap": {
     "nattanyz": {
-      "docs": 10,
-      "tests": 265,
-      "functional": 1048
+      "docs": 76,
+      "tests": 389,
+      "functional": 1191
     },
     "AHaliq": {
-      "docs": 33,
+      "docs": 32,
       "tests": 271,
-      "functional": 2949,
+      "functional": 2875,
       "other": 1
     },
     "PhireHandy": {
       "docs": 3,
       "tests": 0,
-      "functional": 528
+      "functional": 229
     },
     "shawnpunchew11": {
-      "docs": 38,
+      "docs": 45,
       "tests": 122,
-      "functional": 693
+      "functional": 860
     },
     "timothyleong97": {
-      "docs": 133,
+      "docs": 62,
       "tests": 103,
-      "functional": 4098,
+      "functional": 3942,
       "other": 42
     },
     "huiminlim": {
-      "docs": 649,
+      "docs": 654,
       "tests": 186,
-      "functional": 1066,
+      "functional": 1781,
       "other": 121
     }
   },
   "authorContributionVariance": {
-    "nattanyz": 124415.21,
-    "AHaliq": 95741.94,
-    "PhireHandy": 26334.223,
-    "shawnpunchew11": 35288.293,
-    "timothyleong97": 1684794.5,
-    "huiminlim": 57308.02
+    "nattanyz": 140333.6,
+    "AHaliq": 94333.19,
+    "PhireHandy": 786731.0,
+    "shawnpunchew11": 46822.01,
+    "timothyleong97": 1660275.4,
+    "huiminlim": 76683.945
   },
   "authorDisplayNameMap": {
     "nattanyz": "CS2103-F09-2 TAN Y ... TALIE",

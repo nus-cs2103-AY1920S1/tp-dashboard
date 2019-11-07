@@ -252,6 +252,20 @@
             "deletions": 40
           }
         ]
+      },
+      {
+        "insertions": 2,
+        "deletions": 0,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "5d9712fdad853e423968076facc8480ee1f1fe24",
+            "messageTitle": "Update Events popup window (#262)",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 0
+          }
+        ]
       }
     ],
     "briyanii": [
@@ -2584,8 +2598,8 @@
         ]
       },
       {
-        "insertions": 2013,
-        "deletions": 289,
+        "insertions": 2181,
+        "deletions": 370,
         "date": "2019-11-06",
         "commitResults": [
           {
@@ -2636,6 +2650,76 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 2
+          },
+          {
+            "hash": "fdb8033e7fc4cee17f6c2d5486b2cfe2bfcd5bf4",
+            "messageTitle": "Fix bug: undoing \"add expense\" not reflected in primary budget panel",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 8
+          },
+          {
+            "hash": "bda0dfd3376437cf08679ff188647cb61601c3b7",
+            "messageTitle": "Change dates of some expenses in SampleDataUtil so that the current period budget is more populated",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 10
+          },
+          {
+            "hash": "e990a40213d2cc2705fd74320ccd0f8f6132f261",
+            "messageTitle": "Update UG: Introduction, Budgeting, and Command Summary",
+            "messageBody": "",
+            "insertions": 104,
+            "deletions": 45
+          },
+          {
+            "hash": "dea2c6e59d3025219a38f098b289946d28a5bca6",
+            "messageTitle": "Update PPP: team tasks",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 0
+          },
+          {
+            "hash": "691b2cc5a4b1ced6ccac68cb8d0e11bd484fcf08",
+            "messageTitle": "Move code related to tracking initial and final budget status from MainWindow to Logic",
+            "messageBody": "",
+            "insertions": 33,
+            "deletions": 15
+          },
+          {
+            "hash": "91d05333226eb86903189e88e92f9e1bc153a6a6",
+            "messageTitle": "Add validation for max budget percentage value in AddExpenseCommand",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 3
+          }
+        ]
+      },
+      {
+        "insertions": 51,
+        "deletions": 31,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "b94094256db255fa37e40409fbfc40808920c588",
+            "messageTitle": "Update version in MainApp",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "d88340eafc79529dbdec8f2cc81ebf3521ebeae0",
+            "messageTitle": "Fix bug: switch period not reflected in json sometimes",
+            "messageBody": "",
+            "insertions": 35,
+            "deletions": 28
+          },
+          {
+            "hash": "a125fa089e58845f906d2a6e0a3b6955ec40ac42",
+            "messageTitle": "Fix bug: budgets refreshing every 10 seconds, making \"switchperiod\" unable to maintain the current status",
+            "messageBody": "- Change budget refreshing implementation in Timekeeper such that budgets only refresh at day breaks (00:00)\n",
+            "insertions": 14,
+            "deletions": 1
           }
         ]
       }
@@ -2801,54 +2885,89 @@
             "deletions": 10
           }
         ]
+      },
+      {
+        "insertions": 1011,
+        "deletions": 188,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "71efe592fec98da86d6615304ef3625326ff5d50",
+            "messageTitle": "Add Coveralls Badge in readme (#258)",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
+          },
+          {
+            "hash": "70e0e76279dbf0e81d5abf329392d76d15f3f934",
+            "messageTitle": "Add menu prefix and implement AddMenuExpenseCommand (#257)",
+            "messageBody": "* Add canteen menu support on add expenses\r\n\r\n* Implement AddMenuExpense command\r\n\r\n* Fix residual error\r\n\r\n* Add sample menu item list and update UG\r\n\r\n* Fix EOF error\r\n",
+            "insertions": 1010,
+            "deletions": 188
+          }
+        ]
+      },
+      {
+        "insertions": 2,
+        "deletions": 0,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "0f8b265aa48897f6b56bcbb56e7b9451fece3722",
+            "messageTitle": "Add AddMenuExpenseCommand to reserved command words (#264)",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 0
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "czkay": 4155,
-    "briyanii": 7427,
-    "qweiping31415": 4338,
-    "anqichen9856": 9054,
-    "ryoarmanda": 1332
+    "czkay": 4151,
+    "briyanii": 7367,
+    "qweiping31415": 4282,
+    "anqichen9856": 9110,
+    "ryoarmanda": 2335
   },
   "authorFileTypeContributionMap": {
     "czkay": {
-      "docs": 254,
+      "docs": 248,
       "tests": 2093,
-      "functional": 1696,
+      "functional": 1698,
       "other": 112
     },
     "briyanii": {
-      "docs": 611,
+      "docs": 605,
       "tests": 2542,
-      "functional": 4234,
+      "functional": 4180,
       "other": 40
     },
     "qweiping31415": {
-      "docs": 513,
+      "docs": 511,
       "tests": 1255,
-      "functional": 2334,
+      "functional": 2280,
       "other": 236
     },
     "anqichen9856": {
-      "docs": 610,
-      "tests": 3869,
-      "functional": 4394,
+      "docs": 686,
+      "tests": 3870,
+      "functional": 4373,
       "other": 181
     },
     "ryoarmanda": {
-      "docs": 130,
-      "tests": 443,
-      "functional": 663,
+      "docs": 161,
+      "tests": 1080,
+      "functional": 998,
       "other": 96
     }
   },
   "authorContributionVariance": {
-    "czkay": 160026.27,
-    "briyanii": 2196246.8,
-    "qweiping31415": 145527.92,
-    "anqichen9856": 723238.0,
-    "ryoarmanda": 14246.161
+    "czkay": 157747.94,
+    "briyanii": 2165148.0,
+    "qweiping31415": 143578.02,
+    "anqichen9856": 729308.4,
+    "ryoarmanda": 35108.824
   },
   "authorDisplayNameMap": {
     "czkay": "CS2103T-T11-1 CHONG ...  KANG",
