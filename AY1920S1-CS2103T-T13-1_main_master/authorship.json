@@ -29174,6 +29174,477 @@
     }
   },
   {
+    "path": "src/main/java/organice/commons/util/PersonAttributeCheckUtil.java",
+    "fileType": "functional",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "package organice.commons.util;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_AGE;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_BLOOD_TYPE;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_DOCTOR_IN_CHARGE;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NAME;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NRIC;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN_EXPIRY_DATE;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PHONE;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PRIORITY;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TISSUE_TYPE;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TYPE;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.logic.parser.ArgumentMultimap;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.Age;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.BloodType;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.DoctorInCharge;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.Name;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.Nric;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.Organ;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.OrganExpiryDate;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.Phone;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.Priority;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.TissueType;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "import organice.model.person.Type;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": " * Helper functions for checking properties or validity of Person and Person child class attributes."
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "public class PersonAttributeCheckUtil {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "     * Checks that the values in the given {@code argMultimap} are valid."
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    public static void checkValidityAttributes(ArgumentMultimap argMultimap) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        // attempt to create the attribute from values in multimap"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e nameKeywords \u003d argMultimap.getAllValues(PREFIX_NAME);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e nricKeywords \u003d argMultimap.getAllValues(PREFIX_NRIC);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e phoneKeywords \u003d argMultimap.getAllValues(PREFIX_PHONE);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e typeKeywords \u003d argMultimap.getAllValues(PREFIX_TYPE);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e ageKeywords \u003d argMultimap.getAllValues(PREFIX_AGE);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e priorityKeywords \u003d argMultimap.getAllValues(PREFIX_PRIORITY);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e bloodTypeKeywords \u003d argMultimap.getAllValues(PREFIX_BLOOD_TYPE);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e doctorInChargeKeywords \u003d argMultimap.getAllValues(PREFIX_DOCTOR_IN_CHARGE);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e tissueTypeKeywords \u003d argMultimap.getAllValues(PREFIX_TISSUE_TYPE);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e organExpiryDateKeywords \u003d argMultimap.getAllValues(PREFIX_ORGAN_EXPIRY_DATE);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        List\u003cString\u003e organKeywords \u003d argMultimap.getAllValues(PREFIX_ORGAN);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        // Attempt to create every single type of object. Relies on that object\u0027s constructor to throw exception"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        nameKeywords.forEach(Name::new);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        nricKeywords.forEach(Nric::new);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        phoneKeywords.forEach(Phone::new);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        typeKeywords.forEach(Type::new);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        ageKeywords.forEach(Age::new);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        priorityKeywords.forEach(Priority::new);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        bloodTypeKeywords.forEach(BloodType::new);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        doctorInChargeKeywords.forEach(DoctorInCharge::new);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        tissueTypeKeywords.forEach(TissueType::new);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        organExpiryDateKeywords.forEach(OrganExpiryDate::new);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        organKeywords.forEach(Organ::new);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "TheRealRavager": 66
+    }
+  },
+  {
     "path": "src/main/java/organice/commons/util/StringUtil.java",
     "fileType": "functional",
     "lines": [
@@ -36745,870 +37216,870 @@
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "TheRealRavager"
-        },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TYPE;"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 9,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import java.util.ArrayList;"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 10,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import java.util.Arrays;"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 11,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import java.util.Comparator;"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 12,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import java.util.List;"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 13,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import java.util.function.BiFunction;"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 14,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": ""
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 15,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import javafx.collections.FXCollections;"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 16,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import javafx.collections.transformation.FilteredList;"
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 17,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": ""
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 18,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.logic.parser.ArgumentMultimap;"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 19,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.Model;"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 20,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.person.Name;"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 21,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.person.Person;"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 22,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.person.PersonContainsPrefixesPredicate;"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 23,
         "author": {
           "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "TheRealRavager"
         },
         "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "TheRealRavager"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 26,
-        "author": {
           "gitId": "-"
         },
         "content": "/**"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 26,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": " * Finds and lists all persons in address book whose prefixes match any of the argument prefix-keyword pairs."
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 27,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": " * Performs fuzzy searching based on Levenshtein Distance."
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
         "content": " * Keyword matching is case insensitive."
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
         "content": " */"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
         "content": "public class FindCommand extends Command {"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
         "content": "    public static final String COMMAND_WORD \u003d \"find\";"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 34,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Finds all persons whose prefixes are similar to any of\""
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 35,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "            + \" the specified prefix-keywords pairs (case-insensitive) and displays them as a list with index numbers.\""
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 36,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "            + \"\\nList of Prefixes: n/, ic/, p/, a/, t/, pr/, b/, d/, tt/, exp/, o/\""
       },
       {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "            + \"\\nParameters: PREFIX/KEYWORD [MORE_PREFIX-KEYWORD_PAIRS]...\""
+      },
+      {
         "lineNumber": 38,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            + \"Parameters: PREFIX/KEYWORD [MORE_PREFIX-KEYWORD_PAIRS]...\\n\""
+        "content": "            + \"\\nExample: \" + COMMAND_WORD + \" n/alice t/doctor\";"
       },
       {
         "lineNumber": 39,
-        "author": {
-          "gitId": "TheRealRavager"
-        },
-        "content": "            + \"Example: \" + COMMAND_WORD + \" n/alice t/doctor\";"
-      },
-      {
-        "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 40,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "    // Maximum Levenshtein Distance tolerated for a fuzzy match"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 41,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "    private static final int FUZZY_THRESHOLD \u003d 5;"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 42,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": ""
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 43,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "    private final ArgumentMultimap argMultimap;"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 44,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": ""
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 45,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "    public FindCommand(ArgumentMultimap argMultimap) {"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 46,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "        this.argMultimap \u003d argMultimap;"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 47,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    /**"
+        "content": "     * Returns a copy of the {@code inputList} which is filtered according to maximum tolerable Levenshtein Distance"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     * Returns a copy of the {@code inputList} which is filtered according to maximum tolerable Levenshtein Distance"
+        "content": "     * (edit distance) then sorted according to ascending level of distance."
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     * (edit distance) then sorted according to ascending level of distance."
+        "content": "     */"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     */"
+        "content": "    private List\u003cPerson\u003e fuzzyMatch(ArgumentMultimap argMultimap, List\u003cPerson\u003e inputList) {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private List\u003cPerson\u003e fuzzyMatch(ArgumentMultimap argMultimap, List\u003cPerson\u003e inputList) {"
+        "content": "        // Fuzzy Match by Levenshtein Distance is not implemented for following prefixes:"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Fuzzy Match by Levenshtein Distance is not implemented for following prefixes:"
+        "content": "        // Type, Age, Priority, BloodType, TissueType"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Age, Priority, BloodType, TissueType"
+        "content": "        // Typos in these fields have a very small Levenshtein Distance (LD) as typical field length is very small"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Typos in these fields have a very small Levenshtein Distance (LD) as typical field length is very small"
+        "content": ""
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        List\u003cString\u003e nameKeywords \u003d argMultimap.getAllValues(PREFIX_NAME);"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        List\u003cString\u003e nameKeywords \u003d argMultimap.getAllValues(PREFIX_NAME);"
+        "content": "        List\u003cString\u003e nricKeywords \u003d argMultimap.getAllValues(PREFIX_NRIC);"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        List\u003cString\u003e nricKeywords \u003d argMultimap.getAllValues(PREFIX_NRIC);"
+        "content": "        List\u003cString\u003e phoneKeywords \u003d argMultimap.getAllValues(PREFIX_PHONE);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        List\u003cString\u003e phoneKeywords \u003d argMultimap.getAllValues(PREFIX_PHONE);"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        List\u003cString\u003e typeKeywords \u003d argMultimap.getAllValues(PREFIX_TYPE);"
+        "content": "        // List containing combined Levenshtein Distance of persons in inputList"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        ArrayList\u003cInteger\u003e distanceList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // List containing combined Levenshtein Distance of persons in inputList"
+        "content": ""
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cInteger\u003e distanceList \u003d new ArrayList\u003c\u003e();"
+        "content": "        for (int i \u003d 0; i \u003c inputList.size(); i++) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            int combinedLevenshteinDistance \u003d 0;"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        for (int i \u003d 0; i \u003c inputList.size(); i++) {"
+        "content": "            Person currentPerson \u003d inputList.get(i);"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            Person currentPerson \u003d inputList.get(i);"
+        "content": ""
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            int combinedLevenshteinDistance \u003d 0;"
+        "content": "            // If all 3 fuzzy search parameters are empty, set all non-exact matches to be beyond threshold"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            combinedLevenshteinDistance +\u003d nameKeywords.isEmpty() ? 0"
+        "content": "            // i.e. none of them will appear"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    : findMinLevenshteinDistance(nameKeywords, currentPerson.getName());"
+        "content": "            if (nameKeywords.isEmpty() \u0026\u0026 nricKeywords.isEmpty() \u0026\u0026 phoneKeywords.isEmpty()) {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            combinedLevenshteinDistance +\u003d nricKeywords.isEmpty() ? 0"
+        "content": "                combinedLevenshteinDistance \u003d FUZZY_THRESHOLD + 1;"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    : findMinLevenshteinDistance(nricKeywords, currentPerson.getNric().toString());"
+        "content": "            } else {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            combinedLevenshteinDistance +\u003d phoneKeywords.isEmpty() ? 0"
+        "content": "                combinedLevenshteinDistance +\u003d nameKeywords.isEmpty() ? 0"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    : findMinLevenshteinDistance(phoneKeywords, currentPerson.getPhone().toString());"
+        "content": "                        : findMinLevenshteinDistance(nameKeywords, currentPerson.getName());"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            combinedLevenshteinDistance +\u003d typeKeywords.isEmpty() ? 0"
+        "content": "                combinedLevenshteinDistance +\u003d nricKeywords.isEmpty() ? 0"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    : findMinLevenshteinDistance(typeKeywords, currentPerson.getType().toString());"
+        "content": "                        : findMinLevenshteinDistance(nricKeywords, currentPerson.getNric().toString());"
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "                combinedLevenshteinDistance +\u003d phoneKeywords.isEmpty() ? 0"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            distanceList.add(i, combinedLevenshteinDistance);"
+        "content": "                        : findMinLevenshteinDistance(phoneKeywords, currentPerson.getPhone().toString());"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            distanceList.add(i, combinedLevenshteinDistance);"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Keep Persons whose Levenshtein Distance is within tolerable range"
+        "content": "        }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cInteger\u003e distancesOfTolerablePersons \u003d new ArrayList\u003c\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cPerson\u003e tolerablePersons \u003d new ArrayList\u003c\u003e(inputList.size());"
+        "content": "        // Keep Persons whose Levenshtein Distance is within tolerable range"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        for (int i \u003d 0; i \u003c inputList.size(); i++) {"
+        "content": "        ArrayList\u003cInteger\u003e distancesOfTolerablePersons \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            int levenshteinDistance \u003d distanceList.get(i);"
+        "content": "        ArrayList\u003cPerson\u003e tolerablePersons \u003d new ArrayList\u003c\u003e(inputList.size());"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            if (levenshteinDistance \u003c\u003d FUZZY_THRESHOLD) {"
+        "content": "        for (int i \u003d 0; i \u003c inputList.size(); i++) {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                distancesOfTolerablePersons.add(levenshteinDistance);"
+        "content": "            int levenshteinDistance \u003d distanceList.get(i);"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                tolerablePersons.add(inputList.get(i));"
+        "content": "            if (levenshteinDistance \u003c\u003d FUZZY_THRESHOLD) {"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            }"
+        "content": "                distancesOfTolerablePersons.add(levenshteinDistance);"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        }"
+        "content": "                tolerablePersons.add(inputList.get(i));"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cPerson\u003e sortedPersons \u003d new ArrayList\u003c\u003e(tolerablePersons);"
+        "content": "        }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        sortedPersons.sort(Comparator.comparingInt(left -\u003e"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                distancesOfTolerablePersons.get(tolerablePersons.indexOf(left))));"
+        "content": "        ArrayList\u003cPerson\u003e sortedPersons \u003d new ArrayList\u003c\u003e(tolerablePersons);"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        sortedPersons.sort(Comparator.comparingInt(left -\u003e"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        return sortedPersons;"
+        "content": "                distancesOfTolerablePersons.get(tolerablePersons.indexOf(left))));"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        return sortedPersons;"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private int findMinLevenshteinDistance(List\u003cString\u003e prefixKeywords, String personAttribute) {"
+        "content": "    }"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        return prefixKeywords.stream().reduce(Integer.MAX_VALUE, (minDistance, nextKeyword) -\u003e Integer.min("
+        "content": ""
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                minDistance, calculateLevenshteinDistance(nextKeyword.toLowerCase(), personAttribute.toLowerCase())),"
+        "content": "    private int findMinLevenshteinDistance(List\u003cString\u003e prefixKeywords, String personAttribute) {"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                Integer::min);"
+        "content": "        return prefixKeywords.stream().reduce(Integer.MAX_VALUE, (minDistance, nextKeyword) -\u003e Integer.min("
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": "                minDistance, calculateLevenshteinDistance(nextKeyword.toLowerCase(), personAttribute.toLowerCase())),"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "                Integer::min);"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     * Returns the minimum Levenshtein Distance of every {@code prefixKeyword} and {@code personName} pair. If"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     * {@code prefixKeyword} is a single-word string, {@code personName} is split according to spaces (if possible) and"
+        "content": "    /**"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     * the minimum distance is calculated between every possible pair."
+        "content": "     * Returns the minimum Levenshtein Distance of every {@code prefixKeyword} and {@code personName} pair. If"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     */"
+        "content": "     * {@code prefixKeyword} is a single-word string, {@code personName} is split according to spaces (if possible) and"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private int findMinLevenshteinDistance(List\u003cString\u003e prefixKeywords, Name personName) {"
+        "content": "     * the minimum distance is calculated between every possible pair."
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // If keyword is one word long, split the personName and find minLD."
+        "content": "     */"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Else just do as we are normally doing in original finalMinLD"
+        "content": "    private int findMinLevenshteinDistance(List\u003cString\u003e prefixKeywords, Name personName) {"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        // If keyword is one word long, split the personName and find minLD."
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        BiFunction\u003cString, String, Integer\u003e findDistanceSplitIfMultiWord \u003d (prefixKeyword, pName) -\u003e"
+        "content": "        // Else just do as we are normally doing in original finalMinLD"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                prefixKeyword.split(\" \").length \u003d\u003d 1 ? Arrays.stream(pName.split(\" \"))"
+        "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                        .reduce(Integer.MAX_VALUE, (minDistance, nextNameWord) -\u003e Integer.min(minDistance,"
+        "content": "        BiFunction\u003cString, String, Integer\u003e findDistanceSplitIfMultiWord \u003d (prefixKeyword, pName) -\u003e"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                                calculateLevenshteinDistance(prefixKeyword.toLowerCase(), nextNameWord.toLowerCase())),"
+        "content": "                prefixKeyword.split(\" \").length \u003d\u003d 1 ? Arrays.stream(pName.split(\" \"))"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                                Integer::min)"
+        "content": "                        .reduce(Integer.MAX_VALUE, (minDistance, nextNameWord) -\u003e Integer.min(minDistance,"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                : calculateLevenshteinDistance(prefixKeyword.toLowerCase(), pName.toLowerCase());"
+        "content": "                                calculateLevenshteinDistance(prefixKeyword.toLowerCase(), nextNameWord.toLowerCase())),"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "                                Integer::min)"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        return prefixKeywords.stream().reduce(Integer.MAX_VALUE, (minDistance, nextKeyword) -\u003e"
+        "content": "                : calculateLevenshteinDistance(prefixKeyword.toLowerCase(), pName.toLowerCase());"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                Integer.min(minDistance, findDistanceSplitIfMultiWord.apply(nextKeyword, personName.toString())),"
+        "content": ""
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                Integer::min);"
+        "content": "        return prefixKeywords.stream().reduce(Integer.MAX_VALUE, (minDistance, nextKeyword) -\u003e"
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": "                Integer.min(minDistance, findDistanceSplitIfMultiWord.apply(nextKeyword, personName.toString())),"
       },
       {
         "lineNumber": 126,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "                Integer::min);"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "    public CommandResult execute(Model model) {"
+        "content": ""
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "        requireNonNull(model);"
+        "content": "    @Override"
       },
       {
         "lineNumber": 130,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "    public CommandResult execute(Model model) {"
       },
       {
         "lineNumber": 131,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "-"
         },
-        "content": "        List\u003cPerson\u003e allPersons \u003d Arrays.asList(model.getFullPersonList().toArray(Person[]::new));"
+        "content": "        requireNonNull(model);"
       },
       {
         "lineNumber": 132,
@@ -37622,150 +38093,164 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        FilteredList\u003cPerson\u003e exactMatches \u003d new FilteredList\u003c\u003e(FXCollections.observableList(allPersons));"
+        "content": "        List\u003cPerson\u003e allPersons \u003d Arrays.asList(model.getFullPersonList().toArray(Person[]::new));"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        exactMatches.setPredicate(new PersonContainsPrefixesPredicate(argMultimap));"
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        FilteredList\u003cPerson\u003e exactMatches \u003d new FilteredList\u003c\u003e(FXCollections.observableList(allPersons));"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        List\u003cPerson\u003e allExceptExactMatches \u003d new ArrayList\u003c\u003e(allPersons);"
+        "content": "        exactMatches.setPredicate(new PersonContainsPrefixesPredicate(argMultimap));"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        allExceptExactMatches.removeAll(Arrays.asList(exactMatches.toArray(Person[]::new)));"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        allExceptExactMatches \u003d fuzzyMatch(argMultimap, allExceptExactMatches);"
+        "content": "        List\u003cPerson\u003e allExceptExactMatches \u003d new ArrayList\u003c\u003e(allPersons);"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        allExceptExactMatches.removeAll(Arrays.asList(exactMatches.toArray(Person[]::new)));"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cPerson\u003e finalArrayList \u003d new ArrayList\u003c\u003e(exactMatches);"
+        "content": "        allExceptExactMatches \u003d fuzzyMatch(argMultimap, allExceptExactMatches);"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        finalArrayList.addAll(allExceptExactMatches);"
+        "content": ""
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        ArrayList\u003cPerson\u003e finalArrayList \u003d new ArrayList\u003c\u003e(exactMatches);"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        model.setDisplayedPersonList(finalArrayList);"
+        "content": "        finalArrayList.addAll(allExceptExactMatches);"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        return new CommandResult(\"Found \" + exactMatches.size() + \" exact matches and \""
+        "content": ""
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                + allExceptExactMatches.size() + \" possible matches!\");"
+        "content": "        model.setDisplayedPersonList(finalArrayList);"
       },
       {
         "lineNumber": 146,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": "        return new CommandResult(\"Found \" + exactMatches.size() + \" exact matches and \""
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "                + allExceptExactMatches.size() + \" possible matches!\");"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    @Override"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "                || (other instanceof FindCommand // instanceof handles nulls"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "-"
         },
-        "content": "                \u0026\u0026 argMultimap.equals(((FindCommand) other).argMultimap)); // state check"
+        "content": "        return other \u003d\u003d this // short circuit if same object"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                || (other instanceof FindCommand // instanceof handles nulls"
       },
       {
         "lineNumber": 154,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "                \u0026\u0026 argMultimap.equals(((FindCommand) other).argMultimap)); // state check"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
@@ -37773,8 +38258,8 @@
       }
     ],
     "authorContributionMap": {
-      "TheRealRavager": 128,
-      "-": 26
+      "TheRealRavager": 131,
+      "-": 25
     }
   },
   {
@@ -41083,7 +41568,7 @@
         "author": {
           "gitId": "SimNee"
         },
-        "content": "                \u0026\u0026 taskNumber \u003c donor.getProcessingList(patientNric).size()) {"
+        "content": "                \u0026\u0026 taskNumber \u003c donor.getProcessingList(patientNric).size() + 1) {"
       },
       {
         "lineNumber": 102,
@@ -46477,290 +46962,332 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_AGE;"
+        "content": "import static organice.commons.util.PersonAttributeCheckUtil.checkValidityAttributes;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_BLOOD_TYPE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_AGE;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_DOCTOR_IN_CHARGE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_BLOOD_TYPE;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NAME;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_DOCTOR_IN_CHARGE;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NRIC;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NAME;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NRIC;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN_EXPIRY_DATE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PHONE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN_EXPIRY_DATE;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PRIORITY;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PHONE;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TISSUE_TYPE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PRIORITY;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TYPE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TISSUE_TYPE;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TYPE;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import organice.logic.commands.ExactFindCommand;"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import organice.logic.parser.exceptions.ParseException;"
+        "content": "import organice.logic.commands.ExactFindCommand;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import organice.model.person.PersonContainsPrefixesPredicate;"
+        "content": "import organice.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "import organice.model.person.PersonContainsPrefixesPredicate;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": " * Parses input arguments and creates a new ExactFindCommand object"
+        "content": "/**"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": " */"
+        "content": " * Parses input arguments and creates a new ExactFindCommand object"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "public class ExactFindCommandParser implements Parser\u003cExactFindCommand\u003e {"
+        "content": " */"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "public class ExactFindCommandParser implements Parser\u003cExactFindCommand\u003e {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     * Parses the given {@code String} of arguments in the context of the ExactFindCommand"
+        "content": "    /**"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     * and returns a ExactFindCommand object for execution."
+        "content": "     * Parses the given {@code String} of arguments in the context of the ExactFindCommand"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     * @throws ParseException if the user input does not conform the expected format"
+        "content": "     * and returns a ExactFindCommand object for execution."
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "     */"
+        "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public ExactFindCommand parse(String args) throws ParseException {"
+        "content": "     */"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        args \u003d args.replaceAll(\"\\n\", \" \").replaceAll(\"\\\\s+\", \" \");"
+        "content": "    public ExactFindCommand parse(String args) throws ParseException {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        String trimmedArgs \u003d args.trim();"
+        "content": "        args \u003d args.replaceAll(\"\\n\", \" \").replaceAll(\"\\\\s+\", \" \");"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArgumentMultimap argMultimap \u003d ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_NRIC, PREFIX_PHONE,"
+        "content": "        String trimmedArgs \u003d args.trim();"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                PREFIX_TYPE, PREFIX_AGE, PREFIX_PRIORITY, PREFIX_BLOOD_TYPE, PREFIX_DOCTOR_IN_CHARGE,"
+        "content": "        ArgumentMultimap argMultimap \u003d ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_NRIC, PREFIX_PHONE,"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                PREFIX_TISSUE_TYPE, PREFIX_ORGAN_EXPIRY_DATE, PREFIX_ORGAN);"
+        "content": "                PREFIX_TYPE, PREFIX_AGE, PREFIX_PRIORITY, PREFIX_BLOOD_TYPE, PREFIX_DOCTOR_IN_CHARGE,"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "                PREFIX_TISSUE_TYPE, PREFIX_ORGAN_EXPIRY_DATE, PREFIX_ORGAN);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Preamble length \u003e 4 indicates initial command is not `ExactFindCommand.COMMAND_WORD PREFIX/KEYWORD`"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        if (trimmedArgs.isEmpty() || argMultimap.getPreamble().length() \u003e ExactFindCommand.COMMAND_WORD.length()) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            throw new ParseException("
+        "content": "            checkValidityAttributes(argMultimap);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ExactFindCommand.MESSAGE_USAGE));"
+        "content": "        } catch (IllegalArgumentException e) {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(e.getMessage());"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        return new ExactFindCommand(new PersonContainsPrefixesPredicate(argMultimap));"
+        "content": "        }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        if (trimmedArgs.isEmpty() || !argMultimap.getPreamble().isEmpty()) {"
       },
       {
         "lineNumber": 45,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "            throw new ParseException("
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ExactFindCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        return new ExactFindCommand(new PersonContainsPrefixesPredicate(argMultimap));"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
         "author": {
           "gitId": "TheRealRavager"
         },
@@ -46768,7 +47295,7 @@
       }
     ],
     "authorContributionMap": {
-      "TheRealRavager": 45
+      "TheRealRavager": 51
     }
   },
   {
@@ -46801,283 +47328,325 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_AGE;"
+        "content": "import static organice.commons.util.PersonAttributeCheckUtil.checkValidityAttributes;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_BLOOD_TYPE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_AGE;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_DOCTOR_IN_CHARGE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_BLOOD_TYPE;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NAME;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_DOCTOR_IN_CHARGE;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NRIC;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NAME;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_NRIC;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN_EXPIRY_DATE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PHONE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_ORGAN_EXPIRY_DATE;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PRIORITY;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PHONE;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TISSUE_TYPE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_PRIORITY;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TYPE;"
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TISSUE_TYPE;"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "import static organice.logic.parser.CliSyntax.PREFIX_TYPE;"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "-"
         },
-        "content": "import organice.logic.commands.FindCommand;"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import organice.logic.parser.exceptions.ParseException;"
+        "content": "import organice.logic.commands.FindCommand;"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "import organice.logic.parser.exceptions.ParseException;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 21,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": " * Parses input arguments and creates a new ExactFindCommand object"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
         "content": " */"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
         "content": "public class FindCommandParser implements Parser\u003cFindCommand\u003e {"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 26,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "     * Parses the given {@code String} of arguments in the context of the ExactFindCommand"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 27,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "     * and returns a ExactFindCommand object for execution."
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
         "content": "     * @throws ParseException if the user input does not conform the expected format"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
         "content": "    public FindCommand parse(String args) throws ParseException {"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 31,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "        args \u003d args.replaceAll(\"\\n\", \" \").replaceAll(\"\\\\s+\", \" \");"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
         "content": "        String trimmedArgs \u003d args.trim();"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 33,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "        ArgumentMultimap argMultimap \u003d ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_NRIC, PREFIX_PHONE,"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 34,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "                PREFIX_TYPE, PREFIX_AGE, PREFIX_PRIORITY, PREFIX_BLOOD_TYPE, PREFIX_DOCTOR_IN_CHARGE,"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 35,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "                PREFIX_TISSUE_TYPE, PREFIX_ORGAN_EXPIRY_DATE, PREFIX_ORGAN);"
       },
       {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "TheRealRavager"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 36,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Preamble length \u003e 7 indicates initial command is not `fuzfind PREFIX/KEYWORD`"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        if (trimmedArgs.isEmpty() || argMultimap.getPreamble().length() \u003e 7) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "            throw new ParseException("
+        "content": "            checkValidityAttributes(argMultimap);"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.MESSAGE_USAGE));"
+        "content": "        } catch (IllegalArgumentException e) {"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "        }"
+        "content": "            throw new ParseException(e.getMessage());"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        return new FindCommand(argMultimap);"
+        "content": "        }"
       },
       {
         "lineNumber": 42,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        if (trimmedArgs.isEmpty() || !argMultimap.getPreamble().isEmpty()) {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            throw new ParseException("
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        return new FindCommand(argMultimap);"
+      },
+      {
+        "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
@@ -47085,7 +47654,7 @@
       }
     ],
     "authorContributionMap": {
-      "TheRealRavager": 26,
+      "TheRealRavager": 32,
       "-": 18
     }
   },
@@ -61009,479 +61578,472 @@
         "author": {
           "gitId": "SimNee"
         },
-        "content": "            //newList \u003d newList.substring(1,newList.length() - 1);"
+        "content": "            updatedList.add(new Nric(newList));"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "            updatedList.add(new Nric(newList));"
+        "content": "            this.patientsMatchedBefore \u003d updatedList;"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "            this.patientsMatchedBefore \u003d updatedList;"
+        "content": "        } else {"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "        } else {"
+        "content": "            String[] patientNricString \u003d newList.split(\",\");"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "            String[] patientNricString \u003d newList.split(\",\");"
+        "content": "            for (int i \u003d 0; i \u003c patientNricString.length; i++) {"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "            for (int i \u003d 0; i \u003c patientNricString.length; i++) {"
+        "content": "                String currentPatientNric \u003d patientNricString[i];"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "                String currentPatientNric \u003d patientNricString[i];"
+        "content": "                if (!currentPatientNric.trim().isEmpty()) {"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "                if (!currentPatientNric.trim().isEmpty()) {"
+        "content": "                    updatedList.add(new Nric(currentPatientNric.trim()));"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "                    updatedList.add(new Nric(currentPatientNric.trim()));"
+        "content": "                }"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "                }"
+        "content": "                this.patientsMatchedBefore \u003d updatedList;"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "                this.patientsMatchedBefore \u003d updatedList;"
+        "content": "            }"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "SimNee"
         },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 177,
-        "author": {
-          "gitId": "SimNee"
-        },
         "content": ""
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 177,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 178,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "     * Returns true if both donors have the same identity and data fields."
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 179,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "     * This defines a stronger notion of equality between two donors."
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 180,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 182,
+        "lineNumber": 181,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 183,
+        "lineNumber": 182,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "    public boolean equals(Object other) {"
       },
       {
-        "lineNumber": 184,
+        "lineNumber": 183,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "        if (other \u003d\u003d this) {"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 184,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "            return true;"
       },
       {
-        "lineNumber": 186,
+        "lineNumber": 185,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "        }"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "        if (!(other instanceof Donor)) {"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "        if (!(other instanceof Donor)) {"
+        "content": "            return false;"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            return false;"
+        "content": "        }"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "        Donor otherPerson \u003d (Donor) other;"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "        Donor otherPerson \u003d (Donor) other;"
+        "content": "        return otherPerson.getNric().equals(getNric())"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "        return otherPerson.getNric().equals(getNric())"
+        "content": "            \u0026\u0026 otherPerson.getName().equals(getName())"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            \u0026\u0026 otherPerson.getName().equals(getName())"
+        "content": "            \u0026\u0026 otherPerson.getPhone().equals(getPhone())"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            \u0026\u0026 otherPerson.getPhone().equals(getPhone())"
+        "content": "            \u0026\u0026 otherPerson.getType().equals(getType())"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            \u0026\u0026 otherPerson.getType().equals(getType())"
+        "content": "            \u0026\u0026 otherPerson.getAge().equals(getAge())"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            \u0026\u0026 otherPerson.getAge().equals(getAge())"
+        "content": "            \u0026\u0026 otherPerson.getBloodType().equals(getBloodType())"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            \u0026\u0026 otherPerson.getBloodType().equals(getBloodType())"
+        "content": "            \u0026\u0026 otherPerson.getTissueType().equals(getTissueType())"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            \u0026\u0026 otherPerson.getTissueType().equals(getTissueType())"
-      },
-      {
-        "lineNumber": 200,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
         "content": "            \u0026\u0026 otherPerson.getOrgan().equals(getOrgan())"
       },
       {
-        "lineNumber": 201,
+        "lineNumber": 200,
         "author": {
           "gitId": "SimNee"
         },
         "content": "            \u0026\u0026 otherPerson.getOrganExpiryDate().equals(getOrganExpiryDate())"
       },
       {
-        "lineNumber": 202,
+        "lineNumber": 201,
         "author": {
           "gitId": "SimNee"
         },
         "content": "            \u0026\u0026 otherPerson.getStatus().equals(getStatus());"
       },
       {
-        "lineNumber": 203,
+        "lineNumber": 202,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "    }"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    @Override"
+        "content": "    public int hashCode() {"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    public int hashCode() {"
-      },
-      {
-        "lineNumber": 207,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
         "content": "        // use this method for custom fields hashing instead of implementing your own"
       },
       {
-        "lineNumber": 208,
+        "lineNumber": 207,
         "author": {
           "gitId": "SimNee"
         },
         "content": "        return Objects.hash(type, nric, name, phone, age, bloodType, tissueType, organ, organExpiryDate, status);"
       },
       {
-        "lineNumber": 209,
+        "lineNumber": 208,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "    }"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    @Override"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    public String toString() {"
+        "content": "        final StringBuilder builder \u003d new StringBuilder();"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "        final StringBuilder builder \u003d new StringBuilder();"
+        "content": "        builder.append(super.toString())"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "        builder.append(super.toString())"
+        "content": "            .append(\" Age: \")"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            .append(\" Age: \")"
+        "content": "            .append(getAge())"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            .append(getAge())"
+        "content": "            .append(\" Blood Type: \")"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            .append(\" Blood Type: \")"
+        "content": "            .append(getBloodType())"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            .append(getBloodType())"
+        "content": "            .append(\" Tissue Type: \")"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            .append(\" Tissue Type: \")"
+        "content": "            .append(getTissueType())"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            .append(getTissueType())"
+        "content": "            .append(\" Organ: \")"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            .append(\" Organ: \")"
+        "content": "            .append(getOrgan())"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            .append(getOrgan())"
-      },
-      {
-        "lineNumber": 223,
-        "author": {
-          "gitId": "WilliamRyank"
-        },
         "content": "            .append(\" Organ Expiry Date: \")"
       },
       {
-        "lineNumber": 224,
+        "lineNumber": 223,
         "author": {
           "gitId": "SimNee"
         },
         "content": "            .append(getOrganExpiryDate())"
       },
       {
-        "lineNumber": 225,
+        "lineNumber": 224,
         "author": {
           "gitId": "SimNee"
         },
         "content": "            .append(\" Status: \")"
       },
       {
-        "lineNumber": 226,
+        "lineNumber": 225,
         "author": {
           "gitId": "SimNee"
         },
         "content": "            .append(getStatus());"
       },
       {
-        "lineNumber": 227,
+        "lineNumber": 226,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": ""
       },
       {
-        "lineNumber": 228,
+        "lineNumber": 227,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "        return builder.toString();"
       },
       {
-        "lineNumber": 229,
+        "lineNumber": 228,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 230,
+        "lineNumber": 229,
         "author": {
           "gitId": "WilliamRyank"
         },
         "content": ""
       },
       {
-        "lineNumber": 231,
+        "lineNumber": 230,
         "author": {
           "gitId": "WilliamRyank"
         },
@@ -61492,7 +62054,7 @@
       "WilliamRyank": 96,
       "C-likethis123": 28,
       "TheRealRavager": 2,
-      "SimNee": 105
+      "SimNee": 104
     }
   },
   {
@@ -63244,58 +63806,58 @@
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "/**"
+        "content": "import java.util.AbstractMap;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": " * Represents a Person\u0027s NRIC in ORGANice."
+        "content": "import java.util.Map;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": " * Guarantees: immutable; is valid as declared in {@link #isValidNric(String)} (String)}"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "public class Nric {"
+        "content": " * Represents a Person\u0027s NRIC in ORGANice."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": " * Guarantees: immutable; is valid as declared in {@link #isValidNric(String)} (String)}"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d \"Nric must start with a letter \u0027S/T/F/G\u0027, 7 numbers afterward \""
+        "content": " */"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            + \"and its must end with a letter\";"
+        "content": "public class Nric {"
       },
       {
         "lineNumber": 14,
@@ -63307,306 +63869,754 @@
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    /*"
+        "content": "    public static final String MESSAGE_CONSTRAINTS \u003d \"Nric must be a valid Singaporean Nric that starts with any of \""
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "     * The first character of the address must not be a whitespace,"
+        "content": "            + \"\u0027S/T/F/G\u0027, has 7 numbers afterward and ends with a valid checksum letter.\";"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "     * otherwise \" \" (a blank string) becomes a valid input."
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "     */"
+        "content": "    public static final String VALIDATION_REGEX \u003d \"^[STFG]\\\\d{7}[A-Z]$\";"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    public static final String VALIDATION_REGEX \u003d \"^[STFG]\\\\d{7}[A-Z]$\";"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "    //  If the IC starts with S or T: 0\u003dJ, 1\u003dZ, 2\u003dI, 3\u003dH, 4\u003dG, 5\u003dF, 6\u003dE, 7\u003dD, 8\u003dC, 9\u003dB, 10\u003dA"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public final String value;"
+        "content": "    private static final Map\u003cInteger, Character\u003e CHECKSUM_FOR_NRIC_BEGINS_WITH_S_OR_T \u003d Map.ofEntries("
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(0, \u0027J\u0027),"
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    /**"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(1, \u0027Z\u0027),"
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "     * Constructs a {@code Nric}."
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(2, \u0027I\u0027),"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "     *"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(3, \u0027H\u0027),"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "     * @param nric A valid nric."
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(4, \u0027G\u0027),"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "     */"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(5, \u0027F\u0027),"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public Nric(String nric) {"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(6, \u0027E\u0027),"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        requireNonNull(nric);"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(7, \u0027D\u0027),"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        checkArgument(isValidNric(nric), MESSAGE_CONSTRAINTS);"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(8, \u0027C\u0027),"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        value \u003d nric.toUpperCase();"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(9, \u0027B\u0027),"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(10, \u0027A\u0027));"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
         "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    /**"
+        "content": "    //  If the IC starts with F or G: 0\u003dX, 1\u003dW, 2\u003dU, 3\u003dT, 4\u003dR, 5\u003dQ, 6\u003dP, 7\u003dN, 8\u003dM, 9\u003dL, 10\u003dK"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "     * Returns true if a given string is a valid nric."
+        "content": "    private static final Map\u003cInteger, Character\u003e CHECKSUM_FOR_NRIC_BEGINS_WITH_F_OR_G \u003d Map.ofEntries("
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "     */"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(0, \u0027X\u0027),"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static boolean isValidNric(String test) {"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(1, \u0027W\u0027),"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        return test.toUpperCase().matches(VALIDATION_REGEX);"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(2, \u0027U\u0027),"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(3, \u0027T\u0027),"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(4, \u0027R\u0027),"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    @Override"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(5, \u0027Q\u0027),"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public String toString() {"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(6, \u0027P\u0027),"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        return value;"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(7, \u0027N\u0027),"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(8, \u0027M\u0027),"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(9, \u0027L\u0027),"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    @Override"
+        "content": "            new AbstractMap.SimpleEntry\u003c\u003e(10, \u0027K\u0027));"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "        return other \u003d\u003d this // short circuit if same object"
+        "content": "    public final String value;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            || (other instanceof Nric // instanceof handles nulls"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "            \u0026\u0026 value.equals(((Nric) other).value)); // state check"
+        "content": "    /**"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    }"
+        "content": "     * Constructs a {@code Nric}."
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "     *"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    @Override"
+        "content": "     * @param nric A valid nric."
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    public int hashCode() {"
+        "content": "     */"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "        return value.hashCode();"
+        "content": "    public Nric(String nric) {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": "    }"
+        "content": "        requireNonNull(nric);"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "WilliamRyank"
         },
-        "content": ""
+        "content": "        checkArgument(isValidNric(nric), MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 58,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "        value \u003d nric.toUpperCase();"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "     * Returns true if a given string is a valid Nric"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    public static boolean isValidNric(String test) {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        requireNonNull(test);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        if (!test.toUpperCase().matches(VALIDATION_REGEX)) {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        return test.toUpperCase().charAt(test.length() - 1) \u003d\u003d calculateChecksumLetter(test);"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    // Nric checksum calculation referenced from:"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    // https://ayumilovemaple.wordpress.com/2008/09/24/validation-singapore-nric-number-verification/"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "     * Calculates the checksum letter of a given Nric."
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "    public static char calculateChecksumLetter(String nric) {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        requireNonNull(nric);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        checkArgument(nric.toUpperCase().matches(VALIDATION_REGEX));"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        String nricCopy \u003d nric.toUpperCase();"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        char[] nricChars \u003d nricCopy.toCharArray();"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        char firstLetter \u003d nricChars[0];"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int firstDigit \u003d Integer.parseInt(String.valueOf(nricChars[1]));"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int secondDigit \u003d Integer.parseInt(String.valueOf(nricChars[2]));"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int thirdDigit \u003d Integer.parseInt(String.valueOf(nricChars[3]));"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int fourthDigit \u003d Integer.parseInt(String.valueOf(nricChars[4]));"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int fifthDigit \u003d Integer.parseInt(String.valueOf(nricChars[5]));"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int sixthDigit \u003d Integer.parseInt(String.valueOf(nricChars[6]));"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int seventhDigit \u003d Integer.parseInt(String.valueOf(nricChars[7]));"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int checksumValue \u003d (firstDigit * 2 + secondDigit * 7 + thirdDigit * 6 + fourthDigit * 5 + fifthDigit * 4"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "                + sixthDigit * 3 + seventhDigit * 2 + (firstLetter \u003d\u003d \u0027T\u0027 || firstLetter \u003d\u003d \u0027G\u0027 ? 4 : 0)) % 11;"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        char validChecksumLetter \u003d firstLetter \u003d\u003d \u0027S\u0027 || firstLetter \u003d\u003d \u0027T\u0027"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "                ? CHECKSUM_FOR_NRIC_BEGINS_WITH_S_OR_T.get(checksumValue)"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "                : CHECKSUM_FOR_NRIC_BEGINS_WITH_F_OR_G.get(checksumValue);"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        return validChecksumLetter;"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "        return value;"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "        return other \u003d\u003d this // short circuit if same object"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "            || (other instanceof Nric // instanceof handles nulls"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "            \u0026\u0026 value.equals(((Nric) other).value)); // state check"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    public int hashCode() {"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "        return value.hashCode();"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "WilliamRyank"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 122,
         "author": {
           "gitId": "WilliamRyank"
         },
@@ -63614,8 +64624,8 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 56,
-      "TheRealRavager": 2
+      "WilliamRyank": 48,
+      "TheRealRavager": 74
     }
   },
   {
@@ -72694,1102 +73704,1116 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import java.util.ArrayList;"
+        "content": "import static organice.model.person.Nric.calculateChecksumLetter;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import java.util.Arrays;"
+        "content": ""
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import java.util.Calendar;"
+        "content": "import java.util.ArrayList;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import java.util.Collections;"
+        "content": "import java.util.Arrays;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "import java.util.Calendar;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import organice.model.AddressBook;"
+        "content": "import java.util.Collections;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "import organice.model.ReadOnlyAddressBook;"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "TheRealRavager"
         },
-        "content": "import organice.model.person.Age;"
+        "content": "import organice.model.AddressBook;"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "TheRealRavager"
         },
-        "content": "import organice.model.person.BloodType;"
+        "content": "import organice.model.ReadOnlyAddressBook;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "import organice.model.person.Doctor;"
+        "content": "import organice.model.person.Age;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "import organice.model.person.DoctorInCharge;"
+        "content": "import organice.model.person.BloodType;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "C-likethis123"
         },
-        "content": "import organice.model.person.Donor;"
+        "content": "import organice.model.person.Doctor;"
       },
       {
         "lineNumber": 15,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "import organice.model.person.DoctorInCharge;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "C-likethis123"
+        },
+        "content": "import organice.model.person.Donor;"
+      },
+      {
+        "lineNumber": 17,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.person.Name;"
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 18,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.person.Nric;"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 19,
         "author": {
           "gitId": "C-likethis123"
         },
         "content": "import organice.model.person.Organ;"
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 20,
         "author": {
           "gitId": "C-likethis123"
         },
         "content": "import organice.model.person.OrganExpiryDate;"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 21,
         "author": {
           "gitId": "C-likethis123"
         },
         "content": "import organice.model.person.Patient;"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 22,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.person.Person;"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 23,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.person.Phone;"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 24,
         "author": {
           "gitId": "C-likethis123"
         },
         "content": "import organice.model.person.Priority;"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 25,
         "author": {
           "gitId": "C-likethis123"
         },
         "content": "import organice.model.person.Status;"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 26,
         "author": {
           "gitId": "C-likethis123"
         },
         "content": "import organice.model.person.TissueType;"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 27,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "import organice.model.person.Type;"
       },
       {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "/**"
-      },
-      {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": " * Contains utility methods for populating {@code AddressBook} with sample data."
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "-"
         },
-        "content": ""
+        "content": " * Contains utility methods for populating {@code AddressBook} with sample data."
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "public class SampleDataUtil {"
+        "content": " */"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "C-likethis123"
         },
-        "content": "    private static final Name[] NAMES_FIRST \u003d Arrays.stream("
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "-"
         },
-        "content": "            new String[] {\"Alice\", \"Antiope\", \"Benson\", \"Betty\", \"Carol\", \"Casey\", \"Duncan\", \"Dexter\", \"Elliot\", \"Elle\","
+        "content": "public class SampleDataUtil {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                \"Darion\", \"Delilah\", \"Elle\", \"Eden\", \"Frank\", \"Felicia\", \"Gary\", \"George\", \"Helen\", \"Halimah\","
+        "content": "    private static final Name[] NAMES_FIRST \u003d Arrays.stream("
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                \"Issac\", \"Irene\", \"James\", \"Janet\", \"Kelly\", \"Karen\", \"Lionel\", \"Leonard\", \"Mary\", \"Marisha\", \"Neo\","
+        "content": "            new String[] {\"Alice\", \"Antiope\", \"Benson\", \"Betty\", \"Carol\", \"Casey\", \"Duncan\", \"Dexter\", \"Elliot\", \"Elle\","
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                \"Navin\", \"Oscar\", \"Olivia\", \"Penelope\", \"Pauline\"})"
+        "content": "                \"Darion\", \"Delilah\", \"Elle\", \"Eden\", \"Frank\", \"Felicia\", \"Gary\", \"George\", \"Helen\", \"Halimah\","
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            .map(Name::new).toArray(Name[]::new);"
+        "content": "                \"Issac\", \"Irene\", \"James\", \"Janet\", \"Kelly\", \"Karen\", \"Lionel\", \"Leonard\", \"Mary\", \"Marisha\", \"Neo\","
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private static final Name[] NAMES_LAST \u003d Arrays.stream("
+        "content": "                \"Navin\", \"Oscar\", \"Olivia\", \"Penelope\", \"Pauline\"})"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            new String[]{\"Smith\", \"Lim\", \"Tan\", \"Lee\", \"Chua\", \"Yacob\", \"Chow\", \"Doe\", \"Richards\", \"Walker\", \"Ross\","
+        "content": "            .map(Name::new).toArray(Name[]::new);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                \"Martinez\", \"Brady\", \"Weiss\", \"Belladonna\", \"Rose\", \"Tennant\", \"Perry\", \"Davidson\"})"
+        "content": "    private static final Name[] NAMES_LAST \u003d Arrays.stream("
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            .map(Name::new).toArray(Name[]::new);"
+        "content": "            new String[]{\"Smith\", \"Lim\", \"Tan\", \"Lee\", \"Chua\", \"Yacob\", \"Chow\", \"Doe\", \"Richards\", \"Walker\", \"Ross\","
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private static final char[] NRIC_LETTERS \u003d \"STFG\".toCharArray();"
+        "content": "                \"Martinez\", \"Brady\", \"Weiss\", \"Belladonna\", \"Rose\", \"Tennant\", \"Perry\", \"Davidson\"})"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private static final char[] NRIC_CHECKSUMS \u003d \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\".toCharArray();"
+        "content": "            .map(Name::new).toArray(Name[]::new);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private static final BloodType[] BLOODTYPES \u003d BloodType.BLOOD_TYPES.stream()"
+        "content": "    private static final char[] NRIC_LETTERS \u003d \"STFG\".toCharArray();"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            .map(BloodType::new).toArray(BloodType[]::new);"
+        "content": "    private static final BloodType[] BLOODTYPES \u003d BloodType.BLOOD_TYPES.stream()"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private static final Priority[] PRIORITIES \u003d Arrays.stream("
+        "content": "            .map(BloodType::new).toArray(BloodType[]::new);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            new String[] {Priority.PRIORITY_LOW, Priority.PRIORITY_MEDIUM, Priority.PRIORITY_HIGH})"
+        "content": "    private static final Priority[] PRIORITIES \u003d Arrays.stream("
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            .map(Priority::new).toArray(Priority[]::new);"
+        "content": "            new String[] {Priority.PRIORITY_LOW, Priority.PRIORITY_MEDIUM, Priority.PRIORITY_HIGH})"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    private static final String[] TISSUETYPE_VALUES \u003d"
+        "content": "            .map(Priority::new).toArray(Priority[]::new);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            new String[] {\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"12\"};"
+        "content": "    private static final String[] TISSUETYPE_VALUES \u003d"
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            new String[] {\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"12\"};"
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "C-likethis123"
         },
-        "content": "    public static Person[] getSamplePersons() {"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int numDoctors \u003d 10;"
+        "content": "    private static Person[] getSamplePersons() {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int numPatients \u003d 20;"
+        "content": "        int numDoctors \u003d 10;"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int numDonors \u003d 20;"
+        "content": "        int numPatients \u003d 20;"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int numPersons \u003d numDoctors + numDonors + numPatients;"
+        "content": "        int numDonors \u003d 20;"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int nricMin \u003d 1000000;"
+        "content": "        int numPersons \u003d numDoctors + numDonors + numPatients;"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int nricMax \u003d 9999999;"
+        "content": "        int nricMin \u003d 1000000;"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int nricIncrementMax \u003d (nricMax - nricMin) / numPersons;"
+        "content": "        int nricMax \u003d 9999999;"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        int nricIncrementMax \u003d (nricMax - nricMin) / numPersons;"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // To cycle back, % array.length"
+        "content": "        char dummyChecksum \u003d \u0027A\u0027;"
       },
       {
         "lineNumber": 62,
-        "author": {
-          "gitId": "TheRealRavager"
-        },
-        "content": "        int iterator \u003d 0;"
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "TheRealRavager"
-        },
-        "content": "        int nricBody \u003d nricMin;"
-      },
-      {
-        "lineNumber": 64,
         "author": {
           "gitId": "C-likethis123"
         },
         "content": ""
       },
       {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        // To cycle back, % array.length"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "TheRealRavager"
+        },
+        "content": "        int iterator \u003d 0;"
+      },
+      {
         "lineNumber": 65,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cDoctor\u003e doctorList \u003d new ArrayList\u003c\u003e();"
+        "content": "        int nricBody \u003d nricMin;"
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "C-likethis123"
         },
-        "content": "        // Create Doctors"
+        "content": ""
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        for (; iterator \u003c numDoctors; iterator++, nricBody +\u003d Math.random() * (nricIncrementMax + 1)) {"
+        "content": "        ArrayList\u003cDoctor\u003e doctorList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            Doctor newDoctor \u003d new Doctor("
+        "content": "        // Create Doctors"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Type(\"doctor\"),"
+        "content": "        for (; iterator \u003c numDoctors; iterator++, nricBody +\u003d Math.random() * (nricIncrementMax + 1)) {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Nric(NRIC_LETTERS[iterator % NRIC_LETTERS.length]"
+        "content": "            String nricLessChecksum \u003d NRIC_LETTERS[iterator % NRIC_LETTERS.length] + String.valueOf(nricBody);"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + String.valueOf(nricBody) + NRIC_CHECKSUMS[iterator % NRIC_CHECKSUMS.length]),"
+        "content": "            Doctor newDoctor \u003d new Doctor("
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Name(NAMES_FIRST[iterator % NAMES_FIRST.length]"
+        "content": "                    new Type(\"doctor\"),"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + \" \" + NAMES_LAST[iterator % NAMES_LAST.length]),"
+        "content": "                    new Nric(nricLessChecksum + calculateChecksumLetter(nricLessChecksum + dummyChecksum)),"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Phone((String.valueOf((int) (Math.random() * ((99999999 - 80000000) + 1) + 80000000))))"
+        "content": "                    new Name(NAMES_FIRST[iterator % NAMES_FIRST.length]"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            );"
+        "content": "                            + \" \" + NAMES_LAST[iterator % NAMES_LAST.length]),"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            doctorList.add(newDoctor);"
+        "content": "                    new Phone((String.valueOf((int) (Math.random() * ((99999999 - 80000000) + 1) + 80000000))))"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        }"
+        "content": "            );"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            doctorList.add(newDoctor);"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Create Patients"
+        "content": "        }"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cPatient\u003e patientList \u003d new ArrayList\u003c\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        for (; iterator \u003c numDoctors + numPatients;"
+        "content": "        // Create Patients"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "             iterator++, nricBody +\u003d Math.random() * (nricIncrementMax + 1)) {"
+        "content": "        ArrayList\u003cPatient\u003e patientList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            // NOTE TissueType not random."
+        "content": "        for (; iterator \u003c numDoctors + numPatients;"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            Patient newPatient \u003d new Patient("
+        "content": "             iterator++, nricBody +\u003d Math.random() * (nricIncrementMax + 1)) {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Type(\"patient\"),"
+        "content": "            String nricLessChecksum \u003d NRIC_LETTERS[iterator % NRIC_LETTERS.length] + String.valueOf(nricBody);"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Nric(NRIC_LETTERS[iterator % NRIC_LETTERS.length]"
+        "content": "            // NOTE TissueType not random."
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + String.valueOf(nricBody) + NRIC_CHECKSUMS[iterator % NRIC_CHECKSUMS.length]),"
+        "content": "            Patient newPatient \u003d new Patient("
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Name(NAMES_FIRST[iterator % NAMES_FIRST.length]"
+        "content": "                    new Type(\"patient\"),"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + \" \" + NAMES_LAST[iterator % NAMES_LAST.length]),"
+        "content": "                    new Nric(nricLessChecksum + calculateChecksumLetter(nricLessChecksum + dummyChecksum)),"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Phone((String.valueOf((int) (Math.random() * ((99999999 - 80000000) + 1) + 80000000)))),"
+        "content": "                    new Name(NAMES_FIRST[iterator % NAMES_FIRST.length]"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Age(String.valueOf("
+        "content": "                            + \" \" + NAMES_LAST[iterator % NAMES_LAST.length]),"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            (int) ((Math.random() * (((Age.AGE_MAX - 2) - (Age.AGE_MIN + 1)) + 1)) + Age.AGE_MIN))),"
+        "content": "                    new Phone((String.valueOf((int) (Math.random() * ((99999999 - 80000000) + 1) + 80000000)))),"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Priority(PRIORITIES[iterator % PRIORITIES.length].toString()),"
+        "content": "                    new Age(String.valueOf("
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new BloodType(BLOODTYPES[iterator % BLOODTYPES.length].toString()),"
+        "content": "                            (int) ((Math.random() * (((Age.AGE_MAX - 2) - (Age.AGE_MIN + 1)) + 1)) + Age.AGE_MIN))),"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new TissueType("
+        "content": "                    new Priority(PRIORITIES[iterator % PRIORITIES.length].toString()),"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            TISSUETYPE_VALUES[iterator % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                    new BloodType(BLOODTYPES[iterator % BLOODTYPES.length].toString()),"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + TISSUETYPE_VALUES[(iterator + 7) % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                    new TissueType("
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + TISSUETYPE_VALUES[(iterator + 4) % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                            TISSUETYPE_VALUES[iterator % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + TISSUETYPE_VALUES[(iterator + 2) % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                            + TISSUETYPE_VALUES[(iterator + 7) % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + TISSUETYPE_VALUES[(iterator + 11) % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                            + TISSUETYPE_VALUES[(iterator + 4) % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + TISSUETYPE_VALUES[(iterator + 5) % TISSUETYPE_VALUES.length]"
+        "content": "                            + TISSUETYPE_VALUES[(iterator + 2) % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    ),"
+        "content": "                            + TISSUETYPE_VALUES[(iterator + 11) % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Organ(\"kidney\"),"
+        "content": "                            + TISSUETYPE_VALUES[(iterator + 5) % TISSUETYPE_VALUES.length]"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new DoctorInCharge(doctorList.get(iterator % doctorList.size()).getNric().toString()),"
+        "content": "                    ),"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Status(Status.STATUS_NOT_PROCESSING)"
+        "content": "                    new Organ(\"kidney\"),"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            );"
+        "content": "                    new DoctorInCharge(doctorList.get(iterator % doctorList.size()).getNric().toString()),"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            patientList.add(newPatient);"
+        "content": "                    new Status(Status.STATUS_NOT_PROCESSING)"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        }"
+        "content": "            );"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            patientList.add(newPatient);"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Create Donors"
+        "content": "        }"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cDonor\u003e donorList \u003d new ArrayList\u003c\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        Calendar calendar \u003d Calendar.getInstance();"
+        "content": "        // Create Donors"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int minDateIncrement \u003d 30;"
+        "content": "        ArrayList\u003cDonor\u003e donorList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        int maxDateIncrement \u003d 150;"
+        "content": "        Calendar calendar \u003d Calendar.getInstance();"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        for (; iterator \u003c numPersons; iterator++, nricBody +\u003d Math.random() * (nricIncrementMax + 1)) {"
+        "content": "        int minDateIncrement \u003d 30;"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            // Random date within +[30, 150) days"
+        "content": "        int maxDateIncrement \u003d 150;"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            calendar.add(Calendar.DATE,"
+        "content": "        for (; iterator \u003c numPersons; iterator++, nricBody +\u003d Math.random() * (nricIncrementMax + 1)) {"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    (int) (Math.random() * ((maxDateIncrement - minDateIncrement) + 1) + minDateIncrement));"
+        "content": "            // Random date within +[30, 150) days"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            Donor newDonor \u003d new Donor("
+        "content": "            calendar.add(Calendar.DATE,"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Type(\"donor\"),"
+        "content": "                    (int) (Math.random() * ((maxDateIncrement - minDateIncrement) + 1) + minDateIncrement));"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Nric(NRIC_LETTERS[iterator % NRIC_LETTERS.length]"
+        "content": "            String nricLessChecksum \u003d NRIC_LETTERS[iterator % NRIC_LETTERS.length] + String.valueOf(nricBody);"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + String.valueOf(nricBody) + NRIC_CHECKSUMS[iterator % NRIC_CHECKSUMS.length]),"
+        "content": "            Donor newDonor \u003d new Donor("
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Name(NAMES_FIRST[iterator % NAMES_FIRST.length]"
+        "content": "                    new Type(\"donor\"),"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            + \" \" + NAMES_LAST[iterator % NAMES_LAST.length]),"
+        "content": "                    new Nric(nricLessChecksum + calculateChecksumLetter(nricLessChecksum + dummyChecksum)),"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Phone((String.valueOf((int) (Math.random() * ((99999999 - 80000000) + 1) + 80000000)))),"
+        "content": "                    new Name(NAMES_FIRST[iterator % NAMES_FIRST.length]"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Age(String.valueOf("
+        "content": "                            + \" \" + NAMES_LAST[iterator % NAMES_LAST.length]),"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            (int) ((Math.random() * (((Age.AGE_MAX - 2) - (Age.AGE_MIN + 1)) + 1)) + Age.AGE_MIN))),"
+        "content": "                    new Phone((String.valueOf((int) (Math.random() * ((99999999 - 80000000) + 1) + 80000000)))),"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new BloodType(BLOODTYPES[iterator % BLOODTYPES.length].toString()),"
+        "content": "                    new Age(String.valueOf("
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new TissueType("
+        "content": "                            (int) ((Math.random() * (((Age.AGE_MAX - 2) - (Age.AGE_MIN + 1)) + 1)) + Age.AGE_MIN))),"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                            TISSUETYPE_VALUES[iterator % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                    new BloodType(BLOODTYPES[iterator % BLOODTYPES.length].toString()),"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                                    + TISSUETYPE_VALUES[(iterator + 7) % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                    new TissueType("
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                                    + TISSUETYPE_VALUES[(iterator + 4) % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                            TISSUETYPE_VALUES[iterator % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                                    + TISSUETYPE_VALUES[(iterator + 2) % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                                    + TISSUETYPE_VALUES[(iterator + 7) % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                                    + TISSUETYPE_VALUES[(iterator + 11) % TISSUETYPE_VALUES.length] + \",\""
+        "content": "                                    + TISSUETYPE_VALUES[(iterator + 4) % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                                    + TISSUETYPE_VALUES[(iterator + 5) % TISSUETYPE_VALUES.length]"
+        "content": "                                    + TISSUETYPE_VALUES[(iterator + 2) % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    ),"
+        "content": "                                    + TISSUETYPE_VALUES[(iterator + 11) % TISSUETYPE_VALUES.length] + \",\""
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Organ(\"kidney\"),"
+        "content": "                                    + TISSUETYPE_VALUES[(iterator + 5) % TISSUETYPE_VALUES.length]"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new OrganExpiryDate(OrganExpiryDate.DATE_FORMAT.format(calendar.getTime())),"
+        "content": "                    ),"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                    new Status(Status.STATUS_NOT_PROCESSING)"
+        "content": "                    new Organ(\"kidney\"),"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            );"
+        "content": "                    new OrganExpiryDate(OrganExpiryDate.DATE_FORMAT.format(calendar.getTime())),"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "            donorList.add(newDonor);"
+        "content": "                    new Status(Status.STATUS_NOT_PROCESSING)"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        }"
+        "content": "            );"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "            donorList.add(newDonor);"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ArrayList\u003cPerson\u003e personList \u003d new ArrayList\u003c\u003e();"
+        "content": "        }"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        personList.addAll(doctorList);"
+        "content": ""
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        personList.addAll(patientList);"
+        "content": "        ArrayList\u003cPerson\u003e personList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        personList.addAll(donorList);"
+        "content": "        personList.addAll(doctorList);"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        // Random sort"
+        "content": "        personList.addAll(patientList);"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        Collections.shuffle(personList);"
+        "content": "        personList.addAll(donorList);"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        return personList.toArray(Person[]::new);"
+        "content": "        // Random sort"
       },
       {
         "lineNumber": 151,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "    }"
+        "content": "        Collections.shuffle(personList);"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": ""
+        "content": "        return personList.toArray(Person[]::new);"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static ReadOnlyAddressBook getSampleAddressBook() {"
+        "content": "    }"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "        AddressBook sampleAb \u003d new AddressBook();"
+        "content": ""
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "        for (Person samplePerson : getSamplePersons()) {"
+        "content": "    public static ReadOnlyAddressBook getSampleAddressBook() {"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "            sampleAb.addPerson(samplePerson);"
+        "content": "        AddressBook sampleAb \u003d new AddressBook();"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        for (Person samplePerson : getSamplePersons()) {"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "        return sampleAb;"
+        "content": "            sampleAb.addPerson(samplePerson);"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return sampleAb;"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
@@ -73798,7 +74822,7 @@
     ],
     "authorContributionMap": {
       "C-likethis123": 15,
-      "TheRealRavager": 129,
+      "TheRealRavager": 131,
       "-": 16
     }
   },
@@ -110513,7 +111537,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        Patient validPatient \u003d new PatientBuilder().withNric(\"S1234567A\").build();"
+        "content": "        Patient validPatient \u003d new PatientBuilder().withNric(\"S6295135D\").build();"
       },
       {
         "lineNumber": 72,
@@ -112549,35 +113573,35 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final String VALID_NRIC_DOCTOR_AMY \u003d \"S1111111A\";"
+        "content": "    public static final String VALID_NRIC_DOCTOR_AMY \u003d \"S8078981E\";"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final String VALID_NRIC_DONOR_JOHN \u003d \"T1312123P\";"
+        "content": "    public static final String VALID_NRIC_DONOR_JOHN \u003d \"S6488870F\";"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final String VALID_NRIC_PATIENT_BOB \u003d \"G2222222B\";"
+        "content": "    public static final String VALID_NRIC_PATIENT_BOB \u003d \"S7044112H\";"
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final String VALID_NRIC_PATIENT_IRENE \u003d \"S1111112A\";"
+        "content": "    public static final String VALID_NRIC_PATIENT_IRENE \u003d \"S9605440H\";"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final String VALID_NRIC_DONOR_IRENE_DONOR \u003d \"S9876543G\";"
+        "content": "    public static final String VALID_NRIC_DONOR_IRENE_DONOR \u003d \"S9155102J\";"
       },
       {
         "lineNumber": 54,
@@ -113834,9 +114858,9 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 54,
-      "C-likethis123": 20,
-      "TheRealRavager": 72,
+      "WilliamRyank": 53,
+      "C-likethis123": 19,
+      "TheRealRavager": 74,
       "-": 76,
       "SimNee": 10
     }
@@ -124745,271 +125769,257 @@
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public void parseCommand_find() throws Exception {"
+        "content": "    public void parseCommand_exactFind() throws Exception {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        String searchParams \u003d ExactFindCommand.COMMAND_WORD + \" n/Alice ic/S1111111A t/doctor\";"
+        "content": "        String searchParams \u003d ExactFindCommand.COMMAND_WORD + \" n/Alice ic/S9058768D t/doctor\";"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        ExactFindCommand command \u003d (ExactFindCommand) parser.parseCommand("
+        "content": "        ExactFindCommand command \u003d (ExactFindCommand) parser.parseCommand(searchParams);"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                ExactFindCommand.COMMAND_WORD + \" \" + searchParams);"
+        "content": "        //TODO: Replace ArgumentTokenizer with stub"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        //TODO: Replace ArgumentTokenizer with stub"
+        "content": "        assertEquals(new ExactFindCommand(new PersonContainsPrefixesPredicate(ArgumentTokenizer"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(new ExactFindCommand(new PersonContainsPrefixesPredicate(ArgumentTokenizer"
+        "content": "                .tokenize(\" n/Alice ic/S9058768D t/doctor\", PREFIX_NAME, PREFIX_NRIC, PREFIX_TYPE))), command);"
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "-"
         },
-        "content": "                .tokenize(ExactFindCommand.COMMAND_WORD"
+        "content": "    }"
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "TheRealRavager"
+          "gitId": "-"
         },
-        "content": "                        + \" n/Alice ic/S1111111A t/doctor\", PREFIX_NAME, PREFIX_NRIC, PREFIX_TYPE))), command);"
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void parseCommand_help() throws Exception {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        assertTrue(parser.parseCommand(HelpCommand.COMMAND_WORD) instanceof HelpCommand);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void parseCommand_help() throws Exception {"
+        "content": "        assertTrue(parser.parseCommand(HelpCommand.COMMAND_WORD + \" 3\") instanceof HelpCommand);"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(parser.parseCommand(HelpCommand.COMMAND_WORD) instanceof HelpCommand);"
+        "content": "    }"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(parser.parseCommand(HelpCommand.COMMAND_WORD + \" 3\") instanceof HelpCommand);"
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void parseCommand_list() throws Exception {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    public void parseCommand_list() throws Exception {"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "-"
-        },
         "content": "        assertTrue(parser.parseCommand(ListCommand.COMMAND_WORD) instanceof ListCommand);"
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 81,
         "author": {
           "gitId": "Yen-Peng"
         },
         "content": "        Type type \u003d new Type(Type.PATIENT);"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 82,
         "author": {
           "gitId": "Yen-Peng"
         },
         "content": "        ListCommand command \u003d (ListCommand) parser.parseCommand(ListCommand.COMMAND_WORD + \" t/patient\");"
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 83,
         "author": {
           "gitId": "Yen-Peng"
         },
         "content": "        assertEquals(new ListCommand(type), command);"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 84,
         "author": {
           "gitId": "Yen-Peng"
         },
         "content": ""
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 85,
         "author": {
           "gitId": "Yen-Peng"
         },
         "content": "        assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, ListCommand.MESSAGE_USAGE), ()"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 86,
         "author": {
           "gitId": "Yen-Peng"
         },
         "content": "            -\u003e parser.parseCommand(ListCommand.COMMAND_WORD + \" unknownParameter\"));"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void parseCommand_unrecognisedInput_throwsParseException() {"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE), ()"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void parseCommand_unrecognisedInput_throwsParseException() {"
+        "content": "            -\u003e parser.parseCommand(\"\"));"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE), ()"
+        "content": "    }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "            -\u003e parser.parseCommand(\"\"));"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "-"
-        },
         "content": "    public void parseCommand_unknownCommand_throwsParseException() {"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 97,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "        assertThrows("
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 98,
         "author": {
           "gitId": "TheRealRavager"
         },
         "content": "                ParseException.class, MESSAGE_UNKNOWN_COMMAND, () -\u003e parser.parseCommand(\"unknownCommand\"));"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
@@ -125017,8 +126027,8 @@
       }
     ],
     "authorContributionMap": {
-      "TheRealRavager": 31,
-      "-": 62,
+      "TheRealRavager": 30,
+      "-": 61,
       "Yen-Peng": 7,
       "SimNee": 2
     }
@@ -127732,7 +128742,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public void parse_validArgs_returnsFindCommand() {"
+        "content": "    public void parse_validArgs_returnsExactFindCommand() {"
       },
       {
         "lineNumber": 25,
@@ -127753,7 +128763,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                ArgumentTokenizer.tokenize(\"   \" + ExactFindCommand.COMMAND_WORD + \" n/Alice Bob      \","
+        "content": "                ArgumentTokenizer.tokenize(\" n/Alice Bob\","
       },
       {
         "lineNumber": 28,
@@ -127767,7 +128777,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        assertParseSuccess(parser, ExactFindCommand.COMMAND_WORD + \" n/Alice Bob\", expectedExactFindCommand);"
+        "content": "        assertParseSuccess(parser, \" n/Alice Bob\", expectedExactFindCommand);"
       },
       {
         "lineNumber": 30,
@@ -128849,9 +129859,9 @@
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    private static final String VALID_NRIC \u003d \"S1111111A\";"
+        "content": "    private static final String VALID_NRIC \u003d \"S2267897C\";"
       },
       {
         "lineNumber": 25,
@@ -129674,8 +130684,8 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 26,
-      "TheRealRavager": 9,
+      "WilliamRyank": 25,
+      "TheRealRavager": 10,
       "-": 106
     }
   },
@@ -130108,7 +131118,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        Person editedAlice \u003d new PersonBuilder(DOCTOR_ALICE).withNric(\"S1532142A\").build();"
+        "content": "        Person editedAlice \u003d new PersonBuilder(DOCTOR_ALICE).withNric(\"F1289064T\").build();"
       },
       {
         "lineNumber": 62,
@@ -130297,7 +131307,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        Person editedAlice \u003d new PersonBuilder(DOCTOR_ALICE).withNric(\"S1532142A\").build();"
+        "content": "        Person editedAlice \u003d new PersonBuilder(DOCTOR_ALICE).withNric(\"F1289064T\").build();"
       },
       {
         "lineNumber": 89,
@@ -135773,51 +136783,51 @@
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"s1234512b\")); // should be case insensitive"
+        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"f1289064t\")); // should be case insensitive"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"s1234512R\")); // should be case insensitive"
+        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"F1289064T\")); // should be case insensitive"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"T1234512a\")); // should be case insensitive"
+        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"F1289064t\")); // should be case insensitive"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"S1234567B\")); // starts with \u0027S\u0027"
+        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"S4681130E\")); // starts with \u0027S\u0027"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"T2222222A\")); // starts with \u0027T\u0027"
+        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"T3685500I\")); // starts with \u0027T\u0027"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"F3333333A\")); // starts with \u0027F\u0027"
+        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"F9418981X\")); // starts with \u0027F\u0027"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"G4444444A\")); // starts with \u0027G\u0027"
+        "content": "        assertTrue(DoctorInCharge.isValidDoctorInCharge(\"G1146086R\")); // starts with \u0027G\u0027"
       },
       {
         "lineNumber": 47,
@@ -135850,9 +136860,9 @@
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(new DoctorInCharge(\"S1111111A\").toString(), \"S1111111A\");"
+        "content": "        assertEquals(new DoctorInCharge(\"S6906071D\").toString(), \"S6906071D\");"
       },
       {
         "lineNumber": 52,
@@ -135885,9 +136895,9 @@
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        DoctorInCharge doctorInCharge \u003d new DoctorInCharge(\"S1111111A\");"
+        "content": "        DoctorInCharge doctorInCharge \u003d new DoctorInCharge(\"S6906071D\");"
       },
       {
         "lineNumber": 57,
@@ -135906,9 +136916,9 @@
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertFalse(doctorInCharge.equals(new DoctorInCharge(\"S1111111B\")));"
+        "content": "        assertFalse(doctorInCharge.equals(new DoctorInCharge(\"S0038935H\")));"
       },
       {
         "lineNumber": 60,
@@ -135920,9 +136930,9 @@
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(doctorInCharge.equals(new DoctorInCharge(\"S1111111A\")));"
+        "content": "        assertTrue(doctorInCharge.equals(new DoctorInCharge(\"S6906071D\")));"
       },
       {
         "lineNumber": 62,
@@ -135955,9 +136965,9 @@
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        DoctorInCharge doctorInCharge \u003d new DoctorInCharge(\"S1111111A\");"
+        "content": "        DoctorInCharge doctorInCharge \u003d new DoctorInCharge(\"S6906071D\");"
       },
       {
         "lineNumber": 67,
@@ -135969,16 +136979,16 @@
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(doctorInCharge.hashCode(), new DoctorInCharge(\"S1111111A\").hashCode());"
+        "content": "        assertEquals(doctorInCharge.hashCode(), new DoctorInCharge(\"S6906071D\").hashCode());"
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertNotEquals(doctorInCharge.hashCode(), new DoctorInCharge(\"S1111111B\").hashCode());"
+        "content": "        assertNotEquals(doctorInCharge.hashCode(), new DoctorInCharge(\"S0038935H\").hashCode());"
       },
       {
         "lineNumber": 70,
@@ -135996,8 +137006,8 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 69,
-      "TheRealRavager": 2
+      "WilliamRyank": 55,
+      "TheRealRavager": 16
     }
   },
   {
@@ -136639,7 +137649,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                + \" Nric: S1532142A Phone: 94351253\");"
+        "content": "                + \" Nric: F1289064T Phone: 94351253\");"
       },
       {
         "lineNumber": 92,
@@ -137661,9 +138671,9 @@
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "            \"John Person Type: donor Nric: T1312123P Phone: 81230942 Age: 60 \""
+        "content": "            \"John Person Type: donor Nric: S6488870F Phone: 81230942 Age: 60 \""
       },
       {
         "lineNumber": 135,
@@ -137758,9 +138768,9 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 104,
+      "WilliamRyank": 103,
       "C-likethis123": 1,
-      "TheRealRavager": 41,
+      "TheRealRavager": 42,
       "SimNee": 1
     }
   },
@@ -138527,9 +139537,9 @@
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(\"Irene Donor Person Type: donor Nric: S9876543G Phone: 85355255 \""
+        "content": "        assertEquals(\"Irene Donor Person Type: donor Nric: S9155102J Phone: 85355255 \""
       },
       {
         "lineNumber": 110,
@@ -138638,7 +139648,8 @@
       }
     ],
     "authorContributionMap": {
-      "C-likethis123": 121,
+      "C-likethis123": 120,
+      "TheRealRavager": 1,
       "Yen-Peng": 1,
       "SimNee": 2
     }
@@ -139483,9 +140494,9 @@
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "C-likethis123"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(\"Irene Person Type: patient Nric: S1111112A Phone: 85355255 \""
+        "content": "        assertEquals(\"Irene Person Type: patient Nric: S9605440H Phone: 85355255 \""
       },
       {
         "lineNumber": 121,
@@ -139594,7 +140605,8 @@
       }
     ],
     "authorContributionMap": {
-      "C-likethis123": 132,
+      "C-likethis123": 131,
+      "TheRealRavager": 1,
       "Yen-Peng": 1,
       "SimNee": 2
     }
@@ -140359,51 +141371,51 @@
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(Nric.isValidNric(\"s1234512b\")); // should be case insensitive"
+        "content": "        assertTrue(Nric.isValidNric(\"s2304654g\")); // should be case insensitive"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(Nric.isValidNric(\"s1234512R\")); // should be case insensitive"
+        "content": "        assertTrue(Nric.isValidNric(\"S2304654G\")); // should be case insensitive"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(Nric.isValidNric(\"T1234512a\")); // should be case insensitive"
+        "content": "        assertTrue(Nric.isValidNric(\"S2304654g\")); // should be case insensitive"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(Nric.isValidNric(\"S1234567B\")); // starts with \u0027S\u0027"
+        "content": "        assertTrue(Nric.isValidNric(\"S1139237G\")); // starts with \u0027S\u0027"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(Nric.isValidNric(\"T2222222A\")); // starts with \u0027T\u0027"
+        "content": "        assertTrue(Nric.isValidNric(\"T4796195A\")); // starts with \u0027T\u0027"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(Nric.isValidNric(\"F3333333A\")); // starts with \u0027F\u0027"
+        "content": "        assertTrue(Nric.isValidNric(\"F4999805T\")); // starts with \u0027F\u0027"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(Nric.isValidNric(\"G4444444A\")); // starts with \u0027G\u0027"
+        "content": "        assertTrue(Nric.isValidNric(\"G7714007M\")); // starts with \u0027G\u0027"
       },
       {
         "lineNumber": 47,
@@ -140436,9 +141448,9 @@
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(new Nric(\"S1111111A\").toString(), \"S1111111A\");"
+        "content": "        assertEquals(new Nric(\"S2304654G\").toString(), \"S2304654G\");"
       },
       {
         "lineNumber": 52,
@@ -140471,9 +141483,9 @@
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        Nric nric \u003d new Nric(\"S1111111A\");"
+        "content": "        Nric nric \u003d new Nric(\"S2304654G\");"
       },
       {
         "lineNumber": 57,
@@ -140492,9 +141504,9 @@
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertFalse(nric.equals(new Nric(\"S1111111B\")));"
+        "content": "        assertFalse(nric.equals(new Nric(\"S1139237G\")));"
       },
       {
         "lineNumber": 60,
@@ -140506,9 +141518,9 @@
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertTrue(nric.equals(new Nric(\"S1111111A\")));"
+        "content": "        assertTrue(nric.equals(new Nric(\"S2304654G\")));"
       },
       {
         "lineNumber": 62,
@@ -140541,9 +141553,9 @@
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        Nric nric \u003d new Nric(\"S1111111A\");"
+        "content": "        Nric nric \u003d new Nric(\"S2304654G\");"
       },
       {
         "lineNumber": 67,
@@ -140555,16 +141567,16 @@
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(nric.hashCode(), new Nric(\"S1111111A\").hashCode());"
+        "content": "        assertEquals(nric.hashCode(), new Nric(\"S2304654G\").hashCode());"
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertNotEquals(nric.hashCode(), new Nric(\"S1111111B\").hashCode());"
+        "content": "        assertNotEquals(nric.hashCode(), new Nric(\"S1139237G\").hashCode());"
       },
       {
         "lineNumber": 70,
@@ -140582,8 +141594,8 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 69,
-      "TheRealRavager": 2
+      "WilliamRyank": 55,
+      "TheRealRavager": 16
     }
   },
   {
@@ -142741,9 +143753,9 @@
       {
         "lineNumber": 145,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(\"Irene Person Type: patient Nric: S1111112A Phone: 85355255 \""
+        "content": "        assertEquals(\"Irene Person Type: patient Nric: S9605440H Phone: 85355255 \""
       },
       {
         "lineNumber": 146,
@@ -142845,9 +143857,9 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 62,
+      "WilliamRyank": 61,
       "C-likethis123": 57,
-      "TheRealRavager": 38,
+      "TheRealRavager": 39,
       "SimNee": 2
     }
   },
@@ -143525,7 +144537,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "                .tokenize(ExactFindCommand.COMMAND_WORD + \" n/Benson t/doctor ic/S1111111A p/12345\","
+        "content": "                .tokenize(ExactFindCommand.COMMAND_WORD + \" n/Benson t/doctor ic/S9155102J p/12345\","
       },
       {
         "lineNumber": 97,
@@ -143539,7 +144551,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "        assertFalse(predicate.test(new PersonBuilder().withType(\"doctor\").withNric(\"S1111111A\").withName(\"Alice\")"
+        "content": "        assertFalse(predicate.test(new PersonBuilder().withType(\"doctor\").withNric(\"S9155102J\").withName(\"Alice\")"
       },
       {
         "lineNumber": 99,
@@ -144225,9 +145237,9 @@
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "        assertEquals(alice.toString().trim() , \"Alice Pauline Person Type: doctor Nric: S1532142A Phone: 94351253\");"
+        "content": "        assertEquals(alice.toString().trim() , \"Alice Pauline Person Type: doctor Nric: F1289064T Phone: 94351253\");"
       },
       {
         "lineNumber": 94,
@@ -144308,9 +145320,9 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 22,
+      "WilliamRyank": 21,
       "C-likethis123": 16,
-      "TheRealRavager": 27,
+      "TheRealRavager": 28,
       "-": 39
     }
   },
@@ -156641,9 +157653,9 @@
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final String DEFAULT_DOCTOR_IN_CHARGE \u003d \"S1111111A\";"
+        "content": "    public static final String DEFAULT_DOCTOR_IN_CHARGE \u003d \"S9878206J\";"
       },
       {
         "lineNumber": 26,
@@ -157536,9 +158548,9 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 51,
+      "WilliamRyank": 50,
       "C-likethis123": 75,
-      "TheRealRavager": 7,
+      "TheRealRavager": 8,
       "SimNee": 19
     }
   },
@@ -157640,30 +158652,30 @@
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final String DEFAULT_NAME \u003d \"Alice Pauline\";"
+        "content": "    private static final String DEFAULT_NAME \u003d \"Alice Pauline\";"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "-"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final String DEFAULT_PHONE \u003d \"85355255\";"
+        "content": "    private static final String DEFAULT_PHONE \u003d \"85355255\";"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final String DEFAULT_NRIC \u003d \"S1111111A\";"
+        "content": "    private static final String DEFAULT_NRIC \u003d \"T6842475A\";"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final String DEFAULT_TYPE \u003d \"doctor\";"
+        "content": "    private static final String DEFAULT_TYPE \u003d \"doctor\";"
       },
       {
         "lineNumber": 18,
@@ -158087,10 +159099,10 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 17,
+      "WilliamRyank": 15,
       "C-likethis123": 4,
-      "TheRealRavager": 6,
-      "-": 50
+      "TheRealRavager": 10,
+      "-": 48
     }
   },
   {
@@ -159485,23 +160497,23 @@
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "SimNee"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final Nric NRIC_FIRST_PERSON \u003d new Nric(\"T5231426Q\");"
+        "content": "    public static final Nric NRIC_FIRST_PERSON \u003d new Nric(\"F1289064T\");"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "SimNee"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final Nric NRIC_SECOND_PERSON \u003d new Nric(\"G5642431P\");"
+        "content": "    public static final Nric NRIC_SECOND_PERSON \u003d new Nric(\"S1048607F\");"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "SimNee"
+          "gitId": "TheRealRavager"
         },
-        "content": "    public static final Nric NRIC_THIRD_PERSON \u003d new Nric(\"F6423467F\");"
+        "content": "    public static final Nric NRIC_THIRD_PERSON \u003d new Nric(\"G7977893T\");"
       },
       {
         "lineNumber": 12,
@@ -159512,7 +160524,8 @@
       }
     ],
     "authorContributionMap": {
-      "SimNee": 12
+      "TheRealRavager": 3,
+      "SimNee": 9
     }
   },
   {
@@ -159860,7 +160873,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final Doctor DOCTOR_ALICE \u003d new DoctorBuilder().withNric(\"S1532142A\")"
+        "content": "    public static final Doctor DOCTOR_ALICE \u003d new DoctorBuilder().withNric(\"F1289064T\")"
       },
       {
         "lineNumber": 50,
@@ -159888,7 +160901,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final Patient PATIENT_CARL \u003d new PatientBuilder().withAge(\"22\").withNric(\"G5642431P\")"
+        "content": "    public static final Patient PATIENT_CARL \u003d new PatientBuilder().withAge(\"22\").withNric(\"S1048607F\")"
       },
       {
         "lineNumber": 54,
@@ -159907,16 +160920,16 @@
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "            .withDoctorInCharge(\"S1532142A\").build();"
+        "content": "            .withDoctorInCharge(\"F1289064T\").build();"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final Patient PATIENT_DANIEL \u003d new PatientBuilder().withAge(\"34\").withNric(\"F6423467F\")"
+        "content": "    public static final Patient PATIENT_DANIEL \u003d new PatientBuilder().withAge(\"34\").withNric(\"G7977893T\")"
       },
       {
         "lineNumber": 58,
@@ -159935,9 +160948,9 @@
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "WilliamRyank"
+          "gitId": "TheRealRavager"
         },
-        "content": "            .withDoctorInCharge(\"T5231426Q\").build();"
+        "content": "            .withDoctorInCharge(\"F1289064T\").build();"
       },
       {
         "lineNumber": 61,
@@ -159993,7 +161006,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final Donor DONOR_ELLE \u003d new DonorBuilder().withAge(\"13\").withNric(\"S9374923S\")"
+        "content": "    public static final Donor DONOR_ELLE \u003d new DonorBuilder().withAge(\"13\").withNric(\"F8258118U\")"
       },
       {
         "lineNumber": 69,
@@ -160014,7 +161027,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final Donor DONOR_FIONA \u003d new DonorBuilder().withAge(\"25\").withNric(\"F9183156L\")"
+        "content": "    public static final Donor DONOR_FIONA \u003d new DonorBuilder().withAge(\"25\").withNric(\"F5171921L\")"
       },
       {
         "lineNumber": 72,
@@ -160035,7 +161048,7 @@
         "author": {
           "gitId": "TheRealRavager"
         },
-        "content": "    public static final Donor DONOR_GEORGE \u003d new DonorBuilder().withAge(\"44\").withNric(\"S1234567A\")"
+        "content": "    public static final Donor DONOR_GEORGE \u003d new DonorBuilder().withAge(\"44\").withNric(\"T6860546B\")"
       },
       {
         "lineNumber": 75,
@@ -160333,9 +161346,9 @@
       }
     ],
     "authorContributionMap": {
-      "WilliamRyank": 27,
+      "WilliamRyank": 25,
       "C-likethis123": 23,
-      "TheRealRavager": 30,
+      "TheRealRavager": 32,
       "-": 31,
       "SimNee": 5
     }

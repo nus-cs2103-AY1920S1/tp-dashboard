@@ -730,8 +730,8 @@
         ]
       },
       {
-        "insertions": 265,
-        "deletions": 429,
+        "insertions": 538,
+        "deletions": 865,
         "date": "2019-11-07",
         "commitResults": [
           {
@@ -740,6 +740,13 @@
             "messageBody": "* Modify ViewAllTagsCommand and ViewDefaultTagsCommand\r\n\r\n* Update GUI to have different colours for default and user tags\r\n\r\n* Add some standard colours to the Color enum\r\n\r\n* Fix checkstyle issue\r\n\r\n* Update UG (remove newtag command and add removealltags command)\r\n\r\n* Add RemoveAllTagsCommand. Also added to parser already.\r\n\r\n* Implement sorting of modules according to module code in GUI within a semester\r\n\r\n* Add method to return uniquetaglist as list of strings\r\n\r\n* Fix codacy issues\r\n\r\n* Update tests\r\n\r\n* Add DeleteTagCommand test\r\n\r\n* Remove CreateTagCommand\r\n\r\n* Add TagModuleCommandTest\r\n\r\n* Fix checkstyle\r\n\r\n* Add RemoveTagFromModuleCommandTest\r\n\r\n* Add TagModuleCommandTest\r\n\r\n* Add RemoveTagFromAllCommandTest and RemoveAllTagsCommandTest\r\n\r\n* Add tests for other tagging commands\r\n\r\n* Fix checkstyle\r\n\r\n* Add ViewTaggedCommand + test\r\n\r\n* Fix checkstyle\r\n\r\n* Edit CommandResultTest to test for command results with views\r\n\r\n* Modify RenameTagCommand + add test\r\n\r\n* Implement FindModuleCommand and test\r\n\r\n* Fix tests + add TagStudyPlanCommand and test\r\n\r\n* Fix errors\r\n\r\n* Update tagging commands to check if provided module code is valid.\r\n\r\n* Add RemoveTagFromStudyPlanCommand + test\r\n\r\n* Update command words to differentiate between module tags and studyplan tags\r\n\r\n* Add command to sort study plans by priority tags.\r\n\r\n* Sort tags in TagListPanel and add descriptions for default tags\r\n\r\n* Modify tests\r\n\r\n* Update UserGuide\r\n\r\n* Fix checkstyle\r\n\r\n* Update help\r\n\r\n* Update UserGuide and fix problems in TagStudyPlanCommand and RemoveTagFromStudyPlanCommand\r\n\r\n* Modify some tests\r\n\r\n* Implementing sorting of modules in ModuleListPanel\r\n\r\n* Fix checkstyle\r\n\r\n* Fix completed tags bug\r\n\r\n* Change command words for study plan tagging\r\n\r\n* Fix bug in study plan tagging (invalid study plan index)\r\n\r\n* Update tests\r\n\r\n* Add support for undo-ing study plan tagging\r\n\r\n* Fix bug in ViewTaggedCommandParser\r\n\r\n* Fix bug in RenameTagCommand\r\n\r\n* Set wrap text for tag labels\r\n\r\n* Add PPP draft\r\n\r\n* Limit tag name length to prevent tags from extending beyond the window size\r\n\r\n* Fix bug in FindModuleCommand\r\n\r\n* Add assertion + modify tests\r\n\r\n* Update model class diagram\r\n\r\n* Remove removeall command and change command words\r\n\r\n* Fix checkstyle\r\n\r\n* Update user guide portion in PPP\r\n\r\n* Fix bugs in renametagcommand and tag length\r\n\r\n* Update UG\r\n\r\n* Modify removepriority to take in only study plan index\r\n\r\n* Fix checkstyle\r\n",
             "insertions": 265,
             "deletions": 429
+          },
+          {
+            "hash": "abc1f8dfd62886367a3d3f9e5257466882895aa7",
+            "messageTitle": "Fix some bugs and update user guide portion in ppp (#317)",
+            "messageBody": "* Modify ViewAllTagsCommand and ViewDefaultTagsCommand\r\n\r\n* Update GUI to have different colours for default and user tags\r\n\r\n* Add some standard colours to the Color enum\r\n\r\n* Fix checkstyle issue\r\n\r\n* Update UG (remove newtag command and add removealltags command)\r\n\r\n* Add RemoveAllTagsCommand. Also added to parser already.\r\n\r\n* Implement sorting of modules according to module code in GUI within a semester\r\n\r\n* Add method to return uniquetaglist as list of strings\r\n\r\n* Fix codacy issues\r\n\r\n* Update tests\r\n\r\n* Add DeleteTagCommand test\r\n\r\n* Remove CreateTagCommand\r\n\r\n* Add TagModuleCommandTest\r\n\r\n* Fix checkstyle\r\n\r\n* Add RemoveTagFromModuleCommandTest\r\n\r\n* Add TagModuleCommandTest\r\n\r\n* Add RemoveTagFromAllCommandTest and RemoveAllTagsCommandTest\r\n\r\n* Add tests for other tagging commands\r\n\r\n* Fix checkstyle\r\n\r\n* Add ViewTaggedCommand + test\r\n\r\n* Fix checkstyle\r\n\r\n* Edit CommandResultTest to test for command results with views\r\n\r\n* Modify RenameTagCommand + add test\r\n\r\n* Implement FindModuleCommand and test\r\n\r\n* Fix tests + add TagStudyPlanCommand and test\r\n\r\n* Fix errors\r\n\r\n* Update tagging commands to check if provided module code is valid.\r\n\r\n* Add RemoveTagFromStudyPlanCommand + test\r\n\r\n* Update command words to differentiate between module tags and studyplan tags\r\n\r\n* Add command to sort study plans by priority tags.\r\n\r\n* Sort tags in TagListPanel and add descriptions for default tags\r\n\r\n* Modify tests\r\n\r\n* Update UserGuide\r\n\r\n* Fix checkstyle\r\n\r\n* Update help\r\n\r\n* Update UserGuide and fix problems in TagStudyPlanCommand and RemoveTagFromStudyPlanCommand\r\n\r\n* Modify some tests\r\n\r\n* Implementing sorting of modules in ModuleListPanel\r\n\r\n* Fix checkstyle\r\n\r\n* Fix completed tags bug\r\n\r\n* Change command words for study plan tagging\r\n\r\n* Fix bug in study plan tagging (invalid study plan index)\r\n\r\n* Update tests\r\n\r\n* Add support for undo-ing study plan tagging\r\n\r\n* Fix bug in ViewTaggedCommandParser\r\n\r\n* Fix bug in RenameTagCommand\r\n\r\n* Set wrap text for tag labels\r\n\r\n* Add PPP draft\r\n\r\n* Limit tag name length to prevent tags from extending beyond the window size\r\n\r\n* Fix bug in FindModuleCommand\r\n\r\n* Add assertion + modify tests\r\n\r\n* Update model class diagram\r\n\r\n* Remove removeall command and change command words\r\n\r\n* Fix checkstyle\r\n\r\n* Update user guide portion in PPP\r\n\r\n* Fix bugs in renametagcommand and tag length\r\n\r\n* Update UG\r\n\r\n* Modify removepriority to take in only study plan index\r\n\r\n* Fix checkstyle\r\n\r\n* Update commandw words in command usage message and fix bug in deletetagcommand\r\n\r\n* Resolve merge conflict\r\n",
+            "insertions": 273,
+            "deletions": 436
           }
         ]
       }
@@ -1222,8 +1229,8 @@
         ]
       },
       {
-        "insertions": 1621,
-        "deletions": 557,
+        "insertions": 1634,
+        "deletions": 578,
         "date": "2019-11-07",
         "commitResults": [
           {
@@ -1239,6 +1246,41 @@
             "messageBody": "This reverts commit 01f843c02f8b1a48545ca60075718e5e590135bb.",
             "insertions": 429,
             "deletions": 265
+          },
+          {
+            "hash": "9aa741f71ab220b492ae50acd6eb8e68de6f3d61",
+            "messageTitle": "Ascii (#315)",
+            "messageBody": "* Fix asciidoc\r\n\r\n* Fix ascii\r\n\r\n* Remove asciidoctor\r\n",
+            "insertions": 4,
+            "deletions": 5
+          },
+          {
+            "hash": "b3dfe51bf4facb64a7b755eb966a54b1b111d79d",
+            "messageTitle": "Fix DG (#316)",
+            "messageBody": "* Fix DG\r\n",
+            "insertions": 0,
+            "deletions": 7
+          },
+          {
+            "hash": "13b7f6fff2e773f63e74cc33031161a5c05d5dcf",
+            "messageTitle": "Update README.adoc",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "7ba09b1160d87fc1ef29b57c437a731156ee77a4",
+            "messageTitle": "Update README.adoc",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "1db960c9956939c49f38ee2c471c9872e5069243",
+            "messageTitle": "Fix my PPP (#318)",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 7
           }
         ]
       }
@@ -2013,6 +2055,20 @@
             "deletions": 1036
           }
         ]
+      },
+      {
+        "insertions": 126,
+        "deletions": 13,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "f1752a8e0f9e9716fc398b4ec622b3924ffa3b8c",
+            "messageTitle": "Add PPP; Update Developer Guide storage section (#314)",
+            "messageBody": "* resolve conflict\r\n\r\n* Add test for version tracking\r\n\r\n* fix checkstyle\r\n\r\n* fix checkstyle\r\n\r\n* Add more tests for version tracking\r\n\r\n* fix tests\r\n\r\n* Add JsonModulePlannerStorageTest\r\n\r\n* Reduce storage test file size\r\n\r\n* fix checkstyle\r\n\r\n* fix checkstyle and tests\r\n\r\n* fix commit bugs and added title validation\r\n\r\n* fix checkstyle\r\n\r\n* change tag pointers during activation\r\n\r\n* add storage support for tagging study plans\r\n\r\n* add json adapted commit test\r\n\r\n* fix checkstyle\r\n\r\n* fix codacy\r\n\r\n* add json adapted module tests\r\n\r\n* fix checkstyle\r\n\r\n* add more tests\r\n\r\n* fix checkstyle\r\n\r\n* fix checkstyle\r\n\r\n* Add more command tests\r\n\r\n* fix checkstyle\r\n\r\n* changed commit list to string\r\n\r\n* fix codacy\r\n\r\n* fix test bug\r\n\r\n* add viewplan command\r\n\r\n* add viewplan to parser\r\n\r\n* add commands for addsem and removesem\r\n\r\n* Add test for removesem command\r\n\r\n* add test for editTitleCommand\r\n\r\n* add more tests\r\n\r\n* change version number\r\n\r\n* Edit user guide\r\n\r\n* Change Ui.png to screenshot\r\n\r\n* gitignore\r\n\r\n* Update user guide\r\n\r\n* Change some command results to command exceptions\r\n\r\n* Change study plan index to study plan ID\r\n\r\n* Update UG\r\n\r\n* Modify user guide\r\n\r\n* Increase test coverage for storage commands\r\n\r\n* add more tests\r\n\r\n* add more tests\r\n\r\n* add more storage parser tests\r\n\r\n* more tests\r\n\r\n* Fix checkstyle\r\n\r\n* Remove old version of user guide\r\n\r\n* Add PPP. Update Developer Guide storage section\r\n",
+            "insertions": 126,
+            "deletions": 13
+          }
+        ]
       }
     ],
     "yaaanch": [
@@ -2419,6 +2475,20 @@
             "messageBody": "* Adds module codes to autocomplete\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds autocomplete to Dev Guide\r\n\r\n* Adds getActiveTags\r\n\r\n* Refines dev guide and Autocomplete implementation\r\n\r\n* Modifies help\r\n\r\n* Modifies help more\r\n\r\n* Adds specific help commands\r\n\r\n* Edits dev guide to include help\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds HelpCommandTest\r\n\r\n* Adds HelpCommandParserTest\r\n\r\n* Adds typical module planner.\r\n\r\n* Adds to help\r\n\r\n* Adds HelpCommandTest\r\n\r\n* Fixes Autocomplete bug, Changes minor ui\r\n\r\n* Fixes checkstyle\r\n\r\n* Quickfix autocomplete with tags\r\n\r\n* Edits User Guide\r\n\r\n* Updates Help and Autocomplete\r\n\r\n* Adds collapse and expand\r\n\r\n* Adds collapse, expand tests\r\n\r\n* Adds expand and collapse parser tests\r\n\r\n* Adds readability to help\r\n\r\n* Removes important from css\r\n\r\n* Adds expand and collapse to help\r\n\r\n* Adds collapseall expandall, Modifies Current sem implementation\r\n\r\n* Removes old current sem\r\n\r\n* Fixes codacy\r\n\r\n* Allows multiple mods for addmod\r\n\r\n* Adds some logging.\r\n\r\n* Reconfigures autocomplete\r\n\r\n* Adds documentation\r\n\r\n* Adds autocomplete testing\r\n\r\n* Adds Semester names to autocomplete\r\n\r\n* Edits user guide.\r\n\r\n* Modifies developer guide for autocomplete\r\n\r\n* Removes unused field\r\n\r\n* Changes UI in Dev Guide\r\n\r\n* Adds different GUI Modes.\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds tests, changes dark mode\r\n\r\n* Removes old dark theme\r\n\r\n* Modifies Dark Mode\r\n\r\n* Edits tag view\r\n\r\n* Rearranges User Guide\r\n\r\n* Quickfixes collapse and help\r\n\r\n* Refactors mode to theme\r\n\r\n* Fixes checkstyle\r\n",
             "insertions": 128,
             "deletions": 135
+          }
+        ]
+      },
+      {
+        "insertions": 122,
+        "deletions": 587,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "416d771449e30881d8dc51dfae6911068e71f078",
+            "messageTitle": "Adds PPP (#319)",
+            "messageBody": "* Adds module codes to autocomplete\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds autocomplete to Dev Guide\r\n\r\n* Adds getActiveTags\r\n\r\n* Refines dev guide and Autocomplete implementation\r\n\r\n* Modifies help\r\n\r\n* Modifies help more\r\n\r\n* Adds specific help commands\r\n\r\n* Edits dev guide to include help\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds HelpCommandTest\r\n\r\n* Adds HelpCommandParserTest\r\n\r\n* Adds typical module planner.\r\n\r\n* Adds to help\r\n\r\n* Adds HelpCommandTest\r\n\r\n* Fixes Autocomplete bug, Changes minor ui\r\n\r\n* Fixes checkstyle\r\n\r\n* Quickfix autocomplete with tags\r\n\r\n* Edits User Guide\r\n\r\n* Updates Help and Autocomplete\r\n\r\n* Adds collapse and expand\r\n\r\n* Adds collapse, expand tests\r\n\r\n* Adds expand and collapse parser tests\r\n\r\n* Adds readability to help\r\n\r\n* Removes important from css\r\n\r\n* Adds expand and collapse to help\r\n\r\n* Adds collapseall expandall, Modifies Current sem implementation\r\n\r\n* Removes old current sem\r\n\r\n* Fixes codacy\r\n\r\n* Allows multiple mods for addmod\r\n\r\n* Adds some logging.\r\n\r\n* Reconfigures autocomplete\r\n\r\n* Adds documentation\r\n\r\n* Adds autocomplete testing\r\n\r\n* Adds Semester names to autocomplete\r\n\r\n* Edits user guide.\r\n\r\n* Modifies developer guide for autocomplete\r\n\r\n* Removes unused field\r\n\r\n* Changes UI in Dev Guide\r\n\r\n* Adds different GUI Modes.\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds tests, changes dark mode\r\n\r\n* Removes old dark theme\r\n\r\n* Modifies Dark Mode\r\n\r\n* Edits tag view\r\n\r\n* Rearranges User Guide\r\n\r\n* Quickfixes collapse and help\r\n\r\n* Refactors mode to theme\r\n\r\n* Fixes checkstyle\r\n\r\n* First draft of PPP\r\n\r\n* Adds PPP\r\n\r\n* Edits PPP\r\n",
+            "insertions": 122,
+            "deletions": 587
           }
         ]
       }
@@ -2966,33 +3036,33 @@
     ]
   },
   "authorFinalContributionMap": {
-    "chowyiwai": 6764,
-    "andyylam": 7478,
-    "LiuZechu": 6912,
-    "yaaanch": 4207,
+    "chowyiwai": 7022,
+    "andyylam": 6526,
+    "LiuZechu": 7040,
+    "yaaanch": 4318,
     "halfwhole": 3917
   },
   "authorFileTypeContributionMap": {
     "chowyiwai": {
-      "docs": 298,
-      "tests": 3156,
-      "functional": 2990,
-      "other": 320
+      "docs": 342,
+      "tests": 3215,
+      "functional": 3052,
+      "other": 413
     },
     "andyylam": {
-      "docs": 360,
-      "tests": 2602,
-      "functional": 3024,
-      "other": 1492
+      "docs": 371,
+      "tests": 2404,
+      "functional": 2835,
+      "other": 916
     },
     "LiuZechu": {
-      "docs": 294,
+      "docs": 394,
       "tests": 2454,
       "functional": 4030,
-      "other": 134
+      "other": 162
     },
     "yaaanch": {
-      "docs": 423,
+      "docs": 534,
       "tests": 1293,
       "functional": 2325,
       "other": 166
@@ -3004,10 +3074,10 @@
     }
   },
   "authorContributionVariance": {
-    "chowyiwai": 647747.9,
-    "andyylam": 899565.75,
-    "LiuZechu": 170062.2,
-    "yaaanch": 164579.52,
+    "chowyiwai": 664259.8,
+    "andyylam": 901523.44,
+    "LiuZechu": 169417.64,
+    "yaaanch": 169756.33,
     "halfwhole": 126212.125
   },
   "authorDisplayNameMap": {

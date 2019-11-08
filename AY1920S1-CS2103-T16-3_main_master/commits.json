@@ -245,6 +245,20 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 535,
+        "deletions": 82,
+        "date": "2019-11-08",
+        "commitResults": [
+          {
+            "hash": "adda880fb35ad10091413a15b25d507fa46edcf2",
+            "messageTitle": "Add Test for Stage and Unstage commands (#234)",
+            "messageBody": "* Add Test for Stage and Unstage commands\r\n\r\nAdd Parser Test for Stage and Unstage Command\r\n\r\nAdd ExportCommandTest\r\n\r\nFix checkstyle issues\r\n\r\nAdd Load Command Test\r\n\r\nAdd TestFX\r\n\r\nSet up TestFX\r\n\r\nFix checkstyle issues\r\n\r\nConfigure travis.yml\r\n\r\nConfigure travis.yml\r\n\r\nConfigure travis.yml\r\n\r\nConfigure travis.yml\r\n\r\nConfigure travis.yml\r\n\r\nConfigure travis.yml\r\n\r\nConfigure travis.yml\r\n\r\nAdd ImportCommandTest\r\n\r\nAdd Tests\r\n\r\nConfigure travis\r\n\r\nConfigure travis.yml\r\n\r\nUpdate ppp\r\n\r\nUpdate build.gradle\r\n\r\nUpdate ppp\r\n\r\nSettle docs issues\r\n\r\nResolve docs issues\r\n\r\nFix ppp\r\n\r\n* Update ppp\r\n",
+            "insertions": 535,
+            "deletions": 82
+          }
+        ]
       }
     ],
     "moziliar": [
@@ -1373,8 +1387,8 @@
         ]
       },
       {
-        "insertions": 243,
-        "deletions": 23,
+        "insertions": 269,
+        "deletions": 49,
         "date": "2019-11-07",
         "commitResults": [
           {
@@ -1404,6 +1418,69 @@
             "messageBody": "",
             "insertions": 25,
             "deletions": 10
+          },
+          {
+            "hash": "c7c282495a6170cbc4670e9b67f6bcd493ad6a5d",
+            "messageTitle": "Cache javafx images",
+            "messageBody": "",
+            "insertions": 26,
+            "deletions": 26
+          }
+        ]
+      },
+      {
+        "insertions": 672,
+        "deletions": 226,
+        "date": "2019-11-08",
+        "commitResults": [
+          {
+            "hash": "09c5c263c7fde5f2904f65048de319bd7777d2c7",
+            "messageTitle": "Cache meme cards to improve performance.",
+            "messageBody": "Previously, a MemeCard/TemplateCard/ImportMeme card is created anew\nwhenever the GridCell is updated. This results in a lot of lagging and\nexplosive memory usage because MemeCard/TemplateCard/ImportMeme reads\nthe image from the disk everytime it is created.\n\nWith this commit, MemeCard/TemplateCard/ImportMeme are cached in their\nparents and no repeated disk IO is made. Memory usage now is about 500MB\nfor ~500 memes and does not increase when scrolling.\n\nThe respective GridViews can scroll smoothly now. Tested with 1000 memes\nand no significant lag is observed.\n",
+            "insertions": 98,
+            "deletions": 14
+          },
+          {
+            "hash": "948d58dfec1972d17a278bc453ce2565da930e86",
+            "messageTitle": "Enable background loading of images",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "99b2471c67691f4c3f28d40eb28cf353510f0bca",
+            "messageTitle": "Support moving text with arrow keys",
+            "messageBody": "",
+            "insertions": 365,
+            "deletions": 37
+          },
+          {
+            "hash": "8cecce0804f57674a8c470447199f584b4dce219",
+            "messageTitle": "Restrict key press listeners on the command box to their respective contexts",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 4
+          },
+          {
+            "hash": "476b8b133f8ddc118017acf2ce9e6c1a6643861d",
+            "messageTitle": "SUpport faster text moving while holding down shift key",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 2
+          },
+          {
+            "hash": "5a08b36e4a42462052f460c534cc1d3b7119735f",
+            "messageTitle": "Rename imagePath package to path and move DirectoryPath inside",
+            "messageBody": "",
+            "insertions": 181,
+            "deletions": 164
+          },
+          {
+            "hash": "1287db312d6672c08957238ac7ef5271186712e8",
+            "messageTitle": "Allow slower move of text using arrow keys by holding Alt",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 2
           }
         ]
       }
@@ -1636,50 +1713,50 @@
     ]
   },
   "authorFinalContributionMap": {
-    "LivingOnEdge": 2714,
-    "moziliar": 2595,
-    "jonchan51": 4209,
-    "gary-lgy": 5270,
-    "cutieprobe": 3678
+    "LivingOnEdge": 3192,
+    "moziliar": 2550,
+    "jonchan51": 4195,
+    "gary-lgy": 5874,
+    "cutieprobe": 3664
   },
   "authorFileTypeContributionMap": {
     "LivingOnEdge": {
-      "docs": 368,
-      "tests": 371,
-      "functional": 1813,
-      "other": 162
+      "docs": 337,
+      "tests": 862,
+      "functional": 1826,
+      "other": 167
     },
     "moziliar": {
       "docs": 185,
       "tests": 460,
-      "functional": 1855,
+      "functional": 1810,
       "other": 95
     },
     "jonchan51": {
       "docs": 146,
       "tests": 1951,
-      "functional": 1935,
+      "functional": 1921,
       "other": 177
     },
     "gary-lgy": {
-      "docs": 526,
-      "tests": 457,
-      "functional": 4000,
+      "docs": 553,
+      "tests": 494,
+      "functional": 4540,
       "other": 287
     },
     "cutieprobe": {
-      "docs": 140,
-      "tests": 153,
-      "functional": 3232,
+      "docs": 137,
+      "tests": 150,
+      "functional": 3224,
       "other": 153
     }
   },
   "authorContributionVariance": {
-    "LivingOnEdge": 46209.44,
-    "moziliar": 59936.38,
-    "jonchan51": 234742.25,
-    "gary-lgy": 66818.375,
-    "cutieprobe": 123211.48
+    "LivingOnEdge": 50180.49,
+    "moziliar": 59108.004,
+    "jonchan51": 231491.33,
+    "gary-lgy": 75447.23,
+    "cutieprobe": 121490.89
   },
   "authorDisplayNameMap": {
     "LivingOnEdge": "CS2103-T16-3 BILL  ...  CHEE",

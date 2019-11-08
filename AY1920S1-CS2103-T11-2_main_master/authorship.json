@@ -2175,6 +2175,352 @@
     }
   },
   {
+    "path": "docs/DevOps.adoc",
+    "fileType": "docs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "\u003d Module Appeal Management System (MAMS) - Dev Ops"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":site-section: DeveloperGuide"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":toc:"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":toc-title:"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":toc-placement: preamble"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":sectnums:"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":imagesDir: images"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":stylesDir: stylesheets"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":xrefstyle: full"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ifdef::env-github[]"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":tip-caption: :bulb:"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":note-caption: :information_source:"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":warning-caption: :warning:"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "endif::[]"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": ":repoURL: https://github.com/AY1920S1-CS2103-T11-2/main"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Build Automation"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "See \u003c\u003cUsingGradle#, UsingGradle.adoc\u003e\u003e to learn how to use Gradle for build automation."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Continuous Integration"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "We use https://travis-ci.org/[Travis CI] and https://www.appveyor.com/[AppVeyor] to perform _Continuous Integration_ on our projects. See \u003c\u003cUsingTravis#, UsingTravis.adoc\u003e\u003e and \u003c\u003cUsingAppVeyor#, UsingAppVeyor.adoc\u003e\u003e for more details."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Coverage Reporting"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "We use https://coveralls.io/[Coveralls] to track the code coverage of our projects. See \u003c\u003cUsingCoveralls#, UsingCoveralls.adoc\u003e\u003e for more details."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Documentation Previews"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "When a pull request has changes to asciidoc files, you can use https://www.netlify.com/[Netlify] to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See \u003c\u003cUsingNetlify#, UsingNetlify.adoc\u003e\u003e for more details."
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Making a Release"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Here are the steps to create a new release."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": ".  Update the version number in link:https://github.com/AY1920S1-CS2103-T11-2/main/blob/master/src/main/java/mams/MainApp.java[`MainApp.java`]."
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  Generate a JAR file \u003c\u003cUsingGradle#creating-the-jar-file, using Gradle\u003e\u003e."
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  Tag the repo with the version number. e.g. `v0.1`"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  https://help.github.com/articles/creating-releases/[Create a new release using GitHub] and upload the JAR file you created."
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Managing Dependencies"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "A project often depends on third-party libraries. For example, Address Book depends on the https://github.com/FasterXML/jackson[Jackson library] for JSON parsing. Managing these _dependencies_ can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[loweralpha]"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Include those libraries in the repo (this bloats the repo size)"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Require developers to download those libraries manually (this creates extra work for developers)"
+      }
+    ],
+    "authorContributionMap": {
+      "AaronLuk": 3,
+      "-": 45
+    }
+  },
+  {
     "path": "docs/DeveloperGuide.adoc",
     "fileType": "docs",
     "lines": [
@@ -3147,9 +3493,9 @@
       {
         "lineNumber": 139,
         "author": {
-          "gitId": "-"
+          "gitId": "AaronLuk"
         },
-        "content": "*API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]"
+        "content": "*API* : link:https://github.com/AY1920S1-CS2103-T11-2/main/blob/master/src/main/java/mams/storage/Storage.java[`Storage.java`]"
       },
       {
         "lineNumber": 140,
@@ -3182,9 +3528,9 @@
       {
         "lineNumber": 144,
         "author": {
-          "gitId": "-"
+          "gitId": "AaronLuk"
         },
-        "content": "* can save the Address Book data in json format and read it back."
+        "content": "* can save the Mams data in json format and read it back."
       },
       {
         "lineNumber": 145,
@@ -10903,11 +11249,882 @@
     ],
     "authorContributionMap": {
       "SendorasLeft": 522,
-      "AaronLuk": 131,
+      "AaronLuk": 133,
       "chensu2436": 76,
-      "-": 348,
+      "-": 346,
       "cheongliyuan": 122,
       "MistyRainforest": 47
+    }
+  },
+  {
+    "path": "docs/Documentation.adoc",
+    "fileType": "docs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "\u003d Module Appeal Management System (MAMS) - Documentation"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":site-section: DeveloperGuide"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":toc:"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":toc-title:"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":toc-placement: preamble"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":sectnums:"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":imagesDir: images"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":stylesDir: stylesheets"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":xrefstyle: full"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ifdef::env-github[]"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":tip-caption: :bulb:"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":note-caption: :information_source:"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ":warning-caption: :warning:"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "endif::[]"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": ":repoURL: https://github.com/AY1920S1-CS2103-T11-2/main"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Introduction"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "We use asciidoc for writing documentation."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[NOTE]"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "We chose asciidoc over Markdown because asciidoc, although a bit more complex than Markdown, provides more flexibility in formatting."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Editing Documentation"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "See \u003c\u003cUsingGradle#rendering-asciidoc-files, UsingGradle.adoc\u003e\u003e to learn how to render `.adoc` files locally to preview the end result of your edits."
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your `.adoc` files in real-time."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Editing Diagrams"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "See \u003c\u003cUsingPlantUml#, UsingPlantUml.adoc\u003e\u003e to find out how to create and update the UML diagrams in the developer guide."
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Publishing Documentation"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "See \u003c\u003cUsingTravis#deploying-github-pages, UsingTravis.adoc\u003e\u003e to learn how to deploy GitHub Pages using Travis."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Converting Documentation to PDF format"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "We use https://www.google.com/chrome/browser/desktop/[Google Chrome] for converting documentation to PDF format, as Chrome\u0027s PDF engine preserves hyperlinks used in webpages."
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Here are the steps to convert the project documentation files to PDF format."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  Follow the instructions in \u003c\u003cUsingGradle#rendering-asciidoc-files, UsingGradle.adoc\u003e\u003e to convert the AsciiDoc files in the `docs/` directory to HTML format."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  Go to your generated HTML files in the `build/docs` folder, right click on them and select `Open with` -\u003e `Google Chrome`."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  Within Chrome, click on the `Print` option in Chrome\u0027s menu."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".  Set the destination to `Save as PDF`, then click `Save` to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below."
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".Saving documentation as PDF files in Chrome"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "image::chrome_save_as_pdf.png[width\u003d\"300\"]"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[[Docs-SiteWideDocSettings]]"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Site-wide Documentation Settings"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "The link:{repoURL}/build.gradle[`build.gradle`] file specifies some project-specific https://asciidoctor.org/docs/user-manual/#attributes[asciidoc attributes] which affects how all documentation files within this project are rendered."
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[TIP]"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Attributes left unset in the `build.gradle` file will use their *default value*, if any."
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[cols\u003d\"1,2a,1\", options\u003d\"header\"]"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".List of site-wide attributes"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Attribute name |Description |Default value"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|`site-name`"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|The name of the website."
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "If set, the name will be displayed near the top of the page."
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|_not set_"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|`site-githuburl`"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|URL to the site\u0027s repository on https://github.com[GitHub]."
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Setting this will add a \"View on GitHub\" link in the navigation bar."
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|_not set_"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|`site-seedu`"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Define this attribute if the project is an official SE-EDU project."
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "This will render the SE-EDU navigation bar at the top of the page, and add some SE-EDU-specific navigation items."
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|_not set_"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[[Docs-PerFileDocSettings]]"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Per-file Documentation Settings"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Each `.adoc` file may also specify some file-specific https://asciidoctor.org/docs/user-manual/#attributes[asciidoc attributes] which affects how the file is rendered."
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Asciidoctor\u0027s https://asciidoctor.org/docs/user-manual/#builtin-attributes[built-in attributes] may be specified and used as well."
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[TIP]"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Attributes left unset in `.adoc` files will use their *default value*, if any."
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[cols\u003d\"1,2a,1\", options\u003d\"header\"]"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".List of per-file attributes, excluding Asciidoctor\u0027s built-in attributes"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Attribute name |Description |Default value"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|`site-section`"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Site section that the document belongs to."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "This will cause the associated item in the navigation bar to be highlighted."
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "One of: `UserGuide`, `DeveloperGuide`, ``LearningOutcomes``{asterisk}, `AboutUs`, `ContactUs`"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "_{asterisk} Official SE-EDU projects only_"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|_not set_"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|`no-site-header`"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Set this attribute to remove the site navigation bar."
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|_not set_"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Site Template"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "The files in link:{repoURL}/docs/stylesheets[`docs/stylesheets`] are the https://developer.mozilla.org/en-US/docs/Web/CSS[CSS stylesheets] of the site."
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "You can modify them to change some properties of the site\u0027s design."
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "The files in link:{repoURL}/docs/templates[`docs/templates`] controls the rendering of `.adoc` files into HTML5."
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "These template files are written in a mixture of https://www.ruby-lang.org[Ruby] and http://slim-lang.com[Slim]."
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[WARNING]"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Modifying the template files in link:{repoURL}/docs/templates[`docs/templates`] requires some knowledge and experience with Ruby and Asciidoctor\u0027s API."
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "You should only modify them if you need greater control over the site\u0027s layout than what stylesheets can provide."
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "The SE-EDU team does not provide support for modified template files."
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d\u003d"
+      }
+    ],
+    "authorContributionMap": {
+      "AaronLuk": 2,
+      "-": 121
     }
   },
   {
@@ -13037,9 +14254,9 @@
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "-"
+          "gitId": "AaronLuk"
         },
-        "content": "\u003d AddressBook Level 3 - Testing"
+        "content": "\u003d Module Appeal Management System (MAMS) - Testing"
       },
       {
         "lineNumber": 2,
@@ -13135,9 +14352,9 @@
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "-"
+          "gitId": "AaronLuk"
         },
-        "content": ":repoURL: https://github.com/se-edu/addressbook-level3/tree/master"
+        "content": ":repoURL: https://github.com/AY1920S1-CS2103-T11-2/main"
       },
       {
         "lineNumber": 16,
@@ -13401,7 +14618,8 @@
     ],
     "authorContributionMap": {
       "SendorasLeft": 3,
-      "-": 49
+      "AaronLuk": 2,
+      "-": 47
     }
   },
   {
@@ -16262,7 +17480,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "Format: `approve [a/INDEX] [APPEAL_REMARK]`"
+        "content": "Format: `approve a/INDEX [r/APPEAL_REMARK]`"
       },
       {
         "lineNumber": 409,
@@ -16493,7 +17711,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "Format: `reject [a/INDEX] [APPEAL_REMARK]`"
+        "content": "Format: `reject a/INDEX [r/APPEAL_REMARK]`"
       },
       {
         "lineNumber": 442,
@@ -16591,7 +17809,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "\u003d\u003d\u003d\u003d Reject appreals in bulk"
+        "content": "\u003d\u003d\u003d\u003d Reject appeals in bulk"
       },
       {
         "lineNumber": 456,
@@ -17221,7 +18439,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "** `approve [a/INDEX] [r/REMARK]`"
+        "content": "** `approve a/INDEX [r/REMARK]`"
       },
       {
         "lineNumber": 546,
@@ -17277,7 +18495,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "** `reject [a/INDEX] [r/REMARK]`"
+        "content": "** `reject a/INDEX [r/REMARK]`"
       },
       {
         "lineNumber": 554,
@@ -49408,7 +50626,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            + \"Parameters: KEYWORD [\" + PREFIX_APPEAL + \"INDEX] [\""
+        "content": "            + \"Parameters: KEYWORD \" + PREFIX_APPEAL + \"INDEX [\""
       },
       {
         "lineNumber": 17,
@@ -49443,7 +50661,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            + \"Parameters: KEYWORD [\" + PREFIX_MASS_RESOLVE + \"] [APPEALID] [APPEALID] ...\\n\""
+        "content": "            + \"Parameters: KEYWORD \" + PREFIX_MASS_RESOLVE + \"[APPEALID] [APPEALID] ...\\n\""
       },
       {
         "lineNumber": 22,
@@ -49457,11 +50675,25 @@
         "author": {
           "gitId": "AaronLuk"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "    public static final String MESSAGE_APPROVE_FAIL \u003d \"Not able to approve appeal %s.\";"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "AaronLuk"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "AaronLuk": 23
+      "AaronLuk": 25
     }
   },
   {
@@ -50271,581 +51503,581 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    throw new CommandException(Messages.MESSAGE_INVALID_STUDENT_MATRIC_ID);"
+        "content": "                    throw new CommandException(Messages.MESSAGE_INVALID_STUDENT_MATRIC_ID"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                            + \" \""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                studentToEdit \u003d studentToCheckList.get(0);"
+        "content": "                            + String.format(MESSAGE_APPROVE_FAIL, appealToApprove.getAppealId()));"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //check if student has the module (ready for deletion)."
+        "content": "                }"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e studentModules \u003d studentToEdit.getCurrentModules();"
+        "content": "                studentToEdit \u003d studentToCheckList.get(0);"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                boolean hasModule \u003d false;"
+        "content": "                //check if student has the module (ready for deletion)."
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                for (Tag tag : studentModules) {"
+        "content": "                Set\u003cTag\u003e studentModules \u003d studentToEdit.getCurrentModules();"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    if (tag.getTagName().equalsIgnoreCase(moduleCode)) {"
+        "content": "                boolean hasModule \u003d false;"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        hasModule \u003d true;"
+        "content": "                for (Tag tag : studentModules) {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    }"
+        "content": "                    if (tag.getTagName().equalsIgnoreCase(moduleCode)) {"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                        hasModule \u003d true;"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                if (!hasModule) {"
+        "content": "                    }"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    throw new CommandException(MESSAGE_MISSING_MODULE);"
+        "content": "                }"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                if (!hasModule) {"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                    throw new CommandException(MESSAGE_MISSING_MODULE"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //check if module exist"
+        "content": "                            + \" \""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                List\u003cModule\u003e moduleToCheckList \u003d fullModuleList.stream()"
+        "content": "                            + String.format(MESSAGE_APPROVE_FAIL, appealToApprove.getAppealId()));"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        .filter(m -\u003e m.getModuleCode().equalsIgnoreCase(moduleCode)).collect(Collectors.toList());"
+        "content": "                }"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                if (moduleToCheckList.isEmpty()) {"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    throw new CommandException(MESSAGE_INVALID_MODULE);"
+        "content": "                //check if module exist"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                List\u003cModule\u003e moduleToCheckList \u003d fullModuleList.stream()"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                moduleToEdit \u003d moduleToCheckList.get(0);"
+        "content": "                        .filter(m -\u003e m.getModuleCode().equalsIgnoreCase(moduleCode)).collect(Collectors.toList());"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                if (moduleToCheckList.isEmpty()) {"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                    throw new CommandException(MESSAGE_INVALID_MODULE"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e ret \u003d new HashSet\u003c\u003e();"
+        "content": "                            + \" \""
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e studentAllTags \u003d studentToEdit.getTags();"
+        "content": "                            + String.format(MESSAGE_APPROVE_FAIL, appealToApprove.getAppealId()));"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                for (Tag tag : studentAllTags) {"
+        "content": "                }"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    if (!tag.getTagName().equalsIgnoreCase(moduleCode)) {"
+        "content": "                moduleToEdit \u003d moduleToCheckList.get(0);"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        ret.add(tag);"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    }"
+        "content": ""
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                Set\u003cTag\u003e ret \u003d new HashSet\u003c\u003e();"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                Set\u003cTag\u003e studentAllTags \u003d studentToEdit.getTags();"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //create a tag list without the student for the new module"
+        "content": "                for (Tag tag : studentAllTags) {"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e ret2 \u003d new HashSet\u003c\u003e();"
+        "content": "                    if (!tag.getTagName().equalsIgnoreCase(moduleCode)) {"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e moduleAllStudents \u003d moduleToEdit.getStudents();"
+        "content": "                        ret.add(tag);"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                for (Tag tag : moduleAllStudents) {"
+        "content": "                    }"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    if (!tag.getTagName().equalsIgnoreCase(studentToEdit.getMatricId().toString())) {"
+        "content": "                }"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        ret2.add(tag);"
+        "content": ""
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    }"
+        "content": "                //create a tag list without the student for the new module"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                Set\u003cTag\u003e ret2 \u003d new HashSet\u003c\u003e();"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                Set\u003cTag\u003e moduleAllStudents \u003d moduleToEdit.getStudents();"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                editedStudent \u003d new Student(studentToEdit.getName(),"
+        "content": "                for (Tag tag : moduleAllStudents) {"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        studentToEdit.getCredits(),"
+        "content": "                    if (!tag.getTagName().equalsIgnoreCase(studentToEdit.getMatricId().toString())) {"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        studentToEdit.getPrevMods(),"
+        "content": "                        ret2.add(tag);"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        studentToEdit.getMatricId(),"
+        "content": "                    }"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        ret);"
+        "content": "                }"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.setStudent(studentToEdit, editedStudent);"
+        "content": ""
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.updateFilteredAppealList(Model.PREDICATE_SHOW_ALL_APPEALS);"
+        "content": "                editedStudent \u003d new Student(studentToEdit.getName(),"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.updateFilteredStudentList(Model.PREDICATE_SHOW_ALL_STUDENTS);"
+        "content": "                        studentToEdit.getCredits(),"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                        studentToEdit.getPrevMods(),"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                editedModule \u003d new Module(moduleToEdit.getModuleCode(),"
+        "content": "                        studentToEdit.getMatricId(),"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getModuleName(),"
+        "content": "                        ret);"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getModuleDescription(),"
+        "content": "                model.setStudent(studentToEdit, editedStudent);"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getLecturerName(),"
+        "content": "                model.updateFilteredAppealList(Model.PREDICATE_SHOW_ALL_APPEALS);"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getTimeSlot(),"
+        "content": "                model.updateFilteredStudentList(Model.PREDICATE_SHOW_ALL_STUDENTS);"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getQuota(),"
+        "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        ret2);"
+        "content": "                editedModule \u003d new Module(moduleToEdit.getModuleCode(),"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                        moduleToEdit.getModuleName(),"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.setModule(moduleToEdit, editedModule);"
+        "content": "                        moduleToEdit.getModuleDescription(),"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.updateFilteredStudentList(Model.PREDICATE_SHOW_ALL_STUDENTS);"
+        "content": "                        moduleToEdit.getLecturerName(),"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);"
+        "content": "                        moduleToEdit.getTimeSlot(),"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                feedback \u003d MESSAGE_STUDENT_REMOVE_MOD;"
+        "content": "                        moduleToEdit.getQuota(),"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                target \u003d studentToEditId;"
+        "content": "                        ret2);"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                type +\u003d \"drop module\";"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                change +\u003d moduleCode;"
+        "content": "                model.setModule(moduleToEdit, editedModule);"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                model.updateFilteredStudentList(Model.PREDICATE_SHOW_ALL_STUDENTS);"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            } else {"
+        "content": "                model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                ArrayList\u003cClashCase\u003e clashCases \u003d new ArrayList\u003cClashCase\u003e();"
+        "content": "                feedback \u003d MESSAGE_STUDENT_REMOVE_MOD;"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                moduleCode \u003d appealToApprove.getModuleToAdd();"
+        "content": "                target \u003d studentToEditId;"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                type +\u003d \"drop module\";"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                change +\u003d moduleCode;"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                List\u003cStudent\u003e studentToCheckList \u003d fullStudentList.stream()"
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        .filter(p -\u003e p.getMatricId().toString().equals(studentToEditId)).collect(Collectors.toList());"
+        "content": "            } else {"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                if (studentToCheckList.isEmpty()) {"
+        "content": "                ArrayList\u003cClashCase\u003e clashCases \u003d new ArrayList\u003cClashCase\u003e();"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    throw new CommandException(Messages.MESSAGE_INVALID_STUDENT_MATRIC_ID);"
+        "content": "                moduleCode \u003d appealToApprove.getModuleToAdd();"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                studentToEdit \u003d studentToCheckList.get(0);"
+        "content": ""
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                List\u003cStudent\u003e studentToCheckList \u003d fullStudentList.stream()"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //check if module exist"
+        "content": "                        .filter(p -\u003e p.getMatricId().toString().equals(studentToEditId)).collect(Collectors.toList());"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                List\u003cModule\u003e moduleToCheckList \u003d fullModuleList.stream()"
+        "content": "                if (studentToCheckList.isEmpty()) {"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        .filter(m -\u003e m.getModuleCode().equalsIgnoreCase(moduleCode)).collect(Collectors.toList());"
+        "content": "                    throw new CommandException(Messages.MESSAGE_INVALID_STUDENT_MATRIC_ID"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                if (moduleToCheckList.isEmpty()) {"
+        "content": "                            + \" \""
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    throw new CommandException(MESSAGE_INVALID_MODULE);"
+        "content": "                            + String.format(MESSAGE_APPROVE_FAIL, appealToApprove.getAppealId()));"
       },
       {
         "lineNumber": 198,
@@ -50859,7 +52091,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                moduleToEdit \u003d moduleToCheckList.get(0);"
+        "content": "                studentToEdit \u003d studentToCheckList.get(0);"
       },
       {
         "lineNumber": 200,
@@ -50873,49 +52105,49 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                //check if module exist"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //check if student already has module."
+        "content": "                List\u003cModule\u003e moduleToCheckList \u003d fullModuleList.stream()"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e studentModules \u003d studentToEdit.getCurrentModules();"
+        "content": "                        .filter(m -\u003e m.getModuleCode().equalsIgnoreCase(moduleCode)).collect(Collectors.toList());"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                for (Tag tag : studentModules) {"
+        "content": "                if (moduleToCheckList.isEmpty()) {"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    if (tag.getTagName().equalsIgnoreCase(moduleCode)) {"
+        "content": "                    throw new CommandException(MESSAGE_INVALID_MODULE"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        throw new CommandException(MESSAGE_DUPLICATE_MODULE);"
+        "content": "                            + \" \""
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    }"
+        "content": "                            + String.format(MESSAGE_APPROVE_FAIL, appealToApprove.getAppealId()));"
       },
       {
         "lineNumber": 208,
@@ -50929,7 +52161,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                moduleToEdit \u003d moduleToCheckList.get(0);"
       },
       {
         "lineNumber": 210,
@@ -50943,196 +52175,196 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //Get all the modules student has and add them into an arraylist of modules for checking"
+        "content": ""
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                ArrayList\u003cModule\u003e currentModules \u003d new ArrayList\u003c\u003e();"
+        "content": "                //check if student already has module."
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                for (Tag currentModule : studentModules) {"
+        "content": "                Set\u003cTag\u003e studentModules \u003d studentToEdit.getCurrentModules();"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    String modCode \u003d currentModule.getTagName();"
+        "content": "                for (Tag tag : studentModules) {"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    List\u003cModule\u003e filteredModulesList \u003d model.getFullModuleList()"
+        "content": "                    if (tag.getTagName().equalsIgnoreCase(moduleCode)) {"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                            .stream()"
+        "content": "                        throw new CommandException(MESSAGE_DUPLICATE_MODULE);"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                            .filter(m -\u003e m.getModuleCode().equalsIgnoreCase(modCode))"
+        "content": "                    }"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                            .collect(Collectors.toList());"
+        "content": "                }"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    Module filteredModule \u003d filteredModulesList.get(0);"
+        "content": ""
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    currentModules.add(filteredModule);"
+        "content": ""
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                //Get all the modules student has and add them into an arraylist of modules for checking"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                ArrayList\u003cModule\u003e currentModules \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //Checks if current modules clashes with requested module"
+        "content": "                for (Tag currentModule : studentModules) {"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                for (Module currentModule : currentModules) {"
+        "content": "                    String modCode \u003d currentModule.getTagName();"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    if (getClashCase(currentModule, moduleToEdit).isPresent()) {"
+        "content": "                    List\u003cModule\u003e filteredModulesList \u003d model.getFullModuleList()"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        clashCases.add(getClashCase(currentModule, moduleToEdit).get());"
+        "content": "                            .stream()"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    }"
+        "content": "                            .filter(m -\u003e m.getModuleCode().equalsIgnoreCase(modCode))"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                            .collect(Collectors.toList());"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                    Module filteredModule \u003d filteredModulesList.get(0);"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //If there exists clashes notify admin via feedback message"
+        "content": "                    currentModules.add(filteredModule);"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                if (clashCases.size() !\u003d 0) {"
+        "content": "                }"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    return new CommandResult(MESSAGE_CLASH_IN_STUDENT"
+        "content": ""
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                            + studentToEditId"
+        "content": "                //Checks if current modules clashes with requested module"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                            + \":\\n\""
+        "content": "                for (Module currentModule : currentModules) {"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                            + getClashDetails(clashCases)"
+        "content": "                    if (getClashCase(currentModule, moduleToEdit).isPresent()) {"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                            + \"Unable to approve this appeal\");"
+        "content": "                        clashCases.add(getClashCase(currentModule, moduleToEdit).get());"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                    }"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 239,
@@ -51146,56 +52378,56 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //add module to student."
+        "content": "                //If there exists clashes notify admin via feedback message"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e ret \u003d new HashSet\u003c\u003e();"
+        "content": "                if (clashCases.size() !\u003d 0) {"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e studentAllTags \u003d studentToEdit.getTags();"
+        "content": "                    return new CommandResult(MESSAGE_CLASH_IN_STUDENT"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                for (Tag tag : studentAllTags) {"
+        "content": "                            + studentToEditId"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    ret.add(tag);"
+        "content": "                            + \":\\n\""
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": "                            + getClashDetails(clashCases)"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                ret.add(new Tag(moduleCode));"
+        "content": "                            + \"Unable to approve this appeal\");"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 248,
@@ -51209,1046 +52441,1116 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //add student to module field"
+        "content": ""
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e moduleAllStudents \u003d moduleToEdit.getStudents();"
+        "content": "                //add module to student."
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                Set\u003cTag\u003e ret2 \u003d new HashSet\u003c\u003e(moduleAllStudents);"
+        "content": "                Set\u003cTag\u003e ret \u003d new HashSet\u003c\u003e();"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                ret2.add(new Tag(studentToEdit.getMatricId().toString()));"
+        "content": "                Set\u003cTag\u003e studentAllTags \u003d studentToEdit.getTags();"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                for (Tag tag : studentAllTags) {"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                //replace old student and old module objects with edited modules."
+        "content": "                    ret.add(tag);"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                editedStudent \u003d new Student(studentToEdit.getName(),"
+        "content": "                }"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        studentToEdit.getCredits(),"
+        "content": "                ret.add(new Tag(moduleCode));"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        studentToEdit.getPrevMods(),"
+        "content": ""
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        studentToEdit.getMatricId(),"
+        "content": ""
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        ret);"
+        "content": "                //add student to module field"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                Set\u003cTag\u003e moduleAllStudents \u003d moduleToEdit.getStudents();"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                editedModule \u003d new Module(moduleToEdit.getModuleCode(),"
+        "content": "                Set\u003cTag\u003e ret2 \u003d new HashSet\u003c\u003e(moduleAllStudents);"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getModuleName(),"
+        "content": "                ret2.add(new Tag(studentToEdit.getMatricId().toString()));"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getModuleDescription(),"
+        "content": ""
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getLecturerName(),"
+        "content": "                //replace old student and old module objects with edited modules."
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getTimeSlot(),"
+        "content": "                editedStudent \u003d new Student(studentToEdit.getName(),"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        moduleToEdit.getQuota(),"
+        "content": "                        studentToEdit.getCredits(),"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                        ret2);"
+        "content": "                        studentToEdit.getPrevMods(),"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                        studentToEdit.getMatricId(),"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.setStudent(studentToEdit, editedStudent);"
+        "content": "                        ret);"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.setModule(moduleToEdit, editedModule);"
+        "content": ""
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.updateFilteredStudentList(Model.PREDICATE_SHOW_ALL_STUDENTS);"
+        "content": "                editedModule \u003d new Module(moduleToEdit.getModuleCode(),"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);"
+        "content": "                        moduleToEdit.getModuleName(),"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                        moduleToEdit.getModuleDescription(),"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                feedback \u003d MESSAGE_STUDENT_ADD_MOD;"
+        "content": "                        moduleToEdit.getLecturerName(),"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                target \u003d studentToEditId;"
+        "content": "                        moduleToEdit.getTimeSlot(),"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                type +\u003d \"add module\";"
+        "content": "                        moduleToEdit.getQuota(),"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                change +\u003d moduleCode;"
+        "content": "                        ret2);"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                model.setStudent(studentToEdit, editedStudent);"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                model.setModule(moduleToEdit, editedModule);"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            approvedAppeal \u003d new Appeal(appealToApprove.getAppealId(),"
+        "content": "                model.updateFilteredStudentList(Model.PREDICATE_SHOW_ALL_STUDENTS);"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getAppealType(),"
+        "content": "                model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getStudentId(),"
+        "content": ""
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getAcademicYear(),"
+        "content": "                feedback \u003d MESSAGE_STUDENT_ADD_MOD;"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getStudentWorkload(),"
+        "content": "                target \u003d studentToEditId;"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getAppealDescription(),"
+        "content": "                type +\u003d \"add module\";"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getPreviousModule(),"
+        "content": "                change +\u003d moduleCode;"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getNewModule(),"
+        "content": "            }"
       },
       {
         "lineNumber": 289,
         "author": {
-          "gitId": "SendorasLeft"
+          "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getModuleToAdd(),"
+        "content": ""
       },
       {
         "lineNumber": 290,
         "author": {
-          "gitId": "SendorasLeft"
+          "gitId": "AaronLuk"
         },
-        "content": "                    appealToApprove.getModuleToDrop(),"
+        "content": ""
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    true,"
+        "content": "            approvedAppeal \u003d new Appeal(appealToApprove.getAppealId(),"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    \"APPROVED\","
+        "content": "                    appealToApprove.getAppealType(),"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    reason);"
+        "content": "                    appealToApprove.getStudentId(),"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            model.setAppeal(appealToApprove, approvedAppeal);"
+        "content": "                    appealToApprove.getAcademicYear(),"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            model.updateFilteredAppealList(Model.PREDICATE_SHOW_ALL_APPEALS);"
+        "content": "                    appealToApprove.getStudentWorkload(),"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                    appealToApprove.getAppealDescription(),"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            if (type.equalsIgnoreCase(\"increase workload\")) {"
+        "content": "                    appealToApprove.getPreviousModule(),"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                return new CommandResult(generateSuccessMessageWorkload(appealToApprove, feedback, workLoad, target));"
+        "content": "                    appealToApprove.getNewModule(),"
       },
       {
         "lineNumber": 299,
         "author": {
-          "gitId": "AaronLuk"
+          "gitId": "SendorasLeft"
         },
-        "content": "            } else {"
+        "content": "                    appealToApprove.getModuleToAdd(),"
       },
       {
         "lineNumber": 300,
         "author": {
-          "gitId": "AaronLuk"
+          "gitId": "SendorasLeft"
         },
-        "content": "                return new CommandResult(generateSuccessMessageModule(approvedAppeal, feedback, target, change));"
+        "content": "                    appealToApprove.getModuleToDrop(),"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            }"
+        "content": "                    true,"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        } else {"
+        "content": "                    \"APPROVED\","
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            return new CommandResult(MESSAGE_APPEAL_ALREADY_APPROVED);"
+        "content": "                    reason);"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        }"
+        "content": "            model.setAppeal(appealToApprove, approvedAppeal);"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "            model.updateFilteredAppealList(Model.PREDICATE_SHOW_ALL_APPEALS);"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "            if (type.equalsIgnoreCase(\"increase workload\")) {"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    /**"
+        "content": "                return new CommandResult(generateSuccessMessageWorkload(appealToApprove, feedback, workLoad, target));"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * Formats feedback message for resolving add and remove mod appeals"
+        "content": "            } else {"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @param appealToApprove"
+        "content": "                return new CommandResult(generateSuccessMessageModule(approvedAppeal, feedback, target, change));"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @param feedback"
+        "content": "            }"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @param target"
+        "content": "        } else {"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @param change"
+        "content": "            return new CommandResult(MESSAGE_APPEAL_ALREADY_APPROVED);"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @return"
+        "content": "        }"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    private String generateSuccessMessageModule(Appeal appealToApprove,"
+        "content": "    }"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                                                String feedback,"
+        "content": ""
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                                                String target,"
+        "content": "    /**"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                                                String change) {"
+        "content": "     * Formats feedback message for resolving add and remove mod appeals"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        return \"Approved \""
+        "content": "     * @param appealToApprove"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                + appealToApprove.getAppealId()"
+        "content": "     * @param feedback"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                + \"\\n\""
+        "content": "     * @param target"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                + String.format(feedback, change)"
+        "content": "     * @param change"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                + target;"
+        "content": "     * @return"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "    private String generateSuccessMessageModule(Appeal appealToApprove,"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    /**"
+        "content": "                                                String feedback,"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * Formats feedback message for resolving increase workload appeals"
+        "content": "                                                String target,"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @param appealToApprove"
+        "content": "                                                String change) {"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @param feedback"
+        "content": "        return \"Approved \""
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @param workLoad"
+        "content": "                + appealToApprove.getAppealId()"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @param target"
+        "content": "                + \"\\n\""
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     * @return"
+        "content": "                + String.format(feedback, change)"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "     */"
+        "content": "                + target;"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    private String generateSuccessMessageWorkload(Appeal appealToApprove,"
+        "content": "    }"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                                                  String feedback,"
+        "content": ""
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                                                  int workLoad,"
+        "content": "    /**"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                                                  String target) {"
+        "content": "     * Formats feedback message for resolving increase workload appeals"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        return \"Approved \""
+        "content": "     * @param appealToApprove"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                + appealToApprove.getAppealId()"
+        "content": "     * @param feedback"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                + \"\\n\""
+        "content": "     * @param workLoad"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                + String.format(feedback, target, workLoad);"
+        "content": "     * @param target"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    }"
+        "content": "     * @return"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    @Override"
+        "content": "    private String generateSuccessMessageWorkload(Appeal appealToApprove,"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "                                                  String feedback,"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        // short circuit if same object"
+        "content": "                                                  int workLoad,"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "                                                  String target) {"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            return true;"
+        "content": "        return \"Approved \""
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        }"
+        "content": "                + appealToApprove.getAppealId()"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "                + \"\\n\""
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        // instanceof handles nulls"
+        "content": "                + String.format(feedback, target, workLoad);"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        if (!(other instanceof ApproveCommand)) {"
+        "content": "    }"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            return false;"
+        "content": ""
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        // state check"
+        "content": "        // short circuit if same object"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        ApproveCommand e \u003d (ApproveCommand) other;"
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        return index.equals(e.index)"
+        "content": "            return true;"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                \u0026\u0026 reason.equals(e.reason);"
+        "content": "        }"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "        // instanceof handles nulls"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "        if (!(other instanceof ApproveCommand)) {"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    private Optional\u003cClashCase\u003e getClashCase(Module moduleA, Module moduleB) {"
+        "content": "            return false;"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        int[] timeTableA \u003d moduleA.getTimeSlotToIntArray();"
+        "content": "        }"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        int[] timeTableB \u003d moduleB.getTimeSlotToIntArray();"
+        "content": ""
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        ArrayList\u003cInteger\u003e slots \u003d new ArrayList\u003c\u003e();"
+        "content": "        // state check"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        for (int i : timeTableA) {"
+        "content": "        ApproveCommand e \u003d (ApproveCommand) other;"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            for (int j : timeTableB) {"
+        "content": "        return index.equals(e.index)"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                if (i \u003d\u003d j) {"
+        "content": "                \u0026\u0026 reason.equals(e.reason);"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                    slots.add(i);"
+        "content": "    }"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        }"
+        "content": "    private Optional\u003cClashCase\u003e getClashCase(Module moduleA, Module moduleB) {"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        if (!slots.isEmpty()) {"
+        "content": "        int[] timeTableA \u003d moduleA.getTimeSlotToIntArray();"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            ClashCase c \u003d new ClashCase();"
+        "content": "        int[] timeTableB \u003d moduleB.getTimeSlotToIntArray();"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            c.setModuleA(moduleA);"
+        "content": "        ArrayList\u003cInteger\u003e slots \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            c.setModuleB(moduleB);"
+        "content": "        for (int i : timeTableA) {"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            c.setClashingSlots(slots);"
+        "content": "            for (int j : timeTableB) {"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            return Optional.of(c);"
+        "content": "                if (i \u003d\u003d j) {"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        }"
+        "content": "                    slots.add(i);"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        return Optional.empty();"
+        "content": "                }"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    private String getClashDetails(ArrayList\u003cClashCase\u003e clashCases) {"
+        "content": "        if (!slots.isEmpty()) {"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        StringBuilder s \u003d new StringBuilder();"
+        "content": "            ClashCase c \u003d new ClashCase();"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        for (ClashCase c : clashCases) {"
+        "content": "            c.setModuleA(moduleA);"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            s.append(c.getModuleCodeA());"
+        "content": "            c.setModuleB(moduleB);"
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            s.append(\"  \");"
+        "content": "            c.setClashingSlots(slots);"
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            s.append(c.getModuleCodeB());"
+        "content": "            return Optional.of(c);"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            s.append(\"\\n\");"
+        "content": "        }"
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            s.append(c.getClashingSlots());"
+        "content": "        return Optional.empty();"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            s.append(\"\\n\");"
+        "content": "    }"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "        return s.toString();"
+        "content": "    private String getClashDetails(ArrayList\u003cClashCase\u003e clashCases) {"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "    }"
+        "content": "        StringBuilder s \u003d new StringBuilder();"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": ""
+        "content": "        for (ClashCase c : clashCases) {"
       },
       {
         "lineNumber": 398,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "            s.append(c.getModuleCodeA());"
+      },
+      {
+        "lineNumber": 399,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "            s.append(\"  \");"
+      },
+      {
+        "lineNumber": 400,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "            s.append(c.getModuleCodeB());"
+      },
+      {
+        "lineNumber": 401,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "            s.append(\"\\n\");"
+      },
+      {
+        "lineNumber": 402,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "            s.append(c.getClashingSlots());"
+      },
+      {
+        "lineNumber": 403,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "            s.append(\"\\n\");"
+      },
+      {
+        "lineNumber": 404,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 405,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "        return s.toString();"
+      },
+      {
+        "lineNumber": 406,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 407,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 408,
         "author": {
           "gitId": "AaronLuk"
         },
@@ -52257,7 +53559,7 @@
     ],
     "authorContributionMap": {
       "SendorasLeft": 4,
-      "AaronLuk": 393,
+      "AaronLuk": 403,
       "cheongliyuan": 1
     }
   },
@@ -62743,7 +64045,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            + \"Parameters: KEYWORD [\" + PREFIX_APPEAL + \"INDEX] [\""
+        "content": "            + \"Parameters: KEYWORD \" + PREFIX_APPEAL + \"INDEX [\""
       },
       {
         "lineNumber": 16,
@@ -62778,7 +64080,7 @@
         "author": {
           "gitId": "AaronLuk"
         },
-        "content": "            + \"Parameters: KEYWORDS [\" + PREFIX_MASS_RESOLVE + \"] [APPEALID] [APPEALID] ...\\n\""
+        "content": "            + \"Parameters: KEYWORDS \" + PREFIX_MASS_RESOLVE + \"[APPEALID] [APPEALID] ...\\n\""
       },
       {
         "lineNumber": 21,
@@ -67404,360 +68706,381 @@
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "import java.nio.file.Paths;"
+        "content": "import java.io.File;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "import java.nio.file.Paths;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "import mams.commons.exceptions.DataConversionException;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "import mams.logic.commands.exceptions.CommandException;"
+        "content": "import mams.commons.exceptions.DataConversionException;"
       },
       {
         "lineNumber": 7,
+        "author": {
+          "gitId": "MistyRainforest"
+        },
+        "content": "import mams.logic.commands.exceptions.CommandException;"
+      },
+      {
+        "lineNumber": 8,
         "author": {
           "gitId": "SendorasLeft"
         },
         "content": "import mams.logic.history.FilterOnlyCommandHistory;"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "import mams.model.Model;"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 10,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "import mams.model.ReadOnlyMams;"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 11,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "import mams.storage.JsonMamsStorage;"
       },
       {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "MistyRainforest"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 12,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": " * loads data from mamshistory_undo.json"
+        "content": "/**"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": " */"
+        "content": " * loads data from mamshistory_undo.json"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "public class UndoCommand extends StoreCommand {"
+        "content": " */"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "public class UndoCommand extends StoreCommand {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    public UndoCommand() {"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    public UndoCommand() {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 22,
+        "author": {
+          "gitId": "MistyRainforest"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 23,
         "author": {
           "gitId": "SendorasLeft"
         },
         "content": "    public CommandResult execute(Model model, FilterOnlyCommandHistory commandHistory) throws CommandException {"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 24,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "        JsonMamsStorage history \u003d new JsonMamsStorage(Paths.get(\"data/mamshistory_undo.json\"));"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 25,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "        ReadOnlyMams mamsToReplace;"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 26,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 27,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "            if (history.readMams().isPresent()) {"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 28,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "                mamsToReplace \u003d history.readMams().get();"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 29,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "            } else {"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 30,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "                throw new DataConversionException(new Exception());"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 31,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 32,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "        } catch (DataConversionException e) {"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 33,
         "author": {
           "gitId": "MistyRainforest"
         },
         "content": "            throw new CommandException(\"Unable to undo\");"
       },
       {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "MistyRainforest"
-        },
-        "content": "        }"
-      },
-      {
         "lineNumber": 34,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        new SaveCommand(\"redo\").privateExecute(model);"
+        "content": "        }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        model.replaceMams(mamsToReplace);"
+        "content": "        new SaveCommand(\"redo\").privateExecute(model);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        return new CommandResult(\"Undo Successful \");"
+        "content": "        model.replaceMams(mamsToReplace);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "        File file \u003d new File(\"data/mamshistory_undo.json\");"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    }"
+        "content": "        file.delete();"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "        return new CommandResult(\"Undo Successful \");"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    }"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        // short circuit if same object"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "            return true;"
+        "content": "    public boolean equals(Object other) {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        }"
+        "content": "        // short circuit if same object"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "        if (other \u003d\u003d this) {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        // instanceof handles nulls"
+        "content": "            return true;"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        if (!(other instanceof UndoCommand)) {"
+        "content": "        }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "            return false;"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        }"
+        "content": "        // instanceof handles nulls"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "        return false;"
+        "content": "        if (!(other instanceof UndoCommand)) {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": "    }"
+        "content": "            return false;"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "MistyRainforest"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 54,
+        "author": {
+          "gitId": "MistyRainforest"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "MistyRainforest"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "MistyRainforest"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
         "author": {
           "gitId": "MistyRainforest"
         },
@@ -67766,7 +69089,7 @@
     ],
     "authorContributionMap": {
       "SendorasLeft": 2,
-      "MistyRainforest": 52
+      "MistyRainforest": 55
     }
   },
   {
@@ -141999,6 +143322,43 @@
       "SendorasLeft": 184,
       "chensu2436": 2,
       "-": 112
+    }
+  },
+  {
+    "path": "src/test/java/mams/logic/commands/ApproveCommandTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "package mams.logic.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "public class ApproveCommandTest {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "AaronLuk"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "AaronLuk": 4
     }
   },
   {

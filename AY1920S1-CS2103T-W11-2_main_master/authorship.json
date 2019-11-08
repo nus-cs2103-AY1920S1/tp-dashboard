@@ -3665,9 +3665,9 @@
       {
         "lineNumber": 180,
         "author": {
-          "gitId": "daekoon"
+          "gitId": "liakify"
         },
-        "content": "Participants are saved internally under `participantIds`, which only stores the primary key of `Contact` involved."
+        "content": "Participants are saved internally under `participantIds`, which only stores the primary key of `Person` involved."
       },
       {
         "lineNumber": 181,
@@ -4127,345 +4127,345 @@
       {
         "lineNumber": 246,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "// tag::algorithm[]"
+        "content": "// tag::expense[]"
       },
       {
         "lineNumber": 247,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "\u003d\u003d\u003d Debt simplification algorithm"
+        "content": "\u003d\u003d\u003d Expense class"
       },
       {
         "lineNumber": 248,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "The algorithm is inspired by https://pure.tue.nl/ws/portalfiles/portal/2062204/623903.pdf[this paper]."
+        "content": "`Expense` is a class used to record expense information. It contains the following information:"
       },
       {
         "lineNumber": 249,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
         "content": ""
       },
       {
         "lineNumber": 250,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "We can gurantee the removal of all needless payments."
+        "content": "* Paying person"
       },
       {
         "lineNumber": 251,
         "author": {
-          "gitId": "podocarp"
-        },
-        "content": "The amount of money each person has to hand is minimized."
-      },
-      {
-        "lineNumber": 252,
-        "author": {
-          "gitId": "podocarp"
-        },
-        "content": "We are unable to minimize the number of transactions made."
-      },
-      {
-        "lineNumber": 253,
-        "author": {
-          "gitId": "podocarp"
-        },
-        "content": "The paper gives an overview of that problem and why it is NP-complete (subset-sum)."
-      },
-      {
-        "lineNumber": 254,
-        "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
         "content": ""
       },
       {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "Each expense must be paid by someone, which is recorded as `personId` internally. As the name suggests, only the primary key of the `Person` paying is stored."
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "* Other involved people"
+      },
+      {
         "lineNumber": 255,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "\u003d\u003d\u003d\u003d Operation details"
+        "content": ""
       },
       {
         "lineNumber": 256,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "The amounts each person owes to another is represented by a graph in an adjacency matrix."
+        "content": "Each expense also involves some people who will be taken to owe money to the paying person. This is recorded as `involvedIds[]` internally, which only stores the primary key of each involved person."
       },
       {
         "lineNumber": 257,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "The algorithm represents the payments to be made as a matrix."
+        "content": ""
       },
       {
         "lineNumber": 258,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "There are some other data structures to facilitate its operation, but the code is generally well commented and they are not major player so we will skip them."
+        "content": "* Amount"
       },
       {
         "lineNumber": 259,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
         "content": ""
       },
       {
         "lineNumber": 260,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "To rephrase our gurantee in this context will be: we want to minimize weights."
+        "content": "The amount of money spent. The value of an `Amount` is stored as a `double`, and ranges from 0.01 to 1000000."
       },
       {
         "lineNumber": 261,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "That is, the total amount of money someone will have to touch is minimized."
+        "content": ""
       },
       {
         "lineNumber": 262,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": ""
+        "content": "* Description"
       },
       {
         "lineNumber": 263,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "The lower bound for the amount someone has to handle is the balance."
+        "content": ""
       },
       {
         "lineNumber": 264,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "We create a balance sheeet for the users which is expanded as people enter the activity."
+        "content": "The description of an expense. The description may be blank if the user chooses to not describe what it is about."
       },
       {
         "lineNumber": 265,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "Each expense added, the algorithm retrieves from it:"
+        "content": ""
       },
       {
         "lineNumber": 266,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "* who is involved,"
+        "content": "* Deleted flag"
       },
       {
         "lineNumber": 267,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "* who paid,"
+        "content": ""
       },
       {
         "lineNumber": 268,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "* how much has been paid,"
+        "content": "This flag tracks whether an expense has been marked as deleted or not, and is stored as a boolean value `isDeleted`. For accountability purposes, we do not allow an `Expense` to be deleted from an `Activity` entirely, and instead use this flag to keep track of it. Expenses can only be fully deleted by deleting the entire activity."
       },
       {
         "lineNumber": 269,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "splits everything correctly, and updates all the data structures appropriately."
+        "content": ""
       },
       {
         "lineNumber": 270,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": ""
+        "content": "* Settlement flag"
       },
       {
         "lineNumber": 271,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "Someone\u0027s balance is positive if he received more than he owes."
+        "content": ""
       },
       {
         "lineNumber": 272,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "Then, a negative balance indicates them lending more than they received."
+        "content": "SplitWiser supports 2 main types of \"expenses\": one is an actual expense, and the other is a transaction between people to pay off debts. The latter is what we call a settlement, and is indicated by the boolean `isSettlement`."
       },
       {
         "lineNumber": 273,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "The algorithm simply finds any two people whose balances have opposing signs."
+        "content": ""
       },
       {
         "lineNumber": 274,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "It is unimportant what is the magnitude of their balances (we do not need to take them in any order)."
+        "content": "The following diagram describes the structure of the `Expense` class:"
       },
       {
         "lineNumber": 275,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "What then happens is then the person with the smallest magnitude of balance neutralizes his balance by paying or being paid by the other party."
+        "content": ""
       },
       {
         "lineNumber": 276,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "The algorithm terminates when all balances are 0."
+        "content": ".Structure of the Expense class"
       },
       {
         "lineNumber": 277,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": ""
+        "content": "image::ExpenseClassDiagram.png[]"
       },
       {
         "lineNumber": 278,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "\u003d\u003d\u003d\u003d Proof of optimality"
+        "content": ""
       },
       {
         "lineNumber": 279,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "This is a short proof of optimality since we want it to be called \"algorithm\", not \"heuristic\"."
+        "content": "\u003d\u003d\u003d\u003d Design considerations"
       },
       {
         "lineNumber": 280,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How to actually represent an `Expense`"
       },
       {
         "lineNumber": 281,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "In essence what we are constructing is a bipartite graph."
+        "content": "* **Alternative 1 (current choice)**: An expense is represented by a paying person, amount, and a list of people involved."
       },
       {
         "lineNumber": 282,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "The algorithm never allows someone who owes to be paid, or someone who is owed to pay even more."
+        "content": "** **Pros:** Reasonable flexibility as it enables a wide range of possible expense sharing combinations."
       },
       {
         "lineNumber": 283,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "Hence we can classify all nodes into those with leaving edges (payers) and those with entering edges (payee)."
+        "content": "** **Cons:** Forces equal split among participants in the involved list. A simple example would be that a group of people can have a meal together but each person\u0027s meal would cost a different amount."
       },
       {
         "lineNumber": 284,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": ""
+        "content": "** **Reason for choice:** Although the above con can be a very real issue from a user\u0027s standpoint, we believe this is the best balance between flexibility and usability."
       },
       {
         "lineNumber": 285,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "In a bipartite graph the amount each person handles is minimized."
+        "content": ""
       },
       {
         "lineNumber": 286,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "To see why, we have to keep in mind that the algorithm always neutralizes one of the parties\u0027 balance."
+        "content": "* **Alternative 2**: An expense is represented by a paying person, an amount, a list of paying people and the amount each person should pay back the paying person."
       },
       {
         "lineNumber": 287,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "That is to say, we will not be left with the case where someone who could pay off all his debts \"overpaying\"."
+        "content": "** **Pros:** Ultimate flexibility and addresses the con above."
       },
       {
         "lineNumber": 288,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "In such a case, someone will then have to pay him back, which means it is no longer bipartite."
+        "content": "** **Cons:** Significantly complicates the process of expense adding for the user and the verification process in the backend. Many potential issues may arise, such as the issue of reconciling what happens if the amount list specified does not add up to the amount paid by the paying person."
       },
       {
         "lineNumber": 289,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
         "content": ""
       },
       {
         "lineNumber": 290,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "\u003d\u003d\u003d\u003d Time and Space complexity"
+        "content": ""
       },
       {
         "lineNumber": 291,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "liakify"
         },
-        "content": "We take O(N^2) space and O(N) time."
+        "content": "// end::expense[]"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "Updating of the balance sheet and matrices by the expense command is performed in O(1) time."
+        "content": "// tag::algorithm[]"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "podocarp"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Debt simplification algorithm"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d\u003d Design Considerations"
+        "content": "The algorithm is inspired by https://pure.tue.nl/ws/portalfiles/portal/2062204/623903.pdf[this paper]."
       },
       {
         "lineNumber": 295,
@@ -4479,707 +4479,707 @@
         "author": {
           "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Precision"
+        "content": "We can gurantee the removal of all needless payments."
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "podocarp"
         },
-        "content": ""
+        "content": "The amount of money each person has to hand is minimized."
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "* **Alternative 1 (current choice):** Just use `double`."
+        "content": "We are unable to minimize the number of transactions made."
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "** *Pros*: Easy, straightforward, good enough."
+        "content": "The paper gives an overview of that problem and why it is NP-complete (subset-sum)."
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "** *Cons*: Floating point precision might stack up."
+        "content": ""
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "** *Reason for choice*: For everyday purposes it is highly unlikely currencies (normally at most 2 decimal points) require any higher precision. This is for normal friends, not stockbrokers."
+        "content": "\u003d\u003d\u003d\u003d Operation details"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "podocarp"
         },
-        "content": ""
+        "content": "The amounts each person owes to another is represented by a graph in an adjacency matrix."
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "* **Alternative 2:** Implement a `Rational` class for rational numbers."
+        "content": "The algorithm represents the payments to be made as a matrix."
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "** Pros: Guranteed precision."
+        "content": "There are some other data structures to facilitate its operation, but the code is generally well commented and they are not major player so we will skip them."
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "** Cons: Seems overkill and needlessly over-engineered."
+        "content": ""
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "// end::algorithm[]"
+        "content": "To rephrase our gurantee in this context will be: we want to minimize weights."
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "podocarp"
         },
-        "content": ""
+        "content": "That is, the total amount of money someone will have to touch is minimized."
       },
       {
         "lineNumber": 308,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d List feature"
+        "content": ""
       },
       {
         "lineNumber": 309,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "The lower bound for the amount someone has to handle is the balance."
       },
       {
         "lineNumber": 310,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "The List mechanism is facilitated by the combination of three classes `MainWindow`, `Model` and `Context`."
+        "content": "We create a balance sheeet for the users which is expanded as people enter the activity."
       },
       {
         "lineNumber": 311,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "Each expense added, the algorithm retrieves from it:"
       },
       {
         "lineNumber": 312,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "`Context` is an immutable utility class that describes the nature of the current view of the app. It stores state information about the `ContextType` as well as an optional `Object` of interest. A `Context` may be instantiated either by"
+        "content": "* who is involved,"
       },
       {
         "lineNumber": 313,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "* who paid,"
       },
       {
         "lineNumber": 314,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "* one of the factory methods `newListActivityContext` or `newListContactContext`"
+        "content": "* how much has been paid,"
       },
       {
         "lineNumber": 315,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "* invoking the constructor with either an `Activity` or `Contact` of interest"
+        "content": "splits everything correctly, and updates all the data structures appropriately."
       },
       {
         "lineNumber": 316,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 317,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "The `Context` class exposes relevant getter methods `Context#getType`, `Context#getActivity` and `Context#getContact`, and thus supports contextual behaviour of other commands."
+        "content": "Someone\u0027s balance is positive if he received more than he owes."
       },
       {
         "lineNumber": 318,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "Then, a negative balance indicates them lending more than they received."
       },
       {
         "lineNumber": 319,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "During execution, the List command creates the intended `Context` and updates the `Model` with it, along with the appropriate `FilteredList`. As `MainWindow` tracks both `FilteredList`, JavaFX will automatically re-render the contained card entries when the respective list undergoes structural changes."
+        "content": "The algorithm simply finds any two people whose balances have opposing signs."
       },
       {
         "lineNumber": 320,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "It is unimportant what is the magnitude of their balances (we do not need to take them in any order)."
       },
       {
         "lineNumber": 321,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "The updated `ContextType` of the `Model` is then returned to the `MainWindow` UI controller via the `CommandResult`, where it is used to switch the content displayed."
+        "content": "What then happens is then the person with the smallest magnitude of balance neutralizes his balance by paying or being paid by the other party."
       },
       {
         "lineNumber": 322,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "The algorithm terminates when all balances are 0."
       },
       {
         "lineNumber": 323,
         "author": {
-          "gitId": "Aulud"
-        },
-        "content": "Given below is an example usage scenario of a user intending to view the list of activities."
-      },
-      {
-        "lineNumber": 324,
-        "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
+        "lineNumber": 324,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "\u003d\u003d\u003d\u003d Proof of optimality"
+      },
+      {
         "lineNumber": 325,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "Step 1. The user launches the `SplitWiser` application for the first time, which defaults to displaying the list of contacts."
+        "content": "This is a short proof of optimality since we want it to be called \"algorithm\", not \"heuristic\"."
       },
       {
         "lineNumber": 326,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 327,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "Step 2. The user executes the command string `list a/` to prompt the app to display the full list of activities."
+        "content": "In essence what we are constructing is a bipartite graph."
       },
       {
         "lineNumber": 328,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "The algorithm never allows someone who owes to be paid, or someone who is owed to pay even more."
       },
       {
         "lineNumber": 329,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "The following sequence diagram demonstrates the role of the respective components."
+        "content": "Hence we can classify all nodes into those with leaving edges (payers) and those with entering edges (payee)."
       },
       {
         "lineNumber": 330,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 331,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "image::ViewSequenceDiagram.png[]"
+        "content": "In a bipartite graph the amount each person handles is minimized."
       },
       {
         "lineNumber": 332,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "To see why, we have to keep in mind that the algorithm always neutralizes one of the parties\u0027 balance."
       },
       {
         "lineNumber": 333,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d\u003d Design Considerations"
+        "content": "That is to say, we will not be left with the case where someone who could pay off all his debts \"overpaying\"."
       },
       {
         "lineNumber": 334,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "In such a case, someone will then have to pay him back, which means it is no longer bipartite."
       },
       {
         "lineNumber": 335,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: representing the current context state"
+        "content": ""
       },
       {
         "lineNumber": 336,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Time and Space complexity"
       },
       {
         "lineNumber": 337,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "* **Alternative 1 (current choice):** Creating an immutable `Context` class as a state container to store the appropriate information."
+        "content": "We take O(N^2) space and O(N) time."
       },
       {
         "lineNumber": 338,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "** Pros: Lightweight; context state can be easily passed between components that require access, as it is encapsulated entirely within `Context`."
+        "content": "Updating of the balance sheet and matrices by the expense command is performed in O(1) time."
       },
       {
         "lineNumber": 339,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "** Cons: Harder to implement."
+        "content": ""
       },
       {
         "lineNumber": 340,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Design Considerations"
       },
       {
         "lineNumber": 341,
         "author": {
-          "gitId": "Aulud"
-        },
-        "content": "* **Alternative 2:** Storing the `Context` state in a designated central component, e.g. the `ModelManager`, and exposing relevant methods to other components."
-      },
-      {
-        "lineNumber": 342,
-        "author": {
-          "gitId": "Aulud"
-        },
-        "content": "** Pros: Trivial to implement."
-      },
-      {
-        "lineNumber": 343,
-        "author": {
-          "gitId": "Aulud"
-        },
-        "content": "** Cons: Tightly couples all components that require access to the context state to the central component, complicating testing."
-      },
-      {
-        "lineNumber": 344,
-        "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
+        "lineNumber": 342,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Precision"
+      },
+      {
+        "lineNumber": 343,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 344,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "* **Alternative 1 (current choice):** Just use `double`."
+      },
+      {
         "lineNumber": 345,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "podocarp"
         },
-        "content": "// tag::invitedisinvite[]"
+        "content": "** *Pros*: Easy, straightforward, good enough."
       },
       {
         "lineNumber": 346,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d Invite/Disinvite feature"
+        "content": "** *Cons*: Floating point precision might stack up."
       },
       {
         "lineNumber": 347,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d\u003d Implementation"
+        "content": "** *Reason for choice*: For everyday purposes it is highly unlikely currencies (normally at most 2 decimal points) require any higher precision. This is for normal friends, not stockbrokers."
       },
       {
         "lineNumber": 348,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 349,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "podocarp"
         },
-        "content": "The invite/disinvite mechanism is facilitated by `Activity`."
+        "content": "* **Alternative 2:** Implement a `Rational` class for rational numbers."
       },
       {
         "lineNumber": 350,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "It extends `AddressBook` with an `ActivityBook`, stored internally as an `activityList`. Additionally, it implements the following operations:"
+        "content": "** Pros: Guranteed precision."
       },
       {
         "lineNumber": 351,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "** Cons: Seems overkill and needlessly over-engineered."
       },
       {
         "lineNumber": 352,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "podocarp"
         },
-        "content": "* `Activity#invite()` -- Invites a person to the activity."
+        "content": "// end::algorithm[]"
       },
       {
         "lineNumber": 353,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "podocarp"
         },
-        "content": "* `Activity#disinvite()` -- Disinvites a person from the activity."
+        "content": ""
       },
       {
         "lineNumber": 354,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d List feature"
       },
       {
         "lineNumber": 355,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
-        "content": "These operations are exposed in the `Activity` class as `Activity#invite()` and `Activity#disinvite()` respectively."
+        "content": ""
       },
       {
         "lineNumber": 356,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "The List mechanism is facilitated by the combination of three classes `MainWindow`, `Model` and `Context`."
       },
       {
         "lineNumber": 357,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
-        "content": "Given below is an example usage scenario and how the invite/disinvite mechanism behaves at each step."
+        "content": ""
       },
       {
         "lineNumber": 358,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "`Context` is an immutable utility class that describes the nature of the current view of the app. It stores state information about the `ContextType` as well as an optional `Object` of interest. A `Context` may be instantiated either by"
       },
       {
         "lineNumber": 359,
         "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "Step 1. The user launches the application for the first time. The `SplitWiser` will be initialized with the initial address book and activity book state."
-      },
-      {
-        "lineNumber": 360,
-        "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
         "content": ""
       },
       {
+        "lineNumber": 360,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "* one of the factory methods `newListActivityContext` or `newListContactContext`"
+      },
+      {
         "lineNumber": 361,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
-        "content": "Step 2. The user executes `activity t/breakfast p/David` command to create an activity named breakfast with `David` as the sole participant which is stored in the `activityList`."
+        "content": "* invoking the constructor with either an `Activity` or `Contact` of interest"
       },
       {
         "lineNumber": 362,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
         "content": ""
       },
       {
         "lineNumber": 363,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
-        "content": "Step 3. The user executes `invite p/Louis p/Mary...` to invite more participants into the current viewed activity. The `invite` command calls `Activity#invite()`, inviting more participants into the activity. The `activityList` will then be modified with the newly invited participants which is then stored in the `ActivityBook`."
+        "content": "The `Context` class exposes relevant getter methods `Context#getType`, `Context#getActivity` and `Context#getContact`, and thus supports contextual behaviour of other commands."
       },
       {
         "lineNumber": 364,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 365,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "The following sequence diagram shows how the invite operation works:"
-      },
-      {
-        "lineNumber": 366,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 367,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "image::InviteSequenceDiagram.png[]"
-      },
-      {
-        "lineNumber": 368,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 369,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "NOTE: The lifeline for `InviteCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram."
-      },
-      {
-        "lineNumber": 370,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 371,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "Step 4. The user decides that inviting the person was a mistake or the particular person has not been involved in any of the expenses in the activity. Therefore, it is perfectly fine to remove that person from the activity since he does not owe money to anyone and no one else owes him money."
-      },
-      {
-        "lineNumber": 372,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "Hence the user decides to remove that person by executing the `disinvite` command."
-      },
-      {
-        "lineNumber": 373,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 374,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "Step 5. The user executes `disinvite p/Louis p/David ...` to remove participant(s) from the current activity. The `disinvite` command calls `Activity#disinvite()`, removing participants from the activity. The `activityList` will then be modified due to a change in participants which is then stored in the `ActivityBook`."
-      },
-      {
-        "lineNumber": 375,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 376,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "NOTE: The sequence diagram for the disinvite operation is omitted as it is similar to the invite operation."
-      },
-      {
-        "lineNumber": 377,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 378,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "The following activity diagram summarizes what happens when a user executes an invite command:"
-      },
-      {
-        "lineNumber": 379,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 380,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "image::InviteActivityDiagram.png[]"
-      },
-      {
-        "lineNumber": 381,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 382,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "NOTE: The activity diagram for the disinvite command is omitted as it is similar to the invite operation."
-      },
-      {
-        "lineNumber": 383,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 384,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "\u003d\u003d\u003d\u003d Design Considerations"
-      },
-      {
-        "lineNumber": 385,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 386,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How invite \u0026 disinvite executes"
-      },
-      {
-        "lineNumber": 387,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 388,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "* **Alternative 1 (current choice):** Contextual based invite/disinvite based on current viewed activity."
-      },
-      {
-        "lineNumber": 389,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "** Pros: More user-friendly. Users do not have to keep specifying which activity to invite the participants to each time an invite command is made."
-      },
-      {
-        "lineNumber": 390,
-        "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "** Cons: Harder to implement. Have to consider which activity to invite the participants to based on the current viewed activity."
-      },
-      {
-        "lineNumber": 391,
         "author": {
           "gitId": "Aulud"
         },
         "content": ""
       },
       {
+        "lineNumber": 365,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "During execution, the List command creates the intended `Context` and updates the `Model` with it, along with the appropriate `FilteredList`. As `MainWindow` tracks both `FilteredList`, JavaFX will automatically re-render the contained card entries when the respective list undergoes structural changes."
+      },
+      {
+        "lineNumber": 366,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 367,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "The updated `ContextType` of the `Model` is then returned to the `MainWindow` UI controller via the `CommandResult`, where it is used to switch the content displayed."
+      },
+      {
+        "lineNumber": 368,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 369,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "Given below is an example usage scenario of a user intending to view the list of activities."
+      },
+      {
+        "lineNumber": 370,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 371,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "Step 1. The user launches the `SplitWiser` application for the first time, which defaults to displaying the list of contacts."
+      },
+      {
+        "lineNumber": 372,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 373,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "Step 2. The user executes the command string `list a/` to prompt the app to display the full list of activities."
+      },
+      {
+        "lineNumber": 374,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 375,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "The following sequence diagram demonstrates the role of the respective components."
+      },
+      {
+        "lineNumber": 376,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 377,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "image::ViewSequenceDiagram.png[]"
+      },
+      {
+        "lineNumber": 378,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 379,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "\u003d\u003d\u003d\u003d Design Considerations"
+      },
+      {
+        "lineNumber": 380,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 381,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: representing the current context state"
+      },
+      {
+        "lineNumber": 382,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 383,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "* **Alternative 1 (current choice):** Creating an immutable `Context` class as a state container to store the appropriate information."
+      },
+      {
+        "lineNumber": 384,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "** Pros: Lightweight; context state can be easily passed between components that require access, as it is encapsulated entirely within `Context`."
+      },
+      {
+        "lineNumber": 385,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "** Cons: Harder to implement."
+      },
+      {
+        "lineNumber": 386,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 387,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "* **Alternative 2:** Storing the `Context` state in a designated central component, e.g. the `ModelManager`, and exposing relevant methods to other components."
+      },
+      {
+        "lineNumber": 388,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "** Pros: Trivial to implement."
+      },
+      {
+        "lineNumber": 389,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "** Cons: Tightly couples all components that require access to the context state to the central component, complicating testing."
+      },
+      {
+        "lineNumber": 390,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 391,
+        "author": {
+          "gitId": "JohnNzj"
+        },
+        "content": "// tag::invitedisinvite[]"
+      },
+      {
         "lineNumber": 392,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "* **Alternative 2:** Invite/disinvite based on user specifying the activity number."
+        "content": "\u003d\u003d\u003d Invite/Disinvite feature"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "** Pros: Easy to implement."
+        "content": "\u003d\u003d\u003d\u003d Implementation"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "** Cons: Have to keep retyping activity number if multiple invites/disinvites are needed."
+        "content": ""
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "The invite/disinvite mechanism is facilitated by `Activity`."
       },
       {
         "lineNumber": 396,
         "author": {
-          "gitId": "JohnNzj"
+          "gitId": "Aulud"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Data structure to support the invite/disinvite commands"
+        "content": "It extends `AddressBook` with an `ActivityBook`, stored internally as an `activityList`. Additionally, it implements the following operations:"
       },
       {
         "lineNumber": 397,
@@ -5193,56 +5193,56 @@
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "* **Alternative 1 (current choice):** Use a list to store the participants\u0027 ID in the activity instead of participants."
+        "content": "* `Activity#invite()` -- Invites a person to the activity."
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project."
+        "content": "* `Activity#disinvite()` -- Disinvites a person from the activity."
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "** Cons: Have to find particular participant that matches the ID specified."
+        "content": ""
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "These operations are exposed in the `Activity` class as `Activity#invite()` and `Activity#disinvite()` respectively."
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "* **Alternative 2:** Use list to store participants instead of ID"
+        "content": ""
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "** Pros: Easy to implement. Reuse what is already in the codebase and we do not need to create additional Unique ID key for each participant to identify them."
+        "content": "Given below is an example usage scenario and how the invite/disinvite mechanism behaves at each step."
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "** Cons: Might create duplicate person object when reading from multiple json files if not implemented properly."
+        "content": ""
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "JohnNzj"
         },
-        "content": "// end::invitedisinvite[]"
+        "content": "Step 1. The user launches the application for the first time. The `SplitWiser` will be initialized with the initial address book and activity book state."
       },
       {
         "lineNumber": 406,
@@ -5254,322 +5254,322 @@
       {
         "lineNumber": 407,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "// tag::undoredo[]"
+        "content": "Step 2. The user executes `activity t/breakfast p/David` command to create an activity named breakfast with `David` as the sole participant which is stored in the `activityList`."
       },
       {
         "lineNumber": 408,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "\u003d\u003d\u003d [Proposed] Undo/Redo feature"
+        "content": ""
       },
       {
         "lineNumber": 409,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "\u003d\u003d\u003d\u003d Proposed Implementation"
+        "content": "Step 3. The user executes `invite p/Louis p/Mary...` to invite more participants into the current viewed activity. The `invite` command calls `Activity#invite()`, inviting more participants into the activity. The `activityList` will then be modified with the newly invited participants which is then stored in the `ActivityBook`."
       },
       {
         "lineNumber": 410,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
         "content": ""
       },
       {
         "lineNumber": 411,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "The undo/redo mechanism is facilitated by `VersionedAddressBook`."
+        "content": "The following sequence diagram shows how the invite operation works:"
       },
       {
         "lineNumber": 412,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`."
+        "content": ""
       },
       {
         "lineNumber": 413,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "Additionally, it implements the following operations:"
+        "content": "image::InviteSequenceDiagram.png[]"
       },
       {
         "lineNumber": 414,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
         "content": ""
       },
       {
         "lineNumber": 415,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "* `VersionedAddressBook#commit()` -- Saves the current address book state in its history."
+        "content": "NOTE: The lifeline for `InviteCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram."
       },
       {
         "lineNumber": 416,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "* `VersionedAddressBook#undo()` -- Restores the previous address book state from its history."
+        "content": ""
       },
       {
         "lineNumber": 417,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "* `VersionedAddressBook#redo()` -- Restores a previously undone address book state from its history."
+        "content": "Step 4. The user decides that inviting the person was a mistake or the particular person has not been involved in any of the expenses in the activity. Therefore, it is perfectly fine to remove that person from the activity since he does not owe money to anyone and no one else owes him money."
       },
       {
         "lineNumber": 418,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "Hence the user decides to remove that person by executing the `disinvite` command."
       },
       {
         "lineNumber": 419,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively."
+        "content": ""
       },
       {
         "lineNumber": 420,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "Step 5. The user executes `disinvite p/Louis p/David ...` to remove participant(s) from the current activity. The `disinvite` command calls `Activity#disinvite()`, removing participants from the activity. The `activityList` will then be modified due to a change in participants which is then stored in the `ActivityBook`."
       },
       {
         "lineNumber": 421,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "Given below is an example usage scenario and how the undo/redo mechanism behaves at each step."
+        "content": ""
       },
       {
         "lineNumber": 422,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "NOTE: The sequence diagram for the disinvite operation is omitted as it is similar to the invite operation."
       },
       {
         "lineNumber": 423,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state."
+        "content": ""
       },
       {
         "lineNumber": 424,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "The following activity diagram summarizes what happens when a user executes an invite command:"
       },
       {
         "lineNumber": 425,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "image::UndoRedoState0.png[]"
+        "content": ""
       },
       {
         "lineNumber": 426,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "image::InviteActivityDiagram.png[]"
       },
       {
         "lineNumber": 427,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state."
+        "content": ""
       },
       {
         "lineNumber": 428,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "NOTE: The activity diagram for the disinvite command is omitted as it is similar to the invite operation."
       },
       {
         "lineNumber": 429,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "image::UndoRedoState1.png[]"
+        "content": ""
       },
       {
         "lineNumber": 430,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Design Considerations"
       },
       {
         "lineNumber": 431,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "Step 3. The user executes `add n/David ...` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`."
+        "content": ""
       },
       {
         "lineNumber": 432,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How invite \u0026 disinvite executes"
       },
       {
         "lineNumber": 433,
         "author": {
-          "gitId": "-"
-        },
-        "content": "image::UndoRedoState2.png[]"
-      },
-      {
-        "lineNumber": 434,
-        "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
         "content": ""
       },
       {
+        "lineNumber": 434,
+        "author": {
+          "gitId": "JohnNzj"
+        },
+        "content": "* **Alternative 1 (current choice):** Contextual based invite/disinvite based on current viewed activity."
+      },
+      {
         "lineNumber": 435,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "[NOTE]"
+        "content": "** Pros: More user-friendly. Users do not have to keep specifying which activity to invite the participants to each time an invite command is made."
       },
       {
         "lineNumber": 436,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`."
+        "content": "** Cons: Harder to implement. Have to consider which activity to invite the participants to based on the current viewed activity."
       },
       {
         "lineNumber": 437,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
         "content": ""
       },
       {
         "lineNumber": 438,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state."
+        "content": "* **Alternative 2:** Invite/disinvite based on user specifying the activity number."
       },
       {
         "lineNumber": 439,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "** Pros: Easy to implement."
       },
       {
         "lineNumber": 440,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "image::UndoRedoState3.png[]"
+        "content": "** Cons: Have to keep retyping activity number if multiple invites/disinvites are needed."
       },
       {
         "lineNumber": 441,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
         "content": ""
       },
       {
         "lineNumber": 442,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "[NOTE]"
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Data structure to support the invite/disinvite commands"
       },
       {
         "lineNumber": 443,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "If the `currentStatePointer` is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo."
+        "content": ""
       },
       {
         "lineNumber": 444,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "* **Alternative 1 (current choice):** Use a list to store the participants\u0027 ID in the activity instead of participants."
       },
       {
         "lineNumber": 445,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "The following sequence diagram shows how the undo operation works:"
+        "content": "** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project."
       },
       {
         "lineNumber": 446,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "** Cons: Have to find particular participant that matches the ID specified."
       },
       {
         "lineNumber": 447,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "image::UndoSequenceDiagram.png[]"
+        "content": ""
       },
       {
         "lineNumber": 448,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "* **Alternative 2:** Use list to store participants instead of ID"
       },
       {
         "lineNumber": 449,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "NOTE: The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram."
+        "content": "** Pros: Easy to implement. Reuse what is already in the codebase and we do not need to create additional Unique ID key for each participant to identify them."
       },
       {
         "lineNumber": 450,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": ""
+        "content": "** Cons: Might create duplicate person object when reading from multiple json files if not implemented properly."
       },
       {
         "lineNumber": 451,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
-        "content": "The `redo` command does the opposite -- it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state."
+        "content": "// end::invitedisinvite[]"
       },
       {
         "lineNumber": 452,
         "author": {
-          "gitId": "-"
+          "gitId": "JohnNzj"
         },
         "content": ""
       },
@@ -5578,175 +5578,175 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[NOTE]"
+        "content": "// tag::undoredo[]"
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "-"
         },
-        "content": "If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone address book states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo."
+        "content": "\u003d\u003d\u003d [Proposed] Undo/Redo feature"
       },
       {
         "lineNumber": 455,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d Proposed Implementation"
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "-"
         },
-        "content": "Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged."
+        "content": ""
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The undo/redo mechanism is facilitated by `VersionedAddressBook`."
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "-"
         },
-        "content": "image::UndoRedoState4.png[]"
+        "content": "It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`."
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Additionally, it implements the following operations:"
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "-"
         },
-        "content": "Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add n/David ...` command. This is the behavior that most modern desktop applications follow."
+        "content": ""
       },
       {
         "lineNumber": 461,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `VersionedAddressBook#commit()` -- Saves the current address book state in its history."
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "-"
         },
-        "content": "image::UndoRedoState5.png[]"
+        "content": "* `VersionedAddressBook#undo()` -- Restores the previous address book state from its history."
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `VersionedAddressBook#redo()` -- Restores a previously undone address book state from its history."
       },
       {
         "lineNumber": 464,
         "author": {
           "gitId": "-"
         },
-        "content": "The following activity diagram summarizes what happens when a user executes a new command:"
+        "content": ""
       },
       {
         "lineNumber": 465,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively."
       },
       {
         "lineNumber": 466,
         "author": {
           "gitId": "-"
         },
-        "content": "image::CommitActivityDiagram.png[]"
+        "content": ""
       },
       {
         "lineNumber": 467,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Given below is an example usage scenario and how the undo/redo mechanism behaves at each step."
       },
       {
         "lineNumber": 468,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d Design Considerations"
+        "content": ""
       },
       {
         "lineNumber": 469,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state."
       },
       {
         "lineNumber": 470,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How undo \u0026 redo executes"
+        "content": ""
       },
       {
         "lineNumber": 471,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "image::UndoRedoState0.png[]"
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "-"
         },
-        "content": "* **Alternative 1 (current choice):** Saves the entire address book."
+        "content": ""
       },
       {
         "lineNumber": 473,
         "author": {
           "gitId": "-"
         },
-        "content": "** Pros: Easy to implement."
+        "content": "Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state."
       },
       {
         "lineNumber": 474,
         "author": {
           "gitId": "-"
         },
-        "content": "** Cons: May have performance issues in terms of memory usage."
+        "content": ""
       },
       {
         "lineNumber": 475,
         "author": {
           "gitId": "-"
         },
-        "content": "* **Alternative 2:** Individual command knows how to undo/redo by itself."
+        "content": "image::UndoRedoState1.png[]"
       },
       {
         "lineNumber": 476,
         "author": {
           "gitId": "-"
         },
-        "content": "** Pros: Will use less memory (e.g. for `delete`, just save the person being deleted)."
+        "content": ""
       },
       {
         "lineNumber": 477,
         "author": {
           "gitId": "-"
         },
-        "content": "** Cons: We must ensure that the implementation of each individual command are correct."
+        "content": "Step 3. The user executes `add n/David ...` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`."
       },
       {
         "lineNumber": 478,
@@ -5760,7 +5760,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Data structure to support the undo/redo commands"
+        "content": "image::UndoRedoState2.png[]"
       },
       {
         "lineNumber": 480,
@@ -5774,154 +5774,154 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* **Alternative 1 (current choice):** Use a list to store the history of address book states."
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "-"
         },
-        "content": "** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project."
+        "content": "If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`."
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "-"
         },
-        "content": "** Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both `HistoryManager` and `VersionedAddressBook`."
+        "content": ""
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "-"
         },
-        "content": "* **Alternative 2:** Use `HistoryManager` for undo/redo"
+        "content": "Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state."
       },
       {
         "lineNumber": 485,
         "author": {
           "gitId": "-"
         },
-        "content": "** Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase."
+        "content": ""
       },
       {
         "lineNumber": 486,
         "author": {
           "gitId": "-"
         },
-        "content": "** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things."
+        "content": "image::UndoRedoState3.png[]"
       },
       {
         "lineNumber": 487,
         "author": {
           "gitId": "-"
         },
-        "content": "// end::undoredo[]"
+        "content": ""
       },
       {
         "lineNumber": 488,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 489,
         "author": {
           "gitId": "-"
         },
-        "content": "// tag::dataencryption[]"
+        "content": "If the `currentStatePointer` is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo."
       },
       {
         "lineNumber": 490,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d [Proposed] Data Encryption"
+        "content": ""
       },
       {
         "lineNumber": 491,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The following sequence diagram shows how the undo operation works:"
       },
       {
         "lineNumber": 492,
         "author": {
           "gitId": "-"
         },
-        "content": "_{Explain here how the data encryption feature will be implemented}_"
+        "content": ""
       },
       {
         "lineNumber": 493,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "image::UndoSequenceDiagram.png[]"
       },
       {
         "lineNumber": 494,
         "author": {
           "gitId": "-"
         },
-        "content": "// end::dataencryption[]"
+        "content": ""
       },
       {
         "lineNumber": 495,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "NOTE: The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram."
       },
       {
         "lineNumber": 496,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Logging"
+        "content": ""
       },
       {
         "lineNumber": 497,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The `redo` command does the opposite -- it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state."
       },
       {
         "lineNumber": 498,
         "author": {
           "gitId": "-"
         },
-        "content": "We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations."
+        "content": ""
       },
       {
         "lineNumber": 499,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[NOTE]"
       },
       {
         "lineNumber": 500,
         "author": {
           "gitId": "-"
         },
-        "content": "* The logging level can be controlled using the `logLevel` setting in the configuration file (See \u003c\u003cImplementation-Configuration\u003e\u003e)"
+        "content": "If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone address book states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo."
       },
       {
         "lineNumber": 501,
         "author": {
           "gitId": "-"
         },
-        "content": "* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level"
+        "content": ""
       },
       {
         "lineNumber": 502,
         "author": {
           "gitId": "-"
         },
-        "content": "* Currently log messages are output through: `Console` and to a `.log` file."
+        "content": "Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged."
       },
       {
         "lineNumber": 503,
@@ -5935,7 +5935,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "*Logging Levels*"
+        "content": "image::UndoRedoState4.png[]"
       },
       {
         "lineNumber": 505,
@@ -5949,49 +5949,49 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `SEVERE` : Critical problem detected which may possibly cause the termination of the application"
+        "content": "Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add n/David ...` command. This is the behavior that most modern desktop applications follow."
       },
       {
         "lineNumber": 507,
         "author": {
           "gitId": "-"
         },
-        "content": "* `WARNING` : Can continue, but with caution"
+        "content": ""
       },
       {
         "lineNumber": 508,
         "author": {
           "gitId": "-"
         },
-        "content": "* `INFO` : Information showing the noteworthy actions by the App"
+        "content": "image::UndoRedoState5.png[]"
       },
       {
         "lineNumber": 509,
         "author": {
           "gitId": "-"
         },
-        "content": "* `FINE` : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size"
+        "content": ""
       },
       {
         "lineNumber": 510,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The following activity diagram summarizes what happens when a user executes a new command:"
       },
       {
         "lineNumber": 511,
         "author": {
           "gitId": "-"
         },
-        "content": "[[Implementation-Configuration]]"
+        "content": ""
       },
       {
         "lineNumber": 512,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Configuration"
+        "content": "image::CommitActivityDiagram.png[]"
       },
       {
         "lineNumber": 513,
@@ -6005,7 +6005,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`)."
+        "content": "\u003d\u003d\u003d\u003d Design Considerations"
       },
       {
         "lineNumber": 515,
@@ -6019,7 +6019,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Documentation"
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: How undo \u0026 redo executes"
       },
       {
         "lineNumber": 517,
@@ -6033,133 +6033,133 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
+        "content": "* **Alternative 1 (current choice):** Saves the entire address book."
       },
       {
         "lineNumber": 519,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "** Pros: Easy to implement."
       },
       {
         "lineNumber": 520,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Testing"
+        "content": "** Cons: May have performance issues in terms of memory usage."
       },
       {
         "lineNumber": 521,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* **Alternative 2:** Individual command knows how to undo/redo by itself."
       },
       {
         "lineNumber": 522,
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
+        "content": "** Pros: Will use less memory (e.g. for `delete`, just save the person being deleted)."
       },
       {
         "lineNumber": 523,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "** Cons: We must ensure that the implementation of each individual command are correct."
       },
       {
         "lineNumber": 524,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Dev Ops"
+        "content": ""
       },
       {
         "lineNumber": 525,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d\u003d\u003d Aspect: Data structure to support the undo/redo commands"
       },
       {
         "lineNumber": 526,
         "author": {
           "gitId": "-"
         },
-        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
+        "content": ""
       },
       {
         "lineNumber": 527,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* **Alternative 1 (current choice):** Use a list to store the history of address book states."
       },
       {
         "lineNumber": 528,
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": "** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project."
       },
       {
         "lineNumber": 529,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Product Scope"
+        "content": "** Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both `HistoryManager` and `VersionedAddressBook`."
       },
       {
         "lineNumber": 530,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* **Alternative 2:** Use `HistoryManager` for undo/redo"
       },
       {
         "lineNumber": 531,
         "author": {
           "gitId": "-"
         },
-        "content": "*Target user profile*:"
+        "content": "** Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase."
       },
       {
         "lineNumber": 532,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things."
       },
       {
         "lineNumber": 533,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "* anyone who engages in group activities that involves spending"
+        "content": "// end::undoredo[]"
       },
       {
         "lineNumber": 534,
         "author": {
           "gitId": "-"
         },
-        "content": "* prefer desktop apps over other types"
+        "content": ""
       },
       {
         "lineNumber": 535,
         "author": {
           "gitId": "-"
         },
-        "content": "* prefers typing over mouse input"
+        "content": "// tag::dataencryption[]"
       },
       {
         "lineNumber": 536,
         "author": {
           "gitId": "-"
         },
-        "content": "* is reasonably comfortable using CLI apps"
+        "content": "\u003d\u003d\u003d [Proposed] Data Encryption"
       },
       {
         "lineNumber": 537,
@@ -6171,9 +6171,9 @@
       {
         "lineNumber": 538,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "*Value proposition*: manage debts faster than a typical mouse/GUI driven app"
+        "content": "_{Explain here how the data encryption feature will be implemented}_"
       },
       {
         "lineNumber": 539,
@@ -6187,63 +6187,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": "// end::dataencryption[]"
       },
       {
         "lineNumber": 541,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d User Stories"
+        "content": ""
       },
       {
         "lineNumber": 542,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Logging"
       },
       {
         "lineNumber": 543,
         "author": {
           "gitId": "-"
         },
-        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
+        "content": ""
       },
       {
         "lineNumber": 544,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations."
       },
       {
         "lineNumber": 545,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "[width\u003d\"90%\",cols\u003d\"10%,\u003c15%,35%,40%\",options\u003d\"header\",]"
+        "content": ""
       },
       {
         "lineNumber": 546,
         "author": {
           "gitId": "-"
         },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": "* The logging level can be controlled using the `logLevel` setting in the configuration file (See \u003c\u003cImplementation-Configuration\u003e\u003e)"
       },
       {
         "lineNumber": 547,
         "author": {
           "gitId": "-"
         },
-        "content": "|Priority |As a ... |I want to ... |So that I can..."
+        "content": "* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level"
       },
       {
         "lineNumber": 548,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* * *` | user | add contacts| so that I can keep track of my list of contacts."
+        "content": "* Currently log messages are output through: `Console` and to a `.log` file."
       },
       {
         "lineNumber": 549,
@@ -6255,9 +6255,9 @@
       {
         "lineNumber": 550,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* * *` | user | set how much each of my contacts owe me| so that I know the amount of money each person owes me."
+        "content": "*Logging Levels*"
       },
       {
         "lineNumber": 551,
@@ -6269,224 +6269,224 @@
       {
         "lineNumber": 552,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* * *` | user | set how much I owe one of my contacts| so that I know who I owe money to."
+        "content": "* `SEVERE` : Critical problem detected which may possibly cause the termination of the application"
       },
       {
         "lineNumber": 553,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `WARNING` : Can continue, but with caution"
       },
       {
         "lineNumber": 554,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* * *` | user | see the details of the balances of each contact| so that I know which activity each transactions were from."
+        "content": "* `INFO` : Information showing the noteworthy actions by the App"
       },
       {
         "lineNumber": 555,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `FINE` : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size"
       },
       {
         "lineNumber": 556,
-        "author": {
-          "gitId": "podocarp"
-        },
-        "content": "|`* * *` | user | create a group activity with multiple contacts| so that is easier for us to keep track of the group\u0027s expenditure."
-      },
-      {
-        "lineNumber": 557,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 557,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[[Implementation-Configuration]]"
+      },
+      {
         "lineNumber": 558,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* * *` | user | see how much each person should be paying each other at the end of the activity| so that I can avoid confusion"
+        "content": "\u003d\u003d\u003d Configuration"
       },
       {
         "lineNumber": 559,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 560,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* * *` | user | delete expenses| remove incorrect entries"
+        "content": "Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`)."
       },
       {
         "lineNumber": 561,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 562,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* * *` | user | delete group activities| remove activities that are over"
+        "content": "\u003d\u003d Documentation"
       },
       {
         "lineNumber": 563,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 564,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | user | specify when a contact borrowed money from me| know how long he has owed me money for."
+        "content": "Refer to the guide \u003c\u003cDocumentation#, here\u003e\u003e."
       },
       {
         "lineNumber": 565,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 566,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | user | specify when I borrowed money from a contact| know how long I have owed money for."
+        "content": "\u003d\u003d Testing"
       },
       {
         "lineNumber": 567,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 568,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | user | sort my contacts| filter through information."
+        "content": "Refer to the guide \u003c\u003cTesting#, here\u003e\u003e."
       },
       {
         "lineNumber": 569,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 570,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | traveller | add expenses in other currencies | keep track of debts."
+        "content": "\u003d\u003d Dev Ops"
       },
       {
         "lineNumber": 571,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 572,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | traveller | have expenses in other currencies to be converted to a single currency | simplify my life."
+        "content": "Refer to the guide \u003c\u003cDevOps#, here\u003e\u003e."
       },
       {
         "lineNumber": 573,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 574,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | user | attach tags to individual expenses and activities | search more conveniently."
+        "content": "[appendix]"
       },
       {
         "lineNumber": 575,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d Product Scope"
       },
       {
         "lineNumber": 576,
         "author": {
-          "gitId": "podocarp"
-        },
-        "content": "|`* *` | user | tag an expense with a picture | keep electronic copies of receipts or invoices as proof."
-      },
-      {
-        "lineNumber": 577,
-        "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 577,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "*Target user profile*:"
+      },
+      {
         "lineNumber": 578,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | user | see all my activities in a calendar view | keep track of what has happened."
+        "content": ""
       },
       {
         "lineNumber": 579,
         "author": {
           "gitId": "podocarp"
         },
-        "content": ""
+        "content": "* anyone who engages in group activities that involves spending"
       },
       {
         "lineNumber": 580,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | user | set a recurring reminder for contacts that owes me money | know when to request people to pay back."
+        "content": "* prefer desktop apps over other types"
       },
       {
         "lineNumber": 581,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "* prefers typing over mouse input"
       },
       {
         "lineNumber": 582,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | user | set a recurring reminder for contacts I loaned from | know when to pay them back"
+        "content": "* is reasonably comfortable using CLI apps"
       },
       {
         "lineNumber": 583,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -6495,82 +6495,82 @@
         "author": {
           "gitId": "podocarp"
         },
-        "content": "|`* *` | user | add profile picture to a contact | know how they look like."
+        "content": "*Value proposition*: manage debts faster than a typical mouse/GUI driven app"
       },
       {
         "lineNumber": 585,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 586,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`* *` | user | export my data and import it from a different application| can sync my debt through multiple devices."
+        "content": "[appendix]"
       },
       {
         "lineNumber": 587,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003d\u003d User Stories"
       },
       {
         "lineNumber": 588,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`*` | user| set up automated periodic notifications (emails, etc.) to people who owe me money | remind them to pay me back."
+        "content": ""
       },
       {
         "lineNumber": 589,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "Priorities: High (must have) - `* * \\*`, Medium (nice to have) - `* \\*`, Low (unlikely to have) - `*`"
       },
       {
         "lineNumber": 590,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`*` | user| keep track of objects that I lent and borrowed from other people | remember to return them."
+        "content": ""
       },
       {
         "lineNumber": 591,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "[width\u003d\"90%\",cols\u003d\"10%,\u003c15%,35%,40%\",options\u003d\"header\",]"
       },
       {
         "lineNumber": 592,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "|`*` | user| specify conditions on the loans | assure the loaned items are returned in a specified condition."
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 593,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "|Priority |As a ... |I want to ... |So that I can..."
       },
       {
         "lineNumber": 594,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "|`*` | user| export the data to other format (.ics etc.)i | export the data to other applications."
+        "content": "|`* * *` | user | add contacts| so that I can keep track of my list of contacts."
       },
       {
         "lineNumber": 595,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -6579,7 +6579,7 @@
         "author": {
           "gitId": "podocarp"
         },
-        "content": "|`*` | traveller| create a common pool of funds to spend for large group activities| simplify tracking of common expenses"
+        "content": "|`* * *` | user | set how much each of my contacts owe me| so that I know the amount of money each person owes me."
       },
       {
         "lineNumber": 597,
@@ -6593,7 +6593,7 @@
         "author": {
           "gitId": "podocarp"
         },
-        "content": "|`*` | user| extract information from a picture of a bill| save the trouble of entering expense details myself."
+        "content": "|`* * *` | user | set how much I owe one of my contacts| so that I know who I owe money to."
       },
       {
         "lineNumber": 599,
@@ -6605,9 +6605,9 @@
       {
         "lineNumber": 600,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": "|`* * *` | user | see the details of the balances of each contact| so that I know which activity each transactions were from."
       },
       {
         "lineNumber": 601,
@@ -6619,70 +6619,70 @@
       {
         "lineNumber": 602,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "[appendix]"
+        "content": "|`* * *` | user | create a group activity with multiple contacts| so that is easier for us to keep track of the group\u0027s expenditure."
       },
       {
         "lineNumber": 603,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Use Cases"
+        "content": ""
       },
       {
         "lineNumber": 604,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "|`* * *` | user | see how much each person should be paying each other at the end of the activity| so that I can avoid confusion"
       },
       {
         "lineNumber": 605,
         "author": {
-          "gitId": "JohnNzj"
-        },
-        "content": "(For all use cases below, the *System* is the `SplitWiser` and the *Actor* is the `user`, unless specified otherwise)"
-      },
-      {
-        "lineNumber": 606,
-        "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
+        "lineNumber": 606,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "|`* * *` | user | delete expenses| remove incorrect entries"
+      },
+      {
         "lineNumber": 607,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 608,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d Use case: List contacts"
+        "content": "|`* * *` | user | delete group activities| remove activities that are over"
       },
       {
         "lineNumber": 609,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 610,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "*MSS*"
+        "content": "|`* *` | user | specify when a contact borrowed money from me| know how long he has owed me money for."
       },
       {
         "lineNumber": 611,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": ""
       },
@@ -6691,217 +6691,217 @@
         "author": {
           "gitId": "podocarp"
         },
-        "content": "1. User requests to list contacts"
+        "content": "|`* *` | user | specify when I borrowed money from a contact| know how long I have owed money for."
       },
       {
         "lineNumber": 613,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "2. SplitWiser shows a list of contacts"
+        "content": ""
       },
       {
         "lineNumber": 614,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "+"
+        "content": "|`* *` | user | sort my contacts| filter through information."
       },
       {
         "lineNumber": 615,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 616,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "|`* *` | traveller | add expenses in other currencies | keep track of debts."
       },
       {
         "lineNumber": 617,
         "author": {
-          "gitId": "-"
-        },
-        "content": "*Extensions*"
-      },
-      {
-        "lineNumber": 618,
-        "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
+        "lineNumber": 618,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "|`* *` | traveller | have expenses in other currencies to be converted to a single currency | simplify my life."
+      },
+      {
         "lineNumber": 619,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 620,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "* 1a. The list of contacts is empty"
+        "content": "|`* *` | user | attach tags to individual expenses and activities | search more conveniently."
       },
       {
         "lineNumber": 621,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 622,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "Use case ends."
+        "content": "|`* *` | user | tag an expense with a picture | keep electronic copies of receipts or invoices as proof."
       },
       {
         "lineNumber": 623,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 624,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "[discrete]"
+        "content": "|`* *` | user | see all my activities in a calendar view | keep track of what has happened."
       },
       {
         "lineNumber": 625,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d Use case: List activites"
+        "content": ""
       },
       {
         "lineNumber": 626,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "|`* *` | user | set a recurring reminder for contacts that owes me money | know when to request people to pay back."
       },
       {
         "lineNumber": 627,
         "author": {
-          "gitId": "Aulud"
-        },
-        "content": "*MSS*"
-      },
-      {
-        "lineNumber": 628,
-        "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
+        "lineNumber": 628,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "|`* *` | user | set a recurring reminder for contacts I loaned from | know when to pay them back"
+      },
+      {
         "lineNumber": 629,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "1. User requests to list activities"
+        "content": ""
       },
       {
         "lineNumber": 630,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "2. SplitWiser shows a list of activities"
+        "content": "|`* *` | user | add profile picture to a contact | know how they look like."
       },
       {
         "lineNumber": 631,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 632,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "Use case ends."
+        "content": "|`* *` | user | export my data and import it from a different application| can sync my debt through multiple devices."
       },
       {
         "lineNumber": 633,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 634,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "*Extensions*"
+        "content": "|`*` | user| set up automated periodic notifications (emails, etc.) to people who owe me money | remind them to pay me back."
       },
       {
         "lineNumber": 635,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 636,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "[none]"
+        "content": "|`*` | user| keep track of objects that I lent and borrowed from other people | remember to return them."
       },
       {
         "lineNumber": 637,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "* 1a. The list of activities is empty"
+        "content": ""
       },
       {
         "lineNumber": 638,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "+"
+        "content": "|`*` | user| specify conditions on the loans | assure the loaned items are returned in a specified condition."
       },
       {
         "lineNumber": 639,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 640,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "|`*` | user| export the data to other format (.ics etc.)i | export the data to other applications."
       },
       {
         "lineNumber": 641,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 642,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d\u003d Use case: View an activity"
+        "content": "|`*` | traveller| create a common pool of funds to spend for large group activities| simplify tracking of common expenses"
       },
       {
         "lineNumber": 643,
@@ -6915,658 +6915,658 @@
         "author": {
           "gitId": "podocarp"
         },
-        "content": "*MSS*"
+        "content": "|`*` | user| extract information from a picture of a bill| save the trouble of entering expense details myself."
       },
       {
         "lineNumber": 645,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 646,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "1. User requests to view an activity with a specific activity ID"
+        "content": "|\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 647,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "2. SplitWiser shows details of the specified activity"
+        "content": ""
       },
       {
         "lineNumber": 648,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "+"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 649,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": "\u003d\u003d Use Cases"
       },
       {
         "lineNumber": 650,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 651,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "JohnNzj"
         },
-        "content": "*Extensions*"
+        "content": "(For all use cases below, the *System* is the `SplitWiser` and the *Actor* is the `user`, unless specified otherwise)"
       },
       {
         "lineNumber": 652,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 653,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "* 1a. No activity exists with the specified activity ID."
+        "content": "[discrete]"
       },
       {
         "lineNumber": 654,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "+"
+        "content": "\u003d\u003d\u003d Use case: List contacts"
       },
       {
         "lineNumber": 655,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "[none]"
+        "content": ""
       },
       {
         "lineNumber": 656,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "** 1a1. SplitWiser shows an error message."
+        "content": "*MSS*"
       },
       {
         "lineNumber": 657,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 658,
         "author": {
           "gitId": "podocarp"
         },
-        "content": "Use case ends."
+        "content": "1. User requests to list contacts"
       },
       {
         "lineNumber": 659,
         "author": {
           "gitId": "podocarp"
         },
-        "content": ""
+        "content": "2. SplitWiser shows a list of contacts"
       },
       {
         "lineNumber": 660,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "[discrete]"
+        "content": "+"
       },
       {
         "lineNumber": 661,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Use case: Create an activity"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 662,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 663,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": "*MSS*"
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 664,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 665,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "1. User requests to create an activity with a given title and participant(s)"
+        "content": "[none]"
       },
       {
         "lineNumber": 666,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "2. SplitWiser creates the activity with the supplied title and no expenses"
+        "content": "* 1a. The list of contacts is empty"
       },
       {
         "lineNumber": 667,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "3. SplitWiser adds the user and the supplied contact(s) to the activity"
+        "content": "+"
       },
       {
         "lineNumber": 668,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "4. SplitWiser shows details of the newly created activity"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 669,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "+"
+        "content": ""
       },
       {
         "lineNumber": 670,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "Use case ends."
+        "content": "[discrete]"
       },
       {
         "lineNumber": 671,
         "author": {
           "gitId": "Aulud"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Use case: List activites"
       },
       {
         "lineNumber": 672,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "*Extensions*"
+        "content": ""
       },
       {
         "lineNumber": 673,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "[none]"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 674,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "* 1a. User specifies one or more participants that are not found in the list of contacts"
+        "content": ""
       },
       {
         "lineNumber": 675,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "+"
+        "content": "1. User requests to list activities"
       },
       {
         "lineNumber": 676,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "[none]"
+        "content": "2. SplitWiser shows a list of activities"
       },
       {
         "lineNumber": 677,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "** 1a1. SplitWiser prompts the user to [.underline]#create new contacts# for each of the missing participants"
+        "content": "+"
       },
       {
         "lineNumber": 678,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "+"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 679,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "Use case resumes at step 2."
+        "content": ""
       },
       {
         "lineNumber": 680,
         "author": {
           "gitId": "Aulud"
         },
-        "content": ""
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 681,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "[discrete]"
+        "content": ""
       },
       {
         "lineNumber": 682,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Use case: Delete contact"
+        "content": "[none]"
       },
       {
         "lineNumber": 683,
         "author": {
           "gitId": "Aulud"
         },
-        "content": ""
+        "content": "* 1a. The list of activities is empty"
       },
       {
         "lineNumber": 684,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "*MSS*"
+        "content": "+"
       },
       {
         "lineNumber": 685,
         "author": {
           "gitId": "Aulud"
         },
-        "content": ""
+        "content": "Use case ends."
       },
       {
         "lineNumber": 686,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "1.  User requests to list contacts"
+        "content": ""
       },
       {
         "lineNumber": 687,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "2.  SplitWiser shows a list of contacts"
+        "content": "[discrete]"
       },
       {
         "lineNumber": 688,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "3.  User requests to delete a specific contact in the list"
+        "content": "\u003d\u003d\u003d Use case: View an activity"
       },
       {
         "lineNumber": 689,
         "author": {
-          "gitId": "Aulud"
+          "gitId": "-"
         },
-        "content": "4.  SplitWiser deletes the person"
+        "content": ""
       },
       {
         "lineNumber": 690,
         "author": {
           "gitId": "-"
         },
-        "content": "+"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 691,
         "author": {
           "gitId": "-"
         },
-        "content": "Use case ends."
+        "content": ""
       },
       {
         "lineNumber": 692,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "1. User requests to view an activity with a specific activity ID"
       },
       {
         "lineNumber": 693,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "*Extensions*"
+        "content": "2. SplitWiser shows details of the specified activity"
       },
       {
         "lineNumber": 694,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 695,
         "author": {
-          "gitId": "-"
-        },
-        "content": "[none]"
-      },
-      {
-        "lineNumber": 696,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "* 2a. The list is empty."
-      },
-      {
-        "lineNumber": 697,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "+"
-      },
-      {
-        "lineNumber": 698,
-        "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": "Use case ends."
       },
       {
-        "lineNumber": 699,
+        "lineNumber": 696,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
-        "lineNumber": 700,
+        "lineNumber": 697,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "* 3a. The given index is invalid."
+        "content": "*Extensions*"
       },
       {
-        "lineNumber": 701,
+        "lineNumber": 698,
         "author": {
-          "gitId": "-"
-        },
-        "content": "+"
-      },
-      {
-        "lineNumber": 702,
-        "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": "[none]"
       },
       {
-        "lineNumber": 703,
+        "lineNumber": 699,
         "author": {
           "gitId": "Aulud"
         },
-        "content": "** 3a1. SplitWiser shows an error message."
+        "content": "* 1a. No activity exists with the specified activity ID."
       },
       {
-        "lineNumber": 704,
+        "lineNumber": 700,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
         "content": "+"
       },
       {
+        "lineNumber": 701,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "[none]"
+      },
+      {
+        "lineNumber": 702,
+        "author": {
+          "gitId": "Aulud"
+        },
+        "content": "** 1a1. SplitWiser shows an error message."
+      },
+      {
+        "lineNumber": 703,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "+"
+      },
+      {
+        "lineNumber": 704,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": "Use case ends."
+      },
+      {
         "lineNumber": 705,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "Use case resumes at step 2."
+        "content": ""
       },
       {
         "lineNumber": 706,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "[discrete]"
       },
       {
         "lineNumber": 707,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Use case: Create an activity"
       },
       {
         "lineNumber": 708,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "[appendix]"
+        "content": ""
       },
       {
         "lineNumber": 709,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": "\u003d\u003d Non Functional Requirements"
+        "content": "*MSS*"
       },
       {
         "lineNumber": 710,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
         "content": ""
       },
       {
         "lineNumber": 711,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "Aulud"
         },
-        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has `Java 11` or above installed."
+        "content": "1. User requests to create an activity with a given title and participant(s)"
       },
       {
         "lineNumber": 712,
         "author": {
           "gitId": "Aulud"
         },
-        "content": ".  Should be able to store up to 1000 contacts and activities without a noticeable sluggishness in performance for typical usage."
+        "content": "2. SplitWiser creates the activity with the supplied title and no expenses"
       },
       {
         "lineNumber": 713,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
+        "content": "3. SplitWiser adds the user and the supplied contact(s) to the activity"
       },
       {
         "lineNumber": 714,
         "author": {
           "gitId": "Aulud"
         },
-        "content": ".  Should run smoothly on reasonably lower spec computers."
+        "content": "4. SplitWiser shows details of the newly created activity"
       },
       {
         "lineNumber": 715,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 716,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "[appendix]"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 717,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "\u003d\u003d Glossary"
+        "content": ""
       },
       {
         "lineNumber": 718,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 719,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "[[mainstream-os]] Mainstream OS::"
+        "content": "[none]"
       },
       {
         "lineNumber": 720,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "Aulud"
         },
-        "content": "Windows, Linux, *nix, OS-X"
+        "content": "* 1a. User specifies one or more participants that are not found in the list of contacts"
       },
       {
         "lineNumber": 721,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 722,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "[appendix]"
+        "content": "[none]"
       },
       {
         "lineNumber": 723,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "\u003d\u003d Product Survey"
+        "content": "** 1a1. SplitWiser prompts the user to [.underline]#create new contacts# for each of the missing participants"
       },
       {
         "lineNumber": 724,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 725,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "*Product Name*"
+        "content": "Use case resumes at step 2."
       },
       {
         "lineNumber": 726,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
         "content": ""
       },
       {
         "lineNumber": 727,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "Author: ..."
+        "content": "[discrete]"
       },
       {
         "lineNumber": 728,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "\u003d\u003d\u003d Use case: Delete contact"
       },
       {
         "lineNumber": 729,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "Pros:"
+        "content": ""
       },
       {
         "lineNumber": 730,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "*MSS*"
       },
       {
         "lineNumber": 731,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "* ..."
+        "content": ""
       },
       {
         "lineNumber": 732,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "* ..."
+        "content": "1.  User requests to list contacts"
       },
       {
         "lineNumber": 733,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "2.  SplitWiser shows a list of contacts"
       },
       {
         "lineNumber": 734,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": "Cons:"
+        "content": "3.  User requests to delete a specific contact in the list"
       },
       {
         "lineNumber": 735,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": "4.  SplitWiser deletes the person"
       },
       {
         "lineNumber": 736,
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": "+"
       },
       {
         "lineNumber": 737,
         "author": {
           "gitId": "-"
         },
-        "content": "* ..."
+        "content": "Use case ends."
       },
       {
         "lineNumber": 738,
@@ -7580,119 +7580,119 @@
         "author": {
           "gitId": "-"
         },
-        "content": "[appendix]"
+        "content": "*Extensions*"
       },
       {
         "lineNumber": 740,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d Instructions for Manual Testing"
+        "content": ""
       },
       {
         "lineNumber": 741,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 742,
         "author": {
           "gitId": "-"
         },
-        "content": "Given below are instructions to test the app manually."
+        "content": "* 2a. The list is empty."
       },
       {
         "lineNumber": 743,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 744,
         "author": {
           "gitId": "-"
         },
-        "content": "[NOTE]"
+        "content": "Use case ends."
       },
       {
         "lineNumber": 745,
         "author": {
           "gitId": "-"
         },
-        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+        "content": ""
       },
       {
         "lineNumber": 746,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* 3a. The given index is invalid."
       },
       {
         "lineNumber": 747,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Launch and Shutdown"
+        "content": "+"
       },
       {
         "lineNumber": 748,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[none]"
       },
       {
         "lineNumber": 749,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ". Initial launch"
+        "content": "** 3a1. SplitWiser shows an error message."
       },
       {
         "lineNumber": 750,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "+"
       },
       {
         "lineNumber": 751,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Download the jar file and copy into an empty folder"
+        "content": "Use case resumes at step 2."
       },
       {
         "lineNumber": 752,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": ".. Open the terminal."
+        "content": ""
       },
       {
         "lineNumber": 753,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": ".. Navigate to where you saved the jar file."
+        "content": ""
       },
       {
         "lineNumber": 754,
         "author": {
-          "gitId": "podocarp"
+          "gitId": "-"
         },
-        "content": ".. Execute the file with `java -jar \u003cname of jar\u003e` +"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 755,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+        "content": "\u003d\u003d Non Functional Requirements"
       },
       {
         "lineNumber": 756,
@@ -7704,51 +7704,51 @@
       {
         "lineNumber": 757,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ". Saving window preferences"
+        "content": ".  Should work on any \u003c\u003cmainstream-os,mainstream OS\u003e\u003e as long as it has `Java 11` or above installed."
       },
       {
         "lineNumber": 758,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ""
+        "content": ".  Should be able to store up to 1000 contacts and activities without a noticeable sluggishness in performance for typical usage."
       },
       {
         "lineNumber": 759,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
+        "content": ".  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse."
       },
       {
         "lineNumber": 760,
         "author": {
-          "gitId": "-"
+          "gitId": "Aulud"
         },
-        "content": ".. Re-launch the app by double-clicking the jar file. +"
+        "content": ".  Should run smoothly on reasonably lower spec computers."
       },
       {
         "lineNumber": 761,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: The most recent window size and location is retained."
+        "content": ""
       },
       {
         "lineNumber": 762,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "[appendix]"
       },
       {
         "lineNumber": 763,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Deleting a person"
+        "content": "\u003d\u003d Glossary"
       },
       {
         "lineNumber": 764,
@@ -7762,63 +7762,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": ". Deleting a person while all persons are listed"
+        "content": "[[mainstream-os]] Mainstream OS::"
       },
       {
         "lineNumber": 766,
         "author": {
-          "gitId": "-"
+          "gitId": "podocarp"
         },
-        "content": ""
+        "content": "Windows, Linux, *nix, OS-X"
       },
       {
         "lineNumber": 767,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+        "content": ""
       },
       {
         "lineNumber": 768,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Test case: `delete 1` +"
+        "content": "[appendix]"
       },
       {
         "lineNumber": 769,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+        "content": "\u003d\u003d Product Survey"
       },
       {
         "lineNumber": 770,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Test case: `delete 0` +"
+        "content": ""
       },
       {
         "lineNumber": 771,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+        "content": "*Product Name*"
       },
       {
         "lineNumber": 772,
         "author": {
           "gitId": "-"
         },
-        "content": ".. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +"
+        "content": ""
       },
       {
         "lineNumber": 773,
         "author": {
           "gitId": "-"
         },
-        "content": "   Expected: Similar to previous."
+        "content": "Author: ..."
       },
       {
         "lineNumber": 774,
@@ -7832,7 +7832,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003d\u003d\u003d Saving data"
+        "content": "Pros:"
       },
       {
         "lineNumber": 776,
@@ -7846,31 +7846,353 @@
         "author": {
           "gitId": "-"
         },
-        "content": ". Dealing with missing/corrupted data files"
+        "content": "* ..."
       },
       {
         "lineNumber": 778,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* ..."
       },
       {
         "lineNumber": 779,
         "author": {
           "gitId": "-"
         },
-        "content": ".. _{explain how to simulate a missing/corrupted file and the expected behavior}_"
+        "content": ""
       },
       {
         "lineNumber": 780,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Cons:"
       },
       {
         "lineNumber": 781,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 782,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* ..."
+      },
+      {
+        "lineNumber": 783,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* ..."
+      },
+      {
+        "lineNumber": 784,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 785,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[appendix]"
+      },
+      {
+        "lineNumber": 786,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 787,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 788,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Given below are instructions to test the app manually."
+      },
+      {
+        "lineNumber": 789,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 790,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[NOTE]"
+      },
+      {
+        "lineNumber": 791,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing."
+      },
+      {
+        "lineNumber": 792,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 793,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Launch and Shutdown"
+      },
+      {
+        "lineNumber": 794,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 795,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Initial launch"
+      },
+      {
+        "lineNumber": 796,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 797,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Download the jar file and copy into an empty folder"
+      },
+      {
+        "lineNumber": 798,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": ".. Open the terminal."
+      },
+      {
+        "lineNumber": 799,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": ".. Navigate to where you saved the jar file."
+      },
+      {
+        "lineNumber": 800,
+        "author": {
+          "gitId": "podocarp"
+        },
+        "content": ".. Execute the file with `java -jar \u003cname of jar\u003e` +"
+      },
+      {
+        "lineNumber": 801,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum."
+      },
+      {
+        "lineNumber": 802,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 803,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Saving window preferences"
+      },
+      {
+        "lineNumber": 804,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 805,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Resize the window to an optimum size. Move the window to a different location. Close the window."
+      },
+      {
+        "lineNumber": 806,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Re-launch the app by double-clicking the jar file. +"
+      },
+      {
+        "lineNumber": 807,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: The most recent window size and location is retained."
+      },
+      {
+        "lineNumber": 808,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 809,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Deleting a person"
+      },
+      {
+        "lineNumber": 810,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 811,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Deleting a person while all persons are listed"
+      },
+      {
+        "lineNumber": 812,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 813,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Prerequisites: List all persons using the `list` command. Multiple persons in the list."
+      },
+      {
+        "lineNumber": 814,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Test case: `delete 1` +"
+      },
+      {
+        "lineNumber": 815,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated."
+      },
+      {
+        "lineNumber": 816,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Test case: `delete 0` +"
+      },
+      {
+        "lineNumber": 817,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: No person is deleted. Error details shown in the status message. Status bar remains the same."
+      },
+      {
+        "lineNumber": 818,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +"
+      },
+      {
+        "lineNumber": 819,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   Expected: Similar to previous."
+      },
+      {
+        "lineNumber": 820,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 821,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003d\u003d\u003d Saving data"
+      },
+      {
+        "lineNumber": 822,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 823,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ". Dealing with missing/corrupted data files"
+      },
+      {
+        "lineNumber": 824,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 825,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".. _{explain how to simulate a missing/corrupted file and the expected behavior}_"
+      },
+      {
+        "lineNumber": 826,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 827,
         "author": {
           "gitId": "-"
         },
@@ -7878,12 +8200,12 @@
       }
     ],
     "authorContributionMap": {
-      "podocarp": 133,
-      "liakify": 11,
+      "podocarp": 129,
+      "liakify": 58,
       "JohnNzj": 61,
       "Aulud": 92,
-      "-": 404,
-      "daekoon": 80
+      "-": 408,
+      "daekoon": 79
     }
   },
   {
@@ -10927,6 +11249,183 @@
     }
   },
   {
+    "path": "docs/diagrams/ExpenseClassDiagram.puml",
+    "fileType": "other",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "@startuml"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "!include style.puml"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "skinparam arrowThickness 1.1"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "skinparam arrowColor MODEL_COLOR"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "skinparam classBackgroundColor MODEL_COLOR"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "skinparam FontColor #FFFFFFF"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "show members"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "hide empty members"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "Class Expense {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    -personId"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    -involvedIds[]"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    -description"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    -isDeleted"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    -isSettlement"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "Class Amount {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    -value"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "Expense *--\u003e \"1\" Amount"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "@enduml"
+      }
+    ],
+    "authorContributionMap": {
+      "liakify": 24
+    }
+  },
+  {
     "path": "docs/diagrams/InviteActivityDiagram.puml",
     "fileType": "other",
     "lines": [
@@ -13173,6 +13672,562 @@
     ],
     "authorContributionMap": {
       "Aulud": 139
+    }
+  },
+  {
+    "path": "docs/diagrams/style.puml",
+    "fileType": "other",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/\u0027"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " \u0027Commonly used styles and colors across diagrams."
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " \u0027Refer to https://plantuml-documentation.readthedocs.io/en/latest for a more"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " \u0027comprehensive list of skinparams."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " \u0027/"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u0027T1 through T4 are shades of the original color from lightest to darkest"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define UI_COLOR #1D8900"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define UI_COLOR_T1 #83E769"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define UI_COLOR_T2 #3FC71B"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define UI_COLOR_T3 #166800"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define UI_COLOR_T4 #0E4100"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define LOGIC_COLOR #3333C4"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define LOGIC_COLOR_T1 #C8C8FA"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define LOGIC_COLOR_T2 #6A6ADC"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define LOGIC_COLOR_T3 #1616B0"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define LOGIC_COLOR_T4 #101086"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define MODEL_COLOR #9D0012"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define MODEL_COLOR_T1 #F97181"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define MODEL_COLOR_T2 #E41F36"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define MODEL_COLOR_T3 #7B000E"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define MODEL_COLOR_T4 #51000A"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define STORAGE_COLOR #A38300"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define STORAGE_COLOR_T1 #FFE374"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define STORAGE_COLOR_T2 #EDC520"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define STORAGE_COLOR_T3 #806600"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define STORAGE_COLOR_T2 #544400"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "!define USER_COLOR #000000"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam BackgroundColor #FFFFFFF"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam Shadowing false"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "skinparam ClassAttributeFontColor #FFFFFF"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam Class {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    FontColor #FFFFFF"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    BorderThickness 1"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    BorderColor #FFFFFF"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    StereotypeFontColor #FFFFFF"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    FontName Arial"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam Actor {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    BorderColor USER_COLOR"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    Color USER_COLOR"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    FontName Arial"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam Sequence {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    MessageAlign center"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    BoxFontSize 15"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    BoxPadding 0"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    BoxFontColor #FFFFFF"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    FontName Arial"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam Participant {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    FontColor #FFFFFFF"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    Padding 20"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam MinClassWidth 50"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam ParticipantPadding 10"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam Shadowing false"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam DefaultTextAlignment center"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "skinparam packageStyle Rectangle"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "skinparam classAttributeIconSize 0"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "hide footbox"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "hide members"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "hide circle"
+      }
+    ],
+    "authorContributionMap": {
+      "liakify": 3,
+      "-": 75
     }
   },
   {
@@ -47244,238 +48299,238 @@
         "author": {
           "gitId": "liakify"
         },
-        "content": "    public final double value;"
+        "content": "    public static final double MIN \u003d 0.01;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "liakify"
         },
-        "content": ""
+        "content": "    public static final double MAX \u003d 1000000;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "liakify"
         },
-        "content": "     * Constructs an {@code Amount}."
+        "content": "    public final double value;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "liakify"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "liakify"
         },
-        "content": "     * @param amount A valid amount of money spent."
+        "content": "    /**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "liakify"
         },
-        "content": "     */"
+        "content": "     * Constructs an {@code Amount}."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    public Amount(double amount) {"
+        "content": "     * If the given amount is less than 0.01 but rounds to 0.01, it will be stored as 0.01."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        checkArgument(isValidAmount(amount), MESSAGE_CONSTRAINTS);"
+        "content": "     * Likewise if the given amount is more than 1 million but rounds to 1 million, it will be stored as 1 million."
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        value \u003d amount;"
+        "content": "     *"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    }"
+        "content": "     * @param amount A valid amount of money spent."
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "liakify"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    /**"
+        "content": "    public Amount(double amount) {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "liakify"
         },
-        "content": "     * Returns true if the given amount is a valid amount."
+        "content": "        checkArgument(isValidAmount(amount), MESSAGE_CONSTRAINTS);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "liakify"
         },
-        "content": "     */"
+        "content": "        if (amount \u003e MAX) {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    public static boolean isValidAmount(double test) {"
+        "content": "            value \u003d MAX;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        double d \u003d Math.round(test * 100) / 100.0;"
+        "content": "        } else if (amount \u003e 0 \u0026\u0026 amount \u003c MIN) { //TODO: verify that this does not conflict with settlement when merged"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        return d \u003e 0 \u0026\u0026 d \u003c\u003d 1000000;"
+        "content": "            value \u003d MIN;"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "liakify"
         },
-        "content": ""
+        "content": "            value \u003d amount;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    @Override"
+        "content": "        }"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    public String toString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        return String.format(\"%.2f\", value);"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "liakify"
         },
-        "content": ""
+        "content": "     * Returns true if the given amount is a valid amount."
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    @Override"
+        "content": "     */"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    public boolean equals(Object other) {"
+        "content": "    public static boolean isValidAmount(double test) {"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        if (other \u003d\u003d this) {"
+        "content": "        double d \u003d Math.round(test * 100) / 100.0;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "liakify"
         },
-        "content": "            return true;"
+        "content": "        return d \u003e 0 \u0026\u0026 d \u003c\u003d MAX;"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        } else if (other instanceof Amount) {"
+        "content": "    }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "liakify"
         },
-        "content": "            return Math.abs(value - ((Amount) other).value) \u003c 1e-10;"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        } else {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "liakify"
         },
-        "content": "            return false;"
+        "content": "    public String toString() {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        }"
+        "content": "        return String.format(\"%.2f\", value);"
       },
       {
         "lineNumber": 47,
@@ -47489,11 +48544,88 @@
         "author": {
           "gitId": "liakify"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    public boolean equals(Object other) {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        if (other \u003d\u003d this) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        } else if (other instanceof Amount) {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "            return Math.abs(value - ((Amount) other).value) \u003c 1e-10;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "            return false;"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "liakify"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "liakify": 48
+      "liakify": 59
     }
   },
   {
@@ -102686,35 +103818,35 @@
         "author": {
           "gitId": "liakify"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "liakify"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "liakify"
         },
-        "content": "import static seedu.address.testutil.Assert.assertThrows;"
+        "content": "import static org.junit.jupiter.api.Assertions.assertNotEquals;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "liakify"
         },
-        "content": ""
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "liakify"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": "import static seedu.address.testutil.Assert.assertThrows;"
       },
       {
         "lineNumber": 8,
@@ -102728,7 +103860,7 @@
         "author": {
           "gitId": "liakify"
         },
-        "content": "public class AmountTest {"
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 10,
@@ -102742,171 +103874,255 @@
         "author": {
           "gitId": "liakify"
         },
-        "content": "    @Test"
+        "content": "public class AmountTest {"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    public void constructor_invalidAmount_throwsIllegalArgumentException() {"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertThrows(IllegalArgumentException.class, () -\u003e new Amount(-0.1));"
+        "content": "    @Test"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    }"
+        "content": "    public void constructor_invalidAmount_throwsIllegalArgumentException() {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "liakify"
         },
-        "content": ""
+        "content": "        assertThrows(IllegalArgumentException.class, () -\u003e new Amount(-0.1));"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    public void isValidAmount() {"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        // invalid amounts"
+        "content": "    @Test"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertFalse(Amount.isValidAmount(0)); // Not positive"
+        "content": "    public void isValidAmount() {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertFalse(Amount.isValidAmount(-1)); // Negative int"
+        "content": "        // invalid amounts"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertFalse(Amount.isValidAmount(0.004999)); // Rounds to 0"
+        "content": "        assertFalse(Amount.isValidAmount(0)); // Not positive"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertFalse(Amount.isValidAmount(-0.01)); // Negative double"
+        "content": "        assertFalse(Amount.isValidAmount(-1)); // Negative int"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertFalse(Amount.isValidAmount(1000000.01)); // More than 1 mil"
+        "content": "        assertFalse(Amount.isValidAmount(0.004999)); // Rounds to 0"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertFalse(Amount.isValidAmount(1000000.005)); // Rounds to more than 1 mil"
+        "content": "        assertFalse(Amount.isValidAmount(-0.01)); // Negative double"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "liakify"
         },
-        "content": ""
+        "content": "        assertFalse(Amount.isValidAmount(1000000.01)); // More than 1 mil"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        // valid amounts"
+        "content": "        assertFalse(Amount.isValidAmount(1000000.005)); // Rounds to more than 1 mil"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertTrue(Amount.isValidAmount(0.01)); // Minimum allowable"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertTrue(Amount.isValidAmount(0.005)); // rounds to 0.01"
+        "content": "        // valid amounts"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertTrue(Amount.isValidAmount(1.0)); // Double in range"
+        "content": "        assertTrue(Amount.isValidAmount(0.01)); // Minimum allowable"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertTrue(Amount.isValidAmount(9999)); // Int in range"
+        "content": "        assertTrue(Amount.isValidAmount(0.005)); // rounds to 0.01"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertTrue(Amount.isValidAmount(1000000.0049)); // rounds to 1 mil"
+        "content": "        assertTrue(Amount.isValidAmount(1.0)); // Double in range"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertTrue(Amount.isValidAmount(1000000.00)); // Maximum allowable double"
+        "content": "        assertTrue(Amount.isValidAmount(9999)); // Int in range"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "liakify"
         },
-        "content": "        assertTrue(Amount.isValidAmount(1000000)); // Maximum allowable int"
+        "content": "        assertTrue(Amount.isValidAmount(1000000.0049)); // rounds to 1 mil"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "liakify"
         },
-        "content": "    }"
+        "content": "        assertTrue(Amount.isValidAmount(1000000.00)); // Maximum allowable double"
       },
       {
         "lineNumber": 35,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        assertTrue(Amount.isValidAmount(1000000)); // Maximum allowable int"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    public void constructor_internalRounding() {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        // Anything within Amount.MIN and Amount.MAX is not rounded, but any valid amount beyond the range is rounded"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        assertEquals(new Amount(0.005), new Amount(Amount.MIN));"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        assertNotEquals(new Amount(0.005), new Amount(0.010001));"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        assertEquals(new Amount(1000000.0049999), new Amount(Amount.MAX));"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "        assertNotEquals(new Amount(1000000.0049999), new Amount(999999.99999));"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "liakify"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
         "author": {
           "gitId": "liakify"
         },
@@ -102914,7 +104130,7 @@
       }
     ],
     "authorContributionMap": {
-      "liakify": 35
+      "liakify": 47
     }
   },
   {
