@@ -749,6 +749,20 @@
             "deletions": 436
           }
         ]
+      },
+      {
+        "insertions": 288,
+        "deletions": 220,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "951260f5ab6f426f3186e6b58eea2fce833398e0",
+            "messageTitle": "Update model component of DG (#327)",
+            "messageBody": "* Modify ViewAllTagsCommand and ViewDefaultTagsCommand\r\n\r\n* Update GUI to have different colours for default and user tags\r\n\r\n* Add some standard colours to the Color enum\r\n\r\n* Fix checkstyle issue\r\n\r\n* Update UG (remove newtag command and add removealltags command)\r\n\r\n* Add RemoveAllTagsCommand. Also added to parser already.\r\n\r\n* Implement sorting of modules according to module code in GUI within a semester\r\n\r\n* Add method to return uniquetaglist as list of strings\r\n\r\n* Fix codacy issues\r\n\r\n* Update tests\r\n\r\n* Add DeleteTagCommand test\r\n\r\n* Remove CreateTagCommand\r\n\r\n* Add TagModuleCommandTest\r\n\r\n* Fix checkstyle\r\n\r\n* Add RemoveTagFromModuleCommandTest\r\n\r\n* Add TagModuleCommandTest\r\n\r\n* Add RemoveTagFromAllCommandTest and RemoveAllTagsCommandTest\r\n\r\n* Add tests for other tagging commands\r\n\r\n* Fix checkstyle\r\n\r\n* Add ViewTaggedCommand + test\r\n\r\n* Fix checkstyle\r\n\r\n* Edit CommandResultTest to test for command results with views\r\n\r\n* Modify RenameTagCommand + add test\r\n\r\n* Implement FindModuleCommand and test\r\n\r\n* Fix tests + add TagStudyPlanCommand and test\r\n\r\n* Fix errors\r\n\r\n* Update tagging commands to check if provided module code is valid.\r\n\r\n* Add RemoveTagFromStudyPlanCommand + test\r\n\r\n* Update command words to differentiate between module tags and studyplan tags\r\n\r\n* Add command to sort study plans by priority tags.\r\n\r\n* Sort tags in TagListPanel and add descriptions for default tags\r\n\r\n* Modify tests\r\n\r\n* Update UserGuide\r\n\r\n* Fix checkstyle\r\n\r\n* Update help\r\n\r\n* Update UserGuide and fix problems in TagStudyPlanCommand and RemoveTagFromStudyPlanCommand\r\n\r\n* Modify some tests\r\n\r\n* Implementing sorting of modules in ModuleListPanel\r\n\r\n* Fix checkstyle\r\n\r\n* Fix completed tags bug\r\n\r\n* Change command words for study plan tagging\r\n\r\n* Fix bug in study plan tagging (invalid study plan index)\r\n\r\n* Update tests\r\n\r\n* Add support for undo-ing study plan tagging\r\n\r\n* Fix bug in ViewTaggedCommandParser\r\n\r\n* Fix bug in RenameTagCommand\r\n\r\n* Set wrap text for tag labels\r\n\r\n* Add PPP draft\r\n\r\n* Limit tag name length to prevent tags from extending beyond the window size\r\n\r\n* Fix bug in FindModuleCommand\r\n\r\n* Add assertion + modify tests\r\n\r\n* Update model class diagram\r\n\r\n* Remove removeall command and change command words\r\n\r\n* Fix checkstyle\r\n\r\n* Update user guide portion in PPP\r\n\r\n* Fix bugs in renametagcommand and tag length\r\n\r\n* Update UG\r\n\r\n* Modify removepriority to take in only study plan index\r\n\r\n* Fix checkstyle\r\n\r\n* Update commandw words in command usage message and fix bug in deletetagcommand\r\n\r\n* Resolve merge conflict\r\n\r\n* Update model component of DG\r\n\r\n* Update DG\r\n\r\n* Update UG\r\n",
+            "insertions": 288,
+            "deletions": 220
+          }
+        ]
       }
     ],
     "andyylam": [
@@ -1285,8 +1299,8 @@
         ]
       },
       {
-        "insertions": 1539,
-        "deletions": 26,
+        "insertions": 1686,
+        "deletions": 92,
         "date": "2019-11-09",
         "commitResults": [
           {
@@ -1295,6 +1309,13 @@
             "messageBody": "* Fix asciidoc\r\n\r\n* Fix ascii\r\n\r\n* Add ModuleCard and ModulePill tests\r\n\r\n* CommandBoxTests\r\n\r\n* Implementing ModuleList UI test\r\n\r\n* ModuleCardListPanel tests\r\n\r\n* Fix checkstyle\r\n\r\n* Change build.gradle\r\n\r\n* Fix travis.yml\r\n\r\n* Update build.gradle for headless tests\r\n\r\n* Added ResultDisplay Test\r\n",
             "insertions": 1539,
             "deletions": 26
+          },
+          {
+            "hash": "62095ef1b569d2d6912805e63e9c4de2a59e4fb5",
+            "messageTitle": "Update DG and andyylam PPP (#328)",
+            "messageBody": "* Fix asciidoc\r\n\r\n* Fix ascii\r\n\r\n* Add ModuleCard and ModulePill tests\r\n\r\n* CommandBoxTests\r\n\r\n* Implementing ModuleList UI test\r\n\r\n* ModuleCardListPanel tests\r\n\r\n* Fix checkstyle\r\n\r\n* Change build.gradle\r\n\r\n* Fix travis.yml\r\n\r\n* Update build.gradle for headless tests\r\n\r\n* Added ResultDisplay Test\r\n\r\n* Add ResultDisplayTest and changed name for andyylam PPP\r\n\r\n* DG guide\r\n\r\n* Changed tags for PPP\r\n",
+            "insertions": 147,
+            "deletions": 66
           }
         ]
       }
@@ -2505,6 +2526,20 @@
             "deletions": 587
           }
         ]
+      },
+      {
+        "insertions": 1054,
+        "deletions": 85,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "cf9903df10497ea025933fecc68d8e145aa0b46e",
+            "messageTitle": "Fixes Result Display, Adds Hacker and Dawn Theme, renames PPP. (#323)",
+            "messageBody": "* Adds module codes to autocomplete\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds autocomplete to Dev Guide\r\n\r\n* Adds getActiveTags\r\n\r\n* Refines dev guide and Autocomplete implementation\r\n\r\n* Modifies help\r\n\r\n* Modifies help more\r\n\r\n* Adds specific help commands\r\n\r\n* Edits dev guide to include help\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds HelpCommandTest\r\n\r\n* Adds HelpCommandParserTest\r\n\r\n* Adds typical module planner.\r\n\r\n* Adds to help\r\n\r\n* Adds HelpCommandTest\r\n\r\n* Fixes Autocomplete bug, Changes minor ui\r\n\r\n* Fixes checkstyle\r\n\r\n* Quickfix autocomplete with tags\r\n\r\n* Edits User Guide\r\n\r\n* Updates Help and Autocomplete\r\n\r\n* Adds collapse and expand\r\n\r\n* Adds collapse, expand tests\r\n\r\n* Adds expand and collapse parser tests\r\n\r\n* Adds readability to help\r\n\r\n* Removes important from css\r\n\r\n* Adds expand and collapse to help\r\n\r\n* Adds collapseall expandall, Modifies Current sem implementation\r\n\r\n* Removes old current sem\r\n\r\n* Fixes codacy\r\n\r\n* Allows multiple mods for addmod\r\n\r\n* Adds some logging.\r\n\r\n* Reconfigures autocomplete\r\n\r\n* Adds documentation\r\n\r\n* Adds autocomplete testing\r\n\r\n* Adds Semester names to autocomplete\r\n\r\n* Edits user guide.\r\n\r\n* Modifies developer guide for autocomplete\r\n\r\n* Removes unused field\r\n\r\n* Changes UI in Dev Guide\r\n\r\n* Adds different GUI Modes.\r\n\r\n* Fixes checkstyle\r\n\r\n* Adds tests, changes dark mode\r\n\r\n* Removes old dark theme\r\n\r\n* Modifies Dark Mode\r\n\r\n* Edits tag view\r\n\r\n* Rearranges User Guide\r\n\r\n* Quickfixes collapse and help\r\n\r\n* Refactors mode to theme\r\n\r\n* Fixes checkstyle\r\n\r\n* First draft of PPP\r\n\r\n* Adds PPP\r\n\r\n* Edits PPP\r\n\r\n* Fixes left display\r\n\r\n* Adds Hacker Theme\r\n\r\n* Fixes checkstyle\r\n\r\n* Fixes viewplan GUI for light theme\r\n\r\n* Reverting previous commits\r\n\r\n* Revert \"Fixes left display\"\r\n\r\nThis reverts commit ce1256a67a39f13e9e8bd1a69f44053134929a7a.\r\n\r\n* Redoes the changes, but fixed this time\r\n\r\n* Edits ResultDisplayHandle\r\n\r\n* Beautifies hacker mode\r\n\r\n* Adds Dawn theme\r\n\r\n* Rename PPP\r\n\r\n* Edits userguide\r\n",
+            "insertions": 1054,
+            "deletions": 85
+          }
+        ]
       }
     ],
     "halfwhole": [
@@ -3064,35 +3099,35 @@
     ]
   },
   "authorFinalContributionMap": {
-    "chowyiwai": 7019,
-    "andyylam": 8046,
-    "LiuZechu": 7040,
-    "yaaanch": 4316,
+    "chowyiwai": 7029,
+    "andyylam": 8153,
+    "LiuZechu": 7037,
+    "yaaanch": 5355,
     "halfwhole": 3916
   },
   "authorFileTypeContributionMap": {
     "chowyiwai": {
-      "docs": 342,
+      "docs": 375,
       "tests": 3212,
-      "functional": 3052,
-      "other": 413
+      "functional": 2982,
+      "other": 460
     },
     "andyylam": {
-      "docs": 371,
-      "tests": 3796,
-      "functional": 2885,
-      "other": 994
+      "docs": 392,
+      "tests": 3824,
+      "functional": 2879,
+      "other": 1058
     },
     "LiuZechu": {
-      "docs": 394,
+      "docs": 395,
       "tests": 2454,
-      "functional": 4030,
+      "functional": 4026,
       "other": 162
     },
     "yaaanch": {
-      "docs": 534,
-      "tests": 1291,
-      "functional": 2325,
+      "docs": 532,
+      "tests": 1294,
+      "functional": 3363,
       "other": 166
     },
     "halfwhole": {
@@ -3102,11 +3137,11 @@
     }
   },
   "authorContributionVariance": {
-    "chowyiwai": 646884.94,
-    "andyylam": 897419.6,
-    "LiuZechu": 165604.97,
-    "yaaanch": 165038.05,
-    "halfwhole": 122759.3
+    "chowyiwai": 637664.56,
+    "andyylam": 894411.9,
+    "LiuZechu": 163753.94,
+    "yaaanch": 177846.2,
+    "halfwhole": 121108.73
   },
   "authorDisplayNameMap": {
     "chowyiwai": "CS2103-F09-3 CHOW  ... I WAI",

@@ -1425,8 +1425,8 @@
         ]
       },
       {
-        "insertions": 240,
-        "deletions": 36,
+        "insertions": 314,
+        "deletions": 69,
         "date": "2019-11-09",
         "commitResults": [
           {
@@ -1437,11 +1437,39 @@
             "deletions": 11
           },
           {
+            "hash": "5fd0bda14900b029bf8b1bd2f5397702e4a153ed",
+            "messageTitle": "fix reserialisation of deleted expense",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 2
+          },
+          {
+            "hash": "497f23f994a7585f3c6ef5a92b72046b3efde5e7",
+            "messageTitle": "Update deleteExpense logic for deleting settlements",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "4f77a0698c791eec2a7826aa51a67d3325fdb92b",
+            "messageTitle": "Calculation bug fix",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 13
+          },
+          {
             "hash": "24e101aa15d1e6a100db4862cb2ec6fb8387a507",
             "messageTitle": "Update docs",
             "messageBody": "",
             "insertions": 121,
             "deletions": 8
+          },
+          {
+            "hash": "ed126acfc573ea9fc7610bc192a8edafb79d1b7e",
+            "messageTitle": "Make isSettlement flag immutable",
+            "messageBody": "",
+            "insertions": 33,
+            "deletions": 17
           },
           {
             "hash": "5f0e0bfe3cc11fde391adc2aad0c17f289ec922d",
@@ -1948,6 +1976,104 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 144,
+        "deletions": 28,
+        "date": "2019-11-06",
+        "commitResults": [
+          {
+            "hash": "a51f234ceb7550082990fda44668c81165e68fb2",
+            "messageTitle": "Modify Context.java to change constructor to public Modfiy DeleteCommand for deletion of contact, activity, expense",
+            "messageBody": "",
+            "insertions": 66,
+            "deletions": 14
+          },
+          {
+            "hash": "e91e3f81737cf6d8bcedfecce81fff9d6d9aaf18",
+            "messageTitle": "Add test to DeleteCommandTest",
+            "messageBody": "",
+            "insertions": 78,
+            "deletions": 14
+          }
+        ]
+      },
+      {
+        "insertions": 136,
+        "deletions": 38,
+        "date": "2019-11-07",
+        "commitResults": [
+          {
+            "hash": "909027936314efeb96907ecef774e66c838e6bfc",
+            "messageTitle": "Update userguide, developer guide",
+            "messageBody": "",
+            "insertions": 77,
+            "deletions": 15
+          },
+          {
+            "hash": "5200a2ca463e70a1da821c08b66c621988bff633",
+            "messageTitle": "Fix checkstyle for travis",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 4
+          },
+          {
+            "hash": "9029d366f21031d0a22bf8bddf42cca5e82220cf",
+            "messageTitle": "Complete deletecommand",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 17
+          },
+          {
+            "hash": "d9bc01a565827ab742f1b1b87e9f98d963198748",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "7bcdd204491f281a5c9ef5a7a4171b4d29fb501e",
+            "messageTitle": "Add more tests for DeleteCommand",
+            "messageBody": "",
+            "insertions": 44,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 2,
+        "deletions": 2,
+        "date": "2019-11-08",
+        "commitResults": [
+          {
+            "hash": "f790b43262f92dcd8197accad9e6796cb284f1cb",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 5,
+        "deletions": 6,
+        "date": "2019-11-09",
+        "commitResults": [
+          {
+            "hash": "d306a963bf3fdfd39b81bb5174ead4d833902890",
+            "messageTitle": "Fix constructor issues for context using static factory method",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 5
+          },
+          {
+            "hash": "268c0fd3d727f7929999e65d0da789c93419740d",
+            "messageTitle": "Fix travis unused imports",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
           }
         ]
       }
@@ -2896,47 +3022,47 @@
     ]
   },
   "authorFinalContributionMap": {
-    "podocarp": 2655,
-    "liakify": 2003,
-    "JohnNzj": 1331,
-    "Aulud": 2953,
-    "daekoon": 2461
+    "podocarp": 2617,
+    "liakify": 2072,
+    "JohnNzj": 1576,
+    "Aulud": 2933,
+    "daekoon": 2459
   },
   "authorFileTypeContributionMap": {
     "podocarp": {
-      "docs": 219,
-      "tests": 1159,
-      "functional": 1277
+      "docs": 222,
+      "tests": 1151,
+      "functional": 1244
     },
     "liakify": {
       "docs": 260,
-      "tests": 887,
-      "functional": 712,
+      "tests": 918,
+      "functional": 750,
       "other": 144
     },
     "JohnNzj": {
-      "docs": 83,
-      "tests": 539,
-      "functional": 525,
-      "other": 184
+      "docs": 138,
+      "tests": 653,
+      "functional": 587,
+      "other": 198
     },
     "Aulud": {
-      "docs": 187,
-      "tests": 582,
-      "functional": 2016,
+      "docs": 176,
+      "tests": 577,
+      "functional": 2012,
       "other": 168
     },
     "daekoon": {
       "docs": 96,
-      "tests": 1429,
+      "tests": 1427,
       "functional": 901,
       "other": 35
     }
   },
   "authorContributionVariance": {
     "podocarp": 18991.47,
-    "liakify": 17214.908,
-    "JohnNzj": 18734.451,
+    "liakify": 18103.475,
+    "JohnNzj": 19135.852,
     "Aulud": 88551.43,
     "daekoon": 45999.895
   },

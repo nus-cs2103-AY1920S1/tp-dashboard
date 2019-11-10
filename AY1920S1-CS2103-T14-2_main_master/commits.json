@@ -280,6 +280,20 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 34,
+        "deletions": 25,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "39ed28ad7dd2c98ec0c00e13799c7374d675fc89",
+            "messageTitle": "Fixed #122: Time slot overflow bug, semStart storage (#200)",
+            "messageBody": "",
+            "insertions": 34,
+            "deletions": 25
+          }
+        ]
       }
     ],
     "Ellieyee": [
@@ -986,8 +1000,8 @@
         ]
       },
       {
-        "insertions": 104,
-        "deletions": 28,
+        "insertions": 219,
+        "deletions": 66,
         "date": "2019-11-09",
         "commitResults": [
           {
@@ -996,6 +1010,13 @@
             "messageBody": "* Update UserGuide.adoc\r\n\r\n* Update UserGuide.adoc\r\n\r\n* Update DG and UG\r\n\r\n* Update DG\r\n\r\n* Update DG\r\n\r\n* Update Developer Guide\r\n\r\n* Update  (#6)\r\n\r\n* Include index shortcut for AddStudentCommand (#49)\r\n\r\n* Added Attendance, missing tests for Tutorial and associated subclasses.\r\n\r\n* Allow multiple input formats for addTutorial weeks (#52)\r\n\r\n* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Update list command (#53)\r\n\r\n* Update TutorialCard to display Module code\r\n\r\n* Update List command to display in UI\r\n\r\n* Fuck you sourcetree\r\n\r\n* Implemented saving of Modules\r\n\r\n* Can read module json from file\r\n\r\n* Save progress, before starting on trying to store as an easier to interpret json string array of array of array\r\n\r\n* Add function to save modules model to file. Haven\u0027t add function to read from said saved data.\r\n\r\n* Changed from hashMap to LinkedHashMap to preserve relative ordering\r\n\r\n* Refactor code that deals with saving to Json\r\n\r\n* Add function to read module data from saved Json file\r\n\r\n* Refactor code block on studentStringToStudent\r\n\r\n* Refactor code segment on Student object creation\r\n\r\n* Add checkers for invalid tutorial and student strings \u0026 general refactoring\r\n\r\n* Corrected ckeckStyle and tests\r\n\r\n* Fix checkStyle violations\r\n\r\n* Added intial round of tests\r\n\r\n* Fix test for invalid dateTime or Duration\r\n\r\n* Update fork\r\n\r\n* Add support for saving (but not reading) of attendance list\r\n\r\n* Add test json files\r\n\r\n* Extract out weekly attendance string except final week\r\n\r\n* Fix issue with saving an attendance list with 0 students\r\n\r\n* Add ability to construct attendance object from json string\r\n\r\n* Fix failing test cases due to change in tutorialString structure (addition of tutorialAttendance field)\r\n\r\n* Fix checkstyle violations\r\n\r\n* Added EOF to json test files\r\n\r\n* Revert to 63465c7f\r\n\r\n* Code cleaning\r\n\r\n* Fix check style violations\r\n\r\n* Refactor parsing methods in JsonAdaptedModule.java to JsonUtil.java\r\n\r\n* Refactor JsonAdaptedModuleTest \u0026 JsonUtilTest\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update developer guide\r\n\r\n* Update tutorial class\r\n\r\n* Remove JsonAdaptedPerson from Storage-related files\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Checkpoint before converting tutorial structure from a String to a Map\r\n\r\n* Ported storage to nested map of strings\r\n\r\n* Remove all instances from previous storage method\r\n\r\n* Added saving of initial model state\r\n\r\n* Add ability to save each state for every state-changing command\r\n\r\n* Add a skeleton Undo Command (input/output)\r\n\r\n* Add ability to check for invalid arguments for \"u/integer\"\r\n\r\n* Add if-branch for an undo command\r\n\r\n* Checkpoint before implementing overloaded Command.execute(model, storage) abstract method\r\n\r\n* Add overloaded abstract method to accomodate commands that need both Model \u0026 Storage objects (ie UndoCommand) to operate\r\n\r\n* Added undo ability\r\n\r\n* Fix bug where new state is saved after Undo Command\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing test cases\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Update build.gradle\r\n\r\n* Update build.gradle\r\n\r\n* Bug fixes\r\n\r\n* Update user guide\r\n\r\n* Before attempting to change json storage directory to (Paths.get)\r\n\r\n* Fix state storage file directory for Mac users\r\n\r\n* Update checkStyle\r\n\r\n* Add parsing of Assignment from json\r\n\r\n* Add storage for assignments\r\n\r\n* Add method isDuplicateAssignment\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Add string checking for all student fields. To remove any leftover square brackets ie \"[\" or \"]\".\r\n\r\n* Added Hatziq\u0027s PPP\r\n\r\n* Fix issue #154\r\n\r\n* Maybe fix the assignment storage?\r\n\r\n* Start storage for event\r\n\r\n* Update documentation\r\n\r\n* Update documentation\r\n\r\n* Update docs\r\n\r\n* Added checking for semStart. If new SemStart is the same as current SemStart, throw an error\r\n\r\n* Fix checkStyle\r\n\r\n* Update ahmadhatziq.adoc\r\n\r\n* Add storage for events\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Fix bug where if json state files are missing, will cause app to hang\r\n",
             "insertions": 104,
             "deletions": 28
+          },
+          {
+            "hash": "cf2479d24ec4a125be89259218f3523f8de9d95e",
+            "messageTitle": "Fix bug for undoing Assignments (#199)",
+            "messageBody": "",
+            "insertions": 115,
+            "deletions": 38
           }
         ]
       }
@@ -1459,16 +1480,16 @@
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 8288,
+    "ZiHawkEye": 8317,
     "Ellieyee": 7511,
-    "AhmadHatziq": 3925,
-    "lumos309": 6664
+    "AhmadHatziq": 3983,
+    "lumos309": 6663
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
       "docs": 192,
       "tests": 2617,
-      "functional": 5452,
+      "functional": 5481,
       "other": 27
     },
     "Ellieyee": {
@@ -1479,22 +1500,22 @@
     },
     "AhmadHatziq": {
       "docs": 469,
-      "tests": 357,
-      "functional": 3089,
+      "tests": 376,
+      "functional": 3128,
       "other": 10
     },
     "lumos309": {
       "docs": 254,
       "tests": 2733,
-      "functional": 3335,
+      "functional": 3334,
       "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 142021.08,
-    "Ellieyee": 199260.05,
-    "AhmadHatziq": 62616.832,
-    "lumos309": 54649.715
+    "ZiHawkEye": 140033.6,
+    "Ellieyee": 196901.31,
+    "AhmadHatziq": 62332.887,
+    "lumos309": 54086.61
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",

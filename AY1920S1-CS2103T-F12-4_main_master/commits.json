@@ -777,6 +777,41 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 19,
+        "deletions": 3,
+        "date": "2019-11-09",
+        "commitResults": [
+          {
+            "hash": "8a1873a5c28bb5a8064ed1cbe1725be614e57ef4",
+            "messageTitle": "Amended ppp to match symbols and formatting in adoc and html",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "4d2af62177680c1a26a1f2165fcb28cca469cd39",
+            "messageTitle": "Added RepoSense authorship",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 2,
+        "deletions": 1,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "b01de5856f0bf05d6034c897db61fb9aca8d8bd1",
+            "messageTitle": "amended ppp",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          }
+        ]
       }
     ],
     "xinmingzh": [
@@ -1591,6 +1626,27 @@
             "messageBody": "",
             "insertions": 1,
             "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 23,
+        "deletions": 2,
+        "date": "2019-11-09",
+        "commitResults": [
+          {
+            "hash": "782dfa52cc03c39c05e17e3060f929f0ea424b53",
+            "messageTitle": "added authorship",
+            "messageBody": "",
+            "insertions": 21,
+            "deletions": 0
+          },
+          {
+            "hash": "43e3592cd8834ee7f7a5da6f9bfa131ace03701c",
+            "messageTitle": "amended ppp symbol description",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
           }
         ]
       }
@@ -2661,21 +2717,112 @@
             "deletions": 8
           }
         ]
+      },
+      {
+        "insertions": 129,
+        "deletions": 75,
+        "date": "2019-11-09",
+        "commitResults": [
+          {
+            "hash": "2fb1a71d62b61845ea12b6a9d64e0b49fe461e7b",
+            "messageTitle": "Updated archive displaying behavior and updated commands to follow",
+            "messageBody": "Expense display only switches between default view and archive view\nwhen a command that affects either is made. Commands that do not\naffect them will cause the displayed list to remain the same.\n\nCommands that switch the view include:\n* Add\n* Edit\n* Delete\n* Clear\n* Find\n* List\n* All archive commands besides ListArchiveNames\n* All tag commands besides ListTag\n* Undo\n* Redo\n\nCommands that do not switch the view include:\n* Exit\n* Help\n* ListArchiveNames\n* ListTag\n* History\n* DisplayStats\n",
+            "insertions": 36,
+            "deletions": 23
+          },
+          {
+            "hash": "18682f68ef045169562e3fcde8c70a0ab7f6087f",
+            "messageTitle": "Fixed exit/help command not updated properly",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "115804dbb68e3e49eaaa0fda0228647dbba72931",
+            "messageTitle": "Checkstyle fixes",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 6
+          },
+          {
+            "hash": "0e9375c97a92ee6d783733028dbb069b4753e17f",
+            "messageTitle": "Codacy fix",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "003ed09030a554289d14e52e4fcfb64f42a8d8cc",
+            "messageTitle": "Fixed leaving out add archive command from the changes",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 2
+          },
+          {
+            "hash": "4b625cd81965d654b6210b5a3703a0395d7681a8",
+            "messageTitle": "Updated all instances of \"\" in CommandResult constructors to constant",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 15
+          },
+          {
+            "hash": "acf19593be6a24be2725567beb535fea3cef0fa0",
+            "messageTitle": "Changed impl of VersionedBillboard to allow tracking of displayed list",
+            "messageBody": "",
+            "insertions": 37,
+            "deletions": 13
+          },
+          {
+            "hash": "e5f917a12cc5abfad6269a612acf3e596ac2a896",
+            "messageTitle": "Undid erroneous edit of AddArchiveCommand",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 4
+          },
+          {
+            "hash": "80b6fc55b8b7a92580486a1cba6f996bd7c2572b",
+            "messageTitle": "Fixed AddArchiveCommand to have proper behavior for displaying expenses",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 2
+          },
+          {
+            "hash": "1e459870e06b898e03367058cdbe2d4e20029482",
+            "messageTitle": "Fixed undo and redo commands to copy the undone/redone model instead",
+            "messageBody": "Without copying, after undoing/redoing, updating the model will alter\nthe command history, leading to unpredictable results.\n",
+            "insertions": 12,
+            "deletions": 5
+          },
+          {
+            "hash": "9ce0f875e7e841b29f0d6d062e1d26f238f53d15",
+            "messageTitle": "[Chore] Coveralls bug",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "3d1207da110d1d1402371c1773d1e2159e4ee4bf",
+            "messageTitle": "Fix bug",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 0
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "Davidcwh": 4382,
+    "Davidcwh": 4409,
     "xinmingzh": 883,
-    "waifonglee": 3206,
-    "waynefong0401": 2337,
-    "weiijiie": 4492
+    "waifonglee": 3232,
+    "waynefong0401": 2304,
+    "weiijiie": 4568
   },
   "authorFileTypeContributionMap": {
     "Davidcwh": {
-      "docs": 809,
+      "docs": 810,
       "tests": 1453,
-      "functional": 1916,
+      "functional": 1942,
       "other": 204
     },
     "xinmingzh": {
@@ -2685,29 +2832,29 @@
     },
     "waifonglee": {
       "docs": 441,
-      "tests": 1317,
-      "functional": 1321,
+      "tests": 1321,
+      "functional": 1343,
       "other": 127
     },
     "waynefong0401": {
       "docs": 265,
-      "tests": 684,
-      "functional": 1110,
+      "tests": 681,
+      "functional": 1080,
       "other": 278
     },
     "weiijiie": {
       "docs": 283,
-      "tests": 1737,
-      "functional": 2358,
+      "tests": 1750,
+      "functional": 2421,
       "other": 114
     }
   },
   "authorContributionVariance": {
-    "Davidcwh": 87062.805,
-    "xinmingzh": 12003.833,
-    "waifonglee": 27334.385,
-    "waynefong0401": 186522.0,
-    "weiijiie": 190988.58
+    "Davidcwh": 83801.62,
+    "xinmingzh": 11482.798,
+    "waifonglee": 26255.316,
+    "waynefong0401": 178641.6,
+    "weiijiie": 183087.0
   },
   "authorDisplayNameMap": {
     "Davidcwh": "CS2103T-F12-4 CHIA  ... DAVID",

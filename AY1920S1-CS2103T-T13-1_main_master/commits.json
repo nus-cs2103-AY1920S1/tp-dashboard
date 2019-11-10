@@ -494,8 +494,8 @@
         ]
       },
       {
-        "insertions": 46,
-        "deletions": 29,
+        "insertions": 118,
+        "deletions": 136,
         "date": "2019-11-09",
         "commitResults": [
           {
@@ -504,6 +504,13 @@
             "messageBody": "The following sections were changed:\r\n* Introduction \r\n* Match Feature\r\n* Change tone of user guide\r\n* Exit\r\n\r\nOther changes include:\r\n* Adding labelled diagrams\r\n",
             "insertions": 46,
             "deletions": 29
+          },
+          {
+            "hash": "bd6d01a6df0fedad7f41ddf7f82b690b462ef4ed",
+            "messageTitle": "Change explanation of match feature (#258)",
+            "messageBody": "* Edit diagrams given in existing AB3 Guide\r\n\r\nTo Do:\r\n* Add sequence diagrams\r\n* Add class diagrams\r\n* Expand on design considerations\r\n\r\n* Rewrite implementation details of MatchCommand\r\n\r\n* Add match feature example usage scenario\r\n",
+            "insertions": 72,
+            "deletions": 107
           }
         ]
       }
@@ -1037,53 +1044,74 @@
             "deletions": 2
           }
         ]
+      },
+      {
+        "insertions": 253,
+        "deletions": 56,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "11a911d02b1d4cad375fe183e9872fb6faaa119e",
+            "messageTitle": "adding other attributes to edit (#177)",
+            "messageBody": "* adding other attributes to edit\r\n\r\n* getter and setter methods of the attributes for\r\n\r\n* getting values of attributes in editCommandParser\r\n\r\n* trying to edit\r\n\r\n* removing organ exp date for editing\r\n\r\n* Fix edit\r\n\r\n* Add error message\r\n",
+            "insertions": 237,
+            "deletions": 40
+          },
+          {
+            "hash": "555a43ad6cb34ca1a2fb5baee4e0c2f6bf3af7c0",
+            "messageTitle": "Processing command (#267)",
+            "messageBody": "* WIP: ProcessingCommand\r\n\r\n* Adding method to check if patient and donor exist\r\n\r\n* Able to process 2 ic/ and return the default list out\r\n\r\n* delete unused imports\r\n\r\n* fixed issues regarding processing and matching\r\n\r\n* null pointer errors arise\r\n\r\n* remove the using of storage for the tasklist\r\n\r\n* not able to update list\r\n\r\n* markAsDone is done\r\n\r\n* made setter method for processinglist\r\n\r\n* setter changes\r\n\r\n* processingmark command done\r\n\r\n* some test cases added\r\n\r\n* checkstyle\r\n\r\n* checkstyles\r\n\r\n* Model issues\r\n\r\n* Model issues\r\n\r\n* null pointer fixes\r\n\r\n* null pointer fixes\r\n\r\n* checkstyle\r\n\r\n* checkstyle\r\n\r\n* checkstyle\r\n\r\n* command completed. Test cases not yet\r\n\r\n* trying to revert the conflict removal\r\n\r\n* command completed. Test cases not yet\r\n\r\n* command completed. Test cases not yet\r\n\r\n* command completed. Test cases not yet\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* fix issue #106 regarding addCommand tissuetyping\r\n\r\n* fix issue #106 regarding addCommand tissuetyping\r\n\r\n* fix issue #206 regarding addCommand tissuetyping\r\n\r\n* added more exception handlings\r\n\r\n* merge conflict\r\n\r\n* merge conflict\r\n\r\n* added more exceptions handling and fixed #207\r\n\r\n* added more exceptions handling and fixed #207\r\n\r\n* more exception handlings\r\n\r\n* more exception handlings\r\n\r\n* more exception handlings\r\n\r\n* bugs\r\n\r\n* checkstyle\r\n",
+            "insertions": 16,
+            "deletions": 16
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "WilliamRyank": 4801,
-    "C-likethis123": 3898,
-    "TheRealRavager": 2480,
-    "Yen-Peng": 1087,
-    "SimNee": 1983
+    "WilliamRyank": 4794,
+    "C-likethis123": 3854,
+    "TheRealRavager": 2491,
+    "Yen-Peng": 1080,
+    "SimNee": 2202
   },
   "authorFileTypeContributionMap": {
     "WilliamRyank": {
       "docs": 155,
       "tests": 1464,
-      "functional": 3165,
+      "functional": 3158,
       "other": 17
     },
     "C-likethis123": {
-      "docs": 564,
+      "docs": 502,
       "tests": 1709,
       "functional": 1528,
-      "other": 97
+      "other": 115
     },
     "TheRealRavager": {
-      "docs": 81,
+      "docs": 92,
       "tests": 1144,
       "functional": 1254,
       "other": 1
     },
     "Yen-Peng": {
-      "docs": 283,
+      "docs": 276,
       "tests": 182,
       "functional": 489,
       "other": 133
     },
     "SimNee": {
-      "docs": 83,
+      "docs": 85,
       "tests": 569,
-      "functional": 1331
+      "functional": 1548
     }
   },
   "authorContributionVariance": {
-    "WilliamRyank": 159365.28,
-    "C-likethis123": 95502.46,
-    "TheRealRavager": 166652.92,
-    "Yen-Peng": 5402.1675,
-    "SimNee": 21523.123
+    "WilliamRyank": 157154.28,
+    "C-likethis123": 94577.37,
+    "TheRealRavager": 164220.25,
+    "Yen-Peng": 5329.6343,
+    "SimNee": 22250.64
   },
   "authorDisplayNameMap": {
     "WilliamRyank": "CS2103T-T13-1 WILLI ... SNADI",

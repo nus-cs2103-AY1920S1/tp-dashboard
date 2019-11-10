@@ -31952,72 +31952,72 @@
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "        Label subtitle \u003d new Label(\"Cards in deck\");"
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "        subtitle.getStyleClass().add(\"window-subtitle\");"
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": "        questionList.getChildren().add(subtitle);"
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "nattanyz"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 100,
-        "author": {
           "gitId": "timothyleong97"
         },
         "content": "        ArrayList\u003cFlashCard\u003e cards \u003d deck.getCards();"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 97,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        int numCards \u003d cards.size();"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 98,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        deckSize.setText(numCards + (numCards \u003d\u003d 1 ? \" card\" : \" cards\"));"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 99,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        for (int i \u003d 0; i \u003c numCards; i++) {"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 100,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "            CardTitle cardTitle \u003d new CardTitle(cards.get(i), i + 1, deleteCard, editCard);"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 101,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "            questionList.getChildren().add(cardTitle);"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "timothyleong97"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "timothyleong97"
+        },
+        "content": "        if (numCards \u003d\u003d 1) { //disable the delete button if user has only 1 card in the deck"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "timothyleong97"
+        },
+        "content": "            CardTitle cardTitle \u003d (CardTitle) questionList.getChildren().get(0);"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "timothyleong97"
+        },
+        "content": "            cardTitle.disableDelete();"
       },
       {
         "lineNumber": 106,
@@ -32031,381 +32031,353 @@
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "        if (numCards \u003d\u003d 1) { //disable the delete button if user has only 1 card in the deck"
+        "content": "    }"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "            CardTitle cardTitle \u003d (CardTitle) questionList.getChildren().get(0);"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "            cardTitle.disableDelete();"
+        "content": "    /**"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "        }"
+        "content": "     * Used by CardTitle to trigger a deletion of a card."
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "    }"
+        "content": "     * @param index the 1-based index of a card."
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "    /**"
+        "content": "    private void deleteCard(int index) {"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "     * Used by CardTitle to trigger a deletion of a card."
+        "content": "        if (deck.getCards().size() \u003d\u003d 1) {"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "     * @param index the 1-based index of a card."
+        "content": "            Consumers.doTask(ConsumerSchema.DISPLAY_MESSAGE, \"Your deck needs at least 1 card!\");"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "     */"
+        "content": "            return;"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "    private void deleteCard(int index) {"
+        "content": "        }"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "        if (deck.getCards().size() \u003d\u003d 1) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "            Consumers.doTask(ConsumerSchema.DISPLAY_MESSAGE, \"Your deck needs at least 1 card!\");"
+        "content": "            deck.removeCard(index);"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "            return;"
+        "content": "            renderQuestions();"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "        }"
+        "content": "        } catch (IndexNotFoundException e) {"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "        try {"
+        "content": "            e.printStackTrace();"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "            deck.removeCard(index);"
+        "content": "        }"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "            renderQuestions();"
+        "content": "    }"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "        } catch (IndexNotFoundException e) {"
+        "content": ""
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "            e.printStackTrace();"
+        "content": "    /**"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "        }"
+        "content": "     * Delete a deck."
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "    }"
+        "content": "     * @throws DeckNotFoundException"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "    /**"
+        "content": "    private void deleteDeck() throws DeckNotFoundException { //can be in Responses"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "timothyleong97"
         },
-        "content": "     * Delete a deck."
-      },
-      {
-        "lineNumber": 132,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": "     * @throws DeckNotFoundException"
-      },
-      {
-        "lineNumber": 133,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 134,
-        "author": {
-          "gitId": "timothyleong97"
-        },
-        "content": "    private void deleteDeck() throws DeckNotFoundException { //can be in Responses"
-      },
-      {
-        "lineNumber": 135,
-        "author": {
-          "gitId": "timothyleong97"
-        },
         "content": "        State state \u003d StateHolder.getState();"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 132,
         "author": {
           "gitId": "nattanyz"
         },
         "content": "        state.removeDeck(deck.getDeckName());"
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 133,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        StorageManager.deleteDeck(deck);"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 134,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        Consumers.doTask(ConsumerSchema.DISPLAY_DECKS, true);"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 135,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 136,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": ""
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 137,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "    private void addQuestion() {"
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 138,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        EditDeckDisplay display \u003d new EditDeckDisplay(deck);"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 139,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        Consumers.doTask(ConsumerSchema.SWAP_DISPLAYS, display);"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 140,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 141,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": ""
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 142,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 143,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "     * Replace a card with an edited one."
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 144,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 145,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "    private void editCard(int index) {"
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 146,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        FlashCard cardToEdit \u003d deck.getCards().get(index - 1);"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 147,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        Consumer\u003cFlashCard\u003e onSave \u003d card -\u003e {"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 148,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "            deck.getCards().set(index - 1, card);"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 149,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        };"
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 150,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        Consumer\u003cBoolean\u003e onCancel \u003d b -\u003e renderQuestions();"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 151,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        CardEditingWindow window \u003d new CardEditingWindow(cardToEdit, onSave, onCancel);"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 152,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        questionList.getChildren().clear();"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 153,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "        questionList.getChildren().add(window);"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 154,
         "author": {
           "gitId": "shawnpunchew11"
         },
         "content": ""
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 155,
         "author": {
           "gitId": "timothyleong97"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 156,
         "author": {
           "gitId": "shawnpunchew11"
         },
         "content": ""
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 157,
         "author": {
           "gitId": "timothyleong97"
         },
@@ -32413,7 +32385,7 @@
       }
     ],
     "authorContributionMap": {
-      "nattanyz": 7,
+      "nattanyz": 3,
       "shawnpunchew11": 8,
       "timothyleong97": 146
     }
@@ -98048,9 +98020,9 @@
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "-"
         },
-        "content": "        \u003cLabel fx:id\u003d\"questionLabel\" maxWidth\u003d\"300.0\" text\u003d\"Question \" wrapText\u003d\"true\" /\u003e"
+        "content": "        \u003cLabel fx:id\u003d\"questionLabel\" maxWidth\u003d\"300.0\" style\u003d\"-fx-label-padding: 10;\" text\u003d\"Question \" wrapText\u003d\"true\" /\u003e"
       },
       {
         "lineNumber": 12,
@@ -98090,9 +98062,9 @@
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "-"
         },
-        "content": "        \u003cInsets bottom\u003d\"10.0\" right\u003d\"10.0\" /\u003e"
+        "content": "        \u003cInsets left\u003d\"10.0\" right\u003d\"10.0\" /\u003e"
       },
       {
         "lineNumber": 18,
@@ -98110,8 +98082,9 @@
       }
     ],
     "authorContributionMap": {
-      "nattanyz": 4,
-      "timothyleong97": 15
+      "nattanyz": 2,
+      "timothyleong97": 15,
+      "-": 2
     }
   },
   {
@@ -98376,75 +98349,82 @@
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "nattanyz"
+          "gitId": "-"
         },
-        "content": "      \u003cVBox fx:id\u003d\"questionList\" /\u003e"
+        "content": "      \u003cLabel styleClass\u003d\"window-subtitle\" text\u003d\"Cards in deck\" /\u003e"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "      \u003cLabel fx:id\u003d\"deckSize\" alignment\u003d\"CENTER\" text\u003d\"number of cards\" /\u003e"
+        "content": "      \u003cVBox fx:id\u003d\"questionList\" /\u003e"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "      \u003cHBox spacing\u003d\"10.0\"\u003e"
+        "content": "      \u003cLabel fx:id\u003d\"deckSize\" alignment\u003d\"CENTER\" text\u003d\"number of cards\" /\u003e"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "         \u003cchildren\u003e"
+        "content": "      \u003cHBox spacing\u003d\"10.0\"\u003e"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "              \u003cButton fx:id\u003d\"startTest\" mnemonicParsing\u003d\"false\" text\u003d\"Start Review\" /\u003e"
+        "content": "         \u003cchildren\u003e"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "              \u003cButton fx:id\u003d\"addQuestionButton\" mnemonicParsing\u003d\"false\" text\u003d\"Change Name/Add Question\" /\u003e"
+        "content": "              \u003cButton fx:id\u003d\"startTest\" mnemonicParsing\u003d\"false\" text\u003d\"Start Review\" /\u003e"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "              \u003cButton fx:id\u003d\"deleteDeckButton\" mnemonicParsing\u003d\"false\" text\u003d\"Delete Deck\" textFill\u003d\"RED\" underline\u003d\"true\" /\u003e"
+        "content": "              \u003cButton fx:id\u003d\"addQuestionButton\" mnemonicParsing\u003d\"false\" text\u003d\"Change Name/Add Question\" /\u003e"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "         \u003c/children\u003e"
+        "content": "              \u003cButton fx:id\u003d\"deleteDeckButton\" mnemonicParsing\u003d\"false\" text\u003d\"Delete Deck\" textFill\u003d\"RED\" underline\u003d\"true\" /\u003e"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "      \u003c/HBox\u003e"
+        "content": "         \u003c/children\u003e"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "nattanyz"
         },
-        "content": "   \u003c/children\u003e"
+        "content": "      \u003c/HBox\u003e"
       },
       {
         "lineNumber": 21,
+        "author": {
+          "gitId": "nattanyz"
+        },
+        "content": "   \u003c/children\u003e"
+      },
+      {
+        "lineNumber": 22,
         "author": {
           "gitId": "timothyleong97"
         },
@@ -98453,7 +98433,8 @@
     ],
     "authorContributionMap": {
       "nattanyz": 14,
-      "timothyleong97": 7
+      "timothyleong97": 7,
+      "-": 1
     }
   },
   {
