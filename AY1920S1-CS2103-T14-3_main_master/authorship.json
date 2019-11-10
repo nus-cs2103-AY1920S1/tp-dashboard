@@ -33705,16 +33705,16 @@
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "Oscar-B-Liang"
         },
-        "content": "        + \"[\" + PREFIX_QUESTION + \"WORD] \""
+        "content": "        + \"[\" + PREFIX_QUESTION + \"QUESTION] \""
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "lzw12345"
+          "gitId": "Oscar-B-Liang"
         },
-        "content": "        + \"[\" + PREFIX_CHOICE + \"Choice]\""
+        "content": "        + \"[\" + PREFIX_CHOICE + \"CHOICE] \""
       },
       {
         "lineNumber": 45,
@@ -33742,7 +33742,7 @@
         "author": {
           "gitId": "lzw12345"
         },
-        "content": "        + PREFIX_CHOICE + \"Sample\""
+        "content": "        + PREFIX_CHOICE + \"Sample \""
       },
       {
         "lineNumber": 49,
@@ -35174,9 +35174,9 @@
       }
     ],
     "authorContributionMap": {
-      "Oscar-B-Liang": 177,
-      "lzw12345": 18,
-      "jolynnn8D": 54,
+      "Oscar-B-Liang": 179,
+      "lzw12345": 17,
+      "jolynnn8D": 53,
       "Akimatsu98": 3
     }
   },
@@ -36303,9 +36303,9 @@
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "jolynnn8D"
+          "gitId": "Oscar-B-Liang"
         },
-        "content": "            if (index \u003e\u003d mcqCard.getChoices().size()) {"
+        "content": "            if (index \u003e\u003d mcqCard.getChoices().size() || index \u003c 0) {"
       },
       {
         "lineNumber": 73,
@@ -36666,7 +36666,8 @@
       }
     ],
     "authorContributionMap": {
-      "jolynnn8D": 121,
+      "Oscar-B-Liang": 1,
+      "jolynnn8D": 120,
       "Akimatsu98": 2
     }
   },
@@ -100023,6 +100024,358 @@
     }
   },
   {
+    "path": "src/test/java/seedu/flashcard/model/flashcard/FlashcardContainsKeywordPredicateTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "package seedu.flashcard.model.flashcard;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import java.util.Collections;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import seedu.flashcard.testutil.FlashcardBuilder;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "public class FlashcardContainsKeywordPredicateTest {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void equalsTest() {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        List\u003cString\u003e firstPredicateKeyWordList \u003d Collections.singletonList(\"first\");"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        List\u003cString\u003e secondPredicateKeyWordList \u003d Arrays.asList(\"first\", \"second\");"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        FlashcardContainsKeywordsPredicate firstPredicate \u003d"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "            new FlashcardContainsKeywordsPredicate(firstPredicateKeyWordList);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        FlashcardContainsKeywordsPredicate secondPredicate \u003d"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "            new FlashcardContainsKeywordsPredicate(secondPredicateKeyWordList);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertTrue(firstPredicate.equals(firstPredicate));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        FlashcardContainsKeywordsPredicate firstPredicateCopy \u003d"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "            new FlashcardContainsKeywordsPredicate(firstPredicateKeyWordList);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertTrue(firstPredicate.equals(firstPredicateCopy));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertFalse(firstPredicate.equals(1));"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertFalse(firstPredicate.equals(null));"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertFalse(firstPredicate.equals(secondPredicate));"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void test_flashcardContainsKeywords_returnsTrue() {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        FlashcardContainsKeywordsPredicate predicate \u003d"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "            new FlashcardContainsKeywordsPredicate(Collections.singletonList(\"Blanc\"));"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertTrue(predicate.test(new FlashcardBuilder().withQuestion(\"Mount Blanc\").buildShortAnswerFlashcard()));"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        predicate \u003d new FlashcardContainsKeywordsPredicate(Arrays.asList(\"Daxing\", \"Airport\"));"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertTrue(predicate.test(new FlashcardBuilder().withQuestion(\"Daxing Blanc\").buildShortAnswerFlashcard()));"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertTrue(predicate.test(new FlashcardBuilder().withAnswer(\"Haneda Airport\").buildShortAnswerFlashcard()));"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void test_flashcardDoesNotContainKeywords_returnsFalse() {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        FlashcardContainsKeywordsPredicate predicate \u003d"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "            new FlashcardContainsKeywordsPredicate(Collections.singletonList(\"Blanc\"));"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertFalse(predicate.test(new FlashcardBuilder().withAnswer(\"Daxing airport\").buildShortAnswerFlashcard()));"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Oscar-B-Liang": 49
+    }
+  },
+  {
     "path": "src/test/java/seedu/flashcard/model/flashcard/FlashcardTest.java",
     "fileType": "tests",
     "lines": [
@@ -101327,6 +101680,974 @@
     ],
     "authorContributionMap": {
       "Oscar-B-Liang": 5
+    }
+  },
+  {
+    "path": "src/test/java/seedu/flashcard/model/flashcard/UniqueFlashcardListTest.java",
+    "fileType": "tests",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "package seedu.flashcard.model.flashcard;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import static seedu.flashcard.testutil.Assert.assertThrows;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import static seedu.flashcard.testutil.TypicalFlashcard.DAXING_AIRPORT;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import static seedu.flashcard.testutil.TypicalFlashcard.MOUNT_BLANC;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import seedu.flashcard.model.flashcard.exceptions.CardNotFoundException;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import seedu.flashcard.model.flashcard.exceptions.DuplicateCardException;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "import seedu.flashcard.testutil.FlashcardBuilder;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "public class UniqueFlashcardListTest {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    private final UniqueFlashcardList uniqueFlashcardList \u003d new UniqueFlashcardList();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void contains_nullFlashcard_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e uniqueFlashcardList.contains(null));"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void contains_flashcardNotInList_returnsFalse() {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertFalse(uniqueFlashcardList.contains(MOUNT_BLANC));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void contains_flashcardInList_returnsTrue() {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertTrue(uniqueFlashcardList.contains(MOUNT_BLANC));"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void add_flashcardWithSameQuestionInList_returnsTrue() {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        Flashcard editedFlashcard \u003d"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "            new FlashcardBuilder((McqFlashcard) MOUNT_BLANC).withDefinition(\"123\").buildMcqFlashcard();"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertTrue(uniqueFlashcardList.contains(editedFlashcard));"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void add_nullFlashcard_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e uniqueFlashcardList.add(null));"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void add_duplicateFlashcard_throwsDuplicateFlashcardException() {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(DuplicateCardException.class, () -\u003e uniqueFlashcardList.add(MOUNT_BLANC));"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcard_nullTargetFlashcard_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e uniqueFlashcardList.setFlashcard(null, MOUNT_BLANC));"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcard_nullEditedFlashcard_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e uniqueFlashcardList.setFlashcard(MOUNT_BLANC, null));"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcard_targetFlashcardNotInList_throwsCardNotFoundException() {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(CardNotFoundException.class, () -\u003e uniqueFlashcardList.setFlashcard(MOUNT_BLANC, MOUNT_BLANC));"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcard_editedFlashcardIsSameFlashcard_success() {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.setFlashcard(MOUNT_BLANC, MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        UniqueFlashcardList expectedUniqueFlashcardList \u003d new UniqueFlashcardList();"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        expectedUniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertEquals(expectedUniqueFlashcardList, uniqueFlashcardList);"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcard_editedFlashcardHasSameQuestion_success() {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        Flashcard editedFlashcard \u003d new FlashcardBuilder((McqFlashcard) MOUNT_BLANC)"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "            .withAnswer(\"tall\").withDefinition(\"123\").buildMcqFlashcard();"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.setFlashcard(MOUNT_BLANC, editedFlashcard);"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        UniqueFlashcardList expectedUniqueFlashcardList \u003d new UniqueFlashcardList();"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        expectedUniqueFlashcardList.add(editedFlashcard);"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertEquals(expectedUniqueFlashcardList, uniqueFlashcardList);"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcard_editedFlashcardHasDifferentQuestion_success() {"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.setFlashcard(MOUNT_BLANC, DAXING_AIRPORT);"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        UniqueFlashcardList expectedUniqueFlashcardList \u003d new UniqueFlashcardList();"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        expectedUniqueFlashcardList.add(DAXING_AIRPORT);"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertEquals(expectedUniqueFlashcardList, uniqueFlashcardList);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcard_editedFlashcardHasNonUniqueQuestion_throwsDuplicateFlashcardException() {"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(DAXING_AIRPORT);"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(DuplicateCardException.class, () -\u003e uniqueFlashcardList.setFlashcard(MOUNT_BLANC, DAXING_AIRPORT));"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void remove_nullFlashcard_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e uniqueFlashcardList.remove(null));"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void remove_flashcardDoesNotExist_throwsCardNotFoundException() {"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(CardNotFoundException.class, () -\u003e uniqueFlashcardList.remove(MOUNT_BLANC));"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void remove_existingFlashcard_removeFlashcard() {"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(DAXING_AIRPORT);"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.remove(DAXING_AIRPORT);"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        UniqueFlashcardList expectedUniqueFlashcardList \u003d new UniqueFlashcardList();"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertEquals(expectedUniqueFlashcardList, uniqueFlashcardList);"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcards_nullUniqueFlashcardList_throwsNullPointerException() {"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertThrows(NullPointerException.class, () -\u003e uniqueFlashcardList.setFlashcards((UniqueFlashcardList) null));"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    public void setFlashcards_uniqueFlashcardList_replaceOwnList() {"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.add(MOUNT_BLANC);"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        UniqueFlashcardList expectedUniqueFlashcardList \u003d new UniqueFlashcardList();"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        expectedUniqueFlashcardList.add(DAXING_AIRPORT);"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        uniqueFlashcardList.setFlashcards(expectedUniqueFlashcardList);"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "        assertEquals(expectedUniqueFlashcardList, uniqueFlashcardList);"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "Oscar-B-Liang"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Oscar-B-Liang": 137
     }
   },
   {

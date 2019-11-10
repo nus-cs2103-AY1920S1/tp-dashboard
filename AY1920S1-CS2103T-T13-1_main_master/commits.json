@@ -513,6 +513,34 @@
             "deletions": 107
           }
         ]
+      },
+      {
+        "insertions": 300,
+        "deletions": 191,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "5a5efa02e191f1b6f1177c5c628a2505dc83628d",
+            "messageTitle": "Validate type adding (#263)",
+            "messageBody": "Refactor AddCommandParser\r\n\r\n* Code for checking if form mode should be launched is\r\nconsolidated in the #isLaunchForm method.\r\n\r\n* Validation for one value per prefix is done in the\r\n\r\n* Add test cases to test for type validation\r\n",
+            "insertions": 185,
+            "deletions": 167
+          },
+          {
+            "hash": "6cfb0ecaf15cfa5fe562f3d9f240cfd65fd5843f",
+            "messageTitle": "Enhance match feature (#264)",
+            "messageBody": "* Rename class names for clarity\r\n\r\nPreviously, MatchedDonor objects are displayed by the UI component\r\nMatchCard. This is not an intuitive name.\r\n\r\nLikewise, NumberOfDonors card is renamed to MatchedPatientCard.\r\n\r\n* Change success rate to compatibility rate\r\n\r\n* Fix test cases\r\n",
+            "insertions": 15,
+            "deletions": 18
+          },
+          {
+            "hash": "103a07caa6c850d62a5b5954915288b8228997a7",
+            "messageTitle": "Add object diagrams to explain match feature (#268)",
+            "messageBody": "* Rewrite implementation details of MatchCommand\r\n\r\n* Add match feature example usage scenario\r\n\r\n* Add Object Diagrams for usage scenario\r\n",
+            "insertions": 100,
+            "deletions": 6
+          }
+        ]
       }
     ],
     "TheRealRavager": [
@@ -1046,8 +1074,8 @@
         ]
       },
       {
-        "insertions": 253,
-        "deletions": 56,
+        "insertions": 356,
+        "deletions": 82,
         "date": "2019-11-10",
         "commitResults": [
           {
@@ -1063,35 +1091,42 @@
             "messageBody": "* WIP: ProcessingCommand\r\n\r\n* Adding method to check if patient and donor exist\r\n\r\n* Able to process 2 ic/ and return the default list out\r\n\r\n* delete unused imports\r\n\r\n* fixed issues regarding processing and matching\r\n\r\n* null pointer errors arise\r\n\r\n* remove the using of storage for the tasklist\r\n\r\n* not able to update list\r\n\r\n* markAsDone is done\r\n\r\n* made setter method for processinglist\r\n\r\n* setter changes\r\n\r\n* processingmark command done\r\n\r\n* some test cases added\r\n\r\n* checkstyle\r\n\r\n* checkstyles\r\n\r\n* Model issues\r\n\r\n* Model issues\r\n\r\n* null pointer fixes\r\n\r\n* null pointer fixes\r\n\r\n* checkstyle\r\n\r\n* checkstyle\r\n\r\n* checkstyle\r\n\r\n* command completed. Test cases not yet\r\n\r\n* trying to revert the conflict removal\r\n\r\n* command completed. Test cases not yet\r\n\r\n* command completed. Test cases not yet\r\n\r\n* command completed. Test cases not yet\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* added more checks to ensure valid patient and donor pair\r\n\r\n* fix issue #106 regarding addCommand tissuetyping\r\n\r\n* fix issue #106 regarding addCommand tissuetyping\r\n\r\n* fix issue #206 regarding addCommand tissuetyping\r\n\r\n* added more exception handlings\r\n\r\n* merge conflict\r\n\r\n* merge conflict\r\n\r\n* added more exceptions handling and fixed #207\r\n\r\n* added more exceptions handling and fixed #207\r\n\r\n* more exception handlings\r\n\r\n* more exception handlings\r\n\r\n* more exception handlings\r\n\r\n* bugs\r\n\r\n* checkstyle\r\n",
             "insertions": 16,
             "deletions": 16
+          },
+          {
+            "hash": "05c49f3ffd2a343721eb257c1bd8f934f1f70bca",
+            "messageTitle": "UG changes for processing (#269)",
+            "messageBody": "* UG changes for processing\r\n\r\n* grammar errors\r\n",
+            "insertions": 103,
+            "deletions": 26
           }
         ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "WilliamRyank": 4794,
-    "C-likethis123": 3854,
+    "WilliamRyank": 4724,
+    "C-likethis123": 4021,
     "TheRealRavager": 2491,
     "Yen-Peng": 1080,
-    "SimNee": 2202
+    "SimNee": 2298
   },
   "authorFileTypeContributionMap": {
     "WilliamRyank": {
-      "docs": 155,
-      "tests": 1464,
-      "functional": 3158,
+      "docs": 156,
+      "tests": 1404,
+      "functional": 3147,
       "other": 17
     },
     "C-likethis123": {
-      "docs": 502,
-      "tests": 1709,
-      "functional": 1528,
-      "other": 115
+      "docs": 489,
+      "tests": 1784,
+      "functional": 1546,
+      "other": 202
     },
     "TheRealRavager": {
-      "docs": 92,
+      "docs": 93,
       "tests": 1144,
-      "functional": 1254,
+      "functional": 1253,
       "other": 1
     },
     "Yen-Peng": {
@@ -1101,17 +1136,17 @@
       "other": 133
     },
     "SimNee": {
-      "docs": 85,
+      "docs": 181,
       "tests": 569,
       "functional": 1548
     }
   },
   "authorContributionVariance": {
     "WilliamRyank": 157154.28,
-    "C-likethis123": 94577.37,
+    "C-likethis123": 96798.25,
     "TheRealRavager": 164220.25,
     "Yen-Peng": 5329.6343,
-    "SimNee": 22250.64
+    "SimNee": 23521.943
   },
   "authorDisplayNameMap": {
     "WilliamRyank": "CS2103T-T13-1 WILLI ... SNADI",
