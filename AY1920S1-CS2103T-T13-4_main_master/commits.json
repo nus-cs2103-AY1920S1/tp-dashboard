@@ -1444,8 +1444,8 @@
         ]
       },
       {
-        "insertions": 25,
-        "deletions": 13,
+        "insertions": 395,
+        "deletions": 250,
         "date": "2019-11-09",
         "commitResults": [
           {
@@ -1454,6 +1454,195 @@
             "messageBody": "Use AnchorPanes to fix the Label size. Bind the prefWidthProperty\nof reminderList to widthProperty of the scrollPane so that it resizes\ntogether.\n\nAlso move CSS styling out from FXML to DarkTheme.css\n",
             "insertions": 25,
             "deletions": 13
+          },
+          {
+            "hash": "609011d12b624afeda420f5c844b42e6e25c1e43",
+            "messageTitle": "Update: UG autotag section + minor format fixes",
+            "messageBody": "Team tasks: Add overview of Features section and move command\nparameters table to Command Summary. Insert horizontal line to separate\nFeatures subsections.\n\nIndividual tasks: Update Autotags section and link PPP to the correct\nUG section.\n",
+            "insertions": 197,
+            "deletions": 99
+          },
+          {
+            "hash": "065e477e9b98aceb1422832485a5d68501ab65e5",
+            "messageTitle": "Update: Libraries used (README.md)",
+            "messageBody": "Add JSoup and Readability4J.\nAddresses #57.\n",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "bae7ed8be56183995b382b035556bddcf270ed60",
+            "messageTitle": "Update: Class diagrams (DevGuide Model component)",
+            "messageBody": "Separated the giant class diagram into packages so it\u0027s easier to read.\nInserted diagrams into DevGuide with a rough text description.\n\nOther minor changes: Removed random newline in Mark.java imports,\nedited PPP to reflect number of sections included.\n",
+            "insertions": 170,
+            "deletions": 64
+          },
+          {
+            "hash": "e70bdacedd570362d14eafcac8c49256bf5fe072",
+            "messageTitle": "Fix: Remove johndoe.adoc",
+            "messageBody": "Updated the link to KX\u0027s PPP in AboutUs.\n",
+            "insertions": 1,
+            "deletions": 73
+          }
+        ]
+      },
+      {
+        "insertions": 708,
+        "deletions": 49,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "fe13eb84a9129c797c36998d3f73c6b5c97ed800",
+            "messageTitle": "Add: EditAutotagCommand",
+            "messageBody": "Refactor AutotagController#removeTagger(String) to return an Optional\ninstead of a boolean value. No tests yet.\n",
+            "insertions": 241,
+            "deletions": 26
+          },
+          {
+            "hash": "914d6fab4049a31f3dc4127be1af55de1b21ec5b",
+            "messageTitle": "Add: Tests for EditAutotagCommand",
+            "messageBody": "And improve coverage for existing tests.\n",
+            "insertions": 401,
+            "deletions": 6
+          },
+          {
+            "hash": "d78704602b1754e46ff76e420fae9e45f1fa55a2",
+            "messageTitle": "Fix: Typos in JavaDocs",
+            "messageBody": "Remove references to AutotagCommand and deleting autotags.\n",
+            "insertions": 3,
+            "deletions": 3
+          },
+          {
+            "hash": "7865f6da9ba1393d46afc04bef6e4bbc6ad0c9bd",
+            "messageTitle": "Fix: Phrasing of UG and command summary",
+            "messageBody": "Avoid usage of command sentences. Add goto-reminder to command summary.\n",
+            "insertions": 7,
+            "deletions": 6
+          },
+          {
+            "hash": "c454fe889253415adec30c17abdb2329948efdca",
+            "messageTitle": "Add: UserGuide description of autotag-edit",
+            "messageBody": "",
+            "insertions": 45,
+            "deletions": 0
+          },
+          {
+            "hash": "c780dbd930b45de475b0e87292345447f48b6865",
+            "messageTitle": "Fix: Error message for autotag-edit",
+            "messageBody": "Add a custom message when no fields are changed, in case the user\ninputs a new tag name that is the same as the original, with no new\nconditions. (Previously, MESSAGE_USAGE was shown.)\n",
+            "insertions": 5,
+            "deletions": 4
+          },
+          {
+            "hash": "4719f9a382b0d00ce42e0819a5866bf63aa76717",
+            "messageTitle": "Fix: Checkstyle errors",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 2
+          },
+          {
+            "hash": "31642ca7b59d614f03e96350c0611550c865998e",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: Open O. Close \u003c3646725+openorclose@users.noreply.github.com\u003e",
+            "insertions": 2,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 706,
+        "deletions": 504,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "fea4743858e94262fc6f5dbf0ea9ebcd04ac5e1e",
+            "messageTitle": "Refactor: EditAutotagCommandParser to simplify #parse()",
+            "messageBody": "Move validation into AutotagCommandParser#makePredicateFromMultimap()\nand call it in EditAutotagCommandParser#parse(args).\n",
+            "insertions": 77,
+            "deletions": 128
+          },
+          {
+            "hash": "fa8ada15f15899f5a509c3eab0589e0465e66543",
+            "messageTitle": "Update: Model section of DG",
+            "messageBody": "Update class diagrams and add a better description paragraph for each\npackage.\n",
+            "insertions": 74,
+            "deletions": 35
+          },
+          {
+            "hash": "137ab3342fa7f368230833c580fb5110f2cdcf60",
+            "messageTitle": "Fix: UML notation in autotag package class diagram",
+            "messageBody": "Arrow should have a dotted line, not a solid line.\n",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "0dd53daac7145cc3e59ce82069be20428115b609",
+            "messageTitle": "Update: Autotag implementation in DevGuide",
+            "messageBody": "Update object and sequence diagrams. Add better description.\n",
+            "insertions": 206,
+            "deletions": 120
+          },
+          {
+            "hash": "1a485d1d1812891c55297540ad56924a8b8d1914",
+            "messageTitle": "Fix: Reorganise manual testing instructions section",
+            "messageBody": "To make it easier to follow\n",
+            "insertions": 95,
+            "deletions": 103
+          },
+          {
+            "hash": "9b76a9a29e2aebc9106a2ba840bcfb38fd760a0e",
+            "messageTitle": "Update docs/diagrams/ModelClassDiagram.puml",
+            "messageBody": "Co-Authored-By: Na Nazhou \u003c42093424+Na-Nazhou@users.noreply.github.com\u003e",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "6b3bba2d93393772cc45fb10e8cf38b177852ea6",
+            "messageTitle": "Update docs/DeveloperGuide.adoc",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "d3244d0996fa338377d3c40de3d3dcbfe16cb26a",
+            "messageTitle": "Fix: AutotagController#hasTagger() compares predicates",
+            "messageBody": "Only tagger names (tag names) should be compared.\n",
+            "insertions": 6,
+            "deletions": 5
+          },
+          {
+            "hash": "c77e5535224671be67322694bb177537cfb7858d",
+            "messageTitle": "Add: Manual testing instructions for autotags",
+            "messageBody": "",
+            "insertions": 71,
+            "deletions": 1
+          },
+          {
+            "hash": "d0a49f5da835e1798d683375068af23aac349bdf",
+            "messageTitle": "Fix: Missing import folder during import",
+            "messageBody": "Create the folder ImportedBookmarks if it does not already exist when\nimporting bookmarks.\n",
+            "insertions": 5,
+            "deletions": 1
+          },
+          {
+            "hash": "d727d1875acc262787dd82b88519d26eb8f80b89",
+            "messageTitle": "Add: Manual testing instructions for export/import",
+            "messageBody": "Also, fixed some details for Annotation package in the description of\nthe Model component.\n",
+            "insertions": 46,
+            "deletions": 9
+          },
+          {
+            "hash": "ad6f9b58b8d742de5e76f88f249a0e192b8afc52",
+            "messageTitle": "Fix: Failing tests",
+            "messageBody": "The previous fix broke ImportCommandTest (needed to add IMPORT_FOLDER\nto expectedMark when importing).\n",
+            "insertions": 31,
+            "deletions": 45
+          },
+          {
+            "hash": "58a1b2bb9318c0ca8a6b4da54abf1e8476ea2770",
+            "messageTitle": "Update: Autotag implementation in DevGuide",
+            "messageBody": "",
+            "insertions": 92,
+            "deletions": 54
           }
         ]
       }
@@ -2233,6 +2422,195 @@
             "messageBody": "",
             "insertions": 14,
             "deletions": 3
+          }
+        ]
+      },
+      {
+        "insertions": 1026,
+        "deletions": 111,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "5cfc68ca14decfdc72adb8dd892861fda6a6a7ff",
+            "messageTitle": "Add folder-add, folder-delete",
+            "messageBody": "",
+            "insertions": 788,
+            "deletions": 28
+          },
+          {
+            "hash": "cb4c16b80ffd8bad3ac6c80d0a8fe794e3ec93c6",
+            "messageTitle": "Update ppp",
+            "messageBody": "",
+            "insertions": 77,
+            "deletions": 73
+          },
+          {
+            "hash": "f912bae58e4ef5f7db30be960ba8de77b1266e7a",
+            "messageTitle": "Apply code suggestions",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 10
+          },
+          {
+            "hash": "e008a51fe0c4b6715fc1af516837a26e19f768b4",
+            "messageTitle": "Add folderstructure tests",
+            "messageBody": "",
+            "insertions": 151,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 372,
+        "deletions": 96,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "d728368a4d8d03bb427a5f23a08fe84b72737d41",
+            "messageTitle": "Update UGDG",
+            "messageBody": "",
+            "insertions": 138,
+            "deletions": 12
+          },
+          {
+            "hash": "1e7d227977a62641754f080a70fdc4251ca21e7b",
+            "messageTitle": "Update link",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "f2696a1c21ea6c3fb70ae77a7512203b540f9a04",
+            "messageTitle": "Update ppp",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 9
+          },
+          {
+            "hash": "dfd6b4a8c5320fcb8ee3b18760187a5e935fade9",
+            "messageTitle": "Minor refactor",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 4
+          },
+          {
+            "hash": "5aa970b8c9f3c3d3a3f8d8dba038d7dbcf7d5cec",
+            "messageTitle": "Add folder-edit, -delete, command summary",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "707d6e7b399aecb51cb80e5142410cf5d4a2be2c",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: dorcastan \u003c46101221+dorcastan@users.noreply.github.com\u003e",
+            "insertions": 6,
+            "deletions": 6
+          },
+          {
+            "hash": "5f60d51ac927029baf410c4247b014f4ce1950f6",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "0343bce18b18994e1ea4a27f422274956868c39d",
+            "messageTitle": "Fix typo",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "a299b5808ee43a89a329c14ac5c839f6624b6d91",
+            "messageTitle": "Fix ppp",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "67e86d19d399d82a4b8b42d14e01d1ba6e4f8ee3",
+            "messageTitle": "Add examples",
+            "messageBody": "",
+            "insertions": 44,
+            "deletions": 11
+          },
+          {
+            "hash": "360e11419f05409998508761e27a5ac3d0347d39",
+            "messageTitle": "update ppp",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "d85040f14a5d8436e28f352fc80fe41191f6c017",
+            "messageTitle": "update ppp again",
+            "messageBody": "",
+            "insertions": 14,
+            "deletions": 4
+          },
+          {
+            "hash": "be15b8384f924af7727bcae414ac837c90245c76",
+            "messageTitle": "save",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 3
+          },
+          {
+            "hash": "7591c605be008f88e2a4fe33781f0197d119832b",
+            "messageTitle": "move section",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "2636bd81f0353f5255bf2a705be3bcb66315e736",
+            "messageTitle": "Update Storage component",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 5
+          },
+          {
+            "hash": "ae8c6c9555b0338250ccce41fc8651d440264383",
+            "messageTitle": "Update Storage component",
+            "messageBody": "",
+            "insertions": 39,
+            "deletions": 3
+          },
+          {
+            "hash": "e0790e487111766bb0c417798ec51d3affa88297",
+            "messageTitle": "Add screenshots",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 18
+          },
+          {
+            "hash": "a1e5d1a55f44bdf8769cfa3e663fc469a7c1617e",
+            "messageTitle": "Add screenshots",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "6c5d5fcb5aa8079e17a1c7bfe50a703c632152dd",
+            "messageTitle": "Update screenshots",
+            "messageBody": "",
+            "insertions": 50,
+            "deletions": 8
+          },
+          {
+            "hash": "223bee64a68eff8e7a83c17a0856b810eb82813b",
+            "messageTitle": "Add param constraint",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 3
+          },
+          {
+            "hash": "3eb5391e132bf336129384f55dca60eb96eea57e",
+            "messageTitle": "fix punctuation",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
           }
         ]
       }
@@ -3392,6 +3770,174 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 349,
+        "deletions": 53,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "dba4da51f8af0cc3444a904a245c282e00379130",
+            "messageTitle": "UG",
+            "messageBody": "",
+            "insertions": 150,
+            "deletions": 33
+          },
+          {
+            "hash": "f458c9671c7b970d155d1a8495f317b32f88b5bb",
+            "messageTitle": "DG",
+            "messageBody": "",
+            "insertions": 198,
+            "deletions": 18
+          },
+          {
+            "hash": "9c67a2163bc00560a88efbf1a34ffea97ee601fe",
+            "messageTitle": "ppp",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "741525aca6cd90f300f49c9e4e5997379eaeca05",
+            "messageTitle": "delete space",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 232,
+        "deletions": 153,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "d2e72c458327e27527abaf87d68604fff50dc3d1",
+            "messageTitle": "ppp",
+            "messageBody": "",
+            "insertions": 61,
+            "deletions": 42
+          },
+          {
+            "hash": "8b1fa269c8fd27110bb8cf5f1162618bfdb2c4af",
+            "messageTitle": "edit ppp",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 3
+          },
+          {
+            "hash": "15fa13a84addcdef8898fe834acbe58752828a73",
+            "messageTitle": "test",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "f209cf01528730c87e3a70a89725f1523fe3b6d5",
+            "messageTitle": "edit ug",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "4eac96cf58ae89a9c2fa2166fee2444b965ab0c0",
+            "messageTitle": "manually test case",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 0
+          },
+          {
+            "hash": "ffc92ef23ca697c8ddec3f714ec8cae6c0079ca1",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: Open O. Close \u003c3646725+openorclose@users.noreply.github.com\u003e",
+            "insertions": 8,
+            "deletions": 8
+          },
+          {
+            "hash": "a80f8949a4519aa73f028fb09952c8e6855bfbdb",
+            "messageTitle": "Update docs/diagrams/ReminderAssociationDiagram.puml",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "ccdd50ec36a98da20a8cb733d0022e657c06df48",
+            "messageTitle": "edit UG",
+            "messageBody": "",
+            "insertions": 19,
+            "deletions": 15
+          },
+          {
+            "hash": "59f1f0b53c4072d417b76d1ce5d5a2fe33f481a8",
+            "messageTitle": "add ui",
+            "messageBody": "",
+            "insertions": 43,
+            "deletions": 31
+          },
+          {
+            "hash": "e28d3ed70ed35f3c2628a9eb8c27801868d813aa",
+            "messageTitle": "edit ppp",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 6
+          },
+          {
+            "hash": "837bbaa72feb7d967fc09d4f82e8e389180e6594",
+            "messageTitle": "fix model puml",
+            "messageBody": "",
+            "insertions": 12,
+            "deletions": 31
+          },
+          {
+            "hash": "82309dd8992ea37185e3a8077ff3d60c1ca22cdf",
+            "messageTitle": "add pdf",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "725bf245a784883636c41de9d23d903c5401c790",
+            "messageTitle": "add section num",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 6
+          },
+          {
+            "hash": "fd4f84624d798730e7e03b8836110ae4e355b9cb",
+            "messageTitle": "change title",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "c2d3856ebf99d5835c4102fe12b589338b7f9b8a",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: dorcastan \u003c46101221+dorcastan@users.noreply.github.com\u003e",
+            "insertions": 4,
+            "deletions": 4
+          },
+          {
+            "hash": "fd657e0bca5a09624143ada9f20a614af09def3d",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "Co-Authored-By: dorcastan \u003c46101221+dorcastan@users.noreply.github.com\u003e",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "b38de193a3a85427851d7615307b841dfdd78261",
+            "messageTitle": "Apply suggestions from code review",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
+          },
+          {
+            "hash": "6c992a1880e070c9f41d687d0ab5f6b6442485df",
+            "messageTitle": "Update docs/team/TSAI-HSIAO-HAN.adoc",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
+          }
+        ]
       }
     ],
     "Na-Nazhou": [
@@ -4148,6 +4694,69 @@
             "messageBody": "",
             "insertions": 34,
             "deletions": 28
+          }
+        ]
+      },
+      {
+        "insertions": 311,
+        "deletions": 135,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "d445672efe1ed9d2f773d26409f4de77eb3fe9c7",
+            "messageTitle": "Add documentation",
+            "messageBody": "",
+            "insertions": 124,
+            "deletions": 74
+          },
+          {
+            "hash": "5d3f69b5209763f2ea9744939c52f4b1ec7b70c8",
+            "messageTitle": "Add instructions for manual testing",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 3
+          },
+          {
+            "hash": "02576fe58584f1caefe81f044ae72413b88fff73",
+            "messageTitle": "Improve user guide",
+            "messageBody": "",
+            "insertions": 36,
+            "deletions": 27
+          },
+          {
+            "hash": "779d2267378da6e8b25c53e095be60a9d7aeb39e",
+            "messageTitle": "Edit developer guide",
+            "messageBody": "",
+            "insertions": 71,
+            "deletions": 26
+          },
+          {
+            "hash": "b5300aa34c6e28b4cf334c09e6f1e9ac7e2391a0",
+            "messageTitle": "Add more instructions for manual testing",
+            "messageBody": "",
+            "insertions": 57,
+            "deletions": 0
+          },
+          {
+            "hash": "2bde5730e6af3fd0162db1dfd196c4e74bcdfb88",
+            "messageTitle": "Add more instructions for manual testing",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "b92de2a6f4cb764c95ea0c72038d6122759ad8dd",
+            "messageTitle": "Fix ppp",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
+          },
+          {
+            "hash": "9d5be0b091850b2fbcf3979e2ea7bfc9fc31f319",
+            "messageTitle": "Add section numbers for ppp",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 0
           }
         ]
       }
@@ -5309,8 +5918,8 @@
         ]
       },
       {
-        "insertions": 10,
-        "deletions": 10,
+        "insertions": 14,
+        "deletions": 14,
         "date": "2019-11-08",
         "commitResults": [
           {
@@ -5319,6 +5928,13 @@
             "messageBody": "",
             "insertions": 10,
             "deletions": 10
+          },
+          {
+            "hash": "ef64d8d7e122ee8dcd7ae592f7bbf44756d1385f",
+            "messageTitle": "Commit suggestions for ug",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
           }
         ]
       },
@@ -5349,54 +5965,152 @@
             "deletions": 4
           }
         ]
+      },
+      {
+        "insertions": 578,
+        "deletions": 180,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "a5c0c2e581c6e0a20202170b8e12466d41f414ee",
+            "messageTitle": "Change sd for DG and do slight refactor for annotation commands",
+            "messageBody": "",
+            "insertions": 120,
+            "deletions": 72
+          },
+          {
+            "hash": "1246eaf2f39b088cab6ef635521ed2955872cb0a",
+            "messageTitle": "Modify add annotation sd",
+            "messageBody": "",
+            "insertions": 58,
+            "deletions": 31
+          },
+          {
+            "hash": "55d6c7f5b98a6634333e1fc86594ee4bd43e6033",
+            "messageTitle": "Edit dg delete annotations feature",
+            "messageBody": "",
+            "insertions": 66,
+            "deletions": 18
+          },
+          {
+            "hash": "9ec12b1db91300f79f2bdae51af72521db4b44d2",
+            "messageTitle": "Add sd for edit annotation feature in dg",
+            "messageBody": "",
+            "insertions": 127,
+            "deletions": 10
+          },
+          {
+            "hash": "b017dc005d95431eba047a126fa3c44a3729b6ae",
+            "messageTitle": "Frame dg for annotation design considerations",
+            "messageBody": "",
+            "insertions": 39,
+            "deletions": 4
+          },
+          {
+            "hash": "fbf18c5bf40b15cdeb90acaaa62a094561f60d52",
+            "messageTitle": "Edit design considerations for annotations",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 17
+          },
+          {
+            "hash": "3e6873f1eb6604746c5c3cc25976a8aa0d759e33",
+            "messageTitle": "Touch up annotation feature of dg",
+            "messageBody": "",
+            "insertions": 69,
+            "deletions": 20
+          },
+          {
+            "hash": "bae098b950c755b4ad7eed0ca8811ac543964dec",
+            "messageTitle": "Update annotation cd",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
+          },
+          {
+            "hash": "fb330a09048a51721eba274098cc3087d3040f36",
+            "messageTitle": "Update annotation structure of dg",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 2
+          },
+          {
+            "hash": "c8c144718b48c81a0bb5d647e8f3aeb715e553c3",
+            "messageTitle": "Add test case for dg",
+            "messageBody": "",
+            "insertions": 70,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 21,
+        "deletions": 10,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "f1c8c5d7e6e17062c94e8a7ba2ddcc35fab10f8e",
+            "messageTitle": "Add one liner justification for design chosen",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 0
+          },
+          {
+            "hash": "7a5d641e8269da2006767d60905fcb340e800173",
+            "messageTitle": "Add ui screenshots",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 10
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "dorcastan": 7522,
-    "openorclose": 2990,
-    "TSAI-HSIAO-HAN": 3164,
-    "Na-Nazhou": 3768,
-    "kxyoke": 6315
+    "dorcastan": 8671,
+    "openorclose": 4194,
+    "TSAI-HSIAO-HAN": 3565,
+    "Na-Nazhou": 3876,
+    "kxyoke": 6651
   },
   "authorFileTypeContributionMap": {
     "dorcastan": {
-      "docs": 928,
-      "tests": 3151,
-      "functional": 3104,
-      "other": 339
+      "docs": 1360,
+      "tests": 3512,
+      "functional": 3300,
+      "other": 499
     },
     "openorclose": {
-      "docs": 338,
-      "tests": 951,
-      "functional": 1552,
-      "other": 149
+      "docs": 652,
+      "tests": 1441,
+      "functional": 1942,
+      "other": 159
     },
     "TSAI-HSIAO-HAN": {
-      "docs": 272,
+      "docs": 521,
       "tests": 1046,
-      "functional": 1807,
-      "other": 39
+      "functional": 1806,
+      "other": 192
     },
     "Na-Nazhou": {
-      "docs": 333,
+      "docs": 415,
       "tests": 1877,
       "functional": 1471,
-      "other": 87
+      "other": 113
     },
     "kxyoke": {
-      "docs": 387,
+      "docs": 475,
       "tests": 2437,
       "functional": 3266,
-      "other": 225
+      "other": 473
     }
   },
   "authorContributionVariance": {
-    "dorcastan": 629039.94,
-    "openorclose": 53300.812,
-    "TSAI-HSIAO-HAN": 24390.885,
-    "Na-Nazhou": 45690.348,
-    "kxyoke": 79755.56
+    "dorcastan": 634086.6,
+    "openorclose": 70479.8,
+    "TSAI-HSIAO-HAN": 26743.957,
+    "Na-Nazhou": 46771.93,
+    "kxyoke": 83395.78
   },
   "authorDisplayNameMap": {
     "dorcastan": "CS2103T-T13-4 DORCA ... A TAN",

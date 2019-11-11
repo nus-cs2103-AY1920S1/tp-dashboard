@@ -184,8 +184,8 @@
         ]
       },
       {
-        "insertions": 5,
-        "deletions": 6,
+        "insertions": 97,
+        "deletions": 14,
         "date": "2019-11-10",
         "commitResults": [
           {
@@ -194,6 +194,34 @@
             "messageBody": "* Resolve #173: Remove filter from tag list\r\n\r\n* Resolve #203\r\n",
             "insertions": 5,
             "deletions": 6
+          },
+          {
+            "hash": "ef64990edf8885d806d57037c668ab56f718820f",
+            "messageTitle": "Check invalid tag (#241)",
+            "messageBody": "* Add checker for existence of group name\r\n\r\n* Add a function to check whether a tag is considered valid in a model\r\n",
+            "insertions": 92,
+            "deletions": 8
+          }
+        ]
+      },
+      {
+        "insertions": 116,
+        "deletions": 9,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "91677bf86e85853fbc53b8b635630295441a8886",
+            "messageTitle": "Update contact show (#242)",
+            "messageBody": "* Update contact show to also include notes with associated group\r\n\r\n* Rename method\r\n",
+            "insertions": 111,
+            "deletions": 9
+          },
+          {
+            "hash": "c660b937019af2ceed58b19d789c91612c564c5f",
+            "messageTitle": "Fix bug saving tagbook (#247)",
+            "messageBody": "* Add save tagbook to logic\r\n\r\n* Fix bug saving group tag for notes\r\n",
+            "insertions": 5,
+            "deletions": 0
           }
         ]
       }
@@ -469,6 +497,20 @@
             "messageBody": "* Add changes from team repo (#5)\r\n\r\n* Refactor package name from \u0027seedu.address\u0027 to \u0027tagline\u0027\r\n\r\n* Update mainClassName in build.gradle\r\n\r\n* Merge pull request #6 from from AY1920S1-CS2103T-F12-3/master\r\n\r\n* Refactor package name from \u0027seedu.address\u0027 to \u0027tagline\u0027\r\n\r\n* Update mainClassName in build.gradle\r\n\r\n* Added Contact Command + Basic Commands to UserGuide.adoc\r\n\r\n* Update mentions of AddressBook to TagLine\r\n\r\n* Update AboutUs.adoc\r\n\r\n* Add more use cases to Developer Guide\r\n\r\n* Update team name\r\n\r\n* Add newline after EOF for README and AboutUs\r\n\r\n* Fix Yehez image name\r\n\r\n* Merge PR #10 from AY1920S1-CS2103T-F12-3/main\r\n\r\n* Update Prof name in AboutUs (#35)\r\n\r\n#21\r\n\r\n* Rename Yehezkiel image (#36)\r\n\r\n* Fix typos in Developer Guide and User Guide (#37)\r\n\r\n* Updates from upstream (#14)\r\n\r\n* Add chat pane to GUI (#9)\r\n\r\n* Refactor result pane view (#42)\r\n\r\n* Implement view switching in GUI (#46)\r\n\r\n* Refactor Contact Command Parsers (#43)\r\n\r\n* Update contact parser (#62)\r\n\r\n* Rename person to contact (#65)\r\n\r\n* Fix merge conflicts from upstream\r\n\r\n* Fix merge conflicts\r\n\r\n* Add missing files to master from upstream\r\n\r\n* Remove dummy view\r\n\r\n* Merge updates from  AY1920S1-CS2103T-F12-3/main (#18)\r\n\r\nAdd DeleteNoteCommandTest\r\n\r\n* Updates from upstream (#19)\r\n\r\n* Refactor TagList to UniqueTagList and TagBook to follow structure\r\n\r\nFull changelist:\r\n- Refactor TagList to UniqueTagList\r\n- Add TagBook to implement ReadOnlyTagBook\r\n- Change storage to use ReadOnlyTagBook instead of TagList\r\n- Include new definition of equality for Tags (all fields equal except ID)\r\n- Standardize UniqueXXXXList method naming convention\r\n\r\n* Update architecture diagrams, UI structure, user stories, use cases and NFRs (#108)\r\n\r\n* Fix NoteBook.java for duplicate findNote()\r\n\r\n* Updates from upstream (#21)\r\n\r\n* Update Dev Guide Proposed Component (#123)\r\n\r\n* DG changes in diagram to update future proposed implementation\r\n\r\n* clearer docs\r\n\r\n* added linebreaks\r\n\r\n* line breaks\r\n\r\n* linebreak\r\n\r\n* formatting\r\n\r\n* Refactor ResultPane into a separate class (#103)\r\n\r\n* Update AboutUs.adoc for team members to commit\r\n\r\n* Add a newline in AboutUs.adoc\r\n\r\n* Add more use cases to Developer Guide\r\n\r\n* Fix missing endline\r\n\r\n* Update various docs to display TagLine\r\n\r\n* Add placeholder image\r\n\r\n* Fix minor typo in user guide\r\n\r\n* Update Tagline to TagLine\r\n\r\n* Update team name\r\n\r\n* Fix some typos in user guide and developer guide\r\n\r\n* Add some tests and remove ContactCard index\r\n\r\n* Add new test to NoteListCardTest\r\n\r\n* Remove magic literal in NoteListCard\r\n\r\n* Fix variable declaration order\r\n\r\n* Refactor ResultPane into a separate class\r\n\r\n* Add missing Javadoc\r\n\r\n* Add note filtering implementation to DG (#124)\r\n\r\n* Merge updates from AY1920S1-CS2103T-F12-3/main\r\n\r\nTests for delete note\r\nTests for edit note\r\nXML for DG\r\nGroup feature\r\n\r\n* Add detailed example for note create, delete, edit in UG\r\n\r\n* Add detail example for note list, clear in UG\r\n\r\n* Set image width to 600\r\n\r\n* Add images for UG\r\n\r\n* Fix some bugs in UG\r\n\r\n* Add comment on deleted note id\r\n\r\n* Update note filter in DG\r\n\r\n* Show all notes after deleting\r\n\r\n* Fix test error\r\n\r\n* Fix test error\r\n\r\n* Fix checkstyle\r\n\r\n* Add PPP\r\n\r\n* Fix PPP\r\n\r\n* Udate PPP\r\n\r\n* Fix link in PPP\r\n",
             "insertions": 162,
             "deletions": 16
+          }
+        ]
+      },
+      {
+        "insertions": 108,
+        "deletions": 76,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "3c14593315fb4dca8d209aaf72a5087293328900",
+            "messageTitle": "Add manual tests for note commands in DG (#252)",
+            "messageBody": "* Add changes from team repo (#5)\r\n\r\n* Refactor package name from \u0027seedu.address\u0027 to \u0027tagline\u0027\r\n\r\n* Update mainClassName in build.gradle\r\n\r\n* Merge pull request #6 from from AY1920S1-CS2103T-F12-3/master\r\n\r\n* Refactor package name from \u0027seedu.address\u0027 to \u0027tagline\u0027\r\n\r\n* Update mainClassName in build.gradle\r\n\r\n* Added Contact Command + Basic Commands to UserGuide.adoc\r\n\r\n* Update mentions of AddressBook to TagLine\r\n\r\n* Update AboutUs.adoc\r\n\r\n* Add more use cases to Developer Guide\r\n\r\n* Update team name\r\n\r\n* Add newline after EOF for README and AboutUs\r\n\r\n* Fix Yehez image name\r\n\r\n* Merge PR #10 from AY1920S1-CS2103T-F12-3/main\r\n\r\n* Update Prof name in AboutUs (#35)\r\n\r\n#21\r\n\r\n* Rename Yehezkiel image (#36)\r\n\r\n* Fix typos in Developer Guide and User Guide (#37)\r\n\r\n* Updates from upstream (#14)\r\n\r\n* Add chat pane to GUI (#9)\r\n\r\n* Refactor result pane view (#42)\r\n\r\n* Implement view switching in GUI (#46)\r\n\r\n* Refactor Contact Command Parsers (#43)\r\n\r\n* Update contact parser (#62)\r\n\r\n* Rename person to contact (#65)\r\n\r\n* Fix merge conflicts from upstream\r\n\r\n* Fix merge conflicts\r\n\r\n* Add missing files to master from upstream\r\n\r\n* Remove dummy view\r\n\r\n* Merge updates from  AY1920S1-CS2103T-F12-3/main (#18)\r\n\r\nAdd DeleteNoteCommandTest\r\n\r\n* Updates from upstream (#19)\r\n\r\n* Refactor TagList to UniqueTagList and TagBook to follow structure\r\n\r\nFull changelist:\r\n- Refactor TagList to UniqueTagList\r\n- Add TagBook to implement ReadOnlyTagBook\r\n- Change storage to use ReadOnlyTagBook instead of TagList\r\n- Include new definition of equality for Tags (all fields equal except ID)\r\n- Standardize UniqueXXXXList method naming convention\r\n\r\n* Update architecture diagrams, UI structure, user stories, use cases and NFRs (#108)\r\n\r\n* Fix NoteBook.java for duplicate findNote()\r\n\r\n* Updates from upstream (#21)\r\n\r\n* Update Dev Guide Proposed Component (#123)\r\n\r\n* DG changes in diagram to update future proposed implementation\r\n\r\n* clearer docs\r\n\r\n* added linebreaks\r\n\r\n* line breaks\r\n\r\n* linebreak\r\n\r\n* formatting\r\n\r\n* Refactor ResultPane into a separate class (#103)\r\n\r\n* Update AboutUs.adoc for team members to commit\r\n\r\n* Add a newline in AboutUs.adoc\r\n\r\n* Add more use cases to Developer Guide\r\n\r\n* Fix missing endline\r\n\r\n* Update various docs to display TagLine\r\n\r\n* Add placeholder image\r\n\r\n* Fix minor typo in user guide\r\n\r\n* Update Tagline to TagLine\r\n\r\n* Update team name\r\n\r\n* Fix some typos in user guide and developer guide\r\n\r\n* Add some tests and remove ContactCard index\r\n\r\n* Add new test to NoteListCardTest\r\n\r\n* Remove magic literal in NoteListCard\r\n\r\n* Fix variable declaration order\r\n\r\n* Refactor ResultPane into a separate class\r\n\r\n* Add missing Javadoc\r\n\r\n* Add note filtering implementation to DG (#124)\r\n\r\n* Merge updates from AY1920S1-CS2103T-F12-3/main\r\n\r\nTests for delete note\r\nTests for edit note\r\nXML for DG\r\nGroup feature\r\n\r\n* Add detailed example for note create, delete, edit in UG\r\n\r\n* Add detail example for note list, clear in UG\r\n\r\n* Set image width to 600\r\n\r\n* Add images for UG\r\n\r\n* Fix some bugs in UG\r\n\r\n* Add comment on deleted note id\r\n\r\n* Update note filter in DG\r\n\r\n* Show all notes after deleting\r\n\r\n* Fix test error\r\n\r\n* Fix test error\r\n\r\n* Fix checkstyle\r\n\r\n* Add PPP\r\n\r\n* Fix PPP\r\n\r\n* Udate PPP\r\n\r\n* Fix link in PPP\r\n\r\n* Add legend to PPP\r\n\r\n* Add manual tests for notes\r\n",
+            "insertions": 108,
+            "deletions": 76
           }
         ]
       }
@@ -844,6 +886,41 @@
             "deletions": 1
           }
         ]
+      },
+      {
+        "insertions": 166,
+        "deletions": 30,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "6e2e10cc74cd7085e42e73d8abddc72c6de9141a",
+            "messageTitle": "Compress images slightly to fit PPP page limit (#240)",
+            "messageBody": "* Update AboutUs.adoc for team members to commit\r\n\r\n* Add a newline in AboutUs.adoc\r\n\r\n* Add more use cases to Developer Guide\r\n\r\n* Fix missing endline\r\n\r\n* Update various docs to display TagLine\r\n\r\n* Add placeholder image\r\n\r\n* Fix minor typo in user guide\r\n\r\n* Update Tagline to TagLine\r\n\r\n* Update team name\r\n\r\n* Fix some typos in user guide and developer guide\r\n\r\n* Update AboutUs link\r\n\r\n* Shorten PPP to fit page limit\r\n\r\n* Undo commit\r\n\r\n* Compress images slightly\r\n\r\n* Fix typo\r\n",
+            "insertions": 5,
+            "deletions": 5
+          },
+          {
+            "hash": "bd8f22b4851064956df7a82c877c8d284a4d5c6c",
+            "messageTitle": "Fix sync issue (#248)",
+            "messageBody": "* Update AboutUs.adoc for team members to commit\r\n\r\n* Add a newline in AboutUs.adoc\r\n\r\n* Add more use cases to Developer Guide\r\n\r\n* Fix missing endline\r\n\r\n* Update various docs to display TagLine\r\n\r\n* Add placeholder image\r\n\r\n* Fix minor typo in user guide\r\n\r\n* Update Tagline to TagLine\r\n\r\n* Update team name\r\n\r\n* Fix some typos in user guide and developer guide\r\n\r\n* Fix typo\r\n\r\n* Partially fix sync issue (Tag List is still bugged)\r\n\r\n* Fix sync issue\r\n\r\n* Update to show all notes after tag/untag\r\n\r\n* Fix trailing whitespace\r\n\r\n* Fix broken link\r\n\r\n* Remove full diagram from PPP\r\n\r\n* Update PPP pdf\r\n",
+            "insertions": 98,
+            "deletions": 13
+          },
+          {
+            "hash": "eec4082121e94d7577c83cee3f4fee99d515eede",
+            "messageTitle": "Update manual testing (#249)",
+            "messageBody": "* Update AboutUs.adoc for team members to commit\r\n\r\n* Add a newline in AboutUs.adoc\r\n\r\n* Add more use cases to Developer Guide\r\n\r\n* Fix missing endline\r\n\r\n* Update various docs to display TagLine\r\n\r\n* Add placeholder image\r\n\r\n* Fix minor typo in user guide\r\n\r\n* Update Tagline to TagLine\r\n\r\n* Update team name\r\n\r\n* Fix some typos in user guide and developer guide\r\n\r\n* Fix typo\r\n\r\n* Change autocomplete behavior slightly, and include manual testing instructions\r\n",
+            "insertions": 60,
+            "deletions": 8
+          },
+          {
+            "hash": "e727a5a2a52dc9b806344015fb964a1a02154501",
+            "messageTitle": "Update PPP screenshot (#251)",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 4
+          }
+        ]
       }
     ],
     "Yehezkiel01": [
@@ -1000,6 +1077,34 @@
             "deletions": 0
           }
         ]
+      },
+      {
+        "insertions": 82,
+        "deletions": 89,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "2ccbf15415df23a7e8e2685aee1c0dfeec82afc6",
+            "messageTitle": "Update UG to match product (#245)",
+            "messageBody": "* Fix contact list in UG\r\n\r\n* Update contact create with the same name\r\n\r\n* Fix error message\r\n",
+            "insertions": 10,
+            "deletions": 9
+          },
+          {
+            "hash": "de7b45ef8534181cc430841a32a8373ad8680f1d",
+            "messageTitle": "Note tag bugfix (#244)",
+            "messageBody": "* Validation for existence in contact tag and group tag\r\n\r\n* Reject untagging untagged tag\r\n",
+            "insertions": 28,
+            "deletions": 0
+          },
+          {
+            "hash": "2a36e390c2c7ade4cffb0e4e3202147ae02baded",
+            "messageTitle": "Update UG for PPP (#246)",
+            "messageBody": "* Update UG for note tag command\r\n\r\n* Add more description for note untag\r\n\r\n* Removes isSameContact\r\n\r\n* Updates UserGuide\r\n\r\n* Justify test\r\n",
+            "insertions": 44,
+            "deletions": 80
+          }
+        ]
       }
     ],
     "e0031374": [
@@ -1142,51 +1247,72 @@
             "deletions": 92
           }
         ]
+      },
+      {
+        "insertions": 214,
+        "deletions": 195,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "0c64247603adadd84e3e691469883a0d9044a7fb",
+            "messageTitle": "UG and PPP Update (#238)",
+            "messageBody": "* sampledata\r\n\r\n* dev guide\r\n\r\n* UG fix\r\n\r\n* ppp, dg changes\r\n\r\n* ppp\r\n\r\n* PPP\r\n\r\n* checkstyle\r\n\r\n* UG changes\r\n",
+            "insertions": 134,
+            "deletions": 194
+          },
+          {
+            "hash": "572b1ff0e166e28a4973192c65d7d24b24de36f4",
+            "messageTitle": "Update manual testing (#250)",
+            "messageBody": "* ppp\r\n\r\n* instructions for manual testing\r\n\r\n* dg\r\n",
+            "insertions": 80,
+            "deletions": 1
+          }
+        ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "stevenwjy": 2873,
-    "shiweing": 6077,
-    "tanlk99": 5378,
-    "Yehezkiel01": 2452,
-    "e0031374": 6531
+    "stevenwjy": 2949,
+    "shiweing": 6193,
+    "tanlk99": 5459,
+    "Yehezkiel01": 2481,
+    "e0031374": 6667
   },
   "authorFileTypeContributionMap": {
     "stevenwjy": {
-      "docs": 218,
-      "tests": 822,
-      "functional": 1832,
+      "docs": 217,
+      "tests": 834,
+      "functional": 1897,
       "other": 1
     },
     "shiweing": {
-      "docs": 441,
-      "tests": 2839,
+      "docs": 529,
+      "tests": 2867,
       "functional": 2797
     },
     "tanlk99": {
-      "docs": 461,
-      "tests": 1548,
-      "functional": 3342,
+      "docs": 470,
+      "tests": 1553,
+      "functional": 3409,
       "other": 27
     },
     "Yehezkiel01": {
-      "docs": 98,
-      "tests": 891,
-      "functional": 1463
+      "docs": 136,
+      "tests": 869,
+      "functional": 1476
     },
     "e0031374": {
-      "docs": 541,
-      "tests": 2915,
-      "functional": 3075
+      "docs": 569,
+      "tests": 2930,
+      "functional": 3168
     }
   },
   "authorContributionVariance": {
-    "stevenwjy": 271653.16,
-    "shiweing": 245207.69,
-    "tanlk99": 99113.73,
-    "Yehezkiel01": 118375.59,
-    "e0031374": 361876.2
+    "stevenwjy": 267354.03,
+    "shiweing": 241619.64,
+    "tanlk99": 97693.33,
+    "Yehezkiel01": 116749.414,
+    "e0031374": 357735.34
   },
   "authorDisplayNameMap": {
     "stevenwjy": "CS2103T-F12-3 STEVE ... IJAYA",

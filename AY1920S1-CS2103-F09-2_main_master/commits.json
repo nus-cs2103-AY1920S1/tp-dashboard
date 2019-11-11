@@ -1087,8 +1087,8 @@
         ]
       },
       {
-        "insertions": 235,
-        "deletions": 179,
+        "insertions": 679,
+        "deletions": 511,
         "date": "2019-11-09",
         "commitResults": [
           {
@@ -1174,6 +1174,370 @@
             "messageBody": "",
             "insertions": 6,
             "deletions": 3
+          },
+          {
+            "hash": "cea7f3a862dec6f7a6a08bbc01cc1b5756c3839c",
+            "messageTitle": "Revert changes to DeckDisplay",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 4
+          },
+          {
+            "hash": "10f0a4adcb9c8c901215af6e88922f9b103ef92e",
+            "messageTitle": "Refactor: Add hasScore(), getScore() and setScore(Score) to Session and remove them from TestSession. Create DeckStats, UserSession and UserSessionList. Make UserSession and TestSession extend Session. Remove all methods from TestSessionList except getAverageScore(). Change methods in SessionListUtil to take in Sessions and SessionLists instead of the subclasses.",
+            "messageBody": "",
+            "insertions": 72,
+            "deletions": 97
+          },
+          {
+            "hash": "d617790e47dcd1a4650175dbb77a044e1f0feec7",
+            "messageTitle": "Remove most methods from Stats and move to UserStats, leaving only abstract startCurrentSession(), endCurrentSession() and getCurrentSession().",
+            "messageBody": "",
+            "insertions": 78,
+            "deletions": 53
+          },
+          {
+            "hash": "d4f74836ce19ff0898806120fd61070d6bd5e8da",
+            "messageTitle": "Rename UserStatsHolder to StatsHolder. Store userStats and deckStats in StatsHolder. Add currentDeck field to DeckStats, and getter, setter and reset methods. Add logger to Stats.",
+            "messageBody": "",
+            "insertions": 69,
+            "deletions": 27
+          },
+          {
+            "hash": "851cf085f5a81d1e9b3703b688adeb281360e4f2",
+            "messageTitle": "Improve logging in UserStats",
+            "messageBody": "",
+            "insertions": 10,
+            "deletions": 4
+          },
+          {
+            "hash": "393bdf50cdd7db5e5fd22e2610208d03d3c19c48",
+            "messageTitle": "Partially implement startCurrentSession() and endCurrentSession() in DeckStats. Add methods to DeckStats related to changes to decks.",
+            "messageBody": "",
+            "insertions": 55,
+            "deletions": 3
+          },
+          {
+            "hash": "bd8f0574a6c9f8e1f74c133a8e09110891c3e1b3",
+            "messageTitle": "Partially implement methods in DeckStats",
+            "messageBody": "",
+            "insertions": 38,
+            "deletions": 10
+          },
+          {
+            "hash": "a64040f8b1538b696619f53579b5c859fc9a3cee",
+            "messageTitle": "Implement logic for starting and ending exam sessions in DeckDisplay and Responses.",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 4
+          },
+          {
+            "hash": "c04ab6ea9ffdf5505f891714a0b3da8b82725e02",
+            "messageTitle": "Reinstate obj.put(Schema.SESSION_SCORE, score) in Session. Delete TestSession and UserSession classes.",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 64
+          },
+          {
+            "hash": "8daedd2c7d1f9ba145ced685a15267aaa23cd1d3",
+            "messageTitle": "Delete TestSessionList and UserSessionList classes.",
+            "messageBody": "",
+            "insertions": 32,
+            "deletions": 49
+          },
+          {
+            "hash": "dd3ad21123ad49b72cfffdb165676de5384a3418",
+            "messageTitle": "Reinstate calls to saveUserStats(). Partially implement code for saving and loading deckStats in StorageManager.",
+            "messageBody": "",
+            "insertions": 45,
+            "deletions": 17
+          }
+        ]
+      },
+      {
+        "insertions": 135,
+        "deletions": 67,
+        "date": "2019-11-10",
+        "commitResults": [
+          {
+            "hash": "3cfecaece8fb3c7b9f855504a101cce898efd20d",
+            "messageTitle": "Partially implement methods to save and load deck stats in StorageManager. Add saveDeckStats and loadDeckStats to MainApp and MainWindow",
+            "messageBody": "",
+            "insertions": 73,
+            "deletions": 4
+          },
+          {
+            "hash": "9c8960f70bee3ceb020d882b9228570bab2066a5",
+            "messageTitle": "Added if-clause to Session\u0027s toJson()",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "47d745c5a71bfcd8348fa2f1254621803b93a05a",
+            "messageTitle": "Changes to StatsDisplayUtil and DeckStatisticsWindow",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 12
+          },
+          {
+            "hash": "8ac478f9c926c57777e1670487fd6b5b8ff1bff9",
+            "messageTitle": "Test session list in DeckStatisticsWindow now works as expected! Add defensive coding to DeckStats to account for currentSession, currentDeck not found etc. Update getTestSessionList() method in Deck",
+            "messageBody": "",
+            "insertions": 25,
+            "deletions": 25
+          },
+          {
+            "hash": "13c194ddc23d50cd914f1ece5402ef2672d74f86",
+            "messageTitle": "Fix NullPointerException when opening DeckStatisticsWindow: create new SessionList for deck if not found in hashmap.",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 21
+          },
+          {
+            "hash": "59d3856ce07b2fab08b038203aa20cac93f55173",
+            "messageTitle": "Add logger to StorageManager",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 4
+          }
+        ]
+      },
+      {
+        "insertions": 604,
+        "deletions": 299,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "7ca9df2898e32ca25683a621ae15f2c1a4092034",
+            "messageTitle": "Reinstate display of numSessionsThisWeek, numSessions, averageScore etc. for Deck",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 17
+          },
+          {
+            "hash": "f06f79ef22c30812769aa81c87b53dd2213ae4db",
+            "messageTitle": "Debug average score not showing to 2d.p. in deck table",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 1
+          },
+          {
+            "hash": "9623fa94bccac6c21b926265a838f5feec197fa3",
+            "messageTitle": "Improve layout of DeckStatisticsWindow",
+            "messageBody": "",
+            "insertions": 49,
+            "deletions": 23
+          },
+          {
+            "hash": "5ed22689f67ae873d31c9b84029bf22b9af5a436",
+            "messageTitle": "Fix placeholder for sessionsTableView and deckTableView. Improve layout of StatisticsWindow to match earlier changes to DeckStatisticsWindow.",
+            "messageBody": "",
+            "insertions": 72,
+            "deletions": 16
+          },
+          {
+            "hash": "bf255fac623b18ce6fac6e955b7b21ea2df1adb9",
+            "messageTitle": "Add min height and width to StatisticsWindow and DeckStatisticsWindow",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 3
+          },
+          {
+            "hash": "11f4b038d825b8a7da0f78a5b1205675dc264c05",
+            "messageTitle": "Display total number of decks and cards in StatisticsWindow",
+            "messageBody": "",
+            "insertions": 43,
+            "deletions": 0
+          },
+          {
+            "hash": "87cd6304aae501b936678cf2d5398770a30e8653",
+            "messageTitle": "Add totalTestSessions and totalTestSessionsThisWeek to StatisticsWindow",
+            "messageBody": "",
+            "insertions": 42,
+            "deletions": 3
+          },
+          {
+            "hash": "b20bda88fa3b50d870e6965d722b2d81e3a57471",
+            "messageTitle": "Display average score for decks in StatisticsWindow",
+            "messageBody": "",
+            "insertions": 60,
+            "deletions": 4
+          },
+          {
+            "hash": "b6f22e4382752278dbb9538fd04dbcba7df6ad59",
+            "messageTitle": "Show average score of deck test sessions in DeckStatisticsWindow",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 0
+          },
+          {
+            "hash": "91aa94c44d3371c0e602f697a0d93631a0e803ce",
+            "messageTitle": "Fix checkstyleMain",
+            "messageBody": "",
+            "insertions": 23,
+            "deletions": 32
+          },
+          {
+            "hash": "e005a89fd630309c380eb77d35e66d863886bbaf",
+            "messageTitle": "Refactor: add resetCurrentSession() method to Stats. Move currentSession and getCurrentSession() out of UserStats and DeckStats, and into Stats. Remove redundant getSize() method in Deck.",
+            "messageBody": "",
+            "insertions": 37,
+            "deletions": 39
+          },
+          {
+            "hash": "00c267f3d7d37d6ddef6956c115771fe84f59259",
+            "messageTitle": "Refactor: remove sessionStartString, sessionEndString, durationString as attributes of Session. Move to getters (only used for GUI rendering anyway).",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 32
+          },
+          {
+            "hash": "674690bc820236568b9cc7494665029fd4f6d217",
+            "messageTitle": "Make minor changes to Javadoc",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 7
+          },
+          {
+            "hash": "220c00f508b1a6dcdcdb595a11a666b57edc462c",
+            "messageTitle": "Handle renaming and deleting decks by calling respective methods of DeckStats",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 0
+          },
+          {
+            "hash": "39c8acbca91f5edbb966e60a91ca5f91eccb7860",
+            "messageTitle": "Debug issues related to renaming and deleting decks",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 3
+          },
+          {
+            "hash": "e56d032e13291a15c009c2943dace39c872e3f72",
+            "messageTitle": "Minor changes to logging",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
+          {
+            "hash": "a4481636a75d3df4864901000a455a11e66bd3c2",
+            "messageTitle": "Partially refactor SessionListUtilTest",
+            "messageBody": "",
+            "insertions": 38,
+            "deletions": 44
+          },
+          {
+            "hash": "a7bbd65921eea3d7ee5057977742261b6a981dc7",
+            "messageTitle": "Complete refactoring of SessionListUtilTest",
+            "messageBody": "",
+            "insertions": 16,
+            "deletions": 10
+          },
+          {
+            "hash": "28431d971f912c3ae2b657d7ed1df8944d84bfe0",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "39e2ba8c85095eb2cec2009df59ca8781228d724",
+            "messageTitle": "Improve code quality. Check authorship. Verify that checkstyle passes.",
+            "messageBody": "",
+            "insertions": 7,
+            "deletions": 11
+          },
+          {
+            "hash": "180f5f8886ab5794bc16cb174200231e65c3744f",
+            "messageTitle": "Try to fix DateTimeUtilTest that fails only on Travis",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "6d23957678cb245a1e92e27091bb27d0d242f59e",
+            "messageTitle": "Comment out tests in DateTimeUtilTest that somehow only fail on Travis",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 0
+          },
+          {
+            "hash": "369cbd5344cff4105b7b8a45af764f46816b8013",
+            "messageTitle": "Add educated guess for why test fails on Travis",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 1
+          },
+          {
+            "hash": "3fe430ce11f62f50a3f9cac9efbfdce5bd33e9ee",
+            "messageTitle": "Fix DeckStats toJson(). Debug \"NaN%\" showing in average score when there are no test sessions",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 1
+          },
+          {
+            "hash": "175791248159b657a9a865accba7008edf3685f2",
+            "messageTitle": "Add screenshots and update nattanyz.adoc",
+            "messageBody": "",
+            "insertions": 40,
+            "deletions": 20
+          },
+          {
+            "hash": "ceecb3ef7b8bcc20d8700b6c2f78d230b1889c40",
+            "messageTitle": "Update imagesdir",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "6737d89164aa5f4930d99c87a9c622510a37d209",
+            "messageTitle": "Update imagesdir again",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "6baab46e79e56effd4bf43cf4d2c2bf405b92b27",
+            "messageTitle": "Update nattanyz.adoc",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 19
+          },
+          {
+            "hash": "f4c93abb48a0b72e7983867af6343907c30870b7",
+            "messageTitle": "Update nattanyz.adoc",
+            "messageBody": "",
+            "insertions": 22,
+            "deletions": 2
+          },
+          {
+            "hash": "4747c97396fd83321f7a51957af922c0966595a2",
+            "messageTitle": "Update nattanyz.adoc",
+            "messageBody": "",
+            "insertions": 18,
+            "deletions": 3
+          },
+          {
+            "hash": "e0fb19f38623dd49246d8011f987021c4cc29a04",
+            "messageTitle": "Add stats.adoc",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 0
+          },
+          {
+            "hash": "c265863789fa5c0e3b14c24cb54fe724e9a70932",
+            "messageTitle": "Update stats.adoc",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 2
+          },
+          {
+            "hash": "935dc0df89e6cb17ce777f49c6d34bd1b80cfe10",
+            "messageTitle": "Add class diagram",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 0
           }
         ]
       }
@@ -1824,10 +2188,24 @@
         ]
       },
       {
-        "insertions": 120,
-        "deletions": 60,
+        "insertions": 189,
+        "deletions": 157,
         "date": "2019-11-10",
         "commitResults": [
+          {
+            "hash": "cbee511129d125ca3265b62e7ef7f1f09a63fd5d",
+            "messageTitle": "save and load deckstats, removed deckstats from deck model",
+            "messageBody": "",
+            "insertions": 62,
+            "deletions": 87
+          },
+          {
+            "hash": "41a5e60e8e0ac21d84bef907b0014d4656be55d4",
+            "messageTitle": "Changed require to array",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 2
+          },
           {
             "hash": "749ae434ddcb6de2e9fdc84ef7b7ef3abf51c4b1",
             "messageTitle": "implemented new cli",
@@ -1862,6 +2240,41 @@
             "messageBody": "",
             "insertions": 5,
             "deletions": 5
+          },
+          {
+            "hash": "4f5703157c4eb8eccd0058ce22f084fa90dc2d4d",
+            "messageTitle": "fix font",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 8
+          }
+        ]
+      },
+      {
+        "insertions": 58,
+        "deletions": 25,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "df31a83672d74812377f35f422871b9e1a73c335",
+            "messageTitle": "fix shift for windows",
+            "messageBody": "",
+            "insertions": 30,
+            "deletions": 1
+          },
+          {
+            "hash": "079027ab51001d1c1bd7c494d2b4cd71c7ff2023",
+            "messageTitle": "checkstyle",
+            "messageBody": "",
+            "insertions": 23,
+            "deletions": 23
+          },
+          {
+            "hash": "fcad5e93e852a133469d63f710205a7325cba2ea",
+            "messageTitle": "forgot uppercase for alphabets",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 1
           }
         ]
       }
@@ -2745,8 +3158,8 @@
         ]
       },
       {
-        "insertions": 135,
-        "deletions": 79,
+        "insertions": 254,
+        "deletions": 140,
         "date": "2019-11-10",
         "commitResults": [
           {
@@ -2790,6 +3203,160 @@
             "messageBody": "",
             "insertions": 6,
             "deletions": 9
+          },
+          {
+            "hash": "858e90046ff72fde1424733e7e512eb33a52ac6b",
+            "messageTitle": "Restoring changes made in revert that affected Huimin and Haliq",
+            "messageBody": "",
+            "insertions": 60,
+            "deletions": 61
+          },
+          {
+            "hash": "c0e5cdc396f012d6d7fa1e7ff075572b7794c294",
+            "messageTitle": "Added Author Tags in Responses",
+            "messageBody": "",
+            "insertions": 24,
+            "deletions": 0
+          },
+          {
+            "hash": "835e909241952a8b041f5e1eb4625a4f0a8bbe7a",
+            "messageTitle": "Created UMLSeqDiagram for Test",
+            "messageBody": "",
+            "insertions": 35,
+            "deletions": 0
+          }
+        ]
+      },
+      {
+        "insertions": 323,
+        "deletions": 121,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "7ecf4c8c71b3993b6fdeeb70d5917097c528ae0a",
+            "messageTitle": "Added more Diagrams for DG",
+            "messageBody": "",
+            "insertions": 85,
+            "deletions": 0
+          },
+          {
+            "hash": "7a0798ba711f93e65abb86c47f9c1c2b47ddc0df",
+            "messageTitle": "Added to Developer Guide Test Section",
+            "messageBody": "",
+            "insertions": 55,
+            "deletions": 17
+          },
+          {
+            "hash": "ec8125c9542888e81e73068664fc299edc5e4b81",
+            "messageTitle": "Added to documentation",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 30
+          },
+          {
+            "hash": "68d7d416ea20cdf1a9e03d40a321888eac6bc747",
+            "messageTitle": "Added Consumers to toggle ListView and AddDeckButton Accessibility",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 6
+          },
+          {
+            "hash": "d230060c72436c62736365affe6e0b30da14c06f",
+            "messageTitle": "Fixed checkstyle EOF",
+            "messageBody": "",
+            "insertions": 4,
+            "deletions": 4
+          },
+          {
+            "hash": "566cb3b5e3815b797da088012900f705d9b17705",
+            "messageTitle": "Fixed more checkstyle",
+            "messageBody": "",
+            "insertions": 8,
+            "deletions": 3
+          },
+          {
+            "hash": "356c70aa6aaf2e7c79080400c13e29e3969628a3",
+            "messageTitle": "Added screenshots to the UG",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 0
+          },
+          {
+            "hash": "4af2c1b6654fde58f57ea7748b08a116c749c314",
+            "messageTitle": "Changed Diagrams to Horizontal and shrank PPP to 10 pages",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 11
+          },
+          {
+            "hash": "d93cd0473a674ae3734fbaea37d94d49c1a38571",
+            "messageTitle": "Cleaned up UG",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 10
+          },
+          {
+            "hash": "96262f5b917164d76cc0f92e86d83c6a42954b84",
+            "messageTitle": "Created test for StandardExam",
+            "messageBody": "",
+            "insertions": 49,
+            "deletions": 1
+          },
+          {
+            "hash": "c2276aac2006bb2ac2819bba5dcc2a7ddbc392a7",
+            "messageTitle": "Fix checkstyle for StandardExam",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 2
+          },
+          {
+            "hash": "85e1a515706dbaa92f68a4569cd1ac3ace70992c",
+            "messageTitle": "Checkstyle",
+            "messageBody": "",
+            "insertions": 6,
+            "deletions": 4
+          },
+          {
+            "hash": "0b8c6e9309d80b1e5b0ad97b4664434dc7cac521",
+            "messageTitle": "checkstyle",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "f9a53e10a14c7ab816b8db178a3dd12f705f10a2",
+            "messageTitle": "Fixed checkstyle and changed \"I got it right\"",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 2
+          },
+          {
+            "hash": "217ba4b7c7d00fe25ac52366629d437b448f0e1a",
+            "messageTitle": "travis is a bij",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 2
+          },
+          {
+            "hash": "a38f5c2cffdc98ff118bc85e14de859fef20630b",
+            "messageTitle": "Update State in Buttons",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 0
+          },
+          {
+            "hash": "0a42371361d4cefd2e2ed5860b28ad6e23c4a8cb",
+            "messageTitle": "Fixed bug whereby GUI doesn\u0027t update multiline CLI",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 0
+          },
+          {
+            "hash": "a231066e6e337853d4e68f772fcfe7d96a36f5fd",
+            "messageTitle": "Added more to documentation",
+            "messageBody": "",
+            "insertions": 13,
+            "deletions": 28
           }
         ]
       }
@@ -3604,6 +4171,48 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 103,
+        "deletions": 34,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "77238acee89ab04744d023065150cfb53354653a",
+            "messageTitle": "made the test case checker check for inputs as well.",
+            "messageBody": "",
+            "insertions": 77,
+            "deletions": 1
+          },
+          {
+            "hash": "13c06baa946f97bff465dfe6db1638e4635826f1",
+            "messageTitle": "remove the restriction of keeping at least one card in the deck",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 9
+          },
+          {
+            "hash": "686a23f2f6092bae9bef14947f792b663a13945d",
+            "messageTitle": "Update timothyleong97.adoc",
+            "messageBody": "",
+            "insertions": 5,
+            "deletions": 1
+          },
+          {
+            "hash": "dd9aec7d61b53a82d0b94a22840fb4527294e14c",
+            "messageTitle": "Update timothyleong97.adoc",
+            "messageBody": "initial draft of ppp\n",
+            "insertions": 14,
+            "deletions": 23
+          },
+          {
+            "hash": "90402edb201e4e804a0c53cf4b15268f87cf329a",
+            "messageTitle": "Update CreateDeckDisplay.java",
+            "messageBody": "pressing enter triggers deck saving\n",
+            "insertions": 7,
+            "deletions": 0
           }
         ]
       }
@@ -5591,8 +6200,8 @@
         ]
       },
       {
-        "insertions": 48,
-        "deletions": 278,
+        "insertions": 151,
+        "deletions": 314,
         "date": "2019-11-10",
         "commitResults": [
           {
@@ -5692,61 +6301,209 @@
             "messageBody": "",
             "insertions": 2,
             "deletions": 3
+          },
+          {
+            "hash": "16b1b53961b083659ae188ec50e55aef87d3bcfa",
+            "messageTitle": "Update Docs",
+            "messageBody": "",
+            "insertions": 11,
+            "deletions": 19
+          },
+          {
+            "hash": "e526d2ade65140d0aefbe39f6278a41b1e9d86ed",
+            "messageTitle": "Update docs",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "33824eb95373a4b132c7d9f04ac89a04d62aacae",
+            "messageTitle": "Minor changes",
+            "messageBody": "",
+            "insertions": 72,
+            "deletions": 14
+          },
+          {
+            "hash": "039fdc31e781bb28dadbf086b09e1edc6e3958e8",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 1
+          },
+          {
+            "hash": "705fe1888cb2af57284e0b9f6d490b94debbf894",
+            "messageTitle": "Update PPP",
+            "messageBody": "",
+            "insertions": 17,
+            "deletions": 1
+          }
+        ]
+      },
+      {
+        "insertions": 91,
+        "deletions": 77,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "d222567fa760f38a8071b3d6ba70a86262cce8d9",
+            "messageTitle": "Update PPP",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 30
+          },
+          {
+            "hash": "93de613d10b2679f56d9894d9a9e3be472d014df",
+            "messageTitle": "Update DG",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 3
+          },
+          {
+            "hash": "e8490fe7b54a98148eaa3de4da323308e5267a85",
+            "messageTitle": "Debug view command cli",
+            "messageBody": "",
+            "insertions": 46,
+            "deletions": 6
+          },
+          {
+            "hash": "5c41bb62775d6585e05d062bc2340d6b6628bc1b",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 3
+          },
+          {
+            "hash": "78933e98bcf61aaeaee984464d750e97f94456d6",
+            "messageTitle": "Added: javadoc",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 2
+          },
+          {
+            "hash": "52cdd6ca23142ee7f78ddc37b48ff375becc6605",
+            "messageTitle": "Debug view command cli",
+            "messageBody": "",
+            "insertions": 15,
+            "deletions": 9
+          },
+          {
+            "hash": "2034a711812110369b8268bd1c08525294bfe4fd",
+            "messageTitle": "Debug view command cli",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "64e4b38c6c90d8838b07af16b19d51aaf3c2e26b",
+            "messageTitle": "Update PPP",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "129d31b56e08c62d8b3650e5faac1870880f1bed",
+            "messageTitle": "Debug Help command",
+            "messageBody": "",
+            "insertions": 3,
+            "deletions": 1
+          },
+          {
+            "hash": "201b71934b068580631b8db727154ee29f8df381",
+            "messageTitle": "Update PPP",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "a7fe6b2e3630b7c05ad0d6f533f3347f6670ccee",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 2
+          },
+          {
+            "hash": "49b8198dc60964c89a3c7c60d8e506c5ac3f0776",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
+          },
+          {
+            "hash": "26282d83ac53974cac889f8684f9c38f9425d4bf",
+            "messageTitle": "Fix checkstyle",
+            "messageBody": "",
+            "insertions": 1,
+            "deletions": 1
+          },
+          {
+            "hash": "6c9c944e2b8a3cec588d0ef1fdaf9605b98dca75",
+            "messageTitle": "Debug delete command cli",
+            "messageBody": "",
+            "insertions": 9,
+            "deletions": 15
+          },
+          {
+            "hash": "65ed9ddfb5af08ff0410c2115df87cdcbb935383",
+            "messageTitle": "fix checkstyle",
+            "messageBody": "",
+            "insertions": 2,
+            "deletions": 1
           }
         ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "nattanyz": 2111,
-    "AHaliq": 3266,
-    "PhireHandy": 1212,
-    "shawnpunchew11": 1245,
-    "timothyleong97": 3850,
-    "huiminlim": 2301
+    "nattanyz": 2565,
+    "AHaliq": 3307,
+    "PhireHandy": 931,
+    "shawnpunchew11": 1675,
+    "timothyleong97": 3894,
+    "huiminlim": 2720
   },
   "authorFileTypeContributionMap": {
     "nattanyz": {
-      "docs": 49,
+      "docs": 144,
       "tests": 466,
-      "functional": 1596
+      "functional": 1955
     },
     "AHaliq": {
-      "docs": 99,
+      "docs": 92,
       "tests": 271,
-      "functional": 2895,
+      "functional": 2943,
       "other": 1
     },
     "PhireHandy": {
-      "docs": 73,
+      "docs": 11,
       "tests": 0,
-      "functional": 1139
+      "functional": 920
     },
     "shawnpunchew11": {
-      "docs": 206,
-      "tests": 151,
-      "functional": 888
+      "docs": 166,
+      "tests": 207,
+      "functional": 1180,
+      "other": 122
     },
     "timothyleong97": {
-      "docs": 62,
+      "docs": 119,
       "tests": 103,
-      "functional": 3643,
+      "functional": 3630,
       "other": 42
     },
     "huiminlim": {
-      "docs": 638,
+      "docs": 943,
       "tests": 186,
-      "functional": 1356,
+      "functional": 1470,
       "other": 121
     }
   },
   "authorContributionVariance": {
-    "nattanyz": 138565.42,
-    "AHaliq": 90300.25,
-    "PhireHandy": 751273.6,
-    "shawnpunchew11": 45151.184,
-    "timothyleong97": 1590422.5,
-    "huiminlim": 75805.945
+    "nattanyz": 159018.45,
+    "AHaliq": 89839.195,
+    "PhireHandy": 740447.25,
+    "shawnpunchew11": 47896.965,
+    "timothyleong97": 1567381.8,
+    "huiminlim": 75665.22
   },
   "authorDisplayNameMap": {
     "nattanyz": "CS2103-F09-2 TAN Y ... TALIE",

@@ -301,6 +301,20 @@
             "deletions": 6
           }
         ]
+      },
+      {
+        "insertions": 125,
+        "deletions": 36,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "c76b9b09b556a919e342b80f305a3593dbad5d09",
+            "messageTitle": "Updated docs (#205)",
+            "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n\r\n* Fixed listEvents bug\r\nchanged: displayassignmentscommand message usage - please update user guide\r\nchanged: studentnotfoundexception message in setassignmentscorecommand\r\nfixed: did not throw error when setscore command is called for a student not in the tutorial\r\n\r\n* Updated docs\r\n\r\n* Patched setStudents - clearCommand and undoing deletion of students should work now\r\n\r\n* Fixed SetSemStart Storage bug\r\n\r\n* Added check to ensure tutorial duration is non-negative\r\nFixed storage for semStart\r\n\r\n* Bug fixes\r\nfixed: Error not thrown in application when application is changed but semstart is null\r\nfixed: Error not thrown when invalid time is inputted for addTutorial (9999)\r\nfixed: SuggestedCommands not set to an empty list when deleteSuggestedCommands is called - causes error to be thrown in terminal\r\nwhen index is inputted after suggestedCommand.execute() throws an error\r\n\r\n* Updated docs\r\n",
+            "insertions": 125,
+            "deletions": 36
+          }
+        ]
       }
     ],
     "Ellieyee": [
@@ -667,6 +681,27 @@
             "deletions": 191
           }
         ]
+      },
+      {
+        "insertions": 57,
+        "deletions": 130,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "bf789af5b06667f7bf5e9ae3b9bfed6aa5c4fd5a",
+            "messageTitle": "Update developer guide and PPP (#208)",
+            "messageBody": "",
+            "insertions": 28,
+            "deletions": 117
+          },
+          {
+            "hash": "8db493b98fa76fa56c17f534ed5a59647eb7b00d",
+            "messageTitle": "Update tag for everyone (#209)",
+            "messageBody": "* Update userguide and checkstyle\r\n\r\n* Update architectureSequenceDiagram\r\n\r\n* Update Ui Class Diagram\r\n\r\n* Update PPP\r\n\r\n* Update PPP\r\n\r\n* Update PPP\r\n\r\n* Update tags for PPP\r\n\r\n* Fix PPP tag\r\n\r\n* Update everyone\u0027s PPP\r\n",
+            "insertions": 29,
+            "deletions": 13
+          }
+        ]
       }
     ],
     "AhmadHatziq": [
@@ -1028,8 +1063,8 @@
         ]
       },
       {
-        "insertions": 600,
-        "deletions": 28,
+        "insertions": 749,
+        "deletions": 44,
         "date": "2019-11-10",
         "commitResults": [
           {
@@ -1038,6 +1073,41 @@
             "messageBody": "* Update UserGuide.adoc\r\n\r\n* Update UserGuide.adoc\r\n\r\n* Update DG and UG\r\n\r\n* Update DG\r\n\r\n* Update DG\r\n\r\n* Update Developer Guide\r\n\r\n* Update  (#6)\r\n\r\n* Include index shortcut for AddStudentCommand (#49)\r\n\r\n* Added Attendance, missing tests for Tutorial and associated subclasses.\r\n\r\n* Allow multiple input formats for addTutorial weeks (#52)\r\n\r\n* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Update list command (#53)\r\n\r\n* Update TutorialCard to display Module code\r\n\r\n* Update List command to display in UI\r\n\r\n* Fuck you sourcetree\r\n\r\n* Implemented saving of Modules\r\n\r\n* Can read module json from file\r\n\r\n* Save progress, before starting on trying to store as an easier to interpret json string array of array of array\r\n\r\n* Add function to save modules model to file. Haven\u0027t add function to read from said saved data.\r\n\r\n* Changed from hashMap to LinkedHashMap to preserve relative ordering\r\n\r\n* Refactor code that deals with saving to Json\r\n\r\n* Add function to read module data from saved Json file\r\n\r\n* Refactor code block on studentStringToStudent\r\n\r\n* Refactor code segment on Student object creation\r\n\r\n* Add checkers for invalid tutorial and student strings \u0026 general refactoring\r\n\r\n* Corrected ckeckStyle and tests\r\n\r\n* Fix checkStyle violations\r\n\r\n* Added intial round of tests\r\n\r\n* Fix test for invalid dateTime or Duration\r\n\r\n* Update fork\r\n\r\n* Add support for saving (but not reading) of attendance list\r\n\r\n* Add test json files\r\n\r\n* Extract out weekly attendance string except final week\r\n\r\n* Fix issue with saving an attendance list with 0 students\r\n\r\n* Add ability to construct attendance object from json string\r\n\r\n* Fix failing test cases due to change in tutorialString structure (addition of tutorialAttendance field)\r\n\r\n* Fix checkstyle violations\r\n\r\n* Added EOF to json test files\r\n\r\n* Revert to 63465c7f\r\n\r\n* Code cleaning\r\n\r\n* Fix check style violations\r\n\r\n* Refactor parsing methods in JsonAdaptedModule.java to JsonUtil.java\r\n\r\n* Refactor JsonAdaptedModuleTest \u0026 JsonUtilTest\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update developer guide\r\n\r\n* Update tutorial class\r\n\r\n* Remove JsonAdaptedPerson from Storage-related files\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Checkpoint before converting tutorial structure from a String to a Map\r\n\r\n* Ported storage to nested map of strings\r\n\r\n* Remove all instances from previous storage method\r\n\r\n* Added saving of initial model state\r\n\r\n* Add ability to save each state for every state-changing command\r\n\r\n* Add a skeleton Undo Command (input/output)\r\n\r\n* Add ability to check for invalid arguments for \"u/integer\"\r\n\r\n* Add if-branch for an undo command\r\n\r\n* Checkpoint before implementing overloaded Command.execute(model, storage) abstract method\r\n\r\n* Add overloaded abstract method to accomodate commands that need both Model \u0026 Storage objects (ie UndoCommand) to operate\r\n\r\n* Added undo ability\r\n\r\n* Fix bug where new state is saved after Undo Command\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing test cases\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Update build.gradle\r\n\r\n* Update build.gradle\r\n\r\n* Bug fixes\r\n\r\n* Update user guide\r\n\r\n* Before attempting to change json storage directory to (Paths.get)\r\n\r\n* Fix state storage file directory for Mac users\r\n\r\n* Update checkStyle\r\n\r\n* Add parsing of Assignment from json\r\n\r\n* Add storage for assignments\r\n\r\n* Add method isDuplicateAssignment\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Add string checking for all student fields. To remove any leftover square brackets ie \"[\" or \"]\".\r\n\r\n* Added Hatziq\u0027s PPP\r\n\r\n* Fix issue #154\r\n\r\n* Maybe fix the assignment storage?\r\n\r\n* Start storage for event\r\n\r\n* Update documentation\r\n\r\n* Update documentation\r\n\r\n* Update docs\r\n\r\n* Added checking for semStart. If new SemStart is the same as current SemStart, throw an error\r\n\r\n* Fix checkStyle\r\n\r\n* Update ahmadhatziq.adoc\r\n\r\n* Add storage for events\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Fix bug where if json state files are missing, will cause app to hang\r\n\r\n* Fix for set Students\r\n\r\n* Fix bug where assignment additions won\u0027t be saved\r\n\r\n* Fix undo command for Assignments\r\n\r\n* Added tests\r\n\r\n* Add tests\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing tests\r\n",
             "insertions": 600,
             "deletions": 28
+          },
+          {
+            "hash": "ec149691f5a72d1cf8773a36d504015c1e2853fd",
+            "messageTitle": "Fix bugs \u0026 add tests (#204)",
+            "messageBody": "* Update UserGuide.adoc\r\n\r\n* Update UserGuide.adoc\r\n\r\n* Update DG and UG\r\n\r\n* Update DG\r\n\r\n* Update DG\r\n\r\n* Update Developer Guide\r\n\r\n* Update  (#6)\r\n\r\n* Include index shortcut for AddStudentCommand (#49)\r\n\r\n* Added Attendance, missing tests for Tutorial and associated subclasses.\r\n\r\n* Allow multiple input formats for addTutorial weeks (#52)\r\n\r\n* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Update list command (#53)\r\n\r\n* Update TutorialCard to display Module code\r\n\r\n* Update List command to display in UI\r\n\r\n* Fuck you sourcetree\r\n\r\n* Implemented saving of Modules\r\n\r\n* Can read module json from file\r\n\r\n* Save progress, before starting on trying to store as an easier to interpret json string array of array of array\r\n\r\n* Add function to save modules model to file. Haven\u0027t add function to read from said saved data.\r\n\r\n* Changed from hashMap to LinkedHashMap to preserve relative ordering\r\n\r\n* Refactor code that deals with saving to Json\r\n\r\n* Add function to read module data from saved Json file\r\n\r\n* Refactor code block on studentStringToStudent\r\n\r\n* Refactor code segment on Student object creation\r\n\r\n* Add checkers for invalid tutorial and student strings \u0026 general refactoring\r\n\r\n* Corrected ckeckStyle and tests\r\n\r\n* Fix checkStyle violations\r\n\r\n* Added intial round of tests\r\n\r\n* Fix test for invalid dateTime or Duration\r\n\r\n* Update fork\r\n\r\n* Add support for saving (but not reading) of attendance list\r\n\r\n* Add test json files\r\n\r\n* Extract out weekly attendance string except final week\r\n\r\n* Fix issue with saving an attendance list with 0 students\r\n\r\n* Add ability to construct attendance object from json string\r\n\r\n* Fix failing test cases due to change in tutorialString structure (addition of tutorialAttendance field)\r\n\r\n* Fix checkstyle violations\r\n\r\n* Added EOF to json test files\r\n\r\n* Revert to 63465c7f\r\n\r\n* Code cleaning\r\n\r\n* Fix check style violations\r\n\r\n* Refactor parsing methods in JsonAdaptedModule.java to JsonUtil.java\r\n\r\n* Refactor JsonAdaptedModuleTest \u0026 JsonUtilTest\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update developer guide\r\n\r\n* Update tutorial class\r\n\r\n* Remove JsonAdaptedPerson from Storage-related files\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Checkpoint before converting tutorial structure from a String to a Map\r\n\r\n* Ported storage to nested map of strings\r\n\r\n* Remove all instances from previous storage method\r\n\r\n* Added saving of initial model state\r\n\r\n* Add ability to save each state for every state-changing command\r\n\r\n* Add a skeleton Undo Command (input/output)\r\n\r\n* Add ability to check for invalid arguments for \"u/integer\"\r\n\r\n* Add if-branch for an undo command\r\n\r\n* Checkpoint before implementing overloaded Command.execute(model, storage) abstract method\r\n\r\n* Add overloaded abstract method to accomodate commands that need both Model \u0026 Storage objects (ie UndoCommand) to operate\r\n\r\n* Added undo ability\r\n\r\n* Fix bug where new state is saved after Undo Command\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing test cases\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Update build.gradle\r\n\r\n* Update build.gradle\r\n\r\n* Bug fixes\r\n\r\n* Update user guide\r\n\r\n* Before attempting to change json storage directory to (Paths.get)\r\n\r\n* Fix state storage file directory for Mac users\r\n\r\n* Update checkStyle\r\n\r\n* Add parsing of Assignment from json\r\n\r\n* Add storage for assignments\r\n\r\n* Add method isDuplicateAssignment\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Add string checking for all student fields. To remove any leftover square brackets ie \"[\" or \"]\".\r\n\r\n* Added Hatziq\u0027s PPP\r\n\r\n* Fix issue #154\r\n\r\n* Maybe fix the assignment storage?\r\n\r\n* Start storage for event\r\n\r\n* Update documentation\r\n\r\n* Update documentation\r\n\r\n* Update docs\r\n\r\n* Added checking for semStart. If new SemStart is the same as current SemStart, throw an error\r\n\r\n* Fix checkStyle\r\n\r\n* Update ahmadhatziq.adoc\r\n\r\n* Add storage for events\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Fix bug where if json state files are missing, will cause app to hang\r\n\r\n* Fix for set Students\r\n\r\n* Fix bug where assignment additions won\u0027t be saved\r\n\r\n* Fix undo command for Assignments\r\n\r\n* Added tests\r\n\r\n* Add tests\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing tests\r\n\r\n* Add test\r\n\r\n* Fix issue where clearCommand won\u0027t reset semStart date\r\n\r\n* Fix bug where week range accepts weekStart \u003e weekEnd\r\n\r\n* Fix bug where tutorial with same name won\u0027t be saved in storage\r\n\r\n* Add tests\r\n",
+            "insertions": 149,
+            "deletions": 16
+          }
+        ]
+      },
+      {
+        "insertions": 372,
+        "deletions": 114,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "e4fe35a4cf142d9c67ee09c0eb00717387ce4eef",
+            "messageTitle": "Update docs and DG (#206)",
+            "messageBody": "* Update UserGuide.adoc\r\n\r\n* Update UserGuide.adoc\r\n\r\n* Update DG and UG\r\n\r\n* Update DG\r\n\r\n* Update DG\r\n\r\n* Update Developer Guide\r\n\r\n* Update  (#6)\r\n\r\n* Include index shortcut for AddStudentCommand (#49)\r\n\r\n* Added Attendance, missing tests for Tutorial and associated subclasses.\r\n\r\n* Allow multiple input formats for addTutorial weeks (#52)\r\n\r\n* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Update list command (#53)\r\n\r\n* Update TutorialCard to display Module code\r\n\r\n* Update List command to display in UI\r\n\r\n* Fuck you sourcetree\r\n\r\n* Implemented saving of Modules\r\n\r\n* Can read module json from file\r\n\r\n* Save progress, before starting on trying to store as an easier to interpret json string array of array of array\r\n\r\n* Add function to save modules model to file. Haven\u0027t add function to read from said saved data.\r\n\r\n* Changed from hashMap to LinkedHashMap to preserve relative ordering\r\n\r\n* Refactor code that deals with saving to Json\r\n\r\n* Add function to read module data from saved Json file\r\n\r\n* Refactor code block on studentStringToStudent\r\n\r\n* Refactor code segment on Student object creation\r\n\r\n* Add checkers for invalid tutorial and student strings \u0026 general refactoring\r\n\r\n* Corrected ckeckStyle and tests\r\n\r\n* Fix checkStyle violations\r\n\r\n* Added intial round of tests\r\n\r\n* Fix test for invalid dateTime or Duration\r\n\r\n* Update fork\r\n\r\n* Add support for saving (but not reading) of attendance list\r\n\r\n* Add test json files\r\n\r\n* Extract out weekly attendance string except final week\r\n\r\n* Fix issue with saving an attendance list with 0 students\r\n\r\n* Add ability to construct attendance object from json string\r\n\r\n* Fix failing test cases due to change in tutorialString structure (addition of tutorialAttendance field)\r\n\r\n* Fix checkstyle violations\r\n\r\n* Added EOF to json test files\r\n\r\n* Revert to 63465c7f\r\n\r\n* Code cleaning\r\n\r\n* Fix check style violations\r\n\r\n* Refactor parsing methods in JsonAdaptedModule.java to JsonUtil.java\r\n\r\n* Refactor JsonAdaptedModuleTest \u0026 JsonUtilTest\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update local repo\r\n\r\n* Update developer guide\r\n\r\n* Update tutorial class\r\n\r\n* Remove JsonAdaptedPerson from Storage-related files\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Checkpoint before converting tutorial structure from a String to a Map\r\n\r\n* Ported storage to nested map of strings\r\n\r\n* Remove all instances from previous storage method\r\n\r\n* Added saving of initial model state\r\n\r\n* Add ability to save each state for every state-changing command\r\n\r\n* Add a skeleton Undo Command (input/output)\r\n\r\n* Add ability to check for invalid arguments for \"u/integer\"\r\n\r\n* Add if-branch for an undo command\r\n\r\n* Checkpoint before implementing overloaded Command.execute(model, storage) abstract method\r\n\r\n* Add overloaded abstract method to accomodate commands that need both Model \u0026 Storage objects (ie UndoCommand) to operate\r\n\r\n* Added undo ability\r\n\r\n* Fix bug where new state is saved after Undo Command\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing test cases\r\n\r\n* Fix checkStyle violations\r\n\r\n* Fix checkstyle violations\r\n\r\n* Update build.gradle\r\n\r\n* Update build.gradle\r\n\r\n* Bug fixes\r\n\r\n* Update user guide\r\n\r\n* Before attempting to change json storage directory to (Paths.get)\r\n\r\n* Fix state storage file directory for Mac users\r\n\r\n* Update checkStyle\r\n\r\n* Add parsing of Assignment from json\r\n\r\n* Add storage for assignments\r\n\r\n* Add method isDuplicateAssignment\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Add string checking for all student fields. To remove any leftover square brackets ie \"[\" or \"]\".\r\n\r\n* Added Hatziq\u0027s PPP\r\n\r\n* Fix issue #154\r\n\r\n* Maybe fix the assignment storage?\r\n\r\n* Start storage for event\r\n\r\n* Update documentation\r\n\r\n* Update documentation\r\n\r\n* Update docs\r\n\r\n* Added checking for semStart. If new SemStart is the same as current SemStart, throw an error\r\n\r\n* Fix checkStyle\r\n\r\n* Update ahmadhatziq.adoc\r\n\r\n* Add storage for events\r\n\r\n* Fix checkStyle\r\n\r\n* Fix checkStyle\r\n\r\n* Fix bug where if json state files are missing, will cause app to hang\r\n\r\n* Fix for set Students\r\n\r\n* Fix bug where assignment additions won\u0027t be saved\r\n\r\n* Fix undo command for Assignments\r\n\r\n* Added tests\r\n\r\n* Add tests\r\n\r\n* Fix failing tests\r\n\r\n* Fix failing tests\r\n\r\n* Add test\r\n\r\n* Fix issue where clearCommand won\u0027t reset semStart date\r\n\r\n* Fix bug where week range accepts weekStart \u003e weekEnd\r\n\r\n* Fix bug where tutorial with same name won\u0027t be saved in storage\r\n\r\n* Add tests\r\n\r\n* Add UndoCommand into DG\r\n\r\n* Update docs\r\n",
+            "insertions": 184,
+            "deletions": 76
+          },
+          {
+            "hash": "6948bf8d756eb49891c2b450033f0bc4716c82a4",
+            "messageTitle": "Add Tests \u0026 Documentation (#210)",
+            "messageBody": "",
+            "insertions": 161,
+            "deletions": 31
+          },
+          {
+            "hash": "430908d87f44cc72e7ca496304225a672ba2b77e",
+            "messageTitle": "Fix documentation typos \u0026 add some minor stuff (#212)",
+            "messageBody": "",
+            "insertions": 27,
+            "deletions": 7
           }
         ]
       }
@@ -1499,8 +1569,8 @@
         ]
       },
       {
-        "insertions": 1626,
-        "deletions": 81,
+        "insertions": 1627,
+        "deletions": 83,
         "date": "2019-11-10",
         "commitResults": [
           {
@@ -1509,48 +1579,76 @@
             "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n\r\n* Fix unclickable \"smol white speck\" text input field\r\n\r\n* Improve focusing for input text box\r\n\r\n* Fix bugs\r\n\r\n* Fix test\r\n\r\n* Fix test\r\n\r\n* Partial fix for text input field alignment\r\n\r\n* Fix bugs\r\n\r\n* Add PPP\r\n\r\n* Allow scrolling via key presses\r\n\r\n* Rename CommandExecutor to InputExecutor\r\n\r\n* Refine Student equality test\r\n\r\n* Update PPP, dev guide\r\n\r\n* Fix EOF newline\r\n\r\n* Add test for MarkAttendanceVerifiedCommand\r\n\r\n* Fix MarkAttendanceVerifiedCommandTest\r\n\r\n* Add tests for NUSMods timetable importing\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update ParserUtilTest\r\n\r\n* Update ParserUtilTest\r\n\r\n* Add AddEventCommandTest\r\n\r\n* Add tests for Add/ListEventsCommand\r\n\r\n* Add tests for Delete/EditEventCommand\r\n\r\n* Add SetSemStartCommandIntegration Test\r\n\r\n* Try to fix ExportAttendanceCommandTest\r\n\r\n* Fix checkstyle\r\n\r\n* Attempt fix for ExportAttendanceCommandTest\r\n\r\n* Fix tests for DeleteTutorialCommand\r\n\r\n* Update DeleteTutorialCommandTest\r\n\r\n* Fix bug with command history\r\n",
             "insertions": 1626,
             "deletions": 81
+          },
+          {
+            "hash": "446b21ade5c4dcd0c4625efe9914a31b3aebf197",
+            "messageTitle": "Fix test failing (#203)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n\r\n* Fix unclickable \"smol white speck\" text input field\r\n\r\n* Improve focusing for input text box\r\n\r\n* Fix bugs\r\n\r\n* Fix test\r\n\r\n* Fix test\r\n\r\n* Partial fix for text input field alignment\r\n\r\n* Fix bugs\r\n\r\n* Add PPP\r\n\r\n* Allow scrolling via key presses\r\n\r\n* Rename CommandExecutor to InputExecutor\r\n\r\n* Refine Student equality test\r\n\r\n* Update PPP, dev guide\r\n\r\n* Fix EOF newline\r\n\r\n* Add test for MarkAttendanceVerifiedCommand\r\n\r\n* Fix MarkAttendanceVerifiedCommandTest\r\n\r\n* Add tests for NUSMods timetable importing\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update ParserUtilTest\r\n\r\n* Update ParserUtilTest\r\n\r\n* Add AddEventCommandTest\r\n\r\n* Add tests for Add/ListEventsCommand\r\n\r\n* Add tests for Delete/EditEventCommand\r\n\r\n* Add SetSemStartCommandIntegration Test\r\n\r\n* Try to fix ExportAttendanceCommandTest\r\n\r\n* Fix checkstyle\r\n\r\n* Attempt fix for ExportAttendanceCommandTest\r\n\r\n* Fix tests for DeleteTutorialCommand\r\n\r\n* Update DeleteTutorialCommandTest\r\n\r\n* Fix bug with command history\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n",
+            "insertions": 1,
+            "deletions": 2
+          }
+        ]
+      },
+      {
+        "insertions": 170,
+        "deletions": 95,
+        "date": "2019-11-11",
+        "commitResults": [
+          {
+            "hash": "ef523f7406b6dfacc085365d12a70cdc608ec11c",
+            "messageTitle": "Add more tags to docs (#207)",
+            "messageBody": "",
+            "insertions": 118,
+            "deletions": 61
+          },
+          {
+            "hash": "9d4a7125953a79dbfaf397e1c99f6a31f95b66d5",
+            "messageTitle": "Fix command text field bug (#211)",
+            "messageBody": "* Updated UniqueModule/TutorialList methods\r\n\r\n* Update UniqueModule/TutorialList methods, fix tests\r\n\r\n* Add test for AddTutorialCommand\r\n\r\n* Fix checkstyle\r\n\r\n* Update tests for AddTutorialCommand\r\n\r\n* Add commands for deleting tutorials and modules\r\n\r\n* Accept multiple input types for addTutorialCommand weeks\r\n\r\n* Add confirmation prompt for deleting non-empty modules \u0026 tutorials\r\n\r\n* Fix \"y/n\" recognition, proper module/tutorial deletion\r\n\r\n* Add suggested commands for AddTutorialCommand\r\n\r\n* Add suggested corrections for three command types\r\n\r\n* Add suggested commands for MarkAttendanceCommand (partial)\r\n\r\n* Add suggested commands and tests for MarkAttendanceCommand\r\n\r\n* Add suggested commands for displaying attendance\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Fix checkstyle\r\n\r\n* Comment out failing test for now\r\n\r\n* Add autocomplete feature\r\n\r\n* Add tests for autocomplete feature\r\n\r\n* Fix checkstyle, optimise code\r\n\r\n* Fix autocomplete bug\r\n\r\n* Fix checkstyle\r\n\r\n* Add preliminary dev docs for autocorrect\r\n\r\n* Add dev docs for autocorrect\r\n\r\n* Update dev docs for autocorrect\r\n\r\n* Edit dev guide header\r\n\r\n* Add EOF newline\r\n\r\n* Add EOF newline\r\n\r\n* Add dev docs for and streamline autocomplete\r\n\r\n* Update dev docs\r\n\r\n* Update user guide\r\n\r\n* Add autocomplete for command words\r\n\r\n* Add command history feature\r\n\r\n* Add tests for AutocompleteHandler\r\n\r\n* Fix checkstyle\r\n\r\n* Add tests for command history\r\n\r\n* Clean up ModelStubInputHistoryHandler\r\n\r\n* Update dev guide\r\n\r\n* Fix typo\r\n\r\n* Add missing tests and update existing ones\r\n\r\n* Add AddAssignmentCommandParser test\r\n\r\n* Add DeleteAssignmentCommandParser test\r\n\r\n* Add SetAssignmentScoreCommand test\r\n\r\n* Add tests for Event commands\r\n\r\n* Update score input checking for assignment parsers\r\n\r\n* Add enhance autocomplete\r\n\r\n* Fix autocomplete bugs\r\n\r\n* Fix checkstyle\r\n\r\n* Fix unclickable \"smol white speck\" text input field\r\n\r\n* Improve focusing for input text box\r\n\r\n* Fix bugs\r\n\r\n* Fix test\r\n\r\n* Fix test\r\n\r\n* Partial fix for text input field alignment\r\n\r\n* Fix bugs\r\n\r\n* Add PPP\r\n\r\n* Allow scrolling via key presses\r\n\r\n* Rename CommandExecutor to InputExecutor\r\n\r\n* Refine Student equality test\r\n\r\n* Update PPP, dev guide\r\n\r\n* Fix EOF newline\r\n\r\n* Add test for MarkAttendanceVerifiedCommand\r\n\r\n* Fix MarkAttendanceVerifiedCommandTest\r\n\r\n* Add tests for NUSMods timetable importing\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update MarkAttendanceCommandTest\r\n\r\n* Update ParserUtilTest\r\n\r\n* Update ParserUtilTest\r\n\r\n* Add AddEventCommandTest\r\n\r\n* Add tests for Add/ListEventsCommand\r\n\r\n* Add tests for Delete/EditEventCommand\r\n\r\n* Add SetSemStartCommandIntegration Test\r\n\r\n* Try to fix ExportAttendanceCommandTest\r\n\r\n* Fix checkstyle\r\n\r\n* Attempt fix for ExportAttendanceCommandTest\r\n\r\n* Fix tests for DeleteTutorialCommand\r\n\r\n* Update DeleteTutorialCommandTest\r\n\r\n* Fix bug with command history\r\n\r\n* Fix test failing\r\n\r\n* Fix checkstyle\r\n\r\n* Update PPP\r\n\r\n* Update PPP, add tags to docs\r\n\r\n* Add more tags to docs\r\n\r\n* Fix bug with command text field\r\n\r\n* Fix doc tags\r\n\r\n* Update DisplayAttendanceCommandTest\r\n\r\n* Remove unneeded todo\r\n\r\n* Update ArchitectureSequenceDiagram\r\n",
+            "insertions": 52,
+            "deletions": 34
           }
         ]
       }
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 8295,
-    "Ellieyee": 7511,
-    "AhmadHatziq": 4556,
-    "lumos309": 8251
+    "ZiHawkEye": 8389,
+    "Ellieyee": 7524,
+    "AhmadHatziq": 5019,
+    "lumos309": 8371
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
-      "docs": 192,
+      "docs": 187,
       "tests": 2587,
       "functional": 5489,
-      "other": 27
+      "other": 126
     },
     "Ellieyee": {
-      "docs": 666,
-      "tests": 2716,
-      "functional": 4124,
-      "other": 5
+      "docs": 692,
+      "tests": 2705,
+      "functional": 4123,
+      "other": 4
     },
     "AhmadHatziq": {
-      "docs": 469,
-      "tests": 840,
-      "functional": 3237,
-      "other": 10
+      "docs": 587,
+      "tests": 1103,
+      "functional": 3244,
+      "other": 85
     },
     "lumos309": {
-      "docs": 254,
-      "tests": 4291,
-      "functional": 3364,
+      "docs": 362,
+      "tests": 4296,
+      "functional": 3371,
       "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 139976.9,
-    "Ellieyee": 196901.31,
-    "AhmadHatziq": 66421.22,
-    "lumos309": 90778.88
+    "ZiHawkEye": 137887.72,
+    "Ellieyee": 193968.25,
+    "AhmadHatziq": 70529.64,
+    "lumos309": 89734.0
   },
   "authorDisplayNameMap": {
     "ZiHawkEye": "CS2103-T14-2 YEW K ... I ZHE",
