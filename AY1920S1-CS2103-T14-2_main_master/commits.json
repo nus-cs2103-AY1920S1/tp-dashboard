@@ -303,8 +303,8 @@
         ]
       },
       {
-        "insertions": 125,
-        "deletions": 36,
+        "insertions": 178,
+        "deletions": 76,
         "date": "2019-11-11",
         "commitResults": [
           {
@@ -313,6 +313,27 @@
             "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n\r\n* Fixed listEvents bug\r\nchanged: displayassignmentscommand message usage - please update user guide\r\nchanged: studentnotfoundexception message in setassignmentscorecommand\r\nfixed: did not throw error when setscore command is called for a student not in the tutorial\r\n\r\n* Updated docs\r\n\r\n* Patched setStudents - clearCommand and undoing deletion of students should work now\r\n\r\n* Fixed SetSemStart Storage bug\r\n\r\n* Added check to ensure tutorial duration is non-negative\r\nFixed storage for semStart\r\n\r\n* Bug fixes\r\nfixed: Error not thrown in application when application is changed but semstart is null\r\nfixed: Error not thrown when invalid time is inputted for addTutorial (9999)\r\nfixed: SuggestedCommands not set to an empty list when deleteSuggestedCommands is called - causes error to be thrown in terminal\r\nwhen index is inputted after suggestedCommand.execute() throws an error\r\n\r\n* Updated docs\r\n",
             "insertions": 125,
             "deletions": 36
+          },
+          {
+            "hash": "90e23e44b662792e15d95aeae5285d609fb5e208",
+            "messageTitle": "Updated docs (#214)",
+            "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n\r\n* Fixed listEvents bug\r\nchanged: displayassignmentscommand message usage - please update user guide\r\nchanged: studentnotfoundexception message in setassignmentscorecommand\r\nfixed: did not throw error when setscore command is called for a student not in the tutorial\r\n\r\n* Updated docs\r\n\r\n* Patched setStudents - clearCommand and undoing deletion of students should work now\r\n\r\n* Fixed SetSemStart Storage bug\r\n\r\n* Added check to ensure tutorial duration is non-negative\r\nFixed storage for semStart\r\n\r\n* Bug fixes\r\nfixed: Error not thrown in application when application is changed but semstart is null\r\nfixed: Error not thrown when invalid time is inputted for addTutorial (9999)\r\nfixed: SuggestedCommands not set to an empty list when deleteSuggestedCommands is called - causes error to be thrown in terminal\r\nwhen index is inputted after suggestedCommand.execute() throws an error\r\n\r\n* Updated docs\r\n\r\n* Updated docs\r\n",
+            "insertions": 18,
+            "deletions": 14
+          },
+          {
+            "hash": "2cd419152d465920bca92ebd9265b75f0e86786e",
+            "messageTitle": "Edited PPP (#216)",
+            "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n\r\n* Fixed listEvents bug\r\nchanged: displayassignmentscommand message usage - please update user guide\r\nchanged: studentnotfoundexception message in setassignmentscorecommand\r\nfixed: did not throw error when setscore command is called for a student not in the tutorial\r\n\r\n* Updated docs\r\n\r\n* Patched setStudents - clearCommand and undoing deletion of students should work now\r\n\r\n* Fixed SetSemStart Storage bug\r\n\r\n* Added check to ensure tutorial duration is non-negative\r\nFixed storage for semStart\r\n\r\n* Bug fixes\r\nfixed: Error not thrown in application when application is changed but semstart is null\r\nfixed: Error not thrown when invalid time is inputted for addTutorial (9999)\r\nfixed: SuggestedCommands not set to an empty list when deleteSuggestedCommands is called - causes error to be thrown in terminal\r\nwhen index is inputted after suggestedCommand.execute() throws an error\r\n\r\n* Updated docs\r\n\r\n* Updated docs\r\n\r\n* PPP Update\r\n",
+            "insertions": 31,
+            "deletions": 18
+          },
+          {
+            "hash": "0bf0527089df5784fbe2e42d6012c7d3b0d47ae1",
+            "messageTitle": "Yet another PPP update (#217)",
+            "messageBody": "* Fixed Tutorial.setStudent() and EditCommandTest\r\n\r\n* Update user guide\r\n\r\n* Updated user guide\r\n\r\n* Fixed setStudent() and EditCommand yet again\r\n\r\n* Fixed bugs\r\nfixed: included prefix mat_no and nusid in argmultimap for addstudentcommandparser\r\nfixed: added issameperson() in Student which is called in contains in UniquePersonList which is called in addstudent/hasstudent in application, changed message_duplicate_student to reflect the new logic\r\nchanged: error messages (invalid ... in ...) to for better comprehension\r\nchanged: command usage messages for better comprehension\r\nfixed: included conditional in application.setstudent() that does nothing if editedstudent and target are equal to avoid bug where student reference is changed in uniquepersonlist when the same student is added and removed\r\nfixed: partialinputparsertest where by bob and amy had the same nusnetid and matricnums\r\n\r\n* More bug fixes\r\nfixed: changed assignment/tutname/eventname regex\r\nfixed: display not a valid command, removed from Finder.java\r\nfixed: optional[] no longer printed for optional fields in student.toString()\r\nfixed: duplicateevents error not shown in console for addEventCommand\r\n\r\n* Bug fixes:\r\nfixed: import command whereby no error is shown in console when import https://nusmods.com/timetable/sem-1/share? is inputted\r\nchanged: import command message\r\nchanged: tutname regex to accept non white space characters\r\n\r\n* Fixed listEvents bug\r\nchanged: displayassignmentscommand message usage - please update user guide\r\nchanged: studentnotfoundexception message in setassignmentscorecommand\r\nfixed: did not throw error when setscore command is called for a student not in the tutorial\r\n\r\n* Updated docs\r\n\r\n* Patched setStudents - clearCommand and undoing deletion of students should work now\r\n\r\n* Fixed SetSemStart Storage bug\r\n\r\n* Added check to ensure tutorial duration is non-negative\r\nFixed storage for semStart\r\n\r\n* Bug fixes\r\nfixed: Error not thrown in application when application is changed but semstart is null\r\nfixed: Error not thrown when invalid time is inputted for addTutorial (9999)\r\nfixed: SuggestedCommands not set to an empty list when deleteSuggestedCommands is called - causes error to be thrown in terminal\r\nwhen index is inputted after suggestedCommand.execute() throws an error\r\n\r\n* Updated docs\r\n\r\n* Updated docs\r\n\r\n* PPP Update\r\n\r\n* Final PPP Update\r\n",
+            "insertions": 4,
+            "deletions": 8
           }
         ]
       }
@@ -684,7 +705,7 @@
       },
       {
         "insertions": 57,
-        "deletions": 130,
+        "deletions": 144,
         "date": "2019-11-11",
         "commitResults": [
           {
@@ -700,6 +721,13 @@
             "messageBody": "* Update userguide and checkstyle\r\n\r\n* Update architectureSequenceDiagram\r\n\r\n* Update Ui Class Diagram\r\n\r\n* Update PPP\r\n\r\n* Update PPP\r\n\r\n* Update PPP\r\n\r\n* Update tags for PPP\r\n\r\n* Fix PPP tag\r\n\r\n* Update everyone\u0027s PPP\r\n",
             "insertions": 29,
             "deletions": 13
+          },
+          {
+            "hash": "2b69df8e7cf676d285dcadf8aada3ae4182bbf94",
+            "messageTitle": "Shorten PPP (#215)",
+            "messageBody": "",
+            "insertions": 0,
+            "deletions": 14
           }
         ]
       }
@@ -1084,8 +1112,8 @@
         ]
       },
       {
-        "insertions": 372,
-        "deletions": 114,
+        "insertions": 557,
+        "deletions": 131,
         "date": "2019-11-11",
         "commitResults": [
           {
@@ -1108,6 +1136,13 @@
             "messageBody": "",
             "insertions": 27,
             "deletions": 7
+          },
+          {
+            "hash": "7618a5bf81c099c7b32cf264e9053dc9250ac611",
+            "messageTitle": "Add test \u0026 docs (#213)",
+            "messageBody": "",
+            "insertions": 185,
+            "deletions": 17
           }
         ]
       }
@@ -1613,41 +1648,41 @@
     ]
   },
   "authorFinalContributionMap": {
-    "ZiHawkEye": 8389,
-    "Ellieyee": 7524,
-    "AhmadHatziq": 5019,
-    "lumos309": 8371
+    "ZiHawkEye": 8414,
+    "Ellieyee": 7495,
+    "AhmadHatziq": 5189,
+    "lumos309": 8369
   },
   "authorFileTypeContributionMap": {
     "ZiHawkEye": {
-      "docs": 187,
+      "docs": 212,
       "tests": 2587,
       "functional": 5489,
       "other": 126
     },
     "Ellieyee": {
-      "docs": 692,
+      "docs": 663,
       "tests": 2705,
       "functional": 4123,
       "other": 4
     },
     "AhmadHatziq": {
-      "docs": 587,
-      "tests": 1103,
+      "docs": 574,
+      "tests": 1286,
       "functional": 3244,
       "other": 85
     },
     "lumos309": {
-      "docs": 362,
+      "docs": 360,
       "tests": 4296,
       "functional": 3371,
       "other": 342
     }
   },
   "authorContributionVariance": {
-    "ZiHawkEye": 137887.72,
-    "Ellieyee": 193968.25,
-    "AhmadHatziq": 70529.64,
+    "ZiHawkEye": 138010.34,
+    "Ellieyee": 193963.0,
+    "AhmadHatziq": 73384.17,
     "lumos309": 89734.0
   },
   "authorDisplayNameMap": {
