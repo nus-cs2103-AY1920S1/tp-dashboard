@@ -89969,241 +89969,234 @@
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        addPerformanceTable(performanceData);"
+        "content": "        performanceData.forEach((event, recordList) -\u003e {"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        performanceData.forEach((event, recordList) -\u003e {"
+        "content": "            int numRecords \u003d recordList.size();"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "            int numRecords \u003d recordList.size();"
+        "content": "            if (numRecords \u003e 0) {"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "            if (numRecords \u003e 0) {"
+        "content": "                PerformanceTableHeader header \u003d new PerformanceTableHeader(event.getName());"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                PerformanceTableHeader header \u003d new PerformanceTableHeader(event.getName());"
+        "content": "                performanceBox.getChildren().add(header.getRoot());"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                performanceBox.getChildren().add(header.getRoot());"
+        "content": "                for (int i \u003d 0; i \u003c numRecords; i++) {"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                for (int i \u003d 0; i \u003c numRecords; i++) {"
+        "content": "                    CalendarCompatibleRecord record \u003d recordList.get(i);"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    CalendarCompatibleRecord record \u003d recordList.get(i);"
+        "content": "                    addPerformanceRecord(record);"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                    addPerformanceRecord(record);"
+        "content": "                }"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "                }"
+        "content": "            }"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "            }"
+        "content": "        });"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        });"
+        "content": "    }"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    /**"
+        "content": "     * Adds performance {@code record} for a particular event."
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     * Adds performance {@code record} for a particular event."
+        "content": "     * @param record Record of a particular event"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     * @param record Record of a particular event"
+        "content": "     */"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     */"
+        "content": "    private void addPerformanceRecord(CalendarCompatibleRecord record) {"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    private void addPerformanceRecord(CalendarCompatibleRecord record) {"
+        "content": "        Person athlete \u003d record.getAthlete();"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        Person athlete \u003d record.getAthlete();"
+        "content": "        String name \u003d athlete.getName().toString();"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        String name \u003d athlete.getName().toString();"
+        "content": "        String timing \u003d record.getTiming();"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        String timing \u003d record.getTiming();"
+        "content": "        PerformanceTableContent content \u003d new PerformanceTableContent(name, timing);"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        PerformanceTableContent content \u003d new PerformanceTableContent(name, timing);"
+        "content": "        performanceBox.getChildren().add(content.getRoot());"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        performanceBox.getChildren().add(content.getRoot());"
+        "content": "    }"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    /**"
+        "content": "     * Displays message informing user that there is no performance data on the specified date."
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     * Displays message informing user that there is no performance data on the specified date."
+        "content": "     */"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "     */"
+        "content": "    private void displayNoPerformanceError() {"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "    private void displayNoPerformanceError() {"
+        "content": "        String errorMsg \u003d \"No Performance Record on \" + date.toString();"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        String errorMsg \u003d \"No Performance Record on \" + date.toString();"
+        "content": "        ErrorMessageLabel error \u003d new ErrorMessageLabel(errorMsg);"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        ErrorMessageLabel error \u003d new ErrorMessageLabel(errorMsg);"
+        "content": "        performanceBox.getChildren().add(error.getRoot());"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "shawnlsj97"
         },
-        "content": "        performanceBox.getChildren().add(error.getRoot());"
-      },
-      {
-        "lineNumber": 196,
-        "author": {
-          "gitId": "shawnlsj97"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 197,
+        "lineNumber": 196,
         "author": {
           "gitId": "shawnlsj97"
         },
@@ -90211,7 +90204,7 @@
       }
     ],
     "authorContributionMap": {
-      "shawnlsj97": 191,
+      "shawnlsj97": 190,
       "jeunhoe": 6
     }
   },
