@@ -21245,541 +21245,7 @@
     }
   },
   {
-    "path": "docs/team/mauricetxs.adoc",
-    "fileType": "docs",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "\u003d Maurice Tan - Project Portfolio"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ":site-section: AboutUs"
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ":imagesDir: ../images"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ":stylesDir: ../stylesheets"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "\u003d\u003d PROJECT: CaloFit"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "---"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "\u003d\u003d Overview"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "My team of 3 software engineering student and I were tasked with enhancing a basic command line interface desktop addressbook application(AddressBook – Level 3) for our Software Engineering project. We chose to morph it into a calories tracker management system called CaloFit. This enhanced application provides health-conscious people or those who are aiming for a diet to set their calorie budget for the day or to simply input their meal for the day; a calorie budget tracker that manages the meal that they take; find dishes based on keywords; suggest a meal with the remaining calorie budget; notify the user if the user missed a meal; and get data about their calorie intake progress through a report."
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "CaloFit is a desktop application for tracking the calories that the user has taken from his or her meals over the course of using the application. +"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "The user interacts with CaloFit using a Command Line Interface(CLI) that is represented by a box near the top of the application screen. This is where the user can type in their commands and press \"Enter\" on their keyboards to execute them. +"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "It has a Graphical User Interface(GUI) created with JavaFX. The GUI is the main display that the user sees upon starting up CaloFit."
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "This is what our project looks like as shown in Figure 1 below:"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "image::PPPMain.png[]"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "Figure 1. The graphical user interface for CaloFit."
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "My role was to design and write the codes for the `suggest` and `notification` features. The following sections illustrate these enhancements in more detail, as well as the relevant documentation I have added to the user and developer guides in relation to these enhancements."
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "Note the following symbols and formatting used in this document:"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "[NOTE]"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "This symbol indicates important information."
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "`suggest` A grey highlight (called a mark-up) indicates that this is a command that can be inputted into the command line and executed by the application."
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "\u003d\u003d Summary of contributions"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "This section shows a summary of my coding, documentation, and other helpful contributions to the team project."
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "* *Major enhancement 1*: added *the ability to suggest meals*"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "** What it does: automatically provides the user with suggested meals based on the remaining calorie budget. Ability to toggled between finding meal and suggested meals."
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "** Justification: This feature improves the product significantly because as a user most of the time we would not know what to eat, and a list of suggested meal will help us the user to decide on their meal quicker. Moreover, the suggested meals are all within the calorie budget, hence the user would not need to worry about having a meal that will be over their current calorie budget."
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "** Highlights: This enhancement affects the future suggestion for a whole day meal plan or exercise plan that would be added in future. This feature provides the user with convenience of choosing a meal, and could potentially be the income generating factor for CaloFit."
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "* *Major enhancement 2*: added *the ability to notify user when a meal is missed*"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "** What it does: the user will be prompted with a notification when a meal is missed."
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "** Justification: On top of keeping within the calorie budget range, this feature also ensure that the user follows a spread-out and balance diet, of eating their meal at allocated timing. Furthermore, it also ensures that the user will not miss their meal throughout their busy day schedule."
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "** Highlights: This enhancement affects the future implementation of notification being set by the user and users being allowed to decide on what they want to be notified about. This feature provides the user with a worry-free experience, as they need not worry about forgetting their meal in future."
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "* *Code contributed*: [https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search\u003dmauricetxs\u0026sort\u003dgroupTitle\u0026sortWithin\u003dtitle\u0026since\u003d2019-09-06\u0026timeframe\u003dcommit\u0026mergegroup\u003dfalse\u0026groupSelect\u003dgroupByRepos\u0026breakdown\u003dfalse\u0026tabOpen\u003dtrue\u0026tabType\u003dauthorship\u0026tabAuthor\u003dMauriceTXS\u0026tabRepo\u003dAY1920S1-CS2103T-W11-4%2Fmain%5Bmaster%5D[Functional code]]"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "* *Other contributions*:"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "** Edited, improve and formatted Developer and User Guide."
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "** Reported bugs and suggestions for other teams in the class (https://github.com/MauriceTXS/ped[List of bugs reported])."
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "\u003d\u003d Contributions to the User Guide"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "|\u003d\u003d\u003d"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "|_Given below are sections I contributed to the User Guide as we had to update the original AddressBook-Level 3 User Guide with instructions for the enhancements that we had added. The following is an excerpt from our *CaloFit User Guide*, showing additions that I have made for the `suggest` and `notification` feature. They showcase my ability to write documentation targeting end-users._"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "|\u003d\u003d\u003d"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "include::../UserGuide.adoc[tag\u003dsuggest]"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "include::../UserGuide.adoc[tag\u003dnotification]"
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "\u003d\u003d Contributions to the Developer Guide"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "|\u003d\u003d\u003d"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "|_Given below are sections I contributed to the Developer Guide for the `suggest` and `notification` feature. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "|\u003d\u003d\u003d"
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "include::../DeveloperGuide.adoc[tag\u003dsuggest]"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "include::../DeveloperGuide.adoc[tag\u003dsuggestTesting]"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "include::../DeveloperGuide.adoc[tag\u003dnotification]"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "MauriceTXS"
-        },
-        "content": "include::../DeveloperGuide.adoc[tag\u003dnotificationTesting]"
-      }
-    ],
-    "authorContributionMap": {
-      "MauriceTXS": 75
-    }
-  },
-  {
-    "path": "docs/team/ryanchew.adoc",
+    "path": "docs/team/iltep64.adoc",
     "fileType": "docs",
     "lines": [
       {
@@ -22576,6 +22042,540 @@
     ],
     "authorContributionMap": {
       "iltep64": 113
+    }
+  },
+  {
+    "path": "docs/team/mauricetxs.adoc",
+    "fileType": "docs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "\u003d Maurice Tan - Project Portfolio"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ":site-section: AboutUs"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ":imagesDir: ../images"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ":stylesDir: ../stylesheets"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "\u003d\u003d PROJECT: CaloFit"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "---"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "\u003d\u003d Overview"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "My team of 3 software engineering student and I were tasked with enhancing a basic command line interface desktop addressbook application(AddressBook – Level 3) for our Software Engineering project. We chose to morph it into a calories tracker management system called CaloFit. This enhanced application provides health-conscious people or those who are aiming for a diet to set their calorie budget for the day or to simply input their meal for the day; a calorie budget tracker that manages the meal that they take; find dishes based on keywords; suggest a meal with the remaining calorie budget; notify the user if the user missed a meal; and get data about their calorie intake progress through a report."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "CaloFit is a desktop application for tracking the calories that the user has taken from his or her meals over the course of using the application. +"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "The user interacts with CaloFit using a Command Line Interface(CLI) that is represented by a box near the top of the application screen. This is where the user can type in their commands and press \"Enter\" on their keyboards to execute them. +"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "It has a Graphical User Interface(GUI) created with JavaFX. The GUI is the main display that the user sees upon starting up CaloFit."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "This is what our project looks like as shown in Figure 1 below:"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "image::PPPMain.png[]"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "Figure 1. The graphical user interface for CaloFit."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "My role was to design and write the codes for the `suggest` and `notification` features. The following sections illustrate these enhancements in more detail, as well as the relevant documentation I have added to the user and developer guides in relation to these enhancements."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "Note the following symbols and formatting used in this document:"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "[NOTE]"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "This symbol indicates important information."
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "`suggest` A grey highlight (called a mark-up) indicates that this is a command that can be inputted into the command line and executed by the application."
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "\u003d\u003d Summary of contributions"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "This section shows a summary of my coding, documentation, and other helpful contributions to the team project."
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "* *Major enhancement 1*: added *the ability to suggest meals*"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "** What it does: automatically provides the user with suggested meals based on the remaining calorie budget. Ability to toggled between finding meal and suggested meals."
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "** Justification: This feature improves the product significantly because as a user most of the time we would not know what to eat, and a list of suggested meal will help us the user to decide on their meal quicker. Moreover, the suggested meals are all within the calorie budget, hence the user would not need to worry about having a meal that will be over their current calorie budget."
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "** Highlights: This enhancement affects the future suggestion for a whole day meal plan or exercise plan that would be added in future. This feature provides the user with convenience of choosing a meal, and could potentially be the income generating factor for CaloFit."
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "* *Major enhancement 2*: added *the ability to notify user when a meal is missed*"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "** What it does: the user will be prompted with a notification when a meal is missed."
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "** Justification: On top of keeping within the calorie budget range, this feature also ensure that the user follows a spread-out and balance diet, of eating their meal at allocated timing. Furthermore, it also ensures that the user will not miss their meal throughout their busy day schedule."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "** Highlights: This enhancement affects the future implementation of notification being set by the user and users being allowed to decide on what they want to be notified about. This feature provides the user with a worry-free experience, as they need not worry about forgetting their meal in future."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "* *Code contributed*: [https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search\u003dmauricetxs\u0026sort\u003dgroupTitle\u0026sortWithin\u003dtitle\u0026since\u003d2019-09-06\u0026timeframe\u003dcommit\u0026mergegroup\u003dfalse\u0026groupSelect\u003dgroupByRepos\u0026breakdown\u003dfalse\u0026tabOpen\u003dtrue\u0026tabType\u003dauthorship\u0026tabAuthor\u003dMauriceTXS\u0026tabRepo\u003dAY1920S1-CS2103T-W11-4%2Fmain%5Bmaster%5D[Functional code]]"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "* *Other contributions*:"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "** Edited, improve and formatted Developer and User Guide."
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "** Reported bugs and suggestions for other teams in the class (https://github.com/MauriceTXS/ped[List of bugs reported])."
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "\u003d\u003d Contributions to the User Guide"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "|_Given below are sections I contributed to the User Guide as we had to update the original AddressBook-Level 3 User Guide with instructions for the enhancements that we had added. The following is an excerpt from our *CaloFit User Guide*, showing additions that I have made for the `suggest` and `notification` feature. They showcase my ability to write documentation targeting end-users._"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "include::../UserGuide.adoc[tag\u003dsuggest]"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "include::../UserGuide.adoc[tag\u003dnotification]"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "\u003d\u003d Contributions to the Developer Guide"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "|_Given below are sections I contributed to the Developer Guide for the `suggest` and `notification` feature. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "|\u003d\u003d\u003d"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "include::../DeveloperGuide.adoc[tag\u003dsuggest]"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "include::../DeveloperGuide.adoc[tag\u003dsuggestTesting]"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "include::../DeveloperGuide.adoc[tag\u003dnotification]"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "MauriceTXS"
+        },
+        "content": "include::../DeveloperGuide.adoc[tag\u003dnotificationTesting]"
+      }
+    ],
+    "authorContributionMap": {
+      "MauriceTXS": 75
     }
   },
   {
